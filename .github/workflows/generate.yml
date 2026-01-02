@@ -34,7 +34,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             --items_per_section 15
+          python news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             
 
       - name: Commit & push if changed
         run: |
