@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Daily Digest · 2026-01-02</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--text:#0b0b0f;--muted:#6e6e73;--line:rgba(0,0,0,.10);--shadow:0 10px 30px rgba(0,0,0,.06);--r:18px;--r2:14px;--accent:#0a84ff;--chip:rgba(0,0,0,.05)}
+[data-theme="dark"]{--bg:#0b0b0f;--card:rgba(18,18,24,.94);--text:#f5f5f7;--muted:#a1a1aa;--line:rgba(255,255,255,.12);--shadow:0 14px 44px rgba(0,0,0,.45);--chip:rgba(255,255,255,.08)}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
+.left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.brand .title{font-size:15px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.controls{padding:12px 16px;border-bottom:1px solid var(--line)}
+.search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent;cursor:pointer}
+.pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.nav{padding:10px 10px 14px;overflow:auto;min-height:0}
+.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text)}
+.nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
+.badge{font-size:12px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+.left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}
+.btn:hover{border-color:rgba(10,132,255,.30)}
+.main{display:flex;flex-direction:column}.topbar{padding:16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:var(--card)}
+.h1{font-size:18px;font-weight:900}.meta{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.main-scroll{padding:16px;overflow:auto;min-height:0}
+.section{scroll-margin-top:90px;margin-bottom:18px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:10px}
+.section-title{font-size:14px;font-weight:860}.small{font-size:12px;color:var(--muted)}
+.brief{border:1px solid var(--line);border-radius:var(--r2);padding:14px;line-height:1.75;font-size:13px}
+.actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:999px}
+.cards{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.event{border:1px solid var(--line);border-radius:var(--r2);padding:12px;transition:.12s ease;display:flex;flex-direction:column;gap:8px}
+.event:hover{border-color:rgba(10,132,255,.22);background:rgba(10,132,255,.06)}
+.e-title{font-size:13px;font-weight:820;line-height:1.35}
+.e-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.e-sum{font-size:12px;line-height:1.55}
+.e-links{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.link{font-size:12px;color:var(--accent)}
+.fb{display:flex;gap:8px}
+.iconbtn{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 8px;border-radius:10px;cursor:pointer;font-size:12px}
+.iconbtn.active.good{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.12);color:var(--text)}
+.iconbtn.active.bad{border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.12);color:var(--text)}
+.right{display:flex;flex-direction:column}
+.right-sticky{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding:16px}
+.right-title{font-size:14px;font-weight:880}.right-sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.right-scroll{padding:14px 16px 16px;overflow:auto;min-height:0}
+.kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:var(--r2);padding:12px}
+.k-head{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+.k-val{margin-top:6px;font-size:18px;font-weight:900}
+.k-delta{margin-top:4px;font-size:12px;color:var(--muted)}
+.spark{margin-top:10px;width:100%;height:44px;display:block}
+.hr{height:1px;background:var(--line);margin:14px 0}.group{font-size:12px;color:var(--muted);font-weight:800;margin:8px 0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.18s ease;z-index:999}
+.overlay.open{opacity:1;pointer-events:auto}
+.panel{position:absolute;right:18px;top:18px;bottom:18px;width:min(520px,calc(100vw - 36px));background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.phead{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.ptitle{font-size:14px;font-weight:900}
+.tabs{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.tab{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);cursor:pointer}
+.tab.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.pbody{padding:14px 16px;overflow:auto;min-height:0}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:10px 0}
+.label{font-size:12px;color:var(--muted);line-height:1.4}
+.input{width:160px;border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:transparent;color:var(--text);font-size:12px;outline:none}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+@media (max-width:1200px){.container{grid-template-columns:320px 1fr}.right{display:none}}
+@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="container">
+  <aside class="card left">
+    <div class="brand"><div class="title">Ben的每日资讯简报</div>
+      <div class="sub">Apple News 风格 · 静态页面<br>日期：2026-01-02 · 生成：<span id="genAt">—</span></div>
+    </div>
+    <div class="controls">
+      <input id="q" class="search" placeholder="搜索标题/标签/来源…"/>
+      <div class="pills">
+        <div class="pill active" data-view="all">全部</div>
+        <div class="pill" data-view="cn">中国相关</div>
+        <div class="pill" data-view="global">全球（不含中国）</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="left-foot">
+      <button class="btn" id="btnHome">回到顶部</button>
+      <button class="btn" id="btnSettings">设置</button>
+    </div>
+  </aside>
+
+  <main class="card main">
+    <div class="topbar">
+      <div class="h1">今日要点与事件卡</div>
+      <div class="meta">默认 30 分钟模式（每栏 Top 5），可在设置切换全量（10–20条）。所有内容已预渲染，无客户端抓取。</div>
+    </div>
+    <div class="main-scroll" id="main"></div>
+  </main>
+
+  <aside class="card right">
+    <div class="right-sticky">
+      <div class="right-title">数据与趋势快照</div>
+      <div class="right-sub">生成时刻快照（已内嵌）<br>更新时间：<span id="kpiAt">—</span></div>
+    </div>
+    <div class="right-scroll">
+      <div class="group">LME 金属（Proxy）</div><div class="kgrid" id="kMetals"></div>
+      <div class="hr"></div>
+      <div class="group">利率 / 汇率 / 美元</div><div class="kgrid" id="kMacro"></div>
+      <div class="hr"></div>
+      <div class="group">反馈闭环</div>
+      <div class="kpi">
+        <div class="k-head"><span>7 天窗口</span><span id="fbCount">0</span></div>
+        <div class="k-delta">点 👍/👎 形成偏好；可导出反馈供生成端读取（用于“选题闭环”）。</div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn" id="btnExport">导出反馈</button>
+          <button class="btn" id="btnClearFB">清空本机反馈</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="panel">
+    <div class="phead"><div class="ptitle">设置</div><button class="btn" id="btnClose">关闭</button></div>
+    <div class="tabs">
+      <div class="tab active" data-tab="general">通用</div>
+      <div class="tab" data-tab="layout">布局</div>
+      <div class="tab" data-tab="algo">算法</div>
+      <div class="tab" data-tab="config">扩展</div>
+    </div>
+    <div class="pbody" id="pbody"></div>
+  </div>
+</div>
+
+<script>window.DIGEST = {"date": "2026-01-02", "generated_at_bjt": "2026-01-02 08:00", "kpis": {"generated_at_bjt": "2026-01-02 08:00", "metals": [{"label": "铜（Proxy）（PCOPPUSDM）", "unit": "$/t", "value_str": "8,450", "delta": 12.3, "pct": 0.15, "source": "FRED", "spark_svg": ""}, {"label": "铝（Proxy）（PALUMUSDM）", "unit": "$/t", "value_str": "2,180", "delta": -8.1, "pct": -0.37, "source": "FRED", "spark_svg": ""}], "macro": [{"label": "美债10Y（DGS10）", "unit": "%", "value_str": "4.21", "delta": 0.03, "pct": 0.72, "source": "FRED", "spark_svg": ""}, {"label": "USD/CNY（DEXCHUS）", "unit": "", "value_str": "7.15", "delta": 0.01, "pct": 0.14, "source": "FRED", "spark_svg": ""}]}, "sections": [{"id": "top", "name": "Top 今日要点", "tags": ["宏观", "制裁", "AI算力", "金属", "CBAM", "东南亚"], "brief_zh": "（示例）今天的关键信号集中在利率预期与美元强弱的再定价、制裁/出口管制对算力与关键金属的传导、以及 CBAM 合规从“报告”走向“成本”。建议优先：1）核对右侧 10Y/DXY 与 USD/CNY 的方向一致性；2）把制裁筛查与合规条款写入交易/采购合同；3）对金属品类做“到岸可交易性”核验清单（支付/运输/筛查/验收）。指标：10Y、USD/CNY、铜/铝现货（Proxy）日变动。", "brief_global": "", "brief_cn": "", "events": [{"id": "top_1", "title": "US yields move as markets reprice cuts", "title_zh": "美债收益率波动：市场调整降息预期", "summary_zh": "利率预期边际变化将快速传导至美元与跨境融资成本。", "source_hint": "Google News（聚类）", "date": "2026-01-02", "url": "https://news.google.com/", "tags": ["宏观", "利率"], "region": "global"}, {"id": "top_2", "title": "EU CBAM enters next phase", "title_zh": "欧盟 CBAM 进入下一阶段：证据链与核算要求更硬", "summary_zh": "合规数据缺口将直接变成价格折让与交付风险。", "source_hint": "European Commission", "date": "2026-01-02", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en", "tags": ["CBAM", "合规"], "region": "global"}]}, {"id": "macro", "name": "宏观 / 市场（利率·汇率·风险偏好）", "tags": ["利率", "汇率", "风险偏好"], "brief_zh": "（示例）宏观层面关注“美元-利率-风险偏好”三角是否同向：若美元走强且长端利率上行，风险资产与大宗通常承压；反之利于铜铝等周期品反弹。动作：把报价周期与汇率阈值绑定；每日复核资金成本与账期策略。", "brief_global": "", "brief_cn": "", "events": [{"id": "macro_1", "title": "Dollar steadies ahead of data", "title_zh": "美元企稳等待数据：短期交易更偏事件驱动", "summary_zh": "短期波动加大，建议以阈值触发而非主观判断。", "source_hint": "Google News（聚类）", "date": "2026-01-02", "url": "https://news.google.com/", "tags": ["汇率"], "region": "global"}]}], "config": {"version": "v15-demo"}, "config_full": {"version": "v15", "domain_denylist": ["reuters.com", "ft.com", "wsj.com", "bloomberg.com", "economist.com"], "sections": [{"id": "top", "name": "Top 今日要点", "type": "google_news_cluster", "items_per_section": 15, "query_global": "macro markets rates yields fx sanctions export controls ai data center power copper aluminium lme cbam southeast asia supply chain", "query_cn": "china cny yuan hong kong taiwan export controls sanctions cbam supply chain metals", "tags": ["宏观", "制裁", "AI算力", "金属", "CBAM", "东南亚"]}, {"id": "macro", "name": "宏观 / 市场（利率·汇率·风险偏好）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "fed ecb boj yields rates inflation dollar dxy fx risk sentiment", "query_cn": "china pboe liquidity repo cny fx", "tags": ["利率", "汇率", "风险偏好"]}, {"id": "geo", "name": "地缘政治 / 制裁 / 合规（OFAC·EU）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "OFAC sanctions EU council regulation export controls compliance dual-use", "query_cn": "china export controls sanctions compliance", "tags": ["制裁", "出口管制", "合规"]}, {"id": "ai", "name": "AI 计算基础设施（算力·电力·冷却）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "AI compute infrastructure data center power grid cooling liquid cooling GPU HBM networking", "query_cn": "china ai data center power compute gpu", "tags": ["算力", "电力", "液冷"]}, {"id": "metals", "name": "大宗 / 金属（LME·供需·库存）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "LME copper aluminium nickel zinc lead tin inventories smelter premium demand", "query_cn": "china copper aluminium nickel smelter demand", "tags": ["铜", "铝", "镍", "LME"]}, {"id": "carbon", "name": "碳 / CBAM / 碳市场（Verra·EU）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "CBAM European Commission carbon border adjustment mechanism ETS Verra carbon credits ICVCM", "query_cn": "cbam china exporters carbon footprint", "tags": ["CBAM", "碳会计", "碳市场"]}, {"id": "sea", "name": "东南亚供应链（制造·转移·关键矿产）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "Southeast Asia supply chain Vietnam Malaysia Thailand Indonesia manufacturing relocation critical minerals", "query_cn": "Vietnam supply chain china companies", "tags": ["越南", "制造", "关键矿产"]}, {"id": "frontier", "name": "前沿学科雷达（量子·聚变·材料·生物）", "type": "mixed_news_arxiv", "items_per_section": 15, "query_global": "quantum computing fusion energy photonics advanced materials synthetic biology", "arxiv_cats": ["quant-ph", "physics.plasm-ph", "cond-mat.mtrl-sci", "q-bio.*", "cs.AI", "cs.LG"], "tags": ["量子", "聚变", "材料", "生物"]}], "kpis": {"metals": [{"provider": "fred", "series_id": "PCOPPUSDM", "label": "铜（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PALUMUSDM", "label": "铝（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PZINCUSDM", "label": "锌（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PNICKUSDM", "label": "镍（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PLEADUSDM", "label": "铅（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PTINUSDM", "label": "锡（Proxy）", "unit": "$/t"}], "macro": [{"provider": "fred", "series_id": "DGS10", "label": "美债10Y", "unit": "%"}, {"provider": "fred", "series_id": "DEXCHUS", "label": "USD/CNY", "unit": ""}, {"provider": "fred", "series_id": "DTWEXBGS", "label": "美元指数（广义）", "unit": ""}, {"provider": "fred", "series_id": "DEXUSEU", "label": "EUR/USD", "unit": ""}]}}};</script>
+<script>
+(function(){
+  const D = window.DIGEST || {date:"",generated_at_bjt:"",sections:[],kpis:{metals:[],macro:[]},config:{}};
+  const nav = document.getElementById('nav'), main = document.getElementById('main'), q=document.getElementById('q');
+  const pills=[...document.querySelectorAll('.pill')];
+  const overlay=document.getElementById('overlay'), pbody=document.getElementById('pbody'), tabs=[...document.querySelectorAll('.tab')];
+  document.getElementById('genAt').textContent=D.generated_at_bjt||'—';
+  document.getElementById('kpiAt').textContent=(D.kpis&&D.kpis.generated_at_bjt)||D.generated_at_bjt||'—';
+
+  const key='digest_settings_v15';
+  const st=JSON.parse(localStorage.getItem(key)||'{}');
+  const defaults={theme:'auto',readingMode:'30m',perSectionFull:15,perSection30m:5,weights:{timeliness:0.35,authority:0.2,relevance:0.2,impact:0.15,novelty:0.1}};
+  const S=Object.assign({},defaults,st); const W=Object.assign({},defaults.weights,S.weights||{});
+  function save(){localStorage.setItem(key,JSON.stringify(Object.assign({},S,{weights:W})));}
+
+  function applyTheme(){ if(S.theme==='auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme',S.theme); }
+  applyTheme();
+
+  let view='all';
+  function setView(v){view=v; pills.forEach(p=>p.classList.toggle('active',p.dataset.view===v)); render();}
+  pills.forEach(p=>p.addEventListener('click',()=>setView(p.dataset.view)));
+
+  function esc(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
+  function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,' ').trim();}
+  function matchView(ev){ if(view==='all') return true; return ev.region===view; }
+  function matchQuery(ev){ const t=norm(q.value); if(!t) return true; const hay=norm([ev.title_zh,ev.title,ev.source_hint,(ev.tags||[]).join(' ')].join(' ')); return hay.includes(t); }
+
+  const fbPrefix='digest_fb_v15_'; const seven=7*24*3600*1000;
+  function fbKey(id){return fbPrefix+id;}
+  function setFB(id,v){localStorage.setItem(fbKey(id),JSON.stringify({v,t:Date.now()})); render(); updateFBCount();}
+  function getFB(id){const raw=localStorage.getItem(fbKey(id)); if(!raw) return null; try{return JSON.parse(raw);}catch(e){return null;}}
+  function updateFBCount(){
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix)); let alive=0; const now=Date.now();
+    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); if(o && (now-o.t)<=seven) alive++;}catch(e){} }
+    document.getElementById('fbCount').textContent=alive+' 条';
+  }
+  updateFBCount();
+
+  function kpiBox(x){
+    const d=(x.delta==null)?'—':((x.delta>0?'+':'')+x.delta);
+    const p=(x.pct==null)?'':`（${x.pct>0?'+':''}${x.pct}%）`;
+    return `<div class="kpi"><div class="k-head"><span>${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
+      <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
+      ${x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2,30 L98,30" stroke="rgba(128,128,128,.35)" fill="none"/></svg>'}</div>`;
+  }
+  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
+  document.getElementById('kMacro').innerHTML=((D.kpis&&D.kpis.macro)||[]).map(kpiBox).join('');
+
+  function render(){
+    nav.innerHTML=''; main.innerHTML='';
+    (D.sections||[]).forEach((sec,idx)=>{
+      const events=(sec.events||[]).filter(ev=>matchView(ev)&&matchQuery(ev));
+      const a=document.createElement('a'); a.href='#'+sec.id; a.className=(idx===0?'active':'');
+      a.innerHTML=`<span>${esc(sec.name)}</span><span class="badge">${events.length}</span>`;
+      a.addEventListener('click',(e)=>{e.preventDefault(); document.getElementById(sec.id).scrollIntoView({behavior:'smooth',block:'start'});
+        [...nav.querySelectorAll('a')].forEach(x=>x.classList.remove('active')); a.classList.add('active');});
+      nav.appendChild(a);
+
+      const wrap=document.createElement('section'); wrap.className='section'; wrap.id=sec.id;
+      wrap.innerHTML=`<div class="section-head"><div class="section-title">${esc(sec.name)}</div><div class="small">${events.length} 条（聚类事件）</div></div>`;
+      const brief=document.createElement('div'); brief.className='brief';
+      const briefText=(view==='cn')?(sec.brief_cn||sec.brief_zh||''):(view==='global')?(sec.brief_global||sec.brief_zh||''):(sec.brief_zh||'');
+      brief.textContent=briefText||'（今日该板块暂无可用内容）'; wrap.appendChild(brief);
+
+      if(sec.tags && sec.tags.length){
+        const t=document.createElement('div'); t.className='actions';
+        t.innerHTML=sec.tags.slice(0,8).map(x=>`<span class="tag">${esc(x)}</span>`).join(''); wrap.appendChild(t);
+      }
+
+      const cards=document.createElement('div'); cards.className='cards';
+      const limit=(S.readingMode==='30m')?(S.perSection30m||5):(S.perSectionFull||15);
+      events.slice(0,limit).forEach(ev=>{
+        const fb=getFB(ev.id);
+        const card=document.createElement('div'); card.className='event';
+        card.innerHTML=`<div class="e-title">${esc(ev.title_zh||ev.title||'')}</div>
+          <div class="e-meta"><span>${esc(ev.source_hint||'')}</span><span>${esc(ev.date||'')} · ${ev.region==='cn'?'中国相关':'全球'}</span></div>
+          <div class="e-sum">${esc(ev.summary_zh||'')}</div>
+          <div class="e-links"><a class="link" href="${esc(ev.url||'#')}" target="_blank" rel="noopener">打开原文</a>
+            <div class="fb">
+              <button class="iconbtn ${fb&&fb.v===1?'active good':''}" title="有用">👍</button>
+              <button class="iconbtn ${fb&&fb.v===-1?'active bad':''}" title="无用">👎</button>
+            </div></div>`;
+        card.addEventListener('click',(e)=>{if(e.target&&e.target.classList.contains('iconbtn'))return; if(ev.url) window.open(ev.url,'_blank','noopener');});
+        const [g,b]=card.querySelectorAll('.iconbtn');
+        g.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,1);});
+        b.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,-1);});
+        cards.appendChild(card);
+      });
+      wrap.appendChild(cards); main.appendChild(wrap);
+    });
+  }
+  q.addEventListener('input',()=>render());
+  document.getElementById('btnHome').addEventListener('click',()=>{main.scrollTo({top:0,behavior:'smooth'});});
+  render();
+
+  function renderSettings(tab){
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+    if(tab==='general'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">主题</div><div class="label">auto 跟随系统；dark/light 强制</div></div>
+        <select class="input" id="themeSel"><option value="auto">auto</option><option value="dark">dark</option><option value="light">light</option></select></div>
+        <div class="note">建议固定“30分钟集中阅读”，其余时间关闭碎片化推送。</div>`;
+      const sel=document.getElementById('themeSel'); sel.value=S.theme;
+      sel.addEventListener('change',()=>{S.theme=sel.value; save(); applyTheme();});
+    } else if(tab==='layout'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">阅读模式</div><div class="label">30m：每栏 Top ${S.perSection30m}；full：每栏 Top ${S.perSectionFull}</div></div>
+        <select class="input" id="modeSel"><option value="30m">30m</option><option value="full">full</option></select></div>
+        <div class="row"><div><div style="font-size:13px;font-weight:850">30m 每栏条数</div><div class="label">建议 5</div></div><input class="input" id="n30" value="${S.perSection30m}"/></div>
+        <div class="row"><div><div style="font-size:13px;font-weight:850">Full 每栏条数</div><div class="label">建议 10–20</div></div><input class="input" id="nfull" value="${S.perSectionFull}"/></div>
+        <button class="btn" id="saveLayout" style="margin-top:6px">保存</button>`;
+      const mode=document.getElementById('modeSel'); mode.value=S.readingMode;
+      mode.addEventListener('change',()=>{S.readingMode=mode.value; save(); render();});
+      document.getElementById('saveLayout').addEventListener('click',()=>{
+        const n30=parseInt(document.getElementById('n30').value,10);
+        const nf=parseInt(document.getElementById('nfull').value,10);
+        S.perSection30m=isFinite(n30)?Math.max(3,Math.min(10,n30)):5;
+        S.perSectionFull=isFinite(nf)?Math.max(10,Math.min(20,nf)):15;
+        save(); render(); alert('已保存');
+      });
+    } else if(tab==='algo'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">时效</div><div class="label">timeliness</div></div><input class="input" id="w1" value="${W.timeliness.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">权威</div><div class="label">authority</div></div><input class="input" id="w2" value="${W.authority.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">相关</div><div class="label">relevance</div></div><input class="input" id="w3" value="${W.relevance.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">影响</div><div class="label">impact</div></div><input class="input" id="w4" value="${W.impact.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">新颖</div><div class="label">novelty</div></div><input class="input" id="w5" value="${W.novelty.toFixed(2)}"/></div>
+      <button class="btn" id="saveW" style="margin-top:6px">保存并归一化</button>
+      <div class="note">生成端可读取该权重以实现“选题闭环”。</div>`;
+      document.getElementById('saveW').addEventListener('click',()=>{
+        const vals=[parseFloat(w1.value),parseFloat(w2.value),parseFloat(w3.value),parseFloat(w4.value),parseFloat(w5.value)]
+          .map(v=>isFinite(v)?Math.max(0.01,Math.min(0.9,v)):0.2);
+        const sum=vals.reduce((a,b)=>a+b,0);
+        W.timeliness=+(vals[0]/sum).toFixed(2); W.authority=+(vals[1]/sum).toFixed(2); W.relevance=+(vals[2]/sum).toFixed(2);
+        W.impact=+(vals[3]/sum).toFixed(2); W.novelty=+(vals[4]/sum).toFixed(2);
+        save(); alert('已保存：'+JSON.stringify(W));
+      });
+    } else if(tab==='config'){
+      pbody.innerHTML=`<div style="font-size:13px;font-weight:900;margin-bottom:6px">自由扩展类目与数据维度</div>
+      <div class="note"><b>类目</b>：在 <code>digest_config.json</code> 的 <code>sections</code> 里新增一条，生成器会自动渲染导航与板块。<br><br>
+      <b>数据维度</b>：在 <code>digest_config.json</code> 的 <code>kpis</code> 里新增 FRED 序列（或未来接入 LME 授权源），右侧会自动出现 KPI 卡 + 趋势小图。</div>`;
+    }
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>renderSettings(t.dataset.tab)));
+  document.getElementById('btnSettings').addEventListener('click',()=>{overlay.classList.add('open'); renderSettings('general');});
+  document.getElementById('btnClose').addEventListener('click',()=>overlay.classList.remove('open'));
+  overlay.addEventListener('click',(e)=>{if(e.target===overlay) overlay.classList.remove('open');});
+
+  document.getElementById('btnExport').addEventListener('click',()=>{
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
+    const payload={generated_at:new Date().toISOString(),items:[]};
+    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); payload.items.push({id:k.replace(fbPrefix,''),v:o.v,t:o.t});}catch(e){} }
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='digest_feedback_'+(D.date||'')+'.json'; a.click();
+  });
+  document.getElementById('btnClearFB').addEventListener('click',()=>{
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
+    keys.forEach(k=>localStorage.removeItem(k)); updateFBCount(); render();
+  });
+})();
+</script>
+</body></html>

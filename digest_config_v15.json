@@ -1,0 +1,194 @@
+{
+  "version": "v15",
+  "domain_denylist": [
+    "reuters.com",
+    "ft.com",
+    "wsj.com",
+    "bloomberg.com",
+    "economist.com"
+  ],
+  "sections": [
+    {
+      "id": "top",
+      "name": "Top 今日要点",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "macro markets rates yields fx sanctions export controls ai data center power copper aluminium lme cbam southeast asia supply chain",
+      "query_cn": "china cny yuan hong kong taiwan export controls sanctions cbam supply chain metals",
+      "tags": [
+        "宏观",
+        "制裁",
+        "AI算力",
+        "金属",
+        "CBAM",
+        "东南亚"
+      ]
+    },
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "fed ecb boj yields rates inflation dollar dxy fx risk sentiment",
+      "query_cn": "china pboe liquidity repo cny fx",
+      "tags": [
+        "利率",
+        "汇率",
+        "风险偏好"
+      ]
+    },
+    {
+      "id": "geo",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "OFAC sanctions EU council regulation export controls compliance dual-use",
+      "query_cn": "china export controls sanctions compliance",
+      "tags": [
+        "制裁",
+        "出口管制",
+        "合规"
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI 计算基础设施（算力·电力·冷却）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "AI compute infrastructure data center power grid cooling liquid cooling GPU HBM networking",
+      "query_cn": "china ai data center power compute gpu",
+      "tags": [
+        "算力",
+        "电力",
+        "液冷"
+      ]
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "LME copper aluminium nickel zinc lead tin inventories smelter premium demand",
+      "query_cn": "china copper aluminium nickel smelter demand",
+      "tags": [
+        "铜",
+        "铝",
+        "镍",
+        "LME"
+      ]
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "CBAM European Commission carbon border adjustment mechanism ETS Verra carbon credits ICVCM",
+      "query_cn": "cbam china exporters carbon footprint",
+      "tags": [
+        "CBAM",
+        "碳会计",
+        "碳市场"
+      ]
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "type": "google_news_cluster",
+      "items_per_section": 15,
+      "query_global": "Southeast Asia supply chain Vietnam Malaysia Thailand Indonesia manufacturing relocation critical minerals",
+      "query_cn": "Vietnam supply chain china companies",
+      "tags": [
+        "越南",
+        "制造",
+        "关键矿产"
+      ]
+    },
+    {
+      "id": "frontier",
+      "name": "前沿学科雷达（量子·聚变·材料·生物）",
+      "type": "mixed_news_arxiv",
+      "items_per_section": 15,
+      "query_global": "quantum computing fusion energy photonics advanced materials synthetic biology",
+      "arxiv_cats": [
+        "quant-ph",
+        "physics.plasm-ph",
+        "cond-mat.mtrl-sci",
+        "q-bio.*",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "量子",
+        "聚变",
+        "材料",
+        "生物"
+      ]
+    }
+  ],
+  "kpis": {
+    "metals": [
+      {
+        "provider": "fred",
+        "series_id": "PCOPPUSDM",
+        "label": "铜（Proxy）",
+        "unit": "$/t"
+      },
+      {
+        "provider": "fred",
+        "series_id": "PALUMUSDM",
+        "label": "铝（Proxy）",
+        "unit": "$/t"
+      },
+      {
+        "provider": "fred",
+        "series_id": "PZINCUSDM",
+        "label": "锌（Proxy）",
+        "unit": "$/t"
+      },
+      {
+        "provider": "fred",
+        "series_id": "PNICKUSDM",
+        "label": "镍（Proxy）",
+        "unit": "$/t"
+      },
+      {
+        "provider": "fred",
+        "series_id": "PLEADUSDM",
+        "label": "铅（Proxy）",
+        "unit": "$/t"
+      },
+      {
+        "provider": "fred",
+        "series_id": "PTINUSDM",
+        "label": "锡（Proxy）",
+        "unit": "$/t"
+      }
+    ],
+    "macro": [
+      {
+        "provider": "fred",
+        "series_id": "DGS10",
+        "label": "美债10Y",
+        "unit": "%"
+      },
+      {
+        "provider": "fred",
+        "series_id": "DEXCHUS",
+        "label": "USD/CNY",
+        "unit": ""
+      },
+      {
+        "provider": "fred",
+        "series_id": "DTWEXBGS",
+        "label": "美元指数（广义）",
+        "unit": ""
+      },
+      {
+        "provider": "fred",
+        "series_id": "DEXUSEU",
+        "label": "EUR/USD",
+        "unit": ""
+      }
+    ]
+  }
+}

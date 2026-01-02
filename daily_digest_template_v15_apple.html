@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Daily Digest · {{DATE}}</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--text:#0b0b0f;--muted:#6e6e73;--line:rgba(0,0,0,.10);--shadow:0 10px 30px rgba(0,0,0,.06);--r:18px;--r2:14px;--accent:#0a84ff;--chip:rgba(0,0,0,.05)}
+[data-theme="dark"]{--bg:#0b0b0f;--card:rgba(18,18,24,.94);--text:#f5f5f7;--muted:#a1a1aa;--line:rgba(255,255,255,.12);--shadow:0 14px 44px rgba(0,0,0,.45);--chip:rgba(255,255,255,.08)}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
+.left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.brand .title{font-size:15px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.controls{padding:12px 16px;border-bottom:1px solid var(--line)}
+.search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent;cursor:pointer}
+.pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.nav{padding:10px 10px 14px;overflow:auto;min-height:0}
+.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text)}
+.nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
+.badge{font-size:12px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+.left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}
+.btn:hover{border-color:rgba(10,132,255,.30)}
+.main{display:flex;flex-direction:column}.topbar{padding:16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:var(--card)}
+.h1{font-size:18px;font-weight:900}.meta{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.main-scroll{padding:16px;overflow:auto;min-height:0}
+.section{scroll-margin-top:90px;margin-bottom:18px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:10px}
+.section-title{font-size:14px;font-weight:860}.small{font-size:12px;color:var(--muted)}
+.brief{border:1px solid var(--line);border-radius:var(--r2);padding:14px;line-height:1.75;font-size:13px}
+.actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:999px}
+.cards{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.event{border:1px solid var(--line);border-radius:var(--r2);padding:12px;transition:.12s ease;display:flex;flex-direction:column;gap:8px}
+.event:hover{border-color:rgba(10,132,255,.22);background:rgba(10,132,255,.06)}
+.e-title{font-size:13px;font-weight:820;line-height:1.35}
+.e-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.e-sum{font-size:12px;line-height:1.55}
+.e-links{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.link{font-size:12px;color:var(--accent)}
+.fb{display:flex;gap:8px}
+.iconbtn{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 8px;border-radius:10px;cursor:pointer;font-size:12px}
+.iconbtn.active.good{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.12);color:var(--text)}
+.iconbtn.active.bad{border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.12);color:var(--text)}
+.right{display:flex;flex-direction:column}
+.right-sticky{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding:16px}
+.right-title{font-size:14px;font-weight:880}.right-sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.right-scroll{padding:14px 16px 16px;overflow:auto;min-height:0}
+.kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:var(--r2);padding:12px}
+.k-head{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+.k-val{margin-top:6px;font-size:18px;font-weight:900}
+.k-delta{margin-top:4px;font-size:12px;color:var(--muted)}
+.spark{margin-top:10px;width:100%;height:44px;display:block}
+.hr{height:1px;background:var(--line);margin:14px 0}.group{font-size:12px;color:var(--muted);font-weight:800;margin:8px 0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.18s ease;z-index:999}
+.overlay.open{opacity:1;pointer-events:auto}
+.panel{position:absolute;right:18px;top:18px;bottom:18px;width:min(520px,calc(100vw - 36px));background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.phead{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.ptitle{font-size:14px;font-weight:900}
+.tabs{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.tab{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);cursor:pointer}
+.tab.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.pbody{padding:14px 16px;overflow:auto;min-height:0}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:10px 0}
+.label{font-size:12px;color:var(--muted);line-height:1.4}
+.input{width:160px;border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:transparent;color:var(--text);font-size:12px;outline:none}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+@media (max-width:1200px){.container{grid-template-columns:320px 1fr}.right{display:none}}
+@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="container">
+  <aside class="card left">
+    <div class="brand"><div class="title">Ben的每日资讯简报</div>
+      <div class="sub">Apple News 风格 · 静态页面<br>日期：{{DATE}} · 生成：<span id="genAt">—</span></div>
+    </div>
+    <div class="controls">
+      <input id="q" class="search" placeholder="搜索标题/标签/来源…"/>
+      <div class="pills">
+        <div class="pill active" data-view="all">全部</div>
+        <div class="pill" data-view="cn">中国相关</div>
+        <div class="pill" data-view="global">全球（不含中国）</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="left-foot">
+      <button class="btn" id="btnHome">回到顶部</button>
+      <button class="btn" id="btnSettings">设置</button>
+    </div>
+  </aside>
+
+  <main class="card main">
+    <div class="topbar">
+      <div class="h1">今日要点与事件卡</div>
+      <div class="meta">默认 30 分钟模式（每栏 Top 5），可在设置切换全量（10–20条）。所有内容已预渲染，无客户端抓取。</div>
+    </div>
+    <div class="main-scroll" id="main"></div>
+  </main>
+
+  <aside class="card right">
+    <div class="right-sticky">
+      <div class="right-title">数据与趋势快照</div>
+      <div class="right-sub">生成时刻快照（已内嵌）<br>更新时间：<span id="kpiAt">—</span></div>
+    </div>
+    <div class="right-scroll">
+      <div class="group">LME 金属（Proxy）</div><div class="kgrid" id="kMetals"></div>
+      <div class="hr"></div>
+      <div class="group">利率 / 汇率 / 美元</div><div class="kgrid" id="kMacro"></div>
+      <div class="hr"></div>
+      <div class="group">反馈闭环</div>
+      <div class="kpi">
+        <div class="k-head"><span>7 天窗口</span><span id="fbCount">0</span></div>
+        <div class="k-delta">点 👍/👎 形成偏好；可导出反馈供生成端读取（用于“选题闭环”）。</div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn" id="btnExport">导出反馈</button>
+          <button class="btn" id="btnClearFB">清空本机反馈</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="panel">
+    <div class="phead"><div class="ptitle">设置</div><button class="btn" id="btnClose">关闭</button></div>
+    <div class="tabs">
+      <div class="tab active" data-tab="general">通用</div>
+      <div class="tab" data-tab="layout">布局</div>
+      <div class="tab" data-tab="algo">算法</div>
+      <div class="tab" data-tab="config">扩展</div>
+    </div>
+    <div class="pbody" id="pbody"></div>
+  </div>
+</div>
+
+<script>window.DIGEST = __DIGEST_JSON__;</script>
+<script>
+(function(){
+  const D = window.DIGEST || {date:"",generated_at_bjt:"",sections:[],kpis:{metals:[],macro:[]},config:{}};
+  const nav = document.getElementById('nav'), main = document.getElementById('main'), q=document.getElementById('q');
+  const pills=[...document.querySelectorAll('.pill')];
+  const overlay=document.getElementById('overlay'), pbody=document.getElementById('pbody'), tabs=[...document.querySelectorAll('.tab')];
+  document.getElementById('genAt').textContent=D.generated_at_bjt||'—';
+  document.getElementById('kpiAt').textContent=(D.kpis&&D.kpis.generated_at_bjt)||D.generated_at_bjt||'—';
+
+  const key='digest_settings_v15';
+  const st=JSON.parse(localStorage.getItem(key)||'{}');
+  const defaults={theme:'auto',readingMode:'30m',perSectionFull:15,perSection30m:5,weights:{timeliness:0.35,authority:0.2,relevance:0.2,impact:0.15,novelty:0.1}};
+  const S=Object.assign({},defaults,st); const W=Object.assign({},defaults.weights,S.weights||{});
+  function save(){localStorage.setItem(key,JSON.stringify(Object.assign({},S,{weights:W})));}
+
+  function applyTheme(){ if(S.theme==='auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme',S.theme); }
+  applyTheme();
+
+  let view='all';
+  function setView(v){view=v; pills.forEach(p=>p.classList.toggle('active',p.dataset.view===v)); render();}
+  pills.forEach(p=>p.addEventListener('click',()=>setView(p.dataset.view)));
+
+  function esc(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
+  function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,' ').trim();}
+  function matchView(ev){ if(view==='all') return true; return ev.region===view; }
+  function matchQuery(ev){ const t=norm(q.value); if(!t) return true; const hay=norm([ev.title_zh,ev.title,ev.source_hint,(ev.tags||[]).join(' ')].join(' ')); return hay.includes(t); }
+
+  const fbPrefix='digest_fb_v15_'; const seven=7*24*3600*1000;
+  function fbKey(id){return fbPrefix+id;}
+  function setFB(id,v){localStorage.setItem(fbKey(id),JSON.stringify({v,t:Date.now()})); render(); updateFBCount();}
+  function getFB(id){const raw=localStorage.getItem(fbKey(id)); if(!raw) return null; try{return JSON.parse(raw);}catch(e){return null;}}
+  function updateFBCount(){
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix)); let alive=0; const now=Date.now();
+    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); if(o && (now-o.t)<=seven) alive++;}catch(e){} }
+    document.getElementById('fbCount').textContent=alive+' 条';
+  }
+  updateFBCount();
+
+  function kpiBox(x){
+    const d=(x.delta==null)?'—':((x.delta>0?'+':'')+x.delta);
+    const p=(x.pct==null)?'':`（${x.pct>0?'+':''}${x.pct}%）`;
+    return `<div class="kpi"><div class="k-head"><span>${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
+      <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
+      ${x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2,30 L98,30" stroke="rgba(128,128,128,.35)" fill="none"/></svg>'}</div>`;
+  }
+  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
+  document.getElementById('kMacro').innerHTML=((D.kpis&&D.kpis.macro)||[]).map(kpiBox).join('');
+
+  function render(){
+    nav.innerHTML=''; main.innerHTML='';
+    (D.sections||[]).forEach((sec,idx)=>{
+      const events=(sec.events||[]).filter(ev=>matchView(ev)&&matchQuery(ev));
+      const a=document.createElement('a'); a.href='#'+sec.id; a.className=(idx===0?'active':'');
+      a.innerHTML=`<span>${esc(sec.name)}</span><span class="badge">${events.length}</span>`;
+      a.addEventListener('click',(e)=>{e.preventDefault(); document.getElementById(sec.id).scrollIntoView({behavior:'smooth',block:'start'});
+        [...nav.querySelectorAll('a')].forEach(x=>x.classList.remove('active')); a.classList.add('active');});
+      nav.appendChild(a);
+
+      const wrap=document.createElement('section'); wrap.className='section'; wrap.id=sec.id;
+      wrap.innerHTML=`<div class="section-head"><div class="section-title">${esc(sec.name)}</div><div class="small">${events.length} 条（聚类事件）</div></div>`;
+      const brief=document.createElement('div'); brief.className='brief';
+      const briefText=(view==='cn')?(sec.brief_cn||sec.brief_zh||''):(view==='global')?(sec.brief_global||sec.brief_zh||''):(sec.brief_zh||'');
+      brief.textContent=briefText||'（今日该板块暂无可用内容）'; wrap.appendChild(brief);
+
+      if(sec.tags && sec.tags.length){
+        const t=document.createElement('div'); t.className='actions';
+        t.innerHTML=sec.tags.slice(0,8).map(x=>`<span class="tag">${esc(x)}</span>`).join(''); wrap.appendChild(t);
+      }
+
+      const cards=document.createElement('div'); cards.className='cards';
+      const limit=(S.readingMode==='30m')?(S.perSection30m||5):(S.perSectionFull||15);
+      events.slice(0,limit).forEach(ev=>{
+        const fb=getFB(ev.id);
+        const card=document.createElement('div'); card.className='event';
+        card.innerHTML=`<div class="e-title">${esc(ev.title_zh||ev.title||'')}</div>
+          <div class="e-meta"><span>${esc(ev.source_hint||'')}</span><span>${esc(ev.date||'')} · ${ev.region==='cn'?'中国相关':'全球'}</span></div>
+          <div class="e-sum">${esc(ev.summary_zh||'')}</div>
+          <div class="e-links"><a class="link" href="${esc(ev.url||'#')}" target="_blank" rel="noopener">打开原文</a>
+            <div class="fb">
+              <button class="iconbtn ${fb&&fb.v===1?'active good':''}" title="有用">👍</button>
+              <button class="iconbtn ${fb&&fb.v===-1?'active bad':''}" title="无用">👎</button>
+            </div></div>`;
+        card.addEventListener('click',(e)=>{if(e.target&&e.target.classList.contains('iconbtn'))return; if(ev.url) window.open(ev.url,'_blank','noopener');});
+        const [g,b]=card.querySelectorAll('.iconbtn');
+        g.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,1);});
+        b.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,-1);});
+        cards.appendChild(card);
+      });
+      wrap.appendChild(cards); main.appendChild(wrap);
+    });
+  }
+  q.addEventListener('input',()=>render());
+  document.getElementById('btnHome').addEventListener('click',()=>{main.scrollTo({top:0,behavior:'smooth'});});
+  render();
+
+  function renderSettings(tab){
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+    if(tab==='general'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">主题</div><div class="label">auto 跟随系统；dark/light 强制</div></div>
+        <select class="input" id="themeSel"><option value="auto">auto</option><option value="dark">dark</option><option value="light">light</option></select></div>
+        <div class="note">建议固定“30分钟集中阅读”，其余时间关闭碎片化推送。</div>`;
+      const sel=document.getElementById('themeSel'); sel.value=S.theme;
+      sel.addEventListener('change',()=>{S.theme=sel.value; save(); applyTheme();});
+    } else if(tab==='layout'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">阅读模式</div><div class="label">30m：每栏 Top ${S.perSection30m}；full：每栏 Top ${S.perSectionFull}</div></div>
+        <select class="input" id="modeSel"><option value="30m">30m</option><option value="full">full</option></select></div>
+        <div class="row"><div><div style="font-size:13px;font-weight:850">30m 每栏条数</div><div class="label">建议 5</div></div><input class="input" id="n30" value="${S.perSection30m}"/></div>
+        <div class="row"><div><div style="font-size:13px;font-weight:850">Full 每栏条数</div><div class="label">建议 10–20</div></div><input class="input" id="nfull" value="${S.perSectionFull}"/></div>
+        <button class="btn" id="saveLayout" style="margin-top:6px">保存</button>`;
+      const mode=document.getElementById('modeSel'); mode.value=S.readingMode;
+      mode.addEventListener('change',()=>{S.readingMode=mode.value; save(); render();});
+      document.getElementById('saveLayout').addEventListener('click',()=>{
+        const n30=parseInt(document.getElementById('n30').value,10);
+        const nf=parseInt(document.getElementById('nfull').value,10);
+        S.perSection30m=isFinite(n30)?Math.max(3,Math.min(10,n30)):5;
+        S.perSectionFull=isFinite(nf)?Math.max(10,Math.min(20,nf)):15;
+        save(); render(); alert('已保存');
+      });
+    } else if(tab==='algo'){
+      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">时效</div><div class="label">timeliness</div></div><input class="input" id="w1" value="${W.timeliness.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">权威</div><div class="label">authority</div></div><input class="input" id="w2" value="${W.authority.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">相关</div><div class="label">relevance</div></div><input class="input" id="w3" value="${W.relevance.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">影响</div><div class="label">impact</div></div><input class="input" id="w4" value="${W.impact.toFixed(2)}"/></div>
+      <div class="row"><div><div style="font-size:13px;font-weight:850">新颖</div><div class="label">novelty</div></div><input class="input" id="w5" value="${W.novelty.toFixed(2)}"/></div>
+      <button class="btn" id="saveW" style="margin-top:6px">保存并归一化</button>
+      <div class="note">生成端可读取该权重以实现“选题闭环”。</div>`;
+      document.getElementById('saveW').addEventListener('click',()=>{
+        const vals=[parseFloat(w1.value),parseFloat(w2.value),parseFloat(w3.value),parseFloat(w4.value),parseFloat(w5.value)]
+          .map(v=>isFinite(v)?Math.max(0.01,Math.min(0.9,v)):0.2);
+        const sum=vals.reduce((a,b)=>a+b,0);
+        W.timeliness=+(vals[0]/sum).toFixed(2); W.authority=+(vals[1]/sum).toFixed(2); W.relevance=+(vals[2]/sum).toFixed(2);
+        W.impact=+(vals[3]/sum).toFixed(2); W.novelty=+(vals[4]/sum).toFixed(2);
+        save(); alert('已保存：'+JSON.stringify(W));
+      });
+    } else if(tab==='config'){
+      // Visual editor: sections & KPIs. Stores overrides in localStorage, exports JSON for committing to repo.
+      const baseCfg = (D && D.config_full) ? JSON.parse(JSON.stringify(D.config_full)) : {version:'v15',domain_denylist:[],sections:[],kpis:{metals:[],macro:[]}};
+      const storeKey='digest_config_override_v15';
+      const saved = (()=>{try{return JSON.parse(localStorage.getItem(storeKey)||'null')}catch(e){return null}})();
+      let cfg = saved || baseCfg;
+
+      function esc0(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
+      function dlJSON(obj, name){
+        const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+        const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click();
+      }
+      function saveCfg(){ localStorage.setItem(storeKey, JSON.stringify(cfg)); }
+      function cleanId(x){ return (x||'').trim().toLowerCase().replace(/[^a-z0-9_\-]/g,'_'); }
+      function splitCSV(x){ return (x||'').split(',').map(s=>s.trim()).filter(Boolean); }
+
+      function renderList(){
+        const secRows = (cfg.sections||[]).map((s,idx)=>`
+          <div style="border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+              <div>
+                <div style="font-size:13px;font-weight:900">${esc0(s.name||'(未命名类目)')}</div>
+                <div class="label">id: <code>${esc0(s.id||'')}</code> · type: <code>${esc0(s.type||'google_news_cluster')}</code> · items: ${esc0(String(s.items_per_section||15))}</div>
+                <div class="label" style="margin-top:6px">query_global：${esc0((s.query_global||'').slice(0,140))}${(s.query_global||'').length>140?'…':''}</div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <button class="btn" data-act="sec-edit" data-idx="${idx}">编辑</button>
+                <button class="btn" data-act="sec-del" data-idx="${idx}">删除</button>
+              </div>
+            </div>
+          </div>`).join('');
+
+        const kpiRows = (group)=> (cfg.kpis && cfg.kpis[group] ? cfg.kpis[group] : []).map((k,idx)=>`
+          <div style="border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div>
+                <div style="font-size:13px;font-weight:900">${esc0(k.label||'(未命名指标)')}</div>
+                <div class="label">provider: <code>${esc0(k.provider||'fred')}</code> · series_id: <code>${esc0(k.series_id||'')}</code> · unit: ${esc0(k.unit||'')}</div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <button class="btn" data-act="kpi-edit" data-group="${group}" data-idx="${idx}">编辑</button>
+                <button class="btn" data-act="kpi-del" data-group="${group}" data-idx="${idx}">删除</button>
+              </div>
+            </div>
+          </div>`).join('');
+
+        pbody.innerHTML = `
+          <div style="font-size:13px;font-weight:900;margin-bottom:6px">可视化扩展（无需改代码）</div>
+          <div class="note">这里的修改会保存在本机浏览器（LocalStorage）。你可以<strong>导出 JSON</strong>并提交到 GitHub，使下一次定时生成按新配置执行。</div>
+
+          <div class="hr"></div>
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
+            <div style="font-size:13px;font-weight:900">类目（Sections）</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn" id="btnAddSec">新增类目</button>
+              <button class="btn" id="btnExportCfg">导出配置</button>
+              <label class="btn" style="cursor:pointer">导入配置<input id="fileCfg" type="file" accept="application/json" style="display:none"/></label>
+              <button class="btn" id="btnResetCfg">重置默认</button>
+            </div>
+          </div>
+          <div id="secList">${secRows || '<div class="note">当前没有类目。点击“新增类目”。</div>'}</div>
+
+          <div class="hr"></div>
+          <div style="font-size:13px;font-weight:900">数据维度（KPI）</div>
+          <div class="note">右侧 KPI 面板将自动渲染。当前支持 FRED；后续可接入 LME 授权源。</div>
+
+          <div style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div style="font-weight:850">LME 金属（Proxy）</div>
+              <button class="btn" id="btnAddKpiMetals">新增 KPI</button>
+            </div>
+            <div id="kpiMetals">${kpiRows('metals') || '<div class="note">暂无指标</div>'}</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div style="font-weight:850">利率 / 汇率 / 美元</div>
+              <button class="btn" id="btnAddKpiMacro">新增 KPI</button>
+            </div>
+            <div id="kpiMacro">${kpiRows('macro') || '<div class="note">暂无指标</div>'}</div>
+          </div>
+
+          <div class="hr"></div>
+          <div class="note">
+            <b>提交生效：</b>导出文件名为 <code>digest_config_override.json</code>。把它提交到仓库，并在生成命令里使用：<code>--config digest_config_override.json</code>。
+          </div>
+        `;
+
+        // Wire buttons
+        document.getElementById('btnAddSec').addEventListener('click', ()=>openSecEditor(null));
+        document.getElementById('btnExportCfg').addEventListener('click', ()=>{
+          saveCfg();
+          dlJSON(cfg, 'digest_config_override.json');
+          alert('已导出：digest_config_override.json（提交到仓库即可生效）');
+        });
+        document.getElementById('btnResetCfg').addEventListener('click', ()=>{
+          if(!confirm('重置为默认配置？本机保存的修改将被覆盖。')) return;
+          cfg = baseCfg; saveCfg(); renderList();
+        });
+        const fileCfg = document.getElementById('fileCfg');
+        fileCfg.addEventListener('change', async ()=>{
+          const f=fileCfg.files && fileCfg.files[0]; if(!f) return;
+          const txt=await f.text();
+          try{ cfg = JSON.parse(txt); saveCfg(); renderList(); alert('已导入配置'); }
+          catch(e){ alert('导入失败：JSON 格式不正确'); }
+        });
+
+        document.getElementById('btnAddKpiMetals').addEventListener('click', ()=>openKpiEditor('metals', null));
+        document.getElementById('btnAddKpiMacro').addEventListener('click', ()=>openKpiEditor('macro', null));
+
+        // Delegate edit/delete
+        pbody.querySelectorAll('[data-act]').forEach(el=>{
+          el.addEventListener('click', ()=>{
+            const act=el.getAttribute('data-act');
+            if(act==='sec-edit') openSecEditor(parseInt(el.getAttribute('data-idx'),10));
+            if(act==='sec-del'){
+              const i=parseInt(el.getAttribute('data-idx'),10);
+              if(confirm('删除该类目？')){ cfg.sections.splice(i,1); saveCfg(); renderList(); }
+            }
+            if(act==='kpi-edit'){
+              openKpiEditor(el.getAttribute('data-group'), parseInt(el.getAttribute('data-idx'),10));
+            }
+            if(act==='kpi-del'){
+              const g=el.getAttribute('data-group'); const i=parseInt(el.getAttribute('data-idx'),10);
+              if(confirm('删除该 KPI？')){ cfg.kpis[g].splice(i,1); saveCfg(); renderList(); }
+            }
+          });
+        });
+      }
+
+      function openSecEditor(idx){
+        const isNew = (idx==null);
+        const s = isNew ? {id:'',name:'',type:'google_news_cluster',items_per_section:15,query_global:'',query_cn:'',tags:[]} : JSON.parse(JSON.stringify(cfg.sections[idx]));
+        pbody.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div style="font-size:13px;font-weight:900">${isNew?'新增类目':'编辑类目'}</div>
+            <button class="btn" id="back">返回</button>
+          </div>
+          <div class="note">建议：<code>id</code> 用英文小写；<code>query_global</code> 用英文关键词；<code>items_per_section</code> 10–20。</div>
+
+          <div class="row"><div><div style="font-size:13px;font-weight:850">id</div><div class="label">英文小写/数字/下划线</div></div><input class="input" id="sid" value="${esc0(s.id)}"/></div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">名称</div><div class="label">左侧导航与标题</div></div><input class="input" id="sname" value="${esc0(s.name)}"/></div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">type</div><div class="label">抓取与聚类逻辑</div></div>
+            <select class="input" id="stype">
+              <option value="google_news_cluster">google_news_cluster</option>
+              <option value="mixed_news_arxiv">mixed_news_arxiv</option>
+            </select>
+          </div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">items_per_section</div><div class="label">每栏条数（10–20）</div></div><input class="input" id="sitems" value="${esc0(String(s.items_per_section||15))}"/></div>
+
+          <div class="label" style="margin-top:10px">query_global</div>
+          <textarea id="qg" style="width:100%;min-height:90px;border:1px solid var(--line);border-radius:14px;padding:10px;background:transparent;color:var(--text);font-size:12px;outline:none">${esc0(s.query_global||'')}</textarea>
+
+          <div class="label" style="margin-top:10px">query_cn（可选）</div>
+          <textarea id="qc" style="width:100%;min-height:70px;border:1px solid var(--line);border-radius:14px;padding:10px;background:transparent;color:var(--text);font-size:12px;outline:none">${esc0(s.query_cn||'')}</textarea>
+
+          <div class="label" style="margin-top:10px">tags（逗号分隔，可选）</div>
+          <input class="input" id="stags" style="width:100%" value="${esc0((s.tags||[]).join(','))}"/>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+            <button class="btn" id="save">保存</button>
+            <button class="btn" id="cancel">取消</button>
+          </div>
+        `;
+        document.getElementById('stype').value = s.type || 'google_news_cluster';
+        document.getElementById('back').addEventListener('click', renderList);
+        document.getElementById('cancel').addEventListener('click', renderList);
+        document.getElementById('save').addEventListener('click', ()=>{
+          const sid=cleanId(document.getElementById('sid').value);
+          const sname=(document.getElementById('sname').value||'').trim();
+          if(!sid){ alert('id 不能为空'); return; }
+          if(!sname){ alert('名称不能为空'); return; }
+
+          s.id=sid; s.name=sname;
+          s.type=document.getElementById('stype').value;
+          s.items_per_section = Math.max(10, Math.min(20, parseInt(document.getElementById('sitems').value,10)||15));
+          s.query_global=document.getElementById('qg').value.trim();
+          s.query_cn=document.getElementById('qc').value.trim();
+          s.tags=splitCSV(document.getElementById('stags').value).slice(0,12);
+
+          if(!s.query_global){ alert('query_global 不能为空'); return; }
+
+          if(isNew) cfg.sections.push(s); else cfg.sections[idx]=s;
+          saveCfg(); renderList(); alert('已保存（记得导出配置并提交到仓库）');
+        });
+      }
+
+      function openKpiEditor(group, idx){
+        if(!cfg.kpis) cfg.kpis={metals:[],macro:[]};
+        if(!cfg.kpis[group]) cfg.kpis[group]=[];
+        const isNew=(idx==null);
+        const k = isNew ? {provider:'fred',series_id:'',label:'',unit:''} : JSON.parse(JSON.stringify(cfg.kpis[group][idx]));
+        pbody.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div style="font-size:13px;font-weight:900">${isNew?'新增 KPI':'编辑 KPI'}（${group}）</div>
+            <button class="btn" id="back">返回</button>
+          </div>
+          <div class="note">当前建议用 FRED 序列（<code>series_id</code>）。例如：<code>DGS10</code>, <code>DEXCHUS</code>。</div>
+
+          <div class="row"><div><div style="font-size:13px;font-weight:850">provider</div><div class="label">目前固定为 fred</div></div>
+            <select class="input" id="prov"><option value="fred">fred</option></select>
+          </div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">series_id</div><div class="label">FRED 序列 ID</div></div><input class="input" id="sid" value="${esc0(k.series_id)}"/></div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">label</div><div class="label">卡片显示名称</div></div><input class="input" id="lab" value="${esc0(k.label)}"/></div>
+          <div class="row"><div><div style="font-size:13px;font-weight:850">unit</div><div class="label">如 % / $/t</div></div><input class="input" id="unit" value="${esc0(k.unit)}"/></div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+            <button class="btn" id="save">保存</button>
+            <button class="btn" id="cancel">取消</button>
+          </div>
+        `;
+        document.getElementById('back').addEventListener('click', renderList);
+        document.getElementById('cancel').addEventListener('click', renderList);
+        document.getElementById('save').addEventListener('click', ()=>{
+          const sid=(document.getElementById('sid').value||'').trim();
+          const lab=(document.getElementById('lab').value||'').trim();
+          if(!sid){ alert('series_id 不能为空'); return; }
+          if(!lab){ alert('label 不能为空'); return; }
+          k.provider='fred'; k.series_id=sid; k.label=lab; k.unit=(document.getElementById('unit').value||'').trim();
+          if(isNew) cfg.kpis[group].push(k); else cfg.kpis[group][idx]=k;
+          saveCfg(); renderList(); alert('已保存（记得导出配置并提交到仓库）');
+        });
+      }
+
+      renderList();
+    }
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>renderSettings(t.dataset.tab)));
+  document.getElementById('btnSettings').addEventListener('click',()=>{overlay.classList.add('open'); renderSettings('general');});
+  document.getElementById('btnClose').addEventListener('click',()=>overlay.classList.remove('open'));
+  overlay.addEventListener('click',(e)=>{if(e.target===overlay) overlay.classList.remove('open');});
+
+  document.getElementById('btnExport').addEventListener('click',()=>{
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
+    const payload={generated_at:new Date().toISOString(),items:[]};
+    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); payload.items.push({id:k.replace(fbPrefix,''),v:o.v,t:o.t});}catch(e){} }
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='digest_feedback_'+(D.date||'')+'.json'; a.click();
+  });
+  document.getElementById('btnClearFB').addEventListener('click',()=>{
+    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
+    keys.forEach(k=>localStorage.removeItem(k)); updateFBCount(); render();
+  });
+})();
+</script>
+</body></html>
