@@ -31,39 +31,40 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate index.html
+      - name: Generate index.html (watchdog + stack dump)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: |
-          echo "=== Generate digest (with watchdog) ==="
-          # Run generator in background
+          echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
           python -u news_digest_generator_v15.py \
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
             --limit_raw 40 &
           PID=$!
+          echo "PID=$PID"
 
-          # Wait up to 8 minutes, then dump stack and kill
-          for i in {1..48}; do
+          # Up to 6 minutes total. Every 60s dump python stacks.
+          for i in {1..36}; do
             if ! kill -0 $PID 2>/dev/null; then
               echo "Generator finished."
               wait $PID
               exit $?
             fi
+
+            if [ $((i % 6)) -eq 0 ]; then
+              echo "=== Stack dump at ${i}*10s ==="
+              kill -USR1 $PID || true
+            fi
+
             echo "…still running (${i}*10s)"
             sleep 10
           done
 
-          echo "=== Timeout reached. Dump python stack ==="
-          ps -p $PID -o pid,etime,cmd || true
-
-          # Install py-spy to inspect stack without modifying code
-          python -m pip install py-spy
-          sudo py-spy dump --pid $PID || true
-
-          echo "=== Killing generator ==="
+          echo "=== Timeout reached (6 min). Final stack dump + kill ==="
+          kill -USR1 $PID || true
+          sleep 2
           kill -9 $PID || true
           exit 1
 
