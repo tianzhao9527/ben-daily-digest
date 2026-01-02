@@ -36,14 +36,36 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: |
-          echo "=== Python version ==="
-          python -V
-          echo "=== Generate digest ==="
+          echo "=== Generate digest (with watchdog) ==="
+          # Run generator in background
           python -u news_digest_generator_v15.py \
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
-            --limit_raw 40          
+            --limit_raw 40 &
+          PID=$!
+
+          # Wait up to 8 minutes, then dump stack and kill
+          for i in {1..48}; do
+            if ! kill -0 $PID 2>/dev/null; then
+              echo "Generator finished."
+              wait $PID
+              exit $?
+            fi
+            echo "…still running (${i}*10s)"
+            sleep 10
+          done
+
+          echo "=== Timeout reached. Dump python stack ==="
+          ps -p $PID -o pid,etime,cmd || true
+
+          # Install py-spy to inspect stack without modifying code
+          python -m pip install py-spy
+          sudo py-spy dump --pid $PID || true
+
+          echo "=== Killing generator ==="
+          kill -9 $PID || true
+          exit 1
 
       - name: Commit & push if changed
         run: |
