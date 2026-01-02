@@ -290,7 +290,7 @@ def fetch_rss(url: str, source_name: str, limit: int) -> List[RawItem]:
                 summary=strip_html(summary),
             ))
     except Exception as e:
-        print(f"[digest] RSS parse fail: {url} | {type(e).__name__}: {e}", flush=True)
+        print(f"[digest] RSS {source_name} items={len(feed.entries)} url={url}", flush=True)
     return items
 
 def fetch_fred_csv(series_id: str, points: int = 30) -> List[Tuple[dt.date, float]]:
@@ -649,7 +649,8 @@ def llm_top_brief(sections: List[SectionOutput], kpis: List[KPI]) -> str:
     for k in kpis[:8]:
         if k.value is None:
             continue
-        kpi_lines.append(f"- {k.name}: {k.value:.3f}{k.unit} (Δ {k.delta:.3f if k.delta is not None else 'NA'})")
+        delta_str = "NA" if k.delta is None else f"{k.delta:+.3f}"
+        kpi_lines.append(f"- {k.name}: {k.value:.3f}{k.unit} (Δ {delta_str})")
 
     sys_prompt = (
         "你是企业晨报主编。输出“今日要点”中文300-500字，必须包含："
