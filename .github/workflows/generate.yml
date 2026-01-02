@@ -3,97 +3,85 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # 每 8 小时一次（UTC），对应北京时间 06:00 / 14:00 / 22:00
-    - cron: "0 22,6,14 * * *"
+    # GitHub Actions cron is UTC.
+    # 06:00 Beijing (UTC+8) == 22:00 UTC (previous day)
+    - cron: "0 22 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: digest-generate
-  cancel-in-progress: true
+  group: daily-digest
+  cancel-in-progress: false
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            pip install requests feedparser jinja2 python-dateutil
-          fi
+          python -V
+          pip install -U pip
+          pip install requests feedparser
 
       - name: Generate digest (watchdog + stack dump)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        shell: bash
         run: |
           set -euo pipefail
           echo "=== Generate digest (watchdog + stack dump) ==="
 
-          # 启动生成器（后台）
           python -u news_digest_generator_v15.py \
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
-            --items_per_section 15 \
             --limit_raw 25 \
             --cluster_threshold 0.82 \
             --model gpt-4o-mini \
-            &
+            --items_per_section 15 &
           PID=$!
           echo "PID=$PID"
 
-          # 软超时：10 分钟（每 60 秒 dump 一次栈）
-          # 你如果想更宽松，比如 15 分钟：把 LIMIT=60（60*15s=900s）并调整 sleep
-          LIMIT=40   # 40*15s = 600s
-          for i in $(seq 1 $LIMIT); do
+          # Watchdog: every 60s dump stack via SIGUSR1 (does not kill; script registers handler)
+          for i in $(seq 1 8); do
+            sleep 60
             if kill -0 "$PID" 2>/dev/null; then
-              echo "…still running (${i}*15s)"
-              # 每 60 秒 dump 一次栈（i=4,8,12...）
-              if [ $((i % 4)) -eq 0 ]; then
-                echo "=== Stack dump at ${i}*15s ==="
-                kill -USR1 "$PID" >/dev/null 2>&1 || true
-              fi
-              sleep 15
+              echo "…still running (${i}*60s) -> stack dump (SIGUSR1)"
+              kill -USR1 "$PID" || true
             else
-              echo "Generator finished."
-              wait "$PID"
-              exit 0
+              break
             fi
           done
 
-          echo "=== Timeout reached (10 min). Final stack dump + kill ==="
-          kill -USR1 "$PID" >/dev/null 2>&1 || true
-          sleep 2
-          kill "$PID" >/dev/null 2>&1 || true
-          wait "$PID" || true
-          exit 1
+          wait "$PID"
+          echo "Generator finished."
 
-      - name: Commit and push if changed
+      - name: Commit & push if changed
         run: |
-          set -e
+          set -euo pipefail
           if git diff --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add index.html
-          git commit -m "Update digest (auto)"
+          git commit -m "chore: update daily digest"
           git push
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-html
+          path: index.html
