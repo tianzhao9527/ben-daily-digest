@@ -178,6 +178,88 @@ def today_brief(sections, model):
 只输出正文。"""
   return openai_chat([{'role':'user','content':prompt}],model=model)
 
+def _safe_json_load(s: str) -> Optional[Dict[str,Any]]:
+  try:
+    s2=s.strip()
+    # allow fenced blocks
+    s2=re.sub(r"^```(?:json)?\s*","",s2)
+    s2=re.sub(r"\s*```$","",s2)
+    return json.loads(s2)
+  except Exception:
+    return None
+
+def today_brief_struct(sections, model) -> Tuple[str, str, Optional[Dict[str,Any]]]:
+  """Return (plain_text, brief_html, struct_dict). Falls back to today_brief()."""
+  if not llm_available():
+    txt='（未配置 OPENAI_API_KEY：此处将生成结构化“今日要点”。）'
+    return txt, f"<div>{txt}</div>", None
+
+  bullets=[]
+  for sec in sections[:8]:
+    if sec.get('events'):
+      e=sec['events'][0]
+      bullets.append(f"- {sec['name']}：{e['title_zh']}（{e['summary_zh']}）")
+  prompt=f"""你是企业级晨报总编。请把下面材料整理成**结构化**“今日要点”，并用**严格 JSON**输出（只输出 JSON，不要多余文字）。
+
+字段要求：
+{{
+  \"one_liner\": \"一句话结论（<=28字）\", 
+  \"key_signals\": [\"关键变化1\",\"关键变化2\",\"关键变化3\",\"关键变化4\"],
+  \"why_it_matters\": [\"为什么重要1\",\"为什么重要2\",\"为什么重要3\"],
+  \"actions\": [\"动作1（可执行、可验证）\",\"动作2\",\"动作3\"],
+  \"watch\": [\"指标：X | 阈值：Y | 说明：Z\",\"...\",\"...\"]
+}}
+
+写作约束：
+- 不写背景科普，不写“业内人士表示/值得关注”等空话。
+- 逻辑顺序：宏观/市场 → 制裁/合规 → 产业/算力 → 大宗/金属 → 碳/CBAM → 东南亚供应链。
+- watch 里的“阈值”要具体（数字/区间/方向），如果材料缺失可给“方向阈值”（例如“较昨日上行/下行”）。
+
+材料：
+{chr(10).join(bullets)}
+"""
+  raw=openai_chat([{'role':'user','content':prompt}],model=model)
+  obj=_safe_json_load(raw)
+  if not isinstance(obj,dict):
+    txt=today_brief(sections,model)
+    return txt, f"<div>{txt}</div>", None
+
+  one=str(obj.get('one_liner','')).strip()
+  key_signals=[str(x).strip() for x in (obj.get('key_signals') or []) if str(x).strip()]
+  why=[str(x).strip() for x in (obj.get('why_it_matters') or []) if str(x).strip()]
+  actions=[str(x).strip() for x in (obj.get('actions') or []) if str(x).strip()]
+  watch=[str(x).strip() for x in (obj.get('watch') or []) if str(x).strip()]
+
+  # Plain text (for搜索/导出)
+  txt=(f"今日要点：{one}\n"+
+       "关键变化："+"；".join(key_signals[:6])+"\n"+
+       "为什么重要："+"；".join(why[:4])+"\n"+
+       "动作："+"；".join(actions[:4])+"\n"+
+       "指标："+"；".join(watch[:4]))
+
+  def li(arr):
+    return "".join([f"<li>{re.sub(r'<','&lt;',x)}</li>" for x in arr])
+
+  html=f"""
+  <div class='topgrid'>
+    <div class='tblock'>
+      <div class='tlabel'>一句话结论</div>
+      <div class='tmain'>{re.sub(r'<','&lt;',one) or '—'}</div>
+      <div class='tlabel' style='margin-top:10px'>关键变化</div>
+      <ul class='tlist'>{li(key_signals[:6])}</ul>
+      <div class='tlabel' style='margin-top:10px'>为什么重要</div>
+      <ul class='tlist'>{li(why[:4])}</ul>
+    </div>
+    <div class='tblock'>
+      <div class='tlabel'>今日动作</div>
+      <ul class='tlist'>{li(actions[:4])}</ul>
+      <div class='tlabel' style='margin-top:10px'>关注指标/阈值</div>
+      <ul class='tlist'>{li(watch[:4])}</ul>
+    </div>
+  </div>
+  """
+  return txt, html, obj
+
 def build_kpis(cfg):
   out={'generated_at_bjt':bjt_now_str(),'metals':[],'macro':[]}
   for group in ['metals','macro']:
@@ -204,6 +286,8 @@ def main():
   ap.add_argument('--model',default='gpt-4o-mini')
   ap.add_argument('--limit_raw',type=int,default=90)
   ap.add_argument('--cluster_threshold',type=float,default=0.42)
+  # Backward/CI friendly: allow overriding per-section count from workflow
+  ap.add_argument('--items_per_section',type=int,default=None)
   args=ap.parse_args()
 
   cfg=json.load(open(args.config,'r',encoding='utf-8'))
@@ -214,7 +298,8 @@ def main():
           'kpis':build_kpis(cfg),'sections':[]}
 
   for sec in cfg.get('sections',[]):
-    sid=sec['id']; name=sec['name']; typ=sec.get('type','google_news_cluster'); per=int(sec.get('items_per_section',15))
+    sid=sec['id']; name=sec['name']; typ=sec.get('type','google_news_cluster')
+    per=int(args.items_per_section if args.items_per_section is not None else sec.get('items_per_section',15))
     qg=sec.get('query_global',''); events=[]
     raw=fetch_google_news(qg,limit=args.limit_raw,denyset=denyset) if qg else []
     clusters=cluster_items(raw,threshold=args.cluster_threshold,max_events=per)
@@ -239,26 +324,25 @@ def main():
     digest['sections'].append({'id':sid,'name':name,'tags':sec.get('tags',[]),'brief_zh':brief_global,
                               'brief_global':brief_global,'brief_cn':brief_cn,'events':events})
 
-
-  # 兜底：如果第一个栏目是“Top 今日要点”但没有抓到事件，则从其它栏目抽取高分事件填充（便于快速浏览）
-  if digest.get('sections'):
-    sec0=digest['sections'][0]
-    if (not sec0.get('events')) and (('Top' in sec0.get('name','')) or (sec0.get('id') in ('top','top10'))):
-      pool=[]
-      for s in digest['sections'][1:]:
-        pool.extend(s.get('events',[]))
-      pool=sorted(pool, key=lambda e: e.get('score',0), reverse=True)
-      seen=set(); top=[]
-      for e in pool:
-        eid=e.get('id') or e.get('url') or e.get('title','')
-        if eid in seen: continue
-        seen.add(eid); top.append(e)
-        if len(top)>=10: break
-      sec0['events']=top
-
   if digest['sections']:
-    tb=today_brief(digest['sections'],args.model)
-    digest['sections'][0]['brief_zh']=tb; digest['sections'][0]['brief_global']=tb; digest['sections'][0]['brief_cn']=tb
+    # 1) Build Top section events from other sections so the badge is never 0.
+    if len(digest['sections'])>=2:
+      seen=set(); top_events=[]
+      for sec in digest['sections'][1:]:
+        for e in (sec.get('events') or [])[:2]:
+          u=e.get('url','')
+          if not u or u in seen: continue
+          seen.add(u); top_events.append(e)
+          if len(top_events)>=10: break
+        if len(top_events)>=10: break
+      digest['sections'][0]['events']=top_events
+
+    # 2) Structured, scannable Top brief (HTML + plain text)
+    basis = digest['sections'][1:] if len(digest['sections'])>=2 else digest['sections']
+    tb_txt, tb_html, _ = today_brief_struct(basis, args.model)
+    top = digest['sections'][0]
+    top['brief_zh']=tb_txt; top['brief_global']=tb_txt; top['brief_cn']=tb_txt
+    top['brief_html']=tb_html; top['brief_html_global']=tb_html; top['brief_html_cn']=tb_html
 
   os.makedirs(os.path.dirname(args.out) or '.', exist_ok=True)
   render_html(args.template,digest,args.out)
