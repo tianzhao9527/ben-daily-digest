@@ -1,894 +1,1015 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 """
-news_digest_generator_v18.py
+Ben Daily Digest Generator (v15, stability-hardened)
 
-V18 单页静态简报生成器（结论优先 + 三视图预渲染）
-- 生成端拉取/筛选/聚类/翻译/总结 -> 输出静态 HTML（index.html）
-- 页面端仅做：视图切换（全部/中国相关/全球不含中国）、搜索、展开/收起、反馈（LocalStorage）
-- 不做任何 client-side 抓取（打开页面不会再请求新闻源/数据源）
+Key fixes for GitHub Actions stability:
+- OpenAI calls: hard timeout + retries + graceful degradation (never hang forever)
+- Reduce LLM calls: rule-based region classification + translation cache + LLM budget
+- Strong progress logging (flush=True) for Actions
+- All network calls use timeouts (requests.get / requests.post)
+- Produces a single static HTML via Jinja2 template (no client-side fetching)
 
-数据源（默认）
-- 新闻：Google News RSS（按栏目关键词；可限制来源白名单；拒绝 .cn 域名）
-- 论文：arXiv API
-- 数据：FRED CSV（无需 key）
+Usage:
+  python -u news_digest_generator_v15.py \
+    --config digest_config_v15.json \
+    --template daily_digest_template_v15_apple.html \
+    --out index.html \
+    --limit_raw 25
 
-依赖：
-  pip install requests feedparser jinja2
-（GitHub Actions 会自动安装 requirements.txt）
+Env:
+  OPENAI_API_KEY: required for best results; if missing, falls back to extractive templates.
+  OPENAI_MODEL: optional (default: gpt-4o-mini)  (change to your preferred model)
+  OPENAI_BASE_URL: optional (default: https://api.openai.com/v1)
+  DIGEST_LLM_BUDGET: optional integer (default: 40)
 """
 
 from __future__ import annotations
 
 import argparse
-import json
-import os
-import re
+import dataclasses
+import datetime as dt
 import hashlib
-from datetime import datetime, timezone, timedelta
-from urllib.parse import urlparse, quote_plus
-from typing import Any
+import json
+import math
+import os
+import random
+import re
+import sys
+import time
+from typing import Any, Dict, List, Optional, Tuple
 
-import requests
 import feedparser
-from jinja2 import Template
+import requests
+from jinja2 import Environment, FileSystemLoader, Undefined
 
-import time, sys
-import faulthandler, signal
+# -----------------------------
+# Global safety & logging
+# -----------------------------
 
-# 允许 workflow 发送 SIGUSR1 打印所有线程堆栈（定位卡点）
-faulthandler.enable()
-faulthandler.register(signal.SIGUSR1, all_threads=True)
 print("[digest] boot", flush=True)
 
-import requests
-_real_get = requests.get
+# Enable SIGUSR1 stack dump (useful with watchdog)
+try:
+    import faulthandler
+    import signal
 
-def _get(*args, **kwargs):
-    kwargs.setdefault("timeout", (5, 20))  # connect 5s, read 20s
-    return _real_get(*args, **kwargs)
-requests.get = _get
+    faulthandler.enable()
+    faulthandler.register(signal.SIGUSR1, all_threads=True)
+except Exception:
+    pass
 
-BJT = timezone(timedelta(hours=8))
+UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/122.0.0.0 Safari/537.36"
+)
+
+# Hard timeouts
+HTTP_TIMEOUT_GET = (8, 25)   # connect, read
+HTTP_TIMEOUT_POST = (10, 60) # connect, read
+
+# Requests session
+SESSION = requests.Session()
+SESSION.headers.update({"User-Agent": UA})
+
+# LLM settings
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini").strip()
+
+DEFAULT_LLM_BUDGET = int(os.environ.get("DIGEST_LLM_BUDGET", "40"))
+_llm_calls_used = 0
+
+# Translation cache (in-memory; optional disk persistence)
+_ZH_CACHE: Dict[str, str] = {}
+_CACHE_PATH = ".digest_cache_zh.json"
+
+def _load_cache() -> None:
+    global _ZH_CACHE
+    if os.path.exists(_CACHE_PATH):
+        try:
+            with open(_CACHE_PATH, "r", encoding="utf-8") as f:
+                _ZH_CACHE = json.load(f)
+            print(f"[digest] loaded zh cache: {len(_ZH_CACHE)}", flush=True)
+        except Exception as e:
+            print(f"[digest] cache load failed: {e}", flush=True)
+
+def _save_cache() -> None:
+    # Best-effort; safe to ignore failures in Actions
+    try:
+        with open(_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(_ZH_CACHE, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
 
 # -----------------------------
-# Time / Text Utils
+# Data models
 # -----------------------------
-def now_bjt() -> datetime:
-    return datetime.now(tz=BJT)
 
-def now_bjt_str() -> str:
-    return now_bjt().strftime("%Y-%m-%d %H:%M")
+@dataclasses.dataclass
+class RawItem:
+    title: str
+    link: str
+    source: str
+    published: Optional[dt.datetime] = None
+    summary: str = ""
+    section_id: str = ""
+    region: str = "all"  # all | cn | global
+    tags: List[str] = dataclasses.field(default_factory=list)
 
-def date_bjt_str() -> str:
-    return now_bjt().strftime("%Y-%m-%d")
+@dataclasses.dataclass
+class EventCard:
+    event_id: str
+    title_zh: str
+    conclusion_zh: str
+    evidence_zh: List[str]
+    impact_zh: str
+    next_step_zh: str
+    sources: List[Tuple[str, str]]  # (source_name, url)
+    published: Optional[dt.datetime]
+    region: str  # cn | global | all
+    score: float
 
-def norm_text(s: str) -> str:
-    s = (s or "").strip().lower()
-    s = re.sub(r"[\s\u3000]+", " ", s)
-    s = re.sub(r"[^\w\u4e00-\u9fff\s\-\.\:/]", "", s)
-    return s
+@dataclasses.dataclass
+class SectionOutput:
+    section_id: str
+    name: str
+    brief_zh: str  # 300-500 chars
+    events: List[EventCard]
+
+@dataclasses.dataclass
+class KPI:
+    kpi_id: str
+    name: str
+    unit: str
+    value: Optional[float]
+    delta: Optional[float]  # latest - prev
+    spark: List[float]
+    status: str  # up|down|flat|na
+
+@dataclasses.dataclass
+class DigestViews:
+    all: Dict[str, Any]
+    cn: Dict[str, Any]
+    global_: Dict[str, Any]
+
+
+# -----------------------------
+# Utility functions
+# -----------------------------
+
+def now_bj() -> dt.datetime:
+    # Beijing = UTC+8
+    return dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=8)))
+
+def to_date_str(d: dt.date) -> str:
+    return d.isoformat()
+
+def safe_text(s: Any) -> str:
+    if s is None:
+        return ""
+    return str(s).strip()
 
 def sha1(s: str) -> str:
-    return hashlib.sha1((s or "").encode("utf-8")).hexdigest()
+    return hashlib.sha1(s.encode("utf-8", errors="ignore")).hexdigest()
 
-def safe_domain(url: str) -> str:
-    try:
-        return (urlparse(url).netloc or "").lower()
-    except Exception:
-        return ""
+def clamp(x: float, lo: float, hi: float) -> float:
+    return max(lo, min(hi, x))
 
-def clamp(n: float, lo: float, hi: float) -> float:
-    return max(lo, min(hi, n))
+def shorten_cn(s: str, min_chars: int = 300, max_chars: int = 500) -> str:
+    s = re.sub(r"\s+", " ", (s or "").strip())
+    if len(s) < min_chars:
+        return s
+    if len(s) > max_chars:
+        return s[:max_chars].rstrip() + "…"
+    return s
 
-# -----------------------------
-# OpenAI (optional)
-# -----------------------------
-def llm_available() -> bool:
-    return bool(os.environ.get("OPENAI_API_KEY"))
+def strip_html(html: str) -> str:
+    html = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
+    html = re.sub(r"<style[\s\S]*?</style>", " ", html, flags=re.I)
+    txt = re.sub(r"<[^>]+>", " ", html)
+    return re.sub(r"\s+", " ", txt).strip()
 
-def openai_chat(messages: list[dict], model: str, temperature: float = 0.2, max_tokens: int = 700) -> str:
-    key = os.environ.get("OPENAI_API_KEY")
-    if not key:
-        raise RuntimeError("OPENAI_API_KEY not set")
-    model = os.environ.get("OPENAI_MODEL") or model
-    url = "https://api.openai.com/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
-    payload = {
-        "model": model,
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-        "messages": messages,
-    }
-    r = requests.post(url, headers=headers, json=payload, timeout=120)
-    r.raise_for_status()
-    data = r.json()
-    return data["choices"][0]["message"]["content"]
+def parse_dt_any(entry: Dict[str, Any]) -> Optional[dt.datetime]:
+    # feedparser supplies published_parsed / updated_parsed in time.struct_time
+    for k in ("published_parsed", "updated_parsed"):
+        v = entry.get(k)
+        if v:
+            try:
+                return dt.datetime(*v[:6], tzinfo=dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=8)))
+            except Exception:
+                pass
+    return None
 
-def llm_json(system: str, user: str, model: str, max_tokens: int = 900, temperature: float = 0.2) -> dict:
-    """Return JSON dict; if parsing fails, return {}."""
-    if not llm_available():
-        return {}
-    try:
-        txt = openai_chat(
-            [
-                {"role": "system", "content": system + "\n只输出 JSON，不要输出任何解释文字。"},
-                {"role": "user", "content": user},
-            ],
-            model=model,
-            temperature=temperature,
-            max_tokens=max_tokens,
-        )
-        m = re.search(r"\{.*\}", txt, flags=re.S)
-        if not m:
-            return {}
-        return json.loads(m.group(0))
-    except Exception:
-        return {}
-
-# -----------------------------
-# Fetchers
-# -----------------------------
-def fetch_google_news_rss(query: str, lang: str = "en", region: str = "US", limit: int = 80) -> list[dict]:
-    q = quote_plus(query)
-    ceid = f"{region}:{lang}"
-    url = f"https://news.google.com/rss/search?q={q}&hl={lang}-{region}&gl={region}&ceid={ceid}"
-    feed = feedparser.parse(url)
-    items: list[dict] = []
-    for e in getattr(feed, "entries", [])[:limit]:
-        link = getattr(e, "link", "") or ""
-        title = getattr(e, "title", "") or ""
-        published = getattr(e, "published", "") or getattr(e, "updated", "") or ""
-        summary = getattr(e, "summary", "") or getattr(e, "description", "") or ""
-        source = ""
-        try:
-            source = getattr(getattr(e, "source", None), "title", "") or ""
-        except Exception:
-            source = ""
-        items.append({
-            "title": title,
-            "url": link,
-            "published": published,
-            "summary": re.sub(r"<[^>]+>", "", summary).strip(),
-            "source": source or safe_domain(link) or "Google News",
-        })
-    return items
-
-def fetch_rss(url: str, limit: int = 60, source: str | None = None) -> list[dict]:
-    feed = feedparser.parse(url)
-    items: list[dict] = []
-    for e in getattr(feed, "entries", [])[:limit]:
-        link = getattr(e, "link", "") or ""
-        title = getattr(e, "title", "") or ""
-        published = getattr(e, "published", "") or getattr(e, "updated", "") or ""
-        summary = getattr(e, "summary", "") or getattr(e, "description", "") or ""
-        src = source or getattr(feed, "feed", {}).get("title", "") or safe_domain(url) or "RSS"
-        items.append({
-            "title": title,
-            "url": link,
-            "published": published,
-            "summary": re.sub(r"<[^>]+>", "", summary).strip(),
-            "source": src,
-        })
-    return items
-
-def fetch_arxiv(search_query: str, limit: int = 30) -> list[dict]:
-    # arXiv API: Atom feed
-    q = quote_plus(search_query)
-    url = f"http://export.arxiv.org/api/query?search_query={q}&start=0&max_results={limit}&sortBy=submittedDate&sortOrder=descending"
-    r = requests.get(url, timeout=60)
-    r.raise_for_status()
-    feed = feedparser.parse(r.text)
-    items: list[dict] = []
-    for e in getattr(feed, "entries", [])[:limit]:
-        link = ""
-        for l in getattr(e, "links", []) or []:
-            if getattr(l, "rel", "") == "alternate":
-                link = getattr(l, "href", "") or link
-        title = (getattr(e, "title", "") or "").replace("\n", " ").strip()
-        summary = (getattr(e, "summary", "") or "").replace("\n", " ").strip()
-        published = getattr(e, "published", "") or ""
-        items.append({
-            "title": title,
-            "url": link,
-            "published": published,
-            "summary": summary,
-            "source": "arXiv",
-        })
-    return items
-
-# -----------------------------
-# Region classification
-# -----------------------------
-CN_KW = [
-    "china","chinese","beijing","shanghai","shenzhen","hong kong","taiwan","cny","rmb","yuan",
-    "huawei","byd","tencent","alibaba","xiaomi","tiktok","shein","temu","pinduoduo","sinopec","sinochem","ant group",
-    "hangzhou","jiangsu","zhejiang","shandong","pla","prc"
-]
-
-def classify_region(title: str, model: str = "gpt-4o-mini") -> str:
-    t = norm_text(title)
-    if not t:
-        return "global"
-    if llm_available():
-        js = llm_json(
-            system="你是新闻分类器。",
-            user=f"判断标题是否与中国相关（政策/公司/供应链/市场/地缘）。只输出 JSON：{{\"region\":\"cn\"或\"global\"}}。\n标题：{title}",
-            model=model,
-            max_tokens=60,
-        )
-        if js.get("region") in ("cn", "global"):
-            return js["region"]
-    for k in CN_KW:
-        if k in t:
-            return "cn"
-    if any(x in title for x in ["中国","中方","北京","上海","深圳","香港","台湾","人民币","央行","发改委","工信部"]):
-        return "cn"
-    return "global"
-
-# -----------------------------
-# Clustering
-# -----------------------------
-def tokenize_for_cluster(s: str) -> set[str]:
-    s = norm_text(s)
-    if not s:
-        return set()
-    parts = re.split(r"[\s\-/:\.]+", s)
-    toks: list[str] = []
-    for w in parts:
-        w = w.strip()
-        if not w:
-            continue
-        if re.fullmatch(r"[a-z0-9]{2,}", w):
-            toks.append(w)
-        else:
-            # crude CJK bigrams
-            if len(w) >= 2:
-                toks.extend([w[i:i+2] for i in range(0, len(w)-1)])
-            else:
-                toks.append(w)
+def token_set(s: str) -> set:
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", s)
+    toks = [t for t in s.split() if t and len(t) > 1]
     return set(toks)
 
-def jaccard(a: set[str], b: set[str]) -> float:
+def jaccard(a: set, b: set) -> float:
     if not a or not b:
         return 0.0
     inter = len(a & b)
     union = len(a | b)
     return inter / union if union else 0.0
 
-def cluster_items(items: list[dict], threshold: float = 0.42, max_clusters: int = 80) -> list[dict]:
-    clusters: list[dict] = []
-    for it in items:
-        tset = tokenize_for_cluster(it.get("title",""))
-        if not tset:
-            continue
-        best_i, best_s = -1, 0.0
-        for i, c in enumerate(clusters):
-            s = jaccard(tset, c["tset"])
-            if s > best_s:
-                best_s = s
-                best_i = i
-        if best_s >= threshold and best_i >= 0:
-            clusters[best_i]["items"].append(it)
-            # keep representative title as the shortest (usually cleaner)
-            if len(it.get("title","")) < len(clusters[best_i].get("title","") or ""):
-                clusters[best_i]["title"] = it.get("title","")
-        else:
-            clusters.append({"title": it.get("title",""), "items":[it], "tset": tset})
-        if len(clusters) >= max_clusters:
-            break
-    # sort: clusters with more sources first, then recency (if available)
-    clusters.sort(key=lambda c: (len(c["items"]), c["items"][0].get("published","")), reverse=True)
-    for c in clusters:
-        c.pop("tset", None)
-        c["id"] = sha1((c.get("title","") + "|" + (c["items"][0].get("url",""))))[:12]
-    return clusters
+def similar_title(a: str, b: str) -> float:
+    # cheap similarity: token jaccard + prefix bonus
+    sa, sb = token_set(a), token_set(b)
+    jac = jaccard(sa, sb)
+    if a[:18].lower() == b[:18].lower():
+        jac = max(jac, 0.85)
+    return jac
+
 
 # -----------------------------
-# KPI / FRED
+# Region classification (rule-first)
 # -----------------------------
-def fetch_fred_series(series_id: str, limit: int = 60) -> list[float]:
-    # FRED provides CSV download without key
-    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
-    r = requests.get(url, timeout=60)
-    r.raise_for_status()
-    vals: list[float] = []
-    lines = r.text.strip().splitlines()
-    for line in lines[1:]:
-        parts = line.split(",")
-        if len(parts) < 2:
-            continue
-        v = parts[1].strip()
-        if v in (".", ""):
-            continue
-        try:
-            vals.append(float(v))
-        except Exception:
-            continue
-    return vals[-limit:] if vals else []
 
-def spark_svg(values: list[float], direction: str | None = None) -> str:
-    """Inline SVG sparkline; color via CSS currentColor on wrapper (.up/.down)."""
-    if not values or len(values) < 2:
-        return ""
-    vmin, vmax = min(values), max(values)
-    if vmin == vmax:
-        vmax = vmin + 1e-9
-    W, H = 110.0, 44.0
-    pts = []
-    for i, v in enumerate(values):
-        x = 2 + (W - 4) * (i / (len(values) - 1))
-        y = 6 + (H - 12) * (1 - (v - vmin) / (vmax - vmin))
-        pts.append((x, y))
-    d = "M " + " L ".join([f"{x:.2f},{y:.2f}" for x, y in pts])
-    return f'<svg viewBox="0 0 {W:.0f} {H:.0f}" class="spark" aria-hidden="true"><path d="{d}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>'
+CN_KEYWORDS = [
+    "china", "chinese", "beijing", "shanghai", "shenzhen", "hong kong", "taiwan",
+    "prc", "cny", "yuan", "renminbi", "pla",
+    "中国", "大陆", "北京", "上海", "深圳", "香港", "台湾", "人民币", "央行", "商务部", "发改委"
+]
 
-def compute_delta(values: list[float]) -> tuple[float|None, float|None]:
-    if not values or len(values) < 2:
-        return (None, None)
-    last = values[-1]
-    prev = values[-2]
-    if prev == 0:
-        return (last-prev, None)
-    return (last-prev, (last-prev)/abs(prev)*100.0)
+CN_ENTITIES = [
+    "pboC", "people's bank of china", "mofcom", "ndrc", "csrc", "state council",
+    "huawei", "byd", "smic", "tencent", "alibaba", "temu", "shein",
+    "中芯", "华为", "比亚迪", "腾讯", "阿里", "字节", "宁德时代", "中兴"
+]
 
-def build_kpis(cfg: dict) -> list[dict]:
-    out: list[dict] = []
-    for k in cfg.get("kpis", []):
-        sid = k.get("series")
-        if not sid:
-            continue
-        try:
-            vals = fetch_fred_series(sid, limit=int(k.get("lookback", 40)))
-        except Exception:
-            vals = []
-        last = vals[-1] if vals else None
-        d_abs, d_pct = compute_delta(vals)
-        direction = None
-        if d_abs is not None:
-            direction = "up" if d_abs > 0 else ("down" if d_abs < 0 else "flat")
-        out.append({
-            "id": sid,
-            "title": k.get("title") or sid,
-            "unit": k.get("unit") or "",
-            "value": last,
-            "delta_abs": d_abs,
-            "delta_pct": d_pct,
-            "spark": spark_svg(vals, direction=direction),
-            "direction": direction,
-            "source": "FRED",
-        })
-    return out
+def classify_region_rule(text: str) -> str:
+    t = (text or "").lower()
+    # quick keyword hit
+    for kw in CN_KEYWORDS:
+        if kw.lower() in t:
+            return "cn"
+    for ent in CN_ENTITIES:
+        if ent.lower() in t:
+            return "cn"
+    return "global"
 
-def eval_rule(value: float | None, rule: dict) -> bool:
-    if value is None:
-        return False
-    op = rule.get("op")
-    thr = rule.get("value")
+
+# -----------------------------
+# Fetchers
+# -----------------------------
+
+def http_get(url: str, timeout: Tuple[int, int] = HTTP_TIMEOUT_GET) -> Optional[str]:
     try:
-        thr = float(thr)
-    except Exception:
-        return False
-    if op == ">":
-        return value > thr
-    if op == ">=":
-        return value >= thr
-    if op == "<":
-        return value < thr
-    if op == "<=":
-        return value <= thr
-    if op == "abs>":
-        return abs(value) > thr
-    return False
+        r = SESSION.get(url, timeout=timeout)
+        r.raise_for_status()
+        return r.text
+    except Exception as e:
+        print(f"[digest] GET fail: {url} | {type(e).__name__}: {e}", flush=True)
+        return None
 
-def build_alerts(cfg: dict, kpis: list[dict]) -> list[dict]:
-    rules = cfg.get("alerts", [])
-    kmap = {k["id"]: k for k in kpis}
-    fired: list[dict] = []
-    for r in rules:
-        sid = r.get("series")
-        if not sid or sid not in kmap:
+def fetch_rss(url: str, source_name: str, limit: int) -> List[RawItem]:
+    items: List[RawItem] = []
+    try:
+        # feedparser can parse from URL directly but may not respect our session headers reliably
+        xml = http_get(url)
+        if not xml:
+            return items
+        feed = feedparser.parse(xml)
+        for entry in feed.entries[:limit]:
+            title = safe_text(entry.get("title"))
+            link = safe_text(entry.get("link"))
+            summary = safe_text(entry.get("summary")) or safe_text(entry.get("description"))
+            published = parse_dt_any(entry) or None
+            if not title or not link:
+                continue
+            items.append(RawItem(
+                title=strip_html(title),
+                link=link,
+                source=source_name,
+                published=published,
+                summary=strip_html(summary),
+            ))
+    except Exception as e:
+        print(f"[digest] RSS parse fail: {url} | {type(e).__name__}: {e}", flush=True)
+    return items
+
+def fetch_fred_csv(series_id: str, points: int = 30) -> List[Tuple[dt.date, float]]:
+    # No API key needed: fredgraph.csv
+    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
+    txt = http_get(url)
+    if not txt:
+        return []
+    rows = txt.strip().splitlines()
+    out: List[Tuple[dt.date, float]] = []
+    for line in rows[1:]:
+        parts = line.split(",")
+        if len(parts) != 2:
             continue
-        kv = kmap[sid]
-        if eval_rule(kv.get("value"), r):
-            fired.append({
-                "series": sid,
-                "title": kv.get("title"),
-                "value": kv.get("value"),
-                "unit": kv.get("unit"),
-                "op": r.get("op"),
-                "threshold": r.get("value"),
-                "message": r.get("message",""),
-                "severity": r.get("severity","info"),
-            })
-    return fired[:12]
+        ds, vs = parts[0].strip(), parts[1].strip()
+        if vs == "." or vs == "":
+            continue
+        try:
+            d = dt.date.fromisoformat(ds)
+            v = float(vs)
+            out.append((d, v))
+        except Exception:
+            continue
+    return out[-points:]
+
 
 # -----------------------------
-# Translation helper
+# OpenAI (requests.post) with timeout + retries + degrade
 # -----------------------------
-def to_zh(text: str, model: str) -> str:
-    text = (text or "").strip()
-    if not text:
+
+def _llm_budget_ok(budget: int) -> bool:
+    global _llm_calls_used
+    return _llm_calls_used < budget
+
+def openai_chat(messages: List[Dict[str, str]], model: str, max_tokens: int = 600, temperature: float = 0.2) -> str:
+    """
+    Returns assistant content string. Never blocks indefinitely.
+    On failure returns empty string (caller should degrade).
+    """
+    global _llm_calls_used
+
+    if not OPENAI_API_KEY:
         return ""
-    if not llm_available():
-        return text  # fallback
-    js = llm_json(
-        system="你是专业译者与编辑。",
-        user=f"把下面内容翻译成简体中文，要求准确、简洁、保留专有名词与数字。只输出 JSON：{{\"zh\":\"...\"}}\n\n{text}",
-        model=model,
-        max_tokens=700,
-        temperature=0.1,
-    )
-    zh = (js.get("zh") or "").strip()
-    return zh or text
 
-# -----------------------------
-# Event cards (结论优先)
-# -----------------------------
-EVENT_SCHEMA = {
-    "headline_zh": "string (<=40字，事件标题，中文)",
-    "conclusion": "string (<=50字，一句话结论：发生了什么+对谁重要)",
-    "evidence": ["string (2-3条，带来源名的事实锚点；尽量包含数字/机构/时间)"],
-    "impact": ["string (1-2条，对合规/采购/融资/产品的影响)"],
-    "next": ["string (1-2条，下一步动作或要看的指标/阈值)"],
-    "tags": ["string (<=6个，中文标签)"],
-}
+    if not _llm_budget_ok(DEFAULT_LLM_BUDGET):
+        return ""
 
-def event_card_from_cluster(cluster: dict, model: str, max_sources: int = 5) -> dict:
-    items = (cluster.get("items") or [])[:max_sources]
-    # build richer context
-    src_lines = []
-    for it in items:
-        src_lines.append(
-            f"- 来源:{it.get('source','')} | 时间:{it.get('published','')[:25]} | 标题:{it.get('title','')}\n"
-            f"  摘要:{(it.get('summary','') or '')[:240]}\n"
-            f"  链接:{it.get('url','')}"
-        )
-    ctx = "\n".join(src_lines)
-    if llm_available():
-        js = llm_json(
-            system="你是资深研究助理，擅长把同一事件的多来源报道合并成“结论优先”的事件卡。必须具体，避免空话。",
-            user=(
-                "请基于多来源材料，输出一张事件卡（结论优先）。\n"
-                "硬性要求：\n"
-                "1) evidence 至少 2 条，且尽量包含数字/机构/时间；没有就明确写‘未给出具体数字’。\n"
-                "2) conclusion 不要抽象判断，必须落到具体事件。\n"
-                "3) next 必须是可执行动作或监控指标/阈值。\n"
-                f"输出严格 JSON：{json.dumps(EVENT_SCHEMA, ensure_ascii=False)}\n\n"
-                f"材料：\n{ctx}\n"
-            ),
-            model=model,
-            max_tokens=900,
-            temperature=0.2,
-        )
-    else:
-        js = {}
-    # sanitize
-    out = {k: js.get(k) for k in EVENT_SCHEMA.keys()}
-    out["headline_zh"] = (out.get("headline_zh") or to_zh(cluster.get("title",""), model)).strip()
-    out["conclusion"] = (out.get("conclusion") or "").strip()
-    for k in ("evidence","impact","next","tags"):
-        v = out.get(k) or []
-        if isinstance(v, str):
-            v = [v]
-        out[k] = [str(x).strip() for x in v if str(x).strip()][: (3 if k=="evidence" else 2 if k in ("impact","next") else 6)]
-    out["sources"] = [{
-        "name": it.get("source",""),
-        "title": to_zh(it.get("title",""), model) if llm_available() else it.get("title",""),
-        "url": it.get("url",""),
-        "published": it.get("published",""),
-    } for it in items]
-    out["id"] = cluster.get("id")
-    out["region"] = classify_region(cluster.get("title",""), model=model)  # cluster-level region
-    return out
-
-# -----------------------------
-# Section briefs (300-500字 + 结构)
-# -----------------------------
-SECTION_SCHEMA = {
-    "summary": "string (300-500字，中文段落；必须具体，避免口号)",
-    "one_liner": "string (<=30字，结论一句话)",
-    "facts": ["string (3-5条，事实锚点，尽量含数字/机构/时间)"],
-    "impacts": ["string (2-3条，影响对象：合规/采购/融资/产品/供应链)"],
-    "actions": ["string (2-4条，可执行动作，含验收标准)"],
-    "watch": ["string (2-4条，监控指标/阈值；尽量引用右侧KPI或配置阈值)"],
-}
-
-def section_brief(section_name: str, cards: list[dict], kpis: list[dict], alerts: list[dict], model: str, target_chars=(300,500)) -> dict:
-    # Provide top evidence snippets to ground
-    lines = []
-    for c in cards[:8]:
-        ev = "; ".join((c.get("evidence") or [])[:2])
-        lines.append(f"- {c.get('headline_zh','')}: {c.get('conclusion','')} | 证据: {ev}")
-    kpi_lines = []
-    for k in kpis[:10]:
-        if k.get("value") is None:
-            continue
-        d = k.get("delta_pct")
-        dstr = "" if d is None else f"{d:+.2f}%"
-        kpi_lines.append(f"- {k.get('title')}({k.get('id')}): {k.get('value')} {k.get('unit')} {dstr}")
-    alert_lines = []
-    for a in alerts[:8]:
-        alert_lines.append(f"- {a.get('title')} 触发 {a.get('op')}{a.get('threshold')}: {a.get('message')}")
-    ctx = "\n".join(lines)
-    if llm_available():
-        schema = SECTION_SCHEMA.copy()
-        schema["summary"] = f"string ({target_chars[0]}-{target_chars[1]}字)"
-        js = llm_json(
-            system="你是CEO的栏目情报官，目标是让读者在30秒内抓住本栏目最关键的变化，并给出可执行动作。",
-            user=(
-                f"请为栏目《{section_name}》生成栏目决策卡与简报。\n"
-                f"要求：summary 必须 {target_chars[0]}–{target_chars[1]} 字；必须引用材料中的事实锚点（数字/机构/时间/实体），不要空话。\n"
-                "facts 至少3条；actions 至少2条；watch 至少2条。\n"
-                f"输出严格 JSON：{json.dumps(schema, ensure_ascii=False)}\n\n"
-                f"材料（事件卡摘要）：\n{ctx}\n\n"
-                f"今日KPI快照：\n{chr(10).join(kpi_lines[:12])}\n\n"
-                f"已触发提示（如有）：\n{chr(10).join(alert_lines) if alert_lines else '无'}\n"
-            ),
-            model=model,
-            max_tokens=1100,
-            temperature=0.2,
-        )
-    else:
-        js = {}
-    out = {}
-    out["summary"] = str(js.get("summary") or "").strip()
-    out["one_liner"] = str(js.get("one_liner") or "").strip()
-    for k in ("facts","impacts","actions","watch"):
-        v = js.get(k) or []
-        if isinstance(v, str):
-            v = [v]
-        # trim
-        lim = 5 if k=="facts" else 3 if k=="impacts" else 4
-        out[k] = [str(x).strip() for x in v if str(x).strip()][:lim]
-    # fallback if missing
-    if not out["summary"]:
-        out["summary"] = (f"本栏目今日共聚类 {len(cards)} 个事件。建议优先阅读前3个事件卡，并结合右侧KPI与阈值进行判断。"
-                          f"（未配置 OPENAI_API_KEY 时为占位文本。）")
-    if not out["one_liner"]:
-        out["one_liner"] = f"{section_name}：关注核心变化与可执行动作"
-    return out
-
-# -----------------------------
-# Top brief (300-500字 + 结构)
-# -----------------------------
-TOP_SCHEMA = {
-    "summary": "string (300-500字，今日要点正文；必须具体)",
-    "one_liner": "string (<=30字，今天最重要的判断)",
-    "facts": ["string (3-6条，跨栏目事实锚点)"],
-    "actions": ["string (3-5条，今天的动作/决策)"],
-    "watch": ["string (3-5条，监控指标/阈值)"],
-}
-
-def top_brief(view_name: str, sections_payload: list[dict], kpis: list[dict], alerts: list[dict], model: str, target_chars=(300,500)) -> dict:
-    # Grounding: take first 2 events per section
-    lines = []
-    for s in sections_payload:
-        for c in (s.get("cards") or [])[:2]:
-            ev = "; ".join((c.get("evidence") or [])[:2])
-            lines.append(f"- [{s.get('name')}] {c.get('headline_zh')}: {c.get('conclusion')} | 证据:{ev}")
-    kpi_lines = []
-    for k in kpis[:12]:
-        if k.get("value") is None:
-            continue
-        d = k.get("delta_pct")
-        dstr = "" if d is None else f"{d:+.2f}%"
-        kpi_lines.append(f"- {k.get('title')}({k.get('id')}): {k.get('value')} {k.get('unit')} {dstr}")
-    alert_lines = []
-    for a in alerts[:10]:
-        alert_lines.append(f"- {a.get('title')} 触发 {a.get('op')}{a.get('threshold')}：{a.get('message')}")
-    if llm_available():
-        schema = TOP_SCHEMA.copy()
-        schema["summary"] = f"string ({target_chars[0]}-{target_chars[1]}字)"
-        js = llm_json(
-            system="你是CEO的每日情报官。你必须‘结论优先’，并用事实锚点支撑，不要空话。",
-            user=(
-                f"请生成《Top 今日要点》（视图：{view_name}）。\n"
-                f"要求：summary 必须 {target_chars[0]}–{target_chars[1]} 字；必须引用至少 3 条事实锚点（数字/机构/时间/实体）；actions 给可执行动作；watch 给阈值。\n"
-                f"输出严格 JSON：{json.dumps(schema, ensure_ascii=False)}\n\n"
-                f"材料（跨栏目事件卡摘要）：\n{chr(10).join(lines[:30])}\n\n"
-                f"今日KPI快照：\n{chr(10).join(kpi_lines)}\n\n"
-                f"已触发提示（如有）：\n{chr(10).join(alert_lines) if alert_lines else '无'}\n"
-            ),
-            model=model,
-            max_tokens=1300,
-            temperature=0.2,
-        )
-    else:
-        js = {}
-    out = {}
-    out["summary"] = str(js.get("summary") or "").strip()
-    out["one_liner"] = str(js.get("one_liner") or "").strip()
-    for k in ("facts","actions","watch"):
-        v = js.get(k) or []
-        if isinstance(v, str):
-            v = [v]
-        lim = 6 if k=="facts" else 5
-        out[k] = [str(x).strip() for x in v if str(x).strip()][:lim]
-    if not out["summary"]:
-        out["summary"] = "（占位）未配置 OPENAI_API_KEY，Top 今日要点无法生成。请在 GitHub Secrets 中设置 OPENAI_API_KEY。"
-    if not out["one_liner"]:
-        out["one_liner"] = "今天：先看触发阈值，再按栏目快速决策"
-    return out
-
-# -----------------------------
-# Build sections (raw -> clusters -> cards)
-# -----------------------------
-def apply_source_filters(items: list[dict], cfg: dict) -> list[dict]:
-    deny_tlds = cfg.get("deny_tlds", [".cn"])
-    deny_domains = set([d.lower() for d in cfg.get("deny_domains", [])])
-    allow_domains = set([d.lower() for d in cfg.get("allow_domains", [])])  # optional
-    out = []
-    for it in items:
-        dom = safe_domain(it.get("url",""))
-        if any(dom.endswith(tld) for tld in deny_tlds):
-            continue
-        if dom in deny_domains:
-            continue
-        if allow_domains and (dom not in allow_domains):
-            # if allowlist enabled, enforce it
-            continue
-        out.append(it)
-    return out
-
-def section_fetch(section: dict, items_per_section: int) -> list[dict]:
-    raw: list[dict] = []
-    # 1) google news queries
-    for q in section.get("queries", []):
-        raw.extend(fetch_google_news_rss(q, lang=section.get("lang","en"), region=section.get("region","US"), limit=max(60, items_per_section*6)))
-    # 2) extra rss feeds
-    for f in section.get("feeds", []):
-        url = f.get("url") if isinstance(f, dict) else str(f)
-        src = f.get("source") if isinstance(f, dict) else None
-        raw.extend(fetch_rss(url, limit=max(30, items_per_section*4), source=src))
-    # 3) arxiv
-    if section.get("type") == "arxiv":
-        raw = fetch_arxiv(section.get("arxiv_query","cat:cs.LG"), limit=max(30, items_per_section*3))
-    # de-dup by url
-    seen = set()
-    dedup = []
-    for it in raw:
-        u = it.get("url","")
-        if not u or u in seen:
-            continue
-        seen.add(u)
-        dedup.append(it)
-    return dedup
-
-def build_section(section_cfg: dict, cfg: dict, args) -> dict:
-    items_per_section = int(cfg.get("items_per_section", 15))
-    raw = section_fetch(section_cfg, items_per_section=items_per_section)
-    raw = apply_source_filters(raw, cfg)
-    # classify region
-    for it in raw:
-        it["region"] = classify_region(it.get("title",""), model=args.model)
-    # cluster
-    clusters = cluster_items(raw, threshold=float(cfg.get("cluster_threshold", 0.42)), max_clusters=int(cfg.get("limit_raw", 90)))
-    # cards
-    cards = [event_card_from_cluster(c, model=args.model, max_sources=int(cfg.get("max_sources", 5))) for c in clusters]
-    # limit
-    cards = cards[:items_per_section]
-    return {
-        "id": section_cfg.get("id") or sha1(section_cfg.get("name",""))[:10],
-        "name": section_cfg.get("name",""),
-        "cards": cards,
+    url = f"{OPENAI_BASE_URL}/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {OPENAI_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
     }
 
-def split_view_sections(sections: list[dict], view: str) -> list[dict]:
-    if view == "all":
-        return sections
-    out = []
+    last_err: Optional[Exception] = None
+    for attempt in range(1, 4):
+        try:
+            _llm_calls_used += 1
+            r = SESSION.post(url, headers=headers, json=payload, timeout=HTTP_TIMEOUT_POST)
+            r.raise_for_status()
+            data = r.json()
+            return safe_text(data["choices"][0]["message"]["content"])
+        except Exception as e:
+            last_err = e
+            # exponential backoff
+            time.sleep(2 ** (attempt - 1))
+
+    print(f"[digest] openai_chat failed: {type(last_err).__name__}: {last_err}", flush=True)
+    return ""
+
+def llm_json(system: str, user: str, schema_hint: str = "", max_tokens: int = 700) -> Dict[str, Any]:
+    """
+    Ask LLM to return JSON. If fails, return {}.
+    """
+    content = openai_chat(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user + ("\n\nJSON schema hint:\n" + schema_hint if schema_hint else "")},
+        ],
+        max_tokens=max_tokens,
+        temperature=0.2,
+    )
+    if not content:
+        return {}
+
+    # Try to extract JSON block
+    m = re.search(r"\{[\s\S]*\}", content)
+    if not m:
+        return {}
+    try:
+        return json.loads(m.group(0))
+    except Exception:
+        return {}
+
+def llm_text(system: str, user: str, max_tokens: int = 700) -> str:
+    return openai_chat(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        max_tokens=max_tokens,
+        temperature=0.25,
+    )
+
+
+# -----------------------------
+# Translation (cached)
+# -----------------------------
+
+def to_zh(text: str) -> str:
+    t = safe_text(text)
+    if not t:
+        return ""
+    if re.search(r"[\u4e00-\u9fff]", t):
+        return t
+
+    key = sha1(t)
+    if key in _ZH_CACHE:
+        return _ZH_CACHE[key]
+
+    # If no API key / budget: fallback (no translation)
+    if not OPENAI_API_KEY or not _llm_budget_ok(DEFAULT_LLM_BUDGET):
+        _ZH_CACHE[key] = t
+        return t
+
+    sys_prompt = "你是专业新闻编辑与同传翻译。把英文标题/短句翻译成简洁准确的中文，不要加解释。"
+    zh = llm_text(sys_prompt, t, max_tokens=120).strip()
+    if not zh:
+        zh = t
+    _ZH_CACHE[key] = zh
+    return zh
+
+
+# -----------------------------
+# Clustering into events
+# -----------------------------
+
+def cluster_items(items: List[RawItem], threshold: float) -> List[List[RawItem]]:
+    clusters: List[List[RawItem]] = []
+    for it in items:
+        placed = False
+        for c in clusters:
+            if similar_title(it.title, c[0].title) >= threshold:
+                c.append(it)
+                placed = True
+                break
+        if not placed:
+            clusters.append([it])
+    # sort sources inside cluster by published time desc
+    for c in clusters:
+        c.sort(key=lambda x: x.published or dt.datetime(1970, 1, 1, tzinfo=dt.timezone(dt.timedelta(hours=8))), reverse=True)
+    return clusters
+
+
+# -----------------------------
+# Event card generation (LLM-limited, conclusion-first)
+# -----------------------------
+
+def event_id_from_cluster(cluster: List[RawItem], section_id: str) -> str:
+    base = section_id + "|" + "|".join(sorted({it.link for it in cluster})[:3])
+    return "evt_" + sha1(base)[:10]
+
+def pick_region_for_cluster(cluster: List[RawItem]) -> str:
+    # if any item tagged cn => cn, else global
+    for it in cluster:
+        if it.region == "cn":
+            return "cn"
+    return "global"
+
+def score_cluster(cluster: List[RawItem]) -> float:
+    # simple: recency + source diversity
+    now = now_bj()
+    latest = cluster[0].published or now
+    age_hours = (now - latest).total_seconds() / 3600.0
+    rec = math.exp(-age_hours / 24.0)
+    div = len({it.source for it in cluster})
+    return rec * 0.8 + clamp(div / 4.0, 0.0, 0.2)
+
+def extractive_event_card(cluster: List[RawItem], section_id: str) -> EventCard:
+    rep = cluster[0]
+    title_zh = to_zh(rep.title)
+    # minimal "结论优先" fallback
+    conclusion = f"{title_zh}（多源报道）"
+    evidence = []
+    if rep.summary:
+        evidence.append("要点：" + shorten_cn(to_zh(rep.summary), 30, 80))
+    evidence.append(f"来源数：{len(cluster)}")
+    impact = "影响：待进一步确认（自动降级输出）。"
+    next_step = "下一步：点击来源链接核对关键事实锚点（数字/日期/机构）。"
+    sources = [(it.source, it.link) for it in cluster[:5]]
+    return EventCard(
+        event_id=event_id_from_cluster(cluster, section_id),
+        title_zh=title_zh,
+        conclusion_zh=conclusion,
+        evidence_zh=evidence[:3],
+        impact_zh=impact,
+        next_step_zh=next_step,
+        sources=sources,
+        published=rep.published,
+        region=pick_region_for_cluster(cluster),
+        score=score_cluster(cluster),
+    )
+
+def llm_event_card(cluster: List[RawItem], section_name: str, section_id: str) -> EventCard:
+    # Only 1 LLM call per cluster; if fails, fallback to extractive
+    rep = cluster[0]
+    title_zh = to_zh(rep.title)
+    sources = [(it.source, it.link) for it in cluster[:5]]
+    bullets = []
+    for it in cluster[:3]:
+        s = it.summary or ""
+        s = strip_html(s)
+        if s:
+            bullets.append(f"- {it.source}: {shorten_cn(to_zh(s), 40, 90)}")
+        else:
+            bullets.append(f"- {it.source}: {to_zh(it.title)}")
+
+    sys_prompt = (
+        "你是资深新闻编辑与风险分析师。输出严格用于企业决策晨报，必须具体、可验证、结论优先。"
+        "不要空话，不要泛泛而谈。"
+    )
+
+    user = f"""
+栏目：{section_name}
+事件标题：{title_zh}
+
+已知多源要点（可能包含重复）：
+{chr(10).join(bullets)}
+
+请输出一个 JSON：
+{{
+  "conclusion": "一句话结论（<=28字，具体到对象/方向）",
+  "evidence": ["证据要点1（含机构/数字/日期）","证据要点2", "证据要点3"],
+  "impact": "影响（合规/采购/融资/产品至少选两类具体说明）",
+  "next_step": "下一步动作（动词+对象+验收标准）"
+}}
+"""
+
+    j = llm_json(sys_prompt, user, max_tokens=380)
+    if not j:
+        return extractive_event_card(cluster, section_id)
+
+    conclusion = safe_text(j.get("conclusion"))
+    evidence = j.get("evidence") if isinstance(j.get("evidence"), list) else []
+    evidence = [safe_text(x) for x in evidence if safe_text(x)]
+    impact = safe_text(j.get("impact"))
+    next_step = safe_text(j.get("next_step"))
+
+    # Safety fallback if too empty
+    if not conclusion or len(evidence) < 1:
+        return extractive_event_card(cluster, section_id)
+
+    return EventCard(
+        event_id=event_id_from_cluster(cluster, section_id),
+        title_zh=title_zh,
+        conclusion_zh=conclusion,
+        evidence_zh=evidence[:3],
+        impact_zh=impact or "影响：待进一步核实。",
+        next_step_zh=next_step or "下一步：核对来源并跟踪关键阈值。",
+        sources=sources,
+        published=rep.published,
+        region=pick_region_for_cluster(cluster),
+        score=score_cluster(cluster),
+    )
+
+
+# -----------------------------
+# Section brief (300–500 chars)
+# -----------------------------
+
+def extractive_section_brief(section_name: str, events: List[EventCard]) -> str:
+    # fallback brief with concrete mentions
+    lines = [f"{section_name}：今日信号以“{events[0].conclusion_zh}”为主。" if events else f"{section_name}：暂无高质量事件。"]
+    if events:
+        for ev in events[:4]:
+            lines.append(f"• {ev.conclusion_zh}")
+        lines.append("建议：优先核对带数字/日期的证据要点，并关注右侧阈值触发提示。")
+    s = " ".join(lines)
+    return shorten_cn(s, 180, 480)
+
+def llm_section_brief(section_name: str, events: List[EventCard]) -> str:
+    if not OPENAI_API_KEY or not _llm_budget_ok(DEFAULT_LLM_BUDGET):
+        return extractive_section_brief(section_name, events)
+
+    # build fact anchors from event evidence
+    fact_lines = []
+    for ev in events[:8]:
+        ev_line = f"- {ev.conclusion_zh} | 证据: " + "；".join(ev.evidence_zh[:2])
+        fact_lines.append(ev_line)
+
+    sys_prompt = (
+        "你是企业晨报主编。生成栏目简报（中文300-500字），必须："
+        "1) 以结论开头；2) 引用事实锚点（机构/数字/日期）；"
+        "3) 明确影响对象（至少两类：合规/采购/融资/产品）；"
+        "4) 给出2-4条可执行动作；5) 给出2-4条监控阈值/需要持续观察的指标。"
+        "不要套话。"
+    )
+
+    user = f"""
+栏目：{section_name}
+事件信号（结论+证据）：
+{chr(10).join(fact_lines)}
+
+输出一段中文简报，长度 300-500 字。
+"""
+    txt = llm_text(sys_prompt, user, max_tokens=520)
+    if not txt:
+        return extractive_section_brief(section_name, events)
+    return shorten_cn(txt, 280, 500)
+
+
+# -----------------------------
+# Top brief (300–500 chars)
+# -----------------------------
+
+def extractive_top_brief(sections: List[SectionOutput], kpis: List[KPI]) -> str:
+    # pick strongest conclusions
+    picks = []
     for s in sections:
-        cards = s.get("cards") or []
-        if view == "cn":
-            filt = [c for c in cards if c.get("region") == "cn"]
-        else:  # global
-            filt = [c for c in cards if c.get("region") == "global"]
-        out.append({**s, "cards": filt})
+        if s.events:
+            picks.append(s.events[0].conclusion_zh)
+    picks = picks[:6]
+    kpi_bits = []
+    for k in kpis[:5]:
+        if k.value is None:
+            continue
+        sign = "+" if (k.delta or 0) > 0 else ""
+        d = f"{sign}{k.delta:.2f}" if k.delta is not None else "NA"
+        kpi_bits.append(f"{k.name}{k.unit}:{k.value:.2f}({d})")
+    s = "今日要点："
+    if kpi_bits:
+        s += "市场快照 " + "；".join(kpi_bits) + "。"
+    if picks:
+        s += " 主要事件信号：" + "；".join(picks) + "。"
+    s += " 建议：优先处理制裁/合规与关键大宗价格波动相关事项，并按阈值触发进行跟踪。"
+    return shorten_cn(s, 300, 500)
+
+def llm_top_brief(sections: List[SectionOutput], kpis: List[KPI]) -> str:
+    if not OPENAI_API_KEY or not _llm_budget_ok(DEFAULT_LLM_BUDGET):
+        return extractive_top_brief(sections, kpis)
+
+    event_lines = []
+    for s in sections:
+        for ev in s.events[:2]:
+            event_lines.append(f"- [{s.name}] {ev.conclusion_zh} | 证据: {'；'.join(ev.evidence_zh[:2])}")
+    event_lines = event_lines[:12]
+
+    kpi_lines = []
+    for k in kpis[:8]:
+        if k.value is None:
+            continue
+        kpi_lines.append(f"- {k.name}: {k.value:.3f}{k.unit} (Δ {k.delta:.3f if k.delta is not None else 'NA'})")
+
+    sys_prompt = (
+        "你是企业晨报主编。输出“今日要点”中文300-500字，必须包含："
+        "1) 关键结论；2) 至少3条事实锚点（机构/数字/日期）；"
+        "3) 影响对象（至少两类：合规/采购/融资/产品）；"
+        "4) 2-4条今日动作；5) 2-4条监控阈值/指标。"
+        "不要空话，不要泛泛而谈。"
+    )
+
+    user = f"""
+市场快照（KPI）：
+{chr(10).join(kpi_lines) if kpi_lines else "- NA"}
+
+事件信号（结论+证据）：
+{chr(10).join(event_lines) if event_lines else "- NA"}
+
+输出一段中文300-500字“今日要点”。
+"""
+    txt = llm_text(sys_prompt, user, max_tokens=520)
+    if not txt:
+        return extractive_top_brief(sections, kpis)
+    return shorten_cn(txt, 300, 500)
+
+
+# -----------------------------
+# KPI computation & sparkline svg
+# -----------------------------
+
+def compute_kpi(kcfg: Dict[str, Any]) -> KPI:
+    kid = safe_text(kcfg.get("id") or kcfg.get("kpi_id") or "")
+    name = safe_text(kcfg.get("name") or kid)
+    unit = safe_text(kcfg.get("unit") or "")
+    typ = safe_text(kcfg.get("type") or "fred").lower()
+
+    series = safe_text(kcfg.get("series") or kcfg.get("series_id") or kid)
+
+    values: List[float] = []
+    if typ == "fred" and series:
+        pts = int(kcfg.get("points") or 30)
+        data = fetch_fred_csv(series, pts)
+        values = [v for _, v in data]
+
+    if not values:
+        return KPI(kpi_id=kid, name=name, unit=unit, value=None, delta=None, spark=[], status="na")
+
+    value = values[-1]
+    prev = values[-2] if len(values) >= 2 else values[-1]
+    delta = value - prev
+    if abs(delta) < 1e-9:
+        status = "flat"
+    else:
+        status = "up" if delta > 0 else "down"
+
+    return KPI(kpi_id=kid, name=name, unit=unit, value=value, delta=delta, spark=values[-20:], status=status)
+
+def spark_svg(values: List[float], width: int = 120, height: int = 34) -> str:
+    if not values:
+        return ""
+    vmin, vmax = min(values), max(values)
+    if abs(vmax - vmin) < 1e-9:
+        vmax = vmin + 1.0
+    pts = []
+    n = len(values)
+    for i, v in enumerate(values):
+        x = i * (width - 2) / max(1, (n - 1)) + 1
+        y = (height - 2) - (v - vmin) * (height - 2) / (vmax - vmin) + 1
+        pts.append((x, y))
+    d = "M " + " L ".join([f"{x:.2f},{y:.2f}" for x, y in pts])
+    return f'<svg viewBox="0 0 {width} {height}" width="{width}" height="{height}" aria-hidden="true"><path d="{d}" fill="none" stroke="currentColor" stroke-width="2" /></svg>'
+
+
+# -----------------------------
+# Section builder
+# -----------------------------
+
+def build_section(section_cfg: Dict[str, Any], limit_raw: int, items_per_section: int, cluster_threshold: float) -> SectionOutput:
+    sid = safe_text(section_cfg.get("id") or section_cfg.get("section_id") or "")
+    name = safe_text(section_cfg.get("name") or sid)
+
+    print(f"[digest] section start: {sid} ({name})", flush=True)
+
+    sources_cfg = section_cfg.get("sources") or []
+    # Accept shorthand: {"rss": [..]}
+    if not sources_cfg and "rss" in section_cfg:
+        sources_cfg = [{"type": "rss", "name": "RSS", "url": u} for u in section_cfg["rss"]]
+
+    raw: List[RawItem] = []
+    # distribute raw limit across sources
+    per_src = max(5, limit_raw // max(1, len(sources_cfg)))
+    for s in sources_cfg:
+        stype = safe_text(s.get("type") or "rss").lower()
+        sname = safe_text(s.get("name") or "Source")
+        url = safe_text(s.get("url") or "")
+        if not url:
+            continue
+        if stype == "rss":
+            got = fetch_rss(url, sname, per_src)
+        else:
+            got = fetch_rss(url, sname, per_src)
+        for it in got:
+            it.section_id = sid
+            it.region = classify_region_rule(it.title + " " + it.summary)
+        raw.extend(got)
+
+    # de-dup by link
+    seen = set()
+    uniq: List[RawItem] = []
+    for it in raw:
+        if it.link in seen:
+            continue
+        seen.add(it.link)
+        uniq.append(it)
+
+    # sort by time desc (unknown at end)
+    uniq.sort(key=lambda x: x.published or dt.datetime(1970, 1, 1, tzinfo=dt.timezone(dt.timedelta(hours=8))), reverse=True)
+
+    # cluster
+    clusters = cluster_items(uniq[:limit_raw], threshold=cluster_threshold)
+
+    # event cards: LLM for top clusters; fallback for rest to keep total LLM calls bounded
+    events: List[EventCard] = []
+    for c in clusters:
+        if len(events) >= items_per_section:
+            break
+        # LLM budget: use LLM for first few clusters, then fallback
+        use_llm = _llm_budget_ok(DEFAULT_LLM_BUDGET) and len(events) < max(6, items_per_section // 2)
+        ev = llm_event_card(c, name, sid) if use_llm else extractive_event_card(c, sid)
+        events.append(ev)
+
+    # sort by score
+    events.sort(key=lambda e: e.score, reverse=True)
+
+    # section brief (300-500)
+    brief = llm_section_brief(name, events) if events else f"{name}：今日未抓取到足够高质量条目。"
+
+    print(f"[digest] section done: {sid} events={len(events)}", flush=True)
+
+    return SectionOutput(section_id=sid, name=name, brief_zh=brief, events=events)
+
+
+# -----------------------------
+# Views (all / cn / global-ex-cn)
+# -----------------------------
+
+def filter_sections(sections: List[SectionOutput], mode: str) -> List[SectionOutput]:
+    if mode == "all":
+        return sections
+    out: List[SectionOutput] = []
+    for s in sections:
+        evs = [e for e in s.events if e.region == mode]
+        out.append(SectionOutput(section_id=s.section_id, name=s.name, brief_zh=s.brief_zh, events=evs))
     return out
 
-def nav_counts(sections: list[dict]) -> list[dict]:
-    return [{"id": s["id"], "name": s["name"], "count": len(s.get("cards") or [])} for s in sections]
 
 # -----------------------------
-# Rendering
+# Template render
 # -----------------------------
-def render_html(template_path: str, digest: dict, out_path: str) -> None:
-    tpl = Template(open(template_path, "r", encoding="utf-8").read())
-    html = tpl.render(**digest)
+
+def render_html(template_path: str, context: Dict[str, Any]) -> str:
+    tpl_dir = os.path.dirname(os.path.abspath(template_path)) or "."
+    tpl_name = os.path.basename(template_path)
+    env = Environment(
+        loader=FileSystemLoader(tpl_dir),
+        autoescape=False,
+        undefined=Undefined,  # missing vars won't crash
+    )
+    template = env.get_template(tpl_name)
+    return template.render(**context)
+
+
+# -----------------------------
+# Config loading with defaults
+# -----------------------------
+
+def default_config() -> Dict[str, Any]:
+    # A minimal fallback config using Google News RSS queries (global, authoritative-ish)
+    # You should maintain your own digest_config_v15.json in repo.
+    def gnews(q: str) -> str:
+        # hl=en-US&gl=US&ceid=US:en
+        import urllib.parse
+        return "https://news.google.com/rss/search?q=" + urllib.parse.quote(q) + "&hl=en-US&gl=US&ceid=US:en"
+
+    return {
+        "site_title": "Ben的每日资讯简报",
+        "sections": [
+            {"id": "macro_markets", "name": "宏观与市场", "sources": [{"type": "rss", "name": "Google News", "url": gnews("inflation OR rates OR treasury OR dollar OR stock market")}], "items_per_section": 15},
+            {"id": "geopolitics_sanctions", "name": "地缘政治与制裁", "sources": [{"type": "rss", "name": "Google News", "url": gnews("sanctions OR OFAC OR export controls OR geopolitics")}], "items_per_section": 15},
+            {"id": "ai_compute", "name": "AI算力与基础设施", "sources": [{"type": "rss", "name": "Google News", "url": gnews("NVIDIA OR AI chips OR data center power OR hyperscaler capex")}], "items_per_section": 15},
+            {"id": "commodities_metals", "name": "大宗与金属", "sources": [{"type": "rss", "name": "Google News", "url": gnews("copper price OR aluminum price OR nickel price OR LME")}], "items_per_section": 15},
+            {"id": "carbon_cbam", "name": "碳与CBAM", "sources": [{"type": "rss", "name": "Google News", "url": gnews("CBAM OR carbon credit OR Verra OR EU ETS")}], "items_per_section": 15},
+            {"id": "sea_supplychain", "name": "东南亚供应链", "sources": [{"type": "rss", "name": "Google News", "url": gnews("Vietnam supply chain OR Thailand manufacturing OR Malaysia semiconductor")}], "items_per_section": 15},
+        ],
+        "kpis": [
+            {"id": "DGS10", "name": "美国10Y", "unit": "%", "type": "fred", "series": "DGS10", "points": 30},
+            {"id": "DTB3", "name": "美国3M", "unit": "%", "type": "fred", "series": "DTB3", "points": 30},
+        ],
+    }
+
+def load_config(path: str) -> Dict[str, Any]:
+    if not os.path.exists(path):
+        print(f"[digest] config not found, using defaults: {path}", flush=True)
+        return default_config()
+    with open(path, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+    return cfg
+
+
+# -----------------------------
+# Main
+# -----------------------------
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", required=True)
+    parser.add_argument("--template", required=True)
+    parser.add_argument("--out", default="index.html")
+    parser.add_argument("--date", default="")
+    parser.add_argument("--model", default="")
+    parser.add_argument("--limit_raw", type=int, default=25)
+    parser.add_argument("--cluster_threshold", type=float, default=0.82)
+    parser.add_argument("--items_per_section", type=int, default=0)  # optional; config-driven if 0
+    args = parser.parse_args()
+
+    if args.model:
+        global OPENAI_MODEL
+        OPENAI_MODEL = args.model.strip()
+
+    _load_cache()
+
+    bj_now = now_bj()
+    run_date = bj_now.date()
+    if args.date:
+        try:
+            run_date = dt.date.fromisoformat(args.date)
+        except Exception:
+            pass
+
+    print(f"[digest] date={run_date} model={OPENAI_MODEL} limit_raw={args.limit_raw} thr={args.cluster_threshold} budget={DEFAULT_LLM_BUDGET}", flush=True)
+
+    cfg = load_config(args.config)
+    site_title = safe_text(cfg.get("site_title") or "Ben的每日资讯简报")
+
+    # KPIs
+    kpis_cfg = cfg.get("kpis") or []
+    kpis: List[KPI] = []
+    print(f"[digest] kpi start: {len(kpis_cfg)}", flush=True)
+    for kc in kpis_cfg:
+        try:
+            k = compute_kpi(kc)
+            kpis.append(k)
+        except Exception as e:
+            print(f"[digest] kpi fail: {kc} | {e}", flush=True)
+    print(f"[digest] kpi done: {len(kpis)}", flush=True)
+
+    # Sections
+    sections_cfg = cfg.get("sections") or []
+    sections: List[SectionOutput] = []
+    print(f"[digest] sections start: {len(sections_cfg)}", flush=True)
+
+    for sc in sections_cfg:
+        items_per = int(args.items_per_section) if args.items_per_section > 0 else int(sc.get("items_per_section") or 15)
+        try:
+            sec = build_section(sc, limit_raw=int(args.limit_raw), items_per_section=items_per, cluster_threshold=float(args.cluster_threshold))
+            sections.append(sec)
+        except Exception as e:
+            sid = safe_text(sc.get("id") or sc.get("section_id") or "unknown")
+            print(f"[digest] section fail: {sid} | {type(e).__name__}: {e}", flush=True)
+            sections.append(SectionOutput(section_id=sid, name=safe_text(sc.get("name") or sid), brief_zh="该栏目生成失败（已降级）。", events=[]))
+
+    print(f"[digest] sections done: {len(sections)}", flush=True)
+
+    # Top brief (all view based)
+    top_brief_all = llm_top_brief(sections, kpis)
+    # Views filter
+    sections_cn = filter_sections(sections, "cn")
+    sections_global = filter_sections(sections, "global")
+
+    top_brief_cn = llm_top_brief(sections_cn, kpis) if any(s.events for s in sections_cn) else top_brief_all
+    top_brief_global = llm_top_brief(sections_global, kpis) if any(s.events for s in sections_global) else top_brief_all
+
+    # Prepare template context (provide rich keys; template can ignore extras)
+    def sections_to_dict(secs: List[SectionOutput]) -> List[Dict[str, Any]]:
+        out = []
+        for s in secs:
+            out.append({
+                "id": s.section_id,
+                "name": s.name,
+                "brief_zh": s.brief_zh,
+                "events": [
+                    {
+                        "event_id": e.event_id,
+                        "title_zh": e.title_zh,
+                        "conclusion_zh": e.conclusion_zh,
+                        "evidence_zh": e.evidence_zh,
+                        "impact_zh": e.impact_zh,
+                        "next_step_zh": e.next_step_zh,
+                        "sources": [{"name": n, "url": u} for n, u in e.sources],
+                        "published": e.published.isoformat() if e.published else "",
+                        "region": e.region,
+                        "score": e.score,
+                    }
+                    for e in s.events
+                ]
+            })
+        return out
+
+    def kpis_to_dict(ks: List[KPI]) -> List[Dict[str, Any]]:
+        out = []
+        for k in ks:
+            out.append({
+                "id": k.kpi_id,
+                "name": k.name,
+                "unit": k.unit,
+                "value": k.value,
+                "delta": k.delta,
+                "status": k.status,  # up/down/flat/na
+                "spark_values": k.spark,
+                "spark_svg": spark_svg(k.spark) if k.spark else "",
+            })
+        return out
+
+    views = {
+        "all": {
+            "top_brief_zh": top_brief_all,
+            "sections": sections_to_dict(sections),
+        },
+        "cn": {
+            "top_brief_zh": top_brief_cn,
+            "sections": sections_to_dict(sections_cn),
+        },
+        "global": {
+            "top_brief_zh": top_brief_global,
+            "sections": sections_to_dict(sections_global),
+        }
+    }
+
+    context = {
+        "site_title": site_title,
+        "date": to_date_str(run_date),
+        "generated_at": now_bj().strftime("%Y-%m-%d %H:%M (北京时间)"),
+        "llm_model": OPENAI_MODEL,
+        "llm_calls_used": _llm_calls_used,
+        "kpis": kpis_to_dict(kpis),
+        "views": views,
+        # convenience top-level (for templates that expect these keys)
+        "top_brief_zh": top_brief_all,
+        "sections": sections_to_dict(sections),
+    }
+
+    print("[digest] render html", flush=True)
+    html = render_html(args.template, context)
+
+    # write output
+    out_path = args.out
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
 
-# -----------------------------
-# Default config (if missing)
-# -----------------------------
-DEFAULT_CONFIG = {
-  "items_per_section": 15,
-  "cluster_threshold": 0.42,
-  "limit_raw": 90,
-  "max_sources": 5,
-  "deny_tlds": [".cn"],
-  "sections": [
-    {
-      "id": "macro",
-      "name": "宏观 / 市场（利率·汇率·风险偏好）",
-      "queries": [
-        "US Treasury yields outlook Fed pricing inflation jobs",
-        "USD CNY FX policy capital flows emerging markets risk sentiment",
-        "global equity volatility VIX credit spreads"
-      ]
-    },
-    {
-      "id": "sanctions",
-      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
-      "queries": [
-        "OFAC sanctions update enforcement action guidance",
-        "EU sanctions package Russia export controls compliance",
-        "US export controls semiconductor AI chips restrictions"
-      ],
-      "feeds": [
-        {"source":"OFAC", "url":"https://home.treasury.gov/ofac/press-releases/rss.xml"},
-        {"source":"EU Council", "url":"https://www.consilium.europa.eu/en/press/press-releases/rss/"}
-      ]
-    },
-    {
-      "id": "compute",
-      "name": "AI 计算基础设施（算力·电力·冷却）",
-      "queries": [
-        "data center power demand grid connection GPU supply chain HBM",
-        "AI chip export controls cloud GPU pricing capacity",
-        "liquid cooling data center PUE regulation"
-      ]
-    },
-    {
-      "id": "metals",
-      "name": "大宗 / 金属（LME·供需·库存）",
-      "queries": [
-        "LME copper aluminium nickel zinc inventory premium spread",
-        "scrap copper trade flows sanctions freight",
-        "energy transition metals demand supply"
-      ]
-    },
-    {
-      "id": "carbon",
-      "name": "碳 / CBAM / 碳市场（Verra·EU）",
-      "queries": [
-        "EU CBAM guidance reporting requirements transition period",
-        "Verra methodology update registry integrity",
-        "carbon credit quality additionality audit"
-      ],
-      "feeds": [
-        {"source":"European Commission", "url":"https://ec.europa.eu/commission/presscorner/api/rss?language=en&format=rss"}
-      ]
-    },
-    {
-      "id": "sea",
-      "name": "东南亚供应链（制造·转移·关键矿产）",
-      "queries": [
-        "Vietnam manufacturing investment supply chain relocation",
-        "Indonesia nickel export policy smelter investment",
-        "Thailand Malaysia electronics supply chain incentives"
-      ]
-    },
-    {
-      "id": "frontier",
-      "name": "前沿学科雷达（量子·聚变·材料·生物）",
-      "queries": [
-        "quantum computing error correction breakthrough",
-        "fusion energy high-temperature superconducting magnets",
-        "new materials battery solid-state electrolyte breakthrough",
-        "synthetic biology biomanufacturing platform"
-      ]
-    },
-    {
-      "id": "arxiv",
-      "name": "研究雷达（arXiv）",
-      "type": "arxiv",
-      "arxiv_query": "cat:cs.LG OR cat:cs.AI OR cat:cs.CL"
-    }
-  ],
-  "kpis": [
-    {"series":"DGS10","title":"美债10Y","unit":"%","lookback":40},
-    {"series":"DEXCHUS","title":"USD/CNY","unit":"","lookback":40},
-    {"series":"DTWEXBGS","title":"美元指数（广义）","unit":"","lookback":40},
-    {"series":"PCOPPUSDM","title":"铜（Proxy）","unit":"$/t","lookback":40},
-    {"series":"PALUMUSDM","title":"铝（Proxy）","unit":"$/t","lookback":40},
-    {"series":"PZINCUSDM","title":"锌（Proxy）","unit":"$/t","lookback":40},
-    {"series":"PNICKUSDM","title":"镍（Proxy）","unit":"$/t","lookback":40},
-    {"series":"PLEADUSDM","title":"铅（Proxy）","unit":"$/t","lookback":40},
-    {"series":"PTINUSDM","title":"锡（Proxy）","unit":"$/t","lookback":40}
-  ],
-  "alerts": [
-    {"series":"DGS10","op":">","value":4.30,"severity":"warn","message":"融资成本上行：审视现金流与折现敏感业务"},
-    {"series":"DEXCHUS","op":">","value":7.20,"severity":"warn","message":"汇率压力：复核进口成本、结算币种与对冲方案"},
-    {"series":"PCOPPUSDM","op":"abs>","value":80,"severity":"info","message":"铜价波动放大：复核报价有效期与库存策略"}
-  ]
-}
+    _save_cache()
+    print(f"[digest] done: wrote {out_path} | llm_calls={_llm_calls_used}", flush=True)
 
-# -----------------------------
-# CLI / Main
-# -----------------------------
-def parse_args():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--config", required=True, help="digest_config_v18.json")
-    ap.add_argument("--template", required=True, help="daily_digest_template_v18_singlepage.html")
-    ap.add_argument("--out", default="index.html")
-    ap.add_argument("--date", default=None, help="YYYY-MM-DD (BJT)")
-    ap.add_argument("--model", default="gpt-4o-mini")
-    ap.add_argument("--limit_raw", default=None, type=int)
-    ap.add_argument("--cluster_threshold", default=None, type=float)
-    ap.add_argument("--items_per_section", default=None, type=int)
-    return ap.parse_args()
-
-def load_config(path: str) -> dict:
-    if not os.path.exists(path):
-        return DEFAULT_CONFIG
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-def main():
-    args = parse_args()
-    cfg = load_config(args.config)
-
-    # override from CLI
-    if args.limit_raw is not None:
-        cfg["limit_raw"] = args.limit_raw
-    if args.cluster_threshold is not None:
-        cfg["cluster_threshold"] = args.cluster_threshold
-    if args.items_per_section is not None:
-        cfg["items_per_section"] = args.items_per_section
-
-    date = args.date or date_bjt_str()
-
-    # KPIs + alerts (global, shared across views)
-    kpis = build_kpis(cfg)
-    alerts = build_alerts(cfg, kpis)
-
-    # Build base sections (cards carry region label)
-    base_sections = []
-    for s_cfg in cfg.get("sections", []):
-        try:
-            base_sections.append(build_section(s_cfg, cfg, args))
-        except Exception as e:
-            base_sections.append({
-                "id": s_cfg.get("id") or sha1(s_cfg.get("name",""))[:10],
-                "name": s_cfg.get("name",""),
-                "cards": [],
-                "error": str(e),
-            })
-
-    # Build 3 views with their own Top + section briefs (ALL pre-rendered)
-    views: dict[str, dict] = {}
-    for view in ["all", "cn", "global"]:
-        view_sections = split_view_sections(base_sections, view=view)
-        # section briefs
-        for s in view_sections:
-            s["brief"] = section_brief(s["name"], s.get("cards") or [], kpis=kpis, alerts=alerts, model=args.model, target_chars=(300,500))
-        top = top_brief(view_name=("全部" if view=="all" else "中国相关" if view=="cn" else "全球（不含中国）"),
-                        sections_payload=view_sections, kpis=kpis, alerts=alerts, model=args.model, target_chars=(300,500))
-        views[view] = {
-            "view": view,
-            "top": top,
-            "sections": view_sections,
-            "nav": nav_counts(view_sections),
-        }
-
-    digest = {
-        "TITLE": "Ben的每日资讯简报",
-        "DATE": date,
-        "GENERATED_AT": now_bjt_str(),
-        "VERSION": "v18",
-        "KPIS": kpis,
-        "ALERTS": alerts,
-        "VIEWS": views,
-    }
-
-    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    render_html(args.template, digest, args.out)
-
-    print("OK:", args.out, "generated_at_bjt=", digest["GENERATED_AT"])
-    if not llm_available():
-        print("NOTE: 未配置 OPENAI_API_KEY：中文翻译/简报将是弱化版本。建议在 GitHub Secrets 中设置。")
 
 if __name__ == "__main__":
     main()
