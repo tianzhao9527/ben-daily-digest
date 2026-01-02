@@ -3,8 +3,7 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # GitHub Actions cron is UTC.
-    # 06:00 Beijing (UTC+8) == 22:00 UTC (previous day)
+    # GitHub Actions cron is UTC. 06:00 Beijing (UTC+8) = 22:00 UTC (previous day).
     - cron: "0 22 * * *"
 
 permissions:
@@ -12,18 +11,18 @@ permissions:
 
 concurrency:
   group: daily-digest
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -31,41 +30,24 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -V
-          pip install -U pip
-          pip install requests feedparser
+          python -m pip install --upgrade pip
+          pip install requests feedparser jinja2
 
-      - name: Generate digest (watchdog + stack dump)
+      - name: Generate digest
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PYTHONFAULTHANDLER: "1"
         run: |
           set -euo pipefail
-          echo "=== Generate digest (watchdog + stack dump) ==="
-
-          python -u news_digest_generator_v15.py \
-            --config digest_config_v15.json \
-            --template daily_digest_template_v15_apple.html \
-            --out index.html \
-            --limit_raw 25 \
-            --cluster_threshold 0.82 \
-            --model gpt-4o-mini \
-            --items_per_section 15 &
-          PID=$!
-          echo "PID=$PID"
-
-          # Watchdog: every 60s dump stack via SIGUSR1 (does not kill; script registers handler)
-          for i in $(seq 1 8); do
-            sleep 60
-            if kill -0 "$PID" 2>/dev/null; then
-              echo "…still running (${i}*60s) -> stack dump (SIGUSR1)"
-              kill -USR1 "$PID" || true
-            else
-              break
-            fi
-          done
-
-          wait "$PID"
-          echo "Generator finished."
+          echo "=== Generate digest (timeout + SIGUSR1 stack dump) ==="
+          timeout --signal=USR1 --kill-after=30s 25m \
+            python -u news_digest_generator_v15.py \
+              --config digest_config_v15.json \
+              --template daily_digest_template_v15_apple.html \
+              --out index.html \
+              --limit_raw 25 \
+              --items 15 \
+              --model gpt-4o-mini
 
       - name: Commit & push if changed
         run: |
@@ -79,9 +61,3 @@ jobs:
           git add index.html
           git commit -m "chore: update daily digest"
           git push
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: digest-html
-          path: index.html
