@@ -1,328 +1,671 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Daily Digest · 2026-01-02</title>
-<style>
-:root{--bg:#f5f5f7;--card:#fff;--text:#0b0b0f;--muted:#6e6e73;--line:rgba(0,0,0,.10);--shadow:0 10px 30px rgba(0,0,0,.06);--r:18px;--r2:14px;--accent:#0a84ff;--chip:rgba(0,0,0,.05);--good:#16a34a;--bad:#ef4444}
-[data-theme="dark"]{--bg:#0b0b0f;--card:rgba(18,18,24,.94);--text:#f5f5f7;--muted:#a1a1aa;--line:rgba(255,255,255,.12);--shadow:0 14px 44px rgba(0,0,0,.45);--chip:rgba(255,255,255,.08);--good:#22c55e;--bad:#ef4444}
-*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif}
-a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
-.container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
-.left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
-.brand .title{font-size:14px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
-.controls{padding:12px 16px;border-bottom:1px solid var(--line)}
-.search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent;cursor:pointer}
-.pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
-.nav{padding:10px 10px 14px;overflow:auto;min-height:0}
-.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text);font-size:13px;font-weight:650;line-height:1.2}
-.nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
-.badge{font-size:11px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
-.left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
-.btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}
-.btn:hover{border-color:rgba(10,132,255,.30)}
-.main{display:flex;flex-direction:column}.topbar{padding:16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:var(--card)}
-.h1{font-size:18px;font-weight:900}.meta{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
-.main-scroll{padding:16px;overflow:auto;min-height:0}
-.section{scroll-margin-top:90px;margin-bottom:18px}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:10px}
-.section-title{font-size:14px;font-weight:860}.small{font-size:12px;color:var(--muted)}
-.brief{border:1px solid var(--line);border-radius:var(--r2);padding:14px;line-height:1.75;font-size:13px}
-.topbrief{line-height:1.6;font-size:13px}
-.topgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
-.tblock{border:1px solid var(--line);border-radius:14px;padding:12px;background:linear-gradient(180deg,rgba(10,132,255,.06),transparent)}
-[data-theme="dark"] .tblock{background:linear-gradient(180deg,rgba(10,132,255,.10),transparent)}
-.tlabel{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.02em}
-.tmain{margin-top:6px;font-size:14px;font-weight:850;line-height:1.45}
-.tlist{margin:10px 0 0 0;padding-left:18px;color:var(--text)}
-.tlist li{margin:6px 0;line-height:1.55}
-.tlist li span{color:var(--muted)}
-.tchips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.tchip{font-size:11px;color:var(--muted);border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:999px}
-.actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:999px}
-.cards{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.event{border:1px solid var(--line);border-radius:var(--r2);padding:12px;transition:.12s ease;display:flex;flex-direction:column;gap:8px}
-.event:hover{border-color:rgba(10,132,255,.22);background:rgba(10,132,255,.06)}
-.e-title{font-size:13px;font-weight:820;line-height:1.35}
-.e-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.e-sum{font-size:12px;line-height:1.55}
-.e-links{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.link{font-size:12px;color:var(--accent)}
-.fb{display:flex;gap:8px}
-.iconbtn{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 8px;border-radius:10px;cursor:pointer;font-size:12px}
-.iconbtn.active.good{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.12);color:var(--text)}
-.iconbtn.active.bad{border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.12);color:var(--text)}
-.right{display:flex;flex-direction:column}
-.right-sticky{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding:16px}
-.right-title{font-size:14px;font-weight:880}.right-sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
-.right-scroll{padding:14px 16px 16px;overflow:auto;min-height:0}
-.kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.kpi{border:1px solid var(--line);border-radius:var(--r2);padding:12px}
-.kpi.pos .k-val,.kpi.pos .k-delta{color:var(--good)}
-.kpi.neg .k-val,.kpi.neg .k-delta{color:var(--bad)}
-.kpi.pos{--spark:var(--good);color:var(--good)}
-.kpi.neg{--spark:var(--bad);color:var(--bad)}
-.k-delta{opacity:.95}
-.k-head{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
-.k-val{margin-top:6px;font-size:18px;font-weight:900}
-.k-delta{margin-top:4px;font-size:12px;color:var(--muted)}
-.spark{margin-top:10px;width:100%;height:44px;display:block}
-.hr{height:1px;background:var(--line);margin:14px 0}.group{font-size:12px;color:var(--muted);font-weight:800;margin:8px 0}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.18s ease;z-index:999}
-.overlay.open{opacity:1;pointer-events:auto}
-.panel{position:absolute;right:18px;top:18px;bottom:18px;width:min(520px,calc(100vw - 36px));background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
-.phead{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.ptitle{font-size:14px;font-weight:900}
-.tabs{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
-.tab{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);cursor:pointer}
-.tab.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
-.pbody{padding:14px 16px;overflow:auto;min-height:0}
-.row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:10px 0}
-.label{font-size:12px;color:var(--muted);line-height:1.4}
-.input{width:160px;border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:transparent;color:var(--text);font-size:12px;outline:none}
-.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
-@media (max-width:1200px){.container{grid-template-columns:320px 1fr}.right{display:none}}
-@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
-</style></head>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{{ TITLE }} · {{ DATE }}</title>
+  <style>
+    :root{
+      --bg:#f5f5f7;
+      --panel:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --blue:#0a84ff;
+      --good:#34c759;
+      --bad:#ff3b30;
+      --warn:#ff9f0a;
+      --shadow:0 8px 30px rgba(0,0,0,.06);
+      --radius:18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    }
+    [data-theme="dark"]{
+      --bg:#0b0b0f;
+      --panel:#14161a;
+      --text:#f3f4f6;
+      --muted:#9ca3af;
+      --line:#2a2f37;
+      --shadow:0 14px 40px rgba(0,0,0,.42);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--blue); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .app{
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 320px 1fr 360px;
+      gap: 18px;
+      align-items:start;
+    }
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .left{ position:sticky; top:18px; height: calc(100vh - 36px); overflow:auto; padding:16px}
+    .mid{ padding: 0; overflow:hidden}
+    .right{ position:sticky; top:18px; height: calc(100vh - 36px); overflow:auto; padding:16px}
+    .title{
+      font-size:20px; font-weight:800; letter-spacing:-.02em; margin:0 0 6px 0;
+    }
+    .meta{
+      color:var(--muted); font-size:12px; line-height:1.4;
+    }
+    .search{
+      margin:14px 0 10px 0;
+      display:flex; gap:8px;
+    }
+    .search input{
+      width:100%;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:transparent;
+      color:var(--text);
+      outline:none;
+    }
+    .toggle{
+      display:flex; gap:8px; flex-wrap:wrap;
+      margin:10px 0 14px 0;
+    }
+    .chip{
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--text);
+      cursor:pointer;
+      user-select:none;
+      background:transparent;
+    }
+    .chip.active{
+      border-color: rgba(10,132,255,.35);
+      background: rgba(10,132,255,.14);
+      color: var(--text);
+    }
+    .nav{
+      margin-top:10px;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .nav a{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      color:var(--text);
+      font-size:13px;
+    }
+    .nav a.active{ border-color: rgba(10,132,255,.35); background: rgba(10,132,255,.10); }
+    .badge{
+      min-width:28px;
+      text-align:center;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* mid */
+    .midHeader{
+      padding:18px 18px 10px 18px;
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      background: linear-gradient(180deg, rgba(10,132,255,.06), rgba(0,0,0,0));
+    }
+    .midHeader h2{ margin:0; font-size:18px; font-weight:800; }
+    .midHeader .tools{ display:flex; gap:8px; align-items:center; }
+    .btn{
+      border:1px solid var(--line);
+      border-radius: 12px;
+      padding:8px 10px;
+      background: transparent;
+      color: var(--text);
+      cursor:pointer;
+      font-size:12px;
+    }
+    .btn.primary{
+      border-color: rgba(10,132,255,.35);
+      background: rgba(10,132,255,.14);
+    }
+    .content{
+      padding:18px;
+    }
+    .section{
+      margin-bottom:18px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+    }
+    .section:last-child{ border-bottom:none; }
+    .sectionHeader{
+      display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .sectionHeader h3{
+      margin:0; font-size:15px; font-weight:800;
+    }
+    .sectionHeader .small{ color:var(--muted); font-size:12px; }
+    .briefGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin:10px 0 14px 0;
+    }
+    .briefCard{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 12px;
+      background: rgba(0,0,0,0);
+    }
+    .briefCard h4{
+      margin:0 0 8px 0;
+      font-size:12px; color:var(--muted); font-weight:700;
+      text-transform: none;
+    }
+    .briefCard .big{
+      font-weight:900;
+      font-size:14px;
+      margin-bottom:8px;
+      letter-spacing:-.01em;
+    }
+    .briefCard ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+      font-size:12px;
+      line-height:1.55;
+    }
+    .para{
+      margin:10px 0 0 0;
+      color:var(--text);
+      font-size:13px;
+      line-height:1.7;
+      white-space: pre-wrap;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .event{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px;
+      background: rgba(255,255,255,0);
+    }
+    [data-theme="dark"] .event{ background: rgba(0,0,0,0); }
+    .event .head{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      margin-bottom:8px;
+    }
+    .event .head .h{
+      font-weight:900; font-size:14px; line-height:1.35; margin:0;
+    }
+    .event .head .k{
+      color:var(--muted); font-size:12px;
+      white-space:nowrap;
+    }
+    .event .conclusion{
+      font-size:13px; line-height:1.55; color:var(--text);
+      margin:0 0 8px 0;
+      white-space: pre-wrap;
+    }
+    .pillRow{ display:flex; gap:6px; flex-wrap:wrap; margin:8px 0 0 0; }
+    .pill{
+      border:1px solid var(--line);
+      padding:4px 8px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:11px;
+    }
+    .sub{
+      margin-top:8px;
+      border-top:1px dashed var(--line);
+      padding-top:8px;
+      display:none;
+    }
+    .event.open .sub{ display:block; }
+    .sub h5{ margin:0 0 6px 0; font-size:12px; color:var(--muted); }
+    .sub ul{ margin:0; padding-left:18px; font-size:12px; line-height:1.55; }
+    .sources{ margin-top:8px; font-size:12px; color:var(--muted); }
+    .sources a{ color:var(--blue); }
+    .actionsRow{ display:flex; gap:8px; margin-top:10px; }
+    .iconBtn{
+      width:34px; height:34px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      background:transparent;
+      color:var(--text);
+    }
+
+    /* right: decision panel */
+    .right h3{ margin:0 0 10px 0; font-size:15px; font-weight:900;}
+    .kpiGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .kpi{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+    }
+    .kpi .row{ display:flex; align-items:baseline; justify-content:space-between; gap:8px;}
+    .kpi .name{ font-size:12px; color:var(--muted); font-weight:700;}
+    .kpi .unit{ font-size:11px; color:var(--muted); border:1px solid var(--line); padding:2px 6px; border-radius:999px;}
+    .kpi .val{ font-size:18px; font-weight:900; letter-spacing:-.02em; margin-top:6px;}
+    .kpi .delta{ font-size:12px; margin-top:2px; color:var(--muted);}
+    .sparkWrap{ margin-top:6px; }
+    .spark{ width:100%; height:44px; display:block; }
+    .up{ color: var(--good); }
+    .down{ color: var(--bad); }
+    .flat{ color: var(--muted); }
+
+    .alerts{ margin-top:14px; }
+    .alert{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+      margin-bottom:10px;
+    }
+    .alert .sev{
+      display:inline-block;
+      font-size:11px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      margin-right:6px;
+    }
+    .alert.warn .sev{ color: var(--warn); border-color: rgba(255,159,10,.35); background: rgba(255,159,10,.10); }
+    .alert.info .sev{ color: var(--blue); border-color: rgba(10,132,255,.35); background: rgba(10,132,255,.10); }
+    .alert .t{ font-weight:800; font-size:12px; margin:0 0 6px 0;}
+    .alert .m{ color:var(--text); font-size:12px; line-height:1.55; margin:0;}
+    .footerHint{ color:var(--muted); font-size:12px; margin-top:14px; line-height:1.5;}
+    .view{ display:none; }
+    .view.active{ display:block; }
+    @media (max-width: 1200px){
+      .app{ grid-template-columns: 320px 1fr; }
+      .right{ display:none; }
+    }
+    @media (max-width: 860px){
+      .app{ grid-template-columns: 1fr; }
+      .left, .right{ position:static; height:auto; }
+      .cards{ grid-template-columns: 1fr; }
+      .briefGrid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 <body>
-<div class="container">
-  <aside class="card left">
-    <div class="brand"><div class="title">Ben的每日资讯简报</div>
-<div class="sub">日期：2026-01-02 · 生成：<span id="genAt">—</span></div>
+<div class="app">
+
+  <!-- LEFT -->
+  <aside class="panel left">
+    <div>
+      <h1 class="title">{{ TITLE }}</h1>
+      <div class="meta">日期：{{ DATE }} · 生成：{{ GENERATED_AT }}（北京）</div>
     </div>
-    <div class="controls">
-      <input id="q" class="search" placeholder="搜索标题/标签/来源…"/>
-      <div class="pills">
-        <div class="pill active" data-view="all">全部</div>
-        <div class="pill" data-view="cn">中国相关</div>
-        <div class="pill" data-view="global">全球（不含中国）</div>
-      </div>
+
+    <div class="search">
+      <input id="q" placeholder="搜索标题 / 标签 / 来源…" />
     </div>
-    <nav class="nav" id="nav"></nav>
-    <div class="left-foot">
-      <button class="btn" id="btnHome">回到顶部</button>
-      <button class="btn" id="btnSettings">设置</button>
+
+    <div class="toggle" role="tablist" aria-label="视图切换">
+      <div class="chip active" data-viewbtn="all">全部</div>
+      <div class="chip" data-viewbtn="cn">中国相关</div>
+      <div class="chip" data-viewbtn="global">全球（不含中国）</div>
+      <div class="chip" id="themeBtn" style="margin-left:auto;">日/夜</div>
+    </div>
+
+    <div class="nav" id="nav">
+      <!-- injected -->
+    </div>
+
+    <div style="margin-top:16px; display:flex; justify-content:space-between; gap:10px;">
+      <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部</button>
+      <button class="btn" onclick="openSettings()">设置</button>
     </div>
   </aside>
 
-  <main class="card main">
-    <div class="topbar">
-      <div class="h1">今日要点与事件卡</div>
+  <!-- MID -->
+  <main class="panel mid">
+    <div class="midHeader">
+      <h2>今日要点与事件卡</h2>
+      <div class="tools">
+        <button class="btn" onclick="toggleAll(true)">展开全部</button>
+        <button class="btn" onclick="toggleAll(false)">折叠全部</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      {% for key, view in VIEWS.items() %}
+      <div class="view {% if key=='all' %}active{% endif %}" data-view="{{ key }}">
+        <!-- TOP -->
+        <section class="section" id="top">
+          <div class="sectionHeader">
+            <h3>Top 今日要点</h3>
+            <div class="small">{{ view.sections | length }} 栏目</div>
+          </div>
+
+          <div class="briefGrid">
+            <div class="briefCard">
+              <h4>一句话结论</h4>
+              <div class="big">{{ view.top.one_liner }}</div>
+              <h4 style="margin-top:10px;">关键事实锚点</h4>
+              <ul>
+                {% for x in view.top.facts %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="briefCard">
+              <h4>今日动作</h4>
+              <ul>
+                {% for x in view.top.actions %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+              <h4 style="margin-top:10px;">关注指标 / 阈值</h4>
+              <ul>
+                {% for x in view.top.watch %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="para">{{ view.top.summary }}</div>
+        </section>
+
+        <!-- SECTIONS -->
+        {% for s in view.sections %}
+        <section class="section" id="sec-{{ s.id }}">
+          <div class="sectionHeader">
+            <h3>{{ s.name }}</h3>
+            <div class="small">{{ (s.cards|length) }} 条（事件卡）</div>
+          </div>
+
+          <div class="briefGrid">
+            <div class="briefCard">
+              <h4>一句话结论</h4>
+              <div class="big">{{ s.brief.one_liner }}</div>
+              <h4 style="margin-top:10px;">事实锚点</h4>
+              <ul>
+                {% for x in s.brief.facts %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+              <h4 style="margin-top:10px;">影响</h4>
+              <ul>
+                {% for x in s.brief.impacts %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="briefCard">
+              <h4>可执行动作</h4>
+              <ul>
+                {% for x in s.brief.actions %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+              <h4 style="margin-top:10px;">监控指标 / 阈值</h4>
+              <ul>
+                {% for x in s.brief.watch %}
+                <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="para">{{ s.brief.summary }}</div>
+
+          <div class="cards">
+            {% for c in s.cards %}
+            <article class="event" data-event-id="{{ c.id }}" data-region="{{ c.region }}" data-text="{{ (c.headline_zh ~ ' ' ~ (c.tags|join(' ')) ~ ' ' ~ (c.sources[0].name if c.sources) )|e }}">
+              <div class="head">
+                <p class="h">{{ c.headline_zh }}</p>
+                <div class="k">{{ (c.sources[0].name if c.sources) }}</div>
+              </div>
+              <p class="conclusion">{{ c.conclusion }}</p>
+
+              <div class="pillRow">
+                {% for t in c.tags %}
+                  <span class="pill">{{ t }}</span>
+                {% endfor %}
+              </div>
+
+              <div class="actionsRow">
+                <button class="btn primary" onclick="toggleEvent(this)">展开</button>
+                <a class="btn" href="{{ c.sources[0].url if c.sources else '#' }}" target="_blank" rel="noopener">打开原文</a>
+                <div style="flex:1"></div>
+                <button class="iconBtn" title="有用" onclick="vote(this,'up')">👍</button>
+                <button class="iconBtn" title="无用" onclick="vote(this,'down')">👎</button>
+              </div>
+
+              <div class="sub">
+                <h5>证据</h5>
+                <ul>
+                  {% for x in c.evidence %}
+                  <li>{{ x }}</li>
+                  {% endfor %}
+                </ul>
+
+                <h5 style="margin-top:10px;">影响</h5>
+                <ul>
+                  {% for x in c.impact %}
+                  <li>{{ x }}</li>
+                  {% endfor %}
+                </ul>
+
+                <h5 style="margin-top:10px;">下一步</h5>
+                <ul>
+                  {% for x in c.next %}
+                  <li>{{ x }}</li>
+                  {% endfor %}
+                </ul>
+
+                <div class="sources">
+                  来源：
+                  {% for s2 in c.sources %}
+                    <a href="{{ s2.url }}" target="_blank" rel="noopener">{{ s2.name }}</a>{% if not loop.last %} · {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+      {% endfor %}
 
     </div>
-    <div class="main-scroll" id="main"></div>
   </main>
 
-  <aside class="card right">
-    <div class="right-sticky">
-      <div class="right-title">数据与趋势快照</div>
-      <div class="right-sub">生成时刻快照（已内嵌）<br>更新时间：<span id="kpiAt">—</span></div>
+  <!-- RIGHT -->
+  <aside class="panel right">
+    <h3>决策面板</h3>
+    <div class="meta">快照生成：{{ GENERATED_AT }}（北京）</div>
+
+    <div class="alerts">
+      <h3 style="margin-top:14px;">提示 / 阈值触发</h3>
+      {% if ALERTS and (ALERTS|length)>0 %}
+        {% for a in ALERTS %}
+        <div class="alert {{ a.severity }}">
+          <span class="sev">{{ a.severity }}</span>
+          <p class="t">{{ a.title }}：{{ a.op }}{{ a.threshold }}</p>
+          <p class="m">{{ a.message }}</p>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="meta">今日无触发。</div>
+      {% endif %}
     </div>
-    <div class="right-scroll">
-      <div class="group">LME 金属（Proxy）</div><div class="kgrid" id="kMetals"></div>
-      <div class="hr"></div>
-      <div class="group">利率 / 汇率 / 美元</div><div class="kgrid" id="kMacro"></div>
-      <div class="hr"></div>
-      <div class="group">反馈闭环</div>
+
+    <h3 style="margin-top:14px;">KPI 与趋势快照</h3>
+    <div class="kpiGrid">
+      {% for k in KPIS %}
       <div class="kpi">
-        <div class="k-head"><span>7 天窗口</span><span id="fbCount">0</span></div>
-        <div class="k-delta">点 👍/👎 形成偏好；可导出反馈供生成端读取（用于“选题闭环”）。</div>
-        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
-          <button class="btn" id="btnExport">导出反馈</button>
-          <button class="btn" id="btnClearFB">清空本机反馈</button>
+        <div class="row">
+          <div class="name">{{ k.title }} ({{ k.id }})</div>
+          <div class="unit">{{ k.unit if k.unit else ' ' }}</div>
+        </div>
+        <div class="val">{{ '—' if k.value is none else ('%.4g'|format(k.value)) }}</div>
+        <div class="delta">
+          {% if k.delta_pct is not none %}
+            {% if k.direction=='up' %}<span class="up">{% elif k.direction=='down' %}<span class="down">{% else %}<span class="flat">{% endif %}
+              {{ '%.2f'|format(k.delta_abs) }} ({{ '%.2f'|format(k.delta_pct) }}%)
+            </span>
+          {% else %}
+            —
+          {% endif %}
+          · {{ k.source }}
+        </div>
+        <div class="sparkWrap {% if k.direction=='up' %}up{% elif k.direction=='down' %}down{% else %}flat{% endif %}">
+          {{ k.spark | safe }}
         </div>
       </div>
+      {% endfor %}
+    </div>
+
+    <div class="footerHint">
+      反馈：在事件卡点 👍/👎，会保存在本地浏览器（LocalStorage），用于后续权重与栏目优先级校准（后续迭代）。
     </div>
   </aside>
+
 </div>
 
-<div class="overlay" id="overlay">
-  <div class="panel">
-    <div class="phead"><div class="ptitle">设置</div><button class="btn" id="btnClose">关闭</button></div>
-    <div class="tabs">
-      <div class="tab active" data-tab="general">通用</div>
-      <div class="tab" data-tab="layout">布局</div>
-      <div class="tab" data-tab="algo">算法</div>
-      <div class="tab" data-tab="config">扩展</div>
+<!-- Settings modal (simple placeholder) -->
+<div id="settings" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.35); padding:24px;">
+  <div class="panel" style="max-width:760px;margin:0 auto;padding:18px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-weight:900;font-size:18px;">设置</div>
+      <button class="btn" onclick="closeSettings()">关闭</button>
     </div>
-    <div class="pbody" id="pbody"></div>
+    <div style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6;">
+      本版本为“单页静态输出”。栏目与数据维度建议通过 <span style="font-family:var(--mono)">digest_config_v15.json</span> 增加/修改。
+      下一阶段可加入“可视化设置编辑器”（在页面里填写后生成 JSON 并下载），再由 GitHub Actions 自动应用。
+    </div>
   </div>
 </div>
 
-<script>window.DIGEST = {"date": "2026-01-02", "generated_at_bjt": "2026-01-02 14:12", "config": {"version": "v15"}, "config_full": {"version": "v15", "domain_denylist": ["reuters.com", "ft.com", "wsj.com", "bloomberg.com", "economist.com"], "sections": [{"id": "top", "name": "Top 今日要点", "type": "google_news_cluster", "items_per_section": 15, "query_global": "macro markets rates yields fx sanctions export controls ai data center power copper aluminium lme cbam southeast asia supply chain", "query_cn": "china cny yuan hong kong taiwan export controls sanctions cbam supply chain metals", "tags": ["宏观", "制裁", "AI算力", "金属", "CBAM", "东南亚"]}, {"id": "macro", "name": "宏观 / 市场（利率·汇率·风险偏好）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "fed ecb boj yields rates inflation dollar dxy fx risk sentiment", "query_cn": "china pboe liquidity repo cny fx", "tags": ["利率", "汇率", "风险偏好"]}, {"id": "geo", "name": "地缘政治 / 制裁 / 合规（OFAC·EU）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "OFAC sanctions EU council regulation export controls compliance dual-use", "query_cn": "china export controls sanctions compliance", "tags": ["制裁", "出口管制", "合规"]}, {"id": "ai", "name": "AI 计算基础设施（算力·电力·冷却）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "AI compute infrastructure data center power grid cooling liquid cooling GPU HBM networking", "query_cn": "china ai data center power compute gpu", "tags": ["算力", "电力", "液冷"]}, {"id": "metals", "name": "大宗 / 金属（LME·供需·库存）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "LME copper aluminium nickel zinc lead tin inventories smelter premium demand", "query_cn": "china copper aluminium nickel smelter demand", "tags": ["铜", "铝", "镍", "LME"]}, {"id": "carbon", "name": "碳 / CBAM / 碳市场（Verra·EU）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "CBAM European Commission carbon border adjustment mechanism ETS Verra carbon credits ICVCM", "query_cn": "cbam china exporters carbon footprint", "tags": ["CBAM", "碳会计", "碳市场"]}, {"id": "sea", "name": "东南亚供应链（制造·转移·关键矿产）", "type": "google_news_cluster", "items_per_section": 15, "query_global": "Southeast Asia supply chain Vietnam Malaysia Thailand Indonesia manufacturing relocation critical minerals", "query_cn": "Vietnam supply chain china companies", "tags": ["越南", "制造", "关键矿产"]}, {"id": "frontier", "name": "前沿学科雷达（量子·聚变·材料·生物）", "type": "mixed_news_arxiv", "items_per_section": 15, "query_global": "quantum computing fusion energy photonics advanced materials synthetic biology", "arxiv_cats": ["quant-ph", "physics.plasm-ph", "cond-mat.mtrl-sci", "q-bio.*", "cs.AI", "cs.LG"], "tags": ["量子", "聚变", "材料", "生物"]}], "kpis": {"metals": [{"provider": "fred", "series_id": "PCOPPUSDM", "label": "铜（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PALUMUSDM", "label": "铝（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PZINCUSDM", "label": "锌（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PNICKUSDM", "label": "镍（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PLEADUSDM", "label": "铅（Proxy）", "unit": "$/t"}, {"provider": "fred", "series_id": "PTINUSDM", "label": "锡（Proxy）", "unit": "$/t"}], "macro": [{"provider": "fred", "series_id": "DGS10", "label": "美债10Y", "unit": "%"}, {"provider": "fred", "series_id": "DEXCHUS", "label": "USD/CNY", "unit": ""}, {"provider": "fred", "series_id": "DTWEXBGS", "label": "美元指数（广义）", "unit": ""}, {"provider": "fred", "series_id": "DEXUSEU", "label": "EUR/USD", "unit": ""}]}}, "kpis": {"generated_at_bjt": "2026-01-02 14:12", "metals": [{"label": "铜（Proxy）（PCOPPUSDM）", "unit": "$/t", "value_str": "9,835", "delta": 303.8672, "pct": 3.19, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.63,37.80 L 5.25,36.07 L 6.88,35.99 L 8.51,32.86 L 10.14,26.67 L 11.76,24.90 L 13.39,20.51 L 15.02,15.95 L 16.64,12.98 L 18.27,5.57 L 19.90,10.28 L 21.53,11.87 L 23.15,12.58 L 24.78,12.99 L 26.41,8.54 L 28.03,9.42 L 29.66,10.99 L 31.29,8.95 L 32.92,7.54 L 34.54,5.00 L 36.17,5.50 L 37.80,12.37 L 39.42,15.25 L 41.05,28.67 L 42.68,24.74 L 44.31,26.90 L 45.93,27.73 L 47.56,24.22 L 49.19,21.39 L 50.81,15.78 L 52.44,16.41 L 54.07,17.11 L 55.69,17.53 L 57.32,22.52 L 58.95,21.16 L 60.58,20.46 L 62.20,21.59 L 63.83,22.22 L 65.46,25.18 L 67.08,22.99 L 68.71,21.06 L 70.34,21.56 L 71.97,21.97 L 73.59,18.55 L 75.22,11.92 L 76.85,6.00 L 78.47,10.13 L 80.10,12.45 L 81.73,16.01 L 83.36,13.56 L 84.98,11.14 L 86.61,15.18 L 88.24,16.64 L 89.86,16.05 L 91.49,12.93 L 93.12,9.36 L 94.75,14.32 L 96.37,11.17 L 98.00,8.49' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "铝（Proxy）（PALUMUSDM）", "unit": "$/t", "value_str": "2,526", "delta": 78.615, "pct": 3.21, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.63,37.26 L 5.25,37.17 L 6.88,36.02 L 8.51,33.66 L 10.14,32.20 L 11.76,32.40 L 13.39,31.03 L 15.02,28.98 L 16.64,26.61 L 18.27,24.50 L 19.90,24.28 L 21.53,23.35 L 23.15,21.42 L 24.78,17.17 L 26.41,15.34 L 28.03,20.80 L 29.66,19.72 L 31.29,14.03 L 32.92,9.63 L 34.54,5.00 L 36.17,9.61 L 37.80,17.08 L 39.42,21.92 L 41.05,24.98 L 42.68,24.51 L 44.31,28.35 L 45.93,27.79 L 47.56,26.04 L 49.19,25.17 L 50.81,23.40 L 52.44,24.84 L 54.07,27.04 L 55.69,26.27 L 57.32,27.45 L 58.95,29.08 L 60.58,29.54 L 62.20,29.98 L 63.83,29.08 L 65.46,28.91 L 67.08,28.76 L 68.71,28.95 L 70.34,28.77 L 71.97,29.18 L 73.59,28.26 L 75.22,23.32 L 76.85,22.09 L 78.47,23.35 L 80.10,26.07 L 81.73,26.01 L 83.36,24.08 L 84.98,21.55 L 86.61,21.80 L 88.24,22.55 L 89.86,21.99 L 91.49,20.45 L 93.12,20.52 L 94.75,25.73 L 96.37,24.27 L 98.00,22.83' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "锌（Proxy）（PZINCUSDM）", "unit": "$/t", "value_str": "2,655", "delta": 12.0286, "pct": 0.46, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.63,35.33 L 5.25,34.89 L 6.88,34.92 L 8.51,31.34 L 10.14,29.66 L 11.76,30.82 L 13.39,30.21 L 15.02,29.47 L 16.64,28.90 L 18.27,26.72 L 19.90,27.00 L 21.53,27.06 L 23.15,26.44 L 24.78,25.69 L 26.41,20.67 L 28.03,21.43 L 29.66,20.06 L 31.29,16.97 L 32.92,16.64 L 34.54,11.34 L 36.17,5.00 L 37.80,14.32 L 39.42,16.13 L 41.05,24.62 L 42.68,17.11 L 44.31,24.31 L 45.93,26.76 L 47.56,27.20 L 49.19,24.44 L 50.81,21.67 L 52.44,24.18 L 54.07,26.75 L 55.69,29.81 L 57.32,34.22 L 58.95,35.93 L 60.58,35.48 L 62.20,35.47 L 63.83,34.07 L 65.46,34.82 L 67.08,33.32 L 68.71,33.83 L 70.34,33.67 L 71.97,36.17 L 73.59,34.65 L 75.22,30.50 L 76.85,26.94 L 78.47,29.21 L 80.10,29.70 L 81.73,30.57 L 83.36,28.61 L 84.98,24.61 L 86.61,26.18 L 88.24,25.73 L 89.86,28.96 L 91.49,29.38 L 93.12,28.00 L 94.75,32.27 L 96.37,31.79 L 98.00,31.60' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "镍（Proxy）（PNICKUSDM）", "unit": "$/t", "value_str": "15,003", "delta": -347.2956, "pct": -2.26, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.63,37.06 L 5.25,36.59 L 6.88,35.96 L 8.51,35.01 L 10.14,33.33 L 11.76,31.61 L 13.39,30.41 L 15.02,34.02 L 16.64,33.83 L 18.27,32.04 L 19.90,31.42 L 21.53,30.03 L 23.15,29.49 L 24.78,29.10 L 26.41,29.13 L 28.03,28.18 L 29.66,28.04 L 31.29,24.17 L 32.92,21.42 L 34.54,5.00 L 36.17,6.31 L 37.80,14.44 L 39.42,18.33 L 41.05,25.61 L 42.68,24.70 L 44.31,23.47 L 45.93,24.70 L 47.56,18.85 L 49.19,13.18 L 50.81,14.37 L 52.44,16.92 L 54.07,22.62 L 55.69,21.82 L 57.32,24.53 L 58.95,26.03 L 60.58,26.26 L 62.20,27.33 L 63.83,28.66 L 65.46,30.95 L 67.08,32.99 L 68.71,33.96 L 70.34,34.51 L 71.97,34.14 L 73.59,32.38 L 75.22,31.16 L 76.85,28.77 L 78.47,32.21 L 80.10,34.14 L 81.73,34.19 L 83.36,34.42 L 84.98,33.43 L 86.61,35.15 L 88.24,35.63 L 89.86,35.73 L 91.49,35.88 L 93.12,34.62 L 94.75,36.11 L 96.37,35.77 L 98.00,36.35' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "铅（Proxy）（PLEADUSDM）", "unit": "$/t", "value_str": "1,974", "delta": 17.1439, "pct": 0.88, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,36.78 L 3.63,30.48 L 5.25,33.85 L 6.88,39.00 L 8.51,31.58 L 10.14,25.99 L 11.76,26.30 L 13.39,22.81 L 15.02,29.85 L 16.64,26.45 L 18.27,17.36 L 19.90,16.90 L 21.53,9.10 L 23.15,5.00 L 24.78,13.85 L 26.41,8.71 L 28.03,9.50 L 29.66,11.01 L 31.29,9.40 L 32.92,11.27 L 34.54,8.71 L 36.17,6.51 L 37.80,19.21 L 39.42,23.08 L 41.05,27.87 L 42.68,23.41 L 44.31,34.00 L 45.93,27.09 L 47.56,21.75 L 49.19,15.03 L 50.81,16.03 L 52.44,22.12 L 54.07,20.94 L 55.69,19.36 L 57.32,22.38 L 58.95,20.53 L 60.58,21.27 L 62.20,18.84 L 63.83,13.65 L 65.46,20.08 L 67.08,17.04 L 68.71,25.63 L 70.34,22.43 L 71.97,22.83 L 73.59,24.17 L 75.22,20.42 L 76.85,15.36 L 78.47,19.24 L 80.10,21.38 L 81.73,27.13 L 83.36,26.93 L 84.98,25.27 L 86.61,27.75 L 88.24,27.72 L 89.86,31.26 L 91.49,29.37 L 93.12,25.44 L 94.75,32.10 L 96.37,29.39 L 98.00,28.47' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "锡（Proxy）（PTINUSDM）", "unit": "$/t", "value_str": "32,544", "delta": 599.6468, "pct": 1.88, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.63,38.76 L 5.25,38.38 L 6.88,38.09 L 8.51,37.65 L 10.14,36.10 L 11.76,33.29 L 13.39,27.66 L 15.02,26.70 L 16.64,25.08 L 18.27,20.00 L 19.90,19.72 L 21.53,17.78 L 23.15,16.49 L 24.78,16.66 L 26.41,13.03 L 28.03,11.19 L 29.66,10.85 L 31.29,7.81 L 32.92,5.00 L 34.54,5.04 L 36.17,6.23 L 37.80,15.25 L 39.42,20.51 L 41.05,28.84 L 42.68,29.78 L 44.31,34.31 L 45.93,36.54 L 47.56,34.15 L 49.19,30.43 L 50.81,25.50 L 52.44,26.95 L 54.07,30.63 L 55.69,28.52 L 57.32,28.58 L 58.95,26.50 L 60.58,24.54 L 62.20,28.01 L 63.83,28.61 L 65.46,29.98 L 67.08,30.41 L 68.71,29.85 L 70.34,29.16 L 71.97,27.93 L 73.59,26.20 L 75.22,20.96 L 76.85,19.17 L 78.47,20.33 L 80.10,20.55 L 81.73,20.94 L 83.36,20.94 L 84.98,20.35 L 86.61,23.36 L 88.24,24.39 L 89.86,23.47 L 91.49,20.63 L 93.12,17.57 L 94.75,19.98 L 96.37,20.44 L 98.00,19.67' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}], "macro": [{"label": "美债10Y（DGS10）", "unit": "%", "value_str": "4.14", "delta": 0.02, "pct": 0.49, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,18.30 L 3.39,13.87 L 4.78,12.39 L 6.17,16.83 L 7.57,10.91 L 8.96,7.96 L 10.35,5.00 L 11.74,12.39 L 13.13,10.91 L 14.52,16.83 L 15.91,19.78 L 17.30,15.35 L 18.70,7.96 L 20.09,13.87 L 21.48,15.35 L 22.87,13.87 L 24.26,27.17 L 25.65,30.13 L 27.04,27.17 L 28.43,36.04 L 29.83,31.61 L 31.22,34.57 L 32.61,37.52 L 34.00,39.00 L 35.39,33.09 L 36.78,31.61 L 38.17,33.09 L 39.57,36.04 L 40.96,22.74 L 42.35,18.30 L 43.74,18.30 L 45.13,15.35 L 46.52,19.78 L 47.91,9.43 L 49.30,18.30 L 50.70,18.30 L 52.09,15.35 L 53.48,22.74 L 54.87,18.30 L 56.26,13.87 L 57.65,15.35 L 59.04,16.83 L 60.43,15.35 L 61.83,19.78 L 63.22,25.70 L 64.61,28.65 L 66.00,33.09 L 67.39,34.57 L 68.78,31.61 L 70.17,21.26 L 71.57,21.26 L 72.96,25.70 L 74.35,18.30 L 75.74,13.87 L 77.13,9.43 L 78.52,7.96 L 79.91,15.35 L 81.30,13.87 L 82.70,6.48 L 84.09,7.96 L 85.48,12.39 L 86.87,10.91 L 88.26,16.83 L 89.65,10.91 L 91.04,9.43 L 92.43,7.96 L 93.83,12.39 L 95.22,13.87 L 96.61,16.83 L 98.00,13.87' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "USD/CNY（DEXCHUS）", "unit": "", "value_str": "7.0063", "delta": -0.0079, "pct": -0.11, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,11.23 L 3.39,14.03 L 4.78,11.67 L 6.17,11.23 L 7.57,11.28 L 8.96,11.90 L 10.35,6.78 L 11.74,6.18 L 13.13,6.44 L 14.52,9.89 L 15.91,9.99 L 17.30,9.74 L 18.70,9.74 L 20.09,9.74 L 21.48,9.74 L 22.87,9.74 L 24.26,9.74 L 25.65,7.81 L 27.04,6.13 L 28.43,5.00 L 29.83,8.14 L 31.22,8.96 L 32.61,8.09 L 34.00,9.86 L 35.39,9.27 L 36.78,8.27 L 38.17,9.20 L 39.57,9.45 L 40.96,12.26 L 42.35,15.19 L 43.74,15.40 L 45.13,12.39 L 46.52,10.53 L 47.91,9.17 L 49.30,7.29 L 50.70,8.19 L 52.09,9.86 L 53.48,9.25 L 54.87,9.92 L 56.26,11.79 L 57.65,16.17 L 59.04,15.09 L 60.43,12.95 L 61.83,12.98 L 63.22,12.16 L 64.61,12.36 L 66.00,13.18 L 67.39,14.37 L 68.78,18.87 L 70.17,21.11 L 71.57,21.29 L 72.96,22.17 L 74.35,22.60 L 75.74,24.25 L 77.13,22.24 L 78.52,22.71 L 79.91,22.35 L 81.30,24.33 L 82.70,24.15 L 84.09,25.72 L 85.48,26.52 L 86.87,28.52 L 88.26,29.89 L 89.65,29.53 L 91.04,30.22 L 92.43,30.09 L 93.83,31.18 L 95.22,33.41 L 96.61,36.97 L 98.00,39.00' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "美元指数（广义）（DTWEXBGS）", "unit": "", "value_str": "119.85", "delta": 0.0267, "pct": 0.02, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,39.00 L 3.39,38.74 L 4.78,32.54 L 6.17,31.05 L 7.57,30.68 L 8.96,33.07 L 10.35,26.19 L 11.74,21.64 L 13.13,22.92 L 14.52,26.97 L 15.91,26.69 L 17.30,26.49 L 18.70,23.14 L 20.09,27.27 L 21.48,24.92 L 22.87,22.31 L 24.26,18.80 L 25.65,14.92 L 27.04,14.60 L 28.43,13.85 L 29.83,17.81 L 31.22,20.12 L 32.61,19.64 L 34.00,20.68 L 35.39,17.37 L 36.78,17.30 L 38.17,16.60 L 39.57,16.87 L 40.96,18.65 L 42.35,20.74 L 43.74,22.07 L 45.13,12.79 L 46.52,11.45 L 47.91,10.56 L 49.30,5.97 L 50.70,5.68 L 52.09,7.58 L 53.48,11.30 L 54.87,12.44 L 56.26,15.56 L 57.65,18.96 L 59.04,16.60 L 60.43,14.71 L 61.83,13.56 L 63.22,10.03 L 64.61,7.64 L 66.00,5.61 L 67.39,5.00 L 68.78,8.52 L 70.17,13.33 L 71.57,15.77 L 72.96,16.62 L 74.35,14.69 L 75.74,19.75 L 77.13,20.40 L 78.52,20.40 L 79.91,19.31 L 81.30,20.42 L 82.70,20.47 L 84.09,28.97 L 85.48,27.00 L 86.87,29.37 L 88.26,30.21 L 89.65,26.91 L 91.04,28.22 L 92.43,26.76 L 93.83,28.97 L 95.22,32.55 L 96.61,35.97 L 98.00,35.64' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}, {"label": "EUR/USD（DEXUSEU）", "unit": "", "value_str": "1.1766", "delta": -0.0014, "pct": -0.12, "source": "FRED", "spark_svg": "<svg class='spark' viewBox='0 0 100 44' preserveAspectRatio='none'><path d='M 2.00,5.00 L 3.39,5.28 L 4.78,11.37 L 6.17,13.90 L 7.57,12.02 L 8.96,9.50 L 10.35,14.93 L 11.74,21.39 L 13.13,19.61 L 14.52,16.05 L 15.91,15.58 L 17.30,16.71 L 18.70,19.24 L 20.09,14.46 L 21.48,18.21 L 22.87,21.30 L 24.26,27.67 L 25.65,32.07 L 27.04,27.01 L 28.43,27.48 L 29.83,24.67 L 31.22,22.14 L 32.61,21.30 L 34.00,22.98 L 35.39,26.73 L 36.78,27.10 L 38.17,27.10 L 39.57,25.79 L 40.96,24.86 L 42.35,22.70 L 43.74,22.23 L 45.13,31.60 L 46.52,33.75 L 47.91,34.69 L 49.30,38.44 L 50.70,39.00 L 52.09,33.94 L 53.48,30.29 L 54.87,33.38 L 56.26,28.98 L 57.65,23.64 L 59.04,26.64 L 60.43,28.42 L 61.83,30.20 L 63.22,33.85 L 64.61,34.41 L 66.00,37.03 L 67.39,35.91 L 68.78,32.63 L 70.17,29.07 L 71.57,28.23 L 72.96,26.07 L 74.35,28.60 L 75.74,22.61 L 77.13,22.70 L 78.52,24.95 L 79.91,25.79 L 81.30,24.58 L 82.70,23.55 L 84.09,13.62 L 85.48,15.96 L 86.87,13.62 L 88.26,12.31 L 89.65,14.37 L 91.04,16.15 L 92.43,16.90 L 93.83,14.18 L 95.22,11.74 L 96.61,11.37 L 98.00,12.68' stroke='currentColor' stroke-opacity='0.65' fill='none' stroke-width='2'/></svg>"}]}, "sections": [{"id": "top", "name": "Top 今日要点", "tags": ["宏观", "制裁", "AI算力", "金属", "CBAM", "东南亚"], "brief_zh": "今日要点：市场极化趋势显著，制裁持续影响产业链。\n关键变化：2026市场展望显示多元化极化趋势；英国、欧盟和美国对俄罗斯实施新制裁；2026年顶级AI基础设施股票投资机会；中国制造业下滑重塑亚洲工业格局\n为什么重要：市场极化可能导致投资机会和风险增加；制裁措施将持续影响全球供应链和市场稳定；AI基础设施投资将推动技术进步和产业升级；中国制造业衰退可能影响区域经济合作\n动作：关注2026市场极化趋势的投资机会；评估制裁对供应链的潜在影响；监测AI基础设施相关股票的表现\n指标：市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势；制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加；AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多", "brief_global": "今日要点：市场极化趋势显著，制裁持续影响产业链。\n关键变化：2026市场展望显示多元化极化趋势；英国、欧盟和美国对俄罗斯实施新制裁；2026年顶级AI基础设施股票投资机会；中国制造业下滑重塑亚洲工业格局\n为什么重要：市场极化可能导致投资机会和风险增加；制裁措施将持续影响全球供应链和市场稳定；AI基础设施投资将推动技术进步和产业升级；中国制造业衰退可能影响区域经济合作\n动作：关注2026市场极化趋势的投资机会；评估制裁对供应链的潜在影响；监测AI基础设施相关股票的表现\n指标：市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势；制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加；AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多", "brief_cn": "今日要点：市场极化趋势显著，制裁持续影响产业链。\n关键变化：2026市场展望显示多元化极化趋势；英国、欧盟和美国对俄罗斯实施新制裁；2026年顶级AI基础设施股票投资机会；中国制造业下滑重塑亚洲工业格局\n为什么重要：市场极化可能导致投资机会和风险增加；制裁措施将持续影响全球供应链和市场稳定；AI基础设施投资将推动技术进步和产业升级；中国制造业衰退可能影响区域经济合作\n动作：关注2026市场极化趋势的投资机会；评估制裁对供应链的潜在影响；监测AI基础设施相关股票的表现\n指标：市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势；制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加；AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多", "events": [{"id": "macro_1", "title": "2026 market outlook: A multidimensional polarization - J.P. Morgan", "title_zh": "1) 2026市场展望：多维度极化", "summary_zh": "2) 要点：市场将出现多元化的极化趋势。", "source_hint": "J.P. Morgan", "date": "Tue, 09 Dec 2025", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9keHZKTjBMa0NLZXBaV2pjNG0tUm5jZjZ6Ukd3bHRVNDExZmJmcWtOaFlMbmNmSXFiaWVRQU9xTWhrZHJJdzhZcXRybVVnSnhpNldjUU9mVktnVFZLeE1LQ0pBX0kxN2ZaMGNIYmRXVzZNbkJwR09wM3V4Z2g?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_2", "title": "US bank worries spark sell-off - Convera", "title_zh": "1) 美国银行担忧引发抛售 - Convera", "summary_zh": "2) 美国银行业的不安情绪导致市场抛售。", "source_hint": "Convera", "date": "Fri, 17 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWjhiOGtHSnl6X1RJcmJMZWdZQkhqekhXZi1MR0xPVThvSGJJMHN0YU1wb2dlcUFFYWF1cHhhcGJSZHNEUmZ5SW4zZ1hmY0E2aXNKNGJ5VnNONDZ5T0M2WDF0WjYzR1RLRE95RDFuaTFOekcyQnZOei1fUDB3SVNkS1BXLXZUOHBXd1V1OUNicnplcDNMVWk3NWcwaEhrTmk0TEpN?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "geo_1", "title": "UK, EU and US sanctions on Russia - Fieldfisher", "title_zh": "1) 英国、欧盟和美国对俄罗斯的制裁", "summary_zh": "2) 各国对俄罗斯实施制裁以应对其行为。", "source_hint": "Fieldfisher", "date": "Wed, 10 Dec 2025", "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRkR0OE4zakg3ajgzTUI1UTg0cnk5LUlWU3VfcmdYb3VwSWJYVE43U3lXWHBGb0Vza0huN2xZN1BOM1dtZFg5YWFSYUU4T3p2TlRuUUl4RlB2cDV1QjdNVGJ3SDRTOWZkUUFpMVByc1F5TV9GWHFNV2REempsczhtRlFzNUJKZ093WTJVX0I2bDlDRl9IbGJ2NjhPbXZHV3JZRWQ5cXpJakpWYlRSVnpOSGlJbw?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_2", "title": "Sanctions extraterritoriality and overlapping jurisdictions: new horizons in US, EU and UK law - Global Investigations Review", "title_zh": "1) 制裁的域外适用与重叠管辖：美欧英法律的新视野", "summary_zh": "2) 探讨美欧英法律中制裁的域外适用及其管辖重叠问题。", "source_hint": "Global Investigations Review", "date": "Mon, 07 Jul 2025", "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNU0F2YUZqQVRUOGNFN3Z1SXI0YWF3bnU1WDIyVFNHMGp3UnFNdUpDUHFDWHZRbUliTE5jWkMwclY1MFo3YUpjdjBRWWNDOHNubjZvVTNvZW5aOFdvY2UtLTg1S3d5QW1LMjRpTzVCaHFqNWxlS05BSno2LUVveml3eEZ2aGF5cG96UC00RTZrNjB2dWJYSzZyR3RKbE56TFB6VEdBcFNDOThOMlFfLTdLVzZBUHF0bmNUWWFUbTJQc2h6cjN3OWk0RE5ZLVJSMVlBejg2bmZ5S0JDc2NLSTFsVGg0R2VvMWpMZERPaUZxY0tKWnJEeFBaR1E3YVA1dTlXN3RjeU52U3JoOU0?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "ai_1", "title": "Top AI Infrastructure Stocks 2026: Data Center Picks & Shovels - Exoswan Insights", "title_zh": "1) 2026年顶级AI基础设施股票：数据中心投资分析", "summary_zh": "2) 关注数据中心相关股票的投资机会。", "source_hint": "Exoswan Insights", "date": "Thu, 11 Dec 2025", "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5FZkdReFV6bndNakt0ck9RX1l3N2p2S1pVTXVDZW1nRnMxV1BOVkZzTGp0ZnRxNEZSWjVGVnlKQmQwSUt3eHFRaTR5N1hiZ2pUdEtZaW95cw?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_2", "title": "Meta’s Infrastructure Evolution and the Advent of AI - Engineering at Meta", "title_zh": "1) Meta基础设施的演变与人工智能的到来", "summary_zh": "2) Meta在基础设施和人工智能领域的工程进展。", "source_hint": "Engineering at Meta", "date": "Mon, 29 Sep 2025", "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVEpDSmdobjhEV25aTHhhZlVodWpSNG1CeExoSmhib2paTnFOT2d3SXFJLU1COXZYUGJWdW42Wk80UkZOU3JPak8wRmlITjdqWktvUWp5Y1o0aVFuLWF5dDJLUWZUX2I4N3dwdzRrTElJSl85SW1WZEFHalJmNjNGRklJWTJ6dTlxQ3d4ZVJlTDBBblUxUHphUGViMDFMbEpHUi03Vi1pTlMxeVNxT1JB?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "metals_1", "title": "Fastmarkets monthly base metals market update - Fastmarkets", "title_zh": "1) Fastmarkets每月基础金属市场更新", "summary_zh": "2) 要点：提供基础金属市场的最新动态与分析。", "source_hint": "Fastmarkets", "date": "Fri, 20 Jun 2025", "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNlc5c1JlektfNnFFOGFkYktGUzE1TzlFa2h1SzNsbDg0STlwSDladVhYNlRnNWlZT1l3VHJFMEhnS3ppekJEdllLQlpGbXI3UTMxRTBEcld6SnU1VkJQSkF3QW1ZTHZtS1RHNk9pcXlVMUNISkk5aUUtcUtNTGo4X0JKM1hXbWlUX202OWFsdUYzOTlUMDV6ZHRDQ3loUQ?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_2", "title": "Trump Tariffs Reshape Global Metal Markets as Tin Surges 25% - Discovery Alert", "title_zh": "1) 特朗普关税重塑全球金属市场，锡价飙升25%", "summary_zh": "2) 锡价大幅上涨，全球金属市场受关税影响显著。", "source_hint": "Discovery Alert", "date": "Sat, 05 Apr 2025", "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMGs4S0lja2ZxTllKTFk4cWpJdWhqTXhfZlhHc0FZLWFUQ3JtVHNQOXhLQ3lzLW9OUU1kemZFd3ZfZFBZZmViQnZkSTNoX0xNdXd1WF9fUXdITFFkbm5jVVR5TDFQdmhkRUhkVEJ6RG5BbTM4WlpXbWpLYWNmYlkxdUQ0SWJfUEk?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "carbon_1", "title": "The price of CO₂ - flow – Deutsche Bank", "title_zh": "1) 二氧化碳价格流动 - 德意志银行", "summary_zh": "2) 文章探讨二氧化碳价格的变化及其影响。", "source_hint": "flow – Deutsche Bank", "date": "Thu, 25 Jul 2024", "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1QbEcwZUV5aDduOGV3dHp4RUNUMy12QlVIN3JfclpMV2dBcDh2djUxaHBBWW9GNC1lNnlMcURuZVRkcmxrbWtyNUkta3VYMUJObzQ4QmkwVW9rUVR3bXJRenUwbGMxc1BoS0ZHNEZXeWQ?oc=5", "tags": ["CBAM", "碳会计", "碳市场"], "region": "global"}, {"id": "carbon_2", "title": "Carbon Markets in 2025: A New Era of Accountability, Quality, and Transparency - CarbonCredits.com", "title_zh": "1) 2025年碳市场：责任、质量与透明度的新纪元", "summary_zh": "2) 碳市场将迎来更高的责任和透明度标准。", "source_hint": "CarbonCredits.com", "date": "Mon, 10 Feb 2025", "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYzVEbi1VN080VmRTYnZFTk05WnpnS29VWjhRWDFLTVhNWGIycGMtMzVBRlp2X1pHamVXUi01eXd0MkV4TEVUemlhXzdsc2hJcVd4Mk01ZjFJa3lRbE5uU2pCS0NZRTItX2drWEV4YVZDekVVTzBiUU1VSW5uWVdXM2RORDlTZXpDZ0F2YnhPQVc2TDExanNrMm16R253eElxWS0xTg?oc=5", "tags": ["CBAM", "碳会计", "碳市场"], "region": "global"}], "brief_html": "\n  <div class='topgrid'>\n    <div class='tblock'>\n      <div class='tlabel'>一句话结论</div>\n      <div class='tmain'>市场极化趋势显著，制裁持续影响产业链。</div>\n      <div class='tlabel' style='margin-top:10px'>关键变化</div>\n      <ul class='tlist'><li>2026市场展望显示多元化极化趋势</li><li>英国、欧盟和美国对俄罗斯实施新制裁</li><li>2026年顶级AI基础设施股票投资机会</li><li>中国制造业下滑重塑亚洲工业格局</li></ul>\n      <div class='tlabel' style='margin-top:10px'>为什么重要</div>\n      <ul class='tlist'><li>市场极化可能导致投资机会和风险增加</li><li>制裁措施将持续影响全球供应链和市场稳定</li><li>AI基础设施投资将推动技术进步和产业升级</li><li>中国制造业衰退可能影响区域经济合作</li></ul>\n    </div>\n    <div class='tblock'>\n      <div class='tlabel'>今日动作</div>\n      <ul class='tlist'><li>关注2026市场极化趋势的投资机会</li><li>评估制裁对供应链的潜在影响</li><li>监测AI基础设施相关股票的表现</li></ul>\n      <div class='tlabel' style='margin-top:10px'>关注指标/阈值</div>\n      <ul class='tlist'><li>市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势</li><li>制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加</li><li>AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多</li></ul>\n    </div>\n  </div>\n  ", "brief_html_global": "\n  <div class='topgrid'>\n    <div class='tblock'>\n      <div class='tlabel'>一句话结论</div>\n      <div class='tmain'>市场极化趋势显著，制裁持续影响产业链。</div>\n      <div class='tlabel' style='margin-top:10px'>关键变化</div>\n      <ul class='tlist'><li>2026市场展望显示多元化极化趋势</li><li>英国、欧盟和美国对俄罗斯实施新制裁</li><li>2026年顶级AI基础设施股票投资机会</li><li>中国制造业下滑重塑亚洲工业格局</li></ul>\n      <div class='tlabel' style='margin-top:10px'>为什么重要</div>\n      <ul class='tlist'><li>市场极化可能导致投资机会和风险增加</li><li>制裁措施将持续影响全球供应链和市场稳定</li><li>AI基础设施投资将推动技术进步和产业升级</li><li>中国制造业衰退可能影响区域经济合作</li></ul>\n    </div>\n    <div class='tblock'>\n      <div class='tlabel'>今日动作</div>\n      <ul class='tlist'><li>关注2026市场极化趋势的投资机会</li><li>评估制裁对供应链的潜在影响</li><li>监测AI基础设施相关股票的表现</li></ul>\n      <div class='tlabel' style='margin-top:10px'>关注指标/阈值</div>\n      <ul class='tlist'><li>市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势</li><li>制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加</li><li>AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多</li></ul>\n    </div>\n  </div>\n  ", "brief_html_cn": "\n  <div class='topgrid'>\n    <div class='tblock'>\n      <div class='tlabel'>一句话结论</div>\n      <div class='tmain'>市场极化趋势显著，制裁持续影响产业链。</div>\n      <div class='tlabel' style='margin-top:10px'>关键变化</div>\n      <ul class='tlist'><li>2026市场展望显示多元化极化趋势</li><li>英国、欧盟和美国对俄罗斯实施新制裁</li><li>2026年顶级AI基础设施股票投资机会</li><li>中国制造业下滑重塑亚洲工业格局</li></ul>\n      <div class='tlabel' style='margin-top:10px'>为什么重要</div>\n      <ul class='tlist'><li>市场极化可能导致投资机会和风险增加</li><li>制裁措施将持续影响全球供应链和市场稳定</li><li>AI基础设施投资将推动技术进步和产业升级</li><li>中国制造业衰退可能影响区域经济合作</li></ul>\n    </div>\n    <div class='tblock'>\n      <div class='tlabel'>今日动作</div>\n      <ul class='tlist'><li>关注2026市场极化趋势的投资机会</li><li>评估制裁对供应链的潜在影响</li><li>监测AI基础设施相关股票的表现</li></ul>\n      <div class='tlabel' style='margin-top:10px'>关注指标/阈值</div>\n      <ul class='tlist'><li>市场极化指数：上升 | 阈值：较昨日上行 | 说明：反映市场多元化趋势</li><li>制裁影响指数：上升 | 阈值：较昨日上行 | 说明：制裁措施增加</li><li>AI基础设施投资回报率：上升 | 阈值：5%-10% | 说明：投资机会增多</li></ul>\n    </div>\n  </div>\n  "}, {"id": "macro", "name": "宏观 / 市场（利率·汇率·风险偏好）", "tags": ["利率", "汇率", "风险偏好"], "brief_zh": "近期市场展望显示，2026年将出现多维度极化趋势，市场参与者需对此保持高度警惕。美国银行业的不安情绪引发了市场抛售，反映出投资者对金融稳定性的担忧，这一现象可能会加剧市场的不确定性并影响资金流动。\n\n在外汇市场方面，MUFG的研究指出，本月外汇市场的趋势与预测将受到多重因素的影响，尤其是美元指数（DXY）的动态。OANDA的分析显示，美元疲软使得欧元有望实现显著的年度涨幅，市场对关键经济数据的期待将进一步影响汇率走势。美元/日元的预测则需要关注美联储与日本央行的政策动向，以及美中关系的变化，这些因素将直接影响汇率波动。\n\n日元近期遭遇自七月以来最糟糕的月度下跌，主要由于日本央行未能满足市场预期，导致日元贬值。尽管如此，市场分析师认为日元贬值可能在未来出现反转，投资者需密切关注相关政策变化。\n\n展望下周，市场将聚焦于利率变化及风险管理策略，特别是在当前被分歧困扰的环境中，Convera面临的挑战可能影响其发展方向。对于2025年日元对欧元的汇率预测，关键因素将包括经济数据和政策调整。\n\n综上所述，当前市场环境复杂多变，企业需及时调整策略以应对潜在风险。\n\n动作：\n1. 加强对外汇市场动态的监测，特别是美元和日元的走势，以便及时调整外汇风险管理策略。\n2. 评估美国银行业的不安情绪对公司融资和投资决策的影响，必要时调整资金配置以降低风险。", "brief_global": "近期市场展望显示，2026年将出现多维度极化趋势，市场参与者需对此保持高度警惕。美国银行业的不安情绪引发了市场抛售，反映出投资者对金融稳定性的担忧，这一现象可能会加剧市场的不确定性并影响资金流动。\n\n在外汇市场方面，MUFG的研究指出，本月外汇市场的趋势与预测将受到多重因素的影响，尤其是美元指数（DXY）的动态。OANDA的分析显示，美元疲软使得欧元有望实现显著的年度涨幅，市场对关键经济数据的期待将进一步影响汇率走势。美元/日元的预测则需要关注美联储与日本央行的政策动向，以及美中关系的变化，这些因素将直接影响汇率波动。\n\n日元近期遭遇自七月以来最糟糕的月度下跌，主要由于日本央行未能满足市场预期，导致日元贬值。尽管如此，市场分析师认为日元贬值可能在未来出现反转，投资者需密切关注相关政策变化。\n\n展望下周，市场将聚焦于利率变化及风险管理策略，特别是在当前被分歧困扰的环境中，Convera面临的挑战可能影响其发展方向。对于2025年日元对欧元的汇率预测，关键因素将包括经济数据和政策调整。\n\n综上所述，当前市场环境复杂多变，企业需及时调整策略以应对潜在风险。\n\n动作：\n1. 加强对外汇市场动态的监测，特别是美元和日元的走势，以便及时调整外汇风险管理策略。\n2. 评估美国银行业的不安情绪对公司融资和投资决策的影响，必要时调整资金配置以降低风险。", "brief_cn": "近期市场展望显示出多维度极化趋势，预计到2026年，市场将出现多元化的极化现象。这一变化将影响投资者的风险偏好和资产配置策略。美国银行业的不安情绪引发了市场抛售，进一步加剧了市场的波动性，投资者需对此保持警惕。\n\n在外汇市场方面，MUFG的每月外汇展望指出，当前市场趋势与预测分析显示出美元指数（DXY）的动态变化，尤其是GBP/USD的走势值得关注。美联储与日本央行的政策走向，以及美中谈判的进展，将直接影响美元/日元的汇率。近期美元疲软，欧元有望实现显著的年度涨幅，市场对关键数据的期待也在推动欧元表现强劲。\n\n日元方面，自七月以来遭遇最糟糕的月度下跌，主要由于日本央行未能满足市场预期，导致日元贬值。然而，市场分析师认为日元贬值可能在未来出现反转，投资者需密切关注相关动态。\n\n展望下周，利率变化及市场风险管理策略将成为焦点。Convera面临的分歧问题也可能影响其发展，企业应对此保持关注，以便及时调整策略。\n\n动作：\n1. 加强对外汇市场动态的监测，特别是美元与主要货币对的走势，以优化外汇风险管理策略。\n2. 评估美国银行业的不安情绪对投资组合的潜在影响，必要时调整资产配置以降低风险。", "events": [{"id": "macro_1", "title": "2026 market outlook: A multidimensional polarization - J.P. Morgan", "title_zh": "1) 2026市场展望：多维度极化", "summary_zh": "2) 要点：市场将出现多元化的极化趋势。", "source_hint": "J.P. Morgan", "date": "Tue, 09 Dec 2025", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9keHZKTjBMa0NLZXBaV2pjNG0tUm5jZjZ6Ukd3bHRVNDExZmJmcWtOaFlMbmNmSXFiaWVRQU9xTWhrZHJJdzhZcXRybVVnSnhpNldjUU9mVktnVFZLeE1LQ0pBX0kxN2ZaMGNIYmRXVzZNbkJwR09wM3V4Z2g?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_2", "title": "US bank worries spark sell-off - Convera", "title_zh": "1) 美国银行担忧引发抛售 - Convera", "summary_zh": "2) 美国银行业的不安情绪导致市场抛售。", "source_hint": "Convera", "date": "Fri, 17 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWjhiOGtHSnl6X1RJcmJMZWdZQkhqekhXZi1MR0xPVThvSGJJMHN0YU1wb2dlcUFFYWF1cHhhcGJSZHNEUmZ5SW4zZ1hmY0E2aXNKNGJ5VnNONDZ5T0M2WDF0WjYzR1RLRE95RDFuaTFOekcyQnZOei1fUDB3SVNkS1BXLXZUOHBXd1V1OUNicnplcDNMVWk3NWcwaEhrTmk0TEpN?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_3", "title": "Monthly Foreign Exchange Outlook - MUFG Research", "title_zh": "1) 每月外汇展望 - MUFG研究", "summary_zh": "2) 本月外汇市场趋势与预测分析。", "source_hint": "MUFG Research", "date": "Mon, 01 Dec 2025", "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSElZMDNYaFNscnY1eHNDNHpJOU55Qk9SZkRRM3ZheF90OERJOVNkdEd6T1RwXzQ3VGVHMHctX093UUZWOHFjNE5CcWJkM0RSeG9haWVHSkx0cXFvb3cxUEZqb2MwOVQ5eVdVRVIyb3RMb25lSVhyeFl3TU9hLVVaTHdHWWVRUQ?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_4", "title": "US Dollar Index (DXY) Movements for OANDA:GBPUSD by GlobalWolfStreet - TradingView — Track All Markets", "title_zh": "1) OANDA:GBPUSD的美元指数(DXY)动态", "summary_zh": "2) 追踪全球市场的美元指数变动。", "source_hint": "TradingView — Track All Markets", "date": "Tue, 18 Nov 2025", "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVF9WTHNYNnBIbDZLd1d4MXJfVUJMVEE5b1hkcDRNWThxbURacENNc3EtVzUwQ0NqVW5pX3QxcTg2U2tqSC1mUm1valVaQTJTYXFVb3A4T284RlVKZkZLMU14X0dBcUZ4UUV3YkVhbTRZb014eDZFZnpwb0xwMmZHYTAxUWJBQTA?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_5", "title": "USD/JPY forecast: Fed, BoJ, and US-China talks set the tone - FOREX.com", "title_zh": "1) 美元/日元预测：美联储、日本央行与美中谈判定调", "summary_zh": "2) 关注美联储与日本央行政策及美中关系对汇率的影响。", "source_hint": "FOREX.com", "date": "Wed, 29 Oct 2025", "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUlNxOXNqdUtYemFELWQ1SHo5ZG5aVzJFZWFJdFJKSG84c1FMbW5BSEt0UmZaSV9OTXhvYTlueGNmOTZVa2l1TWdyZklfS1JGS2o2UEpwVjFGdjFsaWRtQ05PWmNmUUlEWThRazlVZVY4UXNPUWFrbGllVHZ3eUtQZEd4UDNsQW1odHlzeXhmRWNsYzlvSkJIUHpPY0pBRmMxRWp1WjFR?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_6", "title": "US Dollar Stumbles: Euro Poised for Stunning Annual Gains as Markets Await Critical Data - CryptoRank", "title_zh": "1) 美元疲软：欧元有望实现惊人年度涨幅", "summary_zh": "2) 市场期待关键数据，欧元表现强劲。", "source_hint": "CryptoRank", "date": "Mon, 15 Dec 2025", "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1RNUpIN29XY2JIVk5WbmNMRTNaU2lINU1uWjdLcXlHMTZtaDBUTHhjRm5hM0hjckNkZE9CYzY1QUtsOTZJTl84MDIzc01TNmR2M0toWnVwTmxLRWhxcXluQ0UwMmctYUlUSmdyUnlPOWhvVFRz?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_7", "title": "Forex market outlook for 2026: AUD/USD, USD/JPY, EUR/USD forecasts - ig.com", "title_zh": "1) 2026年外汇市场展望：AUD/USD、USD/JPY、EUR/USD预测", "summary_zh": "2) 预测2026年主要货币对的走势。", "source_hint": "ig.com", "date": "Fri, 12 Dec 2025", "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdGliMmFrVi1lcGM0VWF4UzJyNjJiUGVBbzgzRENLUFFzbk52MnJzSnc3bjJ3R1NYVGxoc1JIUE1aR0NfaWd4S1d5RFM5S2FpcFZDR0RKUGNlelRwc1p6RlNrTldlZ3BxVUVjOFNMa3JmajdEYS0wb0xLb28xVEVzaUlCQWJnQQ?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_8", "title": "Yen faces worst monthly drop since July as BOJ disappoints - Reuters", "title_zh": "1) 日元遭遇自七月以来最糟糕的月度下跌", "summary_zh": "2) 日本央行未能满足市场预期，导致日元贬值。", "source_hint": "Reuters", "date": "Fri, 31 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT3pKcW5NajZ1TzdseUgyLWJKQ0NtblRUZ1NHNlRDME0xb1luRjhZZlgtXzNFb1I5bnRwaWJLaGZaOWNNS09LcHVUWDhHblFiV3ZlRnJCaXlMMWxwaEpkZ2pXdjBwSm9kZlB0WjhFbVI3TlYwVFY4dWdXOEcyNTJHQURvN3VNSy1jSTdXVkF6elFKMUVCNnVxU2c2a3JNVG1kcmQtN2thMFhmUQ?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_9", "title": "Japanese Yen Weakness – A Potential Reversal Is a Long-Term Story - European Business Magazine", "title_zh": "1) 日元疲软——潜在反转是长期故事", "summary_zh": "2) 日元贬值可能在未来出现反转。", "source_hint": "European Business Magazine", "date": "Tue, 21 Oct 2025", "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdDV1cTBGbEdjTHBuVnJkM0p2U3p3QlZzQ3RWVGJPU09fMlRzYmM0WG10UFBTdmNOaUdOZWpEWnNJN3JEUUVmc3FvN3MyQWdsa3dxc0lzaW01UzJNeXUtSTUzWF9rLU82U1RqVlhEYUI2QjRVRkcwZkd2RDdkRGsxYXg1ZGc4NWZZcjAtSEh6TTlxQW9PZjZUUDVGanBSYV83WmpwUnlERnNXSDNOZmfSAbYBQVVfeXFMT252SEdienhBdk5jbWhONG56Uk1ERXJCYkJHQk9tUnR6Um1MLTB1bTFzTFAwRHMzXzhINGpvWksyZm1feUMyVTlGaDNNVk1HUkQ5bTFOcFEzTm9YNGtld2c1WEdQZ3ZmN01jMFNObkFTb1pkZVIxY0hETWZzRmhlNVlSbDliVzl1NTBDQUZzckVJdUV1ekRwTWZWZmdBYkx3WHRtRm1xd0JuZzRfckpXUjc0WFJxblE?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_10", "title": "Week Ahead: Rates, Risk, and Rotation - VT Markets", "title_zh": "1) 下周展望：利率、风险与轮换 - VT市场", "summary_zh": "2) 关注利率变化及市场风险管理策略。", "source_hint": "VT Markets", "date": "Mon, 27 Oct 2025", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5leVFaaGJhempWWDlmTEZra3E4N3FRbkkxUWpKY2k1Q0l0aDdXaUo2cUN2ZTRveGZ4ckVfZWtpR0tWVjRIZ2lhNGp4ZGF5aE41djhZdjNxZXFSbGR6NVUwREpqcjd4MUY1QjROSUZnaE9LMGRFalBKRVhjWDQ?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_11", "title": "Haunted by divergence - Convera", "title_zh": "1) 被分歧困扰 - Convera", "summary_zh": "2) Convera面临的分歧问题影响其发展。", "source_hint": "Convera", "date": "Fri, 31 Oct 2025", "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVVlNalAyQ2ZBdDBSNEJMN2xfRVdKa2lkQUpNRWswQjljTWFESGdwU2QtYVp2Zk5hMncyamFQYzJtNkFuX2dNVzhLaHp3UzdybGdDMGM4bDh1YWJMV3VXb29pbUNWRDItVkJKX255SHJaZ2ZRWjk0aE93QmEySXU3UW1yM1QydjRTS1pEaVQ1LTloTko3cUNr?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_12", "title": "Yen to Euro Rate 2025: Key Factors & Market Outlook - EBC Financial Group", "title_zh": "1) 2025年日元对欧元汇率：关键因素与市场展望", "summary_zh": "2) 预测2025年日元与欧元汇率走势及影响因素。", "source_hint": "EBC Financial Group", "date": "Thu, 30 Oct 2025", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0wTUladXhMRHYzWUJOMGtFbmYzeF9ybWRxMFc4YVNERHMwdUdydXo5OVZTeTFCc1lpRWFkWEZMQzdVeXFGZjdYSTlSZFhNUjBUeWpIYVlrc2NjSkRMV0xxV0kzSzk3N2xRTjM2R0dpM3I1TmJGNUZKT0Z0bXc?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_13", "title": "FX Weekly - MUFG Research", "title_zh": "1) 外汇周报 - MUFG研究", "summary_zh": "2) 本周外汇市场动态与分析。", "source_hint": "MUFG Research", "date": "Fri, 04 Jul 2025", "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zQWZ0TE03enllamlDTl9DZFQyeF9GNmFMTGQtemZGQXRlc05RLWRqbEdKSFMwTWpDamlIeGptUGdmZ2ZfaHRXNUl5NWpMMEJOYjVPcGd5WDd3ay1xY1J4dlNfd1Y?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_14", "title": "Dollar Posts Modest Gains as US Consumer Sentiment Revised Higher - TradingView - Suivez tous les marchés", "title_zh": "1) 美元小幅上涨，美国消费者信心上修", "summary_zh": "2) 美国消费者信心改善，推动美元小幅走强。", "source_hint": "TradingView - Suivez tous les marchés", "date": "Fri, 21 Nov 2025", "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZWRmQklLZEdqVGQ0Q0NPWUtGTGRUeTRtZlp3MGJqN0Y1RjlJcFlGQV9hbTFLeUdEVWQzSDUydVY2VElKejhkWU9PQy1WcUxfYWRCcnNXX0pGaUJyQ3Fsd2FFcDJmQ1JjYkRMdlktNUh3UHR6NTNWSlhseWVsSEQtMEpiZHFZdUIwdUQ4QUI0YWJ0WmdDZ0I0QlVTY0t4R1d5RzdSSVlNd2V2WGdhMExWNnFHd0lNZDBaRXVucXBaR3NJQUxPZ3c?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}, {"id": "macro_15", "title": "Keep calm, but watch the carry - Convera", "title_zh": "1) 保持冷静，但要关注收益", "summary_zh": "2) 关注收益变化，保持冷静应对。", "source_hint": "Convera", "date": "Fri, 05 Dec 2025", "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONm5yYXVQSjZaS2VXTmpRcFMyVUlyV0paTHhhZUhuR2Q2RnlQQzJySFg5MUdYb0RrcmNZZlA4M1VIeWJucFV0cllQUUtMbHliWG5FQW9oVEstS0NNZmxybUNCdFhCdUdHZnJMWDUtbkJ0U29uU3FjU20xU255ZUFnUzR4elBLRF9nN3dPZUZjcVNBNlhZZUZnTk9fRHFfSVJ4X3c?oc=5", "tags": ["利率", "汇率", "风险偏好"], "region": "global"}]}, {"id": "geo", "name": "地缘政治 / 制裁 / 合规（OFAC·EU）", "tags": ["制裁", "出口管制", "合规"], "brief_zh": "近期，英国、欧盟和美国联合对俄罗斯实施了一系列广泛的制裁措施，以回应其在乌克兰的侵略行为。这些制裁不仅涵盖了金融、能源和军事领域，还涉及到对俄罗斯企业和个人的资产冻结。这一举措的重要性在于，它不仅是对俄罗斯行为的直接反制，也反映了国际社会在维护全球安全与稳定方面的团结。\n\n值得注意的是，这些制裁的域外适用性和管辖权的重叠问题引发了广泛讨论。美、欧、英三国的法律框架在制裁执行上存在交叉，企业在进行国际贸易时需特别关注这些法律的适用范围，以避免合规风险。尤其是在2024年，随着制裁政策的不断更新，企业必须及时调整其合规策略，以应对新的法律环境。\n\n此外，OFAC、BIS和DOJ近期发布的指南为外国公司提供了遵守美国制裁和出口管制法律的框架，帮助其理解复杂的合规要求。同时，欧盟也更新了制裁的最佳实践，明确了资产冻结的所有权门槛，进一步提升了合规的透明度和可操作性。\n\n在国际贸易领域，2024年的动态显示出市场对合规的重视程度不断提高。企业在进行证券交易和投资管理时，必须加强对制裁的筛查，以降低潜在的法律风险。吉布森·邓恩和Akin Gump等法律服务机构提供的咨询服务，将为企业在复杂的国际贸易环境中提供必要的支持。\n\n综上所述，当前的制裁环境对企业的经营与合规提出了更高的要求，企业需积极应对，以确保在合规的同时，保持竞争力。\n\n动作：1) 立即评估现有合规政策，确保符合最新的制裁要求；2) 加强对国际贸易法律动态的监测，及时调整业务策略以应对变化。", "brief_global": "近期，英国、欧盟和美国联合对俄罗斯实施了一系列广泛的制裁措施，以回应其在乌克兰的侵略行为。这些制裁不仅涵盖了金融、能源和军事领域，还涉及到对俄罗斯企业和个人的资产冻结。这一举措的重要性在于，它不仅是对俄罗斯行为的直接反制，也反映了国际社会在维护全球安全与稳定方面的团结。\n\n值得注意的是，这些制裁的域外适用性和管辖权的重叠问题引发了广泛讨论。美、欧、英三国的法律框架在制裁执行上存在交叉，企业在进行国际贸易时需特别关注这些法律的适用范围，以避免合规风险。尤其是在2024年，随着制裁政策的不断更新，企业必须及时调整其合规策略，以应对新的法律环境。\n\n此外，OFAC、BIS和DOJ近期发布的指南为外国公司提供了遵守美国制裁和出口管制法律的框架，帮助其理解复杂的合规要求。同时，欧盟也更新了制裁的最佳实践，明确了资产冻结的所有权门槛，进一步提升了合规的透明度和可操作性。\n\n在国际贸易领域，2024年的动态显示出市场对合规的重视程度不断提高。企业在进行证券交易和投资管理时，必须加强对制裁的筛查，以降低潜在的法律风险。吉布森·邓恩和Akin Gump等法律服务机构提供的咨询服务，将为企业在复杂的国际贸易环境中提供必要的支持。\n\n综上所述，当前的制裁环境对企业的经营与合规提出了更高的要求，企业需积极应对，以确保在合规的同时，保持竞争力。\n\n动作：1) 立即评估现有合规政策，确保符合最新的制裁要求；2) 加强对国际贸易法律动态的监测，及时调整业务策略以应对变化。", "brief_cn": "近期，英国、欧盟和美国联合对俄罗斯实施了一系列新的制裁措施，以回应其在乌克兰的侵略行为。这些制裁不仅涵盖了经济领域，还涉及金融、能源和军事等多个方面，显示出三方在应对俄罗斯行为上的一致性和决心。这一系列制裁的实施，标志着国际社会对俄罗斯行为的强烈反对，并可能进一步加剧全球经济的不确定性。\n\n值得注意的是，这些制裁的域外适用性及其管辖重叠问题引发了广泛关注。美国、欧盟和英国的法律框架在制裁实施上存在交叉，企业在合规时需特别注意不同地区法律的适用性，以避免潜在的法律风险。此外，欧盟近期更新了资产冻结的所有权门槛，明确了相关限制，这对企业的合规策略提出了新的要求。\n\n在国际贸易领域，2024年的动态显示出制裁与出口管制的复杂性。吉布森·邓恩和Akin Gump等法律服务机构提供的最新分析指出，企业在进行国际交易时，必须加强对制裁的筛查，确保合规，降低潜在的制裁风险。OFAC、BIS和DOJ也发布了针对外国公司的指南，帮助其理解美国的制裁与出口管制要求，这为企业提供了重要的合规参考。\n\n综上所述，当前的制裁环境对企业的经营与合规提出了更高的要求，企业必须密切关注国际制裁动态，以制定相应的应对策略。\n\n动作：\n1. 加强对国际制裁的监测，定期更新合规政策，确保符合最新法律要求。\n2. 进行全面的制裁风险评估，特别是在与俄罗斯及其相关方的交易中，确保所有交易的合规性。", "events": [{"id": "geo_1", "title": "UK, EU and US sanctions on Russia - Fieldfisher", "title_zh": "1) 英国、欧盟和美国对俄罗斯的制裁", "summary_zh": "2) 各国对俄罗斯实施制裁以应对其行为。", "source_hint": "Fieldfisher", "date": "Wed, 10 Dec 2025", "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRkR0OE4zakg3ajgzTUI1UTg0cnk5LUlWU3VfcmdYb3VwSWJYVE43U3lXWHBGb0Vza0huN2xZN1BOM1dtZFg5YWFSYUU4T3p2TlRuUUl4RlB2cDV1QjdNVGJ3SDRTOWZkUUFpMVByc1F5TV9GWHFNV2REempsczhtRlFzNUJKZ093WTJVX0I2bDlDRl9IbGJ2NjhPbXZHV3JZRWQ5cXpJakpWYlRSVnpOSGlJbw?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_2", "title": "Sanctions extraterritoriality and overlapping jurisdictions: new horizons in US, EU and UK law - Global Investigations Review", "title_zh": "1) 制裁的域外适用与重叠管辖：美欧英法律的新视野", "summary_zh": "2) 探讨美欧英法律中制裁的域外适用及其管辖重叠问题。", "source_hint": "Global Investigations Review", "date": "Mon, 07 Jul 2025", "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNU0F2YUZqQVRUOGNFN3Z1SXI0YWF3bnU1WDIyVFNHMGp3UnFNdUpDUHFDWHZRbUliTE5jWkMwclY1MFo3YUpjdjBRWWNDOHNubjZvVTNvZW5aOFdvY2UtLTg1S3d5QW1LMjRpTzVCaHFqNWxlS05BSno2LUVveml3eEZ2aGF5cG96UC00RTZrNjB2dWJYSzZyR3RKbE56TFB6VEdBcFNDOThOMlFfLTdLVzZBUHF0bmNUWWFUbTJQc2h6cjN3OWk0RE5ZLVJSMVlBejg2bmZ5S0JDc2NLSTFsVGg0R2VvMWpMZERPaUZxY0tKWnJEeFBaR1E3YVA1dTlXN3RjeU52U3JoOU0?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_3", "title": "Russia/Ukraine Sanctions Update - Month of February 2024 - Mayer Brown", "title_zh": "1) 俄罗斯/乌克兰制裁更新 - 2024年2月", "summary_zh": "2) 本月制裁动态及影响分析。", "source_hint": "Mayer Brown", "date": "Mon, 30 Jun 2025", "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQ2pNTld1M2tJSklPVDZuX0ZUbUh3eXkzR1JQb0VXQkxZZFdZWV9uaFlNd095ZnJVdzZWVTZJRDBIajQ0eVE5WFY1WkpfSmd3cHZVaUtHQW4xeFlpZnJhNHVHb0NoVDFJMTlISDdLaXNwcnNJb1VzbmRLM3dCU0lOa1RMZzFQeVFZOW9kSnkyRWxwbjRzYkZwSnM5bU9UY2xOT3hoUkhMTWd3SkFnamotRA?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_4", "title": "International Trade 2024 Year-End Update - Gibson Dunn", "title_zh": "1) 国际贸易2024年年终更新 - 吉布森·邓恩", "summary_zh": "2) 要点：总结2024年国际贸易的最新动态与趋势。", "source_hint": "Gibson Dunn", "date": "Thu, 06 Feb 2025", "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9WVGNGUFlIV2JnRDZidXRlWS1uOE9pT3RXcWFVNkdGUEdMemdnQjlJejZkeHUtM2hiTllpcVd3T1RyLUN2YklONE9mbFV5ckMwUkVOUUN5S0dmNTkyTll6YlFPc05Sank0MlI1U1JGdk5oQ1JpNXU0?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_5", "title": "Sanctioned Securities Screening: Safeguarding Securities Trading and Investment Management Firms - Kharon", "title_zh": "1) 制裁证券筛查：保护证券交易和投资管理公司", "summary_zh": "2) 要点：确保合规，降低制裁风险。", "source_hint": "Kharon", "date": "Tue, 29 Jul 2025", "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOV0JNcGFsSUt4ZHN6WFFPMFVwQktOc1huUm9jd0szWnJHanB2T21Yd25vUkV0bGFsVXR6SnFXeTNJTjJ0N25nT2xJVHprZFdnTzNjUENtdGlxaUVNTXZLelpIdEk4RENuOEZhMzNJWFd2RE1ydUNzVFJpQmpuNEJCYTBQSjFFTG90bWJhNHJadzlYMkVpZ2RHUzhZQ0ktNDlzR2VDTS1ibTA5akJ4anFwQzdDdjNheUJ4REp0RlAwYzc1TE5rSktoLVliUngteWR2Vkp5QlpxSkdOemNBOTYyUTdvbzhBRzZVNXc?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_6", "title": "INSIGHT: Russia Sanctions - Skuld", "title_zh": "1) 中文标题：洞察：俄罗斯制裁 - Skuld", "summary_zh": "2) 要点：分析俄罗斯制裁对市场的影响。", "source_hint": "Skuld", "date": "Thu, 31 Jul 2025", "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSzkwc1pWSEhaRkV6clQ2dURYZzRTZUVhd3ZSNHdxUnhuRTZ5QlRhal9FQ3Y1YXppYnI0WVZ4bW84dksyaFYyMUFFWHVlODA2NFlDM1FMUFlzcmlQemh5MnNwaDRXcUJNM0FHM01vZWtLZFJaeWJlaDY2NnpjZlFZeXlNNA?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_7", "title": "EU sanctions against Russia explained - consilium.europa.eu", "title_zh": "1) 欧盟对俄罗斯的制裁解读", "summary_zh": "2) 欧盟实施制裁以回应俄罗斯的侵略行为。", "source_hint": "consilium.europa.eu", "date": "Fri, 25 Oct 2024", "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNGdlRTItcmNDaWZvRXBZMUkxWVUtdWg1eUFMQkJtbEdoWmhSSU9JSjNxVmYwNlVITDI5SGw4cVpPMGlBOGJoSlUzNVRZUzRtc3JwUTN6ZFdNMjU0QTVYSS02cG53S2U2YllPZTFLZG8tSlV6dE9janljaVBsOThJSnZaaFl2dw?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_8", "title": "International Trade - Akin Gump Strauss Hauer & Feld LLP", "title_zh": "1) 国际贸易 - Akin Gump Strauss Hauer & Feld LLP", "summary_zh": "2) 要点：该公司提供国际贸易法律服务与咨询。", "source_hint": "Akin Gump Strauss Hauer & Feld LLP", "date": "Tue, 16 Dec 2025", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1vOW5waXpYMTlYQjNBbWpEWWo3MzJiWTRGaldqSEVpMHJqTk9rRHgxc3UxSEROUVctdFlfcUV3VXRyWE5RbGlOY2V5WENWdWV1ZzZOQ0c2YkZuU3RiSU40X196ajd4ek9rc3hFSEdsN3d4Rml4SnVUZk4ya04?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_9", "title": "OFAC, BIS and DOJ Issue Guidance for Foreign Companies to Comply with US Sanctions and Export Control Laws - Hunton Andrews Kurth LLP", "title_zh": "1) OFAC、BIS和DOJ发布外国公司遵守美国制裁和出口管制法律的指南", "summary_zh": "2) 指南帮助外国公司理解美国制裁与出口管制要求。", "source_hint": "Hunton Andrews Kurth LLP", "date": "Tue, 12 Mar 2024", "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOVlRweDNuX1JobHZsbnVMWW5GOGpmUVhoMWlYanNZZldHZk1HQzBvNm1sQkNuNmwxcE4xYS11Rkl4V1lEQ3haMXlGTF8tM1ZyREpkNnRkcG1ZTE05Z0hzOUNCeGdlOFpZbll3b0VNQXJCUmNHWndCbXp4RDE5NzFiYXJmLXllWm84LWt4cjQyVXVfR0VKd0hndFdfZG5BNWVyeE10dmJqeWoza3FPWHF5S2F5YzBZR1hxTlNpSi1GVzVhYjlxakFxYUYxR1V2OTJZaUJSN0VnOWVPTzNhR2Rwa1JfbnI0OHBaRlE?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_10", "title": "EU Updates Sanctions Best Practices, Clarifying Ownership Threshold for Asset Freeze Restrictions - Skadden, Arps, Slate, Meagher & Flom LLP", "title_zh": "1) 欧盟更新制裁最佳实践，明确资产冻结限制的所有权门槛", "summary_zh": "2) 欧盟对资产冻结的所有权门槛进行了澄清。", "source_hint": "Skadden, Arps, Slate, Meagher & Flom LLP", "date": "Thu, 05 Sep 2024", "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMmFQSUtYNWwtd2M4NDNicU5VN2Rscng1WlVMTVZVZ1drZzNqN0VSZzh1ek9YVi1iSFY4RHhwZ2xhN0hoMFlMdUFXRVowVWpLUGs5T0pUS3R3ZWdkeWhfdU1nNHZXZjFFSmo2c3VWcnlkd2VLdWM2LW1zalBCRkN3dkZwRWR3aVhlTUVmZElyZS1jWUE?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_11", "title": "2023 Year-End Sanctions and Export Controls Update - Gibson Dunn", "title_zh": "1) 2023年年终制裁与出口管制更新 - 吉布森·邓恩", "summary_zh": "2) 要点：总结2023年制裁与出口管制的最新动态。", "source_hint": "Gibson Dunn", "date": "Wed, 07 Feb 2024", "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOV9TQWNCaTRXRVY2ei1rbWVZd3JmYjdRUlhTbVR3cE1Sb0ROYk9UTTFuV0xVTlR5MURseWd3LWxVMk9kVGZJNjZWN3o5R2dnOFJSSVZZOG1DWkdnU19veXlBQVJMcGxRSmtLa18yYk5oSnREV3UxeUdDVjk2R29GZzNnSHA?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_12", "title": "US, EU, and UK Announce Wide-Ranging Additional Sanctions and Export Controls Targeting Russian War Efforts, In Coordination With Broader G-7 Commitments - Mayer Brown", "title_zh": "1) 美国、欧盟和英国宣布针对俄罗斯战争努力的广泛制裁与出口管制", "summary_zh": "2) 三方协调实施新制裁，支持G7更广泛承诺。", "source_hint": "Mayer Brown", "date": "Mon, 27 Feb 2023", "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNeE10ckpmZHdabmtFb3J2WWJIMno5Z3c3Mk85VEFVMF9YaFNUQjdzWlRLWmx0TnAwN1AxbW45TExVaDFwdHR3bmI1WUNsNkFsd1NCcEFYNy1QVENpOE04NTR3N1R0elAwUXFUenB3WlV1VEJDbzJwRHpCVTRBYm93MkpXS3ByMHMwbzNrR2pRT0JUVHV1RHNXOXBMdXJ0V1d5enhSeF9UY25qMExBSEhDT0lodkMxZE5lSGVSMDI4TEVkS2p2WWRSd0U1Mjk2WkVKQXdZLURvSnBBc1pySThpOUgwMXNxaV9aMFRDQUpNRjhzdmU2YjRwSlhlbHltUjRnTEZpME4wTzNrejdBOUNNMFRVMzJtOXMwOWw5MGhPR1E2VTJCM1o4dUZZRHJpdFY2N0E?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_13", "title": "United States and European Union Impose Broad Economic Sanctions Against Russia - Akin Gump Strauss Hauer & Feld LLP", "title_zh": "1) 美国和欧盟对俄罗斯实施广泛经济制裁", "summary_zh": "2) 美国和欧盟联合采取措施制裁俄罗斯经济。", "source_hint": "Akin Gump Strauss Hauer & Feld LLP", "date": "Fri, 28 Jul 2023", "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPelBiUnltZ09zTXgtMGxqNXpsRGxCM1h6Uk5mZjhiVzhRN2JrOVhkcTdYcEdPM2VhZzVkVmdUb2FBbE45aTZKWWNmQl9CWjM0cWJuOExYSXl0ZlpXSkk1TGZTQlBleWhvQ256cEtMRHcxM3NhM3FaLVhqeTFPM0xmMGFGWDg5UHFkbnBiZjBjZ1VFV0J1cjZIUHgxekU1Y29oSnJpZTUzYlgyaUFlMTVkRHI4T09GZ2hTZ21mUGV3?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_14", "title": "Status update: EU and UK easing of sanctions on Syria - White & Case LLP", "title_zh": "1) 状态更新：欧盟和英国对叙利亚制裁的放松", "summary_zh": "2) 要点：欧盟和英国正在逐步放宽对叙利亚的制裁措施。", "source_hint": "White & Case LLP", "date": "Mon, 30 Jun 2025", "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcklka05scnd2enNRY0pjRkZWZER2SXA3OUM0cDVXRldWQmRhcEI2TEJfSDBuMGd6emRSSC12bnUwUW9TRG5wOGdEQmdCWjF2SDdEaGFqUzVrd0VvcUlpMGJYeXJzRlNrQzNQRzNFdUZJOWxRQm9YUUo5QzNKNkNqVnQ3N2c2UE95X2V2cVM1RQ?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}, {"id": "geo_15", "title": "Russia Sanctions Database: November 2024 - Atlantic Council", "title_zh": "1) 俄罗斯制裁数据库：2024年11月 - 大西洋理事会", "summary_zh": "2) 数据库更新了俄罗斯的制裁信息。", "source_hint": "Atlantic Council", "date": "Thu, 17 Apr 2025", "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdEYzTmVFcHRWQlN4a1VQeWlKQTN0elJDUTVzSlA3QmwtUHlDNDZtb3p1Zi0xR3lWWmNVeElCc0k1SlhCR095Zk54VTd4XzVzU2FkaFVSakNtbXp3ellWOWo1ZjdSS2Y0Uzk1VmZNY2ZDaWpmRnJNY1dCV0hHUERxaFk5dVBUYkJadXd6R0s1TWg1cVN2WEow?oc=5", "tags": ["制裁", "出口管制", "合规"], "region": "global"}]}, {"id": "ai", "name": "AI 计算基础设施（算力·电力·冷却）", "tags": ["算力", "电力", "液冷"], "brief_zh": "**栏目简报：AI计算基础设施**\n\n近期，全球AI基础设施市场正迎来重要变革，预计到2034年市场规模将达到1657.3亿美元，显示出强劲的增长潜力。随着Meta等科技巨头在基础设施和人工智能领域的持续投资，数据中心的建设与优化成为行业关注的焦点。2025年OCP峰会明确指出，AI基础设施的三大支柱包括服务器机架、电力与冷却、网络，这为投资者提供了明确的投资方向。\n\nFlextronics在克服数据中心电力、热量和规模挑战方面的努力，表明行业内对技术难题的重视。AI优化的数据中心被视为未来基础设施的必然选择，推动了相关技术的快速发展。此外，市场上出现了7只最佳数据中心股票、ETF和REIT，投资者可通过这些工具把握行业发展机遇。\n\n在网络技术方面，GTC25洞察指出，网络可能在AI竞争中扭转局势，强调了网络基础设施在AI发展中的关键角色。同时，晶圆级AI加速器与单芯片GPU的性能、效率和成本分析为企业在选择技术方案时提供了重要参考。\n\n综上所述，AI基础设施的演变不仅影响了市场格局，也为企业的经营与合规带来了新的挑战与机遇。企业需关注数据中心相关股票的投资机会，以便在未来的AI浪潮中占据有利位置。\n\n动作：\n1. 评估并投资于7只最佳数据中心股票和相关ETF，以把握市场增长机会。\n2. 加强对AI优化数据中心技术的研究与应用，提升企业基础设施的竞争力。", "brief_global": "**栏目简报：AI计算基础设施**\n\n近期，全球AI基础设施市场正迎来重要变革，预计到2034年市场规模将达到1657.3亿美元，显示出强劲的增长潜力。随着Meta等科技巨头在基础设施和人工智能领域的持续投资，数据中心的建设与优化成为行业关注的焦点。2025年OCP峰会明确指出，AI基础设施的三大支柱包括服务器机架、电力与冷却、网络，这为投资者提供了明确的投资方向。\n\nFlextronics在克服数据中心电力、热量和规模挑战方面的努力，表明行业内对技术难题的重视。AI优化的数据中心被视为未来基础设施的必然选择，推动了相关技术的快速发展。此外，市场上出现了7只最佳数据中心股票、ETF和REIT，投资者可通过这些工具把握行业发展机遇。\n\n在网络技术方面，GTC25洞察指出，网络可能在AI竞争中扭转局势，强调了网络基础设施在AI发展中的关键角色。同时，晶圆级AI加速器与单芯片GPU的性能、效率和成本分析为企业在选择技术方案时提供了重要参考。\n\n综上所述，AI基础设施的演变不仅影响了市场格局，也为企业的经营与合规带来了新的挑战与机遇。企业需关注数据中心相关股票的投资机会，以便在未来的AI浪潮中占据有利位置。\n\n动作：\n1. 评估并投资于7只最佳数据中心股票和相关ETF，以把握市场增长机会。\n2. 加强对AI优化数据中心技术的研究与应用，提升企业基础设施的竞争力。", "brief_cn": "在当前的市场环境中，AI计算基础设施的投资机会日益显著，尤其是数据中心相关股票的潜力。预计到2034年，人工智能数据中心市场规模将达到1657.3亿美元，显示出强劲的增长趋势。随着Meta等企业在基础设施和人工智能领域的持续创新，数据中心的演变正加速推进，成为企业战略的重要组成部分。\n\n2025年OCP峰会强调了AI基础设施建设的三大支柱：服务器机架、电力与冷却、网络。这些要素的优化将直接影响数据中心的效率和可持续性。Flextronics等公司正在积极应对数据中心在电力、热量和规模方面的挑战，推动关键技术的突破，确保基础设施能够满足日益增长的AI计算需求。\n\n此外，网络技术在AI竞争中扮演着至关重要的角色，可能会成为未来市场的关键转折点。随着AI优化的数据中心成为未来基础设施的必然选择，企业需要关注相关的投资机会，包括7只最佳数据中心股票、ETF和REIT，以抓住这一波AI浪潮带来的收益。\n\n综上所述，AI计算基础设施的快速发展不仅为企业带来了新的投资机会，也对经营与合规提出了更高的要求。企业需在技术创新与市场需求之间找到平衡，以确保在竞争中立于不败之地。\n\n动作：\n1. 评估并投资于数据中心相关的股票和基金，以把握市场增长机会。\n2. 加强对AI基础设施建设的技术研究，特别是在电力、冷却和网络优化方面，确保企业在未来竞争中占据优势。", "events": [{"id": "ai_1", "title": "Top AI Infrastructure Stocks 2026: Data Center Picks & Shovels - Exoswan Insights", "title_zh": "1) 2026年顶级AI基础设施股票：数据中心投资分析", "summary_zh": "2) 关注数据中心相关股票的投资机会。", "source_hint": "Exoswan Insights", "date": "Thu, 11 Dec 2025", "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5FZkdReFV6bndNakt0ck9RX1l3N2p2S1pVTXVDZW1nRnMxV1BOVkZzTGp0ZnRxNEZSWjVGVnlKQmQwSUt3eHFRaTR5N1hiZ2pUdEtZaW95cw?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_2", "title": "Meta’s Infrastructure Evolution and the Advent of AI - Engineering at Meta", "title_zh": "1) Meta基础设施的演变与人工智能的到来", "summary_zh": "2) Meta在基础设施和人工智能领域的工程进展。", "source_hint": "Engineering at Meta", "date": "Mon, 29 Sep 2025", "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVEpDSmdobjhEV25aTHhhZlVodWpSNG1CeExoSmhib2paTnFOT2d3SXFJLU1COXZYUGJWdW42Wk80UkZOU3JPak8wRmlITjdqWktvUWp5Y1o0aVFuLWF5dDJLUWZUX2I4N3dwdzRrTElJSl85SW1WZEFHalJmNjNGRklJWTJ6dTlxQ3d4ZVJlTDBBblUxUHphUGViMDFMbEpHUi03Vi1pTlMxeVNxT1JB?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_3", "title": "2025 OCP Summit—AI Infrastructure Buildout Consisted of Three Pillars: AI Servers Rack, Power & Cooling, and Networking - The Futurum Group", "title_zh": "1) 2025 OCP峰会——AI基础设施建设的三大支柱", "summary_zh": "2) AI基础设施包括服务器机架、电力与冷却、网络。", "source_hint": "The Futurum Group", "date": "Mon, 03 Nov 2025", "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOUg0TU1HRlVLSURQUWhXbnhsbTJQaFRpcnR4c1dKR2I3T3dUeFcwVnh3SmNVVmN0UExMX3M4QVRZeTdDYy1rZlZXTlJiMVA0Wkh0UEdackI5V1VHTkdYbWJBQlNyT3RRR3doTVRnSXhWOFNMbDFpTU92U3Y1U1NnNURDVVF6ZzAtV1JzSlladHlUZUMtZzJrUU1ueS1UZ2ZLQU15TkZyYjcweEJKbnVVV0VLNA?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_4", "title": "Overcoming power, heat, and scale hurdles in the data center - Flextronics", "title_zh": "1) 克服数据中心的电力、热量和规模挑战 - Flextronics", "summary_zh": "2) Flextronics致力于解决数据中心的关键技术难题。", "source_hint": "Flextronics", "date": "Thu, 01 May 2025", "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kVUJWSFlwUElXUUFXR1JTRUhLVkZtQWtxcGRqeWtOWTh6R3ZPZzhKUjZBR0RnZEJwWi1MWWlsUGNUR3BHSzAtTGxlQWRVOTRUOC12c1NMUk5tbUxSWkh1WWhENEQ5ZWJWX0RIUlZDVUJVaFZXdFE?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_5", "title": "What is an AI-optimized data center? Why next-gen infrastructure is nonnegotiable - Network World", "title_zh": "1) 什么是AI优化的数据中心？下一代基础设施为何不可或缺", "summary_zh": "2) AI优化的数据中心是未来基础设施的必然选择。", "source_hint": "Network World", "date": "Thu, 04 Sep 2025", "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTU5MQWh5bW94aG1iWUpMemVXRzVhVnJEWkk1WFV3TWh2NlBqeUtHNk4xaVMwNWF2UWFGTUFfMjFPdUZSbHlNcWllOWFYeUF4T0dUN3pheF96djV5d2xxdWRxUElQUFhQS0ZYNF8yQU9GZGVRSm1JcGV5ODdNY3hKWDRrZjdkWE9qUU9JU0E5d1p6YldMRXpEMWVxTUJ0Nll4dWw4V2RneElNLWZHanUwbXY2a2lUVDgzNkh2eEh1OVlZZlVMVnpvZlBYcw?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_6", "title": "7 Best Data Center Stocks, ETFs and REITs to Buy - US News Money", "title_zh": "1) 7只最佳数据中心股票、ETF和REIT", "summary_zh": "2) 推荐投资数据中心相关的股票和基金。", "source_hint": "US News Money", "date": "Wed, 03 Dec 2025", "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBQVlEtUGdBN0dkZkI1N0d0djdKN0xzVE10N0xBemhGQ2lJRHVfSjY3ZGQwMDhxZGRCb1B0b21kR1RNTFJxbHV1d3c5WFcyVF85ME5NRjRwX3hZblNZelFrN3lmT0hVdWIyVnM5MnhBNG5vS2h6b3c?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_7", "title": "AI Data Centers Market Size to Hit USD 165.73 Billion by 2034 - Precedence Research", "title_zh": "1) 人工智能数据中心市场规模到2034年将达1657.3亿美元", "summary_zh": "2) 预计2034年市场规模将显著增长。", "source_hint": "GlobeNewswire", "date": "Wed, 10 Sep 2025", "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxOeUY4MkdZV1htekxKQUFZdEljNzg0UXJEemtrdkNIUjNxNk8wVzFwMGJqaDNjenYwTXBnTGV1WHJyWTZHczlqUmUxRHRQamhiQ1pGSENDaWtIMmE4Y3FYZDA2VjNXS3pzTWJtVkJ0VDhWY3NjbTl3X2JWTW11MmxtbnlhVmVjQmtYbTA0WXllRlFtRlFkMkc0NXMyaEttS0NTZXN4SXBOcldrSmpoT3VfeDBqakYwak1PTGNrQVY5NDRzbDBKdWE5bzBXeXN1R3Y1YW9BVmZKdk9Yc01yMmFEeGh2YmRneEFQUTlIcmM3bWJ1TzNSTU9sV3JjOFgwVTdtdkFubzctR1BsRElzN1ItNHdieWlXallBSEMzQkxBRmw3Wm8tOFZKRTE4M2hyNHhob1NfQm5pRXlyaFBv?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_8", "title": "AI Data Center Market Size, Share and Industry Report, 2025 To 2030 - MarketsandMarkets", "title_zh": "1) 人工智能数据中心市场规模、份额及行业报告（2025-2030）", "summary_zh": "2) 报告分析未来五年AI数据中心市场发展趋势。", "source_hint": "MarketsandMarkets", "date": "Mon, 23 Jun 2025", "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUWY3c2RmVTJpMXBERXFueXh3NUNFNXhaRGl4QjZvZUk2VFlVMzBLOVIxaHVhS0NfaUpwQnYzQTEwT0Q5T1dydUJPX3c0cVN2SVFsNVQ4VkU1S042dEtzaTNmcXpJMGVpQUtBckdHX3ppS3J5dWZGS3ZwUVc5NFpnOWk5eV9XYWI4UVhfbnR3?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_9", "title": "Best AI Stocks to Buy Now (December 2025): 10 Ways to Invest in the Next Wave of the AI Boom - ts2.tech", "title_zh": "1) 2025年12月最佳AI股票推荐", "summary_zh": "2) 投资下一个AI浪潮的10种方式。", "source_hint": "ts2.tech", "date": "Sun, 07 Dec 2025", "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONEFEd1hacFhkT0Faekx3eDRqTVNPLVdaWXNxYVJCQXRRdlUxc3dCb1RiU3RZZ3FQMVNPSUJhVko5LXk0cGh0S0NSMzhNbzlWQVYybjh5Z2hISTZTeERTRVlSTGNrbWw3X1ZIakFjVTFkTnQyMHRpNndBRWpLd2ZiTDduVGFHckNwbUZJY2Q0TnZ4dHJ0cEdEUkt4NGpMZXJaUnVzWTVXZ2pIeFhMcGFV?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_10", "title": "Insights from GTC25: Networking Could Tip the Balance in the AI Race - Dell'Oro Group", "title_zh": "1) GTC25洞察：网络可能在AI竞争中扭转局势", "summary_zh": "2) 网络技术在AI发展中扮演关键角色。", "source_hint": "Dell'Oro Group", "date": "Fri, 21 Mar 2025", "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdUl6QXExNmVQOVBXOUZKSHhyWnUzeUltMDFvXzY4Y2J4TFQ1R1RobVEzZWl3Ykh6Ny1wWmNCQjJ2MHZQUGZ5dGhramNPYmRydGMxWTBsMHZaMFl4TkJzaHUwRVBBNHFBYjJLWGF6d3puSnRYS1F1eU16MkdJTm1XcVVmdmM0ZDRZYkU3dkNhaUpOQ0J6S1dn?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_11", "title": "From Chips to Power Grids: The Hidden Plays Behind the AI Gold Rush - The Globe and Mail", "title_zh": "1) 从芯片到电网：AI热潮背后的隐秘游戏", "summary_zh": "2) AI产业链各环节的深层次影响与机遇。", "source_hint": "The Globe and Mail", "date": "Sun, 12 Oct 2025", "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQ2k0b3dQT3JlWWxkeEE0RldSN2lwcm9zNXViYlBVM0djMURJRjBrbVQ5SjYyd29LbmxBRjVkdkN5Zjd4bE1XaHNpYzNfeW9mZE15eEJEb3dhek1Kd0tqYUM3MHluR21jcjZWZU1zeEQzNXoxRnRsNmNfdURPeTVoczNFMUxBOXU0QTJVMERxLVc0YXpZZVg0amgtZXg4RkJ4Q0NhYm84T3d6WjdxSXZMeDBSaUNpMnpxMFVUcm5lZVB6SlRxWk9ISmJ6Q2NiNFJRUW1adVNtLVFIS1cybmRMQWVHbDE5dw?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_12", "title": "Performance, efficiency, and cost analysis of wafer-scale AI accelerators vs. single-chip GPUs - ScienceDirect.com", "title_zh": "1) 晶圆级AI加速器与单芯片GPU的性能、效率和成本分析", "summary_zh": "2) 比较晶圆级AI加速器与单芯片GPU的各项指标。", "source_hint": "ScienceDirect.com", "date": "Fri, 17 Oct 2025", "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mank5R0ZoUGp1Vkp4TkE3djFhZXh6NEdDZEliMVNPUGNqQk5xTnZ6QjZjb1VrdnpzRkZuNlRmcXdyOWJ2NS1zRFZ6Y0dCVFp2X0VrYkhTdXc1TTU1U0xGaFR1bTA0RFpTVUlFQktWczh5NVJDT3c?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_13", "title": "Data Center Power Doubling? Next-Gen Efficiency & Sustainability Guide - TrendForce", "title_zh": "1) 数据中心电力翻倍？下一代效率与可持续性指南", "summary_zh": "2) 探讨数据中心提升效率与可持续性的策略。", "source_hint": "TrendForce", "date": "Tue, 02 Sep 2025", "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FaTVLbm93UnRTWk5vcUFGS0oza2lfM0tLbG9ybUNmLVNZNmxrSlJQS21pMmtKZmdYRklpcWlhdzFRZk9tODRVZ3hMcmxmVV9nT3B5bUhmZ2ZSS0VRZ2xENE5qQQ?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_14", "title": "AI infrastructure—mapping the next economic revolution - RCR Wireless News", "title_zh": "1) AI基础设施——描绘下一个经济革命", "summary_zh": "2) AI基础设施将推动经济新变革。", "source_hint": "RCR Wireless News", "date": "Fri, 11 Apr 2025", "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5NTBlSzZnOUJ4dm9iRXdKUVh6dzdZY01LX1hZelJJSVA4emNUZ3BXaTdqUmJCWmZHNFkwZFBSWTJTakdEZENuX3UwaUJQTWMzY0dtV0xhOTVQXzhTc0wyWE9YS3hvTXVfQWgxLXhSOE1GSEYwOHloUlVuRzlNT3c?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}, {"id": "ai_15", "title": "NVIDIA Announces Spectrum-X Photonics, Co-Packaged Optics Networking Switches to Scale AI Factories to Millions of GPUs - NVIDIA Newsroom", "title_zh": "1) NVIDIA发布Spectrum-X光子共封装光网络交换机，助力AI工厂扩展至百万GPU", "summary_zh": "2) 新技术提升AI工厂的网络能力和规模。", "source_hint": "NVIDIA Newsroom", "date": "Tue, 18 Mar 2025", "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUTNKenhxbEhuZnpaYzJIZEVUd2pqNmM5TUtVbUpBS05DVTRqZGNRMzJCYzFUQml5M1JxOFl4UlVEeGo4amJjcHNTT0lBT3l0SkNJZmFzODl2LXFibV96R0NqOFAwNDY0SF9Ga2hTTnFoT0dlb2NweXo4dE9HVndnampiT3FfUUJ0MFFmb2JmblhaZHg0TjZCX2toNEZlRzBKV2ZYN284QQ?oc=5", "tags": ["算力", "电力", "液冷"], "region": "global"}]}, {"id": "metals", "name": "大宗 / 金属（LME·供需·库存）", "tags": ["铜", "铝", "镍", "LME"], "brief_zh": "本月基础金属市场更新显示，全球金属市场正经历显著变化，主要受到特朗普关税政策的影响。锡价在此背景下飙升25%，反映出关税对市场的深远影响。与此同时，铝价短期内波动较大，但长期展望依然看涨，企业需警惕可能的过度扩张风险。\n\n尽管本周需求疲软，基本金属价格却逆势上涨，显示出市场的韧性。然而，经济衰退的担忧仍然压制着金属价格，导致市场出现暴跌现象。展望未来，预计到2025年，伦敦金属交易所的基本金属将面临严重的供应危机，这将对整个行业造成重大影响。\n\n此外，锌矿增量对锌价走势的影响也不容忽视，企业需密切关注矿产资源的变化。值得注意的是，Wanatiara Persada镍铁冶炼厂年底前将完成6亿美元的投资，这一举措可能会对镍市场产生积极影响。\n\n综上所述，当前金属市场的动态变化对企业的经营与合规提出了新的挑战与机遇。企业应及时调整策略，以应对不断变化的市场环境。\n\n动作：\n1. 监测特朗普关税政策对金属价格的持续影响，评估对供应链的潜在风险。\n2. 加强对基本金属市场供需动态的分析，制定应对2025年供应危机的预案。", "brief_global": "本月基础金属市场更新显示，全球金属市场正经历显著变化，主要受到特朗普关税政策的影响。锡价在此背景下飙升25%，反映出关税对市场的深远影响。与此同时，铝价短期内波动较大，但长期展望依然看涨，企业需警惕可能的过度扩张风险。\n\n尽管本周需求疲软，基本金属价格却逆势上涨，显示出市场的韧性。然而，经济衰退的担忧仍然压制着金属价格，导致市场出现暴跌现象。展望未来，预计到2025年，伦敦金属交易所的基本金属将面临严重的供应危机，这将对整个行业造成重大影响。\n\n此外，锌矿增量对锌价走势的影响也不容忽视，企业需密切关注矿产资源的变化。值得注意的是，Wanatiara Persada镍铁冶炼厂年底前将完成6亿美元的投资，这一举措可能会对镍市场产生积极影响。\n\n综上所述，当前金属市场的动态变化对企业的经营与合规提出了新的挑战与机遇。企业应及时调整策略，以应对不断变化的市场环境。\n\n动作：\n1. 监测特朗普关税政策对金属价格的持续影响，评估对供应链的潜在风险。\n2. 加强对基本金属市场供需动态的分析，制定应对2025年供应危机的预案。", "brief_cn": "近期金属市场出现普遍下跌，尤其是上海镍价格大幅下滑，跌幅达到8%。这一波动反映出市场对金属需求的担忧，尤其是在全球经济放缓的背景下，投资者情绪受到影响。然而，与此形成鲜明对比的是，锂碳酸盐业务却表现强劲，显示出在电动车和储能领域的持续需求。\n\n金属价格的普跌可能会对相关企业的盈利能力产生负面影响，尤其是那些依赖于镍和其他金属的制造商。企业需密切关注市场动态，以便及时调整采购和生产策略，降低成本风险。同时，锂碳酸盐的强劲表现则为企业提供了新的增长机会，尤其是在新能源领域的布局上。\n\n从合规角度来看，金属价格波动可能影响企业的财务报告和风险管理策略，企业需确保在财务预测和合规审查中充分考虑这些因素，以避免潜在的合规风险。\n\n动作：\n1. 评估当前金属库存及采购策略，考虑适时调整以应对价格波动。\n2. 加强对锂碳酸盐市场的分析，探索扩大业务布局的机会，特别是在电动车和储能领域。", "events": [{"id": "metals_1", "title": "Fastmarkets monthly base metals market update - Fastmarkets", "title_zh": "1) Fastmarkets每月基础金属市场更新", "summary_zh": "2) 要点：提供基础金属市场的最新动态与分析。", "source_hint": "Fastmarkets", "date": "Fri, 20 Jun 2025", "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNlc5c1JlektfNnFFOGFkYktGUzE1TzlFa2h1SzNsbDg0STlwSDladVhYNlRnNWlZT1l3VHJFMEhnS3ppekJEdllLQlpGbXI3UTMxRTBEcld6SnU1VkJQSkF3QW1ZTHZtS1RHNk9pcXlVMUNISkk5aUUtcUtNTGo4X0JKM1hXbWlUX202OWFsdUYzOTlUMDV6ZHRDQ3loUQ?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_2", "title": "Trump Tariffs Reshape Global Metal Markets as Tin Surges 25% - Discovery Alert", "title_zh": "1) 特朗普关税重塑全球金属市场，锡价飙升25%", "summary_zh": "2) 锡价大幅上涨，全球金属市场受关税影响显著。", "source_hint": "Discovery Alert", "date": "Sat, 05 Apr 2025", "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMGs4S0lja2ZxTllKTFk4cWpJdWhqTXhfZlhHc0FZLWFUQ3JtVHNQOXhLQ3lzLW9OUU1kemZFd3ZfZFBZZmViQnZkSTNoX0xNdXd1WF9fUXdITFFkbm5jVVR5TDFQdmhkRUhkVEJ6RG5BbTM4WlpXbWpLYWNmYlkxdUQ0SWJfUEk?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_3", "title": "Trump, tariffs and tin - LME metals in seven charts - Reuters", "title_zh": "1) 特朗普、关税与锡 - LME金属七图解", "summary_zh": "2) 文章通过七幅图表分析LME金属市场动态。", "source_hint": "Reuters", "date": "Mon, 07 Apr 2025", "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNamFqMDRlOHZKaFV5V3RRSlBxOGlMb3c5MnNtQ2p3NFhuVkpPX25hNU1FVlRVNVl1a3F5M21sVFU5RlRmbEo4eGwzRE0tVEZNSnFEdGd2Y0xBWUhMT1o4aWNpekdHNGRKbzRCMGRBZUZadm1OSzhvdFFmX1dNdU5rVFJFSjNVbkpRLUVCRGI5aHJlb2N0NzJSaXZPSWRod2ZKa0lQRXZFQWRNaHc?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_4", "title": "Aluminum prices have shown a fluctuating trend in the near term, with a bullish outlook for long-term prices. However, the risk of overexpansion in other regions remains [ICM conference] | SMM - Shanghai Metals Market", "title_zh": "1) 铝价短期波动，长期展望看涨，但其他地区扩张风险仍存", "summary_zh": "2) 铝价短期波动，长期看涨，需警惕过度扩张风险。", "source_hint": "Shanghai Metals Market", "date": "Tue, 03 Jun 2025", "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxQVDBadVgxc1JnT3dmRldwNVlNbDhST2NRMGJCLU4ySDFMV3phcnVoSHRLaWlhY1dodVJEZDJxMEV0S0RwX2wtTVNVX1h6TlFSSHp1UnphSFY2XzV4NUdObm55eHZIcWM0WHFHR1hlVklHUGtoVGpLUVlVbzdIVlhyX0xfc2dGTndyR1pfVnVLSG54V0JBMmxsbWNDSmtrSFZ4ZUVfT2g2TGI0amwxTnBWNm5hak9zcXpPNi13Z2ZENU5wQ0V3M2hTclpkOGJsUmtEdnl1SXZ2T2hwa3BxWXpfZ2pkLWFXVlczWnRIT2d5THAtelVKSWhTbE43UTBsLWstdWxPMHJFZFMxQXViaGY5NHE0VUpDM3k5WUhKVEpPMFhWeVhtdlBmampLM3R2NUR3M1Vuanh3QXRMbVl0ZmNzNTEtWjFUN0pLVGc?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_5", "title": "Base metals prices defy weak demand in moves up – what happened this week? - Fastmarkets", "title_zh": "1) 基本金属价格逆势上涨——本周发生了什么？", "summary_zh": "2) 本周尽管需求疲软，基本金属价格仍上涨。", "source_hint": "Fastmarkets", "date": "Tue, 28 May 2024", "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBCMGdJRDY3QkVONFl3WXVWSWNvYXZ0dHc2eGpmbGZJWkRBTWsyMVdSSERkbXBXcVZibzRfV1RnRktrbldxUm9pUlIwWC1KdWZGaWZqZTFXdm0tcEFnT0Myc3M2eVMyMktXbHlaSWVLa0xrWWhVaElFY1lVZEpPdw?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_6", "title": "Metals melt down as recession fears overwhelm supply woes - Mining.com", "title_zh": "1) 金属因经济衰退担忧而暴跌", "summary_zh": "2) 经济衰退的担忧压倒了供应问题。", "source_hint": "Mining.com", "date": "Mon, 04 Jul 2022", "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRy1Dck9vWFV1aVRBSWVQdjk4R3VqbEkxeDVLaklxeGsxVjBkakxsdFdvc0VZaFZtRWZ6aUwxZkVRVWhwRGM4WkJwWEs2VXZWREkzQktOR3RONGdIUGoyZm96OFdSVHVCZUZRS2R5UGFEU185RmtSc0Y1NUl2ZG50eFlRRkJLQkEybXdwanJOZTB5aVp3RF9j?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_7", "title": "[SMM Today's News] Metal General fell, Shanghai Nickel fell by 8% | Lithium Carbonate business soared all the way | Summary of spot market performance | SMM - Shanghai Metals Market", "title_zh": "1) 中文标题：金属普跌，上海镍跌8%；锂碳酸盐业务大涨", "summary_zh": "2) 要点：金属市场波动，锂碳酸盐表现强劲。", "source_hint": "Shanghai Metals Market", "date": "Sun, 15 Oct 2023", "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQdzVhS25aXzd4b1lrZXMxVmRVb01DbHJwQnNLRHZ2N3NhRmR0eHVEX1hPZmE2RTczaWRrdmNFUk9ZT0RZRmhfNjZiRmpCZFk1SGVZTktTb0E3MUNhQll2VVZGYUZvMFBYb0ExbXNQYzc3djlPd05SUThMUzBTYWphRjZVbjJidzRZWlpuaWs4RDhVVm1Ca0pZaXFKbU1Td24tWlVXYjNpR3ByalNheHJhdzhQUWJhQjBrN0JxY2VjUzZ2UHRIOFM2MVZ2MGZCX0V5LS1KbUF5ZUtnc1R0X1Z1WV9ObnR0UXctMXFMTHZWRlhpOHF1SW82TWNPVUhqOGZGb2NOQ2o1YUVpYm10Vy1nblJjZHpoM2lsX1dENkR5TjRsQQ?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "cn"}, {"id": "metals_8", "title": "LME Base Metals Face Critical Supply Crisis in 2025 - Discovery Alert", "title_zh": "1) 2025年伦敦金属交易所基本金属面临严重供应危机", "summary_zh": "2) 预计2025年基本金属供应将出现重大短缺。", "source_hint": "Discovery Alert", "date": "Tue, 23 Dec 2025", "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZTNqckg1Nmh1ZDZKdnBERW5GZzZhRUhIa25oY1NNWlNBR0QzOC1ObS1PWXlPejZzTGotVFBFMFFfay1GeEZVWlZfWG1zcDdodjZobU4yb2htVUhaUGVSZlBhZ0x3WXE0QVZyeUR4Q3N2dlp6RFpBU0hfakN2Smg0c2FTTQ?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_9", "title": "[SMM topic] Zinc ore increment determines the trend of 2018 zinc price? - Shanghai Metals Market", "title_zh": "1) 锌矿增量决定2018年锌价趋势？", "summary_zh": "2) 锌矿增量对锌价走势影响显著。", "source_hint": "Shanghai Metals Market", "date": "Thu, 26 Oct 2023", "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPenUxVmoxU1JmVlZNcmhWamlnODBCWng5Z1FIbl9TVjRTMzdCZTRNNkpZenkwdnVxVkJmZzEtWUhJVzR6ZFc4V2p4VTEta05TV2pZbG5OQUdQbWtPQ0pUdmo3cVVJSHBnbjNXTFkzY2xRZEVLX0xTY3N3bjFsTUsxdlh6b3VpZmFZaDJWQm9NcktpUlpiQW5FaVJuZVZkYUwzZG9VWl9wOFM0S0paOXJnd1VyQ2MyQQ?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}, {"id": "metals_10", "title": "Wanatiara Persada ferronickel smelter: $600m invested in operation by the end of the year - Shanghai Metals Market", "title_zh": "1) Wanatiara Persada镍铁冶炼厂：年底前投资6亿美元", "summary_zh": "2) Wanatiara Persada冶炼厂年底前将完成6亿美元投资。", "source_hint": "Shanghai Metals Market", "date": "Fri, 12 Jul 2019", "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOR2lYS2k1TURRb1lHeGdIekg1d083bDhJbnFDWFRYdUJ1ellqTkd4bnZtdm1tSzFOQ3hndGhpQVdNdUU2dE1PeFpqbGNMaWlIbVItS1Y4TDRSdGdQWlpIMVlhRjl1T2lPLWNaSW9jSWktcEJPaldwVVVNempON2xhYm5jM2RoQ2ZrWHZseTI0dGR0N2RfVUV5eHNDZTl0UUJVREd2bFNrVm9sMkFBbkcyMFQ1RWN3M1pLN2lMaENMenZ4c1FzWGVhblB4NTZZZw?oc=5", "tags": ["铜", "铝", "镍", "LME"], "region": "global"}]}, {"id": "carbon", "name": "碳 / CBAM / 碳市场（Verra·EU）", "tags": ["CBAM", "碳会计", "碳市场"], "brief_zh": "近期，德意志银行发布了一份关于二氧化碳价格流动的报告，分析了当前碳市场的动态及其潜在影响。报告指出，随着全球对气候变化的关注加剧，二氧化碳价格正在经历显著波动，这不仅反映了市场供需关系的变化，也预示着未来碳市场的重大转型。\n\n进入2025年，碳市场将迎来一个新的纪元，责任、质量与透明度将成为核心标准。这一变化将促使企业在碳排放管理上承担更大的责任，确保其碳信用的质量和来源透明。这意味着企业需要更加重视其碳足迹的监测与报告，确保符合即将实施的新规。\n\n这一趋势的重要性在于，随着欧盟及其他地区对碳排放的监管不断加强，企业面临的合规风险将显著上升。未能适应新标准的企业可能会遭遇罚款、市场准入限制等不利后果，进而影响其市场竞争力和品牌声誉。因此，企业必须提前布局，确保在碳市场中占据有利地位。\n\n为应对这一变化，企业应采取以下可执行动作：\n动作：1) 加强碳排放数据的收集与分析，确保符合2025年新标准的要求。  \n动作：2) 制定碳管理战略，提升透明度和责任感，以应对未来市场的合规挑战。", "brief_global": "近期，德意志银行发布了一份关于二氧化碳价格流动的报告，分析了当前碳市场的动态及其潜在影响。报告指出，随着全球对气候变化的关注加剧，二氧化碳价格正在经历显著波动，这不仅反映了市场供需关系的变化，也预示着未来碳市场的重大转型。\n\n进入2025年，碳市场将迎来一个新的纪元，责任、质量与透明度将成为核心标准。这一变化将促使企业在碳排放管理上承担更大的责任，确保其碳信用的质量和来源透明。这意味着企业需要更加重视其碳足迹的监测与报告，确保符合即将实施的新规。\n\n这一趋势的重要性在于，随着欧盟及其他地区对碳排放的监管不断加强，企业面临的合规风险将显著上升。未能适应新标准的企业可能会遭遇罚款、市场准入限制等不利后果，进而影响其市场竞争力和品牌声誉。因此，企业必须提前布局，确保在碳市场中占据有利地位。\n\n为应对这一变化，企业应采取以下可执行动作：\n动作：1) 加强碳排放数据的收集与分析，确保符合2025年新标准的要求。  \n动作：2) 制定碳管理战略，提升透明度和责任感，以应对未来市场的合规挑战。", "brief_cn": "近期，德意志银行发布了一份关于二氧化碳价格流动的研究报告，深入探讨了二氧化碳价格的变化及其对市场的影响。随着全球对气候变化的关注加剧，二氧化碳价格的波动不仅反映了市场供需关系，也成为企业合规与经营决策的重要参考指标。\n\n进入2025年，碳市场将迎来责任、质量与透明度的新纪元。这意味着，企业在碳交易中将面临更高的责任要求和透明度标准，相关政策的实施将直接影响企业的运营成本和合规风险。企业需要重新评估其碳排放策略，以适应日益严格的市场环境。\n\n从经营角度来看，二氧化碳价格的波动可能导致企业在成本控制和资源配置上的挑战。企业需密切关注碳市场动态，以便及时调整其碳管理策略，确保在合规的同时降低运营风险。此外，透明度的提升将促使企业在碳排放报告和披露方面更加谨慎，避免因信息不对称而导致的法律风险。\n\n综上所述，当前碳市场的变化对企业的经营与合规提出了新的要求，企业必须积极应对，以确保在未来的市场中占据竞争优势。\n\n动作：1) 评估现有碳管理策略，确保符合2025年新标准；2) 加强对碳市场动态的监测，及时调整经营决策。", "events": [{"id": "carbon_1", "title": "The price of CO₂ - flow – Deutsche Bank", "title_zh": "1) 二氧化碳价格流动 - 德意志银行", "summary_zh": "2) 文章探讨二氧化碳价格的变化及其影响。", "source_hint": "flow – Deutsche Bank", "date": "Thu, 25 Jul 2024", "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1QbEcwZUV5aDduOGV3dHp4RUNUMy12QlVIN3JfclpMV2dBcDh2djUxaHBBWW9GNC1lNnlMcURuZVRkcmxrbWtyNUkta3VYMUJObzQ4QmkwVW9rUVR3bXJRenUwbGMxc1BoS0ZHNEZXeWQ?oc=5", "tags": ["CBAM", "碳会计", "碳市场"], "region": "global"}, {"id": "carbon_2", "title": "Carbon Markets in 2025: A New Era of Accountability, Quality, and Transparency - CarbonCredits.com", "title_zh": "1) 2025年碳市场：责任、质量与透明度的新纪元", "summary_zh": "2) 碳市场将迎来更高的责任和透明度标准。", "source_hint": "CarbonCredits.com", "date": "Mon, 10 Feb 2025", "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYzVEbi1VN080VmRTYnZFTk05WnpnS29VWjhRWDFLTVhNWGIycGMtMzVBRlp2X1pHamVXUi01eXd0MkV4TEVUemlhXzdsc2hJcVd4Mk01ZjFJa3lRbE5uU2pCS0NZRTItX2drWEV4YVZDekVVTzBiUU1VSW5uWVdXM2RORDlTZXpDZ0F2YnhPQVc2TDExanNrMm16R253eElxWS0xTg?oc=5", "tags": ["CBAM", "碳会计", "碳市场"], "region": "global"}]}, {"id": "sea", "name": "东南亚供应链（制造·转移·关键矿产）", "tags": ["越南", "制造", "关键矿产"], "brief_zh": "近期，东南亚地区面临特朗普关税的重大挑战，这对该地区经济构成了直接威胁。与此同时，罗兰贝格的研究显示，东南亚正迅速崛起为全球工业新中心，吸引了越来越多的外资，尤其是在芯片和人工智能领域。为了应对全球经济的碎片化，东南亚国家需要重新调整贸易政策，以适应新的经济环境。\n\n东南亚在关键矿产贸易中扮演着越来越重要的角色，成为全球供应链中不可或缺的一部分。越南正处于引领工业能力的关键时刻，具备了良好的发展机遇。而印尼则在推动绿色工业政策，以促进可持续发展，展现出其在全球供应链中的新定位。\n\n东南亚的多中心工业网络正在逐步形成，为全球供应链提供了多样化的机会。然而，美国的关税政策对全球供应链产生了深远的影响，企业需密切关注这一动态，以便及时调整策略。此外，特朗普与日本及东南亚签署的稀土供应链协议，旨在确保稀土供应链的安全，这对相关行业的企业来说是一个重要信号。\n\n综上所述，东南亚在全球经济中的地位愈发重要，企业应积极应对外部挑战，抓住区域内的机遇。\n\n动作：\n1. 评估并调整供应链策略，以应对特朗普关税带来的影响，确保业务连续性。\n2. 加强与东南亚国家的合作，特别是在芯片和人工智能领域，优化投资政策以吸引外资。", "brief_global": "近期，东南亚地区面临特朗普关税的重大挑战，这对该地区经济构成了直接威胁。与此同时，罗兰贝格的研究显示，东南亚正迅速崛起为全球工业新中心，吸引了越来越多的外资，尤其是在芯片和人工智能领域。为了应对全球经济的碎片化，东南亚国家需要重新调整贸易政策，以适应新的经济环境。\n\n东南亚在关键矿产贸易中扮演着越来越重要的角色，成为全球供应链中不可或缺的一部分。越南正处于引领工业能力的关键时刻，具备了良好的发展机遇。而印尼则在推动绿色工业政策，以促进可持续发展，展现出其在全球供应链中的新定位。\n\n东南亚的多中心工业网络正在逐步形成，为全球供应链提供了多样化的机会。然而，美国的关税政策对全球供应链产生了深远的影响，企业需密切关注这一动态，以便及时调整策略。此外，特朗普与日本及东南亚签署的稀土供应链协议，旨在确保稀土供应链的安全，这对相关行业的企业来说是一个重要信号。\n\n综上所述，东南亚在全球经济中的地位愈发重要，企业应积极应对外部挑战，抓住区域内的机遇。\n\n动作：\n1. 评估并调整供应链策略，以应对特朗普关税带来的影响，确保业务连续性。\n2. 加强与东南亚国家的合作，特别是在芯片和人工智能领域，优化投资政策以吸引外资。", "brief_cn": "近期，中国制造业的下滑正在重塑亚洲工业格局，导致东南亚国家面临前所未有的机遇与挑战。中国制造业的衰退不仅影响了国内经济，也对整个亚洲的工业发展产生了深远影响。东盟国家在中国出口激增的背景下，正处于全球去风险策略的十字路口，面临如何平衡出口增长与风险管理的双重挑战。\n\n特朗普政府的政策意图通过越南等东南亚国家来对抗中国的经济影响力，这一策略可能会加剧区域内的竞争态势。越南作为首站，正迅速成为外资流入的热点，吸引了大量制造业转移。这一现象不仅为越南带来了经济增长的机会，也促使其他东南亚国家加快产业升级与转型。\n\n中国的产业转移在一定程度上助力了东南亚的工业化进程，推动了当地经济的发展。然而，这一过程也伴随着技术转移、人才流动等复杂因素，企业在进行供应链布局时需谨慎评估风险与机遇。\n\n综上所述，当前东南亚供应链的动态变化对企业经营与合规提出了新的要求。企业需密切关注区域内的政策变化与市场动向，以便及时调整战略。\n\n动作：1) 加强对东南亚市场的调研，评估潜在的投资机会与风险；2) 制定应对全球去风险策略的方案，确保供应链的稳定与合规。", "events": [{"id": "sea_1", "title": "Close competition: China’s manufacturing downturn redraws Asia’s industrial map - Robotics & Automation News", "title_zh": "1) 激烈竞争：中国制造业下滑重塑亚洲工业格局", "summary_zh": "2) 中国制造业的衰退影响亚洲整体工业发展。", "source_hint": "Robotics & Automation News", "date": "Mon, 03 Nov 2025", "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOGlVc2ZXYWZ2b2lZLVczQkVfeWh5ZkZEdHE4ejR1dU85TTJTbjFiWDloaVR4UXhOdmp1dUhrdXpzc0pBclNacXNXSWxkZHVWSEVhYWJTSkZFVHB6ai00TG5oVGRuUFg3eXJkMVNaMlV4Tzg3MHZkSFZ0YUVBRHNCOXJUMndQYWVDa0ZBcWIzWTd2Yzg4S1YwM25jN0oyQnZkOUVoc29pLW5HVHhmMk9NS3gxaWtQVmxuR3pEQTY5V3RWZTVkMHNMRjdwYkk?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "cn"}, {"id": "sea_2", "title": "ASEAN economy under threat after Trump tariffs - GIS Reports", "title_zh": "1) 特朗普关税威胁东盟经济", "summary_zh": "2) 东盟经济面临特朗普关税的重大挑战。", "source_hint": "GIS Reports", "date": "Thu, 11 Sep 2025", "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NeXFmbDF3bEo0SDhQaUhFMGJmSXR3ejJrMVJpbnZ3STdDUkc0TzZiRnhWYjRlLW5xZTNiUXNIR3dKNGxwZE91X0lQd1N1UFE1c3N3MFhxLWVGOXZkY1E?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_3", "title": "Roland Berger study: Southeast Asia quickly becoming new industrial hub - Consultancy.asia", "title_zh": "1) 罗兰贝格研究：东南亚迅速成为新工业中心", "summary_zh": "2) 东南亚正快速崛起为全球工业新中心。", "source_hint": "Consultancy.asia", "date": "Tue, 25 Nov 2025", "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQb3hYUVhWdEh1ZWl4YmZSSV9NZjFiMGlKc3pKZkNGUmUyNjhaSHg1VGEzSnVnY1c1ZTVxU3ZIZkxYblZJQXRjX2lvTGROOUltVkxHeWhoYm5WWjVWVkIyc3pTQVVQVGJVQ19telhnM2g4UnJURkdKZzd2U2pYWndsdnRwcjhjQzExRGo3cDJUc2VVYnVoN1pVdUVVTk9STWVWMmRLeDV1cFVkYzNqMGc?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_4", "title": "Recalibrating Southeast Asian trade policy in a world of economic fragmentation - East Asia Forum", "title_zh": "1) 重新调整东南亚贸易政策应对经济碎片化", "summary_zh": "2) 东南亚需适应全球经济分裂的新挑战。", "source_hint": "East Asia Forum", "date": "Sat, 20 Sep 2025", "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMVQySlhmRGdrVUIyWW1PQ3o5cU8ySmwyUlVkLWxFTFdSQUtNLUwwSG1lcnAtakVDdjhReWFtRkg1aGJZczhGOEFlcGs5aTZBb2pHaWIwVzc5Y1NfWExHWWFYNExmR0tSTzU1Vmp1ZVh2MG5aUDJqWDlUZldVbnhxOUhsc050aHY1ellCYzJOMGg2eHRtS2ttRXpacmQxSzlqYnlMSGhmNHZnNFc0VFQteFZsWEJ3Qmoz?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_5", "title": "360° View of How Southeast Asia Can Attract More FDI in Chips and AI - Wilson Center", "title_zh": "1) 东南亚如何吸引更多芯片和人工智能外资的360°视角", "summary_zh": "2) 东南亚需优化政策以吸引外资投资芯片与AI领域。", "source_hint": "Wilson Center", "date": "Tue, 01 Apr 2025", "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMjhDYmM2OGNCdGdPNG55R0xPUnZSeWxyZjVUZUVJUWZLaTJaeVVmSmlkWTVLRkZRUGRnU1d3WVpfclNBWUlrMXZIeWduUTk4NFBUSWZHdkVNMExyNGJYcUpxTVpuWkdyT19OUkhmMVVyd2JjTmtpNUFZSUJOa0doTmVLSVdiQkIwREJscVBYdWR6T0RLTnRuamdIbkd3MjJtTElr?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_6", "title": "ASEAN Caught Between China’s Export Surge and Global De-Risking - Asia Society", "title_zh": "1) 东盟在中国出口激增与全球去风险之间的困境", "summary_zh": "2) 东盟面临中国出口增长与全球去风险策略的双重挑战。", "source_hint": "Asia Society", "date": "Mon, 17 Feb 2025", "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUEJhX2l4al9SbHpneWpFZTkxdW9GUG5xQl9UTGtWSm83SVpfbVhxLWVwZFJiUGxpM19MajYycUJEQzBBQ21oNmt4emd6Nmw5Nkx4RkpOLUwxbXNya3VJOGJTS3FGNzJkZUxieTNUU0FyUmxBNXBzTENWZGNEUGdydUdQM2p1MllIaW5Hdi0zd2E5T0JoTXY0Szd2TzRCblR4R2ZtbnFR?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "cn"}, {"id": "sea_7", "title": "Trump Wants the World to Squeeze Out China. He’s Starting With Vietnam. - The New York Times", "title_zh": "1) 特朗普希望全球挤压中国，首站越南", "summary_zh": "2) 特朗普通过越南对抗中国影响力。", "source_hint": "The New York Times", "date": "Thu, 03 Jul 2025", "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcnNwNjJsNUlQcTRFWU1rWDJqZlBhcG8zTlFoRW1RT0lWQ05EM2E5ZHlJdmRheGRWOW1pQ2JCTWlVbWRKM2FJSXlLdV9adXphTkw0aHZ2VjNMbnRIMlBuMjU3blBDMUhja2xSbTVpc2hBQURMMjFSMFk4bzlLeUdrSEtERE9pb2RYbGtlaTZn?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "cn"}, {"id": "sea_8", "title": "Southeast Asia’s Strategic Rise as Critical Minerals Trading Powerhouse - Discovery Alert", "title_zh": "1) 东南亚作为关键矿产贸易强国的战略崛起", "summary_zh": "2) 东南亚在关键矿产贸易中扮演越来越重要的角色。", "source_hint": "Discovery Alert", "date": "Mon, 27 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQc2VRRHp5NHh6Z2dRRGJMeko0WWF3MVNhem11NFNocUdUSzRUZ3Axc2loMVVNdTgtTVcwNm44VWJ3LUg1VkVDUF9tM2NFNVZGM1R3ZHhvNVRncDNBcm96bklUaDR0YTZjVEhhYUlHTXdyczlLXzliaHQ3bGtSdExxN1Fn?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_9", "title": "Has China’s Great Relocation Helped Southeast Asia Industrialise? - fulcrum.sg", "title_zh": "1) 中国的大迁移是否助力东南亚工业化？", "summary_zh": "2) 中国的产业转移对东南亚经济发展产生了积极影响。", "source_hint": "fulcrum.sg", "date": "Fri, 02 May 2025", "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZEY5bXhkNEkyTEVEbl9UN0l6M1ljVHpfbGJaTXpDVFdVWFM1OTcxU3dnc0MzMUpyelphM3Jmb0ZSVXBOYnNYemFIM09fNXV2X1Foc0ZOSUJ4bHdpWXhycGQzVnlNWllkajN0aVotWXZERk1Bc0FGcHJqYThfbzgwWFFVQ19HV0xVV1RV?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "cn"}, {"id": "sea_10", "title": "Vietnam’s time to lead in industrial capacity is now - Vietnam Investment Review - VIR", "title_zh": "1) 越南现在是引领工业能力的时机", "summary_zh": "2) 越南具备引领工业发展的良好机遇。", "source_hint": "Vietnam Investment Review - VIR", "date": "Tue, 12 Aug 2025", "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQdUxaMm5XaFRtM1VGN2xORGg2eHA2U3ZPLVJqSXBYRm5zY0RWQlNERWFaZnV5Ul9YbHFJVEtHT09FZlZxZ1htd3BiRk9rZWZHdkJZN19Jb2I3UVNsTC1GNVQ3QTRuZ0k5OXVfN2Q2bFlLSF9mNzBsZkNtQk1sQVR5Und0QmxtWVVwY1E?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_11", "title": "The future of Indonesia’s green industrial policy - Lowy Institute", "title_zh": "1) 印尼绿色工业政策的未来", "summary_zh": "2) 印尼正推动绿色工业政策以促进可持续发展。", "source_hint": "Lowy Institute", "date": "Tue, 04 Mar 2025", "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQX2xHSG5UcExHRkZaOTMteWpZeE90MjJfSnpEY1dfOTF4OXJqZzhSYkx2V0oyVXRKbXlJa3E2RzlZaVdwRDlDQnpqLWd1dFoyNlVHVTZWUGx0RWNxQTNPVVoxUXlMUnVWQlhuRHoxUGt0NmNkRFl2ZFNqU1R3VHNGTmRlSVAtQld4X3RpNnpn?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_12", "title": "South-east Asia evolving into multi-hub industrial network: Roland Berger - The Business Times", "title_zh": "1) 东南亚演变为多中心工业网络：罗兰·贝格", "summary_zh": "2) 东南亚正逐步形成多中心的工业网络。", "source_hint": "The Business Times", "date": "Fri, 31 Oct 2025", "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRnQxX3BNOXN4YmpvZXU2NGZ3eERvaVROc082cTlkMGVIRHQ3c1BvLVFaTE9jaUg5Y2szeksxTlRveXJkTThQUW41MHZETlgydFNHR3Nick9pNEhDaW4xYnRkVU90TWxsSlY0aE9FbXR3TzIwSjBtZDVJR2kzRGd2MFB0TVp2Z0hfRHhKOGtMZUR5c2x3bHlXdWxvRTJRY1RSX1JPOWs3c3BGLVF4VHJRTVRqc3lrMnlxWXFTRg?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_13", "title": "Diversifying global supply chains: Opportunities in Southeast Asia - McKinsey & Company", "title_zh": "1) 多元化全球供应链：东南亚的机遇", "summary_zh": "2) 东南亚为全球供应链提供了多样化的机会。", "source_hint": "McKinsey & Company", "date": "Thu, 05 Sep 2024", "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTXh1N1QtSWN4WEpUWjZWSERFdkIxTXZkQUhKQ1RpOVhNcDQzcU9OLVBJV3E0czc4WEJpZURIMWVQeWRzOFlLcktxVU5Hc2I1Y2EzV0MxSDZfRU4zVF9kQVlsTDUxWnRUb1MyZWJITDdxNXI1cmZCNEZoeXdxOG9TM1RGRFJoYmVXRmgxZERmdGZPaFdYeV94Q0gyWGNFTW52OVNnWTg3NU0yMVBGTE51SEM5T2ROMjBTNkNVMkZvVE9xdw?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_14", "title": "Chain Reaction: US Tariffs and Global Supply Chains - rhg.com", "title_zh": "1) 连锁反应：美国关税与全球供应链", "summary_zh": "2) 要点：美国关税对全球供应链产生深远影响。", "source_hint": "rhg.com", "date": "Thu, 09 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVzRzY2lVOTN4MjM5SEhtVkhhT1U5QWx3RWxfbnBHR3Z4amNBTkkxVXZOWHFka0lOQ0NhaWE2VzVCdzZIUENUNkNleHNiTXFva3ZkRjhzbUVpdlZvSnFKX2pXUTBmc21wSGR0WF9Ecjk5MHgtTFhPX3pzR1Eydi1NX0JB?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}, {"id": "sea_15", "title": "Trump Inks Rare Earth Deals with Japan and Southeast Asia to Secure Supply Chains - CarbonCredits.com", "title_zh": "1) 特朗普与日本及东南亚签署稀土供应链协议", "summary_zh": "2) 旨在确保稀土供应链安全。", "source_hint": "CarbonCredits.com", "date": "Fri, 31 Oct 2025", "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNLW1Pal94UEl0blZ5UmVOS0RVYmdDRzRhNjQ5SVFkNkNFSFdWTzV5SEN4cXJyM1hXVFRkNUZkM2hPWUF3UVllZi1JMlBKTjNaVlZCNjhhSzhGak9PS2JIZXd1V25aN0tVTkc5b2VKSkIxSWNLU2ROU1p5bkE4YlFJNkFwUl84aVd4dHloOU1RVGRRTS1ONW1SUEpOZlpqOHo1T2Rzc0dlTm5uQlhC?oc=5", "tags": ["越南", "制造", "关键矿产"], "region": "global"}]}, {"id": "frontier", "name": "前沿学科雷达（量子·聚变·材料·生物）", "tags": ["量子", "聚变", "材料", "生物"], "brief_zh": "**前沿学科雷达简报**\n\n近期，量子计算领域的动态引起了广泛关注。根据最新报告，预计到2025年，将有76家主要公司活跃于量子计算市场。这一趋势不仅反映了全球科技竞争的加速，也表明量子材料市场到2032年将达到969亿美元，显示出巨大的商业潜力和投资机会。\n\n与此同时，德克萨斯大学（UT）的研究优势与美国社会需求紧密相连，表明高等教育机构在推动科技创新和满足市场需求方面的关键角色。此外，127家企业在未来科技交汇点上展现出强大的投资潜力，值得投资者关注。\n\n在新兴技术方面，2026年十大新兴技术的分析显示，这些技术将对40多个行业产生深远影响，企业需密切关注这些趋势，以便及时调整战略。Exoswan的洞察报告揭示了识别高回报投资的四种关键模式，企业在投资决策时应考虑这些模式，以提高投资回报率。\n\n光子学领域也在快速发展，2025年光子学西部展览会即将举行，展品将展示最新的技术进展，企业可借此机会了解行业前沿动态。此外，微系统技术办公室专注于微系统技术的研发与应用，为相关企业提供了政策支持和技术指导。\n\n值得注意的是，生物启发的神经形态感知系统正在推动智能感知与神经电子学的发展，这一领域的创新将为企业带来新的商业机会。\n\n综上所述，量子计算、光子学和生物启发技术等前沿领域正在重塑市场格局，企业应积极布局，以把握未来发展机遇。\n\n动作：\n1. 评估并投资于量子计算和光子学相关企业，以抓住市场增长机会。\n2. 关注新兴技术趋势，调整产品和服务策略，以适应行业变化。", "brief_global": "**前沿学科雷达简报**\n\n近期，量子计算领域的动态引起了广泛关注。根据最新报告，预计到2025年，将有76家主要公司活跃于量子计算市场。这一趋势不仅反映了全球科技竞争的加速，也表明量子材料市场到2032年将达到969亿美元，显示出巨大的商业潜力和投资机会。\n\n与此同时，德克萨斯大学（UT）的研究优势与美国社会需求紧密相连，表明高等教育机构在推动科技创新和满足市场需求方面的关键角色。此外，127家企业在未来科技交汇点上展现出强大的投资潜力，值得投资者关注。\n\n在新兴技术方面，2026年十大新兴技术的分析显示，这些技术将对40多个行业产生深远影响，企业需密切关注这些趋势，以便及时调整战略。Exoswan的洞察报告揭示了识别高回报投资的四种关键模式，企业在投资决策时应考虑这些模式，以提高投资回报率。\n\n光子学领域也在快速发展，2025年光子学西部展览会即将举行，展品将展示最新的技术进展，企业可借此机会了解行业前沿动态。此外，微系统技术办公室专注于微系统技术的研发与应用，为相关企业提供了政策支持和技术指导。\n\n值得注意的是，生物启发的神经形态感知系统正在推动智能感知与神经电子学的发展，这一领域的创新将为企业带来新的商业机会。\n\n综上所述，量子计算、光子学和生物启发技术等前沿领域正在重塑市场格局，企业应积极布局，以把握未来发展机遇。\n\n动作：\n1. 评估并投资于量子计算和光子学相关企业，以抓住市场增长机会。\n2. 关注新兴技术趋势，调整产品和服务策略，以适应行业变化。", "brief_cn": "栏目：前沿学科雷达（量子·聚变·材料·生物）\n\n近期，中国在量子技术和脑机接口领域取得了显著进展，预计到2025年，这些前沿产业将迎来飞速发展。量子技术的突破不仅为信息处理和通信带来了革命性变化，还可能在安全性和计算能力上超越传统技术。同时，脑机接口的实现将推动人机交互的深度融合，具身智能的蓬勃发展将改变人类与技术的关系，提升生产力和生活质量。\n\n这一系列进展的重要性在于，它们将直接影响企业的技术布局和市场竞争力。量子技术的应用将为数据安全和处理效率提供新的解决方案，企业需要关注其在加密通信、金融科技等领域的潜在应用。而脑机接口的成熟将为医疗、教育和娱乐等行业带来新的商业模式，企业需提前布局相关产品和服务，以抢占市场先机。\n\n从经营与合规的角度来看，企业应密切关注这些技术的发展动态，及时调整战略以适应新兴市场的需求。同时，随着技术的进步，相关的法律法规和伦理标准也将不断完善，企业需加强合规管理，确保在技术应用过程中遵循法律法规，维护企业声誉。\n\n动作：1) 组建专门团队，跟踪量子技术和脑机接口的最新进展，评估其对公司产品和服务的影响。2) 制定合规策略，确保在新技术应用中符合相关法律法规，降低法律风险。", "events": [{"id": "frontier_1", "title": "Quantum Computing Companies in 2025 (76 Major Players) - The Quantum Insider", "title_zh": "1) 2025年量子计算公司（76家主要参与者）", "summary_zh": "2) 报告分析了2025年量子计算领域的主要公司。", "source_hint": "The Quantum Insider", "date": "Tue, 23 Sep 2025", "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAyRkQzTTdGNFUzUmYzYzJseVRXTVRvbFR1VlNtNi00N29KbVBySnhTdDgyTlhyTHJCMGRuTGpQUmh4QWdBUTVubElpUjJOc0hWV3ZJYUVXTnMtMTJyR2FMR1lNbm9jRnpUM2xCcXFPbXVyYlFmS2ZMZ3JjTGxwUQ?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_2", "title": "UT Research Strengths Reflect American Priorities - UT Austin News", "title_zh": "1) UT研究优势反映美国优先事项", "summary_zh": "2) UT研究领域与美国社会需求紧密相关。", "source_hint": "UT Austin News", "date": "Thu, 23 Oct 2025", "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQX2k3WmRQWlZld3FTcFJFR3ZTRFdWaWJzNHJXSlYxSXlXaDF0Y0VPZmRJbjZVTllubktYcGNWUnU4ZDZXUDdfbUN0M0t6eTRmcURFOVhhMndVMnB1NkRYbFBoWTdSeXgtTEx0X0l0Wk9fS3ZrSVRfZ1FtU2drcDd3T1h4aWFrYS13T1R0TlRR?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_3", "title": "Quantum Materials Market to Hit USD 96.9 Billion by 2032 as the Race for Quantum Computing, Next-Gen Semiconductors, and Topological Electronics Accelerates Globally - PR Newswire", "title_zh": "1) 量子材料市场到2032年将达969亿美元", "summary_zh": "2) 全球量子计算和新一代半导体竞争加速。", "source_hint": "PR Newswire", "date": "Wed, 26 Nov 2025", "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPYk9fTVFVWlctMmNFaXpVdkhLSWJadnE4b1AzS1JKeVZ1bTZHekl5X093WDhYakpZbVJYV183NndZZTBtdldQTjFVSXZZMjYtRndrZ2lwSDN6R2pHZzA1anhTckJXNGpqekp4THl5ZFlsNWYzS1BXWXA1RDN5dTVBcndOaEMxUjhpYXZmOFVKMUZsbHVxcFljMjVTT0owbzFxaF9aTW9mMXE5clpUWlFYSmxqd2NCMkx6dF9tR2tTdnpPYUpBY1FuUTd1WFpNbkRUaHktbWdrUGFZWFowcnE1NFJfWWtuS3dfZkJ1M0FUZU5RcHhsV2dBOHYtYnNWeHZmLVN1VGp4LUx1RGRINlBnYzBtYnpTYTVCMGJqX3FEaTBqTHRSZjkxWmM5U2UxVjczY0d6TkZ0amNpQlNkLVd2Mw?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_4", "title": "The Convergence Investor’s Cheat Sheet: 127 Companies Positioned at the Intersection of Future Technologies - DataDrivenInvestor", "title_zh": "1) 未来科技交汇点的投资者备忘单：127家企业", "summary_zh": "2) 127家公司在未来科技交汇处具备投资潜力。", "source_hint": "DataDrivenInvestor", "date": "Wed, 22 Oct 2025", "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOSEctanRPODBQTl91cW40ZGNabnBtc2lyNThaVmc4a1QwZWRuVy10WTlyUjBJWnhfX29oaUllVDI5all2U2pUSHJzVm5nanBqR3dldWFTM0tIcjFOUlZ2QldPNmNLUXJfV3h6UC1XNmVjcUo2UkhnZ3dqWFVXbWFUM2xnTjVqNWloNGM3MFVHUVc5bktCUFdoU3cyQUdIam12TTZLTDVJS0xaZ2hnZGk2bDE0NlBlNzZMTlRINnBhZDFnWVJHT2ZTWFFmY1hBZ1Q1eG1PSEVDOWRHWWc?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_5", "title": "Top 10 Emerging Technologies in 2026: How Tech Trends Shape 40+ Industries - StartUs Insights", "title_zh": "1) 2026年十大新兴技术：科技趋势如何影响40多个行业", "summary_zh": "2) 文章探讨新兴技术对多个行业的影响与趋势。", "source_hint": "StartUs Insights", "date": "Mon, 13 Oct 2025", "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRWhQUnJCMzFZeGRUeWtGN1B1ak5NWTVqMU83OHBtNkVyMW9od3V4amxyX2VRRWh5ZEVMLWhZejRQNmI2czJfNWpNSWt6ZnVGUFV3OXo2cVpJNm9OZUlTWlBLLU1RWTF1a2YzRGV1VDZTQTd6N1NNYThDYzlmNllPcTFic0ZzUWtTa3lr?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_6", "title": "2025 Frontier Progress in China's Future Industries: Quantum Technology Soaring, Brain-Computer Interface Turning Real, and Embodied Intelligence Thriving - 36Kr", "title_zh": "1) 2025年中国未来产业前沿进展：量子技术飞速发展，脑机接口成真，具身智能蓬勃发展", "summary_zh": "2) 量子技术和脑机接口等前沿科技在中国快速发展。", "source_hint": "36Kr", "date": "Sun, 16 Nov 2025", "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE12NWVEck1hWjEtTnpyTmJiMzl3dTNpb2k0d19OQWIyY3ZtN2ZndEQyVFdiUEZmSGlmemwxc25jWjVUb18zRW5BeFFaY0ZMdFpGekFz?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "cn"}, {"id": "frontier_7", "title": "Convergence Effects: Four Patterns for Spotting 10X Investments - Exoswan Insights", "title_zh": "1) 收敛效应：识别10倍投资的四种模式 - Exoswan洞察", "summary_zh": "2) 要点：揭示识别高回报投资的四种关键模式。", "source_hint": "Exoswan Insights", "date": "Wed, 23 Jul 2025", "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBkNTlkeVhsTjBLU20xM1hwa3VkdlBtRGE1cWVVeTNrT0ZxMEx4UlNwTHdIR2p1MXBtaHR4TW1WVWJHcThneVVVWXpnazhSQ0lC?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_8", "title": "Photonics West Gears up for 2025 Showcase | Show Preview | Dec 2024 - Photonics Spectra", "title_zh": "1) 光子学西部展览会2025年预展", "summary_zh": "2) 2025年光子学西部展即将举行，展品精彩纷呈。", "source_hint": "Photonics Spectra", "date": "Fri, 26 Sep 2025", "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQS2ZyWnlZOVRwRk5TLTlyY0d3NGVjSkxGSzRFV0VTT01rRFhXRnJaNDVweE9xdGdsUjlCSndrZEUxcDVQQUJYNVdmVzVxMjFhYUlLOFZhQ0xoaXRWbmp0TnBxLUhYaEY1VDBGWUlJYmdfYVNPY1pLMnF3bDJSMFZoeEI0OU8yc2dST1FN?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_9", "title": "Paradigm Shifts: The DNA-Level Catalysts of Exponential Markets - Exoswan Insights", "title_zh": "1) 范式转变：推动指数市场的DNA级催化剂 - Exoswan洞察", "summary_zh": "2) 要点：探讨DNA级因素如何影响市场快速变化。", "source_hint": "Exoswan Insights", "date": "Tue, 22 Jul 2025", "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1oRmJudC1WX2IzQVNqQ3lHZEUwYlZyQzV1aXBncXJmYWgtaWxvbjRlVTF6aE9EbnA3b1FtaVZKYlZtRm1OV3ZiVjh4TQ?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_10", "title": "Microsystems Technology Office - darpa.mil", "title_zh": "1) 微系统技术办公室 - darpa.mil", "summary_zh": "2) 该办公室专注于微系统技术的研发与应用。", "source_hint": "darpa.mil", "date": "Sun, 15 Dec 2024", "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE83aG4yeEFaSzdkcXY3elJYbDZkTHBnalRIakdBTk1lZFllT29hdWFLV1dqMGJHTDNUeGZBdzdxTjFRNjB3eWxjWndCUmFxTEhR?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_11", "title": "A manufacturable platform for photonic quantum computing - Nature", "title_zh": "1) 可制造的光子量子计算平台", "summary_zh": "2) 该平台为光子量子计算提供了可行的制造方案。", "source_hint": "Nature", "date": "Wed, 26 Feb 2025", "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9HTE0tZzAzdGMyRE5yYlRkUFJTVVlkUFpUdzVxWWFFVXdwSUxyYUN6eXI3blhTRmVCOHRBajM3eWRleG5xNEctNkNxMTUzSzAydXQybDlzY2Q5YTJIUkw4?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_12", "title": "Accelerated Computing, Networking Drive Supercomputing in Age of AI - NVIDIA Blog", "title_zh": "1) 加速计算与网络推动AI时代超级计算", "summary_zh": "2) 加速计算和网络技术促进了超级计算的发展。", "source_hint": "NVIDIA Blog", "date": "Mon, 17 Nov 2025", "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQOFUtTXNTX1JBZWZrY0Y5UndnMF83RkNiQnNCbjNlY1h0S1NLZ190YU1vWk1Oc2M0Q24wajdWOTlKZDdYaUN6UjFrY1ZjRU52bXd3M25TLUZ1N1dBNlFuRXFsckRtOW9fcUFKbDlkUndXSFFCWUZ2ZDVsS0pTNndTQmNjTWVWby13?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_13", "title": "Bio‐Inspired Neuromorphic Sensory Systems from Intelligent Perception to Nervetronics - Wiley", "title_zh": "1) 生物启发的神经形态感知系统：从智能感知到神经电子学", "summary_zh": "2) 探讨生物启发技术在感知系统中的应用与发展。", "source_hint": "Wiley", "date": "Mon, 11 Nov 2024", "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE01MTdQTXM3RmZsUlRSbjNxdE02VVZNX1dteEV4cFRVU0dZVlA3Skh5dmZ5Z21oUVVWUzdYRkw3TVp3cXBoTEpUTjhEVjVPZklBOHlXVjZrbndNa2RCRThKZFJvUmhWZWU0SjZ0NlNhMTFGSDJ2Wnc?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_14", "title": "What CEOs Need to Know About Deep Technologies | BCG - Boston Consulting Group", "title_zh": "1) CEO需了解的深度技术", "summary_zh": "2) 深度技术对企业战略和创新至关重要。", "source_hint": "Boston Consulting Group", "date": "Thu, 19 May 2022", "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVU9HOThWQkk0NEtFQzlHSzlEdWUxVG01VW9XRlJzZHNmV0xRZTZOdGUwYW0wMXJISjlZelZTSWZRdnRMZHdmcDJOTWdZbUhjTXh0QzFxaGFVNjJYaFVJejl0bU1HaVZSUkNpTVd3Nngwbm9hQm5lVFlBQWZEWGJKVlRSNzhCUQ?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}, {"id": "frontier_15", "title": "Intelligent Computing: The Latest Advances, Challenges, and Future - Science Partner Journals", "title_zh": "1) 智能计算：最新进展、挑战与未来", "summary_zh": "2) 探讨智能计算领域的最新发展与面临的挑战。", "source_hint": "Science Partner Journals", "date": "Mon, 30 Jan 2023", "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE56Zk52dkVON0cwY01feURwQ0o1YkY5amRmdm5QMUdWNG9RVVJVMUZzZmw5eDgyWkYzMFE3UU84VnFCdWQ2VWJzQnZfdnF5YjU2cFVpV3NPd0dYYkhEOGt3VjFR?oc=5", "tags": ["量子", "聚变", "材料", "生物"], "region": "global"}]}]};</script>
 <script>
-(function(){
-  const D = window.DIGEST || {date:"",generated_at_bjt:"",sections:[],kpis:{metals:[],macro:[]},config:{}};
-  const nav = document.getElementById('nav'), main = document.getElementById('main'), q=document.getElementById('q');
-  const pills=[...document.querySelectorAll('.pill')];
-  const overlay=document.getElementById('overlay'), pbody=document.getElementById('pbody'), tabs=[...document.querySelectorAll('.tab')];
-  document.getElementById('genAt').textContent=D.generated_at_bjt||'—';
-  document.getElementById('kpiAt').textContent=(D.kpis&&D.kpis.generated_at_bjt)||D.generated_at_bjt||'—';
+  const VIEWS = {{ VIEWS | tojson }};
+  let currentView = 'all';
 
-  const key='digest_settings_v15';
-  const st=JSON.parse(localStorage.getItem(key)||'{}');
-  const defaults={theme:'auto',readingMode:'30m',perSectionFull:15,perSection30m:5,weights:{timeliness:0.35,authority:0.2,relevance:0.2,impact:0.15,novelty:0.1}};
-  const S=Object.assign({},defaults,st); const W=Object.assign({},defaults.weights,S.weights||{});
-  function save(){localStorage.setItem(key,JSON.stringify(Object.assign({},S,{weights:W})));}
-
-  function applyTheme(){ if(S.theme==='auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme',S.theme); }
-  applyTheme();
-
-  let view='all';
-  function setView(v){view=v; pills.forEach(p=>p.classList.toggle('active',p.dataset.view===v)); render();}
-  pills.forEach(p=>p.addEventListener('click',()=>setView(p.dataset.view)));
-
-  function esc(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
-  function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,' ').trim();}
-  function matchView(ev){ if(view==='all') return true; return ev.region===view; }
-  function matchQuery(ev){ const t=norm(q.value); if(!t) return true; const hay=norm([ev.title_zh,ev.title,ev.source_hint,(ev.tags||[]).join(' ')].join(' ')); return hay.includes(t); }
-
-  const fbPrefix='digest_fb_v15_'; const seven=7*24*3600*1000;
-  function fbKey(id){return fbPrefix+id;}
-  function setFB(id,v){localStorage.setItem(fbKey(id),JSON.stringify({v,t:Date.now()})); render(); updateFBCount();}
-  function getFB(id){const raw=localStorage.getItem(fbKey(id)); if(!raw) return null; try{return JSON.parse(raw);}catch(e){return null;}}
-  function updateFBCount(){
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix)); let alive=0; const now=Date.now();
-    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); if(o && (now-o.t)<=seven) alive++;}catch(e){} }
-    document.getElementById('fbCount').textContent=alive+' 条';
-  }
-  updateFBCount();
-
-  function kpiBox(x){
-    const d=(x.delta==null)?'—':((x.delta>0?'+':'')+x.delta);
-    const p=(x.pct==null)?'':`（${x.pct>0?'+':''}${x.pct}%）`;
-    const s=(x.pct!=null?x.pct:x.delta);
-    const cls=(s>0)?'pos':(s<0)?'neg':'';
-    const svg=(x.spark_svg||'').replace(/stroke=\"[^\"]*\"/g,'stroke=\"currentColor\"');
-    return `<div class="kpi ${cls}"><div class="k-head"><span>${esc(x.label||'')}</span><span class="tag">${esc(x.unit||'')}</span></div>
-      <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
-      ${(svg||'<svg class="spark" viewBox="0 0 100 30"><path d="M0,20 L100,20" stroke="rgba(128,128,128,.35)" fill="none"/></svg>')}</div>`;
-  }
-  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
-
-  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
-  document.getElementById('kMacro').innerHTML=((D.kpis&&D.kpis.macro)||[]).map(kpiBox).join('');
-
-  function render(){
-    nav.innerHTML=''; main.innerHTML='';
-    (D.sections||[]).forEach((sec,idx)=>{
-      const events=(sec.events||[]).filter(ev=>matchView(ev)&&matchQuery(ev));
-      const a=document.createElement('a'); a.href='#'+sec.id; a.className=(idx===0?'active':'');
-      a.innerHTML=`<span>${esc(sec.name)}</span><span class="badge">${events.length}</span>`;
-      a.addEventListener('click',(e)=>{e.preventDefault(); document.getElementById(sec.id).scrollIntoView({behavior:'smooth',block:'start'});
-        [...nav.querySelectorAll('a')].forEach(x=>x.classList.remove('active')); a.classList.add('active');});
-      nav.appendChild(a);
-
-      const wrap=document.createElement('section'); wrap.className='section'; wrap.id=sec.id;
-      wrap.innerHTML=`<div class="section-head"><div class="section-title">${esc(sec.name)}</div><div class="small">${events.length} 条（聚类事件）</div></div>`;
-      const brief=document.createElement('div'); brief.className='brief';
-      const briefText=(view==='cn')?(sec.brief_cn||sec.brief_zh||''):(view==='global')?(sec.brief_global||sec.brief_zh||''):(sec.brief_zh||'');
-      // Top 今日要点：允许生成端提供结构化 HTML，提高可读性
-      const htmlKey=(view==='cn')?'brief_html_cn':(view==='global')?'brief_html_global':'brief_html';
-      const briefHtml=sec[htmlKey] || sec.brief_html || '';
-      if(briefHtml){
-        brief.classList.add('topbrief');
-        brief.innerHTML=briefHtml;
-      }else{
-        brief.textContent=briefText||'（今日该板块暂无可用内容）';
-      }
-      wrap.appendChild(brief);
-
-      if(sec.tags && sec.tags.length){
-        const t=document.createElement('div'); t.className='actions';
-        t.innerHTML=sec.tags.slice(0,8).map(x=>`<span class="tag">${esc(x)}</span>`).join(''); wrap.appendChild(t);
-      }
-
-      const cards=document.createElement('div'); cards.className='cards';
-      const limit=(S.readingMode==='30m')?(S.perSection30m||5):(S.perSectionFull||15);
-      events.slice(0,limit).forEach(ev=>{
-        const fb=getFB(ev.id);
-        const card=document.createElement('div'); card.className='event';
-        card.innerHTML=`<div class="e-title">${esc(ev.title_zh||ev.title||'')}</div>
-          <div class="e-meta"><span>${esc(ev.source_hint||'')}</span><span>${esc(ev.date||'')} · ${ev.region==='cn'?'中国相关':'全球'}</span></div>
-          <div class="e-sum">${esc(ev.summary_zh||'')}</div>
-          <div class="e-links"><a class="link" href="${esc(ev.url||'#')}" target="_blank" rel="noopener">打开原文</a>
-            <div class="fb">
-              <button class="iconbtn ${fb&&fb.v===1?'active good':''}" title="有用">👍</button>
-              <button class="iconbtn ${fb&&fb.v===-1?'active bad':''}" title="无用">👎</button>
-            </div></div>`;
-        card.addEventListener('click',(e)=>{if(e.target&&e.target.classList.contains('iconbtn'))return; if(ev.url) window.open(ev.url,'_blank','noopener');});
-        const [g,b]=card.querySelectorAll('.iconbtn');
-        g.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,1);});
-        b.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,-1);});
-        cards.appendChild(card);
+  function renderNav(){
+    const nav = document.getElementById('nav');
+    nav.innerHTML = '';
+    const items = [{id:'top', name:'Top 今日要点', count: (VIEWS[currentView].sections||[]).length}].concat(VIEWS[currentView].nav||[]);
+    items.forEach((it)=>{
+      const a = document.createElement('a');
+      a.href = it.id==='top' ? '#top' : ('#sec-' + it.id);
+      a.dataset.target = it.id;
+      a.innerHTML = `<span>${it.name}</span><span class="badge">${it.count}</span>`;
+      a.addEventListener('click', ()=>{
+        [...nav.querySelectorAll('a')].forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
       });
-      wrap.appendChild(cards); main.appendChild(wrap);
+      nav.appendChild(a);
+    });
+    // default active
+    const first = nav.querySelector('a'); if(first) first.classList.add('active');
+  }
+
+  function setView(v){
+    currentView = v;
+    document.querySelectorAll('.view').forEach(el=>{
+      el.classList.toggle('active', el.dataset.view===v);
+    });
+    document.querySelectorAll('[data-viewbtn]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.viewbtn===v);
+    });
+    renderNav();
+    applySearch();
+  }
+
+  function toggleEvent(btn){
+    const card = btn.closest('.event');
+    card.classList.toggle('open');
+  }
+
+  function toggleAll(open){
+    document.querySelectorAll(`.view[data-view="${currentView}"] .event`).forEach(el=>{
+      el.classList.toggle('open', open);
     });
   }
-  q.addEventListener('input',()=>render());
-  document.getElementById('btnHome').addEventListener('click',()=>{main.scrollTo({top:0,behavior:'smooth'});});
-  render();
 
-  function renderSettings(tab){
-    tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
-    if(tab==='general'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">主题</div><div class="label">auto 跟随系统；dark/light 强制</div></div>
-        <select class="input" id="themeSel"><option value="auto">auto</option><option value="dark">dark</option><option value="light">light</option></select></div>
-        <div class="note">建议固定“30分钟集中阅读”，其余时间关闭碎片化推送。</div>`;
-      const sel=document.getElementById('themeSel'); sel.value=S.theme;
-      sel.addEventListener('change',()=>{S.theme=sel.value; save(); applyTheme();});
-    } else if(tab==='layout'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">阅读模式</div><div class="label">30m：每栏 Top ${S.perSection30m}；full：每栏 Top ${S.perSectionFull}</div></div>
-        <select class="input" id="modeSel"><option value="30m">30m</option><option value="full">full</option></select></div>
-        <div class="row"><div><div style="font-size:13px;font-weight:850">30m 每栏条数</div><div class="label">建议 5</div></div><input class="input" id="n30" value="${S.perSection30m}"/></div>
-        <div class="row"><div><div style="font-size:13px;font-weight:850">Full 每栏条数</div><div class="label">建议 10–20</div></div><input class="input" id="nfull" value="${S.perSectionFull}"/></div>
-        <button class="btn" id="saveLayout" style="margin-top:6px">保存</button>`;
-      const mode=document.getElementById('modeSel'); mode.value=S.readingMode;
-      mode.addEventListener('change',()=>{S.readingMode=mode.value; save(); render();});
-      document.getElementById('saveLayout').addEventListener('click',()=>{
-        const n30=parseInt(document.getElementById('n30').value,10);
-        const nf=parseInt(document.getElementById('nfull').value,10);
-        S.perSection30m=isFinite(n30)?Math.max(3,Math.min(10,n30)):5;
-        S.perSectionFull=isFinite(nf)?Math.max(10,Math.min(20,nf)):15;
-        save(); render(); alert('已保存');
-      });
-    } else if(tab==='algo'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">时效</div><div class="label">timeliness</div></div><input class="input" id="w1" value="${W.timeliness.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">权威</div><div class="label">authority</div></div><input class="input" id="w2" value="${W.authority.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">相关</div><div class="label">relevance</div></div><input class="input" id="w3" value="${W.relevance.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">影响</div><div class="label">impact</div></div><input class="input" id="w4" value="${W.impact.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">新颖</div><div class="label">novelty</div></div><input class="input" id="w5" value="${W.novelty.toFixed(2)}"/></div>
-      <button class="btn" id="saveW" style="margin-top:6px">保存并归一化</button>
-      <div class="note">生成端可读取该权重以实现“选题闭环”。</div>`;
-      document.getElementById('saveW').addEventListener('click',()=>{
-        const vals=[parseFloat(w1.value),parseFloat(w2.value),parseFloat(w3.value),parseFloat(w4.value),parseFloat(w5.value)]
-          .map(v=>isFinite(v)?Math.max(0.01,Math.min(0.9,v)):0.2);
-        const sum=vals.reduce((a,b)=>a+b,0);
-        W.timeliness=+(vals[0]/sum).toFixed(2); W.authority=+(vals[1]/sum).toFixed(2); W.relevance=+(vals[2]/sum).toFixed(2);
-        W.impact=+(vals[3]/sum).toFixed(2); W.novelty=+(vals[4]/sum).toFixed(2);
-        save(); alert('已保存：'+JSON.stringify(W));
-      });
-    } else if(tab==='config'){
-      pbody.innerHTML=`<div style="font-size:13px;font-weight:900;margin-bottom:6px">自由扩展类目与数据维度</div>
-      <div class="note"><b>类目</b>：在 <code>digest_config.json</code> 的 <code>sections</code> 里新增一条，生成器会自动渲染导航与板块。<br><br>
-      <b>数据维度</b>：在 <code>digest_config.json</code> 的 <code>kpis</code> 里新增 FRED 序列（或未来接入 LME 授权源），右侧会自动出现 KPI 卡 + 趋势小图。</div>`;
-    }
+  function vote(btn, dir){
+    const card = btn.closest('.event');
+    const id = card.dataset.eventId;
+    const key = 'digest_votes_v18';
+    const obj = JSON.parse(localStorage.getItem(key) || '{}');
+    obj[id] = dir;
+    localStorage.setItem(key, JSON.stringify(obj));
+    btn.style.borderColor = 'rgba(10,132,255,.35)';
+    btn.style.background = 'rgba(10,132,255,.10)';
   }
-  tabs.forEach(t=>t.addEventListener('click',()=>renderSettings(t.dataset.tab)));
-  document.getElementById('btnSettings').addEventListener('click',()=>{overlay.classList.add('open'); renderSettings('general');});
-  document.getElementById('btnClose').addEventListener('click',()=>overlay.classList.remove('open'));
-  overlay.addEventListener('click',(e)=>{if(e.target===overlay) overlay.classList.remove('open');});
 
-  document.getElementById('btnExport').addEventListener('click',()=>{
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
-    const payload={generated_at:new Date().toISOString(),items:[]};
-    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); payload.items.push({id:k.replace(fbPrefix,''),v:o.v,t:o.t});}catch(e){} }
-    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
-    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='digest_feedback_'+(D.date||'')+'.json'; a.click();
+  function applySearch(){
+    const q = (document.getElementById('q').value || '').trim().toLowerCase();
+    const cards = document.querySelectorAll(`.view[data-view="${currentView}"] .event`);
+    cards.forEach(el=>{
+      const t = (el.dataset.text || '').toLowerCase();
+      el.style.display = (!q || t.includes(q)) ? '' : 'none';
+    });
+  }
+
+  document.getElementById('q').addEventListener('input', applySearch);
+
+  document.querySelectorAll('[data-viewbtn]').forEach(btn=>{
+    btn.addEventListener('click', ()=>setView(btn.dataset.viewbtn));
   });
-  document.getElementById('btnClearFB').addEventListener('click',()=>{
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
-    keys.forEach(k=>localStorage.removeItem(k)); updateFBCount(); render();
-  });
-})();
+
+  // Theme toggle
+  function loadTheme(){
+    const t = localStorage.getItem('digest_theme') || 'light';
+    document.documentElement.dataset.theme = t==='dark' ? 'dark' : 'light';
+  }
+  function toggleTheme(){
+    const cur = document.documentElement.dataset.theme || 'light';
+    const next = cur==='dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('digest_theme', next);
+  }
+  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+  loadTheme();
+
+  function openSettings(){ document.getElementById('settings').style.display = 'block'; }
+  function closeSettings(){ document.getElementById('settings').style.display = 'none'; }
+  window.openSettings = openSettings;
+  window.closeSettings = closeSettings;
+  window.toggleEvent = toggleEvent;
+  window.toggleAll = toggleAll;
+  window.vote = vote;
+
+  // init
+  renderNav();
 </script>
-</body></html>
+
+</body>
+</html>
+
+<script>window.DIGEST={"date": "2026-01-02", "generated_at_bjt": "2026-01-02 19:12 (BJT)", "kpis": [{"id": "DGS10", "name": "DGS10", "unit": "%", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "DEXCHUS", "name": "DEXCHUS", "unit": "", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "DTWEXBGS", "name": "DTWEXBGS", "unit": "", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PCOPPUSDM", "name": "PCOPPUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PALUMUSDM", "name": "PALUMUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PZINCUSDM", "name": "PZINCUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PNICKUSDM", "name": "PNICKUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PLEADUSDM", "name": "PLEADUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}, {"id": "PTINUSDM", "name": "PTINUSDM", "unit": "$/t", "value": null, "delta": null, "series": [], "source": "FRED"}], "sections": [{"id": "top", "name": "Top 今日要点", "tags": ["结论优先", "主线", "风险/机会"], "brief_zh": "今日主线：市场继续围绕利率路径、美元强弱与关键大宗波动定价，叠加地缘与制裁不确定性。关注点集中在美债收益率与美元对主要货币的边际变化、LME关键金属价格与库存信号，以及AI算力/数据中心电力与冷却约束的新增进展。接下来24-72小时重点盯紧：政策/制裁新增细节是否落地、风险资产情绪是否随宏观数据转向、以及供应链/关键矿产与碳合规（CBAM）规则更新对成本与交付的传导。", "brief_cn": "今日主线：市场继续围绕利率路径、美元强弱与关键大宗波动定价，叠加地缘与制裁不确定性。关注点集中在美债收益率与美元对主要货币的边际变化、LME关键金属价格与库存信号，以及AI算力/数据中心电力与冷却约束的新增进展。接下来24-72小时重点盯紧：政策/制裁新增细节是否落地、风险资产情绪是否随宏观数据转向、以及供应链/关键矿产与碳合规（CBAM）规则更新对成本与交付的传导。", "brief_global": "今日主线：市场继续围绕利率路径、美元强弱与关键大宗波动定价，叠加地缘与制裁不确定性。关注点集中在美债收益率与美元对主要货币的边际变化、LME关键金属价格与库存信号，以及AI算力/数据中心电力与冷却约束的新增进展。接下来24-72小时重点盯紧：政策/制裁新增细节是否落地、风险资产情绪是否随宏观数据转向、以及供应链/关键矿产与碳合规（CBAM）规则更新对成本与交付的传导。", "events": []}, {"id": "macro", "name": "宏观 / 市场（利率·汇率·风险偏好）", "tags": [], "brief_zh": "近期全球货币市场经历了显著波动，尤其是日元和人民币的表现引发关注。日元因日本央行的政策调整而走弱，市场对未来的预期变得更加谨慎。与此同时，人民币兑美元汇率在美元走软的背景下回升，达到自2024年9月以来的最高水平。这些变化不仅影响了投资者的信心，也可能对全球经济复苏产生深远影响。市场参与者需关注即将发布的经济数据及各国央行的政策动向，以便更好地评估未来的市场走势。", "brief_cn": "今日该板块暂无明确中国相关新增，因近期的市场动态主要集中在日元和美元的波动上，人民币的表现虽有所回升，但整体影响较小。", "brief_global": "The global currency market is experiencing significant fluctuations, particularly with the Japanese yen and the Chinese yuan. The yen has weakened due to adjustments in the Bank of Japan's policies, leading to increased caution among market participants regarding future expectations. Meanwhile, the yuan has strengthened against the dollar, reaching its highest level since September 2024, as the dollar softens. These changes not only affect investor confidence but could also have profound implications for global economic recovery. Market participants should closely monitor upcoming economic data and central bank policy directions to better assess future market trends.", "events": [{"id": "macro-1-6805319", "title": "日元因日本央行政策调整而走弱", "title_zh": "日元因日本央行政策调整而走弱", "summary_zh": "日本央行的政策调整导致日元走弱，市场对未来的预期变得更加谨慎。", "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdFkyNGt0TUlkT182NmlDYzZ4RDVWV3l6dEJ3ek9wSEtaajhhVEhta1JOc1B4SzFQTzNvV2ZlUGtJay0wMVpyYnpBOEE0b0Qxb2FLTG80R0ttaG9obVA0Q29iWW1WZThRZkRFR0JaemlreDBfY3k3UnZzOFZ1WlJ5Z0R6cTRJZw?oc=5", "source_hint": "EBC Financial Group", "date": "2025-12-26", "region": "global"}, {"id": "macro-2-9742828", "title": "人民币兑美元汇率回升至2024年9月以来最高水平", "title_zh": "人民币兑美元汇率回升至2024年9月以来最高水平", "summary_zh": "人民币兑美元汇率在美元走软的背景下回升，达到自2024年9月以来的最高水平。", "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10YVJJaW5iYTNTdlA0YVctUVhWYjNsZk9lajdLQTMxM3R4aHhhNHV4RmNMc2VPMzgwVV9IZW1zRzBZMTNPN0p6TGJCQ3dvY3BCZjBfRlZyeDVNNkx5NlI1cA?oc=5", "source_hint": "Editorialge", "date": "2025-12-25", "region": "cn"}]}, {"id": "sanctions", "name": "地缘政治 / 制裁 / 合规（OFAC·EU）", "tags": ["中国", "半导体", "出口管制", "Nvidia"], "brief_zh": "近期，美国允许Nvidia向中国出售H200 AI芯片，这一决定在全球半导体市场引发了广泛关注。此举被视为美国在中美科技竞争中的重要转折点，可能会加剧中美之间的技术和经济摩擦。中国在AI芯片领域的需求持续增长，而Nvidia的技术优势使其成为中国市场的关键供应商。未来，观察美国对中国科技企业的进一步出口管制政策将至关重要。", "brief_cn": "今日该板块暂无明确中国相关新增。", "brief_global": "The recent decision by the U.S. to allow Nvidia to sell H200 AI chips to China has sparked significant interest in the global semiconductor market. This move is seen as a pivotal moment in the U.S.-China tech rivalry, potentially escalating tensions in technology and economic relations. China's growing demand for AI chips, coupled with Nvidia's technological edge, positions it as a crucial supplier in the Chinese market. Moving forward, it will be essential to monitor the U.S. export control policies affecting Chinese tech firms.", "events": [{"id": "sanctions-1-1079226", "title": "美国允许Nvidia向中国出售H200 AI芯片", "title_zh": "美国允许Nvidia向中国出售H200 AI芯片", "summary_zh": "美国政府决定允许Nvidia向中国出售H200 AI芯片，此举可能加剧中美科技竞争，影响全球半导体市场。", "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNU0M5QUZfR09vd0Y0NUx3VHczQ29MUlpMQVZzcHN5UU5sWHFxRDFQaGd3dU5iWkUwQ05fcDlNNlE4M1h3OUlfeVVNT1NLMF9wa00tXzQ4WmY2T2tucmdCX0dXVjI4c0dnd2RIRElFUnE4bmtaQWVyRFBqa3M4NTJ0eVotb05ENnppZ0NXNEdaNnI1b1BiV1E5U0pITlFCZzFpTVRzTS1JUUl1QQ?oc=5", "source_hint": "Reuters", "date": "2025-12-09", "region": "global"}, {"id": "sanctions-2-8309954", "title": "Nvidia获得特朗普批准向中国出售H200 AI芯片", "title_zh": "Nvidia获得特朗普批准向中国出售H200 AI芯片", "summary_zh": "Nvidia获得特朗普的批准，可以向中国出售H200 AI芯片，这一决定可能会影响中美科技关系。", "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNREU5eEdSX0NfSk1hVDV5cVBSVVdwQnd1R2o1V3NtUGxwSTVtVkdjYnJISGtjUmo4b1BBeG9DOGJraDh1NXdhQ2M3UWY0LWZEVEwyaVZ4cGhkRE8ydmt1TXlSMl9XaW5EdURvZHU2d3FxX3NSbGZISndZRHdmVDVHenRaTXVoYnBYVGFfQXpwUmFTa3FrWTFoQVBZdl9uckhwSWdhLXJDSDJacFdZazI4MXdKdw?oc=5", "source_hint": "Bloomberg.com", "date": "2025-12-09", "region": "global"}]}, {"id": "compute", "name": "AI 计算基础设施（算力·电力·冷却）", "tags": ["AI计算基础设施", "电力", "绿色能源", "芯片"], "brief_zh": "随着人工智能基础设施需求的激增，全球对绿色电力的需求也随之上升。摩根士丹利指出，这一趋势可能引发可再生能源的超级周期。与此同时，英飞凌公司强调了向垂直供应链和直流微电网的转变，显示出AI对电力供应的影响。此外，阿里巴巴考虑大规模采购AMD的AI芯片，以增强其计算能力，这将进一步推动中国在AI领域的竞争力。接下来，市场将关注电力瓶颈和出口管制对AI基础设施投资的影响。", "brief_cn": "今日该板块暂无明确中国相关新增。原因是虽然有提及阿里巴巴的采购计划，但整体信息较为分散，未形成明确的政策或市场动态。", "brief_global": "全球范围内，AI基础设施的需求正在推动绿色电力的增长。摩根士丹利预测，这将引发可再生能源的超级周期，影响未来的能源市场。英飞凌则指出，AI技术的进步将促使电力供应链向垂直整合和直流微电网转型。此外，阿里巴巴正在考虑大规模采购AMD的AI芯片，以提升其计算能力，显示出企业在AI领域的激烈竞争。市场将密切关注电力供应瓶颈和相关政策对AI基础设施的影响。", "events": [{"id": "compute-1-1121981", "title": "摩根士丹利：AI基础设施推动绿色电力需求激增", "title_zh": "摩根士丹利：AI基础设施推动绿色电力需求激增", "summary_zh": "摩根士丹利指出，AI基础设施的需求激增将推动可再生能源的超级周期，影响未来的能源市场。", "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbnVlMk5zdlhrcERjeTJGVExuYWI2MEplVlhGT3ljZ1FCQ1JvSzFaVVF1dHRXbXRMR2dmM09QblpRUTZWdU1sWXFVUGs2Z0RmamVydW1aT2dPTlF4RFZ2V2ZoMFpWVy1TREdBcVFVVlBzcUtaZ2VWSXk3LU0xUGhkd19mSHhhNWJUT29kZlZFRHR6M0lSdFBBOHVxSEc?oc=5", "source_hint": "富途牛牛", "date": "2025-12-30", "region": "global"}, {"id": "compute-2-3373655", "title": "英飞凌：AI电力趋势向垂直供应和直流微电网发展", "title_zh": "英飞凌：AI电力趋势向垂直供应和直流微电网发展", "summary_zh": "英飞凌公司强调，AI技术的进步将促使电力供应链向垂直整合和直流微电网转型。", "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOElUUE52aGZWMEFZcHJDeHNoMWUyOEtxU29Ja2steFYzY2xJd0JnSmdmUmRWXzJJZHo5Tk1EdjJYYVo3REVrbUFVclo5OFA2S3QxdE1HUzI5eDBmVkFYYUgybEZiRjdZOGItS2FXRHBnR1RyRXhlelJVRHQ3WjZTaEdR?oc=5", "source_hint": "digitimes", "date": "2025-12-29", "region": "global"}, {"id": "compute-3-13987", "title": "阿里巴巴考虑大规模采购AMD AI芯片", "title_zh": "阿里巴巴考虑大规模采购AMD AI芯片", "summary_zh": "阿里巴巴正在考虑大规模采购AMD的AI芯片，以增强其计算能力，显示出企业在AI领域的激烈竞争。", "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmRGZE5aTkxiVkRDcW1SZEFJNWJ6T0NNeEVlMWNKdllRbG41ejExNHdtRXZTcERhQjNYU1daSm9DRmtPcTFRZDRjMUtBcl9sQWJhZkhQLWhTMVliYUVJUVJsVU5RREI4T0ZObW9UUWlzeDJRaGpWdmJLU1FadkZwS3FhQkJTNkg1UzUwUGlYUnVsRDl4bWJyMzRlWThoVzl4MFF3NkV1MkZ0SkFpNmgtaQ?oc=5", "source_hint": "TipRanks", "date": "2025-12-22", "region": "cn"}]}, {"id": "metals", "name": "大宗 / 金属（LME·供需·库存）", "tags": ["金属市场", "供应链", "能源转型", "铜"], "brief_zh": "2025年，全球金属市场面临前所未有的挑战与机遇。铜价创下历史新高，主要由于能源转型带来的需求激增。同时，LME基本金属面临严重的供应危机，预计将影响未来几年的市场稳定性。矿业巨头正在积极调整策略，以应对这一变化。随着对电池金属和关键矿产的需求不断上升，投资者应关注相关企业的动态和政策变化，以把握市场机会。", "brief_cn": "今日该板块暂无明确中国相关新增，因大部分报道集中于全球市场动态，未涉及具体中国企业或政策。", "brief_global": "In 2025, the global metals market is facing unprecedented challenges and opportunities. Copper prices have reached record highs, primarily driven by surging demand from the energy transition. Meanwhile, LME base metals are experiencing a critical supply crisis, which is expected to impact market stability in the coming years. Mining giants are actively adjusting their strategies to cope with these changes. As demand for battery metals and critical minerals continues to rise, investors should pay attention to the dynamics of related companies and policy changes to seize market opportunities.", "events": [{"id": "metals-1-5975224", "title": "铜价创历史新高：矿业巨头利用能源转型需求", "title_zh": "铜价创历史新高：矿业巨头利用能源转型需求", "summary_zh": "2025年12月24日，铜价因能源转型需求激增而创下历史新高，矿业巨头正在调整策略以应对市场变化。", "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVEwzdElrcTdqRG5Idkp2RHRuVUFXRi1IYlNyaHJxZHpUSDRDVnFjd3FybEs0RHExbmtITnFZTTRnUmZObFczREN1eVVGM0RoZlJGSDlucjNDTzU1ek9zN053c2NldGZZaENGVkRHWlEzR3lfVmhTN3h6TDctaDVPUzJR?oc=5", "source_hint": "GNews:metals", "date": "2025-12-24", "region": "global"}, {"id": "metals-2-3630263", "title": "LME基本金属面临2025年严重供应危机", "title_zh": "LME基本金属面临2025年严重供应危机", "summary_zh": "2025年12月23日，LME基本金属因供应危机面临严峻挑战，市场稳定性受到威胁。", "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZTNqckg1Nmh1ZDZKdnBERW5GZzZhRUhIa25oY1NNWlNBR0QzOC1ObS1PWXlPejZzTGotVFBFMFFfay1GeEZVWlZfWG1zcDdodjZobU4yb2htVUhaUGVSZlBhZ0x3WXE0QVZyeUR4Q3N2dlp6RFpBU0hfakN2Smg0c2FTTQ?oc=5", "source_hint": "GNews:metals", "date": "2025-12-23", "region": "global"}, {"id": "metals-3-4502625", "title": "供应链因能源转型需求激增而面临挑战", "title_zh": "供应链因能源转型需求激增而面临挑战", "summary_zh": "2025年12月4日，随着能源转型推动金属需求激增，供应链面临重大挑战，影响市场稳定。", "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaFF6UGo4S3BxQUpQRlpHNUUwa1dzQVg3cFlvdHFrZkF5RExqMXVNVlhBN3BHdXQwX3VVdTdkS1p3clJ2VmhSTk5ORGQ3WFJnTFc5ZGhQUTVMSXBFMmd5ZnNHalpsdWFKbVpoYmhuakljNkVRSWh2bTdvbzRqN1pLX0pmZkRqZTFkYUFZaW5TQTlrY2hPd1ExZkVmSEItSTdTNDVfR09NSzhQTVRQcVQ4aVE5ZDNTR2xnbXRFcEZTRWFJeVdXU1pURVFXVk1qbWxiVzN3MWUycw?oc=5", "source_hint": "GNews:metals", "date": "2025-12-04", "region": "global"}]}, {"id": "carbon", "name": "碳 / CBAM / 碳市场（Verra·EU）", "tags": ["碳市场", "CBAM", "Verra"], "brief_zh": "近期，Verra和ICVCM批准了农业碳方法学，标志着自愿碳市场的进一步发展。这一进展将为农业领域的碳信用交易提供新的机会，促进可持续农业实践的实施。与此同时，欧盟的碳边界调整机制（CBAM）正在逐步实施，企业需准备应对新的碳成本规则。随着全球对气候变化的关注加剧，碳市场的透明度和合规性变得尤为重要。各国企业应密切关注这些变化，以便及时调整策略，确保合规并抓住市场机遇。", "brief_cn": "今日该板块暂无明确中国相关新增。", "brief_global": "近期，Verra和ICVCM批准了农业碳方法学，标志着自愿碳市场的进一步发展。这一进展将为农业领域的碳信用交易提供新的机会，促进可持续农业实践的实施。与此同时，欧盟的碳边界调整机制（CBAM）正在逐步实施，企业需准备应对新的碳成本规则。随着全球对气候变化的关注加剧，碳市场的透明度和合规性变得尤为重要。各国企业应密切关注这些变化，以便及时调整策略，确保合规并抓住市场机遇。", "events": [{"id": "carbon-1-4157560", "title": "ICVCM批准农业碳方法学", "title_zh": "ICVCM批准农业碳方法学", "summary_zh": "ICVCM近日批准了来自CAR和Verra的农业碳方法学，为农业领域的碳信用交易提供了新的框架。这将促进可持续农业实践的实施。", "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNVBiN1dGQW9pVmVMMVJ2dVFmRHEwVTNfTUkxeUFxbkZwOHRQSjhzeWJCY09VaVU2VldkQ2g1MFJQSXlGVV82VDdEWTRWODg5QzEySXY1Sks3WEp2VXBMd1dwc0oySC0xMVB4T1gtSjRveUJWTnR2X2FZS2VqU2lxdk4zVEMzQTJMLTFZeE5PbFJRaTE3TmIwYlNJSHdRZk54RThyTm9rOGQ4RElIaDEyUTlWQmzSAcQBQVVfeXFMUFJmdDFtR0xDNGZ0ZlE3TmNCWmdFOVF5cl9vcDVXRFNCQkx0bVd0TnJGSnhvQXhtZWxycTV6a1QwSkxxaUVZQnZ3Z0hrejNZdlBkZ3FvYVFqZ3BlUUV1eU5qdFFRU3FOVWlTaUVxNlJFMjBkT2VnSmp0X3czakw2YWlXRjRJaWprZDBfY1RfeWZrY3Z3TW03d05jN2p6NVZNUjl1b1I3RE1yS0JYRC1Ua1lYMjR3ckdXQ2M3cV9DR2x6Y1pLdg?oc=5", "source_hint": "GNews:carbon", "date": "2025-11-04", "region": "global"}, {"id": "carbon-2-537700", "title": "欧盟碳边界调整机制的实施", "title_zh": "欧盟碳边界调整机制的实施", "summary_zh": "欧盟正在逐步实施碳边界调整机制（CBAM），企业需准备应对新的碳成本规则。这将影响跨境贸易和企业的合规策略。", "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdF9NaFpkXy15VDY4RzNSYTVyNm5wQTM3cjRJemhJQVdpVG9CaXMxWVBEVEpCRlkyNlFTMjVZbEc4elkyVUFwV3ozVE9BVEdzSC1qUHQxdDFwT1ZlTFYwNTJmSkxia2EzWTVxOGo3YUhHRTFuLXk2TW1Qc3Z0UWhiY041a3FBNEZpS2MzRHBkOXJweEhLZkdXT0tHb2pmV1JzMjhobUo3enhfWkdhcGpocER6M1FaaDh1cWVpM2RDMlREb1YyeG9NTw?oc=5", "source_hint": "GNews:carbon", "date": "2025-09-05", "region": "global"}]}, {"id": "sea", "name": "东南亚供应链（制造·转移·关键矿产）", "tags": ["东南亚供应链", "镍", "越南", "泰国", "印尼"], "brief_zh": "近期，东南亚地区的供应链发生了显著变化，尤其是在镍和半导体产业方面。印尼的镍出口禁令正在重塑全球供应链，导致其他国家如越南和泰国加速提升其在全球价值链中的地位。越南政府明确表示希望减少对进口的依赖，并加强本国的供应链能力。同时，泰国也在积极投资以提升工业竞争力，计划在2026年前吸引更多外资。整体来看，东南亚国家正在通过政策调整和投资来增强其在全球市场中的竞争力，值得关注的是这些变化如何影响中国的供应链布局。", "brief_cn": "今日该板块暂无明确中国相关新增。主要原因是当前的报道集中在东南亚国家的政策变化及其对全球供应链的影响，而未直接涉及中国的政策或企业。", "brief_global": "The Southeast Asian supply chain is undergoing significant transformations, particularly in the nickel and semiconductor sectors. Indonesia's nickel export ban is reshaping global supply chains, prompting countries like Vietnam and Thailand to accelerate their positions in the global value chain. The Vietnamese government has explicitly stated its intention to reduce import reliance and strengthen domestic supply chain capabilities. Meanwhile, Thailand is actively investing to enhance industrial competitiveness, aiming to attract more foreign investment by 2026. Overall, Southeast Asian nations are leveraging policy adjustments and investments to boost their competitiveness in the global market, raising questions about how these changes will impact China's supply chain strategies.", "events": [{"id": "sea-1-2207671", "title": "印尼的镍出口禁令正在重塑全球供应链", "title_zh": "印尼的镍出口禁令正在重塑全球供应链", "summary_zh": "印尼实施镍出口禁令，导致全球镍供应链发生重大变化，影响其他国家的市场策略。", "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVmZXQmRxbl9TSVJmZjJFVWFMeVZLNDQ1enQyZVk2VzFZVDRNQjlUZ25NcVdNMU45bnA4S21EVlBSZkdzX1poaTdwYTdvclpvZUVYMFRROGFVR0sxb1BxTk9aNWV6d2syajhSc3Vsd1FpNDFBVWpWZnNvdG9Vc2VEQU8wQQ?oc=5", "source_hint": "Discovery Alert", "date": "2025-12-12", "region": "global"}, {"id": "sea-2-1081268", "title": "越南政府明确表示希望减少对进口的依赖", "title_zh": "越南政府明确表示希望减少对进口的依赖", "summary_zh": "越南政府计划通过政策调整来加强本国供应链能力，减少对外部进口的依赖。", "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSkNwVXc3aGxPT3FJZktJMGpfdHRCZW95X1BKSUI5dl9aOWc3MVBOMWE1ekE0b1pIUVVwLUtQUG9sbUFyenAwQllZdUg5VGVzMjdUb3VFUHJUc0NDcU83Rjlaa3k0V3YweFdRbk52U2xDaTJ4R2p1dWN6d01pOURCSUlKTHBnV1pmQUN4dTRGZng2YXlMMzEzQnF4Y21iT3BjQXROWUFCUnlkRUdkU19B?oc=5", "source_hint": "vietnamnews.vn", "date": "2025-09-18", "region": "global"}, {"id": "sea-3-2515224", "title": "泰国积极投资以提升工业竞争力", "title_zh": "泰国积极投资以提升工业竞争力", "summary_zh": "泰国计划在2026年前吸引更多外资，提升其工业竞争力，投资金额达1.53亿美元。", "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4yM3ozSkRFMkNrTUlDRmwzcTI1aXJadzZ2ekVkSHkyRFlGNGVaSWp1ZC1zNTVaM3VWdHFuSHNfbXktNHVvVVA4MUYzd1ZpSkVs?oc=5", "source_hint": "The Edge Malaysia", "date": "2025-11-06", "region": "global"}]}, {"id": "frontier", "name": "前沿学科雷达（量子·聚变·材料·生物）", "tags": ["量子计算", "量子纠错", "中国", "科技进步"], "brief_zh": "近期，中国在量子计算领域取得了显著进展，特别是在量子纠错技术方面。中国科学家成功展示了超导量子原型机“Zuchongzhi 3.2”的纠错突破，标志着在量子计算稳定性和效率方面与谷歌的竞争加剧。此外，中国的研究团队在超导量子系统的稳定性方面也取得了里程碑式的进展，进一步缩小了与国际领先水平的差距。这些进展不仅提升了中国在全球量子计算领域的地位，也为未来的量子技术应用奠定了基础。", "brief_cn": "近期，中国在量子计算领域取得了显著进展，特别是在量子纠错技术方面。中国科学家成功展示了超导量子原型机“Zuchongzhi 3.2”的纠错突破，标志着在量子计算稳定性和效率方面与谷歌的竞争加剧。此外，中国的研究团队在超导量子系统的稳定性方面也取得了里程碑式的进展，进一步缩小了与国际领先水平的差距。这些进展不仅提升了中国在全球量子计算领域的地位，也为未来的量子技术应用奠定了基础。", "brief_global": "Recent advancements in quantum computing have been marked by significant breakthroughs in error correction technology, particularly from Chinese scientists. The superconducting quantum prototype 'Zuchongzhi 3.2' has demonstrated a breakthrough in error correction, indicating a competitive stance against Google's progress in quantum computing stability and efficiency. These developments not only enhance China's position in the global quantum computing landscape but also lay a foundation for future applications of quantum technology.", "events": [{"id": "frontier-1-9700265", "title": "中国科学家在量子纠错方面取得突破", "title_zh": "中国科学家在量子纠错方面取得突破", "summary_zh": "中国科学家成功展示了超导量子原型机“Zuchongzhi 3.2”的纠错突破，标志着在量子计算稳定性和效率方面与谷歌的竞争加剧。", "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBGNmpnMUNqOEM3NDlVT1pXbkdSNks5c2hGSnRlTTlQamZjMVVPZmpqblZQTE42S2ZHWG1kdVJJZm5jNm15UDMtazI5dHd4OUoyek04NW5qT0Y5WkZ1RXBITjln?oc=5", "source_hint": "Global Times", "date": "2025-12-23", "region": "cn"}, {"id": "frontier-2-2130045", "title": "中国超导量子系统稳定性取得里程碑进展", "title_zh": "中国超导量子系统稳定性取得里程碑进展", "summary_zh": "中国研究团队在超导量子系统的稳定性方面取得了重要进展，进一步缩小了与国际领先水平的差距。", "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdndSdDU3cWlhWlhlVXprV3pUZU83ZG5wb0hPaTA3NnlvTDJKdmNIYXBfcHYzUmxaVHlXZ0lCb1l2eF9ZMWNWOTA2YjdJdXl0c3hRT2dFUUtkdTlrQS1qeExqU0hHMXdoODJleFBEUXN3Q0gydm1tQWt6Y1pDaXcwRjhRZExFYkhkMGJIY0IycE01VEthVWYxWnhoT3NVXzVNcGNmMTlZQjhLZmdPbnZmZXZRa9IBswFBVV95cUxPdndSdDU3cWlhWlhlVXprV3pUZU83ZG5wb0hPaTA3NnlvTDJKdmNIYXBfcHYzUmxaVHlXZ0lCb1l2eF9ZMWNWOTA2YjdJdXl0c3hRT2dFUUtkdTlrQS1qeExqU0hHMXdoODJleFBEUXN3Q0gydm1tQWt6Y1pDaXcwRjhRZExFYkhkMGJIY0IycE01VEthVWYxWnhoT3NVXzVNcGNmMTlZQjhLZmdPbnZmZXZRaw?oc=5", "source_hint": "Harici", "date": "2025-12-29", "region": "cn"}]}, {"id": "arxiv", "name": "研究雷达（arXiv）", "tags": [], "brief_zh": "（今日该板块暂无可用内容：无候选来源。）", "brief_cn": "今日该板块暂无明确中国相关新增。", "brief_global": "（今日该板块暂无可用内容：无候选来源。）", "events": []}], "meta": {"items_per_section": 15, "limit_raw": 25, "generator": "news_digest_generator_v15.py"}};</script>
