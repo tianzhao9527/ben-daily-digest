@@ -3,9 +3,8 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # 每 8 小时一次（UTC 时间）
-    # 北京时间 = UTC+8，因此会在北京时间 08:00 / 16:00 / 00:00 左右更新
-    - cron: "0 */8 * * *"
+    # 每 8 小时一次（UTC），对应北京时间 06:00 / 14:00 / 22:00
+    - cron: "0 22,6,14 * * *"
 
 permissions:
   contents: write
@@ -17,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -37,19 +36,20 @@ jobs:
             pip install requests feedparser jinja2 python-dateutil
           fi
 
-      - name: Generate digest (with watchdog + SIGUSR1 stack dump)
+      - name: Generate digest (watchdog + stack dump)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
-          echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
+          echo "=== Generate digest (watchdog + stack dump) ==="
 
           # 启动生成器（后台）
           python -u news_digest_generator_v15.py \
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
+            --items_per_section 15 \
             --limit_raw 25 \
             --cluster_threshold 0.82 \
             --model gpt-4o-mini \
@@ -57,18 +57,18 @@ jobs:
           PID=$!
           echo "PID=$PID"
 
-          # 6 分钟超时（可按需调大/调小）
-          LIMIT=36
+          # 软超时：10 分钟（每 60 秒 dump 一次栈）
+          # 你如果想更宽松，比如 15 分钟：把 LIMIT=60（60*15s=900s）并调整 sleep
+          LIMIT=40   # 40*15s = 600s
           for i in $(seq 1 $LIMIT); do
             if kill -0 "$PID" 2>/dev/null; then
-              echo "…still running (${i}*10s)"
-              # 每 60s 打一次堆栈，便于定位卡住点
-              if [ $((i % 6)) -eq 0 ]; then
-                echo "=== Stack dump at ${i}*10s ==="
-                kill -USR1 "$PID" || true
-                sleep 1
+              echo "…still running (${i}*15s)"
+              # 每 60 秒 dump 一次栈（i=4,8,12...）
+              if [ $((i % 4)) -eq 0 ]; then
+                echo "=== Stack dump at ${i}*15s ==="
+                kill -USR1 "$PID" >/dev/null 2>&1 || true
               fi
-              sleep 10
+              sleep 15
             else
               echo "Generator finished."
               wait "$PID"
@@ -76,10 +76,10 @@ jobs:
             fi
           done
 
-          echo "=== Timeout reached (6 min). Final stack dump + kill ==="
-          kill -USR1 "$PID" || true
+          echo "=== Timeout reached (10 min). Final stack dump + kill ==="
+          kill -USR1 "$PID" >/dev/null 2>&1 || true
           sleep 2
-          kill "$PID" || true
+          kill "$PID" >/dev/null 2>&1 || true
           wait "$PID" || true
           exit 1
 
