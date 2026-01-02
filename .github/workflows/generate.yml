@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,8 +34,16 @@ jobs:
       - name: Generate index.html
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PYTHONUNBUFFERED: "1"
         run: |
-          python news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             
+          echo "=== Python version ==="
+          python -V
+          echo "=== Generate digest ==="
+          python -u news_digest_generator_v15.py \
+            --config digest_config_v15.json \
+            --template daily_digest_template_v15_apple.html \
+            --out index.html \
+            --limit_raw 40          
 
       - name: Commit & push if changed
         run: |
@@ -45,5 +54,6 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
+          
           git commit -m "Update digest"
           git push
