@@ -29,6 +29,19 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlparse, quote_plus
 
+import sys
+import signal
+import faulthandler
+
+# 让 Python 在异常/死锁时可输出堆栈
+faulthandler.enable(all_threads=True)
+
+# 关键：接住 SIGUSR1，把所有线程堆栈打到 stderr，但不退出
+try:
+    faulthandler.register(signal.SIGUSR1, file=sys.stderr, all_threads=True)
+except Exception:
+    pass
+
 import feedparser
 import requests
 from jinja2 import Template
