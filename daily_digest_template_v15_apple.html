@@ -355,7 +355,7 @@
 
     <div class="content">
 
-      {% for key, view in views.items() %}
+      {% for key, view in VIEWS.items() %}
       <div class="view {% if key=='all' %}active{% endif %}" data-view="{{ key }}">
         <!-- TOP -->
         <section class="section" id="top">
@@ -561,7 +561,7 @@
       <button class="btn" onclick="closeSettings()">关闭</button>
     </div>
     <div style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6;">
-      本版本为“单页静态输出”。栏目与数据维度建议通过 <span style="font-family:var(--mono)">digest_config_v18.json</span> 增加/修改。
+      本版本为“单页静态输出”。栏目与数据维度建议通过 <span style="font-family:var(--mono)">digest_config_v15.json</span> 增加/修改。
       下一阶段可加入“可视化设置编辑器”（在页面里填写后生成 JSON 并下载），再由 GitHub Actions 自动应用。
     </div>
   </div>

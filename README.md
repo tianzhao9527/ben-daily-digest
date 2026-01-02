@@ -1,28 +1,38 @@
-# Ben 的每日资讯简报（GitHub Pages 部署版）
+# Ben Daily Digest (v15)
 
-这个仓库用于**定时生成**一个静态 `index.html`（无客户端抓取），并通过 **GitHub Pages** 对外提供访问。
+这是一个 **静态** 的每日资讯简报生成器：GitHub Actions 定时运行，生成 `index.html` 并提交回仓库；GitHub Pages 直接展示 `index.html`。
 
-## 你会得到什么
-- 访问 `https://<你的用户名>.github.io/<仓库名>/` 就能看到最新简报
-- GitHub Actions 会在 **北京时间 08:00 / 16:00 / 00:00**（每 8 小时）自动更新 `index.html`
+## 文件说明
+- `news_digest_generator_v15.py` 生成器（抓取 + 聚类 + LLM 总结 + 输出 HTML）
+- `digest_config_v15.json` 配置（栏目、查询、KPI、阈值）
+- `daily_digest_template_v15_apple.html` 页面模板（Apple 风格单页）
+- `.github/workflows/generate.yml` 定时工作流（默认每 8 小时）
+- `requirements.txt` Python 依赖
 
-## 必需文件
-- `news_digest_generator_v15.py`：生成器
-- `daily_digest_template_v15_apple.html`：页面模板
-- `digest_config_v15.json`：栏目与 KPI 配置
-- `.github/workflows/generate.yml`：定时任务（Actions）
+## 你需要配置
+在 GitHub 仓库 Settings → Secrets and variables → Actions：
+- 新建 `OPENAI_API_KEY`（用于中文总结与事件卡）
 
-## 可选：启用更强的中文总结
-生成器支持使用 OpenAI 生成更好的中文栏目简报与“今日要点”。
+## GitHub Pages
+Settings → Pages：
+- Source 选择 **Deploy from a branch**
+- Branch 选 `main`，Folder 选 `/ (root)`
 
-在 GitHub 仓库中设置 `OPENAI_API_KEY`：
-Settings → Secrets and variables → Actions → New repository secret
+## 本地测试
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-Name: `OPENAI_API_KEY`
-Value: 你的 key
+python news_digest_generator_v15.py \
+  --config digest_config_v15.json \
+  --template daily_digest_template_v15_apple.html \
+  --out index.html
 
-## 修改栏目 / KPI（可视化）
-打开站点页面 → 右下角【设置】→【扩展】：
-- 新增/编辑类目与 KPI
-- 点击【导出配置】得到 `digest_config_override.json`
-- 把它覆盖仓库里的 `digest_config_v15.json`（提交后下次生成生效）
+python -m http.server 8000
+# 浏览器打开 http://localhost:8000/index.html
+```
+
+## 常见问题
+- events=0：通常是 RSS/Google News 抓取为空（网络/查询过窄/源异常）。查看 Actions 日志里 `[digest] gnews ... entries=...`
+- 卡住很久：脚本对 OpenAI/抓取均有 timeout；若仍卡住，请把 Actions 日志贴出来继续排查。
