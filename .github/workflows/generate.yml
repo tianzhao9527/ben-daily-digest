@@ -41,7 +41,7 @@ jobs:
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
-            --limit_raw 40 &
+            --limit_raw 25 &
           PID=$!
           echo "PID=$PID"
 
