@@ -239,6 +239,23 @@ def main():
     digest['sections'].append({'id':sid,'name':name,'tags':sec.get('tags',[]),'brief_zh':brief_global,
                               'brief_global':brief_global,'brief_cn':brief_cn,'events':events})
 
+
+  # 兜底：如果第一个栏目是“Top 今日要点”但没有抓到事件，则从其它栏目抽取高分事件填充（便于快速浏览）
+  if digest.get('sections'):
+    sec0=digest['sections'][0]
+    if (not sec0.get('events')) and (('Top' in sec0.get('name','')) or (sec0.get('id') in ('top','top10'))):
+      pool=[]
+      for s in digest['sections'][1:]:
+        pool.extend(s.get('events',[]))
+      pool=sorted(pool, key=lambda e: e.get('score',0), reverse=True)
+      seen=set(); top=[]
+      for e in pool:
+        eid=e.get('id') or e.get('url') or e.get('title','')
+        if eid in seen: continue
+        seen.add(eid); top.append(e)
+        if len(top)>=10: break
+      sec0['events']=top
+
   if digest['sections']:
     tb=today_brief(digest['sections'],args.model)
     digest['sections'][0]['brief_zh']=tb; digest['sections'][0]['brief_global']=tb; digest['sections'][0]['brief_cn']=tb

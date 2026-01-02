@@ -10,16 +10,16 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
 .left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
-.brand .title{font-size:15px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.brand .title{font-size:14px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
 .controls{padding:12px 16px;border-bottom:1px solid var(--line)}
 .search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent;cursor:pointer}
 .pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
 .nav{padding:10px 10px 14px;overflow:auto;min-height:0}
-.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text)}
+.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text);font-size:13px;font-weight:650;line-height:1.2}
 .nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
-.badge{font-size:12px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+.badge{font-size:11px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
 .left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
 .btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}
 .btn:hover{border-color:rgba(10,132,255,.30)}
@@ -50,6 +50,11 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .right-scroll{padding:14px 16px 16px;overflow:auto;min-height:0}
 .kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .kpi{border:1px solid var(--line);border-radius:var(--r2);padding:12px}
+.kpi.pos .k-val,.kpi.pos .k-delta{color:var(--good)}
+.kpi.neg .k-val,.kpi.neg .k-delta{color:var(--bad)}
+.kpi.pos{--spark:var(--good);color:var(--good)}
+.kpi.neg{--spark:var(--bad);color:var(--bad)}
+.k-delta{opacity:.95}
 .k-head{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
 .k-val{margin-top:6px;font-size:18px;font-weight:900}
 .k-delta{margin-top:4px;font-size:12px;color:var(--muted)}
@@ -75,7 +80,7 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 <div class="container">
   <aside class="card left">
     <div class="brand"><div class="title">Ben的每日资讯简报</div>
-      <div class="sub">Apple News 风格 · 静态页面<br>日期：{{DATE}} · 生成：<span id="genAt">—</span></div>
+<div class="sub">日期：{{DATE}} · 生成：<span id="genAt">—</span></div>
     </div>
     <div class="controls">
       <input id="q" class="search" placeholder="搜索标题/标签/来源…"/>
@@ -95,7 +100,7 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
   <main class="card main">
     <div class="topbar">
       <div class="h1">今日要点与事件卡</div>
-      <div class="meta">默认 30 分钟模式（每栏 Top 5），可在设置切换全量（10–20条）。所有内容已预渲染，无客户端抓取。</div>
+
     </div>
     <div class="main-scroll" id="main"></div>
   </main>
@@ -178,10 +183,15 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
   function kpiBox(x){
     const d=(x.delta==null)?'—':((x.delta>0?'+':'')+x.delta);
     const p=(x.pct==null)?'':`（${x.pct>0?'+':''}${x.pct}%）`;
-    return `<div class="kpi"><div class="k-head"><span>${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
+    const s=(x.pct!=null?x.pct:x.delta);
+    const cls=(s>0)?'pos':(s<0)?'neg':'';
+    const svg=(x.spark_svg||'').replace(/stroke=\"[^\"]*\"/g,'stroke=\"currentColor\"');
+    return `<div class="kpi ${cls}"><div class="k-head"><span>${esc(x.label||'')}</span><span class="tag">${esc(x.unit||'')}</span></div>
       <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
-      ${x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2,30 L98,30" stroke="rgba(128,128,128,.35)" fill="none"/></svg>'}</div>`;
+      ${(svg||'<svg class="spark" viewBox="0 0 100 30"><path d="M0,20 L100,20" stroke="rgba(128,128,128,.35)" fill="none"/></svg>')}</div>`;
   }
+  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
+
   document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
   document.getElementById('kMacro').innerHTML=((D.kpis&&D.kpis.macro)||[]).map(kpiBox).join('');
 
@@ -272,230 +282,9 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
         save(); alert('已保存：'+JSON.stringify(W));
       });
     } else if(tab==='config'){
-      // Visual editor: sections & KPIs. Stores overrides in localStorage, exports JSON for committing to repo.
-      const baseCfg = (D && D.config_full) ? JSON.parse(JSON.stringify(D.config_full)) : {version:'v15',domain_denylist:[],sections:[],kpis:{metals:[],macro:[]}};
-      const storeKey='digest_config_override_v15';
-      const saved = (()=>{try{return JSON.parse(localStorage.getItem(storeKey)||'null')}catch(e){return null}})();
-      let cfg = saved || baseCfg;
-
-      function esc0(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
-      function dlJSON(obj, name){
-        const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
-        const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click();
-      }
-      function saveCfg(){ localStorage.setItem(storeKey, JSON.stringify(cfg)); }
-      function cleanId(x){ return (x||'').trim().toLowerCase().replace(/[^a-z0-9_\-]/g,'_'); }
-      function splitCSV(x){ return (x||'').split(',').map(s=>s.trim()).filter(Boolean); }
-
-      function renderList(){
-        const secRows = (cfg.sections||[]).map((s,idx)=>`
-          <div style="border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0">
-            <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
-              <div>
-                <div style="font-size:13px;font-weight:900">${esc0(s.name||'(未命名类目)')}</div>
-                <div class="label">id: <code>${esc0(s.id||'')}</code> · type: <code>${esc0(s.type||'google_news_cluster')}</code> · items: ${esc0(String(s.items_per_section||15))}</div>
-                <div class="label" style="margin-top:6px">query_global：${esc0((s.query_global||'').slice(0,140))}${(s.query_global||'').length>140?'…':''}</div>
-              </div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <button class="btn" data-act="sec-edit" data-idx="${idx}">编辑</button>
-                <button class="btn" data-act="sec-del" data-idx="${idx}">删除</button>
-              </div>
-            </div>
-          </div>`).join('');
-
-        const kpiRows = (group)=> (cfg.kpis && cfg.kpis[group] ? cfg.kpis[group] : []).map((k,idx)=>`
-          <div style="border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0">
-            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-              <div>
-                <div style="font-size:13px;font-weight:900">${esc0(k.label||'(未命名指标)')}</div>
-                <div class="label">provider: <code>${esc0(k.provider||'fred')}</code> · series_id: <code>${esc0(k.series_id||'')}</code> · unit: ${esc0(k.unit||'')}</div>
-              </div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <button class="btn" data-act="kpi-edit" data-group="${group}" data-idx="${idx}">编辑</button>
-                <button class="btn" data-act="kpi-del" data-group="${group}" data-idx="${idx}">删除</button>
-              </div>
-            </div>
-          </div>`).join('');
-
-        pbody.innerHTML = `
-          <div style="font-size:13px;font-weight:900;margin-bottom:6px">可视化扩展（无需改代码）</div>
-          <div class="note">这里的修改会保存在本机浏览器（LocalStorage）。你可以<strong>导出 JSON</strong>并提交到 GitHub，使下一次定时生成按新配置执行。</div>
-
-          <div class="hr"></div>
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
-            <div style="font-size:13px;font-weight:900">类目（Sections）</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn" id="btnAddSec">新增类目</button>
-              <button class="btn" id="btnExportCfg">导出配置</button>
-              <label class="btn" style="cursor:pointer">导入配置<input id="fileCfg" type="file" accept="application/json" style="display:none"/></label>
-              <button class="btn" id="btnResetCfg">重置默认</button>
-            </div>
-          </div>
-          <div id="secList">${secRows || '<div class="note">当前没有类目。点击“新增类目”。</div>'}</div>
-
-          <div class="hr"></div>
-          <div style="font-size:13px;font-weight:900">数据维度（KPI）</div>
-          <div class="note">右侧 KPI 面板将自动渲染。当前支持 FRED；后续可接入 LME 授权源。</div>
-
-          <div style="margin-top:10px">
-            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-              <div style="font-weight:850">LME 金属（Proxy）</div>
-              <button class="btn" id="btnAddKpiMetals">新增 KPI</button>
-            </div>
-            <div id="kpiMetals">${kpiRows('metals') || '<div class="note">暂无指标</div>'}</div>
-          </div>
-
-          <div style="margin-top:14px">
-            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-              <div style="font-weight:850">利率 / 汇率 / 美元</div>
-              <button class="btn" id="btnAddKpiMacro">新增 KPI</button>
-            </div>
-            <div id="kpiMacro">${kpiRows('macro') || '<div class="note">暂无指标</div>'}</div>
-          </div>
-
-          <div class="hr"></div>
-          <div class="note">
-            <b>提交生效：</b>导出文件名为 <code>digest_config_override.json</code>。把它提交到仓库，并在生成命令里使用：<code>--config digest_config_override.json</code>。
-          </div>
-        `;
-
-        // Wire buttons
-        document.getElementById('btnAddSec').addEventListener('click', ()=>openSecEditor(null));
-        document.getElementById('btnExportCfg').addEventListener('click', ()=>{
-          saveCfg();
-          dlJSON(cfg, 'digest_config_override.json');
-          alert('已导出：digest_config_override.json（提交到仓库即可生效）');
-        });
-        document.getElementById('btnResetCfg').addEventListener('click', ()=>{
-          if(!confirm('重置为默认配置？本机保存的修改将被覆盖。')) return;
-          cfg = baseCfg; saveCfg(); renderList();
-        });
-        const fileCfg = document.getElementById('fileCfg');
-        fileCfg.addEventListener('change', async ()=>{
-          const f=fileCfg.files && fileCfg.files[0]; if(!f) return;
-          const txt=await f.text();
-          try{ cfg = JSON.parse(txt); saveCfg(); renderList(); alert('已导入配置'); }
-          catch(e){ alert('导入失败：JSON 格式不正确'); }
-        });
-
-        document.getElementById('btnAddKpiMetals').addEventListener('click', ()=>openKpiEditor('metals', null));
-        document.getElementById('btnAddKpiMacro').addEventListener('click', ()=>openKpiEditor('macro', null));
-
-        // Delegate edit/delete
-        pbody.querySelectorAll('[data-act]').forEach(el=>{
-          el.addEventListener('click', ()=>{
-            const act=el.getAttribute('data-act');
-            if(act==='sec-edit') openSecEditor(parseInt(el.getAttribute('data-idx'),10));
-            if(act==='sec-del'){
-              const i=parseInt(el.getAttribute('data-idx'),10);
-              if(confirm('删除该类目？')){ cfg.sections.splice(i,1); saveCfg(); renderList(); }
-            }
-            if(act==='kpi-edit'){
-              openKpiEditor(el.getAttribute('data-group'), parseInt(el.getAttribute('data-idx'),10));
-            }
-            if(act==='kpi-del'){
-              const g=el.getAttribute('data-group'); const i=parseInt(el.getAttribute('data-idx'),10);
-              if(confirm('删除该 KPI？')){ cfg.kpis[g].splice(i,1); saveCfg(); renderList(); }
-            }
-          });
-        });
-      }
-
-      function openSecEditor(idx){
-        const isNew = (idx==null);
-        const s = isNew ? {id:'',name:'',type:'google_news_cluster',items_per_section:15,query_global:'',query_cn:'',tags:[]} : JSON.parse(JSON.stringify(cfg.sections[idx]));
-        pbody.innerHTML = `
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-            <div style="font-size:13px;font-weight:900">${isNew?'新增类目':'编辑类目'}</div>
-            <button class="btn" id="back">返回</button>
-          </div>
-          <div class="note">建议：<code>id</code> 用英文小写；<code>query_global</code> 用英文关键词；<code>items_per_section</code> 10–20。</div>
-
-          <div class="row"><div><div style="font-size:13px;font-weight:850">id</div><div class="label">英文小写/数字/下划线</div></div><input class="input" id="sid" value="${esc0(s.id)}"/></div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">名称</div><div class="label">左侧导航与标题</div></div><input class="input" id="sname" value="${esc0(s.name)}"/></div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">type</div><div class="label">抓取与聚类逻辑</div></div>
-            <select class="input" id="stype">
-              <option value="google_news_cluster">google_news_cluster</option>
-              <option value="mixed_news_arxiv">mixed_news_arxiv</option>
-            </select>
-          </div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">items_per_section</div><div class="label">每栏条数（10–20）</div></div><input class="input" id="sitems" value="${esc0(String(s.items_per_section||15))}"/></div>
-
-          <div class="label" style="margin-top:10px">query_global</div>
-          <textarea id="qg" style="width:100%;min-height:90px;border:1px solid var(--line);border-radius:14px;padding:10px;background:transparent;color:var(--text);font-size:12px;outline:none">${esc0(s.query_global||'')}</textarea>
-
-          <div class="label" style="margin-top:10px">query_cn（可选）</div>
-          <textarea id="qc" style="width:100%;min-height:70px;border:1px solid var(--line);border-radius:14px;padding:10px;background:transparent;color:var(--text);font-size:12px;outline:none">${esc0(s.query_cn||'')}</textarea>
-
-          <div class="label" style="margin-top:10px">tags（逗号分隔，可选）</div>
-          <input class="input" id="stags" style="width:100%" value="${esc0((s.tags||[]).join(','))}"/>
-
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-            <button class="btn" id="save">保存</button>
-            <button class="btn" id="cancel">取消</button>
-          </div>
-        `;
-        document.getElementById('stype').value = s.type || 'google_news_cluster';
-        document.getElementById('back').addEventListener('click', renderList);
-        document.getElementById('cancel').addEventListener('click', renderList);
-        document.getElementById('save').addEventListener('click', ()=>{
-          const sid=cleanId(document.getElementById('sid').value);
-          const sname=(document.getElementById('sname').value||'').trim();
-          if(!sid){ alert('id 不能为空'); return; }
-          if(!sname){ alert('名称不能为空'); return; }
-
-          s.id=sid; s.name=sname;
-          s.type=document.getElementById('stype').value;
-          s.items_per_section = Math.max(10, Math.min(20, parseInt(document.getElementById('sitems').value,10)||15));
-          s.query_global=document.getElementById('qg').value.trim();
-          s.query_cn=document.getElementById('qc').value.trim();
-          s.tags=splitCSV(document.getElementById('stags').value).slice(0,12);
-
-          if(!s.query_global){ alert('query_global 不能为空'); return; }
-
-          if(isNew) cfg.sections.push(s); else cfg.sections[idx]=s;
-          saveCfg(); renderList(); alert('已保存（记得导出配置并提交到仓库）');
-        });
-      }
-
-      function openKpiEditor(group, idx){
-        if(!cfg.kpis) cfg.kpis={metals:[],macro:[]};
-        if(!cfg.kpis[group]) cfg.kpis[group]=[];
-        const isNew=(idx==null);
-        const k = isNew ? {provider:'fred',series_id:'',label:'',unit:''} : JSON.parse(JSON.stringify(cfg.kpis[group][idx]));
-        pbody.innerHTML = `
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-            <div style="font-size:13px;font-weight:900">${isNew?'新增 KPI':'编辑 KPI'}（${group}）</div>
-            <button class="btn" id="back">返回</button>
-          </div>
-          <div class="note">当前建议用 FRED 序列（<code>series_id</code>）。例如：<code>DGS10</code>, <code>DEXCHUS</code>。</div>
-
-          <div class="row"><div><div style="font-size:13px;font-weight:850">provider</div><div class="label">目前固定为 fred</div></div>
-            <select class="input" id="prov"><option value="fred">fred</option></select>
-          </div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">series_id</div><div class="label">FRED 序列 ID</div></div><input class="input" id="sid" value="${esc0(k.series_id)}"/></div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">label</div><div class="label">卡片显示名称</div></div><input class="input" id="lab" value="${esc0(k.label)}"/></div>
-          <div class="row"><div><div style="font-size:13px;font-weight:850">unit</div><div class="label">如 % / $/t</div></div><input class="input" id="unit" value="${esc0(k.unit)}"/></div>
-
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-            <button class="btn" id="save">保存</button>
-            <button class="btn" id="cancel">取消</button>
-          </div>
-        `;
-        document.getElementById('back').addEventListener('click', renderList);
-        document.getElementById('cancel').addEventListener('click', renderList);
-        document.getElementById('save').addEventListener('click', ()=>{
-          const sid=(document.getElementById('sid').value||'').trim();
-          const lab=(document.getElementById('lab').value||'').trim();
-          if(!sid){ alert('series_id 不能为空'); return; }
-          if(!lab){ alert('label 不能为空'); return; }
-          k.provider='fred'; k.series_id=sid; k.label=lab; k.unit=(document.getElementById('unit').value||'').trim();
-          if(isNew) cfg.kpis[group].push(k); else cfg.kpis[group][idx]=k;
-          saveCfg(); renderList(); alert('已保存（记得导出配置并提交到仓库）');
-        });
-      }
-
-      renderList();
+      pbody.innerHTML=`<div style="font-size:13px;font-weight:900;margin-bottom:6px">自由扩展类目与数据维度</div>
+      <div class="note"><b>类目</b>：在 <code>digest_config.json</code> 的 <code>sections</code> 里新增一条，生成器会自动渲染导航与板块。<br><br>
+      <b>数据维度</b>：在 <code>digest_config.json</code> 的 <code>kpis</code> 里新增 FRED 序列（或未来接入 LME 授权源），右侧会自动出现 KPI 卡 + 趋势小图。</div>`;
     }
   }
   tabs.forEach(t=>t.addEventListener('click',()=>renderSettings(t.dataset.tab)));
