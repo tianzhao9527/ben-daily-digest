@@ -33,6 +33,22 @@ import requests
 import feedparser
 from jinja2 import Template
 
+import time, sys
+import faulthandler, signal
+
+# 允许 workflow 发送 SIGUSR1 打印所有线程堆栈（定位卡点）
+faulthandler.enable()
+faulthandler.register(signal.SIGUSR1, all_threads=True)
+print("[digest] boot", flush=True)
+
+import requests
+_real_get = requests.get
+
+def _get(*args, **kwargs):
+    kwargs.setdefault("timeout", (5, 20))  # connect 5s, read 20s
+    return _real_get(*args, **kwargs)
+requests.get = _get
+
 BJT = timezone(timedelta(hours=8))
 
 # -----------------------------
