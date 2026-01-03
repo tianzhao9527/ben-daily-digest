@@ -3,26 +3,27 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # GitHub Actions cron is UTC. 06:00 Beijing (UTC+8) = 22:00 UTC (previous day).
-    - cron: "0 22 * * *"
+    # 06:30 Asia/Shanghai = 22:30 UTC (previous day); adjust as needed
+    - cron: "30 22 * * *"
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: daily-digest
-  cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -33,31 +34,51 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests feedparser jinja2
 
-      - name: Generate digest
+      - name: Generate digest (watchdog + SIGUSR1 stack dump)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PYTHONFAULTHANDLER: "1"
         run: |
           set -euo pipefail
-          echo "=== Generate digest (timeout + SIGUSR1 stack dump) ==="
-          timeout --signal=USR1 --kill-after=30s 25m \
-            python -u news_digest_generator_v15.py \
-              --config digest_config_v15.json \
-              --template daily_digest_template_v15_apple.html \
-              --out index.html \
-              --limit_raw 25 \
-              --items 15 \
-              --model gpt-4o-mini
+          echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
+          python -u news_digest_generator_v15.py \
+            --config digest_config_v15.json \
+            --template daily_digest_template_v15_apple.html \
+            --out index.html \
+            --limit_raw 25 \
+            --items_per_section 15 \
+            --model gpt-4o-mini &
+          PID=$!
+          echo "PID=$PID"
+          # Send stack dump every 60s (up to 10 minutes) without terminating the process
+          for i in $(seq 1 10); do
+            sleep 60
+            if kill -0 $PID 2>/dev/null; then
+              echo "…still running (${i}*60s) -> stack dump (SIGUSR1)"
+              kill -USR1 $PID || true
+            else
+              break
+            fi
+          done
+          wait $PID
 
-      - name: Commit & push if changed
+      - name: Prepare Pages artifact
         run: |
-          set -euo pipefail
-          if git diff --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "chore: update daily digest"
-          git push
+          mkdir -p site
+          cp index.html site/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
