@@ -20,19 +20,13 @@
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
       "queries": [
-        "OFAC sanctions update enforcement action guidance",
-        "EU sanctions package Russia export controls compliance",
-        "US export controls semiconductor AI chips restrictions"
-      ],
-      "feeds": [
-        {
-          "source": "OFAC",
-          "url": "https://home.treasury.gov/ofac/press-releases/rss.xml"
-        },
-        {
-          "source": "EU Council",
-          "url": "https://www.consilium.europa.eu/en/press/press-releases/rss/"
-        }
+        "site:ofac.treasury.gov press release sanctions",
+        "site:home.treasury.gov press releases sanctions OFAC",
+        "site:federalregister.gov OFAC sanctions",
+        "site:bis.doc.gov export controls entity list rule",
+        "site:ofsi.hmtreasury.gov.uk financial sanctions update",
+        "site:consilium.europa.eu sanctions package press release",
+        "site:eur-lex.europa.eu restrictive measures regulation"
       ]
     },
     {
@@ -57,15 +51,11 @@
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
       "queries": [
-        "EU CBAM guidance reporting requirements transition period",
-        "Verra methodology update registry integrity",
-        "carbon credit quality additionality audit"
-      ],
-      "feeds": [
-        {
-          "source": "European Commission",
-          "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&format=rss"
-        }
+        "site:taxation-customs.ec.europa.eu CBAM guidance reporting",
+        "site:ec.europa.eu presscorner CBAM",
+        "site:eur-lex.europa.eu CBAM implementing regulation",
+        "site:verra.org methodology update registry",
+        "site:unfccc.int Article 6 carbon market guidance"
       ]
     },
     {
@@ -172,5 +162,8 @@
       "severity": "info",
       "message": "铜价波动放大：复核报价有效期与库存策略"
     }
-  ]
+  ],
+  "meta": {
+    "note": "v15 config adjusted to remove RSS feeds that returned 404/403 in GitHub Actions; replaced by Google News queries constrained to authoritative domains (site:...) and Federal Register for OFAC-related rules."
+  }
 }
