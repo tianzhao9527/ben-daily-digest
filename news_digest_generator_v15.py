@@ -572,8 +572,11 @@ def build_digest(cfg: Dict[str, Any], *, date: str, model: str, limit_raw: int, 
 
     return {
         "meta": {
+            "title": cfg.get("title") or "Ben的每日资讯简报",
             "date": date,
             "generated_at_utc": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "generated_at_bjt": dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds"),
+
             "model": model,
             "items_per_section": items_per_section,
         },
@@ -594,12 +597,24 @@ def render_html(template_path: str, digest: Dict[str, Any]) -> str:
 
     # Provide template variables (match v15 template expectations)
     context = {
+        # Headline meta (template expects these as UPPERCASE)
+        "TITLE": (digest.get("meta", {}) or {}).get("title") or "Ben的每日资讯简报",
+        "DATE": (digest.get("meta", {}) or {}).get("date") or "",
+        "GENERATED_AT": (digest.get("meta", {}) or {}).get("generated_at_bjt")
+            or (digest.get("meta", {}) or {}).get("generated_at_utc")
+            or "",
+
+        # Backward/forward compatibility
         "META": digest.get("meta", {}),
         "KPIS": digest.get("kpis", []),
-        "views": digest.get("views", {}),  # template uses `views`
+
+        # v15 template compatibility: some revisions used VIEWS, some used views
+        "VIEWS": digest.get("views", {}) or {},
+        "views": digest.get("views", {}) or {},
     }
 
     # Defensive: ensure every view has required keys
+ ensure every view has required keys
     for _, v in (context["views"] or {}).items():
         v["top"] = ensure_top(v.get("top", {}) or {})
         for s in v.get("sections", []) or []:
