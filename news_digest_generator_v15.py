@@ -513,7 +513,7 @@ for k in kpi_cfg:
                 "series_values": values[-min(len(values), 40):] if values else [],
             })
         
-except Exception as e:
+            except Exception as e:
             series = (k.get("series") or "").strip()
             title = (k.get("title") or k.get("name") or series or "KPI").strip()
             unit = (k.get("unit") or "").strip()
