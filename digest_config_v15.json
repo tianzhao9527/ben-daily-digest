@@ -14,7 +14,8 @@
         "US Treasury yields outlook Fed pricing inflation jobs",
         "USD CNY FX policy capital flows emerging markets risk sentiment",
         "global equity volatility VIX credit spreads"
-      ]
+      ],
+      "feeds": []
     },
     {
       "id": "sanctions",
@@ -24,8 +25,7 @@
         "EU sanctions package Russia export controls compliance",
         "US export controls semiconductor AI chips restrictions"
       ],
-      "feeds": [],
-      "note": "RSS sources disabled (unstable/blocked); using Google News queries."
+      "feeds": []
     },
     {
       "id": "compute",
@@ -34,7 +34,8 @@
         "data center power demand grid connection GPU supply chain HBM",
         "AI chip export controls cloud GPU pricing capacity",
         "liquid cooling data center PUE regulation"
-      ]
+      ],
+      "feeds": []
     },
     {
       "id": "metals",
@@ -43,7 +44,8 @@
         "LME copper aluminium nickel zinc inventory premium spread",
         "scrap copper trade flows sanctions freight",
         "energy transition metals demand supply"
-      ]
+      ],
+      "feeds": []
     },
     {
       "id": "carbon",
@@ -53,8 +55,7 @@
         "Verra methodology update registry integrity",
         "carbon credit quality additionality audit"
       ],
-      "feeds": [],
-      "note": "Official RSS disabled (unstable); using Google News queries."
+      "feeds": []
     },
     {
       "id": "sea",
@@ -63,7 +64,8 @@
         "Vietnam manufacturing investment supply chain relocation",
         "Indonesia nickel export policy smelter investment",
         "Thailand Malaysia electronics supply chain incentives"
-      ]
+      ],
+      "feeds": []
     },
     {
       "id": "frontier",
@@ -73,13 +75,15 @@
         "fusion energy high-temperature superconducting magnets",
         "new materials battery solid-state electrolyte breakthrough",
         "synthetic biology biomanufacturing platform"
-      ]
+      ],
+      "feeds": []
     },
     {
       "id": "arxiv",
       "name": "研究雷达（arXiv）",
       "type": "arxiv",
-      "arxiv_query": "cat:cs.LG OR cat:cs.AI OR cat:cs.CL"
+      "arxiv_query": "cat:cs.LG OR cat:cs.AI OR cat:cs.CL",
+      "feeds": []
     }
   ],
   "kpis": [
@@ -161,5 +165,9 @@
       "message": "铜价波动放大：复核报价有效期与库存策略"
     }
   ],
-  "title": "Ben的每日资讯简报"
+  "gnews_locale": {
+    "hl": "en-US",
+    "gl": "US",
+    "ceid": "US:en"
+  }
 }
