@@ -464,7 +464,8 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
     kpi_cfg = cfg.get("kpis") or []
     log(f"[digest] kpi start: {len(kpi_cfg)}")
     
-for k in kpi_cfg:
+    
+    for k in kpi_cfg:
         try:
             series = (k.get("series") or "").strip()
             title = (k.get("title") or k.get("name") or series or "KPI").strip()
@@ -512,8 +513,7 @@ for k in kpi_cfg:
                 "color": color,
                 "series_values": values[-min(len(values), 40):] if values else [],
             })
-        
-            except Exception as e:
+        except Exception as e:
             series = (k.get("series") or "").strip()
             title = (k.get("title") or k.get("name") or series or "KPI").strip()
             unit = (k.get("unit") or "").strip()
