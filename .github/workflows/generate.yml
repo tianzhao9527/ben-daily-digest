@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
 
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install requests jinja2 feedparser beautifulsoup4 lxml
+          python -m pip install requests jinja2
 
       - name: Generate digest (watchdog + SIGUSR1 stack dump)
         env:
