@@ -136,7 +136,7 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script>window.DIGEST = __DIGEST_JSON__;</script>
+<script>window.DIGEST = {{ DIGEST_JSON | safe }};</script>
 <script>
 (function(){
   const D = window.DIGEST || {date:"",generated_at_bjt:"",sections:[],kpis:{metals:[],macro:[]},config:{}};
