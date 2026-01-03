@@ -3,7 +3,7 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # Beijing time: 06:00 / 14:00 / 22:00  (UTC: 22:00 / 06:00 / 14:00)
+    # Beijing time runs at 06:00 / 14:00 / 22:00 (UTC: 22:00 / 06:00 / 14:00)
     - cron: "0 22,6,14 * * *"
 
 permissions:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -30,26 +30,32 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install requests feedparser jinja2
+          python -m pip install requests jinja2 feedparser beautifulsoup4 lxml
 
-      - name: Generate digest (safe timeout)
+      - name: Generate digest (watchdog + SIGUSR1 stack dump)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
-          echo "=== Generate digest ==="
-          date -u
-          # hard timeout at 10 minutes (leave buffer for commit/push)
-          timeout 600s python -u news_digest_generator_v15.py \
-            --config digest_config_v15.json \
-            --template daily_digest_template_v15_apple.html \
-            --out index.html \
-            --limit_raw 25 \
-            --items_per_section 15 \
-            --model gpt-4o-mini
-          echo "=== Digest generated ==="
-          ls -lah index.html
+          echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
+
+          python -u news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             --limit_raw 25             --items_per_section 15             --model gpt-4o-mini &
+          PID=$!
+          echo "PID=$PID"
+
+          # watchdog: dump stack every 60s (up to 8 times) without failing the step
+          for i in {1..8}; do
+            sleep 60
+            if kill -0 "$PID" 2>/dev/null; then
+              echo "…still running (${i}*60s) -> stack dump (SIGUSR1)"
+              kill -USR1 "$PID" 2>/dev/null || true
+            else
+              break
+            fi
+          done
+
+          wait "$PID"
 
       - name: Commit & push
         run: |
