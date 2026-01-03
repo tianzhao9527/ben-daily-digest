@@ -182,11 +182,26 @@ button,input,select,textarea{font-family:var(--font)}
   updateFBCount();
 
   function kpiBox(x){
-    const d=(x.delta==null)?'—':((x.delta>0?'+':'')+x.delta);
-    const p=(x.pct==null)?'':`（${x.pct>0?'+':''}${x.pct}%）`;
-    return `<div class="kpi"><div class="k-head"><span>${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
+    function fmt(n){
+      if(n==null || n===undefined || Number.isNaN(Number(n))) return '—';
+      const v=Number(n);
+      if(Math.abs(v)>=1000) return (v>0?'+':'')+v.toFixed(0);
+      if(Math.abs(v)>=10) return (v>0?'+':'')+v.toFixed(2);
+      return (v>0?'+':'')+v.toFixed(4).replace(/\.0+$/,"").replace(/(\.\d*?)0+$/,"$1");
+    }
+    function fmtPct(n){
+      if(n==null || n===undefined || Number.isNaN(Number(n))) return '';
+      const v=Number(n);
+      const s=(v>0?'+':'')+v.toFixed(2).replace(/\.00$/,'');
+      return `（${s}%）`;
+    }
+    const d=fmt(x.delta);
+    const p=fmtPct(x.pct);
+    const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:99px;background:${esc(x.color||'#64748B')};margin-right:8px;transform:translateY(-1px)"></span>`;
+    const spark = x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2 30 L20 28 L40 26 L60 24 L80 22 L98 18" stroke="rgba(128,128,128,.35)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    return `<div class="kpi"><div class="k-head"><span>${dot}${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
       <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
-      ${x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2,30 L98,30" stroke="rgba(128,128,128,.35)" fill="none"/></svg>'}</div>`;
+      ${spark}</div>`;
   }
   function normalizeKpis(k){
     if(!k) return {metals:[], macro:[]};
@@ -202,7 +217,7 @@ button,input,select,textarea{font-family:var(--font)}
           else if(Math.abs(v)>=10) value_str = v.toFixed(2);
           else value_str = v.toFixed(4).replace(/\.0+$/,"").replace(/(\.\d*?)0+$/,"$1");
         }
-        const row={label:x.name||x.id||"KPI", unit:x.unit||"", value_str, delta:null, delta_pct:null, direction:null, spark_svg:"", source:x.source||""};
+        const row={label:x.name||x.title||x.id||"KPI", unit:x.unit||"", value_str:value_str, value:val, updated_at:x.updated_at||null, delta:x.delta??null, pct:x.delta_pct??null, direction:x.direction||null, spark_svg:x.spark_svg||"", color:x.color||null, source:x.source||""};
         (grp==="macro"?macro:metals).push(row);
       }
       return {metals, macro};

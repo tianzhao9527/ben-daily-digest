@@ -201,6 +201,68 @@ def fetch_fred_latest(series_id: str) -> tuple[float | None, str | None]:
             continue
     return None, None
 
+def fetch_fred_recent(series_id: str, max_points: int = 40) -> tuple[list[float], list[str]]:
+    """Fetch recent numeric observations from FRED graph CSV endpoint (no API key).
+    Returns (values, dates) in chronological order, limited to last `max_points` numeric points.
+    """
+    url = fred_csv(series_id)
+    def _do():
+        r = requests.get(url, timeout=(6, 20))
+        r.raise_for_status()
+        return r.text
+    csv_text = retry(_do, name=f"fred {series_id} recent", tries=3, base_sleep=1.0)
+
+    lines = [x.strip() for x in csv_text.splitlines() if x.strip()]
+    if len(lines) < 2:
+        return [], []
+    vals: list[float] = []
+    dates: list[str] = []
+    # parse all numeric then slice last N
+    for row in lines[1:]:
+        parts = row.split(",")
+        if len(parts) < 2:
+            continue
+        dt, val_s = parts[0].strip(), parts[1].strip()
+        if val_s in (".", ""):
+            continue
+        try:
+            v = float(val_s)
+        except Exception:
+            continue
+        dates.append(dt)
+        vals.append(v)
+    if not vals:
+        return [], []
+    if max_points and len(vals) > max_points:
+        dates = dates[-max_points:]
+        vals = vals[-max_points:]
+    return vals, dates
+
+
+def _color_for_key(key: str) -> str:
+    """Deterministic color from key."""
+    palette = ["#0a84ff", "#34c759", "#ff9f0a", "#ff453a", "#bf5af2", "#64d2ff", "#ffd60a", "#30d158", "#ff375f"]
+    h = 0
+    for ch in key:
+        h = (h * 131 + ord(ch)) & 0xFFFFFFFF
+    return palette[h % len(palette)]
+
+
+def _spark_svg(values: list[float], stroke: str) -> str:
+    if not values or len(values) < 2:
+        return ""
+    w, h, pad = 100.0, 44.0, 3.0
+    mn, mx = min(values), max(values)
+    span = (mx - mn) if (mx - mn) != 0 else 1.0
+    pts = []
+    for i, v in enumerate(values):
+        x = pad + (w - 2 * pad) * (i / (len(values) - 1))
+        y = pad + (h - 2 * pad) * (1.0 - ((v - mn) / span))
+        pts.append((x, y))
+    d = f"M {pts[0][0]:.2f},{pts[0][1]:.2f} " + " ".join([f"L {x:.2f},{y:.2f}" for x, y in pts[1:]])
+    return f'<svg class="spark" viewBox="0 0 100 44" preserveAspectRatio="none" aria-hidden="true"><path d="{d}" stroke="{stroke}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+
+
 # -------------------------
 # OpenAI (chat.completions via requests)
 # -------------------------
@@ -401,28 +463,77 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
     kpis: list[dict] = []
     kpi_cfg = cfg.get("kpis") or []
     log(f"[digest] kpi start: {len(kpi_cfg)}")
-    for k in kpi_cfg:
+    
+for k in kpi_cfg:
         try:
-            series = k.get("series")
-            val, updated = fetch_fred_latest(series) if series else (None, None)
+            series = (k.get("series") or "").strip()
+            title = (k.get("title") or k.get("name") or series or "KPI").strip()
+            unit = (k.get("unit") or "").strip()
+            lookback = int(k.get("lookback") or 40)
+
+            values: list[float] = []
+            dates: list[str] = []
+            if series:
+                values, dates = fetch_fred_recent(series, max_points=lookback)
+
+            val = values[-1] if values else None
+            updated = dates[-1] if dates else None
+
+            delta = None
+            delta_pct = None
+            direction = None
+            if values and len(values) >= 2 and val is not None:
+                prev = values[-2]
+                delta = val - prev
+                if prev != 0:
+                    delta_pct = (delta / prev) * 100.0
+                # direction used for UI chips
+                if abs(delta) < 1e-12:
+                    direction = "flat"
+                elif delta > 0:
+                    direction = "up"
+                else:
+                    direction = "down"
+
+            color = _color_for_key(series or title)
+            spark = _spark_svg(values[-min(len(values), 40):], stroke=color) if values else ""
+
             kpis.append({
-                "id": k.get("id"),
-                "name": k.get("name"),
-                "unit": k.get("unit",""),
+                "id": series or title,
+                "name": title,
+                "unit": unit,
                 "value": val,
                 "updated_at": updated,
                 "source": "FRED" if series else (k.get("source") or ""),
+                "delta": delta,
+                "delta_pct": delta_pct,
+                "direction": direction,
+                "spark_svg": spark,
+                "color": color,
+                "series_values": values[-min(len(values), 40):] if values else [],
             })
-        except Exception as e:
+        
+except Exception as e:
+            series = (k.get("series") or "").strip()
+            title = (k.get("title") or k.get("name") or series or "KPI").strip()
+            unit = (k.get("unit") or "").strip()
+            color = _color_for_key(series or title)
             kpis.append({
-                "id": k.get("id"),
-                "name": k.get("name"),
-                "unit": k.get("unit",""),
+                "id": series or title,
+                "name": title,
+                "unit": unit,
                 "value": None,
                 "updated_at": None,
-                "source": "FRED",
+                "source": "FRED" if series else (k.get("source") or ""),
+                "delta": None,
+                "delta_pct": None,
+                "direction": None,
+                "spark_svg": "",
+                "color": color,
+                "series_values": [],
                 "error": str(e)[:200],
             })
+
     log(f"[digest] kpi done: {len(kpis)}")
 
     sections_cfg = normalize_sections_cfg(cfg.get("sections") or [])
