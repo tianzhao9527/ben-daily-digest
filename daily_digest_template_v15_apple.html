@@ -10,7 +10,7 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
 .left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
-.brand .title{font-size:15px;font-weight:860}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.brand .title{font-size:15px;font-weight:700}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
 .controls{padding:12px 16px;border-bottom:1px solid var(--line)}
 .search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
@@ -18,6 +18,10 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
 .nav{padding:10px 10px 14px;overflow:auto;min-height:0}
 .nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text)}
+.nav a{font-size:13px;font-weight:600;line-height:1.25}
+.nav a .badge{font-weight:600}
+.nav a .sub{font-size:11px}
+
 .nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
 .badge{font-size:12px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
 .left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
@@ -70,6 +74,8 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
 @media (max-width:1200px){.container{grid-template-columns:320px 1fr}.right{display:none}}
 @media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
+
+button,input,select,textarea{font-family:var(--font)}
 </style></head>
 <body>
 <div class="container">
@@ -182,8 +188,30 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
       <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
       ${x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2,30 L98,30" stroke="rgba(128,128,128,.35)" fill="none"/></svg>'}</div>`;
   }
-  document.getElementById('kMetals').innerHTML=((D.kpis&&D.kpis.metals)||[]).map(kpiBox).join('');
-  document.getElementById('kMacro').innerHTML=((D.kpis&&D.kpis.macro)||[]).map(kpiBox).join('');
+  function normalizeKpis(k){
+    if(!k) return {metals:[], macro:[]};
+    if(Array.isArray(k)){
+      const metals=[], macro=[];
+      for(const x of k){
+        const id=String(x.id||"").toUpperCase();
+        const grp=(id==="DGS10"||id==="DEXCHUS"||id==="DTWEXBGS") ? "macro" : "metals";
+        let value_str="—";
+        if(x.value!==null && x.value!==undefined && !Number.isNaN(Number(x.value))){
+          const v=Number(x.value);
+          if(Math.abs(v)>=1000) value_str = v.toFixed(0);
+          else if(Math.abs(v)>=10) value_str = v.toFixed(2);
+          else value_str = v.toFixed(4).replace(/\.0+$/,"").replace(/(\.\d*?)0+$/,"$1");
+        }
+        const row={label:x.name||x.id||"KPI", unit:x.unit||"", value_str, delta:null, delta_pct:null, direction:null, spark_svg:"", source:x.source||""};
+        (grp==="macro"?macro:metals).push(row);
+      }
+      return {metals, macro};
+    }
+    return {metals: k.metals||[], macro: k.macro||[]};
+  }
+  const KG = normalizeKpis(D.kpis);
+  document.getElementById('kMetals').innerHTML=(KG.metals||[]).map(kpiBox).join('');
+  document.getElementById('kMacro').innerHTML=(KG.macro||[]).map(kpiBox).join('');
 
   function render(){
     nav.innerHTML=''; main.innerHTML='';
