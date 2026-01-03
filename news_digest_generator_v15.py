@@ -238,7 +238,7 @@ def sparkline_svg(values: List[float], *, w: int = 140, h: int = 34, pad: int = 
 def build_kpis(kpi_cfg: List[Dict[str, Any]]) -> List[KPI]:
     out: List[KPI] = []
     for k in kpi_cfg:
-        sid = k.get("fred")
+        sid = k.get('fred') or k.get('series') or k.get('id')
         if not sid:
             continue
         pts = fetch_fred_series(sid, n=30)
@@ -249,8 +249,8 @@ def build_kpis(kpi_cfg: List[Dict[str, Any]]) -> List[KPI]:
         delta = (vals[-1] - vals[-2]) if len(vals) >= 2 else None
         out.append(
             KPI(
-                key=k.get("key", sid),
-                name=k.get("name", sid),
+                key=(k.get('key') or sid),
+                name=(k.get('name') or k.get('title') or sid),
                 value=value,
                 unit=k.get("unit", ""),
                 delta=delta,
@@ -482,9 +482,21 @@ def build_digest(cfg: Dict[str, Any], *, date: str, model: str, limit_raw: int, 
 
     # Sections
     sections_out: List[Dict[str, Any]] = []
-    sections_cfg: Dict[str, Any] = cfg.get("sections", {}) or {}
-    log(f"[digest] sections start: {len(sections_cfg)}")
-    for sid, sc in sections_cfg.items():
+    sections_cfg_raw = cfg.get("sections", []) or []
+    # 支持两种格式：
+    # 1) {"macro": {...}, "sanctions": {...}}  (dict)
+    # 2) [{"id": "macro", ...}, {"id": "sanctions", ...}]  (list) —— digest_config_v15.json 使用该格式
+    if isinstance(sections_cfg_raw, dict):
+        sections_iter = list(sections_cfg_raw.items())
+    else:
+        sections_iter = []
+        for i, sc in enumerate(list(sections_cfg_raw)):
+            if not isinstance(sc, dict):
+                continue
+            sid = sc.get("id") or sc.get("key") or f"sec{i}"
+            sections_iter.append((sid, sc))
+    log(f"[digest] sections start: {len(sections_iter)}")
+    for sid, sc in sections_iter:
         name = sc.get("name", sid)
         log(f"[digest] section start: {sid} ({name})")
         raw = build_raw_items_for_section(sid, sc, limit_raw=limit_raw)
