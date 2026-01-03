@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""news_digest_generator_v15.py
+"""
+news_digest_generator_v15.py
+- Fetches candidate items (primarily Google News RSS + optional RSS feeds)
+- Builds "conclusion-first" event cards via a small number of LLM calls
+- Renders a single static HTML page (no client-side fetching)
 
-Fixes for v15/v18 template mismatch and GH Actions watchdog:
-- Proper server-side Jinja2 rendering when template contains Jinja markers ({% ... %}, {{ ... }}).
-- Fallback to JSON injection only when template contains __DIGEST_JSON__.
-- SIGUSR1 stack dump (faulthandler) so watchdog can dump without killing the process.
-- RSS feed config can be dict {source,url} or plain string URL.
-- All HTTP calls have timeouts + bounded retries to prevent hanging.
-- LLM JSON parsing is robust; falls back to deterministic brief when LLM fails.
+Designed to run reliably on GitHub Actions.
 """
 
 from __future__ import annotations
@@ -16,556 +14,606 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import datetime as dt
-import faulthandler
 import hashlib
-import html as _html
+import html
 import json
-import math
 import os
 import random
 import re
 import signal
+import sys
 import time
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import quote_plus, urlparse
 
-import feedparser
 import requests
+import feedparser
+from jinja2 import Environment, BaseLoader, StrictUndefined
+import faulthandler
 
+# ----------------------------
+# Safety / debugging hooks
+# ----------------------------
+# Allow the workflow to send SIGUSR1 to dump stacks without killing the process.
 try:
-    from jinja2 import Environment, BaseLoader, StrictUndefined
+    faulthandler.register(signal.SIGUSR1, all_threads=True)
 except Exception:
-    Environment = None  # type: ignore
+    pass
 
+UA = os.getenv("DIGEST_UA", "Mozilla/5.0 (compatible; BenDailyDigest/1.0; +https://github.com/)")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
-DEFAULT_UA = "ben-daily-digest/1.0 (+github-actions)"
-OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+DEFAULT_TIMEOUT = (10, 60)  # connect, read
 
 
 def log(msg: str) -> None:
     print(msg, flush=True)
 
 
-def now_beijing() -> dt.datetime:
-    return dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc).astimezone(
-        dt.timezone(dt.timedelta(hours=8))
-    )
+# ----------------------------
+# Data structures
+# ----------------------------
+@dataclasses.dataclass
+class RawItem:
+    title: str
+    url: str
+    source: str = ""
+    published: str = ""
+    snippet: str = ""
+    section: str = ""
 
 
-def sha1(s: str) -> str:
-    return hashlib.sha1(s.encode("utf-8")).hexdigest()
+@dataclasses.dataclass
+class KPI:
+    key: str
+    name: str
+    value: float
+    unit: str = ""
+    delta: Optional[float] = None
+    spark: str = ""  # svg path or inline sparkline string
+    hint: str = ""
 
 
-def retry(fn, *, tries: int = 3, base_sleep: float = 1.0, jitter: float = 0.4, what: str = "op"):
+# ----------------------------
+# Helpers
+# ----------------------------
+def retry(fn, *, tries: int = 3, base: float = 0.8, jitter: float = 0.5, what: str = ""):
     last = None
     for i in range(tries):
         try:
             return fn()
         except Exception as e:
             last = e
-            sleep_s = base_sleep * (1.0 + i * 0.6) * (1.0 + random.random() * jitter)
-            log(f"[digest] retry {what}: {type(e).__name__}: {e} (sleep {sleep_s:.1f}s)")
-            time.sleep(sleep_s)
+            sleep = base * (1.6 ** i) + random.random() * jitter
+            log(f"[digest] retry {what}: {type(e).__name__}: {e} (sleep {sleep:.1f}s)")
+            time.sleep(sleep)
     raise last  # type: ignore
 
 
-def http_get(url: str, *, timeout_s: float = 20.0, headers: Optional[dict] = None) -> requests.Response:
-    hdr = {"User-Agent": DEFAULT_UA, "Accept": "*/*"}
+def http_get(url: str, *, timeout=DEFAULT_TIMEOUT, headers: Optional[Dict[str, str]] = None) -> requests.Response:
+    h = {"User-Agent": UA}
     if headers:
-        hdr.update(headers)
-    s = requests.Session()
-    return s.get(url, headers=hdr, timeout=(6.0, timeout_s))
+        h.update(headers)
+    r = requests.get(url, timeout=timeout, headers=h)
+    r.raise_for_status()
+    return r
 
 
-def http_post(url: str, *, json_body: dict, timeout_s: float = 60.0, headers: Optional[dict] = None) -> requests.Response:
-    hdr = {"User-Agent": DEFAULT_UA, "Accept": "application/json", "Content-Type": "application/json"}
+def http_post(url: str, *, json_body: Dict[str, Any], timeout=DEFAULT_TIMEOUT, headers: Optional[Dict[str, str]] = None) -> requests.Response:
+    h = {"User-Agent": UA, "Content-Type": "application/json"}
     if headers:
-        hdr.update(headers)
-    s = requests.Session()
-    return s.post(url, headers=hdr, json=json_body, timeout=(10.0, timeout_s))
+        h.update(headers)
+    r = requests.post(url, timeout=timeout, headers=h, data=json.dumps(json_body))
+    r.raise_for_status()
+    return r
 
 
-def safe_json_loads(s: str) -> Optional[Any]:
+def today_utc() -> str:
+    return dt.datetime.utcnow().strftime("%Y-%m-%d")
+
+
+def norm_title(s: str) -> str:
+    s = s.lower()
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[“”\"'’]", "", s)
+    s = re.sub(r"[^a-z0-9\u4e00-\u9fff ]+", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def stable_id(*parts: str) -> str:
+    h = hashlib.sha1("||".join(parts).encode("utf-8")).hexdigest()
+    return h[:12]
+
+
+def is_cn_related(text: str, url: str = "") -> bool:
+    t = (text or "").lower()
+    # conservative rules: only mark "China-related" if strongly indicated
+    keys = [
+        "china", "chinese", "beijing", "shanghai", "shenzhen", "hong kong", "taiwan",
+        "prc", "cny", "pbo c", "pboC", "xinjiang", "guangdong", "tianjin", "wuhan",
+        "hainan", "macau", "taipei", "renminbi",
+    ]
+    if any(k in t for k in keys):
+        return True
     try:
-        return json.loads(s)
+        host = urlparse(url).netloc.lower()
+        if host.endswith(".cn"):
+            return True
     except Exception:
-        return None
+        pass
+    return False
 
 
-def extract_first_json_object(text: str) -> Optional[dict]:
-    if not text:
-        return None
-    obj = safe_json_loads(text.strip())
-    if isinstance(obj, dict):
-        return obj
-    # find first {...} that parses
-    for m in re.finditer(r"\{", text):
-        start = m.start()
-        for end in range(len(text), start, -1):
-            if text[end - 1] != "}":
-                continue
-            chunk = text[start:end]
-            obj = safe_json_loads(chunk)
-            if isinstance(obj, dict):
-                return obj
-    return None
+# ----------------------------
+# Sources
+# ----------------------------
+def google_news_rss_url(q: str) -> str:
+    # Use US English to avoid region bias; still global coverage.
+    return f"https://news.google.com/rss/search?q={quote_plus(q)}&hl=en-US&gl=US&ceid=US:en"
 
 
-@dataclass
-class RawItem:
-    title: str
-    url: str
-    source: str
-    published: str
-    snippet: str
-    section_id: str
-
-
-@dataclass
-class EventCard:
-    title: str
-    one_liner: str
-    key_points: List[str]
-    why_it_matters: List[str]
-    action: List[str]
-    sources: List[dict]
-    tags: List[str]
-
-
-@dataclass
-class KPI:
-    id: str
-    title: str
-    unit: str
-    value: Optional[float]
-    delta: Optional[float]
-    direction: Optional[str]
-    source: str
-    spark: str
-
-
-def google_news_rss_url(query: str, *, lang: str = "en", gl: str = "US", ceid: str = "US:en") -> str:
-    from urllib.parse import quote_plus
-    return f"https://news.google.com/rss/search?q={quote_plus(query)}&hl={lang}&gl={gl}&ceid={ceid}"
-
-
-def fetch_google_news_items(query: str, *, section_id: str, max_entries: int = 50) -> List[RawItem]:
+def fetch_google_news_items(query: str, *, section_id: str, limit: int = 40) -> List[RawItem]:
     url = google_news_rss_url(query)
-
     def _do():
-        r = http_get(url, timeout_s=25.0)
-        r.raise_for_status()
-        return r.text
-
-    xml = retry(_do, tries=3, what=f"gnews {section_id}")
-    feed = feedparser.parse(xml)
-    items: List[RawItem] = []
-    for e in feed.entries[:max_entries]:
-        title = getattr(e, "title", "").strip()
-        link = getattr(e, "link", "").strip()
-        published = getattr(e, "published", "") or getattr(e, "updated", "")
-        source = "Google News"
-        if " - " in title:
-            t, s = title.rsplit(" - ", 1)
-            if len(s) <= 50:
-                title = t.strip()
-                source = s.strip()
-        summary = getattr(e, "summary", "") or ""
-        summary = re.sub(r"<[^>]+>", "", summary).strip()
-        if title and link:
-            items.append(RawItem(title=title, url=link, source=source, published=published, snippet=summary, section_id=section_id))
-    return items
+        r = http_get(url)
+        fp = feedparser.parse(r.text)
+        out: List[RawItem] = []
+        for e in fp.entries[:limit]:
+            title = getattr(e, "title", "") or ""
+            link = getattr(e, "link", "") or ""
+            # source is often like "Reuters" in e.source.title
+            src = ""
+            try:
+                src = e.source.title  # type: ignore
+            except Exception:
+                pass
+            published = getattr(e, "published", "") or ""
+            summary = getattr(e, "summary", "") or ""
+            out.append(RawItem(title=title, url=link, source=src, published=published, snippet=summary, section=section_id))
+        return out
+    return retry(_do, tries=3, what=f"gnews {section_id}")
 
 
-def parse_rss_items(feed: Any, *, section_id: str, max_entries: int = 50) -> List[RawItem]:
-    if isinstance(feed, dict):
-        source_name = str(feed.get("source", "") or "RSS")
-        url = str(feed.get("url", "") or "").strip()
-    else:
-        source_name = "RSS"
-        url = str(feed or "").strip()
-
-    if not url:
-        return []
-
+def parse_rss_items(feed_url: str, *, section_id: str, limit: int = 40, source_name: str = "") -> List[RawItem]:
     def _do():
-        r = http_get(url, timeout_s=25.0)
-        r.raise_for_status()
-        return r.text
-
-    try:
-        xml = retry(_do, tries=2, what=f"feed {source_name}")
-    except Exception as e:
-        log(f"[digest] feed {section_id} failed: {e}")
-        return []
-
-    parsed = feedparser.parse(xml)
-    items: List[RawItem] = []
-    for e in parsed.entries[:max_entries]:
-        title = getattr(e, "title", "").strip()
-        link = getattr(e, "link", "").strip()
-        published = getattr(e, "published", "") or getattr(e, "updated", "")
-        summary = getattr(e, "summary", "") or ""
-        summary = re.sub(r"<[^>]+>", "", summary).strip()
-        if title and link:
-            items.append(RawItem(title=title, url=link, source=source_name, published=published, snippet=summary, section_id=section_id))
-    return items
+        r = http_get(feed_url)
+        fp = feedparser.parse(r.text)
+        out: List[RawItem] = []
+        for e in fp.entries[:limit]:
+            title = getattr(e, "title", "") or ""
+            link = getattr(e, "link", "") or ""
+            published = getattr(e, "published", "") or ""
+            summary = getattr(e, "summary", "") or ""
+            src = source_name
+            out.append(RawItem(title=title, url=link, source=src, published=published, snippet=summary, section=section_id))
+        return out
+    return retry(_do, tries=2, what=f"feed {source_name or section_id}")
 
 
-def fetch_fred_series_csv(series_id: str) -> List[Tuple[str, float]]:
-    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
+# ----------------------------
+# KPIs (lightweight, no paywalls)
+# ----------------------------
+def fred_series_csv(series_id: str) -> str:
+    # FRED provides a CSV endpoint for graph data.
+    return f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
 
+
+def fetch_fred_series(series_id: str, *, n: int = 30) -> List[Tuple[str, float]]:
     def _do():
-        r = http_get(url, timeout_s=25.0)
-        r.raise_for_status()
-        return r.text
-
-    csv_text = retry(_do, tries=3, what=f"fred {series_id}")
-    rows: List[Tuple[str, float]] = []
-    for line in csv_text.splitlines()[1:]:
-        parts = line.split(",")
-        if len(parts) != 2:
-            continue
-        ds, vs = parts
-        if vs in (".", ""):
-            continue
-        try:
-            rows.append((ds, float(vs)))
-        except Exception:
-            continue
-    return rows
+        r = http_get(fred_series_csv(series_id), timeout=(10, 40))
+        rows = [ln.strip() for ln in r.text.splitlines() if ln.strip()]
+        # header: DATE,VALUE
+        pts: List[Tuple[str, float]] = []
+        for ln in rows[1:]:
+            try:
+                d, v = ln.split(",", 1)
+                if v == ".":
+                    continue
+                pts.append((d, float(v)))
+            except Exception:
+                continue
+        return pts[-n:]
+    return retry(_do, tries=3, what=f"fred {series_id}")
 
 
-def sparkline_svg(values: List[float], *, width: int = 120, height: int = 28, pad: int = 2) -> str:
+def sparkline_svg(values: List[float], *, w: int = 140, h: int = 34, pad: int = 3) -> str:
     if not values:
         return ""
-    vmin, vmax = min(values), max(values)
-    if math.isclose(vmin, vmax):
-        vmin -= 1.0
-        vmax += 1.0
-    pts = []
-    n = len(values)
+    mn, mx = min(values), max(values)
+    if mx - mn < 1e-9:
+        mx = mn + 1.0
+    xs = []
+    ys = []
     for i, v in enumerate(values):
-        x = pad + (width - 2 * pad) * (i / (n - 1 if n > 1 else 1))
-        y = pad + (height - 2 * pad) * (1.0 - (v - vmin) / (vmax - vmin))
-        pts.append((x, y))
-    d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-    return (
-        f'<svg class="spark" width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-        f'<path d="{d}" fill="none" stroke="currentColor" stroke-width="2" />'
-        f'</svg>'
-    )
+        x = pad + (w - 2 * pad) * (i / max(1, len(values) - 1))
+        y = pad + (h - 2 * pad) * (1 - (v - mn) / (mx - mn))
+        xs.append(x)
+        ys.append(y)
+    d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in zip(xs, ys))
+    return f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg"><path d="{d}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
 
 
-def build_kpis(cfg: dict) -> List[KPI]:
+def build_kpis(kpi_cfg: List[Dict[str, Any]]) -> List[KPI]:
     out: List[KPI] = []
-    for k in cfg.get("kpis", []) or []:
-        kid = k.get("id", "")
-        title = k.get("title", kid)
-        unit = k.get("unit", "")
-        source = k.get("source", "FRED")
-        series = k.get("fred_series")
-        value = None
-        delta = None
-        direction = None
-        spark = ""
-        if series:
-            rows = fetch_fred_series_csv(series)
-            vals = [v for _, v in rows][-30:]
-            if vals:
-                value = vals[-1]
-                if len(vals) >= 2:
-                    delta = vals[-1] - vals[-2]
-                    direction = "up" if delta > 0 else ("down" if delta < 0 else None)
-                spark = sparkline_svg(vals)
-        out.append(KPI(id=kid, title=title, unit=unit, value=value, delta=delta, direction=direction, source=source, spark=spark))
+    for k in kpi_cfg:
+        sid = k.get("fred")
+        if not sid:
+            continue
+        pts = fetch_fred_series(sid, n=30)
+        vals = [v for _, v in pts]
+        if not vals:
+            continue
+        value = vals[-1]
+        delta = (vals[-1] - vals[-2]) if len(vals) >= 2 else None
+        out.append(
+            KPI(
+                key=k.get("key", sid),
+                name=k.get("name", sid),
+                value=value,
+                unit=k.get("unit", ""),
+                delta=delta,
+                spark=sparkline_svg(vals),
+                hint=k.get("hint", ""),
+            )
+        )
     return out
 
 
-def openai_chat(model: str, messages: List[dict], *, temperature: float = 0.2, max_tokens: int = 900, timeout_s: float = 90.0) -> str:
-    api_key = os.getenv("OPENAI_API_KEY", "").strip()
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is missing")
-    payload = {"model": model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens}
-    r = http_post(OPENAI_URL, json_body=payload, timeout_s=timeout_s, headers={"Authorization": f"Bearer {api_key}"})
-    if r.status_code >= 400:
-        raise requests.HTTPError(f"{r.status_code} {r.text[:400]}")
-    data = r.json()
-    return data["choices"][0]["message"]["content"]
+# ----------------------------
+# OpenAI JSON helpers
+# ----------------------------
+def openai_chat_json(messages: List[Dict[str, str]], *, model: str, max_output_tokens: int = 900) -> Dict[str, Any]:
+    if not OPENAI_API_KEY:
+        raise RuntimeError("OPENAI_API_KEY is not set")
+    url = "https://api.openai.com/v1/chat/completions"
+    body = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+        "max_tokens": max_output_tokens,
+    }
+    def _do():
+        r = http_post(url, json_body=body, timeout=(10, 120), headers={"Authorization": f"Bearer {OPENAI_API_KEY}"})
+        data = r.json()
+        txt = data["choices"][0]["message"]["content"]
+        try:
+            return json.loads(txt)
+        except Exception as e:
+            raise ValueError(f"OpenAI did not return JSON object: {e} :: {txt[:200]}")
+    return retry(_do, tries=2, what="openai")
 
 
-def openai_chat_json(model: str, messages: List[dict], *, temperature: float = 0.2, max_tokens: int = 900) -> dict:
-    txt = retry(lambda: openai_chat(model, messages, temperature=temperature, max_tokens=max_tokens), tries=3, what="openai")
-    obj = extract_first_json_object(txt)
-    if not isinstance(obj, dict):
-        raise ValueError("OpenAI did not return JSON object")
-    return obj
+def ensure_brief(obj: Dict[str, Any]) -> Dict[str, Any]:
+    # Ensure the template-required keys exist.
+    return {
+        "one_liner": obj.get("one_liner", "") or "",
+        "facts": list(obj.get("facts", []) or []),
+        "impacts": list(obj.get("impacts", []) or []),
+        "actions": list(obj.get("actions", []) or []),
+        "watch": list(obj.get("watch", []) or []),
+        "summary": obj.get("summary", "") or "",
+    }
 
 
-def dedupe_items(items: List[RawItem]) -> List[RawItem]:
+def ensure_top(obj: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "one_liner": obj.get("one_liner", "") or "",
+        "facts": list(obj.get("facts", []) or []),
+        "actions": list(obj.get("actions", []) or []),
+        "watch": list(obj.get("watch", []) or []),
+        "summary": obj.get("summary", "") or "",
+    }
+
+
+# ----------------------------
+# LLM packing: "结论优先"
+# ----------------------------
+def llm_section_pack(section_title: str, items: List[RawItem], *, model: str, want_n: int) -> Dict[str, Any]:
+    # Keep the payload bounded to avoid 400 errors.
+    items = items[: max(want_n * 3, 30)]
+    payload = []
+    for it in items:
+        payload.append({
+            "title": it.title[:160],
+            "url": it.url,
+            "source": it.source[:60],
+            "published": it.published[:60],
+        })
+    prompt = {
+        "section": section_title,
+        "target_cards": want_n,
+        "items": payload,
+    }
+    sys_msg = (
+        "你是一个严谨的财经/产业情报编辑。"
+        "基于给定链接列表（可能有同一事件的多篇报道），生成“结论优先”的事件卡。"
+        "要求：中文输出；每个事件卡包含：title_zh（<=26字）、conclusion（1句结论）、"
+        "facts（2-4条要点）、impact（对业务/市场含义 1-2条）、actions（可执行动作 1-2条）、"
+        "watch（风险/观察点 1-2条）、links（1-3条原文链接）。"
+        "总共输出 target_cards 条事件卡；如聚类后不足，则用剩余单篇补足。"
+        "并输出一个 section_brief：300-500字，结构化（结论/关键事实/影响/动作/观察），避免空话。"
+        "只返回JSON。"
+    )
+    user_msg = json.dumps(prompt, ensure_ascii=False)
+    j = openai_chat_json(
+        [
+            {"role": "system", "content": sys_msg},
+            {"role": "user", "content": user_msg},
+        ],
+        model=model,
+        max_output_tokens=1100,
+    )
+    cards = j.get("cards", []) or []
+    section_brief = ensure_brief(j.get("section_brief", {}) or {})
+    # Normalize cards; fill if short
+    norm_cards: List[Dict[str, Any]] = []
+    used_urls = set()
+    for c in cards:
+        links = c.get("links", []) or []
+        links2 = []
+        for lk in links:
+            if isinstance(lk, str):
+                links2.append({"title": "", "url": lk})
+            elif isinstance(lk, dict) and lk.get("url"):
+                links2.append({"title": lk.get("title","")[:80], "url": lk["url"]})
+        if not links2:
+            continue
+        for lk in links2:
+            used_urls.add(lk["url"])
+        norm_cards.append({
+            "id": stable_id(section_title, links2[0]["url"]),
+            "title": c.get("title_zh", "") or c.get("title", "") or "",
+            "conclusion": c.get("conclusion", "") or "",
+            "facts": list(c.get("facts", []) or []),
+            "impact": list(c.get("impact", []) or []),
+            "actions": list(c.get("actions", []) or []),
+            "watch": list(c.get("watch", []) or []),
+            "links": links2[:3],
+            "cn_related": any(is_cn_related((c.get("title_zh","") or "") + " " + (c.get("conclusion","") or ""), lk["url"]) for lk in links2),
+        })
+    # Fill missing cards with simple 1:1 mapping from unused items
+    for it in items:
+        if len(norm_cards) >= want_n:
+            break
+        if it.url in used_urls:
+            continue
+        norm_cards.append({
+            "id": stable_id(section_title, it.url),
+            "title": it.title,  # if not translated, keep English
+            "conclusion": "",
+            "facts": [],
+            "impact": [],
+            "actions": [],
+            "watch": [],
+            "links": [{"title": it.source, "url": it.url}],
+            "cn_related": is_cn_related(it.title, it.url),
+        })
+        used_urls.add(it.url)
+    return {"cards": norm_cards[:want_n], "brief": section_brief}
+
+
+def llm_top_brief(sections: List[Dict[str, Any]], kpis: List[KPI], *, model: str) -> Dict[str, Any]:
+    # Build compact input
+    sec_in = []
+    for s in sections:
+        b = s.get("brief", {}) or {}
+        sec_in.append({
+            "name": s.get("name", ""),
+            "one_liner": b.get("one_liner", ""),
+            "facts": (b.get("facts", []) or [])[:2],
+            "impact": (b.get("impacts", []) or [])[:2],
+        })
+    kpi_in = []
+    for k in kpis[:10]:
+        kpi_in.append({
+            "name": k.name,
+            "value": k.value,
+            "unit": k.unit,
+            "delta": k.delta,
+        })
+    prompt = {"sections": sec_in, "kpis": kpi_in}
+    sys_msg = (
+        "你是一个严谨的情报主编。请基于各栏目简报与KPI，输出今天的“今日要点”（300-500字），"
+        "并给出结构化列表：facts(3-5条)、actions(2-4条)、watch(2-4条)与一句话one_liner。"
+        "避免空泛形容词，优先写可验证的事实、明确的影响与可执行动作。只返回JSON。"
+    )
+    j = openai_chat_json(
+        [{"role": "system", "content": sys_msg},
+         {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)}],
+        model=model,
+        max_output_tokens=900,
+    )
+    return ensure_top(j)
+
+
+# ----------------------------
+# Candidate selection / dedupe
+# ----------------------------
+def dedupe_items(items: List[RawItem], *, hard_limit: int) -> List[RawItem]:
     seen = set()
     out = []
     for it in items:
-        k = sha1((it.title + "|" + it.url).lower())
-        if k in seen:
+        key = (norm_title(it.title), it.url.split("?")[0])
+        if key in seen:
             continue
-        seen.add(k)
+        seen.add(key)
         out.append(it)
-    return out
-
-
-def pick_candidates(items: List[RawItem], *, limit_raw: int) -> List[RawItem]:
-    items = sorted(items, key=lambda x: (len(x.snippet or ""), x.source != "Google News"), reverse=True)
-    return items[:limit_raw]
-
-
-def llm_section_pack(model: str, section_name: str, raw_items: List[RawItem], *, items: int = 15) -> List[EventCard]:
-    rows = []
-    for i, it in enumerate(raw_items[:40], 1):
-        rows.append({"i": i, "title": it.title, "source": it.source, "published": it.published, "url": it.url, "snippet": (it.snippet or "")[:240]})
-
-    sys_prompt = "You are an analyst generating a daily briefing. Return ONLY a JSON object. No markdown."
-    user_prompt = {
-        "section": section_name,
-        "items": rows,
-        "output_spec": {
-            "events": [{
-                "title": "string (<=40 chars, Chinese)",
-                "one_liner": "string (<=60 chars, Chinese)",
-                "key_points": ["..."],
-                "why_it_matters": ["..."],
-                "action": ["..."],
-                "sources": [{"i": 1}],
-                "tags": ["..."],
-            }]
-        },
-        "rules": [
-            f"Output up to {items} events; if low-signal, output fewer but not empty.",
-            "Each event must cite 1-3 sources by index i from input items.",
-            "Be concrete: numbers, names, decisions, dates.",
-        ],
-    }
-
-    obj = openai_chat_json(model, [{"role": "system", "content": sys_prompt}, {"role": "user", "content": json.dumps(user_prompt, ensure_ascii=False)}], temperature=0.2, max_tokens=1200)
-    events = obj.get("events") or obj.get("Events") or []
-    out: List[EventCard] = []
-    for e in events:
-        try:
-            sources = []
-            for s in (e.get("sources") or [])[:3]:
-                idx = int(s.get("i", 0))
-                if 1 <= idx <= len(rows):
-                    ri = rows[idx - 1]
-                    sources.append({"title": ri["title"], "url": ri["url"], "source": ri["source"], "published": ri["published"]})
-            out.append(EventCard(
-                title=str(e.get("title", "")).strip(),
-                one_liner=str(e.get("one_liner", "")).strip(),
-                key_points=[str(x).strip() for x in (e.get("key_points") or []) if str(x).strip()],
-                why_it_matters=[str(x).strip() for x in (e.get("why_it_matters") or []) if str(x).strip()],
-                action=[str(x).strip() for x in (e.get("action") or []) if str(x).strip()],
-                sources=sources,
-                tags=[str(x).strip() for x in (e.get("tags") or []) if str(x).strip()][:6],
-            ))
-        except Exception:
-            continue
-    return [x for x in out if x.title and x.sources]
-
-
-def fallback_event_cards(section_name: str, items: List[RawItem], *, max_events: int = 6) -> List[EventCard]:
-    out: List[EventCard] = []
-    for it in items[:max_events]:
-        out.append(EventCard(
-            title=it.title[:48],
-            one_liner=(it.snippet[:60] if it.snippet else it.title[:60]),
-            key_points=[(it.snippet[:140] if it.snippet else it.title)[:140]],
-            why_it_matters=[f"{section_name}：建议跟踪该信息的后续进展与量化影响。"],
-            action=["打开原文核对口径与时间点；如涉及合规/制裁，确认适用范围与对象。"],
-            sources=[{"title": it.title, "url": it.url, "source": it.source, "published": it.published}],
-            tags=[section_name.split("（")[0][:6]],
-        ))
-    return out
-
-
-def build_top_brief_fallback(sections: List[dict], kpis: List[KPI]) -> dict:
-    bullets = []
-    for sec in sections:
-        for ev in sec.get("events", [])[:2]:
-            bullets.append(f"{sec.get('name','')}: {ev.one_liner or ev.title}")
-            if len(bullets) >= 5:
-                break
-        if len(bullets) >= 5:
+        if len(out) >= hard_limit:
             break
-
-    kpi_bullets = []
-    for k in kpis[:6]:
-        if k.value is None:
-            continue
-        dv = ""
-        if k.delta is not None:
-            sign = "+" if k.delta > 0 else ""
-            dv = f" (Δ {sign}{k.delta:.3f})"
-        kpi_bullets.append(f"{k.title}: {k.value:.3f}{k.unit}{dv}")
-
-    return {
-        "one_liner": "今日信息偏结构化风险与供需变化，建议以‘结论优先’方式跟踪关键变量。",
-        "key_changes": bullets or ["暂无足够高置信事件（或 LLM 输出异常），建议以数据与公告为主线跟踪。"],
-        "actions": ["优先核对 2-3 条高影响新闻原文与数据口径；", "把关键阈值写入决策面板，次日自动对比变化。"],
-        "kpis": kpi_bullets,
-    }
+    return out
 
 
-def split_views(sections: List[dict]) -> Dict[str, dict]:
-    def is_cn(ev: EventCard) -> bool:
-        txt = " ".join([ev.title, ev.one_liner] + ev.key_points + ev.why_it_matters)
-        return any(x in txt for x in ["中国", "China", "CNY", "人民币", "大陆", "香港", "台湾"])
-
-    views = {"all": {"sections": sections}, "cn": {"sections": []}, "global": {"sections": []}}
-    for sec in sections:
-        evs: List[EventCard] = sec.get("events", [])
-        cn = [e for e in evs if is_cn(e)]
-        gl = [e for e in evs if not is_cn(e)]
-        if cn:
-            views["cn"]["sections"].append({**sec, "events": cn})
-        if gl:
-            views["global"]["sections"].append({**sec, "events": gl})
-    return views
-
-
-def render_html(template_path: str, context: dict) -> str:
-    tpl = Path(template_path).read_text(encoding="utf-8")
-
-    # Jinja2 rendering (recommended)
-    if Environment is not None and ("{%" in tpl or "{{" in tpl):
-        env = Environment(loader=BaseLoader(), autoescape=True, undefined=StrictUndefined)
-        t = env.from_string(tpl)
-        return t.render(**context)
-
-    # JSON injection fallback
-    digest_json = json.dumps(context, ensure_ascii=False)
-    if "__DIGEST_JSON__" in tpl:
-        return tpl.replace("__DIGEST_JSON__", _html.escape(digest_json))
-
-    return tpl
-
-
-def load_config(path: str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
-
-
-def build_raw_items_for_section(section: dict, *, limit_raw: int) -> List[RawItem]:
-    sid = section["id"]
+# ----------------------------
+# Digest build
+# ----------------------------
+def build_raw_items_for_section(section_id: str, section_cfg: Dict[str, Any], *, limit_raw: int) -> List[RawItem]:
     items: List[RawItem] = []
-
-    for feed in section.get("feeds", []) or []:
-        items += parse_rss_items(feed, section_id=sid, max_entries=limit_raw)
-
-    for q in section.get("queries", []) or []:
-        q_short = (q[:28] + "...") if len(q) > 31 else q
-        g = fetch_google_news_items(q, section_id=sid, max_entries=limit_raw * 4)
-        log(f"[digest] gnews {sid} q='{q_short}' entries={len(g)}")
-        items += g
-
-    items = dedupe_items(items)
-    items = pick_candidates(items, limit_raw=limit_raw)
+    # RSS feeds (optional)
+    for f in section_cfg.get("feeds", []) or []:
+        url = f.get("url") if isinstance(f, dict) else str(f)
+        name = f.get("source", "") if isinstance(f, dict) else ""
+        if not url:
+            continue
+        try:
+            got = parse_rss_items(url, section_id=section_id, limit=limit_raw, source_name=name)
+            items.extend(got)
+        except Exception as e:
+            log(f"[digest] feed {section_id} failed: {e}")
+    # Google News queries
+    for q in section_cfg.get("queries", []) or []:
+        try:
+            got = fetch_google_news_items(q, section_id=section_id, limit=limit_raw)
+            log(f"[digest] gnews {section_id} q='{q[:24]}...' entries={len(got)}")
+            items.extend(got)
+        except Exception as e:
+            log(f"[digest] gnews {section_id} failed: {e}")
+    items = dedupe_items(items, hard_limit=max(limit_raw, 30))
     return items
 
 
-def build_digest(cfg: dict, *, date_str: str, model: str, limit_raw: int, items_per_section: int) -> dict:
-    log(f"[digest] kpi start: {len(cfg.get('kpis', []))}")
-    kpis = build_kpis(cfg)
+def build_digest(cfg: Dict[str, Any], *, date: str, model: str, limit_raw: int, items_per_section: int) -> Dict[str, Any]:
+    # KPI panel
+    log(f"[digest] kpi start: {len(cfg.get('kpis', []) or [])}")
+    kpis = build_kpis(cfg.get("kpis", []) or [])
     log(f"[digest] kpi done: {len(kpis)}")
 
-    sections_out: List[dict] = []
-    log(f"[digest] sections start: {len(cfg.get('sections', []))}")
-    for sec in cfg.get("sections", []):
-        sid = sec["id"]
-        name = sec.get("name", sid)
+    # Sections
+    sections_out: List[Dict[str, Any]] = []
+    sections_cfg: Dict[str, Any] = cfg.get("sections", {}) or {}
+    log(f"[digest] sections start: {len(sections_cfg)}")
+    for sid, sc in sections_cfg.items():
+        name = sc.get("name", sid)
         log(f"[digest] section start: {sid} ({name})")
-        raw = build_raw_items_for_section(sec, limit_raw=limit_raw)
-        if raw:
-            try:
-                events = llm_section_pack(model, name, raw, items=items_per_section)
-            except Exception as e:
-                log(f"[digest] llm section {sid} failed: {e}")
-                events = fallback_event_cards(name, raw, max_events=min(6, items_per_section))
-        else:
-            events = []
-        log(f"[digest] section done: {sid} events={len(events)}")
-        sections_out.append({"id": sid, "name": name, "events": events})
-
+        raw = build_raw_items_for_section(sid, sc, limit_raw=limit_raw)
+        if not raw:
+            log(f"[digest] section {sid}: raw=0 (no candidates)")
+            sections_out.append({
+                "id": sid,
+                "name": name,
+                "events": [],
+                "brief": ensure_brief({}),
+            })
+            continue
+        # Select candidates
+        raw = raw[: max(limit_raw, items_per_section * 3)]
+        try:
+            pack = llm_section_pack(name, raw, model=model, want_n=items_per_section)
+            cards = pack["cards"]
+            brief = ensure_brief(pack.get("brief", {}) or {})
+        except Exception as e:
+            log(f"[digest] llm section pack failed ({sid}): {e}")
+            # Fallback: keep first N as simple cards
+            cards = [{
+                "id": stable_id(sid, it.url),
+                "title": it.title,
+                "conclusion": "",
+                "facts": [],
+                "impact": [],
+                "actions": [],
+                "watch": [],
+                "links": [{"title": it.source, "url": it.url}],
+                "cn_related": is_cn_related(it.title, it.url),
+            } for it in raw[:items_per_section]]
+            brief = ensure_brief({})
+        sections_out.append({
+            "id": sid,
+            "name": name,
+            "events": cards,
+            "brief": brief,
+        })
+        log(f"[digest] section done: {sid} events={len(cards)}")
     log(f"[digest] sections done: {len(sections_out)}")
 
-    # Top brief (LLM optional)
-    top_brief = None
+    # Views: cn / global(ex-cn)
+    def filt_sections(pred):
+        out = []
+        for s in sections_out:
+            ev = [e for e in (s.get("events", []) or []) if pred(e)]
+            out.append({**s, "events": ev})
+        return out
+
+    cn_sections = filt_sections(lambda e: bool(e.get("cn_related")))
+    gl_sections = filt_sections(lambda e: not bool(e.get("cn_related")))
+
+    # Top briefs per view
     try:
-        brief_input = {
-            "date": date_str,
-            "sections": [{"id": s["id"], "name": s["name"], "event_titles": [e.title for e in s["events"][:5]]} for s in sections_out],
-            "kpis": [{"id": k.id, "title": k.title, "unit": k.unit, "value": k.value, "delta": k.delta} for k in kpis],
-            "output_spec": {"one_liner": "string", "key_changes": ["..."], "actions": ["..."]},
-        }
-        obj = openai_chat_json(model, [{"role": "system", "content": "Return ONLY JSON."}, {"role": "user", "content": json.dumps(brief_input, ensure_ascii=False)}], temperature=0.2, max_tokens=600)
-        if isinstance(obj, dict) and obj.get("one_liner"):
-            top_brief = obj
+        top_all = llm_top_brief(sections_out, kpis, model=model)
     except Exception as e:
         log(f"[digest] llm daily brief failed: {e}")
+        top_all = ensure_top({})
 
-    if not top_brief:
-        top_brief = build_top_brief_fallback(sections_out, kpis)
+    # For cn/global, do lightweight: reuse all-top but adjust one-liner
+    top_cn = dict(top_all)
+    top_gl = dict(top_all)
+    if top_cn.get("one_liner"):
+        top_cn["one_liner"] = "（中国相关）" + top_cn["one_liner"]
+    if top_gl.get("one_liner"):
+        top_gl["one_liner"] = "（全球·不含中国）" + top_gl["one_liner"]
 
-    views = split_views(sections_out)
-    views["all"]["top"] = top_brief
-    views["cn"]["top"] = top_brief
-    views["global"]["top"] = top_brief
-
-    digest = {
-        # v15-style uppercase
-        "TITLE": cfg.get("title", "Ben 的每日资讯简报"),
-        "DATE": date_str,
-        "GENERATED_AT": now_beijing().strftime("%Y-%m-%d %H:%M"),
-        "SECTIONS": sections_out,
-        "KPIS": [dataclasses.asdict(k) for k in kpis],
-        "TOP": top_brief,
-        # v18-style
-        "VIEWS": views,
-        "ALERTS": [],
+    views = {
+        "global": {"key": "global", "label": "全球（不含中国）", "top": top_gl, "sections": gl_sections},
+        "cn": {"key": "cn", "label": "中国相关", "top": top_cn, "sections": cn_sections},
     }
-    # lowercase aliases
-    digest["title"] = digest["TITLE"]
-    digest["date"] = digest["DATE"]
-    digest["generated_at"] = digest["GENERATED_AT"]
-    digest["sections"] = digest["SECTIONS"]
-    digest["kpis"] = digest["KPIS"]
-    digest["top"] = digest["TOP"]
-    digest["views"] = digest["VIEWS"]
-    digest["alerts"] = digest["ALERTS"]
-    return digest
+
+    return {
+        "meta": {
+            "date": date,
+            "generated_at_utc": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "model": model,
+            "items_per_section": items_per_section,
+        },
+        "kpis": [dataclasses.asdict(k) for k in kpis],
+        "views": views,
+        "sections_all": sections_out,
+        "top": top_all,
+    }
 
 
-def main() -> None:
-    # Allow watchdog to send SIGUSR1 without killing the process.
-    try:
-        faulthandler.register(signal.SIGUSR1)
-    except Exception:
-        pass
+# ----------------------------
+# Rendering
+# ----------------------------
+def render_html(template_path: str, digest: Dict[str, Any]) -> str:
+    tpl = Path(template_path).read_text(encoding="utf-8")
+    env = Environment(loader=BaseLoader(), autoescape=True, undefined=StrictUndefined)
+    t = env.from_string(tpl)
 
+    # Provide template variables (match v15 template expectations)
+    context = {
+        "META": digest.get("meta", {}),
+        "KPIS": digest.get("kpis", []),
+        "views": digest.get("views", {}),  # template uses `views`
+    }
+
+    # Defensive: ensure every view has required keys
+    for _, v in (context["views"] or {}).items():
+        v["top"] = ensure_top(v.get("top", {}) or {})
+        for s in v.get("sections", []) or []:
+            s["brief"] = ensure_brief(s.get("brief", {}) or {})
+    return t.render(**context)
+
+
+# ----------------------------
+# CLI
+# ----------------------------
+def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
     ap.add_argument("--template", required=True)
     ap.add_argument("--out", default="index.html")
-    ap.add_argument("--date", default="")
+    ap.add_argument("--date", default=today_utc())
     ap.add_argument("--model", default="gpt-4o-mini")
     ap.add_argument("--limit_raw", type=int, default=25)
-    ap.add_argument("--items", type=int, default=15)
+    ap.add_argument("--items_per_section", type=int, default=15)
     args = ap.parse_args()
 
     log("[digest] boot")
-    date_str = args.date.strip() or now_beijing().strftime("%Y-%m-%d")
-    log(f"[digest] date={date_str} model={args.model} limit_raw={args.limit_raw} items={args.items}")
+    log(f"[digest] date={args.date} model={args.model} limit_raw={args.limit_raw} items={args.items_per_section}")
 
-    cfg = load_config(args.config)
-    digest = build_digest(cfg, date_str=date_str, model=args.model, limit_raw=args.limit_raw, items_per_section=args.items)
+    cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
+    digest = build_digest(cfg, date=args.date, model=args.model, limit_raw=args.limit_raw, items_per_section=args.items_per_section)
 
     log("[digest] render html")
     out_html = render_html(args.template, digest)
