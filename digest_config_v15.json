@@ -1,173 +1,173 @@
 {
-  "items_per_section": 15,
-  "cluster_threshold": 0.42,
-  "limit_raw": 90,
-  "max_sources": 5,
-  "deny_tlds": [
-    ".cn"
+  "kpis": [
+    {
+      "id": "DFF",
+      "name": "美联储有效联邦基金利率",
+      "unit": "%",
+      "source": "FRED"
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y收益率",
+      "unit": "%",
+      "source": "FRED"
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY（离岸/即期代理）",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜（World Bank / USD）",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝（World Bank / USD）",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍（World Bank / USD）",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌（World Bank / USD）",
+      "unit": "",
+      "source": "FRED"
+    },
+    {
+      "id": "PLEADUSDM",
+      "name": "铅（World Bank / USD）",
+      "unit": "",
+      "source": "FRED"
+    }
   ],
   "sections": [
     {
       "id": "macro",
+      "order": 10,
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
-      "queries": [
-        "US Treasury yields outlook Fed pricing inflation jobs",
-        "USD CNY FX policy capital flows emerging markets risk sentiment",
-        "global equity volatility VIX credit spreads"
+      "feeds": [
+        {
+          "source": "FOMC (Board of Governors)",
+          "url": "https://www.federalreserve.gov/feeds/press_monetary.xml"
+        },
+        {
+          "source": "ECB Press releases",
+          "url": "https://www.ecb.europa.eu/press/pr/html/index.en.rss"
+        }
       ],
-      "feeds": []
+      "gnews_queries": [
+        "US Treasury yields outlook Fed policy inflation",
+        "USD CNY exchange rate policy capital flows China",
+        "global equity volatility VIX risk appetite"
+      ]
     },
     {
       "id": "sanctions",
+      "order": 20,
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
-      "queries": [
-        "OFAC sanctions update enforcement action guidance",
-        "EU sanctions package Russia export controls compliance",
-        "US export controls semiconductor AI chips restrictions"
+      "feeds": [
+        {
+          "source": "Justia FedReg (OFAC) Atom",
+          "url": "https://regulations.justia.com/regulations/fedreg/agencies/office-of-foreign-assets-control?limit=200&mode=atom"
+        },
+        {
+          "source": "UK OFSI (search)",
+          "url": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom"
+        }
       ],
-      "feeds": []
+      "gnews_queries": [
+        "OFAC sanctions update enforcement action designation",
+        "EU sanctions package Russia export controls",
+        "US export controls semiconductors AI chips cloud services"
+      ]
     },
     {
       "id": "compute",
+      "order": 30,
       "name": "AI 计算基础设施（算力·电力·冷却）",
-      "queries": [
-        "data center power demand grid connection GPU supply chain HBM",
-        "AI chip export controls cloud GPU pricing capacity",
-        "liquid cooling data center PUE regulation"
-      ],
-      "feeds": []
+      "gnews_queries": [
+        "data center power demand grid interconnection queue PPA",
+        "AI chip export controls cloud GPU availability pricing",
+        "liquid cooling data center PUE immersion direct-to-chip"
+      ]
     },
     {
       "id": "metals",
-      "name": "大宗 / 金属（LME·供需·库存）",
-      "queries": [
-        "LME copper aluminium nickel zinc inventory premium spread",
-        "scrap copper trade flows sanctions freight",
-        "energy transition metals demand supply"
-      ],
-      "feeds": []
+      "order": 40,
+      "name": "大宗 / 金属（供需·库存·贸易）",
+      "gnews_queries": [
+        "copper price supply demand inventories smelter disruptions",
+        "scrap copper trade flows sanctions shipping",
+        "energy transition metals demand nickel lithium rare earths"
+      ]
     },
     {
       "id": "carbon",
+      "order": 50,
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
-      "queries": [
-        "EU CBAM guidance reporting requirements transition period",
-        "Verra methodology update registry integrity",
-        "carbon credit quality additionality audit"
+      "feeds": [
+        {
+          "source": "European Commission Presscorner",
+          "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&format=rss"
+        }
       ],
-      "feeds": []
+      "gnews_queries": [
+        "EU CBAM guidance reporting requirements transitional period",
+        "Verra methodology update registry integrity",
+        "carbon credit quality additionality leakage transparency"
+      ]
     },
     {
       "id": "sea",
+      "order": 60,
       "name": "东南亚供应链（制造·转移·关键矿产）",
-      "queries": [
-        "Vietnam manufacturing investment supply chain relocation",
-        "Indonesia nickel export policy smelter investment",
-        "Thailand Malaysia electronics supply chain incentives"
-      ],
-      "feeds": []
+      "gnews_queries": [
+        "Vietnam manufacturing investment electronics supply chain shift",
+        "Indonesia nickel export policy EV battery supply chain",
+        "Thailand Malaysia electronics EMS semiconductor packaging investment"
+      ]
     },
     {
       "id": "frontier",
+      "order": 70,
       "name": "前沿学科雷达（量子·聚变·材料·生物）",
-      "queries": [
-        "quantum computing error correction breakthrough",
-        "fusion energy high-temperature superconducting magnets",
-        "new materials battery solid-state electrolyte breakthrough",
-        "synthetic biology biomanufacturing platform"
-      ],
-      "feeds": []
+      "gnews_queries": [
+        "quantum computing error correction breakthrough qubit scaling",
+        "fusion energy high-temperature superconducting magnets tokamak",
+        "new materials battery solid-state electrolyte anode cathode",
+        "synthetic biology biomanufacturing platform cell factory"
+      ]
     },
     {
       "id": "arxiv",
+      "order": 80,
       "name": "研究雷达（arXiv）",
-      "type": "arxiv",
-      "arxiv_query": "cat:cs.LG OR cat:cs.AI OR cat:cs.CL",
-      "feeds": []
+      "feeds": [
+        {
+          "source": "arXiv cs.AI",
+          "url": "https://export.arxiv.org/rss/cs.AI"
+        },
+        {
+          "source": "arXiv econ",
+          "url": "https://export.arxiv.org/rss/econ"
+        }
+      ],
+      "gnews_queries": []
     }
-  ],
-  "kpis": [
-    {
-      "series": "DGS10",
-      "title": "美债10Y",
-      "unit": "%",
-      "lookback": 40
-    },
-    {
-      "series": "DEXCHUS",
-      "title": "USD/CNY",
-      "unit": "",
-      "lookback": 40
-    },
-    {
-      "series": "DTWEXBGS",
-      "title": "美元指数（广义）",
-      "unit": "",
-      "lookback": 40
-    },
-    {
-      "series": "PCOPPUSDM",
-      "title": "铜（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PALUMUSDM",
-      "title": "铝（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PZINCUSDM",
-      "title": "锌（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PNICKUSDM",
-      "title": "镍（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PLEADUSDM",
-      "title": "铅（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PTINUSDM",
-      "title": "锡（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    }
-  ],
-  "alerts": [
-    {
-      "series": "DGS10",
-      "op": ">",
-      "value": 4.3,
-      "severity": "warn",
-      "message": "融资成本上行：审视现金流与折现敏感业务"
-    },
-    {
-      "series": "DEXCHUS",
-      "op": ">",
-      "value": 7.2,
-      "severity": "warn",
-      "message": "汇率压力：复核进口成本、结算币种与对冲方案"
-    },
-    {
-      "series": "PCOPPUSDM",
-      "op": "abs>",
-      "value": 80,
-      "severity": "info",
-      "message": "铜价波动放大：复核报价有效期与库存策略"
-    }
-  ],
-  "gnews_locale": {
-    "hl": "en-US",
-    "gl": "US",
-    "ceid": "US:en"
-  }
+  ]
 }
