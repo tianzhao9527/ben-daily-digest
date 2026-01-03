@@ -614,7 +614,6 @@ def render_html(template_path: str, digest: Dict[str, Any]) -> str:
     }
 
     # Defensive: ensure every view has required keys
- ensure every view has required keys
     for _, v in (context["views"] or {}).items():
         v["top"] = ensure_top(v.get("top", {}) or {})
         for s in v.get("sections", []) or []:
