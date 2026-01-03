@@ -1,10 +1,10 @@
-name: Generate Daily Digest
+name: Generate & Deploy Daily Digest
 
 on:
   workflow_dispatch:
   schedule:
-    # 06:30 Asia/Shanghai = 22:30 UTC (previous day); adjust as needed
-    - cron: "30 22 * * *"
+    # 北京时间 06:00 = UTC 22:00（前一日）
+    - cron: "0 22 * * *"
 
 permissions:
   contents: read
@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -27,57 +27,37 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          # 生成器依赖
           pip install requests feedparser jinja2
 
-      - name: Generate digest (watchdog + SIGUSR1 stack dump)
+      - name: Generate digest
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set -euo pipefail
-          echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
+          DATE_CN=$(TZ=Asia/Shanghai date +%F)
+          echo "DATE_CN=$DATE_CN"
           python -u news_digest_generator_v15.py \
             --config digest_config_v15.json \
             --template daily_digest_template_v15_apple.html \
             --out index.html \
+            --date "$DATE_CN" \
+            --model gpt-4o-mini \
             --limit_raw 25 \
-            --items_per_section 15 \
-            --model gpt-4o-mini &
-          PID=$!
-          echo "PID=$PID"
-          # Send stack dump every 60s (up to 10 minutes) without terminating the process
-          for i in $(seq 1 10); do
-            sleep 60
-            if kill -0 $PID 2>/dev/null; then
-              echo "…still running (${i}*60s) -> stack dump (SIGUSR1)"
-              kill -USR1 $PID || true
-            else
-              break
-            fi
-          done
-          wait $PID
-
-      - name: Prepare Pages artifact
-        run: |
-          mkdir -p site
-          cp index.html site/index.html
+            --items_per_section 15
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: .
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
