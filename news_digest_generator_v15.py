@@ -27,6 +27,30 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
+import faulthandler
+import signal
+
+# Enable stack dumps on demand from GitHub Actions watchdog (kill -USR1 <pid>)
+faulthandler.enable(all_threads=True)
+
+def _sigusr1_handler(signum, frame):
+    try:
+        sys.stderr.write("\n[digest] SIGUSR1 stack dump\n")
+        sys.stderr.flush()
+    except Exception:
+        pass
+    try:
+        faulthandler.dump_traceback(file=sys.stderr, all_threads=True)
+    except Exception:
+        pass
+
+try:
+    signal.signal(signal.SIGUSR1, _sigusr1_handler)
+except Exception:
+    # SIGUSR1 may not exist on some platforms; safe to ignore
+    pass
+
+
 
 # ----------------------------
 # Generic helpers
