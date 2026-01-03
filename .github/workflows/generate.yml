@@ -40,11 +40,17 @@ jobs:
           set -euo pipefail
           echo "=== Generate digest (watchdog + SIGUSR1 stack dump) ==="
 
-          python -u news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             --limit_raw 25             --items_per_section 15             --model gpt-4o-mini &
+          python -u news_digest_generator_v15.py \
+            --config digest_config_v15.json \
+            --template daily_digest_template_v15_apple.html \
+            --out index.html \
+            --limit_raw 25 \
+            --items_per_section 15 \
+            --model gpt-4o-mini &
           PID=$!
           echo "PID=$PID"
 
-          # watchdog: dump stack every 60s (up to 8 times) without failing the step
+          # watchdog: dump stack every 60s (up to 8 times)
           for i in {1..8}; do
             sleep 60
             if kill -0 "$PID" 2>/dev/null; then
