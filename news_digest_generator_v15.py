@@ -51,9 +51,23 @@ def parse_rfc2822(dt_str: str) -> _dt.datetime | None:
         return None
 
 def safe_json_dumps(obj) -> str:
-    # Avoid </script> injection breaking the template.
+    """Serialize a Python object into JSON that is safe to embed inside a <script> tag.
+
+    Why:
+    - Prevents </script> from terminating the script tag.
+    - Escapes U+2028/U+2029 which are valid in JSON strings but are *line terminators* in JS,
+      causing the browser to throw a SyntaxError and stop all subsequent rendering.
+    """
     s = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
-    return s.replace("</", "<\\/")
+    # Avoid </script> injection breaking the template.
+    s = s.replace("</", "<\\/")
+    # Prevent JS parse breakage on line-separator / control chars that can appear in feeds.
+    s = s.replace("\u2028", "\\u2028").replace("\u2029", "\\u2029").replace("\u0085", "\\u0085")
+    # Also handle literal characters defensively.
+    s = s.replace("\u2028".encode("utf-8").decode("unicode_escape"), "\\u2028")
+    s = s.replace("\u2029".encode("utf-8").decode("unicode_escape"), "\\u2029")
+    s = s.replace("\u0085".encode("utf-8").decode("unicode_escape"), "\\u0085")
+    return s
 
 def sha1(s: str) -> str:
     return hashlib.sha1(s.encode("utf-8", errors="ignore")).hexdigest()
