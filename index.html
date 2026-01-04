@@ -1,154 +1,735 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ben 的每日资讯简报</title>
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Daily Digest · 2026-01-04</title>
 <style>
-:root { --bg:#f5f7fb; --card:#fff; --border:#e5e7eb; --text:#0f172a; --muted:#64748b; --pri:#2563eb; }
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
-header{padding:16px 20px;font-weight:800;font-size:20px}
-.layout{display:grid;grid-template-columns:260px 1fr 320px;gap:12px;padding:0 12px 12px}
-.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;overflow:auto}
-.left .btn{width:100%;margin-top:8px}
-.btn{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer}
-.btn.primary{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.4);font-weight:700}
-.section{margin-bottom:14px}
-.card{border:1px solid var(--border);border-radius:12px;padding:10px;margin-bottom:8px;background:#fff}
-.card h4{margin:0 0 6px 0;font-size:14px}
-.card .meta{font-size:12px;color:var(--muted)}
-/* overlay */
-#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;z-index:9999}
-#overlay.open{display:flex}
-#overlay .panel{width:min(820px,calc(100vw - 48px));max-height:80vh}
-/* settings ui */
-.sm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.sm-card{border:1px solid var(--border);border-radius:14px;padding:12px;background:#fafafa}
-.seg{padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:12px}
-.seg.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.4);font-weight:700}
-.sm-row{display:flex;flex-wrap:wrap;gap:8px}
-.sm-label{font-size:12px;font-weight:700;margin-bottom:8px}
-footer{padding:12px;text-align:center;color:var(--muted);font-size:12px}
-</style>
-</head>
+:root{--bg:#f5f5f7;--card:#fff;--text:#0b0b0f;--muted:#6e6e73;--line:rgba(0,0,0,.10);--shadow:0 10px 30px rgba(0,0,0,.06);--r:18px;--r2:14px;--accent:#0a84ff;--chip:rgba(0,0,0,.05)}
+[data-theme="dark"]{--bg:#0b0b0f;--card:rgba(18,18,24,.94);--text:#f5f5f7;--muted:#a1a1aa;--line:rgba(255,255,255,.12);--shadow:0 14px 44px rgba(0,0,0,.45);--chip:rgba(255,255,255,.08)}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.container{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:16px;grid-template-columns:320px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0;overflow:hidden}
+.left{display:flex;flex-direction:column}.brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.brand .title{font-size:15px;font-weight:700}.brand .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.controls{padding:12px 16px;border-bottom:1px solid var(--line)}
+.search{width:100%;border:1px solid var(--line);background:transparent;padding:10px 12px;border-radius:12px;outline:none;color:var(--text);font-size:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent;cursor:pointer}
+.pill.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.nav{padding:10px 10px 14px;overflow:auto;min-height:0}
+.nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:14px;color:var(--text)}
+.nav a{font-size:13px;font-weight:600;line-height:1.25}
+.nav a .badge{font-weight:600}
+.nav a .sub{font-size:11px}
+
+.nav a:hover{background:var(--chip)}.nav a.active{background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.20)}
+.badge{font-size:12px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+.left-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}
+.btn:hover{border-color:rgba(10,132,255,.30)}
+.main{display:flex;flex-direction:column}.topbar{padding:16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:var(--card)}
+.h1{font-size:18px;font-weight:900}.meta{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.main-scroll{padding:16px;overflow:auto;min-height:0}
+.section{scroll-margin-top:90px;margin-bottom:18px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:10px}
+.section-title{font-size:14px;font-weight:860}.small{font-size:12px;color:var(--muted)}
+.brief{border:1px solid var(--line);border-radius:var(--r2);padding:14px;line-height:1.75;font-size:13px}
+.actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:999px}
+.cards{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.event{border:1px solid var(--line);border-radius:var(--r2);padding:12px;transition:.12s ease;display:flex;flex-direction:column;gap:8px}
+.event:hover{border-color:rgba(10,132,255,.22);background:rgba(10,132,255,.06)}
+.e-title{font-size:13px;font-weight:820;line-height:1.35}
+.e-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.e-sum{font-size:12px;line-height:1.55}
+.e-links{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.link{font-size:12px;color:var(--accent)}
+.fb{display:flex;gap:8px}
+.iconbtn{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 8px;border-radius:10px;cursor:pointer;font-size:12px}
+.iconbtn.active.good{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.12);color:var(--text)}
+.iconbtn.active.bad{border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.12);color:var(--text)}
+.right{display:flex;flex-direction:column}
+.right-sticky{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding:16px}
+.right-title{font-size:14px;font-weight:880}.right-sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.45}
+.right-scroll{padding:14px 16px 16px;overflow:auto;min-height:0}
+.kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:var(--r2);padding:12px}
+.k-head{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+.k-val{margin-top:6px;font-size:18px;font-weight:900}
+.k-delta{margin-top:4px;font-size:12px;color:var(--muted)}
+.spark{margin-top:10px;width:100%;height:44px;display:block}
+.hr{height:1px;background:var(--line);margin:14px 0}.group{font-size:12px;color:var(--muted);font-weight:800;margin:8px 0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.18s ease;z-index:999}
+.overlay.open{opacity:1;pointer-events:auto}
+.panel{position:absolute;right:18px;top:18px;bottom:18px;width:min(520px,calc(100vw - 36px));background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.phead{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.ptitle{font-size:14px;font-weight:900}
+.tabs{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.tab{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);cursor:pointer}
+.tab.active{color:var(--text);border-color:rgba(10,132,255,.40);background:rgba(10,132,255,.12)}
+.pbody{padding:14px 16px;overflow:auto;min-height:0}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:10px 0}
+.label{font-size:12px;color:var(--muted);line-height:1.4}
+.input{width:160px;border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:transparent;color:var(--text);font-size:12px;outline:none}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+@media (max-width:1200px){.container{grid-template-columns:320px 1fr}.right{display:none}}
+@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
+
+button,input,select,textarea{font-family:var(--font)}
+
+/* --- v15 render fix: essential UI atoms (non-breaking) --- */
+.badge{min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(148,163,184,.25);font-size:12px;padding:0 6px}
+.section{margin-bottom:18px}
+.st{font-weight:800;font-size:16px;margin:6px 0}
+.sb{opacity:.8;margin:6px 0 10px 0;line-height:1.4}
+.card{border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:12px;margin:10px 0;background:rgba(255,255,255,0.02)}
+.ct{font-weight:800;margin-bottom:6px}
+.cs{opacity:.9;line-height:1.5}
+.sources{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.src a{font-weight:650}
+.muted{opacity:.65}
+.empty{opacity:.65;padding:14px;border:1px dashed rgba(148,163,184,.35);border-radius:14px;margin:12px 0}
+.k-name{display:inline-flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:999px;display:inline-block}
+.spark{width:100%;height:26px;margin-top:8px}
+.k-unit{opacity:.7;font-size:12px;margin-left:4px}
+/* === v15 PATCH: KPI color rule (red/green) + buttons === */
+:root{
+  --kpi-up:#16A34A;   /* green */
+  --kpi-down:#DC2626; /* red */
+  --kpi-flat:#64748B; /* slate */
+}
+.kpi-dot{ width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:8px; flex:0 0 auto;}
+.kpi-dot.up{ background:var(--kpi-up); }
+.kpi-dot.down{ background:var(--kpi-down); }
+.kpi-dot.flat{ background:var(--kpi-flat); }
+
+.kpi-spark path.up{ stroke:var(--kpi-up) !important; }
+.kpi-spark path.down{ stroke:var(--kpi-down) !important; }
+.kpi-spark path.flat{ stroke:var(--kpi-flat) !important; }
+
+#settingsModal{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(0,0,0,0.35); z-index:9999;
+}
+#settingsModal .panel{
+  width:min(720px, calc(100vw - 48px));
+  max-height:min(80vh, 720px);
+  overflow:auto;
+  background:#fff; border-radius:16px; padding:18px 18px 14px 18px;
+  border:1px solid rgba(148,163,184,0.35);
+  box-shadow:0 16px 48px rgba(0,0,0,0.18);
+}
+#settingsModal .panel h3{ margin:0 0 8px 0; font-size:16px; }
+#settingsModal .panel pre{ white-space:pre-wrap; word-break:break-word; overflow:auto;
+  margin:10px 0 14px 0; padding:12px; border-radius:12px;
+  background:rgba(148,163,184,0.12);
+  border:1px solid rgba(148,163,184,0.25);
+  font-size:12px; line-height:1.45;
+}
+#settingsModal .actions{ display:flex; gap:10px; justify-content:flex-end; }
+
+/* density compact */
+.density-compact .event-card{ padding:10px 12px !important; }
+.density-compact .event-card h4{ margin:0 0 4px 0 !important; }
+.density-compact .event-card .meta{ margin-top:4px !important; }
+
+/* === v15 SETTINGS UI v6 === */
+#settingsModal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:9999; }
+#settingsModal .panel{ width:min(820px, calc(100vw - 48px)); max-height:min(82vh, 760px); overflow:auto; background:#fff; border-radius:18px; padding:18px 18px 14px 18px;
+  border:1px solid rgba(148,163,184,0.35); box-shadow:0 16px 48px rgba(0,0,0,0.18); }
+.sm-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.sm-title{ font-size:20px; font-weight:800; letter-spacing:0.2px; }
+.sm-sub{ margin-top:6px; font-size:12px; opacity:0.7; line-height:1.4; }
+.sm-grid{ margin-top:14px; display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+@media (max-width: 860px){ .sm-grid{ grid-template-columns:1fr; } }
+.sm-card{ border:1px solid rgba(148,163,184,0.35); border-radius:14px; padding:12px; background:rgba(148,163,184,0.08); }
+.sm-label{ font-size:12px; font-weight:700; opacity:0.85; margin-bottom:10px; }
+.sm-hint{ margin-top:10px; font-size:11px; opacity:0.65; }
+.sm-seg{ display:flex; flex-wrap:wrap; gap:8px; }
+.seg{ padding:8px 10px; border-radius:999px; border:1px solid rgba(148,163,184,0.45); background:#fff; font-size:12px; cursor:pointer; }
+.seg.active{ border-color:rgba(37,99,235,0.65); background:rgba(37,99,235,0.10); font-weight:700; }
+.sm-radio{ display:flex; flex-direction:column; gap:10px; font-size:12px; }
+.sm-radio input{ margin-right:8px; }
+.sm-debug{ margin-top:12px; border:1px solid rgba(148,163,184,0.35); border-radius:14px; padding:10px 12px; background:rgba(148,163,184,0.06); }
+.sm-debug summary{ cursor:pointer; font-size:12px; font-weight:700; opacity:0.8; }
+#settingsPre{ margin-top:10px; white-space:pre-wrap; word-break:break-word; font-size:12px; line-height:1.45; padding:10px 12px; border-radius:12px; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); max-height:280px; overflow:auto; }
+.sm-actions{ display:flex; justify-content:flex-end; margin-top:10px; }
+
+</style></head>
 <body>
-
-<header>Ben 的每日资讯简报</header>
-
-<div class="layout">
-  <aside class="panel left">
-    <button class="btn primary" id="btnSettings">设置</button>
-    <button class="btn" id="btnTop">回到顶部</button>
+<div class="container">
+  <aside class="card left">
+    <div class="brand"><div class="title">Ben的每日资讯简报</div>
+      <div class="sub">日期：2026-01-04 · 生成：<span id="genAt">—</span></div>
+    </div>
+    <div class="controls">
+      <input id="q" class="search" placeholder="搜索标题/标签/来源…"/>
+      <div class="pills">
+        <div class="pill active" data-view="all">全部</div>
+        <div class="pill" data-view="cn">中国相关</div>
+        <div class="pill" data-view="global">全球（不含中国）</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="left-foot">
+      <button class="btn" id="btnHome">回到顶部</button>
+      <button class="btn" id="btnSettings">设置</button>
+    </div>
   </aside>
 
-  <main class="panel" id="main"></main>
+  <main class="card main">
+    <div class="topbar">
+      <div class="h1">今日要点与事件卡</div>
+      <div class="meta">默认 30 分钟模式（每栏 Top 5），可在设置切换全量（10–20条）。所有内容已预渲染，无客户端抓取。</div>
+    </div>
+    <div class="main-scroll" id="main"></div>
+  </main>
 
-  <aside class="panel right" id="right">
-    <h4>右侧 KPI（示例）</h4>
-    <div class="card">USD/CNY 7.00</div>
-    <div class="card">美债10Y 4.18%</div>
+  <aside class="card right">
+    <div class="right-sticky">
+      <div class="right-title">数据与趋势快照</div>
+      <div class="right-sub">生成时刻快照（已内嵌）<br>更新时间：<span id="kpiAt">—</span></div>
+    </div>
+    <div class="right-scroll">
+      <div class="group">LME 金属（Proxy）</div><div class="kgrid" id="kMetals"></div>
+      <div class="hr"></div>
+      <div class="group">利率 / 汇率 / 美元</div><div class="kgrid" id="kMacro"></div>
+      <div class="hr"></div>
+      <div class="group">反馈闭环</div>
+      <div class="kpi">
+        <div class="k-head"><span>7 天窗口</span><span id="fbCount">0</span></div>
+        <div class="k-delta">点 👍/👎 形成偏好；可导出反馈供生成端读取（用于“选题闭环”）。</div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn" id="btnExport">导出反馈</button>
+          <button class="btn" id="btnClearFB">清空本机反馈</button>
+        </div>
+      </div>
+    </div>
   </aside>
 </div>
 
-<div id="overlay">
+<div class="overlay" id="overlay">
   <div class="panel">
-    <h3>设置</h3>
-    <div class="sm-grid">
-      <div class="sm-card">
-        <div class="sm-label">每板块展示条数</div>
-        <div class="sm-row">
-          <button class="seg" data-items="5">Top 5</button>
-          <button class="seg" data-items="10">Top 10</button>
-          <button class="seg" data-items="15">Top 15</button>
-          <button class="seg" data-items="0">全部</button>
-        </div>
-      </div>
-      <div class="sm-card">
-        <div class="sm-label">是否显示右侧 KPI</div>
-        <div class="sm-row">
-          <button class="seg" data-kpi="on">显示</button>
-          <button class="seg" data-kpi="off">隐藏</button>
-        </div>
-      </div>
+    <div class="phead"><div class="ptitle">设置</div><button class="btn" id="btnClose">关闭</button></div>
+    <div class="tabs">
+      <div class="tab active" data-tab="general">通用</div>
+      <div class="tab" data-tab="layout">布局</div>
+      <div class="tab" data-tab="algo">算法</div>
+      <div class="tab" data-tab="config">扩展</div>
     </div>
-    <div style="margin-top:12px;display:flex;justify-content:flex-end;gap:8px">
-      <button class="btn" id="btnClose">关闭</button>
-      <button class="btn primary" id="btnApply">应用</button>
-    </div>
+    <div class="pbody" id="pbody"></div>
   </div>
 </div>
 
-<footer>本地设置保存在浏览器，不会影响生成端</footer>
-
+<script>window.DIGEST = {"date":"2026-01-04","generated_at_utc":"2026-01-04T04:00:04.890427+00:00","kpis":[{"id":"DGS10","name":"美债10Y","unit":"%","value":4.18,"updated_at":"2025-12-31","source":"FRED","delta":0.040000000000000036,"delta_pct":0.966183574879228,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,15.00 L 5.41,21.00 L 7.82,7.00 L 10.23,19.00 L 12.64,19.00 L 15.05,15.00 L 17.46,25.00 L 19.87,19.00 L 22.28,13.00 L 24.69,15.00 L 27.10,17.00 L 29.51,15.00 L 31.92,21.00 L 34.33,29.00 L 36.74,33.00 L 39.15,39.00 L 41.56,41.00 L 43.97,37.00 L 46.38,23.00 L 48.79,23.00 L 51.21,29.00 L 53.62,19.00 L 56.03,13.00 L 58.44,7.00 L 60.85,5.00 L 63.26,15.00 L 65.67,13.00 L 68.08,3.00 L 70.49,5.00 L 72.90,11.00 L 75.31,9.00 L 77.72,17.00 L 80.13,9.00 L 82.54,7.00 L 84.95,5.00 L 87.36,11.00 L 89.77,13.00 L 92.18,17.00 L 94.59,13.00 L 97.00,5.00\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[4.13,4.1,4.17,4.11,4.11,4.13,4.08,4.11,4.14,4.13,4.12,4.13,4.1,4.06,4.04,4.01,4.0,4.02,4.09,4.09,4.06,4.11,4.14,4.17,4.18,4.13,4.14,4.19,4.18,4.15,4.16,4.12,4.16,4.17,4.18,4.15,4.14,4.12,4.14,4.18]},{"id":"DEXCHUS","name":"USD/CNY","unit":"","value":7.0063,"updated_at":"2025-12-26","source":"FRED","delta":-0.007899999999999352,"delta_pct":-0.11262866756008316,"direction":"down","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,12.72 L 5.41,9.11 L 7.82,6.89 L 10.23,5.25 L 12.64,3.00 L 15.05,4.08 L 17.46,6.08 L 19.87,5.34 L 22.28,6.15 L 24.69,8.40 L 27.10,13.64 L 29.51,12.35 L 31.92,9.79 L 34.33,9.82 L 36.74,8.83 L 39.15,9.08 L 41.56,10.06 L 43.97,11.48 L 46.38,16.88 L 48.79,19.56 L 51.21,19.78 L 53.62,20.83 L 56.03,21.35 L 58.44,23.33 L 60.85,20.92 L 63.26,21.48 L 65.67,21.04 L 68.08,23.42 L 70.49,23.20 L 72.90,25.08 L 75.31,26.04 L 77.72,28.45 L 80.13,30.08 L 82.54,29.65 L 84.95,30.48 L 87.36,30.33 L 89.77,31.62 L 92.18,34.31 L 94.59,38.56 L 97.00,41.00\" stroke=\"#DC2626\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#DC2626","series_values":[7.098,7.1097,7.1169,7.1222,7.1295,7.126,7.1195,7.1219,7.1193,7.112,7.095,7.0992,7.1075,7.1074,7.1106,7.1098,7.1066,7.102,7.0845,7.0758,7.0751,7.0717,7.07,7.0636,7.0714,7.0696,7.071,7.0633,7.064,7.0579,7.0548,7.047,7.0417,7.0431,7.0404,7.0409,7.0367,7.028,7.0142,7.0063]},{"id":"DTWEXBGS","name":"美元指数（广义）","unit":"","value":119.8529,"updated_at":"2025-12-26","source":"FRED","delta":0.026700000000005275,"delta_pct":0.022282272157512526,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,23.94 L 5.41,12.56 L 7.82,10.92 L 10.23,9.82 L 12.64,4.19 L 15.05,3.83 L 17.46,6.16 L 19.87,10.73 L 22.28,12.13 L 24.69,15.95 L 27.10,20.13 L 29.51,17.23 L 31.92,14.91 L 34.33,13.50 L 36.74,9.17 L 39.15,6.24 L 41.56,3.75 L 43.97,3.00 L 46.38,7.31 L 48.79,13.22 L 51.21,16.22 L 53.62,17.26 L 56.03,14.88 L 58.44,21.10 L 60.85,21.90 L 63.26,21.90 L 65.67,20.56 L 68.08,21.92 L 70.49,21.99 L 72.90,32.40 L 75.31,29.99 L 77.72,32.90 L 80.13,33.94 L 82.54,29.88 L 84.95,31.49 L 87.36,29.70 L 89.77,32.41 L 92.18,36.80 L 94.59,41.00 L 97.00,40.59\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[120.929,121.665,121.7715,121.8422,122.2066,122.2295,122.0788,121.7835,121.6932,121.4459,121.1756,121.363,121.5131,121.6042,121.8845,122.0735,122.235,122.2833,122.0044,121.6225,121.4288,121.3615,121.5149,121.1131,121.0614,121.0615,121.1478,121.0601,121.0557,120.3821,120.5383,120.3501,120.283,120.5451,120.4409,120.5571,120.3816,120.098,119.8262,119.8529]},{"id":"PCOPPUSDM","name":"铜（Proxy）","unit":"$/t","value":9835.0680952381,"updated_at":"2025-06-01","source":"FRED","delta":303.8671861471903,"delta_pct":3.1881311604433824,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,3.00 L 5.41,3.80 L 7.82,14.82 L 10.23,19.46 L 12.64,41.00 L 15.05,34.69 L 17.46,38.15 L 19.87,39.50 L 22.28,33.86 L 24.69,29.31 L 27.10,20.31 L 29.51,21.31 L 31.92,22.45 L 34.33,23.11 L 36.74,31.12 L 39.15,28.95 L 41.56,27.82 L 43.97,29.64 L 46.38,30.65 L 48.79,35.39 L 51.21,31.88 L 53.62,28.79 L 56.03,29.59 L 58.44,30.25 L 60.85,24.76 L 63.26,14.11 L 65.67,4.61 L 68.08,11.24 L 70.49,14.96 L 72.90,20.68 L 75.31,16.75 L 77.72,12.86 L 80.13,19.34 L 82.54,21.69 L 84.95,20.74 L 87.36,15.73 L 89.77,10.00 L 92.18,17.97 L 94.59,12.90 L 97.00,8.60\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[10230.8939130435,10174.3476190476,9395.02727272727,9067.55181818182,7544.80952380952,7990.81217391304,7746.01136363636,7651.08285714286,8049.86136363636,8371.09136363636,9007.34636363636,8936.587,8856.31086956522,8809.1575,8243.15608695652,8396.51772727273,8476.67904761905,8347.82826086957,8276.71380952381,7941.35590909091,8189.58772727273,8407.90047619048,8351.33956521739,8304.95047619048,8692.81904761905,9445.59363636363,10117.1634782609,9648.167,9385.31304347826,8981.11772727273,9259.12857142857,9533.99130434783,9075.72714285714,8909.90772727273,8976.68043478261,9330.975,9735.82333333334,9172.69590909091,9531.20090909091,9835.0680952381]},{"id":"PALUMUSDM","name":"铝（Proxy）","unit":"$/t","value":2525.95904761905,"updated_at":"2025-06-01","source":"FRED","delta":78.6149567099601,"delta_pct":3.212255971768882,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,3.00 L 5.41,10.01 L 7.82,21.37 L 10.23,28.73 L 12.64,33.39 L 15.05,32.68 L 17.46,38.51 L 19.87,37.66 L 22.28,35.00 L 24.69,33.68 L 27.10,30.98 L 29.51,33.18 L 31.92,36.52 L 34.33,35.35 L 36.74,37.14 L 39.15,39.63 L 41.56,40.33 L 43.97,41.00 L 46.38,39.63 L 48.79,39.36 L 51.21,39.14 L 53.62,39.43 L 56.03,39.16 L 58.44,39.78 L 60.85,38.38 L 63.26,30.86 L 65.67,28.99 L 68.08,30.91 L 70.49,35.05 L 72.90,34.95 L 75.31,32.02 L 77.72,28.17 L 80.13,28.55 L 82.54,29.70 L 84.95,28.85 L 87.36,26.50 L 89.77,26.61 L 92.18,34.52 L 94.59,32.31 L 97.00,30.11\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[3498.37304347826,3246.99047619048,2839.50545454545,2575.66954545455,2408.42333333333,2433.91608695652,2224.75590909091,2255.53523809524,2350.71636363636,2398.20681818182,2494.90090909091,2416.1815,2296.41695652174,2338.131,2274.01260869565,2184.75363636364,2159.73238095238,2135.58173913043,2184.67380952381,2194.39090909091,2202.25545454545,2192.00523809524,2201.56652173913,2179.45714285714,2229.4419047619,2499.22818181818,2566.31869565217,2497.6055,2349.1252173913,2352.46727272727,2457.4780952381,2595.58304347826,2582.18857142857,2540.88227272727,2571.37043478261,2655.7725,2651.59857142857,2367.80045454546,2447.34409090909,2525.95904761905]},{"id":"PZINCUSDM","name":"锌（Proxy）","unit":"$/t","value":2654.65,"updated_at":"2025-06-01","source":"FRED","delta":12.02863636364009,"delta_pct":0.4551782002960943,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,10.73 L 5.41,3.00 L 7.82,14.37 L 10.23,16.57 L 12.64,26.92 L 15.05,17.76 L 17.46,26.55 L 19.87,29.53 L 22.28,30.06 L 24.69,26.71 L 27.10,23.32 L 29.51,26.38 L 31.92,29.52 L 34.33,33.25 L 36.74,38.63 L 39.15,40.71 L 41.56,40.16 L 43.97,40.15 L 46.38,38.44 L 48.79,39.35 L 51.21,37.53 L 53.62,38.16 L 56.03,37.96 L 58.44,41.00 L 60.85,39.15 L 63.26,34.09 L 65.67,29.76 L 68.08,32.51 L 70.49,33.12 L 72.90,34.18 L 75.31,31.79 L 77.72,26.91 L 80.13,28.83 L 82.54,28.27 L 84.95,32.22 L 87.36,32.72 L 89.77,31.05 L 92.18,36.25 L 94.59,35.66 L 97.00,35.43\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[3962.20739130435,4371.34285714286,3769.65181818182,3652.89136363636,3105.3619047619,3590.13130434783,3124.96818181818,2967.21047619048,2938.92045454545,3116.52272727273,3295.87818181818,3133.838,2967.4647826087,2770.357,2485.78086956522,2375.45,2404.64523809524,2405.16347826087,2495.49619047619,2447.18181818182,2543.61045454545,2510.56857142857,2520.93913043478,2360.0919047619,2457.85619047619,2725.55954545455,2955.18826086957,2809.185,2777.26869565217,2721.07818181818,2847.48380952381,3105.77086956522,3004.19619047619,3033.75818181818,2824.82869565217,2798.2765,2886.76190476191,2611.345,2642.62136363636,2654.65]},{"id":"PNICKUSDM","name":"镍（Proxy）","unit":"$/t","value":15003.1076190476,"updated_at":"2025-06-01","source":"FRED","delta":-347.29556277059964,"delta_pct":-2.2624523841950563,"direction":"down","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,3.00 L 5.41,4.59 L 7.82,14.44 L 10.23,19.16 L 12.64,27.99 L 15.05,26.88 L 17.46,25.39 L 19.87,26.88 L 22.28,19.79 L 24.69,12.92 L 27.10,14.35 L 29.51,17.45 L 31.92,24.36 L 34.33,23.39 L 36.74,26.68 L 39.15,28.49 L 41.56,28.77 L 43.97,30.07 L 46.38,31.68 L 48.79,34.45 L 51.21,36.93 L 53.62,38.11 L 56.03,38.77 L 58.44,38.32 L 60.85,36.19 L 63.26,34.72 L 65.67,31.81 L 68.08,35.99 L 70.49,38.33 L 72.90,38.39 L 75.31,38.66 L 77.72,37.46 L 80.13,39.55 L 82.54,40.13 L 84.95,40.25 L 87.36,40.43 L 89.77,38.90 L 92.18,40.71 L 94.59,40.30 L 97.00,41.00\" stroke=\"#DC2626\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#DC2626","series_values":[33924.1764705882,33133.8095238095,28228.8868181818,25877.0681818182,21481.8928571429,22034.8913043478,22773.9663636364,22032.8928571429,25562.6977272727,28985.9204545455,28271.4909090909,26727.95,23288.6082608696,23770.7995,22134.7826086957,21233.2781818182,21091.2619047619,20446.3582608696,19644.6428571429,18264.0354545455,17027.3636363636,16443.5238095238,16111.6669565217,16338.4642857143,17397.3604761905,18132.3640909091,19576.5465217391,17498.0075,16334.8752173913,16303.2877272727,16167.6776190476,16765.8034782609,15726.9476190476,15438.6563636364,15374.0608695652,15287.031,16048.2019047619,15146.0022727273,15350.4031818182,15003.1076190476]},{"id":"PLEADUSDM","name":"铅（Proxy）","unit":"$/t","value":1973.85619047619,"updated_at":"2025-06-01","source":"FRED","delta":17.143917748920103,"delta_pct":0.8761593611831786,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,6.04 L 5.41,3.00 L 7.82,20.55 L 10.23,25.90 L 12.64,32.52 L 15.05,26.36 L 17.46,41.00 L 19.87,31.44 L 22.28,24.07 L 24.69,14.78 L 27.10,16.16 L 29.51,24.58 L 31.92,22.95 L 34.33,20.77 L 36.74,24.93 L 39.15,22.38 L 41.56,23.40 L 43.97,20.05 L 46.38,12.87 L 48.79,21.76 L 51.21,17.56 L 53.62,29.43 L 56.03,25.00 L 58.44,25.56 L 60.85,27.41 L 63.26,22.23 L 65.67,15.23 L 68.08,20.60 L 70.49,23.56 L 72.90,31.50 L 75.31,31.23 L 77.72,28.93 L 80.13,32.35 L 82.54,32.32 L 84.95,37.21 L 87.36,34.60 L 89.77,29.16 L 92.18,38.37 L 94.59,34.62 L 97.00,33.36\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[2344.83565217391,2386.10857142857,2147.77772727273,2075.15954545455,1985.19619047619,2068.84391304348,1870.10136363636,1999.86047619048,2099.99272727273,2226.11363636364,2207.40318181818,2093.0625,2115.17826086957,2144.8615,2088.27304347826,2122.88636363636,2109.1219047619,2154.61434782609,2252.10142857143,2131.35909090909,2188.45545454545,2027.20285714286,2087.38869565217,2079.82761904762,2054.66666666667,2124.96909090909,2220.01739130435,2147.1015,2106.93782608696,1999.11181818182,2002.73571428571,2033.99608695652,1987.52619047619,1987.91090909091,1921.51782608696,1957.07,2030.88285714286,1905.74909090909,1956.71227272727,1973.85619047619]},{"id":"PTINUSDM","name":"锡（Proxy）","unit":"$/t","value":32544.0295238095,"updated_at":"2025-06-01","source":"FRED","delta":599.6467965367992,"delta_pct":1.877158815859188,"direction":"up","spark_svg":"<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 3.00,3.00 L 5.41,4.44 L 7.82,15.31 L 10.23,21.66 L 12.64,31.71 L 15.05,32.85 L 17.46,38.32 L 19.87,41.00 L 22.28,38.12 L 24.69,33.64 L 27.10,27.68 L 29.51,29.44 L 31.92,33.87 L 34.33,31.33 L 36.74,31.40 L 39.15,28.89 L 41.56,26.53 L 43.97,30.71 L 46.38,31.43 L 48.79,33.09 L 51.21,33.61 L 53.62,32.94 L 56.03,32.10 L 58.44,30.61 L 60.85,28.53 L 63.26,22.20 L 65.67,20.05 L 68.08,21.44 L 70.49,21.71 L 72.90,22.18 L 75.31,22.18 L 77.72,21.47 L 80.13,25.10 L 82.54,26.35 L 84.95,25.24 L 87.36,21.80 L 89.77,18.12 L 92.18,21.02 L 94.59,21.58 L 97.00,20.65\" stroke=\"#16A34A\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>","color":"#16A34A","series_values":[43949.6686956522,43022.2380952381,35992.325,31890.19,25395.7719047619,24660.152173913,21124.0368181818,19391.1661904762,21249.5,24149.3377272727,27999.6022727273,26862.904,23999.9634782609,25643.875,25594.2134782609,27216.6813636364,28743.1428571429,26040.3934782609,25573.9280952381,24501.385,24167.8609090909,24603.0004761905,25142.9817391304,26104.0995238095,27452.0547619048,31540.0109090909,32933.6165217391,32032.703,31860.4739130435,31553.9395454545,31554.1823809524,32012.4343478261,29664.9685714286,28860.5459090909,29579.0430434783,31797.959,34179.6414285714,32303.4986363636,31944.3827272727,32544.0295238095]}],"sections":[{"id":"macro","name":"宏观 / 市场（利率·汇率·风险偏好）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"US Economic Forecast Q4 2025","summary_zh":"Deloitte 报道：US Economic Forecast Q4 2025 - Deloitte","region":"global","score":0.4,"sources":[{"title":"US Economic Forecast Q4 2025 - Deloitte","url":"https://news.google.com/rss/articles/CBMisAFBVV95cUxPenRYbVVidzhLTkVVbXN2VHd4VjY3ZGlZWjBFa0NCQ2xPcEhneHlWZVhud3p2cUVMcWNsdkEzLTlpcmVxREZBbDBkOGFEa0wySEx4YkdoMkdzT3N6NXRnQ19waFNqM3BCdkE1bmczY1pHNVNxQkxoRnpkMk15cERnSklGLTc0ZlZvMzFxeEEtalR1UWF3R0VWNjZCWXFqMUk0VERZWHdpaHplWTdFdmlldQ?oc=5","source":"Deloitte","published_at":"2025-12-19"}]},{"title_zh":"Bond-Market Debate Over Fed’","summary_zh":"Bloomberg.com 报道：Bond-Market Debate Over Fed’s Path in 2026 Is About to Heat Up - Bloomberg.com","region":"global","score":0.4,"sources":[{"title":"Bond-Market Debate Over Fed’s Path in 2026 Is About to Heat Up - Bloomberg.com","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxNMi1ZdWZHRWNMdkwwVFVYQ1kwLXctTXJKV0YyNnpSQTBnMFF3bmhiWHhNMGVzYnhJSjNOOEVjMUJ0TmFfZXk5VWgzRWpkaTlrRDI2T3MtZ3RpbXZBbkpfSFB4N2M1OFdyX2tnWEEwaUhQaE0xVHFZUHlxV2pkempYRkt3bWxGWDFwWGozaWY1eVhRa1VZYnB2OFo0dFV5T201VUNLRV9PTTFfT1piYjRDVjBBYw?oc=5","source":"Bloomberg.com","published_at":"2025-12-14"}]},{"title_zh":"The Fed just cut interest ra","summary_zh":"CNN 报道：The Fed just cut interest rates for the third-straight time - CNN","region":"global","score":0.4,"sources":[{"title":"The Fed just cut interest rates for the third-straight time - CNN","url":"https://news.google.com/rss/articles/CBMihgFBVV95cUxNeFJ3dm9qNm1sVWF4ZVFMeC1DU2taTGlZZWpGbmdYMTkwWGUtVkFRdTJFWHhuMXhDYXh2YUhINWpKWXRrRnl3VWd2X2tNc1B2WThaNFUtcUJFX1BVQ0J0ZjM3VWlyWTFORHIyTVBWSHQzY2Y2anpDNWdfLWEtV2d4MWZjdG9kQQ?oc=5","source":"CNN","published_at":"2025-12-10"}]},{"title_zh":"Daily: US data reinforce Fed","summary_zh":"UBS 报道：Daily: US data reinforce Fed cut expectations - UBS","region":"global","score":0.4,"sources":[{"title":"Daily: US data reinforce Fed cut expectations - UBS","url":"https://news.google.com/rss/articles/CBMivwFBVV95cUxPd1drem9aSmV4a2xGVWR4RExsU1kwOWFHR05ZX0tGdHZaQXJrZ0YtdG5VRnRudVhTQmJMVUkyMFV1Tk9Ib1JsQmpJNXIyYWRac213OVAxU0pCZzNDT0d4Z0NGeENlT09BYkxPVkhXMFV3ZF9iYWhPS1ozNUpQTUI2ZEZjU3lfbWNLeTJYTDBQNll6NzZFR2dSeFJMR3hGVjJnMWcxTGQ4Z3F2VXEtVkdqR29vUjlvVTBQV3dEbXhtcw?oc=5","source":"UBS","published_at":"2025-11-26"}]},{"title_zh":"RSM’s U.S. outlook for 2026:","summary_zh":"The Real Economy Blog 报道：RSM’s U.S. outlook for 2026: An acceleration in growth - The Real Economy Blog","region":"global","score":0.4,"sources":[{"title":"RSM’s U.S. outlook for 2026: An acceleration in growth - The Real Economy Blog","url":"https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVk5NFlqa2J3b09XcjJoU005RUFwdmJBcUhVVk9vQzdkRGNRTU1oRjNMV0NHMnEyYl8zb01kQTRxaG5BazNObWo0NmExbDZORm5kdk5MNFVyaFhTRVBERmNjd1dPR2VJZE8tbmNJUWJQa1NoajhjMFZLRlVFMmxMcWhnS3pOblIyVFE?oc=5","source":"The Real Economy Blog","published_at":"2025-11-24"}]},{"title_zh":"Kiplinger Interest Rates Out","summary_zh":"Kiplinger 报道：Kiplinger Interest Rates Outlook: Federal Reserve Cuts Rates and Now Will Take a Pause - Kiplinger","region":"global","score":0.4,"sources":[{"title":"Kiplinger Interest Rates Outlook: Federal Reserve Cuts Rates and Now Will Take a Pause - Kiplinger","url":"https://news.google.com/rss/articles/CBMia0FVX3lxTE16dEU3VGVOaXQ1TnFDRmhaaS1NSkhuRmdGYnd6SDNURGNaV3hhUkI0MnMxYUFJM1NHMEkySGlSVFJWcy1kak5LbDhEbzdaU2pVU00wYWNCa01hWF9WOWptNmMwR2taZVJ5MmVj?oc=5","source":"Kiplinger","published_at":"2025-12-12"}]},{"title_zh":"US Treasury Bonds Forecast f","summary_zh":"ts2.tech 报道：US Treasury Bonds Forecast for December 2025: Fed Rate Cut, Delayed Jobs & CPI Data, and Auction Supply Set Up a Volatile Finish - ts2.tech","region":"global","score":0.4,"sources":[{"title":"US Treasury Bonds Forecast for December 2025: Fed Rate Cut, Delayed Jobs & CPI Data, and Auction Supply Set Up a Volatile Finish - ts2.tech","url":"https://news.google.com/rss/articles/CBMi3AFBVV95cUxORl92N0J5QkVuaE0yVDNKdXFTa0ZSUFUwMFg2Y25jVHEySEdGQnZUNUNyQWgwc0tIX25TZ1hyaERMVXQ5UFYxNnE1a3J6SGlfcmx2QlR1YUYyOEprOFhBZEF3akt5TFE3MjZ6Q043MEdSR1pEeUlHcjVqZkFVb1JOVW1IWkRuZG1VcFJKTWVoR0pCVTAxZm5aZWp5RkRhMWFQLUN1ZmpyS0hTUGtXLUJhUWRrY2Z5cFU1bzJqQWM5VGNOQm1IS3hHeWwzTUhlOThaTzJ2eWk2aUFWWC10?oc=5","source":"ts2.tech","published_at":"2025-12-14"}]},{"title_zh":"Slower job growth likely sol","summary_zh":"invesco.com 报道：Slower job growth likely solidifies September rate cut - invesco.com","region":"global","score":0.4,"sources":[{"title":"Slower job growth likely solidifies September rate cut - invesco.com","url":"https://news.google.com/rss/articles/CBMijgFBVV95cUxQeGdrc0xFWnFCU2g1N2x1Qm1sRWlKdjM2MDNtbVRzcFBZSnl0Yk1YM3NDbkcwcjh0cG9rXzhvWjh0V2VsQXZTaGxxTkc3eVZNVWJmeW5WLTNOX1gzT29yRnJLRWFab0FHdnR5bEs2RmJSaXhaVHBud1BBZmRRVm1uNGtOQzVYdTRMeVVzc1Rn?oc=5","source":"invesco.com","published_at":"2025-09-08"}]},{"title_zh":"Rising Yields And Job Growth","summary_zh":"Finimize 报道：Rising Yields And Job Growth Shift Fed Rate Cut Outlook - Finimize","region":"global","score":0.4,"sources":[{"title":"Rising Yields And Job Growth Shift Fed Rate Cut Outlook - Finimize","url":"https://news.google.com/rss/articles/CBMijAFBVV95cUxNdlJ2UXZ3c0pZMWpQNU8teHNsQ3dNUjc5dVZOeDlodmxaeThjWFppQ2lJbW5XV19yR0NlOUE2VjR1ZW0tTVB4Vm45S2dXTml6VVFraktsdXctMENFUU1wMVJiQWhZZm5NM3JtYXNFZmEzXzdqQzkwY1RqVWFTU0lBUjVJdkpwOXc2a0lPWg?oc=5","source":"Finimize","published_at":"2025-12-10"}]},{"title_zh":"Instant View: Analysts react","summary_zh":"Reuters 报道：Instant View: Analysts react after Fed cuts interest rates by quarter of a percentage point - Reuters","region":"global","score":0.4,"sources":[{"title":"Instant View: Analysts react after Fed cuts interest rates by quarter of a percentage point - Reuters","url":"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQekx4WXBlVm1tUm1MLTBHOUZRRzJmUU9nTUpaRkpTWmxtdWZfQ1FHdUwzdkk0SUpEZDNLT0VKU2R3VTIzQVVBaWtiSmJJcXVJV0szU2RsdGdJaTJKckZKTnB5OFN6VUt6Qk9GMGYxNWpDcUtwcmhLcnBZbHNoSktRc0d4cHZfdnUxUUsxTVUwYndzNXIxTXNmZHhtT1hMbUkxWktkaTQ0NF9jMVA3OHMtNUFDN0FzYXpTVUFN?oc=5","source":"Reuters","published_at":"2025-09-17"}]},{"title_zh":"The Fed’s once oh-so-certain","summary_zh":"Fortune 报道：The Fed’s once oh-so-certain cuts for the rest of 2025 are already fading into oblivion - Fortune","region":"global","score":0.4,"sources":[{"title":"The Fed’s once oh-so-certain cuts for the rest of 2025 are already fading into oblivion - Fortune","url":"https://news.google.com/rss/articles/CBMiigFBVV95cUxNZkVSUlBZVndEMkpQY0sxblFMYXZOTGsxMWtOeDhZOXlTazRNRzY0VnNUTTJtd3JfNUlkbFUwRTh5V1Q3VFNnMkYxN2JGa0c1eDd5QmZiQkhrQktDU2d4cWlYT1Bqd0kzdzdnQk1RdUh0UmlRcFVBUnNzMVVLLXpIVVBDYnNObWpkZ1E?oc=5","source":"Fortune","published_at":"2025-09-26"}]},{"title_zh":"Fed to push back against cal","summary_zh":"ING THINK economic and financial analysis | ING Think 报道：Fed to push back against calls for rate cuts - ING THINK economic and financial analysis | ING Think","region":"global","score":0.4,"sources":[{"title":"Fed to push back against calls for rate cuts - ING THINK economic and financial analysis | ING Think","url":"https://news.google.com/rss/articles/CBMiggFBVV95cUxNa0JrTUdtcVNRV19LOW5VSnp1ZlN4VEF6Y2lUWWZlbUZ6R1RnQ3RmOWJKQ2UtcmNVRjlQSVh3emxyR0RVMFllSVptb2V0akFoUVNCX0ZlbzVhS0duRWJENzVDZVQzdTVLbjYzTnk5NVdkZXpzN1NnelJvQVhIRms3QzVB?oc=5","source":"ING THINK economic and financial analysis | ING Think","published_at":"2025-05-02"}]},{"title_zh":"Divided Fed Holds Rates; S&P","summary_zh":"Investor's Business Daily 报道：Divided Fed Holds Rates; S&P 500 Falls As Powell Speaks - Investor's Business Daily","region":"global","score":0.4,"sources":[{"title":"Divided Fed Holds Rates; S&P 500 Falls As Powell Speaks - Investor's Business Daily","url":"https://news.google.com/rss/articles/CBMiowFBVV95cUxQSU9zd0pmS081SDlYT3djSlprNW1fUEhFaWVvYUdMWkxWVDEtV3dnX2o1RjhPQjBuN1dzSFZ3aDhkTFRDc2s0alBPVG5zeFQ4QS1HNktHaVNIN000TVNnQmU3MERxZXZ2UkxVYWFOaUkzSVphbFFMR1o1QnNhdXZFUjctQ0NWcU5GcllNNUdrUUo2WWM0azBnMTVxRUVtMFUzbEJr?oc=5","source":"Investor's Business Daily","published_at":"2025-07-30"}]},{"title_zh":"Projected US Interest Rates ","summary_zh":"CCN.com 报道：Projected US Interest Rates in 5 Years: Fed Cuts Rates in \"Challenging Situation\" - CCN.com","region":"global","score":0.4,"sources":[{"title":"Projected US Interest Rates in 5 Years: Fed Cuts Rates in \"Challenging Situation\" - CCN.com","url":"https://news.google.com/rss/articles/CBMigwFBVV95cUxPZVNZTjF3TTZ1eEZYWldnRC1CSXF2dElpWEI3N0o3bjdrZkpVN2ZVR1pDOFlYYUkyZW5XZFVCaXJselVWWlluSllHVE5ia01yNWVNazZEY01yWDhZY2ctazNhLTJtM3hJSE9oVXVFMzdJNEdMOU0wdzZzWjBsRXYzUlE1OA?oc=5","source":"CCN.com","published_at":"2025-09-12"}]},{"title_zh":"Treasury Yields Lowest in Mo","summary_zh":"Bloomberg.com 报道：Treasury Yields Lowest in Months as Jobs Data Back Rate Cuts - Bloomberg.com","region":"global","score":0.4,"sources":[{"title":"Treasury Yields Lowest in Months as Jobs Data Back Rate Cuts - Bloomberg.com","url":"https://news.google.com/rss/articles/CBMisAFBVV95cUxPNmJjaFJsc0xub2xMS1hRbURONk5ITC03VURSS1lQbU1kOXA3TXFZMlZOTE83U05ta19kd29qdHdkZVRkeVBqbnotTGFkUEt3WmJRdF92Rm02ai1qaXpXQkN0a2VQZHZhc3B2Szc5WUZGc1luTkl0aldUazk2Ym9LT0pfa0RvUDhmWFdwRXlXOXdfX3JPb0ltUW5rLTNXV3FTc3ZkYU85amhEVjhLUUJWZQ?oc=5","source":"Bloomberg.com","published_at":"2025-09-04"}]}]},{"id":"sanctions","name":"地缘政治 / 制裁 / 合规（OFAC·EU）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"OFAC Publishes Guidance on t","summary_zh":"A Fresh Take 报道：OFAC Publishes Guidance on the 10-Year Sanctions Enforcement Window: Actions for Compliance Teams - A Fresh Take","region":"global","score":0.4,"sources":[{"title":"OFAC Publishes Guidance on the 10-Year Sanctions Enforcement Window: Actions for Compliance Teams - A Fresh Take","url":"https://news.google.com/rss/articles/CBMivAFBVV95cUxPMzlTMG9JUlh2aWNwaHZZLUgzSURXaFIzeEhaU1Z3Y1dTRWt2MGVNODFwSEVKT1Z1Q19aUThNYU45WWp2X3M5UlFlQnh0czFzeXg1bnd6cHpXaFFnRDJKWnJnMlFjR0xjcUFhZHpSZWtoNTREM3AteTFzX0lkOXFyRXFkR0RZek9MbEdzMmFBLUNvRDZ0OHE5OWtyTUhpY2pwX05tQ2tpb0pmYkowS2VTeVFoa1JWR2JWUHg4YQ?oc=5","source":"A Fresh Take","published_at":"2024-08-13"}]},{"title_zh":"Sanctions have become a tool","summary_zh":"Atlantic Council 报道：Sanctions have become a tool of first resort. But enforcement needs upgraded and updated resources. - Atlantic Council","region":"global","score":0.4,"sources":[{"title":"Sanctions have become a tool of first resort. But enforcement needs upgraded and updated resources. - Atlantic Council","url":"https://news.google.com/rss/articles/CBMitgFBVV95cUxOdkJhOVA1SkpmNkgtVUJOY1pERVFlMWRlU09BUmtTOWVsd2ItX2FlMXJ6QzV2LTRXbjZtbm1jWS1qWVRSZ1N3cTI2LWRSUUt4dlFGejJjRlVEeWR1VmM5eU9ZVmUzVW4yQkJrMThXWHJSWXV0WDJkZDJ3RU1sTHpua3RmOUtYM1lXa3hFdEROSG16Ynl2M1hnLVoyVnd3aFZ3OGkydzdjb2dNT29XZTRUSmZjcUw3UQ?oc=5","source":"Atlantic Council","published_at":"2024-03-26"}]},{"title_zh":"Lessons from the First Four ","summary_zh":"Foley Hoag 报道：Lessons from the First Four OFAC Sanctions Enforcement Actions under the Second Trump Administration - Foley Hoag","region":"global","score":0.4,"sources":[{"title":"Lessons from the First Four OFAC Sanctions Enforcement Actions under the Second Trump Administration - Foley Hoag","url":"https://news.google.com/rss/articles/CBMikAJBVV95cUxPbFNJSzlvQnJmb0laa0xOQk0zRzNsaWFXT2YxNnVOZ0xHWENJUE1JOTloWkdOLUthSWRiWUNCT0hhOFZEbktKSXEzN2xIM1JuZEJQTGpEdF9feEVXeVZkckZOSVFhaGJuclJfYXhHb3d2d0dJRUlWVGhTLUVPX29EM1FjMkYxUGwzSlZCakllT05CZHR4LWd6dEFJYzJ6TlMwSUQtWkZicl9iT2VmLUY0NE1kc2FhWlBLOFBranhQbGRJYUxSZXdHSWFUUi13UVNITnVBQTJwc0FYejY4b2xwenZUNTRaUUFEWHIzVDdWU1dNQlZlSXNUenVmd25xdGZmcG1jcWhzRXZKZGl2R1VMVQ?oc=5","source":"Foley Hoag","published_at":"2025-07-09"}]},{"title_zh":"New OFAC FAQs Offer Guidance","summary_zh":"Morgan Lewis 报道：New OFAC FAQs Offer Guidance on Insurers’ OFAC Compliance Obligations – Publications - Morgan Lewis","region":"global","score":0.4,"sources":[{"title":"New OFAC FAQs Offer Guidance on Insurers’ OFAC Compliance Obligations – Publications - Morgan Lewis","url":"https://news.google.com/rss/articles/CBMirgFBVV95cUxQTGFQZnk0WTVTRVpyUV9vM1RQQzh0THk2Nkw5a3dnZXpzeFRhalJsUmVzeDhydjlaWnE4RFEtRHlTeXk3Y0VldTVOZmtRUXl0WmNWRHg2c3g5R3hWUjNMQzEySXM3YnJwOVRRZWdGY3g1V2tqSC1RbXJqNTNzS0cwRWFXanR4dVVtVjdEYUVDWF9vaXVHYVF6dHpiMjZoN1dzaGhuSWlZalhmU1MtLUE?oc=5","source":"Morgan Lewis","published_at":"2024-11-25"}]},{"title_zh":"OFAC, BIS AND DOJ Issue Guid","summary_zh":"Hunton Andrews Kurth LLP 报道：OFAC, BIS AND DOJ Issue Guidance For Foreign Companies To Comply With US Sanctions And Export Control Laws - Hunton Andrews Kurth LL","region":"global","score":0.4,"sources":[{"title":"OFAC, BIS AND DOJ Issue Guidance For Foreign Companies To Comply With US Sanctions And Export Control Laws - Hunton Andrews Kurth LLP","url":"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNemR0bTkwVTNhX0IyLXJVbGZnb2k3MDZZYzF5MkZNdXQtTU92cFk3R0JXQXo1T0R4Umt3cU5LUkp3OWwxYXhaUUxGc19JcjlRdFNDckdvajdVY0lhSXVtUENSS0pvZldCTUxnd3FiZG9PU1U1VXdGVHNxcV9tZ3dHaWVQS2tkNHZ2MVJkNVVXN2N1VlU4c0EtUko5TnFlbm1CSW9GRS1mLWNmWm1QTk5tck1VcTNITjVXNHc3S1VCYUQ4R2dSdTVnN08xY0lDMHZFZHJJ?oc=5","source":"Hunton Andrews Kurth LLP","published_at":"2024-03-12"}]},{"title_zh":"Virtual Currency Platforms a","summary_zh":"Arnold & Porter 报道：Virtual Currency Platforms and Ransomware Attacks: OFAC Highlights Overlap of Sanctions and Cybersecurity Risks - Arnold & Porter","region":"global","score":0.4,"sources":[{"title":"Virtual Currency Platforms and Ransomware Attacks: OFAC Highlights Overlap of Sanctions and Cybersecurity Risks - Arnold & Porter","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxNS1F6Q0R5aWpSaVkzenlWNERGNElmWXBzZzZGdTZjY0Z6ZFlVNmhPTlRaS0stcDJDZEJNMDhOemR3UWVJX2g1MHVrWF9acllMODl1cjZnZ0tZcU1aekZycDd5SXZqV0J3OVpicXkxa2RObENkakVVTGV1RDZuOTR0NEVURTBOeC1iNE9zTW9LNmVYNm9uU1BkUkU2VTRWZ1I1dDJyYTZHeURjengtM1pLd3VDSQ?oc=5","source":"Arnold & Porter","published_at":"2021-10-20"}]},{"title_zh":"OFAC Issues Updated Guidance","summary_zh":"Inside Privacy 报道：OFAC Issues Updated Guidance on Ransomware Payments - Inside Privacy","region":"global","score":0.4,"sources":[{"title":"OFAC Issues Updated Guidance on Ransomware Payments - Inside Privacy","url":"https://news.google.com/rss/articles/CBMinwFBVV95cUxOeGhWY1R3WUtRVWluOHJnNU1CY3I2TEdCdDg0YlVEbzdUdDIzNE9ReTdsWkVtRWFGN1ZyaTd5bjg5VlpBYTJQUmZ1TFprZXkxRGhaR09NSVltZklndjJWSEU3YkRIQnBjbHZrX21nN0FmcXFZc0dVTEhWXzRsejZYYTlocjRGaGNfb21kM1RpTXl5YkMyZDRrb0Nsd2VGdTQ?oc=5","source":"Inside Privacy","published_at":"2021-09-30"}]},{"title_zh":"Russia/Ukraine Sanctions Upd","summary_zh":"Mayer Brown 报道：Russia/Ukraine Sanctions Update - Month of January 2025 - Mayer Brown","region":"global","score":0.4,"sources":[{"title":"Russia/Ukraine Sanctions Update - Month of January 2025 - Mayer Brown","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxQZWZiZ3l1S1hib0pFTzNnMEczek51TzNQY1RrSGplMmNJdE5hZHVWMTM5WDZIV1JTaXdnQ3JtU2RSWlpGaGhlUWpkcktubTZxVDBTZFg2TlRPSlJJZG1mUGtvREN3TzdFTTctV1ptN1hKakxNZFVqYlhWWW80QzlOTGRzWG9WTEJrNTJmZHBHajVZRkM0cDFJVnNiSnVlZ3gtUmtsZTl6ZUVyajZzOHVXSTJ0MA?oc=5","source":"Mayer Brown","published_at":"2025-01-31"}]},{"title_zh":"OFAC Noncompliance Leads to ","summary_zh":"Consumer Financial Services Law Monitor 报道：OFAC Noncompliance Leads to Big Risks for TPPP - Consumer Financial Services Law Monitor","region":"global","score":0.4,"sources":[{"title":"OFAC Noncompliance Leads to Big Risks for TPPP - Consumer Financial Services Law Monitor","url":"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNWxfUkQtLXdscjlESlkxcFpWck5ZemJrTDQ4MDRPMXpqYlM4cDJYS1F5eEg0NDNRZVNTb3FWUzhrNS1JVkVyRHhIZUdmNzVMWG44SF9VSnhvS0d2OV9qN0tiWFJQZmtuYW9HMFN4d3N0Qk5reGJ5QkNrbkpoR21yT2JiUEQxWUNOYjkyV2dXUGYyMGRiNjdQZWIyM0F0N0NPUDJtQTdJZVZQcnM?oc=5","source":"Consumer Financial Services Law Monitor","published_at":"2016-10-17"}]},{"title_zh":"2023 Year-End Sanctions and ","summary_zh":"Gibson Dunn 报道：2023 Year-End Sanctions and Export Controls Update - Gibson Dunn","region":"global","score":0.4,"sources":[{"title":"2023 Year-End Sanctions and Export Controls Update - Gibson Dunn","url":"https://news.google.com/rss/articles/CBMihAFBVV95cUxQOV9TQWNCaTRXRVY2ei1rbWVZd3JmYjdRUlhTbVR3cE1Sb0ROYk9UTTFuV0xVTlR5MURseWd3LWxVMk9kVGZJNjZWN3o5R2dnOFJSSVZZOG1DWkdnU19veXlBQVJMcGxRSmtLa18yYk5oSnREV3UxeUdDVjk2R29GZzNnSHA?oc=5","source":"Gibson Dunn","published_at":"2024-02-07"}]},{"title_zh":"OFAC Sanctions Compliance Gu","summary_zh":"White & Case LLP 报道：OFAC Sanctions Compliance Guidance for the Virtual Currency Industry - White & Case LLP","region":"global","score":0.4,"sources":[{"title":"OFAC Sanctions Compliance Guidance for the Virtual Currency Industry - White & Case LLP","url":"https://news.google.com/rss/articles/CBMiogFBVV95cUxOeDBYNUdwYnRpemhLZG5CTHBEV0JRU3hzQlBSWUtOSFNDLXl5Zm9ZOWR1b3l0aFdNUzVCNHFRLUlSVWdGSEM5WlBzcm9IWnNkcno2bkkzS0NGc3hJTmF4dHpBekF0dmVBNzBDTmRWcEFoQmFRdGtBVVFiSmFRMllnUFRIYWstYm5IbUl4bU5RY21kQmw4NXFtcThxbUFkQTF0S1E?oc=5","source":"White & Case LLP","published_at":"2021-11-22"}]},{"title_zh":"OFAC Issues Necessary and Lo","summary_zh":"Crowell & Moring LLP 报道：OFAC Issues Necessary and Long-Awaited Updated Guidance for (Re)Insurance Industry - Crowell & Moring LLP","region":"global","score":0.4,"sources":[{"title":"OFAC Issues Necessary and Long-Awaited Updated Guidance for (Re)Insurance Industry - Crowell & Moring LLP","url":"https://news.google.com/rss/articles/CBMiygFBVV95cUxOS1BuYzZFaHdFY1hrVXlEUTZIMTVkNGJtbTJ1LU1DMk1sV0RQa2Jwejd3dzlUdmhjV21ZcmREN251eVVFUFBDTHU5dmpGTUVrS2FuMTAxaXhCMXI0cmE5bERzZElfeDJJeXcwN0xOSjdrMnBVMEtCN011WTBWUkJIcE9ibXNCRjRLSmR2SFBId0JCZXB3RWlVbFUtVU5CWjRrU3BXSFVwY3lGTG54NFZHVW4tVm94d1ZfTDZqR0VwZXFfZ1pxeC1tNFB3?oc=5","source":"Crowell & Moring LLP","published_at":"2024-11-21"}]},{"title_zh":"Clarity on Sanctions Complia","summary_zh":"corporatecomplianceinsights.com 报道：Clarity on Sanctions Compliance: Examining OFAC Guidance and Enforcement - corporatecomplianceinsights.com","region":"global","score":0.4,"sources":[{"title":"Clarity on Sanctions Compliance: Examining OFAC Guidance and Enforcement - corporatecomplianceinsights.com","url":"https://news.google.com/rss/articles/CBMihgFBVV95cUxQMUdaMExldzRJZXlMRWs3Z19OMUFKeFVONThCb2lvMmllajZ0WG0wNklVREc2QVRBVllmSlJqeGIzdE9RUzRVTC1VV21kZ21tTXZ3c0E3UFRnNzZnbW9RTFRENHVvZ0g0M1hfZmVjdEhRcXpiU1V6VkcyejVoNUhtT0ozWmZUQQ?oc=5","source":"corporatecomplianceinsights.com","published_at":"2020-03-12"}]},{"title_zh":"OFAC Imposes New Sanctions t","summary_zh":"WilmerHale 报道：OFAC Imposes New Sanctions to Thwart Ransomware - WilmerHale","region":"global","score":0.4,"sources":[{"title":"OFAC Imposes New Sanctions to Thwart Ransomware - WilmerHale","url":"https://news.google.com/rss/articles/CBMirgFBVV95cUxQUkpubVlTbDBTUHdwRWozOWJPYWhXa2FxekwzT21ackU5emwwa3l6RV9TeU9fd2VibGRBRGs5aVRvQVVDRnhObExrbzBDWE0xVWZaTXQ0MnhtSHBLYkhnR0FfOWRud01GYnltUkltNDZ3SV9XeFZEa2xhZ3lYdkFDcUFQWlNMZlQ1SGZwMUV3ZklKcVFvbWxSR2hBU1BVODRjNFllWlQ1YVJqQlhkemc?oc=5","source":"WilmerHale","published_at":"2021-09-23"}]},{"title_zh":"DOJ, BIS, and OFAC Issue Int","summary_zh":"Hunton Andrews Kurth LLP 报道：DOJ, BIS, and OFAC Issue Inter-Agency Guidance on Voluntary Self-Disclosures of Sanctions and Export Control Violations - Hunton And","region":"global","score":0.4,"sources":[{"title":"DOJ, BIS, and OFAC Issue Inter-Agency Guidance on Voluntary Self-Disclosures of Sanctions and Export Control Violations - Hunton Andrews Kur","url":"https://news.google.com/rss/articles/CBMi6gFBVV95cUxNZVlQa2h3ZElZcFp2QjVWNlVlbm9yMTNtaGYtRTM3cWg5MXl6WXNnWFhXSlZFekk1Mko5QzZDenhnbjZZMUFsVi1YYjVNTU1BNFZwN2Vyc250dDNUSDFJWWp0dEVjWXQ1SUVxX0lTV2NmeGpuRE9nQ3FHZEJfMl9JTkR5ZVJsN2xtTEp6a2VzSmJ6TmVjLUJjN0FIZmVkNHIyampjYTFaSnBxUEx2b2l2SFhFTlliRktKendmMllYdDI1QlR2SHVnMU9KNHNjVndLYUU3X3Y0OGdQbjZwYmRCal9EVkxZWC1nRXc?oc=5","source":"Hunton Andrews Kurth LLP","published_at":"2023-08-01"}]}]},{"id":"compute","name":"AI 计算基础设施（算力·电力·冷却）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"Chip Innovation Will Bridge ","summary_zh":"Semiconductor Engineering 报道：Chip Innovation Will Bridge The Gap For USA Data Center Power - Semiconductor Engineering","region":"global","score":0.4,"sources":[{"title":"Chip Innovation Will Bridge The Gap For USA Data Center Power - Semiconductor Engineering","url":"https://news.google.com/rss/articles/CBMilAFBVV95cUxPdUZ4aGRZOTZiSXBzdHVZUlp2UDB4dk1PS0N0Mjg1Ym9XR2lsMkpJVy0xQzk2V1JtbFMzWVYwOUVOcTdwS25PcWRIRWxBa2VHRndnTTBPTzZ5Qm16RzdOdHFkNkRvLW9ZSnJLX0o0bUNuOC1EQTZKLVZPOHlhaTVZTnpXWi14YjJqMGkwb1dOUDVTNVcy?oc=5","source":"Semiconductor Engineering","published_at":"2025-12-08"}]},{"title_zh":"Top AI Infrastructure Stocks","summary_zh":"Exoswan Insights 报道：Top AI Infrastructure Stocks 2026: Data Center Picks & Shovels - Exoswan Insights","region":"global","score":0.4,"sources":[{"title":"Top AI Infrastructure Stocks 2026: Data Center Picks & Shovels - Exoswan Insights","url":"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5FZkdReFV6bndNakt0ck9RX1l3N2p2S1pVTXVDZW1nRnMxV1BOVkZzTGp0ZnRxNEZSWjVGVnlKQmQwSUt3eHFRaTR5N1hiZ2pUdEtZaW95cw?oc=5","source":"Exoswan Insights","published_at":"2025-12-11"}]},{"title_zh":"Can US infrastructure keep u","summary_zh":"Deloitte 报道：Can US infrastructure keep up with the AI economy? - Deloitte","region":"global","score":0.4,"sources":[{"title":"Can US infrastructure keep up with the AI economy? - Deloitte","url":"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYUloNno0RTBoWlFWWE1DenAyc3JIbU53REJuYnBsZWlyOW5QdmtnMjBmVlk2ZXIyUEhxWjFuS1NEZ3k0ZzRVOUxxYlRFVnBWRUdzOThsU2xsZnkzTFUxQWg2Z1dXclc5TzQwNXRUaUo0bFZBdkFYdkM4SU9sX2x1QmU4X2cxQnFhRktQZDZwcWpaLUxvOTZCRkRnNDZJWWt4Rm9xRkp1bVRjLWYwTDJ2TktzWXNYQjBEMGJrUy1aaDlTdw?oc=5","source":"Deloitte","published_at":"2025-06-24"}]},{"title_zh":"Data Center Stocks: AI Capex","summary_zh":"ts2.tech 报道：Data Center Stocks: AI Capex Boom Meets Power-Grid Bottlenecks — Today’s News and 2026 Outlook (Dec. 20, 2025) - ts2.tech","region":"global","score":0.4,"sources":[{"title":"Data Center Stocks: AI Capex Boom Meets Power-Grid Bottlenecks — Today’s News and 2026 Outlook (Dec. 20, 2025) - ts2.tech","url":"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWmVGZjFvbmFveEZUb09yN1h0Z0NoYmd2Z3RFSVhpNjRBRzMzckMzdzNiUjdsXzBhNVhaaHRsUm1DUkNpWE1qa2puX1NDSXY3azgzN0VWYklycGE2cm42QzhJZ3pjbGtNZ0dOZzdSZEt4VmV1S1dXTlAyLVRjWkxqaHNVeFp6bm1Hc2REUjl5Rl93MkVGZmNFQ0M1c29fLWdLTkZiVGt4OGJTNklwaGdfRUNEaVBOUTdSSDFDc1pnMTQ?oc=5","source":"ts2.tech","published_at":"2025-12-20"}]},{"title_zh":"Silicon Valley data centers ","summary_zh":"Tom's Hardware 报道：Silicon Valley data centers totalling nearly 100MW could 'sit empty for years' due to lack of power — huge installations are idle because Sant","region":"global","score":0.4,"sources":[{"title":"Silicon Valley data centers totalling nearly 100MW could 'sit empty for years' due to lack of power — huge installations are idle because Sa","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxPQVptbkotbGhJZ3hjRXlfUjR6elJlOHZaVzZJcUI4X1JWRkRVSHNReG5QRWVvSUg3T2xBYmxxQ2VVUG92aGI3aE5tU1dKTS1UakxVMWVvY29ncWM5LUpwazZFS2xSNmcyLVpDbHpoZzRKX2dUVnpDQmJheGVhbnNKV2NTOTczajhyQU5QNmNzNE50SWRhSmZkTmVjaks0NTJfa09yeXZTRnY2RlVSMnFMZ0FnSQ?oc=5","source":"Tom's Hardware","published_at":"2025-11-10"}]},{"title_zh":"AI data centers turn to high","summary_zh":"digitimes 报道：AI data centers turn to high-voltage direct current as new power backbone - digitimes","region":"global","score":0.4,"sources":[{"title":"AI data centers turn to high-voltage direct current as new power backbone - digitimes","url":"https://news.google.com/rss/articles/CBMingFBVV95cUxNQ0tJNUtJSTVpcTkwTjVjQWdhLTFvUEVIeG5fNlQ4cm5vdDU5cENEM1A3ZW1lQ1h5QlZERTZTM3czbFo4b1VSYnJCUkYxcmhoNXRoUXVGVGtIeVRaMXkyYW93dFNVbFJrdWoyV0VkR2FwYmFSdEFla3FUUXNPTC1PUHhDU2w0aDhUUk1oRHFpZ1g3SGZ6UVpWUEVLajVTQQ?oc=5","source":"digitimes","published_at":"2025-09-16"}]},{"title_zh":"Overcoming power, heat, and ","summary_zh":"Flextronics 报道：Overcoming power, heat, and scale hurdles in the data center - Flextronics","region":"global","score":0.4,"sources":[{"title":"Overcoming power, heat, and scale hurdles in the data center - Flextronics","url":"https://news.google.com/rss/articles/CBMidkFVX3lxTE1kVUJWSFlwUElXUUFXR1JTRUhLVkZtQWtxcGRqeWtOWTh6R3ZPZzhKUjZBR0RnZEJwWi1MWWlsUGNUR3BHSzAtTGxlQWRVOTRUOC12c1NMUk5tbUxSWkh1WWhENEQ5ZWJWX0RIUlZDVUJVaFZXdFE?oc=5","source":"Flextronics","published_at":"2025-05-01"}]},{"title_zh":"Power consumption and datace","summary_zh":"Blocks and Files 报道：Power consumption and datacenters - Blocks and Files","region":"global","score":0.4,"sources":[{"title":"Power consumption and datacenters - Blocks and Files","url":"https://news.google.com/rss/articles/CBMifkFVX3lxTE5IempydGJSM2R4NjVMbTJFZFVpV29EMmQwV3JOTm5kSTVRZkNNdGZ0T0RmX2lPZlJNcWk3YmxscHFWTzBneEtaSUVFR1Jwc2JjWkJDd21SUTJseXFUTDJYUkhHTHJsMS1NOVJ0SFI1T1R0dWh6bUw5NF9DdUJlQQ?oc=5","source":"Blocks and Files","published_at":"2025-07-14"}]},{"title_zh":"CoWoS Advanced Compute Packa","summary_zh":"Intelligent Living 报道：CoWoS Advanced Compute Packaging Crisis Explained: The Single Biggest Constraint on Global AI Supply Chain Growth - Intelligent Living","region":"global","score":0.4,"sources":[{"title":"CoWoS Advanced Compute Packaging Crisis Explained: The Single Biggest Constraint on Global AI Supply Chain Growth - Intelligent Living","url":"https://news.google.com/rss/articles/CBMifkFVX3lxTE91UW1vdFlBa2lLanQ3bVJldWhFMWM4UHZyM1FWMHBlUG9rVHliZnlWSDZUbXl1MTRsS1NBU0p5eEcwanp1SXNPY09CbWFXeXVqQ0xud3p1aTV1Tm50aXJDdDhHZVItNkR1SjhQTXdOYWwwNm9DQzVYYXdaMnBwUQ?oc=5","source":"Intelligent Living","published_at":"2025-12-02"}]},{"title_zh":"Nscale Seals Huge AI Infrast","summary_zh":"findarticles.com 报道：Nscale Seals Huge AI Infrastructure Deal With Microsoft - findarticles.com","region":"global","score":0.4,"sources":[{"title":"Nscale Seals Huge AI Infrastructure Deal With Microsoft - findarticles.com","url":"https://news.google.com/rss/articles/CBMijgFBVV95cUxNVTdPanoyLXZ4S0RLaWFJNVk4QlVveFdDcnl6bndiUWF0REluZG1FMWhNeWpzY3UySWZDX2pVRjR1Sl9SLXlCWVp2eTdyUXlCNnY0cDdkT3lvYTE4bldYTl94aGRkYjEyX2NnSjZXeWhoNVhjazFFMkFncUU1VmRLLXc3T2M1dzNXY0liWFBn0gGWAUFVX3lxTE5HOHdWNUxqVVc4ZVBDWUpiS2RKUld5U0pkV2FRdWM4RXR2X1FpT1ZXSzdMSC1RRkNfUndOaWVodzlrcl8tU09KbnRjbTVTTHo0YkZncXNYTVZtc0l2MmJHNGFqd2NSNkdRSHpaMldLV1VuSjM4Y3AyTmZDU2xiOWVmeTJXYllJMWd2aUlFM3plLUJtQ0s3UQ?oc=5","source":"findarticles.com","published_at":"2025-10-27"}]},{"title_zh":"Data Center Power Doubling? ","summary_zh":"TrendForce 报道：Data Center Power Doubling? Next-Gen Efficiency & Sustainability Guide - TrendForce","region":"global","score":0.4,"sources":[{"title":"Data Center Power Doubling? Next-Gen Efficiency & Sustainability Guide - TrendForce","url":"https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FaTVLbm93UnRTWk5vcUFGS0oza2lfM0tLbG9ybUNmLVNZNmxrSlJQS21pMmtKZmdYRklpcWlhdzFRZk9tODRVZ3hMcmxmVV9nT3B5bUhmZ2ZSS0VRZ2xENE5qQQ?oc=5","source":"TrendForce","published_at":"2025-09-02"}]},{"title_zh":"Nvidia’s Q3 earnings next we","summary_zh":"Invezz 报道：Nvidia’s Q3 earnings next week: one print to move the entire AI supply chain - Invezz","region":"global","score":0.4,"sources":[{"title":"Nvidia’s Q3 earnings next week: one print to move the entire AI supply chain - Invezz","url":"https://news.google.com/rss/articles/CBMirwFBVV95cUxNOWNmUjY1YUdVbmJBellZbExjd1BfdTktSmJwNWNhV3hhUHJfX2NOZm9xSWdGNlg1UjRYQjBkZE1uV1JPeTZWMGRkbU5JcDFKTHg0RVFkNXJVMEtrMVZrQ2RZc2gxdTduZkhhZjJjQjNkSk1vNDVoNE1hSmlQVUJ6ZDJHdmV6UWFvMWh1emVsNHdXZmhGdHNNa3d2Y01VZUQwUkNyWEFveWExUDlYWUE0?oc=5","source":"Invezz","published_at":"2025-11-15"}]},{"title_zh":"Data Center Stocks Today: Mi","summary_zh":"ts2.tech 报道：Data Center Stocks Today: Micron Ignites an AI Infrastructure Rebound as Oracle Funding Questions and Power-Grid Costs Loom (Dec. 18, 2025) - ts2.te","region":"global","score":0.4,"sources":[{"title":"Data Center Stocks Today: Micron Ignites an AI Infrastructure Rebound as Oracle Funding Questions and Power-Grid Costs Loom (Dec. 18, 2025) ","url":"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPbEFYcUxrcjg4b3BPN2JhSjNsd2pWZDdpR0VhY0wzVkF5LTVrWUlfck13NTZmbjBwMl9zSDFFNE1nM1NLb2U4Ylc5aE9oSTRvaEpVRnJJR1lpbFhmcHV5UHdPSHBvcG1iNXkxaS1PdnJPV0M0UGNRLUcxWmx1NEZESnQ0Ylp1S3ZVYVMyRDBiYm12aHljNndrQUZIbGRlSVNQVXJLdEpEaGFpcVpuczJmbU1KTnd6U1N4U0EwaW1DdWs2Um9nRUZCazJMV0p5MDhhWGd0N2JJTkhzS3dKcE5acTBzOVdHNFEwX0Mw?oc=5","source":"ts2.tech","published_at":"2025-12-18"}]},{"title_zh":"OpenAI's massive memory deal","summary_zh":"digitimes 报道：OpenAI's massive memory deal with Samsung and SK Hynix signals shift in AI chip supply chain - digitimes","region":"global","score":0.4,"sources":[{"title":"OpenAI's massive memory deal with Samsung and SK Hynix signals shift in AI chip supply chain - digitimes","url":"https://news.google.com/rss/articles/CBMimgFBVV95cUxNVzQ5SnJDcXZjb1oxcjZsYmJOY1pxVVlwbzE1cWNfRHZ6c0paVUx3NUpiMGR0V281NGY2YWZrVW43RXRNSjFBaDZCakhMZzhQVHJFazRsV1g1aXFGZ1lhY01nb1lPX0w5X0xFVC1qUHNacFRUUWxuazRtNDl3d3NFcWxySFgzYWZhS3FMOHNIdkJ4Q3BJSUlpRXBB?oc=5","source":"digitimes","published_at":"2025-10-03"}]},{"title_zh":"How to Tackle Semiconductor ","summary_zh":"Data Center Knowledge 报道：How to Tackle Semiconductor Supply Challenges Amid AI’s Soaring Demand - Data Center Knowledge","region":"global","score":0.4,"sources":[{"title":"How to Tackle Semiconductor Supply Challenges Amid AI’s Soaring Demand - Data Center Knowledge","url":"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSURicWZIUjVwclphUkw3czZtSVJmYnRuVkdmM2FCcW9fdHQ5WGY2amNVd1dXdVlvSEE3QnN3NDFoYWtyV2M1a2FqMHMwdWozajBfd21FdDJhX3RuXzNaOTllU2I0TDZrODNXZUUzS3hnbFhQRFNCOWRaSmhkNVJxX0lxaDI0QS1BVnFyeWN6eS1QYVVNM0ExTncyX1VEMEtjRjVhenB6Z1dmazI3QUp2eHA0S0syOFdvb3ZRd3E0dUxMZw?oc=5","source":"Data Center Knowledge","published_at":"2025-01-16"}]}]},{"id":"metals","name":"大宗 / 金属（LME·供需·库存）","tags":[],"brief_zh":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 38 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"Disruption and dislocation: ","summary_zh":"Reuters 报道：Disruption and dislocation: LME metals' year in seven charts - Reuters","region":"global","score":0.4,"sources":[{"title":"Disruption and dislocation: LME metals' year in seven charts - Reuters","url":"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPM0hiQm5CNHFiWHVVNHdtY0oxRDJqRnJJN0h5ZTFUbjRQNU8wNnBVS09PdHFFcWJ2aHM2RXhiQ18wdDNZdy1LV1VENS1CV2J5VGNxTDNZaXYyYnB5Yld4RFM4S0pjSVRtd0lFYjJpQnNNTXI2UGNzOV9SazNnWXN2bnJyZks2YmxIM1hyS2pnVUpXS1Q4c25SUzhqRXRVbGluZ2Z6VDVreWlkWUE?oc=5","source":"Reuters","published_at":"2025-12-23"}]},{"title_zh":"Fastmarkets monthly base met","summary_zh":"Fastmarkets 报道：Fastmarkets monthly base metals market update - Fastmarkets","region":"global","score":0.4,"sources":[{"title":"Fastmarkets monthly base metals market update - Fastmarkets","url":"https://news.google.com/rss/articles/CBMingFBVV95cUxPNlc5c1JlektfNnFFOGFkYktGUzE1TzlFa2h1SzNsbDg0STlwSDladVhYNlRnNWlZT1l3VHJFMEhnS3ppekJEdllLQlpGbXI3UTMxRTBEcld6SnU1VkJQSkF3QW1ZTHZtS1RHNk9pcXlVMUNISkk5aUUtcUtNTGo4X0JKM1hXbWlUX202OWFsdUYzOTlUMDV6ZHRDQ3loUQ?oc=5","source":"Fastmarkets","published_at":"2025-06-20"}]},{"title_zh":"Trump, tariffs and tin - LME","summary_zh":"Reuters 报道：Trump, tariffs and tin - LME metals in seven charts - Reuters","region":"global","score":0.4,"sources":[{"title":"Trump, tariffs and tin - LME metals in seven charts - Reuters","url":"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNamFqMDRlOHZKaFV5V3RRSlBxOGlMb3c5MnNtQ2p3NFhuVkpPX25hNU1FVlRVNVl1a3F5M21sVFU5RlRmbEo4eGwzRE0tVEZNSnFEdGd2Y0xBWUhMT1o4aWNpekdHNGRKbzRCMGRBZUZadm1OSzhvdFFmX1dNdU5rVFJFSjNVbkpRLUVCRGI5aHJlb2N0NzJSaXZPSWRod2ZKa0lQRXZFQWRNaHc?oc=5","source":"Reuters","published_at":"2025-04-07"}]},{"title_zh":"Trump Tariffs Reshape Global","summary_zh":"Discovery Alert 报道：Trump Tariffs Reshape Global Metal Markets as Tin Surges 25% - Discovery Alert","region":"global","score":0.4,"sources":[{"title":"Trump Tariffs Reshape Global Metal Markets as Tin Surges 25% - Discovery Alert","url":"https://news.google.com/rss/articles/CBMihwFBVV95cUxQMGs4S0lja2ZxTllKTFk4cWpJdWhqTXhfZlhHc0FZLWFUQ3JtVHNQOXhLQ3lzLW9OUU1kemZFd3ZfZFBZZmViQnZkSTNoX0xNdXd1WF9fUXdITFFkbm5jVVR5TDFQdmhkRUhkVEJ6RG5BbTM4WlpXbWpLYWNmYlkxdUQ0SWJfUEk?oc=5","source":"Discovery Alert","published_at":"2025-04-05"}]},{"title_zh":"Aluminum prices have shown a","summary_zh":"Shanghai Metals Market 报道：Aluminum prices have shown a fluctuating trend in the near term, with a bullish outlook for long-term prices. However, the risk of ove","region":"global","score":0.4,"sources":[{"title":"Aluminum prices have shown a fluctuating trend in the near term, with a bullish outlook for long-term prices. However, the risk of overexpan","url":"https://news.google.com/rss/articles/CBMiygJBVV95cUxQVDBadVgxc1JnT3dmRldwNVlNbDhST2NRMGJCLU4ySDFMV3phcnVoSHRLaWlhY1dodVJEZDJxMEV0S0RwX2wtTVNVX1h6TlFSSHp1UnphSFY2XzV4NUdObm55eHZIcWM0WHFHR1hlVklHUGtoVGpLUVlVbzdIVlhyX0xfc2dGTndyR1pfVnVLSG54V0JBMmxsbWNDSmtrSFZ4ZUVfT2g2TGI0amwxTnBWNm5hak9zcXpPNi13Z2ZENU5wQ0V3M2hTclpkOGJsUmtEdnl1SXZ2T2hwa3BxWXpfZ2pkLWFXVlczWnRIT2d5THAtelVKSWhTbE43UTBsLWstdWxPMHJFZFMxQXViaGY5NHE0VUpDM3k5WUhKVEpPMFhWeVhtdlBmampLM3R2NUR3M1Vuanh3QXRMbVl0ZmNzNTEtWjFUN0pLVGc?oc=5","source":"Shanghai Metals Market","published_at":"2025-06-30"}]},{"title_zh":"Base metals face supply stra","summary_zh":"Fastmarkets 报道：Base metals face supply strains, carbon costs and tariff headwinds: LME Week 2025 - Fastmarkets","region":"global","score":0.4,"sources":[{"title":"Base metals face supply strains, carbon costs and tariff headwinds: LME Week 2025 - Fastmarkets","url":"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTFR3cHZPSElrVVp0MTVsU281cmIyYjZ0TE5jTllmY3BKOWhqeUdNX2RhdmM1ZDZzLW9IQW9qcEZRODdPb0JYRTFrektZVXRVYms2bnRkTDdIaW84NFVCS2xzVk5pM1lqRUtFUXRta2NTX0FpdDJuWldjZUxPVC1ubmlxTmFZUGZ5?oc=5","source":"Fastmarkets","published_at":"2025-10-10"}]},{"title_zh":"Metals melt down as recessio","summary_zh":"Mining.com 报道：Metals melt down as recession fears overwhelm supply woes - Mining.com","region":"global","score":0.4,"sources":[{"title":"Metals melt down as recession fears overwhelm supply woes - Mining.com","url":"https://news.google.com/rss/articles/CBMilwFBVV95cUxPRy1Dck9vWFV1aVRBSWVQdjk4R3VqbEkxeDVLaklxeGsxVjBkakxsdFdvc0VZaFZtRWZ6aUwxZkVRVWhwRGM4WkJwWEs2VXZWREkzQktOR3RONGdIUGoyZm96OFdSVHVCZUZRS2R5UGFEU185RmtSc0Y1NUl2ZG50eFlRRkJLQkEybXdwanJOZTB5aVp3RF9j?oc=5","source":"Mining.com","published_at":"2022-07-04"}]},{"title_zh":"SMM Evening Comments (May 9)","summary_zh":"Shanghai Metals Market 报道：SMM Evening Comments (May 9): Shanghai Nonferrous Metals Closed Mixed as Market Awaited Further Guidance from US Inflation Data | SMM ","region":"global","score":0.4,"sources":[{"title":"SMM Evening Comments (May 9): Shanghai Nonferrous Metals Closed Mixed as Market Awaited Further Guidance from US Inflation Data | SMM - Shan","url":"https://news.google.com/rss/articles/CBMi_wFBVV95cUxPZlZ6VTY5TnhVNHdGT21MYzdvNUVwNWRYWG9lY0diYVUzaW9uMzNLNm9sOThzQWdiblppTzZkQkYyV0dYdlRZZVkyQnlYOVR2clk0bGFEdHZOakh6STRqRGd1Uy1vQjN0NTVPLWtfLWo4ZE9tU2twS1pleFhvSE9RdmVxMUpzSG9IaVlFWGdNTHNNZzk2NlJiNWlPYXlQTzA2b0JSV2JrOGtMaG1vWFlxNHdxeGFReExJczEwOU85QTNleFJpRy14dGdZd2RNS0JmQkFhck9QXzF5N0RfQ0ZqWnA5MnNESG83anpndjBuQlVoNFhLTHFCYmp1MzI4cjg?oc=5","source":"Shanghai Metals Market","published_at":"2023-10-13"}]},{"title_zh":"Copper's tariff high fails t","summary_zh":"Reuters 报道：Copper's tariff high fails to lift other LME metals - Reuters","region":"global","score":0.4,"sources":[{"title":"Copper's tariff high fails to lift other LME metals - Reuters","url":"https://news.google.com/rss/articles/CBMipgFBVV95cUxOa2xRazd3OGVTeDg2aTNLVUxaa296U3ZBNWpvd2dUOHNLdE5wRk1JTHNQeGhGU3hkaVB0ZWV6dFk3SDctRFNjWUdPZXVnYkxoTS14bTk1enNQSjJzeHQxRk9kYldfSnROMm9obUZYZktpZTV6OVBGQjg0b2pTMTJJX3NicWFMMl9iUWlmME5TYWpLcFRXVmcxVFRENjFTQ1V1cmNHbHJB?oc=5","source":"Reuters","published_at":"2025-07-01"}]},{"title_zh":"LME Base Metals Face Critica","summary_zh":"Discovery Alert 报道：LME Base Metals Face Critical Supply Crisis in 2025 - Discovery Alert","region":"global","score":0.4,"sources":[{"title":"LME Base Metals Face Critical Supply Crisis in 2025 - Discovery Alert","url":"https://news.google.com/rss/articles/CBMigwFBVV95cUxOZTNqckg1Nmh1ZDZKdnBERW5GZzZhRUhIa25oY1NNWlNBR0QzOC1ObS1PWXlPejZzTGotVFBFMFFfay1GeEZVWlZfWG1zcDdodjZobU4yb2htVUhaUGVSZlBhZ0x3WXE0QVZyeUR4Q3N2dlp6RFpBU0hfakN2Smg0c2FTTQ?oc=5","source":"Discovery Alert","published_at":"2025-12-23"}]},{"title_zh":"Vanishing LME shadow stocks ","summary_zh":"Reuters 报道：Vanishing LME shadow stocks add to metals market turmoil - Reuters","region":"global","score":0.4,"sources":[{"title":"Vanishing LME shadow stocks add to metals market turmoil - Reuters","url":"https://news.google.com/rss/articles/CBMirgFBVV95cUxOcTFFbnBGR2pWMVdXUlh3ZzZGUTlXdEhQNHlXbUNkRFJ5eWxBQXdmWC1KWm1iQnhnQVFlRVE3bG9aOFdvb2JUUnkwS09pQ0ZlcE1fQjBFVV9mVktIMy1IVmZkZjFNY2lGc3JaQUtFbkVURm9vbnBsdU5oS2lTckFMcDZLaUdIWmxyR0JhejdUYURNaE1kS2tZellUQXpFUXpUUGdzcHIzS2FzdmNUdWc?oc=5","source":"Reuters","published_at":"2022-04-14"}]},{"title_zh":"Why the SCO Summit 2025 Matt","summary_zh":"TradeImeX 报道：Why the SCO Summit 2025 Matters for Global Trade: The Future of Eurasian Trade Corridors - TradeImeX","region":"global","score":0.4,"sources":[{"title":"Why the SCO Summit 2025 Matters for Global Trade: The Future of Eurasian Trade Corridors - TradeImeX","url":"https://news.google.com/rss/articles/CBMihAFBVV95cUxNUjRJRjc0Mk5sUFYwVnp1OGF2Q2ZtOXVLRzVmdUVHdl9EZjBYM0g2WW5fTWQwTno5N214N3B0aGpiV2NCaGN1NW9PNHpxZzBpX1hwcmw2TzZXSzY0STM5MU4yd2pWaHFzdFpPc3BnX19McktETVpXNnA2STloY3otSDJIdlg?oc=5","source":"TradeImeX","published_at":"2025-09-01"}]},{"title_zh":"African Copper Exports to Ch","summary_zh":"Discovery Alert 报道：African Copper Exports to China Hit by Tanzania Crisis - Discovery Alert","region":"global","score":0.4,"sources":[{"title":"African Copper Exports to China Hit by Tanzania Crisis - Discovery Alert","url":"https://news.google.com/rss/articles/CBMigAFBVV95cUxObzMtN1RCSU54MVdpNTVzVV9FN0h5ejFUaHA0Nm1lWWtsT3NadFZ6Z2JzMjRMdU9fQm5UM1p3ci1jVlh1R25UbElSX1JEYzROY2c2TVBjRG8zUGZsbnFCTjBwSkR5OVE3T1BzMWU2YWRDMm1NTGZSWTVaYkotYnRpVQ?oc=5","source":"Discovery Alert","published_at":"2025-11-01"}]},{"title_zh":"Supply Chains Struggle as En","summary_zh":"BloombergNEF 报道：Supply Chains Struggle as Energy Transition Drives Surging Demand for Metals: BloombergNEF Finds - BloombergNEF","region":"global","score":0.4,"sources":[{"title":"Supply Chains Struggle as Energy Transition Drives Surging Demand for Metals: BloombergNEF Finds - BloombergNEF","url":"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaFF6UGo4S3BxQUpQRlpHNUUwa1dzQVg3cFlvdHFrZkF5RExqMXVNVlhBN3BHdXQwX3VVdTdkS1p3clJ2VmhSTk5ORGQ3WFJnTFc5ZGhQUTVMSXBFMmd5ZnNHalpsdWFKbVpoYmhuakljNkVRSWh2bTdvbzRqN1pLX0pmZkRqZTFkYUFZaW5TQTlrY2hPd1ExZkVmSEItSTdTNDVfR09NSzhQTVRQcVQ4aVE5ZDNTR2xnbXRFcEZTRWFJeVdXU1pURVFXVk1qbWxiVzN3MWUycw?oc=5","source":"BloombergNEF","published_at":"2025-12-04"}]},{"title_zh":"Global Critical Minerals Out","summary_zh":"IEA – International Energy Agency 报道：Global Critical Minerals Outlook 2025 – Analysis - IEA – International Energy Agency","region":"global","score":0.4,"sources":[{"title":"Global Critical Minerals Outlook 2025 – Analysis - IEA – International Energy Agency","url":"https://news.google.com/rss/articles/CBMic0FVX3lxTE5IQy11UURaNVVqZ0Q5SG54Y1NGcEJRd0hTdjZYNHJxS3J0cy1UTG9fV3dTenYtTEZmZzViUmRydkx0b3FSWUVrczdESEJRYUxLWGduYjlXeVBzWmp3ZDJXTGNmSFRYWG5weTd5TXRmdFNBYm8?oc=5","source":"IEA – International Energy Agency","published_at":"2025-05-21"}]}]},{"id":"carbon","name":"碳 / CBAM / 碳市场（Verra·EU）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"EU's carbon cost rules are c","summary_zh":"Reuters 报道：EU's carbon cost rules are changing: how companies can prepare for CBAM - Reuters","region":"global","score":0.4,"sources":[{"title":"EU's carbon cost rules are changing: how companies can prepare for CBAM - Reuters","url":"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdF9NaFpkXy15VDY4RzNSYTVyNm5wQTM3cjRJemhJQVdpVG9CaXMxWVBEVEpCRlkyNlFTMjVZbEc4elkyVUFwV3ozVE9BVEdzSC1qUHQxdDFwT1ZlTFYwNTJmSkxia2EzWTVxOGo3YUhHRTFuLXk2TW1Qc3Z0UWhiY041a3FBNEZpS2MzRHBkOXJweEhLZkdXT0tHb2pmV1JzMjhobUo3enhfWkdhcGpocER6M1FaaDh1cWVpM2RDMlREb1YyeG9NTw?oc=5","source":"Reuters","published_at":"2025-09-05"}]},{"title_zh":"ESG Focus: UK/EU/Internation","summary_zh":"www.hoganlovells.com 报道：ESG Focus: UK/EU/International ESG regulation monthly round-up – June 2025 - www.hoganlovells.com","region":"global","score":0.4,"sources":[{"title":"ESG Focus: UK/EU/International ESG regulation monthly round-up – June 2025 - www.hoganlovells.com","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxQQ1hzenhwcFI1LUJzUlMwT1YzQ0dVOWVWTmtWNjF3bHBpSVBPdEhaY0x1Qk9nNEQyUmoxbmY2S0NrUHc3RmdIRTF0S1c5UXZ0Z3A2b1U4TjVFaEhKOXFJWGN3TlhTRU1fblNveUt6bU5idUNhcklFU2gtY2pMNHBaR2hVUEhIb05EUDRFTVlEcWpKX3pYTkJGbERDMHJjQWpocmRLbi1DTG12Z3U2cDJXcE45MA?oc=5","source":"www.hoganlovells.com","published_at":"2025-07-03"}]},{"title_zh":"European Commission Presents","summary_zh":"Mayer Brown 报道：European Commission Presents “Omnibus” Simplification Package with Amendments to CSRD, CSDDD, CBAM and Taxonomy - Mayer Brown","region":"global","score":0.4,"sources":[{"title":"European Commission Presents “Omnibus” Simplification Package with Amendments to CSRD, CSDDD, CBAM and Taxonomy - Mayer Brown","url":"https://news.google.com/rss/articles/CBMi-wFBVV95cUxPN29ZVFZocGdrbF92NWswcUdpZTVqUEc5SC1oYXNPMW91MDlVSmVQSGloMDc5SXB1Uk5yT2I3OTVmbG9aQkdSWWtzUWZlZHJ5ZFRUN3ZQdG9jZDNDaGRaLXc3cHdFd0xkUFl6aWZabldYcS1waEZSUFQ1d0VRNTNPSmE3cXM2QWhzajIxQTZObzBPZXJhWkczTXVvMzBvZ0JmbkxoU0JLc2ZXVjBTSlNCaDN0SVBWT2huSkZyaDdnWjZnQy1QVGt5VE9ONnhmSDNFdW9VWFBCUDlZck5lS3F0SzRBLVh3NjJHNWtCR2ZkZ09FVmdxUnE2MC1rZw?oc=5","source":"Mayer Brown","published_at":"2025-02-27"}]},{"title_zh":"EU Omnibus Package: 10 thing","summary_zh":"White & Case LLP 报道：EU Omnibus Package: 10 things you should know about the proposed changes to key sustainability legislation - White & Case LLP","region":"global","score":0.4,"sources":[{"title":"EU Omnibus Package: 10 things you should know about the proposed changes to key sustainability legislation - White & Case LLP","url":"https://news.google.com/rss/articles/CBMisAFBVV95cUxOdFRHWUt5XzUteWxmRnRnVEZIYU1DZlBVc3htWnZXZDBSNExaSENhSXNvR29kN1VRbzIzNnhZT2ZWXzJjRE5NSWhxWHpMMzczR3dNelVUNXNERnpkdUd5VkFIdHVCa0xTR1IwY0Y4WjRiUmRLVmJzdmFBOE9sODBOSEZ4UmFQR0F1dUEzRXBhZ011S2s2Y3RnYXRQdGJTQzlVSGRvTXJld2oyM2U1YjRNdg?oc=5","source":"White & Case LLP","published_at":"2025-03-23"}]},{"title_zh":"New CBAM legislative proposa","summary_zh":"Norton Rose Fulbright 报道：New CBAM legislative proposal: Major reduction of CBAM scope and burden - Norton Rose Fulbright","region":"global","score":0.4,"sources":[{"title":"New CBAM legislative proposal: Major reduction of CBAM scope and burden - Norton Rose Fulbright","url":"https://news.google.com/rss/articles/CBMi2AFBVV95cUxOdnpGY09hWFRTdlg1ZjF2NElqakRMOUM1TEtuZTRXNzNkczZjZWxCNkt6b2RtbG1pNEM2TzFudnE4anFNZklJek1ZcWF4VmZoa25sXzN6cW5ycWdfem1MX1ExdDhwaVpucEl6MlQzTVVyRnQ1NTlObExoZ3JGN2FKLU1zRDhrUlVNSjRHaWxuVG1sbE9aQmJnUzhMVF9uVnFQSEFtSlcwWVczQTYwU1J1djJ5bWpwZXIwa2tpeUtEVVdTWlU2bjJmVnhVeEM3QVZ6emR2WWNGS1Q?oc=5","source":"Norton Rose Fulbright","published_at":"2025-03-12"}]},{"title_zh":"EU CBAM: a guide for importe","summary_zh":"Ashurst 报道：EU CBAM: a guide for importers and third-country producers - Ashurst","region":"global","score":0.4,"sources":[{"title":"EU CBAM: a guide for importers and third-country producers - Ashurst","url":"https://news.google.com/rss/articles/CBMimgFBVV95cUxNZDBmcUI0d3lPbF9QR1B4RUlBWjA2NzNGWkZXLVV5Q2x4UDNlU3p4WXdQemRVMjloeFpkMEh2MjY4VmpXbDNzT0E1dTNHRXVTVGZMUDlIeVU0NkNFVVF0WDN0dFNzRFJJYW5WZnQtM3lrall3eTJFaFNwZDBkaVB6cFFseEpjUGFPTm9OVUppTDIwcGNJZFdBYkhB?oc=5","source":"Ashurst","published_at":"2025-02-26"}]},{"title_zh":"EU Carbon Border Adjustment ","summary_zh":"Discovery Alert 报道：EU Carbon Border Adjustment Mechanism: Rules and Implementation Guide - Discovery Alert","region":"global","score":0.4,"sources":[{"title":"EU Carbon Border Adjustment Mechanism: Rules and Implementation Guide - Discovery Alert","url":"https://news.google.com/rss/articles/CBMihgFBVV95cUxQVmhlVkppdmczTldCMjdiaTZNLUFzMnJvQzlKRWYtUUVlRk1wUEFiQ1E0T2pRclNmaEhpa2ZlV3ltQjQyelo3Mzg3Rjk5cHBWaXFtMGhWYy1vb1F6akpaZW96WXMwT2YtalZGLVc1NXJRd1laMlZNM3plMWZTSFpKLUN3bEE5dw?oc=5","source":"Discovery Alert","published_at":"2025-09-12"}]},{"title_zh":"The European Union’s Newest ","summary_zh":"RMI 报道：The European Union’s Newest Tool to Tackle Carbon Leakage - RMI","region":"global","score":0.4,"sources":[{"title":"The European Union’s Newest Tool to Tackle Carbon Leakage - RMI","url":"https://news.google.com/rss/articles/CBMifkFVX3lxTE1Bd2tPRmlsb2xURzkxYnRGT2VtOXhmSFhtQzVMVklrbElYeG9KdncxMGRMZmd1U3YydDF1Rm9HSnlwbTZkaVR0QnI2cFc5bEFjNk1wTHJ3U3hicm05WVB6dW5aTTJ6dDBzck5UbzRPeUxiVnNnajdDUzRuQldrdw?oc=5","source":"RMI","published_at":"2024-04-19"}]},{"title_zh":"What American Manufacturers ","summary_zh":"Third Way 报道：What American Manufacturers Need to Know About the European Union’s Carbon Border Adjustment Mechanism - Third Way","region":"global","score":0.4,"sources":[{"title":"What American Manufacturers Need to Know About the European Union’s Carbon Border Adjustment Mechanism - Third Way","url":"https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ3VLUHJVVTZwSlRmOWdkajJaMFBLdzhzWDZIZDZWMFN5OWhURVFxV1VOSTZMcHU0dzVZak9rdEFBWEJ1Y3BMZFpLN3JrN3F3MUZ4blg3ajJrSkhBUUtuTF9ySXNIc3pxdFdkbFRFc0JYWDNjd1BGazhMVGo2ZzdYM1JNaVY2Q3hOTTk3M2dsSDJ5UXJpa2J0MFh0TzRQTnZCb190dGZ5Q1ZUdmJibTdJbzNuTWZRcjhCNDY4NWU3TFF6M3hlS1k3N2d0TQ?oc=5","source":"Third Way","published_at":"2023-10-02"}]},{"title_zh":"EU CBAM Implementing Regulat","summary_zh":"Trade Compliance Resource Hub 报道：EU CBAM Implementing Regulation on the reporting obligations has been officially published - Trade Compliance Resource Hub","region":"global","score":0.4,"sources":[{"title":"EU CBAM Implementing Regulation on the reporting obligations has been officially published - Trade Compliance Resource Hub","url":"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNN3B3Ykl5SVZZejRLRTRkRUVJc05EbUEydVFsWndudDdIMnNnb3JLZXBjcEo5ZU9YNk9Fc1lfNEtRcjJmZEFUdGQ4c1Z2d29LeExZMXZWM0dKTEJLb0xsbDFldHNrQlRIMjQ0alJ5YS1EQ2JxRGhSUjBSVWpMMzRRNFVjSjdjYkczWFIwTFRTVnRWOExpYjhqcUVJTlkxT1FYamtvd3g3aUg2aXhjV2FyOENyQ1ZidmhuV1UtajFUZE1RUmNfazdoU3BuNHdMV29OcnlEYnRROFJzSVE3SFE?oc=5","source":"Trade Compliance Resource Hub","published_at":"2023-09-22"}]},{"title_zh":"EU Carbon Border Adjustment ","summary_zh":"Deloitte 报道：EU Carbon Border Adjustment Mechanism (CBAM) - Deloitte","region":"global","score":0.4,"sources":[{"title":"EU Carbon Border Adjustment Mechanism (CBAM) - Deloitte","url":"https://news.google.com/rss/articles/CBMipwFBVV95cUxOMnRQVkpxbFFnVWotbFE3WG5NcUFhU3RvWTk1bUNDSzUyRS1PZFV5cDlpRU5EYlVhUmJOV3ZXeTZfNnM5dXlDa2NQZFJ4X3ZXdzlEcUhKLTBFWE94UFFMYV9oMFN0M2tGbXpidDN2c3pGbXd3VGpSV0Q0b255enRBVktmQ0hKVVF0MlVNdi1DMmpaSXBFeE0zVjNuYzVmeW1QUVNERzZoWQ?oc=5","source":"Deloitte","published_at":"2024-09-12"}]},{"title_zh":"How to Prepare Your Carbon D","summary_zh":"Supply & Demand Chain Executive 报道：How to Prepare Your Carbon Data for CBAM Compliance - Supply & Demand Chain Executive","region":"global","score":0.4,"sources":[{"title":"How to Prepare Your Carbon Data for CBAM Compliance - Supply & Demand Chain Executive","url":"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNTkFubzZheWJLRnlsdjYwWW5NSzdxQlZNS015MzN4LTJlYU5XeE1lUTBCN1ZDbnRHR09DeUlHZ2tCLXVBM3pORmhxMEdYd2NZcG1rNTIxbFZLVF9DU0c5Wm5lcGVaT3ZhQUZ5MUNRS29PeDU4Z2tELXpwWVAyUWxjS2ZHM0huSkxLZlJZRHVUZ1VDbmdUXzdxTl80WHhITVV6STRxMnQyLTVKT01tcVl0WWdpUmxpNFdWdkNRdG83TVUzZ2RrX3F0dmpRQlJDMFEycjNYZ0Jic05KemR4Snc?oc=5","source":"Supply & Demand Chain Executive","published_at":"2025-11-03"}]},{"title_zh":"EU Sustainability: State of ","summary_zh":"Latham & Watkins LLP 报道：EU Sustainability: State of Play — EU Climate Law and Energy Transition - Latham & Watkins LLP","region":"global","score":0.4,"sources":[{"title":"EU Sustainability: State of Play — EU Climate Law and Energy Transition - Latham & Watkins LLP","url":"https://news.google.com/rss/articles/CBMioAFBVV95cUxPZU5NelRyU2wwY2liOEh1QzdOVnZDMjJ3bnNnS2lTZkhBNmFpM3U0OEVpS2t4RHVObWRKUldvTjctNG9JMDRsc1d0b0JyM3lVMGh2LWw2c0VEV0cwTlVORVkyVEJZdURWc0o0RkM3YkdSNC1oZFJNYThkM0ZLLW1UYzBMRHpSSDg4SmlKXzZ1a2s2UjZjYlU4cXhYNktYOHN5?oc=5","source":"Latham & Watkins LLP","published_at":"2025-10-01"}]},{"title_zh":"EU's Omnibus Package: Simpli","summary_zh":"Nixon Peabody 报道：EU's Omnibus Package: Simplifying Sustainability Reporting and Administrative Burdens - Nixon Peabody","region":"global","score":0.4,"sources":[{"title":"EU's Omnibus Package: Simplifying Sustainability Reporting and Administrative Burdens - Nixon Peabody","url":"https://news.google.com/rss/articles/CBMi2AFBVV95cUxOQXo3NjRlYTBEX0ZKMUxRd3F6aERXYlBJUEgtSnRXRDJ0MTk1OS10SVVIY1B5TklFRk9vakV5QVdISHRhODlSUER2aHEteV9qMVdJQmxONERTOXB4M3JlSDRvRVUwc1VXc0pQb3ZWZE5RRkRQLUZNaTlVVlIxSm1ObWJHbGktUXpSQXpDQ0s4ZmtTdy1sVGN4YXgtYjd4c1BiUG5nQlVLbGl3SDJuYWkzRkRDaVJhQ0hsb25keVdGd3FuQ0JMUGRSYXhHVDRUM2lCc3p1M0JLOTA?oc=5","source":"Nixon Peabody","published_at":"2025-03-10"}]},{"title_zh":"Navigating the EU Omnibus Si","summary_zh":"EY 报道：Navigating the EU Omnibus Simplification Package - CBAM - EY","region":"global","score":0.4,"sources":[{"title":"Navigating the EU Omnibus Simplification Package - CBAM - EY","url":"https://news.google.com/rss/articles/CBMixAFBVV95cUxOS3hWczc0dG5UQ1BpYkpCSGpzUGM3cG5vYlhjTDZNeGk3Nl9SdUlIN2NTSUJEX3RlY1QwWlR5U3JsWEtHdFJ2aVU2ZmtmdzdjZUJ0RVdadHhnX1c3c3M1ZjVZWHdxX2MyZi1Zc2tZZUdIN19MSTQ4S3hxVUYxeFdfWGhWaXZvVjEydUFMYUFYcVRTN2pnUVhuVk5SbnFTTmQxbThBcjFOU3RPamU5S05IRHlocTREVGpjbVVYM3NJNnB5eGQ2?oc=5","source":"EY","published_at":"2025-07-30"}]}]},{"id":"sea","name":"东南亚供应链（制造·转移·关键矿产）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"ASEAN economies move up the ","summary_zh":"Vietnam Investment Review - VIR 报道：ASEAN economies move up the global chip value chain - Vietnam Investment Review - VIR","region":"global","score":0.4,"sources":[{"title":"ASEAN economies move up the global chip value chain - Vietnam Investment Review - VIR","url":"https://news.google.com/rss/articles/CBMiigFBVV95cUxQRzA0SVNUTTBHd1dJQVU5QTkteDRjMWdhYlB4WUVURThMXzYwc0ZWamQ4WmJ5X1pfc2VoakVKUXI1UkdRUnV1aEZVbTdtVjh4QmVUQVlRTnBid0hkTHY0OHl2amgwY0RjTXZ5NnJwdHIweVpWbGdKcDNsWXgxSWhNOC1GRGVqdHNXQ1E?oc=5","source":"Vietnam Investment Review - VIR","published_at":"2025-12-09"}]},{"title_zh":"Google to move Pixel manufac","summary_zh":"Investment Monitor 报道：Google to move Pixel manufacturing to India as tariffs shift supply chains - Investment Monitor","region":"global","score":0.4,"sources":[{"title":"Google to move Pixel manufacturing to India as tariffs shift supply chains - Investment Monitor","url":"https://news.google.com/rss/articles/CBMiswFBVV95cUxNQmNyNzJ1MkxoY2hZeFlnREEtcHFFT294NkgwYUluWUxvNmVZSDliVWFyUU1rMDhTRDRiM2lmYjhDX2dWUWtGUm9PbUs5X3FHNmpxUHFGQVozOHQxY0N2Wk5Yakt5LUhxeVdaWHNGSFdiOERUNllha2s3S29qYS1nNnVqZW8xX2RpX0NQTi1TUExZLUhmdm9iR3ZYRjJuVWhtWlYzU1hEa01ZR2k0eTlrUHNIZw?oc=5","source":"Investment Monitor","published_at":"2025-04-23"}]},{"title_zh":"Will Vietnam be the Next “Ch","summary_zh":"Modern Diplomacy 报道：Will Vietnam be the Next “China” as the Global Supply Hub After Trump’s Tariffs - Modern Diplomacy","region":"global","score":0.4,"sources":[{"title":"Will Vietnam be the Next “China” as the Global Supply Hub After Trump’s Tariffs - Modern Diplomacy","url":"https://news.google.com/rss/articles/CBMiS0FVX3lxTFBlMkh4VE85d09sNVIzaFFGRVJkQ05JY0dUZDcyT0pnaXMzN3ZYMnB2MllWb3Y1ckVaaHFqVGhHaEZtclJiRDZoYnJJZw?oc=5","source":"Modern Diplomacy","published_at":"2025-03-25"}]},{"title_zh":"Asian Angle | Is Vietnam’s t","summary_zh":"South China Morning Post 报道：Asian Angle | Is Vietnam’s tech dream stuck in the assembly line? - South China Morning Post","region":"global","score":0.4,"sources":[{"title":"Asian Angle | Is Vietnam’s tech dream stuck in the assembly line? - South China Morning Post","url":"https://news.google.com/rss/articles/CBMiowFBVV95cUxQQ2o2ZmI1NUd2TTVKMEVXeGNORWxwT1hzVk9vU3FVZllCTmpqNnVvSEZfSklJUy1aUE1sdlFxMWJTdE9KWEV6eWFGUjJNYllOQW10alRVT1ZNcG1mRlBZM3FhZ3duOXFIeGdvVktyakJycXlNZFJLRUdzQk9VM0ZhTEhLWlg5VkJwNzB5SmF0bjFYYldoU1lvMTROUXFzNWFxdFBF0gGjAUFVX3lxTE9sbmJzZE91NzM4TFg5NDhKMlVxc3Yxb3VqQ2J3a1BlLXB0MnNCUS1LSFFJbEk4U29jMW91RGVBTjFyNFdoejNMdm5sNkh1X29fQW1GOWlCT0RBRGc5UUtTcXhBanlVVGZTQ1FqeG1RZnBHTFZkY24xX1BuZXpOaUdSZkVNWWJFd2ZRU2xkU0xrTDVaSEdqMDJZdHRHWGhWMTNBRjg?oc=5","source":"South China Morning Post","published_at":"2025-07-13"}]},{"title_zh":"Elon Musk’s SpaceX and Suppl","summary_zh":"Vietnam Briefing 报道：Elon Musk’s SpaceX and Suppliers Bet Big on Vietnam - Vietnam Briefing","region":"global","score":0.4,"sources":[{"title":"Elon Musk’s SpaceX and Suppliers Bet Big on Vietnam - Vietnam Briefing","url":"https://news.google.com/rss/articles/CBMihAFBVV95cUxQRVJkaUtYUGhiY3ppOUtGSnZjeldFMTlWZEdKOEtzMEpmUzZ4cm9aTjFNY1BJTFRVbFo4SEM3YlJpY0FDRTh3a2JxdlV0OXJHNVpUMzNaOEUxOXE2MlJoMHFuQ3ZNSnozbF95U3EzVnptZ2hhNzNheEQwZ3NDRnlwcTlKUDA?oc=5","source":"Vietnam Briefing","published_at":"2025-03-19"}]},{"title_zh":"Indonesia’s Manufacturing Ga","summary_zh":"The China-Global South Project 报道：Indonesia’s Manufacturing Gamble: Turning Trade Wars into Economic Opportunity - The China-Global South Project","region":"global","score":0.4,"sources":[{"title":"Indonesia’s Manufacturing Gamble: Turning Trade Wars into Economic Opportunity - The China-Global South Project","url":"https://news.google.com/rss/articles/CBMitgFBVV95cUxNdUVHYS05RXpGZi1KMmo0Nk9TbTNrNHNrZFZhWHM4cGROSmR4b1J3eHhfSE1PalZ0amhxUDE1bDVCSHFaZGpxX0JuYTBCTGRhMGt1QmIzSEJmSVp4NnlGVXZWY0NHc3NISUJOSDZLVGkzTlBxWWF2OVNJX1M5bXFwcGlycFQtaWNWazZVWmZ2NGQ3a2tidHhGR0loZ0NSZ2x3NVNuTEdpalEteFoyUUdMYmFkTjNYQQ?oc=5","source":"The China-Global South Project","published_at":"2025-02-24"}]},{"title_zh":"Vietnam attracts global manu","summary_zh":"The Business Times 报道：Vietnam attracts global manufacturers despite US tariff increases - The Business Times","region":"global","score":0.4,"sources":[{"title":"Vietnam attracts global manufacturers despite US tariff increases - The Business Times","url":"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc29JcVpuenA5WWwtSFVNNUl0ZGdjY3QzNWZEdTE0eF83MTlFYUhFQ0hleUVhVU9jeGpZaThvb1hLNFNNYm9UdnNtLTRnUXR1NFZzZWREVl9Za2pUdTFqZ0laRDdPaUhrMVZuMmx2THVlOWhuVVNGYV8ydUFQbVh0aDRNSWtPUFB3b2w2NHVEOVg3QTZVdWtDQ29BZTkwdzVqN0F1ZTVpdzJvUzZ0TXZHbUotbXFPYmpmMndn?oc=5","source":"The Business Times","published_at":"2025-06-10"}]},{"title_zh":"Vietnam’s ambitious global v","summary_zh":"Vietnam Investment Review - VIR 报道：Vietnam’s ambitious global value chain goals are clear - Vietnam Investment Review - VIR","region":"global","score":0.4,"sources":[{"title":"Vietnam’s ambitious global value chain goals are clear - Vietnam Investment Review - VIR","url":"https://news.google.com/rss/articles/CBMijAFBVV95cUxPeUd3bmFJNDNRLVRrWlNqZE9fNzJZQzBTNmt3YzlTTTUwZ3M4UzRCM2wwdGwwVGhnNU1rZ1dvRXNtMG0zampRNEdmd0JYajZUZm96U1NfZ0xEbzJiSU16RjFaYmVZaUFkLVNHZERMRVYtcFdJSk5YTTJ4dzlrN1NsV1VCMlB4X3NlZ1JUVA?oc=5","source":"Vietnam Investment Review - VIR","published_at":"2025-11-17"}]},{"title_zh":"Diversifying global supply c","summary_zh":"McKinsey & Company 报道：Diversifying global supply chains: Opportunities in Southeast Asia - McKinsey & Company","region":"global","score":0.4,"sources":[{"title":"Diversifying global supply chains: Opportunities in Southeast Asia - McKinsey & Company","url":"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTXh1N1QtSWN4WEpUWjZWSERFdkIxTXZkQUhKQ1RpOVhNcDQzcU9OLVBJV3E0czc4WEJpZURIMWVQeWRzOFlLcktxVU5Hc2I1Y2EzV0MxSDZfRU4zVF9kQVlsTDUxWnRUb1MyZWJITDdxNXI1cmZCNEZoeXdxOG9TM1RGRFJoYmVXRmgxZERmdGZPaFdYeV94Q0gyWGNFTW52OVNnWTg3NU0yMVBGTE51SEM5T2ROMjBTNkNVMkZvVE9xdw?oc=5","source":"McKinsey & Company","published_at":"2024-09-05"}]},{"title_zh":"How Does Global “Friend-Shor","summary_zh":"AllianceBernstein | AB 报道：How Does Global “Friend-Shoring” Affect Chinese Manufacturers? - AllianceBernstein | AB","region":"global","score":0.4,"sources":[{"title":"How Does Global “Friend-Shoring” Affect Chinese Manufacturers? - AllianceBernstein | AB","url":"https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMVZrX3QtemxTMjNjZ1d4QjEyeVpFaVdqX1YyY3EzbTYzdG1HMjF5ZEo0RmZvSnJ3bEthZDJVV2JBYllMSGkzZ0ZKSmxHSXBEcE5aVnJKUlpUTncxZVR6UG0zT0pWYk4tQ0tKQjlXWWxNVEtrYk1vMmxkZEZ6OG4yNkFFXzlvOUJhTG15bkpON1EycHdldkVhdktCZFVWVDREMUJwTkd3ZVdZczNJRE1EUFFreW9seGU1TWw1SG1keVJBazV3NGdhQTc5TUNEY29lZzB1bEcyZw?oc=5","source":"AllianceBernstein | AB","published_at":"2024-03-25"}]},{"title_zh":"New manufacturing hotspots e","summary_zh":"JLL 报道：New manufacturing hotspots emerge - JLL","region":"global","score":0.4,"sources":[{"title":"New manufacturing hotspots emerge - JLL","url":"https://news.google.com/rss/articles/CBMid0FVX3lxTE5jLVlLdUd6akl0ZXBTUTcyYXhsNUxveXh2dDNYRFE0SVVrNVM2eGplcXM1ZWxoQUhWVENTV0hTU005b2d0OTNmcEpHMVJwSDY3bXJwaTFub0M5c3MxbTJnVjAyWndud20yTkRGcmdKcXFRWVc3dE9v?oc=5","source":"JLL","published_at":"2025-06-29"}]},{"title_zh":"Has China’s Great Relocation","summary_zh":"fulcrum.sg 报道：Has China’s Great Relocation Helped Southeast Asia Industrialise? - fulcrum.sg","region":"global","score":0.4,"sources":[{"title":"Has China’s Great Relocation Helped Southeast Asia Industrialise? - fulcrum.sg","url":"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZEY5bXhkNEkyTEVEbl9UN0l6M1ljVHpfbGJaTXpDVFdVWFM1OTcxU3dnc0MzMUpyelphM3Jmb0ZSVXBOYnNYemFIM09fNXV2X1Foc0ZOSUJ4bHdpWXhycGQzVnlNWllkajN0aVotWXZERk1Bc0FGcHJqYThfbzgwWFFVQ19HV0xVV1RV?oc=5","source":"fulcrum.sg","published_at":"2025-05-02"}]},{"title_zh":"Who won the global supply ch","summary_zh":"Hinrich Foundation 报道：Who won the global supply chain upheaval? | Article - Hinrich Foundation","region":"global","score":0.4,"sources":[{"title":"Who won the global supply chain upheaval? | Article - Hinrich Foundation","url":"https://news.google.com/rss/articles/CBMilwFBVV95cUxNcWwtZjVYempFRWVZc0xJeHN1M2FYdkdTTFM5XzEwZzFxZDRTSWkzN0hmaWRfMGNCQjlMNGRhODBUeGYza2NUZUE2bHF6dUVacm1fRjI0RWdLXzBvMFc5QWIzS1lfX1JBOUpqd20xckNLaHl6SkhDbFR4NmhVMllIdXBjUG5CUDN1SFBmWGx2VmlfUEk5RlY0?oc=5","source":"Hinrich Foundation","published_at":"2023-09-26"}]},{"title_zh":"ASEAN economy under threat a","summary_zh":"GIS Reports 报道：ASEAN economy under threat after Trump tariffs - GIS Reports","region":"global","score":0.4,"sources":[{"title":"ASEAN economy under threat after Trump tariffs - GIS Reports","url":"https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NeXFmbDF3bEo0SDhQaUhFMGJmSXR3ejJrMVJpbnZ3STdDUkc0TzZiRnhWYjRlLW5xZTNiUXNIR3dKNGxwZE91X0lQd1N1UFE1c3N3MFhxLWVGOXZkY1E?oc=5","source":"GIS Reports","published_at":"2025-09-11"}]},{"title_zh":"How Tariffs Are Reshaping Gl","summary_zh":"Supply Chain Brain 报道：How Tariffs Are Reshaping Global Supply Chains in 2025 - Supply Chain Brain","region":"global","score":0.4,"sources":[{"title":"How Tariffs Are Reshaping Global Supply Chains in 2025 - Supply Chain Brain","url":"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMHJWdVVmS04xb1lTQkRDZHpSN1FWeEdTWjluMXFTc2h6YlFPSWRhNWpRME9UTXBzR0ZzV05mcUtkMUlBTFFVNkRUU0JnVE1pelJEVWQwaEtiUUZlTTAxamtRTTBsSmpRQlBmZHhVYkJ3dkhkTEhMWVVlX3pVMkRDUUZsOUo3WnM1OS0ySG1IOVZ6Ny1xRWdaczBFNi1xTWNFTmhaeUlZSE5ZOGx0Wlg4NFJnLXBQbVdL?oc=5","source":"Supply Chain Brain","published_at":"2025-06-25"}]}]},{"id":"frontier","name":"前沿学科雷达（量子·聚变·材料·生物）","tags":[],"brief_zh":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_cn":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_us":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_eu":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_asia":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","brief_global":"本板块抓取到 45 条资讯；LLM 摘要不可用时采用标题级回退展示。","events":[{"title_zh":"The Error Correction Breakth","summary_zh":"FinancialContent 报道：The Error Correction Breakthrough: How Google DeepMind’s AlphaQubit is Solving Quantum Computing’s Greatest Challenge - FinancialContent","region":"global","score":0.4,"sources":[{"title":"The Error Correction Breakthrough: How Google DeepMind’s AlphaQubit is Solving Quantum Computing’s Greatest Challenge - FinancialContent","url":"https://news.google.com/rss/articles/CBMikwJBVV95cUxQc0JndkRmWmNjLVdJTTNkTTJCanVNeDhqejRDbnNQM0ppMWhDX2VNREx4c0lMUTlWdmppb2xpZW14Y2JVaHlMX1JJXy04LS1tVkRrTTNSR3JNQWgtZkhpNjJmbVp1YW5vaVRHcmtnUEtxX0tKbi1WVVE3b0NXanI4WS16RFBhU0xXVmNXWm82TDJkdTFNZkEzWEh1b0pJOGVZNW5NV1I5a2JaSzlmOWRBQVp0MjE3VElreXlmR1JjVjRqTDhHTVdHZ2Qwc3lBNFNHdDBmOG8zM2NYTEpPWW1uUUFPNldQb0ZxMGJOczZ6Y3N0a2lWWVJ0U1hxMTUxXzJDMDRtQVloNWJNVDN4MjRQTjBlZw?oc=5","source":"FinancialContent","published_at":"2026-01-01"}]},{"title_zh":"'This moves the timeline for","summary_zh":"Live Science 报道：'This moves the timeline forward significantly': Quantum computing breakthrough could slash pesky errors by up to 100 times - Live Science","region":"global","score":0.4,"sources":[{"title":"'This moves the timeline forward significantly': Quantum computing breakthrough could slash pesky errors by up to 100 times - Live Science","url":"https://news.google.com/rss/articles/CBMi_gFBVV95cUxPWmhYVmdLbUZQNFUtVjMySVNOTTJuSkx0YnpuWmJCV1JyeXpHTjNoWXBHckhuNWRIQkZGcld3MEM0VDhjRENhdVl5eTdYdEFDYnhTUGRMR1p4QWx4UEpUT2JaWG5qdFdtYnVaUE5FUzFjSkd0UFhrb05MeUZmSGphaHdhMHVuQWJiNElfM1E0WWtMMzdFdC1JeHY1OUdPd2l4MFJCSHdyUlJxeFVZMXVaTDFKOEtXVEZ2cl9qbk91NFVkV20yNG92UFNwRzVMNUN2a0wwYnFDbHFKUlB6TldMZzJNX1dBQVBtYmw2QkI4MWwxQ2ZPR3Z6RkxyM2wtQQ?oc=5","source":"Live Science","published_at":"2025-10-17"}]},{"title_zh":"Zuchongzhi 3.2 Demonstrates ","summary_zh":"Quantum Zeitgeist 报道：Zuchongzhi 3.2 Demonstrates Error Correction Breakthrough, Rivaling Google’s Progress - Quantum Zeitgeist","region":"global","score":0.4,"sources":[{"title":"Zuchongzhi 3.2 Demonstrates Error Correction Breakthrough, Rivaling Google’s Progress - Quantum Zeitgeist","url":"https://news.google.com/rss/articles/CBMif0FVX3lxTE50MlFsOU9Mc3RoeFlybVJ6Qmh3eVNHdFhpb1E5YTBSVk5DaWNtV2ZJLS1fNHUxd2haYy1wRnQ2cDl4TE54VjEwbjJidFJLUi1Ub3lVRXlWRDRoMzZiQ3RReDMwSk1iMjBlUE8ySzNqYkRwdEVUZHBqWU8xckI0Ukk?oc=5","source":"Quantum Zeitgeist","published_at":"2025-12-26"}]},{"title_zh":"A potential quantum leap - H","summary_zh":"Harvard Gazette 报道：A potential quantum leap - Harvard Gazette","region":"global","score":0.4,"sources":[{"title":"A potential quantum leap - Harvard Gazette","url":"https://news.google.com/rss/articles/CBMifEFVX3lxTFBoNmkwZEVveGdiY3BLT0dlbFdFM1NTSGlFRzBTOXR0S1RJNlE5NW05al9HUG1SaEpzREI2U3ZzYWFwRi1iTHBQVE1mYU9SWXNWdC1aVFh3OW5oMWcwZm1veDA2SXNiSVRVMkszRU1lelNvLUl0NFU5QzBMMWE?oc=5","source":"Harvard Gazette","published_at":"2025-11-12"}]},{"title_zh":"Quantum computing squares up","summary_zh":"Tech Monitor 报道：Quantum computing squares up to the error-correction challenge - Tech Monitor","region":"global","score":0.4,"sources":[{"title":"Quantum computing squares up to the error-correction challenge - Tech Monitor","url":"https://news.google.com/rss/articles/CBMif0FVX3lxTE4zZVlIZDd5R0xOXy1CbEJfMWdfLVlWYkFNOXBhN0lGUnd3bkZzWHBiVXNzb04zVEVia1F2NFAwR2xsSS1qVXZHTVhVejVlMkQ1VEhiVU9OdWJjS2REVWhzbGZoTHdVamFzR016RVJMM2FnQkR0aFlNRmFqR3RIOVE?oc=5","source":"Tech Monitor","published_at":"2025-11-11"}]},{"title_zh":"2025 Quantum Hardware Breakt","summary_zh":"WebProNews 报道：2025 Quantum Hardware Breakthroughs: IBM, IonQ, Google Drive Scalability - WebProNews","region":"global","score":0.4,"sources":[{"title":"2025 Quantum Hardware Breakthroughs: IBM, IonQ, Google Drive Scalability - WebProNews","url":"https://news.google.com/rss/articles/CBMingFBVV95cUxNMTdtSk41c25UNUFrdEtiSzVjai1iaFhOcWstQ2pTaXh3N3MzaDRfcl8zMEEyZnhnMXUyY3ZMcHlWZ3Z3QXU3MkJRWktqNVctU1FSa2VxM3BOeURfUjdkdmdhdlZlX0tvU1hZa2pNUHpFVEJQdFRiblRwSnZyQUs3RC1oUks4SVJBTEJ3dVNnenJKY0U1SnFlRHl1clVfUQ?oc=5","source":"WebProNews","published_at":"2026-01-02"}]},{"title_zh":"China's superconducting quan","summary_zh":"Global Times 报道：China's superconducting quantum prototype 'Zuchongzhi 3.2' achieves key breakthrough - Global Times","region":"global","score":0.4,"sources":[{"title":"China's superconducting quantum prototype 'Zuchongzhi 3.2' achieves key breakthrough - Global Times","url":"https://news.google.com/rss/articles/CBMiYkFVX3lxTFBGNmpnMUNqOEM3NDlVT1pXbkdSNks5c2hGSnRlTTlQamZjMVVPZmpqblZQTE42S2ZHWG1kdVJJZm5jNm15UDMtazI5dHd4OUoyek04NW5qT0Y5WkZ1RXBITjln?oc=5","source":"Global Times","published_at":"2025-12-23"}]},{"title_zh":"Why quantum computers have m","summary_zh":"Phys.org 报道：Why quantum computers have memory problems over time - Phys.org","region":"global","score":0.4,"sources":[{"title":"Why quantum computers have memory problems over time - Phys.org","url":"https://news.google.com/rss/articles/CBMiakFVX3lxTE5JSXZUdUtNYkJIcUhnWF9pN2pMcU5GTks0ZlBRQTF0aWZ6VzVjMGlXOHU1bk9GOXdpVkRua1dxN1lxaTBtQllKbDFWaThtNTI4a2dHV2lOWE0xOEowdXBaXzZxTExldWpmZXc?oc=5","source":"Phys.org","published_at":"2025-12-19"}]},{"title_zh":"Future of Quantum Computing ","summary_zh":"StartUs Insights 报道：Future of Quantum Computing [2026-2030]: 10 Key Breakthroughs - StartUs Insights","region":"global","score":0.4,"sources":[{"title":"Future of Quantum Computing [2026-2030]: 10 Key Breakthroughs - StartUs Insights","url":"https://news.google.com/rss/articles/CBMihAFBVV95cUxQc1pyNjYtVEw0T1AtTGpTX3RaNjlGemdyNFRvOWlhLUtkcl9fS0lFOWloX2VJdzJJVWVnWFdTSDE1YVFIRDNpSDdOX3FfUEV5YTA3U3FZMXkwaXBpVWNLZm9kUWRpUWMwMGtCU3ZKYk54N3ZrTUVoZ2Y2QlQtd3FzRXg1Z2g?oc=5","source":"StartUs Insights","published_at":"2025-12-08"}]},{"title_zh":"Our Quantum Echoes algorithm","summary_zh":"blog.google 报道：Our Quantum Echoes algorithm is a big step toward real-world applications for quantum computing - blog.google","region":"global","score":0.4,"sources":[{"title":"Our Quantum Echoes algorithm is a big step toward real-world applications for quantum computing - blog.google","url":"https://news.google.com/rss/articles/CBMilgFBVV95cUxNS3lISWdkUTlZejQteFYza2NVNThHdzE0THhsSU8xSXk0bF9YZkNTQ2prR3V1Rk5GYWZSSlhROWNRQjJtRVhsZGxRdzRSa1ktdTN3ZVY1SEN2YldleUJuc2lzaFlRNTZKVDlMUC16dkFYMFFZVDJHTmNfdmktTjQxdkViRHNVaElMa0RTZmNBRkxoaVFKS2c?oc=5","source":"blog.google","published_at":"2025-10-22"}]},{"title_zh":"IBM says conventional AMD ch","summary_zh":"Reuters 报道：IBM says conventional AMD chips can run quantum computing error correction algorithm - Reuters","region":"global","score":0.4,"sources":[{"title":"IBM says conventional AMD chips can run quantum computing error correction algorithm - Reuters","url":"https://news.google.com/rss/articles/CBMitwFBVV95cUxNbzlvVGlJeklGRTdYM2d3cVFXdldYWGNLOW9TYWctMTczTGE1aTF0ckp5d3I1YlJoSE5qS19SNnE1ZkpMZ2JvaG9Zbno5bkhXWjM4Tnh0dUw0eWNPMV9kSkx1czN1UllVWnRSOTRoWF80bE50WFQ4a3pGc2RFS1VOLWZqY0RSclNkc1lfRzUzTldqNExyb3hZTktIN3RaemlVSjlMcHdUel9ocUFKRHZNR3E1UU9QR0U?oc=5","source":"Reuters","published_at":"2025-10-24"}]},{"title_zh":"IBM’s AMD breakthrough bring","summary_zh":"TechHQ 报道：IBM’s AMD breakthrough brings quantum computing closer - TechHQ","region":"global","score":0.4,"sources":[{"title":"IBM’s AMD breakthrough brings quantum computing closer - TechHQ","url":"https://news.google.com/rss/articles/CBMigwFBVV95cUxPZ1VKaVRqb0VrV2hpZmR5enZldHpIV0V1U2gtMVRIVjdoUmJYeUtrTlJLMkRFRm1YSU00NmozUzlCU3EtaU5FUlZqUFFFSlltM1FVa2xJUktlWVEyQ0pIOW9XUlZBQ2hEcjY2MWhMRUFjdWYtaFVkb3hHOXhsbXJ6V1FjWQ?oc=5","source":"TechHQ","published_at":"2025-10-27"}]},{"title_zh":"Princeton’s Breakthrough Qub","summary_zh":"SciTechDaily 报道：Princeton’s Breakthrough Qubit Could Finally Make Quantum Computing Practical - SciTechDaily","region":"global","score":0.4,"sources":[{"title":"Princeton’s Breakthrough Qubit Could Finally Make Quantum Computing Practical - SciTechDaily","url":"https://news.google.com/rss/articles/CBMipAFBVV95cUxNUXNXWUZVMGFIdlFfR0dfdWJ0NHFMRFhLdDIwenZ0UHFreUNpenl6OEpiblNsQ3VFSVhBTktXWDFvWG1NRTVpMmlYSWJEdjh6NnprdFowME85OUw5Tmg3Rk1vY2p3WWhDcjYzSmVlY091bXl1YkplTFBITk1rcVVGWUlfOFpLZVdSUnQxX0ZsZ0lXVTNBWFk3UWFzRFpCUFNrMjJuQg?oc=5","source":"SciTechDaily","published_at":"2025-11-23"}]},{"title_zh":"Oxford Quantum Circuits Repo","summary_zh":"The Quantum Insider 报道：Oxford Quantum Circuits Reports New Error-Detection Method That Reduces Qubit Requirements - The Quantum Insider","region":"global","score":0.4,"sources":[{"title":"Oxford Quantum Circuits Reports New Error-Detection Method That Reduces Qubit Requirements - The Quantum Insider","url":"https://news.google.com/rss/articles/CBMiywFBVV95cUxNTkxQSWJVSzB2ZnctdTljbDdVX01aWnN2LU4yUjRnMzZEVXRveFdtYlFpdjk2eFJxRERvUnp0V2xPQjNmaThYbGJ2RndTeXpxZ3U0VTF3QW1haU1vOTBoUUxnUWh2b3VrNlF5aEhJYzV2eEVCYTBYd3phVWszZzBXTkxtOUtEWFN6VXVmdDJVZWpPU1JYQVdqQmpDcXVrOGZDUVdGVjRkNjRhQWVRLVRUVGNBUkNfMDNNX3pva0VkUmpWZy1IYm1PS1Nydw?oc=5","source":"The Quantum Insider","published_at":"2025-06-19"}]},{"title_zh":"Scientists build 'most accur","summary_zh":"Live Science 报道：Scientists build 'most accurate' quantum computing chip ever thanks to new silicon-based computing architecture - Live Science","region":"global","score":0.4,"sources":[{"title":"Scientists build 'most accurate' quantum computing chip ever thanks to new silicon-based computing architecture - Live Science","url":"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPTnFnU2t0V1p5aGVjUVVLRDAzVUYySGZEV0hwSk5ncWZQZzJsOU5zNDlMb04xaWdEUEJybFpBVjRqR3lrVFpUQXMxb1IzVlE0RWozNXpXazFLRjFQTG1Yd3ZYUHZpTlBweDdITG1NXzlsTDFSYXc3V3JQUU9PekVUREdPQXN1c2dzMnA1WnMyRjdkemhKSm9pVlJjLWxSVkJsVE5wY0drX3JRZ2RqUW0ybTF0Z3lMRmdKVTFITHdOdXZWWTJ1WEwyTEplakltdWI0QnlPYXp2U3FUcFlqZTVCbjBDV3J5NGZWM2U0MjZGUQ?oc=5","source":"Live Science","published_at":"2025-12-20"}]}]},{"id":"arxiv","name":"研究雷达（arXiv）","tags":[],"brief_zh":"（今日该板块暂无可用内容）","brief_cn":"（今日该板块暂无可用内容）","brief_us":"（今日该板块暂无可用内容）","brief_eu":"（今日该板块暂无可用内容）","brief_asia":"（今日该板块暂无可用内容）","brief_global":"（今日该板块暂无可用内容）","events":[]}]};</script>
 <script>
-/* ======= MOCK DIGEST (replace with generator output) ======= */
-window.DIGEST = {
-  sections:[
-    {id:"macro",title:"宏观 / 市场",items:Array.from({length:15},(_,i)=>({t:"宏观新闻 "+(i+1)}))},
-    {id:"sanctions",title:"制裁 / 合规",items:Array.from({length:12},(_,i)=>({t:"制裁新闻 "+(i+1)}))},
-    {id:"ai",title:"AI / 算力",items:Array.from({length:20},(_,i)=>({t:"AI 新闻 "+(i+1)}))}
-  ]
-};
+(function(){
+  const D = (window.DIGEST || {});
+  const sections = Array.isArray(D.sections) ? D.sections : [];
+  const kpis = Array.isArray(D.kpis) ? D.kpis : [];
 
-/* ======= SETTINGS ======= */
-const LS_KEY="digest_settings";
-const DEFAULT={itemsPerSection:5,showKPI:true};
-let SETTINGS=JSON.parse(localStorage.getItem(LS_KEY)||JSON.stringify(DEFAULT));
+  // Top meta
+  const dateEl = document.getElementById('date');
+  if (dateEl && D.date) dateEl.textContent = D.date;
 
-function save(){localStorage.setItem(LS_KEY,JSON.stringify(SETTINGS));}
-function apply(){
-  renderMain();
-  document.getElementById("right").style.display=SETTINGS.showKPI?"":"none";
-}
+  const genAtEl = document.getElementById('genAt');
+  const kpiAtEl = document.getElementById('kpiAt');
+  const genAt = D.generated_at_bjt || D.generated_at_local || D.generated_at_utc || D.generated_at || '';
+  if (genAtEl) genAtEl.textContent = genAt || '—';
+  if (kpiAtEl) kpiAtEl.textContent = genAt || '—';
 
-/* ======= RENDER ======= */
-function renderMain(){
-  const main=document.getElementById("main");
-  main.innerHTML="";
-  DIGEST.sections.forEach(sec=>{
-    const wrap=document.createElement("div");
-    wrap.className="section";
-    wrap.innerHTML=`<h3>${sec.title}</h3>`;
-    const n=SETTINGS.itemsPerSection===0?sec.items.length:SETTINGS.itemsPerSection;
-    sec.items.slice(0,n).forEach(it=>{
-      const c=document.createElement("div");
-      c.className="card";
-      c.innerHTML=`<h4>${it.t}</h4>`;
-      wrap.appendChild(c);
+  // State
+  let view = 'all'; // all | cn | global
+  let query = '';
+  let activeSectionId = sections[0]?.id || '';
+
+  // Helpers
+  const byId = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtNum = (x) => (x === null || x === undefined || Number.isNaN(Number(x))) ? '—' : (Math.abs(Number(x)) >= 100 ? Number(x).toFixed(0) : Number(x).toFixed(3).replace(/0+$/,'').replace(/\.$/,''));
+  const isCnView = () => view === 'cn';
+  const isGlobalNoCnView = () => view === 'global';
+
+  function pickBrief(sec){
+    if (!sec) return '';
+    if (isCnView() && sec.brief_cn) return sec.brief_cn;
+    if (isGlobalNoCnView() && sec.brief_global) return sec.brief_global;
+    return sec.brief_zh || sec.brief_cn || sec.brief_global || '';
+  }
+
+  function eventPassesView(ev){
+    const r = (ev?.region || 'global');
+    if (view === 'all') return true;
+    if (view === 'cn') return r === 'cn';
+    if (view === 'global') return r !== 'cn';
+    return true;
+  }
+
+  function eventPassesQuery(ev){
+    if (!query) return true;
+    const q = query.toLowerCase();
+    const hay = [
+      ev?.title_zh, ev?.summary_zh,
+      ...(Array.isArray(ev?.sources) ? ev.sources.map(s => s?.source || s?.title || '') : [])
+    ].join(' ').toLowerCase();
+    return hay.includes(q);
+  }
+
+  // Render left nav
+  function renderNav(){
+    const nav = byId('nav');
+    if (!nav) return;
+
+    nav.innerHTML = sections.map(sec => {
+      const sid = sec.id;
+      const name = sec.name || sid;
+      const count = Array.isArray(sec.events) ? sec.events.filter(e => eventPassesView(e) && eventPassesQuery(e)).length : 0;
+      const active = sid === activeSectionId ? 'active' : '';
+      return `<a href="#${esc(sid)}" data-sid="${esc(sid)}" class="${active}">
+        <span>${esc(name)}</span><span class="badge">${count}</span>
+      </a>`;
+    }).join('');
+
+    nav.querySelectorAll('a[data-sid]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        activeSectionId = a.getAttribute('data-sid') || activeSectionId;
+        renderAll();
+        const el = document.querySelector(`[data-section="${CSS.escape(activeSectionId)}"]`);
+        if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
     });
-    main.appendChild(wrap);
-  });
-}
+  }
 
-/* ======= SETTINGS UI ======= */
-const overlay=document.getElementById("overlay");
-document.getElementById("btnSettings").onclick=()=>{
-  overlay.classList.add("open");
-  document.querySelectorAll("[data-items]").forEach(b=>{
-    b.classList.toggle("active",Number(b.dataset.items)===SETTINGS.itemsPerSection);
-    b.onclick=()=>{
-      document.querySelectorAll("[data-items]").forEach(x=>x.classList.remove("active"));
-      b.classList.add("active");
-      SETTINGS.itemsPerSection=Number(b.dataset.items);
-    };
-  });
-  document.querySelectorAll("[data-kpi]").forEach(b=>{
-    b.classList.toggle("active",(b.dataset.kpi==="on")===SETTINGS.showKPI);
-    b.onclick=()=>{
-      document.querySelectorAll("[data-kpi]").forEach(x=>x.classList.remove("active"));
-      b.classList.add("active");
-      SETTINGS.showKPI=b.dataset.kpi==="on";
-    };
-  });
-};
-document.getElementById("btnApply").onclick=()=>{save();apply();overlay.classList.remove("open");};
-document.getElementById("btnClose").onclick=()=>overlay.classList.remove("open");
-document.getElementById("btnTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+  // Render main content
+  function renderMain(){
+    const main = byId('main');
+    if (!main) return;
 
-/* init */
-apply();
+    const html = sections.map(sec => {
+      const sid = sec.id;
+      const title = sec.name || sid;
+      const brief = pickBrief(sec);
+      const events = Array.isArray(sec.events) ? sec.events.filter(e => eventPassesView(e) && eventPassesQuery(e)) : [];
+
+      const cards = events.map(ev => {
+        const sources = Array.isArray(ev.sources) ? ev.sources : [];
+        const srcHtml = sources.slice(0, 4).map(s => {
+          const u = s.url || '';
+          const t = s.title || s.source || 'source';
+          const site = s.source || '';
+          return `<div class="src"><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a><span class="muted">${esc(site)}</span></div>`;
+        }).join('');
+
+        return `<div class="card">
+          <div class="ct">${esc(ev.title_zh || '')}</div>
+          <div class="cs">${esc(ev.summary_zh || '')}</div>
+          <div class="sources">${srcHtml}</div>
+        </div>`;
+      }).join('');
+
+      return `<section class="section" data-section="${esc(sid)}">
+        <div class="st">${esc(title)}</div>
+        ${brief ? `<div class="sb">${esc(brief)}</div>` : ''}
+        ${cards || `<div class="empty">暂无内容（可能是数据源当日稀疏或被过滤）</div>`}
+      </section>`;
+    }).join('');
+
+    main.innerHTML = html || `<div class="empty">没有可渲染的内容：DIGEST.sections 为空。</div>`;
+  }
+
+  // Render right panel KPIs
+  function renderKpis(){
+    const kMetals = byId('kMetals');
+    const kMacro = byId('kMacro');
+    if (!kMetals || !kMacro) return;
+
+    const metals = [];
+    const macro = [];
+
+    for (const k of kpis){
+      const id = (k.id || '').toLowerCase();
+      // crude routing by id / name
+      const bucket = (id.includes('lme') || id.includes('metal') || (k.name||'').includes('金属')) ? metals : macro;
+      bucket.push(k);
+    }
+
+    function kpiCard(k){
+      const name = k.name || k.display_name || k.id || '—';
+      const unit = k.unit || '';
+      const val = (k.value !== undefined) ? fmtNum(k.value) : '—';
+      const delta = (k.delta !== undefined && k.delta !== null) ? k.delta : null;
+      const color = k.color || '#64748B';
+      const deltaTxt = (delta === null) ? '' : (delta >= 0 ? `+${fmtNum(delta)}` : `${fmtNum(delta)}`);
+      const spark = k.spark_svg ? k.spark_svg : ''; // if generator provides
+      const series = Array.isArray(k.series) ? k.series : null;
+
+      let sparkHtml = '';
+      if (spark){
+        sparkHtml = `<div class="spark">${spark}</div>`;
+      } else if (series && series.length >= 2){
+        // ultra-light inline sparkline fallback
+        const w=120,h=26,p=2;
+        const min=Math.min(...series), max=Math.max(...series), span=(max-min)||1;
+        const pts=series.map((v,i)=> {
+          const x=p+(w-2*p)*(i/(series.length-1));
+          const y=p+(h-2*p)*(1-((v-min)/span));
+          return [x,y];
+        });
+        let d=`M ${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+        for (let i=1;i<pts.length;i++) d += ` L ${pts[i][0].toFixed(2)} ${pts[i][1].toFixed(2)}`;
+        sparkHtml = `<svg viewBox="0 0 ${w} ${h}" class="spark"><path d="${d}" fill="none" stroke="${esc(color)}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
+      } else {
+        sparkHtml = `<div class="muted">—</div>`;
+      }
+
+      return `<div class="kpi">
+        <div class="k-head">
+          <span class="dot" style="background:${esc(color)}"></span>
+          <span class="k-name">${esc(name)}</span>
+          <span class="k-val">${esc(val)}${unit ? `<span class="k-unit">${esc(unit)}</span>`:''}</span>
+        </div>
+        ${deltaTxt ? `<div class="k-delta">${esc(deltaTxt)}</div>` : `<div class="k-delta muted"> </div>`}
+        ${sparkHtml}
+      </div>`;
+    }
+
+    kMetals.innerHTML = metals.map(kpiCard).join('') || `<div class="muted">暂无 KPI</div>`;
+    kMacro.innerHTML = macro.map(kpiCard).join('') || `<div class="muted">暂无 KPI</div>`;
+  }
+
+  function bindControls(){
+    // pills
+    document.querySelectorAll('.pill[data-view]').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        view = p.getAttribute('data-view') || 'all';
+        renderAll();
+      });
+    });
+
+    // search
+    const q = byId('q');
+    if (q){
+      q.addEventListener('input', () => {
+        query = q.value.trim();
+        renderAll();
+      });
+    }
+
+    // settings overlay open/close
+    const overlay = byId('overlay');
+    const btnSettings = byId('btnSettings');
+    const btnClose = byId('btnClose');
+    if (btnSettings && overlay){
+      btnSettings.addEventListener('click', () => overlay.classList.add('show'));
+    }
+    if (btnClose && overlay){
+      btnClose.addEventListener('click', () => overlay.classList.remove('show'));
+    }
+    // home scroll
+    const btnHome = byId('btnHome');
+    if (btnHome){
+      btnHome.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    }
+  }
+
+  function renderAll(){
+    if (!activeSectionId && sections[0]?.id) activeSectionId = sections[0].id;
+    renderNav();
+    renderMain();
+    renderKpis();
+
+    // feedback count (localStorage)
+    try{
+      const fb = JSON.parse(localStorage.getItem('digest_fb') || '[]');
+      const fbCount = byId('fbCount');
+      if (fbCount) fbCount.textContent = String(Array.isArray(fb) ? fb.length : 0);
+    }catch(e){}
+  }
+
+  // Boot
+  bindControls();
+  renderAll();
+})();
 </script>
 
-</body>
-</html>
+<script>
+/* === v15 PATCH: enforce KPI red/green + wire buttons === */
+function _kpiTrendClass(delta){
+  const d = Number(delta);
+  if (!isFinite(d) || d === 0) return "flat";
+  return d > 0 ? "up" : "down";
+}
+function _formatDelta(delta, deltaPct){
+  const d = Number(delta);
+  const p = Number(deltaPct);
+  let s1 = (isFinite(d) ? (d>0?"+":"") + d.toFixed(3) : "—");
+  if (isFinite(p)) s1 += " (" + (p>0?"+":"") + (p*100).toFixed(2) + "%)";
+  return s1;
+}
+function _renderSparkSVG(series, cls){
+  if (!Array.isArray(series) || series.length < 2) return "";
+  const w = 140, h = 34, pad = 3;
+  const nums = series.map(v => Number(v)).filter(v => isFinite(v));
+  if (nums.length < 2) return "";
+  const min = Math.min(...nums), max = Math.max(...nums);
+  const span = (max-min) || 1;
+  const innerW = w - pad*2, innerH = h - pad*2;
+  const pts = nums.map((v,i)=>{
+    const x = pad + innerW * (i/(nums.length-1));
+    const y = pad + innerH * (1-((v-min)/span));
+    return [x,y];
+  });
+  let d = `M ${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+  for(let i=1;i<pts.length;i++) d += ` L ${pts[i][0].toFixed(2)} ${pts[i][1].toFixed(2)}`;
+  return `
+    <svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+      <path class="${cls}" d="${d}" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  `;
+}
+
+(function(){
+  if (!window.DIGEST) return;
+
+  const originalRenderRight = window.renderRightPanel;
+  window.renderRightPanel = function(){
+    const digest = window.DIGEST || {};
+    const container = document.querySelector("#rightPanelKpis");
+    if (!container) return originalRenderRight ? originalRenderRight() : undefined;
+
+    const groups = digest.kpi_groups || digest.kpis || [];
+    const normGroups = Array.isArray(groups) && groups.length && groups[0] && groups[0].items
+      ? groups
+      : [{ title: "KPI", items: Array.isArray(groups) ? groups : [] }];
+
+    container.innerHTML = "";
+    normGroups.forEach(g=>{
+      const sec = document.createElement("div");
+      sec.className = "kpi-group";
+      sec.innerHTML = `<div class="kpi-group-title">${g.title || ""}</div>`;
+      const grid = document.createElement("div");
+      grid.className = "kpi-grid";
+
+      (g.items || []).forEach(m=>{
+        const delta = (m.delta != null) ? m.delta : (m.change != null ? m.change : 0);
+        const deltaPct = (m.delta_pct != null) ? m.delta_pct : (m.change_pct != null ? m.change_pct : null);
+        const cls = _kpiTrendClass(delta);
+        const val = (m.value != null && isFinite(Number(m.value))) ? Number(m.value) : null;
+
+        const card = document.createElement("div");
+        card.className = "kpi-card";
+
+        const name = m.display_name || m.name || m.title || m.key || "KPI";
+        const unit = m.unit || "";
+
+        card.innerHTML = `
+          <div class="kpi-top">
+            <div class="kpi-name">
+              <span class="kpi-dot ${cls}"></span>
+              <span>${name}</span>
+            </div>
+            <div class="kpi-value">${val==null ? "—" : (Number.isInteger(val) ? val.toString() : val.toFixed(3))} <span class="kpi-unit">${unit}</span></div>
+          </div>
+          <div class="kpi-sub ${cls}">${_formatDelta(delta, deltaPct)}</div>
+          <div class="kpi-spark-wrap">${_renderSparkSVG(m.series || m.trend || m.values || [], cls) || '<div class="kpi-spark-empty">—</div>'}</div>
+        `;
+        grid.appendChild(card);
+      });
+
+      sec.appendChild(grid);
+      container.appendChild(sec);
+    });
+
+    const ts = document.querySelector("#kpiUpdatedAt");
+    if (ts) ts.textContent = (digest.generated_at || digest.generatedAt || "—");
+  };
+})();
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const btnTop = document.querySelector("#btnTop");
+  if (btnTop){
+    btnTop.addEventListener("click", (e)=>{
+      e.preventDefault();
+      window.scrollTo({top:0, behavior:"smooth"});
+      const mid = document.querySelector("#midColumnScroll");
+      if (mid) mid.scrollTo({top:0, behavior:"smooth"});
+      const left = document.querySelector("#leftColumnScroll");
+      if (left) left.scrollTo({top:0, behavior:"smooth"});
+      const right = document.querySelector("#rightColumnScroll");
+      if (right) right.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  const btnSettings = document.querySelector("#btnSettings");
+  const modal = document.querySelector("#settingsModal");
+  const closeBtn = document.querySelector("#settingsClose");
+  const copyBtn = document.querySelector("#settingsCopy");
+  const pre = document.querySelector("#settingsPre");
+
+  function openSettings(){
+    if (!modal) return;
+    if (pre) pre.textContent = JSON.stringify(window.DIGEST?.meta || window.DIGEST || {}, null, 2);
+    modal.style.display = "flex";
+  }
+  function closeSettings(){
+    if (!modal) return;
+    modal.style.display = "none";
+  }
+
+  if (btnSettings) btnSettings.addEventListener("click", (e)=>{ e.preventDefault(); openSettings(); });
+  if (closeBtn) closeBtn.addEventListener("click", (e)=>{ e.preventDefault(); closeSettings(); });
+  if (modal) modal.addEventListener("click", (e)=>{ if (e.target === modal) closeSettings(); });
+  document.addEventListener("keydown", (e)=>{ if (e.key === "Escape") closeSettings(); });
+
+  if (copyBtn){
+    copyBtn.addEventListener("click", async (e)=>{
+      e.preventDefault();
+      try{
+        const txt = (pre && pre.textContent) ? pre.textContent : "";
+        await navigator.clipboard.writeText(txt);
+        copyBtn.textContent = "已复制";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }catch(err){
+        copyBtn.textContent = "复制失败";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }
+    });
+  }
+
+  if (typeof window.renderRightPanel === "function") {
+    try { window.renderRightPanel(); } catch(e) {}
+  }
+});
+</script>
+<div id="settingsModal" aria-hidden="true">
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Settings">
+    <h3>设置</h3>
+    <div style="font-size:12px; opacity:0.75;">用于快速自检渲染输入（不会写回配置）。</div>
+    <pre id="settingsPre"></pre>
+    <div class="actions">
+      <button id="settingsCopy" class="btn">复制配置</button>
+      <button id="settingsClose" class="btn primary">关闭</button>
+    </div>
+  </div>
+</div>
+<script>
+/* === v15 PATCH v3: robust buttons (no ID dependency) + safer settings payload === */
+
+function _findClickableByText(txt){
+  const candidates = Array.from(document.querySelectorAll("button, a"));
+  return candidates.find(el => (el.textContent || "").trim() === txt) || null;
+}
+
+function _scrollAllToTop(){
+  // Window
+  try { window.scrollTo({top:0, behavior:"smooth"}); } catch(e){ window.scrollTo(0,0); }
+
+  // Scrollable containers (limited but robust)
+  const nodes = Array.from(document.querySelectorAll("div, main, section, aside"));
+  for (const el of nodes){
+    const cs = getComputedStyle(el);
+    const oy = cs.overflowY;
+    if ((oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight + 4){
+      try { el.scrollTo({top:0, behavior:"smooth"}); } catch(e){ el.scrollTop = 0; }
+    }
+  }
+}
+
+function _openSettingsModal(){
+  const modal = document.getElementById("settingsModal");
+  const pre = document.getElementById("settingsPre");
+  if (!modal) return;
+
+  const d = window.DIGEST || {};
+
+  function _countItems(sec){
+    if (!sec) return 0;
+    const cand = sec.items ?? sec.events ?? sec.cards ?? sec.news ?? sec.entries ?? sec.articles ?? sec.raw_items ?? [];
+    return Array.isArray(cand) ? cand.length : 0;
+  }
+
+  const sectionsArr = Array.isArray(d.sections) ? d.sections : (Array.isArray(d.section_summaries) ? d.section_summaries : []);
+  const sections = sectionsArr.map(s => ({
+    id: s.id || s.section_id || s.key,
+    title: s.title || s.name,
+    items: _countItems(s)
+  }));
+
+  // KPI summary: show only lightweight fields
+  let kpis = d.kpis;
+  if (!kpis && d.kpi_groups){
+    kpis = d.kpi_groups.map(g => ({
+      title: g.title,
+      items: (g.items || []).map(m => ({
+        id: m.id || m.key,
+        name: m.display_name || m.name || m.title,
+        unit: m.unit,
+        value: m.value,
+        delta: m.delta,
+        delta_pct: m.delta_pct,
+        direction: m.direction,
+        source: m.source,
+        updated_at: m.updated_at
+      }))
+    }));
+  }
+
+  const payload = {
+    date: d.date || d.meta?.date,
+    generated_at_utc: d.generated_at_utc || d.generatedAt || d.meta?.generated_at_utc,
+    sections,
+    kpis
+  };
+
+  if (pre) pre.textContent = JSON.stringify(payload, null, 2);
+  modal.style.display = "flex";
+}
+
+function _closeSettingsModal(){
+  const modal = document.getElementById("settingsModal");
+  if (!modal) return;
+  modal.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  // Bind buttons by ID if present; otherwise bind by visible text.
+  const btnTop = document.getElementById("btnTop") || _findClickableByText("回到顶部");
+  if (btnTop){
+    btnTop.addEventListener("click", (e)=>{ e.preventDefault(); _scrollAllToTop(); });
+  }
+
+  const btnSettings = document.getElementById("btnSettings") || _findClickableByText("设置");
+  if (btnSettings){
+    btnSettings.addEventListener("click", (e)=>{ e.preventDefault(); _openSettingsModal(); });
+  }
+
+  const modal = document.getElementById("settingsModal");
+  const closeBtn = document.getElementById("settingsClose");
+  const copyBtn = document.getElementById("settingsCopy");
+  const pre = document.getElementById("settingsPre");
+
+  if (closeBtn) closeBtn.addEventListener("click", (e)=>{ e.preventDefault(); _closeSettingsModal(); });
+  if (modal) modal.addEventListener("click", (e)=>{ if (e.target === modal) _closeSettingsModal(); });
+  document.addEventListener("keydown", (e)=>{ if (e.key === "Escape") _closeSettingsModal(); });
+
+  if (copyBtn){
+    copyBtn.addEventListener("click", async (e)=>{
+      e.preventDefault();
+      try{
+        await navigator.clipboard.writeText(pre ? (pre.textContent || "") : "");
+        copyBtn.textContent = "已复制";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }catch(err){
+        copyBtn.textContent = "复制失败";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }
+    });
+  }
+});
+</script>
+
+</body></html>
