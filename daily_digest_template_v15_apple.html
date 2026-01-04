@@ -129,6 +129,33 @@ button,input,select,textarea{font-family:var(--font)}
 }
 #settingsModal .actions{ display:flex; gap:10px; justify-content:flex-end; }
 
+/* density compact */
+.density-compact .event-card{ padding:10px 12px !important; }
+.density-compact .event-card h4{ margin:0 0 4px 0 !important; }
+.density-compact .event-card .meta{ margin-top:4px !important; }
+
+/* === v15 SETTINGS UI v6 === */
+#settingsModal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:9999; }
+#settingsModal .panel{ width:min(820px, calc(100vw - 48px)); max-height:min(82vh, 760px); overflow:auto; background:#fff; border-radius:18px; padding:18px 18px 14px 18px;
+  border:1px solid rgba(148,163,184,0.35); box-shadow:0 16px 48px rgba(0,0,0,0.18); }
+.sm-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.sm-title{ font-size:20px; font-weight:800; letter-spacing:0.2px; }
+.sm-sub{ margin-top:6px; font-size:12px; opacity:0.7; line-height:1.4; }
+.sm-grid{ margin-top:14px; display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+@media (max-width: 860px){ .sm-grid{ grid-template-columns:1fr; } }
+.sm-card{ border:1px solid rgba(148,163,184,0.35); border-radius:14px; padding:12px; background:rgba(148,163,184,0.08); }
+.sm-label{ font-size:12px; font-weight:700; opacity:0.85; margin-bottom:10px; }
+.sm-hint{ margin-top:10px; font-size:11px; opacity:0.65; }
+.sm-seg{ display:flex; flex-wrap:wrap; gap:8px; }
+.seg{ padding:8px 10px; border-radius:999px; border:1px solid rgba(148,163,184,0.45); background:#fff; font-size:12px; cursor:pointer; }
+.seg.active{ border-color:rgba(37,99,235,0.65); background:rgba(37,99,235,0.10); font-weight:700; }
+.sm-radio{ display:flex; flex-direction:column; gap:10px; font-size:12px; }
+.sm-radio input{ margin-right:8px; }
+.sm-debug{ margin-top:12px; border:1px solid rgba(148,163,184,0.35); border-radius:14px; padding:10px 12px; background:rgba(148,163,184,0.06); }
+.sm-debug summary{ cursor:pointer; font-size:12px; font-weight:700; opacity:0.8; }
+#settingsPre{ margin-top:10px; white-space:pre-wrap; word-break:break-word; font-size:12px; line-height:1.45; padding:10px 12px; border-radius:12px; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); max-height:280px; overflow:auto; }
+.sm-actions{ display:flex; justify-content:flex-end; margin-top:10px; }
+
 </style></head>
 <body>
 <div class="container">
@@ -704,4 +731,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 });
 </script>
+
 </body></html>
