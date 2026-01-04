@@ -618,12 +618,44 @@ function _openSettingsModal(){
   if (!modal) return;
 
   const d = window.DIGEST || {};
-  // Show meta + KPI summary only (avoid massive payload)
+
+  function _countItems(sec){
+    if (!sec) return 0;
+    const cand = sec.items ?? sec.events ?? sec.cards ?? sec.news ?? sec.entries ?? sec.articles ?? sec.raw_items ?? [];
+    return Array.isArray(cand) ? cand.length : 0;
+  }
+
+  const sectionsArr = Array.isArray(d.sections) ? d.sections : (Array.isArray(d.section_summaries) ? d.section_summaries : []);
+  const sections = sectionsArr.map(s => ({
+    id: s.id || s.section_id || s.key,
+    title: s.title || s.name,
+    items: _countItems(s)
+  }));
+
+  // KPI summary: show only lightweight fields
+  let kpis = d.kpis;
+  if (!kpis && d.kpi_groups){
+    kpis = d.kpi_groups.map(g => ({
+      title: g.title,
+      items: (g.items || []).map(m => ({
+        id: m.id || m.key,
+        name: m.display_name || m.name || m.title,
+        unit: m.unit,
+        value: m.value,
+        delta: m.delta,
+        delta_pct: m.delta_pct,
+        direction: m.direction,
+        source: m.source,
+        updated_at: m.updated_at
+      }))
+    }));
+  }
+
   const payload = {
     date: d.date || d.meta?.date,
     generated_at_utc: d.generated_at_utc || d.generatedAt || d.meta?.generated_at_utc,
-    sections: Array.isArray(d.sections) ? d.sections.map(s => ({id:s.id, title:s.title, items:(s.items||[]).length})) : undefined,
-    kpis: d.kpis ? d.kpis : (d.kpi_groups ? d.kpi_groups : undefined),
+    sections,
+    kpis
   };
 
   if (pre) pre.textContent = JSON.stringify(payload, null, 2);
