@@ -76,6 +76,23 @@ a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 @media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards{grid-template-columns:1fr}}
 
 button,input,select,textarea{font-family:var(--font)}
+
+/* --- v15 render fix: essential UI atoms (non-breaking) --- */
+.badge{min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(148,163,184,.25);font-size:12px;padding:0 6px}
+.section{margin-bottom:18px}
+.st{font-weight:800;font-size:16px;margin:6px 0}
+.sb{opacity:.8;margin:6px 0 10px 0;line-height:1.4}
+.card{border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:12px;margin:10px 0;background:rgba(255,255,255,0.02)}
+.ct{font-weight:800;margin-bottom:6px}
+.cs{opacity:.9;line-height:1.5}
+.sources{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.src a{font-weight:650}
+.muted{opacity:.65}
+.empty{opacity:.65;padding:14px;border:1px dashed rgba(148,163,184,.35);border-radius:14px;margin:12px 0}
+.k-name{display:inline-flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:999px;display:inline-block}
+.spark{width:100%;height:26px;margin-top:8px}
+.k-unit{opacity:.7;font-size:12px;margin-left:4px}
 </style></head>
 <body>
 <div class="container">
@@ -145,202 +162,234 @@ button,input,select,textarea{font-family:var(--font)}
 <script>window.DIGEST = {{ DIGEST_JSON | safe }};</script>
 <script>
 (function(){
-  const D = window.DIGEST || {date:"",generated_at_bjt:"",sections:[],kpis:{metals:[],macro:[]},config:{}};
-  const nav = document.getElementById('nav'), main = document.getElementById('main'), q=document.getElementById('q');
-  const pills=[...document.querySelectorAll('.pill')];
-  const overlay=document.getElementById('overlay'), pbody=document.getElementById('pbody'), tabs=[...document.querySelectorAll('.tab')];
-  document.getElementById('genAt').textContent=D.generated_at_bjt||'—';
-  document.getElementById('kpiAt').textContent=(D.kpis&&D.kpis.generated_at_bjt)||D.generated_at_bjt||'—';
+  const D = (window.DIGEST || {});
+  const sections = Array.isArray(D.sections) ? D.sections : [];
+  const kpis = Array.isArray(D.kpis) ? D.kpis : [];
 
-  const key='digest_settings_v15';
-  const st=JSON.parse(localStorage.getItem(key)||'{}');
-  const defaults={theme:'auto',readingMode:'30m',perSectionFull:15,perSection30m:5,weights:{timeliness:0.35,authority:0.2,relevance:0.2,impact:0.15,novelty:0.1}};
-  const S=Object.assign({},defaults,st); const W=Object.assign({},defaults.weights,S.weights||{});
-  function save(){localStorage.setItem(key,JSON.stringify(Object.assign({},S,{weights:W})));}
+  // Top meta
+  const dateEl = document.getElementById('date');
+  if (dateEl && D.date) dateEl.textContent = D.date;
 
-  function applyTheme(){ if(S.theme==='auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme',S.theme); }
-  applyTheme();
+  const genAtEl = document.getElementById('genAt');
+  const kpiAtEl = document.getElementById('kpiAt');
+  const genAt = D.generated_at_bjt || D.generated_at_local || D.generated_at_utc || D.generated_at || '';
+  if (genAtEl) genAtEl.textContent = genAt || '—';
+  if (kpiAtEl) kpiAtEl.textContent = genAt || '—';
 
-  let view='all';
-  function setView(v){view=v; pills.forEach(p=>p.classList.toggle('active',p.dataset.view===v)); render();}
-  pills.forEach(p=>p.addEventListener('click',()=>setView(p.dataset.view)));
+  // State
+  let view = 'all'; // all | cn | global
+  let query = '';
+  let activeSectionId = sections[0]?.id || '';
 
-  function esc(s){return (s||'').replace(/[&<>"']/g,c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));}
-  function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,' ').trim();}
-  function matchView(ev){ if(view==='all') return true; return ev.region===view; }
-  function matchQuery(ev){ const t=norm(q.value); if(!t) return true; const hay=norm([ev.title_zh,ev.title,ev.source_hint,(ev.tags||[]).join(' ')].join(' ')); return hay.includes(t); }
+  // Helpers
+  const byId = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtNum = (x) => (x === null || x === undefined || Number.isNaN(Number(x))) ? '—' : (Math.abs(Number(x)) >= 100 ? Number(x).toFixed(0) : Number(x).toFixed(3).replace(/0+$/,'').replace(/\.$/,''));
+  const isCnView = () => view === 'cn';
+  const isGlobalNoCnView = () => view === 'global';
 
-  const fbPrefix='digest_fb_v15_'; const seven=7*24*3600*1000;
-  function fbKey(id){return fbPrefix+id;}
-  function setFB(id,v){localStorage.setItem(fbKey(id),JSON.stringify({v,t:Date.now()})); render(); updateFBCount();}
-  function getFB(id){const raw=localStorage.getItem(fbKey(id)); if(!raw) return null; try{return JSON.parse(raw);}catch(e){return null;}}
-  function updateFBCount(){
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix)); let alive=0; const now=Date.now();
-    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); if(o && (now-o.t)<=seven) alive++;}catch(e){} }
-    document.getElementById('fbCount').textContent=alive+' 条';
+  function pickBrief(sec){
+    if (!sec) return '';
+    if (isCnView() && sec.brief_cn) return sec.brief_cn;
+    if (isGlobalNoCnView() && sec.brief_global) return sec.brief_global;
+    return sec.brief_zh || sec.brief_cn || sec.brief_global || '';
   }
-  updateFBCount();
 
-  function kpiBox(x){
-    function fmt(n){
-      if(n==null || n===undefined || Number.isNaN(Number(n))) return '—';
-      const v=Number(n);
-      if(Math.abs(v)>=1000) return (v>0?'+':'')+v.toFixed(0);
-      if(Math.abs(v)>=10) return (v>0?'+':'')+v.toFixed(2);
-      return (v>0?'+':'')+v.toFixed(4).replace(/\.0+$/,"").replace(/(\.\d*?)0+$/,"$1");
-    }
-    function fmtPct(n){
-      if(n==null || n===undefined || Number.isNaN(Number(n))) return '';
-      const v=Number(n);
-      const s=(v>0?'+':'')+v.toFixed(2).replace(/\.00$/,'');
-      return `（${s}%）`;
-    }
-    const d=fmt(x.delta);
-    const p=fmtPct(x.pct);
-    const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:99px;background:${esc(x.color||'#64748B')};margin-right:8px;transform:translateY(-1px)"></span>`;
-    const spark = x.spark_svg || '<svg class="spark" viewBox="0 0 100 44"><path d="M2 30 L20 28 L40 26 L60 24 L80 22 L98 18" stroke="rgba(128,128,128,.35)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    return `<div class="kpi"><div class="k-head"><span>${dot}${esc(x.label)}</span><span class="tag">${esc(x.unit||'')}</span></div>
-      <div class="k-val">${esc(x.value_str||'—')}</div><div class="k-delta">${esc(d)} ${esc(p)} · ${esc(x.source||'')}</div>
-      ${spark}</div>`;
+  function eventPassesView(ev){
+    const r = (ev?.region || 'global');
+    if (view === 'all') return true;
+    if (view === 'cn') return r === 'cn';
+    if (view === 'global') return r !== 'cn';
+    return true;
   }
-  function normalizeKpis(k){
-    if(!k) return {metals:[], macro:[]};
-    if(Array.isArray(k)){
-      const metals=[], macro=[];
-      for(const x of k){
-        const id=String(x.id||"").toUpperCase();
-        const grp=(id==="DGS10"||id==="DEXCHUS"||id==="DTWEXBGS") ? "macro" : "metals";
-        let value_str="—";
-        if(x.value!==null && x.value!==undefined && !Number.isNaN(Number(x.value))){
-          const v=Number(x.value);
-          if(Math.abs(v)>=1000) value_str = v.toFixed(0);
-          else if(Math.abs(v)>=10) value_str = v.toFixed(2);
-          else value_str = v.toFixed(4).replace(/\.0+$/,"").replace(/(\.\d*?)0+$/,"$1");
-        }
-        const row={label:x.name||x.title||x.id||"KPI", unit:x.unit||"", value_str:value_str, value:val, updated_at:x.updated_at||null, delta:x.delta??null, pct:x.delta_pct??null, direction:x.direction||null, spark_svg:x.spark_svg||"", color:x.color||null, source:x.source||""};
-        (grp==="macro"?macro:metals).push(row);
-      }
-      return {metals, macro};
-    }
-    return {metals: k.metals||[], macro: k.macro||[]};
+
+  function eventPassesQuery(ev){
+    if (!query) return true;
+    const q = query.toLowerCase();
+    const hay = [
+      ev?.title_zh, ev?.summary_zh,
+      ...(Array.isArray(ev?.sources) ? ev.sources.map(s => s?.source || s?.title || '') : [])
+    ].join(' ').toLowerCase();
+    return hay.includes(q);
   }
-  const KG = normalizeKpis(D.kpis);
-  document.getElementById('kMetals').innerHTML=(KG.metals||[]).map(kpiBox).join('');
-  document.getElementById('kMacro').innerHTML=(KG.macro||[]).map(kpiBox).join('');
 
-  function render(){
-    nav.innerHTML=''; main.innerHTML='';
-    if(!D.sections || !D.sections.length){
-      main.innerHTML = '<div class="section"><div class="section-head"><div><div class="sect-title">暂无内容</div><div class="sect-sub">数据源或摘要生成失败</div></div></div><div class="brief">请检查生成日志与 OpenAI 输出。</div></div>';
-      return;
-    }
-    (D.sections||[]).forEach((sec,idx)=>{
-      const events=(sec.events||[]).filter(ev=>matchView(ev)&&matchQuery(ev));
-      const a=document.createElement('a'); a.href='#'+sec.id; a.className=(idx===0?'active':'');
-      a.innerHTML=`<span>${esc(sec.name)}</span><span class="badge">${events.length}</span>`;
-      a.addEventListener('click',(e)=>{e.preventDefault(); document.getElementById(sec.id).scrollIntoView({behavior:'smooth',block:'start'});
-        [...nav.querySelectorAll('a')].forEach(x=>x.classList.remove('active')); a.classList.add('active');});
-      nav.appendChild(a);
+  // Render left nav
+  function renderNav(){
+    const nav = byId('nav');
+    if (!nav) return;
 
-      const wrap=document.createElement('section'); wrap.className='section'; wrap.id=sec.id;
-      wrap.innerHTML=`<div class="section-head"><div class="section-title">${esc(sec.name)}</div><div class="small">${events.length} 条（聚类事件）</div></div>`;
-      const brief=document.createElement('div'); brief.className='brief';
-      const briefText=(view==='cn')?(sec.brief_cn||sec.brief_zh||''):(view==='global')?(sec.brief_global||sec.brief_zh||''):(sec.brief_zh||'');
-      brief.textContent=briefText||'（今日该板块暂无可用内容）'; wrap.appendChild(brief);
+    nav.innerHTML = sections.map(sec => {
+      const sid = sec.id;
+      const name = sec.name || sid;
+      const count = Array.isArray(sec.events) ? sec.events.filter(e => eventPassesView(e) && eventPassesQuery(e)).length : 0;
+      const active = sid === activeSectionId ? 'active' : '';
+      return `<a href="#${esc(sid)}" data-sid="${esc(sid)}" class="${active}">
+        <span>${esc(name)}</span><span class="badge">${count}</span>
+      </a>`;
+    }).join('');
 
-      if(sec.tags && sec.tags.length){
-        const t=document.createElement('div'); t.className='actions';
-        t.innerHTML=sec.tags.slice(0,8).map(x=>`<span class="tag">${esc(x)}</span>`).join(''); wrap.appendChild(t);
-      }
-
-      const cards=document.createElement('div'); cards.className='cards';
-      const limit=(S.readingMode==='30m')?(S.perSection30m||5):(S.perSectionFull||15);
-      events.slice(0,limit).forEach(ev=>{
-        const fb=getFB(ev.id);
-        const card=document.createElement('div'); card.className='event';
-        card.innerHTML=`<div class="e-title">${esc(ev.title_zh||ev.title||'')}</div>
-          <div class="e-meta"><span>${esc(ev.source_hint||'')}</span><span>${esc(ev.date||'')} · ${ev.region==='cn'?'中国相关':'全球'}</span></div>
-          <div class="e-sum">${esc(ev.summary_zh||'')}</div>
-          <div class="e-links"><a class="link" href="${esc(ev.url||'#')}" target="_blank" rel="noopener">打开原文</a>
-            <div class="fb">
-              <button class="iconbtn ${fb&&fb.v===1?'active good':''}" title="有用">👍</button>
-              <button class="iconbtn ${fb&&fb.v===-1?'active bad':''}" title="无用">👎</button>
-            </div></div>`;
-        card.addEventListener('click',(e)=>{if(e.target&&e.target.classList.contains('iconbtn'))return; if(ev.url) window.open(ev.url,'_blank','noopener');});
-        const [g,b]=card.querySelectorAll('.iconbtn');
-        g.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,1);});
-        b.addEventListener('click',(e)=>{e.stopPropagation(); setFB(ev.id,-1);});
-        cards.appendChild(card);
+    nav.querySelectorAll('a[data-sid]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        activeSectionId = a.getAttribute('data-sid') || activeSectionId;
+        renderAll();
+        const el = document.querySelector(`[data-section="${CSS.escape(activeSectionId)}"]`);
+        if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
       });
-      wrap.appendChild(cards); main.appendChild(wrap);
     });
   }
-  q.addEventListener('input',()=>render());
-  document.getElementById('btnHome').addEventListener('click',()=>{main.scrollTo({top:0,behavior:'smooth'});});
-  render();
 
-  function renderSettings(tab){
-    tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
-    if(tab==='general'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">主题</div><div class="label">auto 跟随系统；dark/light 强制</div></div>
-        <select class="input" id="themeSel"><option value="auto">auto</option><option value="dark">dark</option><option value="light">light</option></select></div>
-        <div class="note">建议固定“30分钟集中阅读”，其余时间关闭碎片化推送。</div>`;
-      const sel=document.getElementById('themeSel'); sel.value=S.theme;
-      sel.addEventListener('change',()=>{S.theme=sel.value; save(); applyTheme();});
-    } else if(tab==='layout'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">阅读模式</div><div class="label">30m：每栏 Top ${S.perSection30m}；full：每栏 Top ${S.perSectionFull}</div></div>
-        <select class="input" id="modeSel"><option value="30m">30m</option><option value="full">full</option></select></div>
-        <div class="row"><div><div style="font-size:13px;font-weight:850">30m 每栏条数</div><div class="label">建议 5</div></div><input class="input" id="n30" value="${S.perSection30m}"/></div>
-        <div class="row"><div><div style="font-size:13px;font-weight:850">Full 每栏条数</div><div class="label">建议 10–20</div></div><input class="input" id="nfull" value="${S.perSectionFull}"/></div>
-        <button class="btn" id="saveLayout" style="margin-top:6px">保存</button>`;
-      const mode=document.getElementById('modeSel'); mode.value=S.readingMode;
-      mode.addEventListener('change',()=>{S.readingMode=mode.value; save(); render();});
-      document.getElementById('saveLayout').addEventListener('click',()=>{
-        const n30=parseInt(document.getElementById('n30').value,10);
-        const nf=parseInt(document.getElementById('nfull').value,10);
-        S.perSection30m=isFinite(n30)?Math.max(3,Math.min(10,n30)):5;
-        S.perSectionFull=isFinite(nf)?Math.max(10,Math.min(20,nf)):15;
-        save(); render(); alert('已保存');
+  // Render main content
+  function renderMain(){
+    const main = byId('main');
+    if (!main) return;
+
+    const html = sections.map(sec => {
+      const sid = sec.id;
+      const title = sec.name || sid;
+      const brief = pickBrief(sec);
+      const events = Array.isArray(sec.events) ? sec.events.filter(e => eventPassesView(e) && eventPassesQuery(e)) : [];
+
+      const cards = events.map(ev => {
+        const sources = Array.isArray(ev.sources) ? ev.sources : [];
+        const srcHtml = sources.slice(0, 4).map(s => {
+          const u = s.url || '';
+          const t = s.title || s.source || 'source';
+          const site = s.source || '';
+          return `<div class="src"><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a><span class="muted">${esc(site)}</span></div>`;
+        }).join('');
+
+        return `<div class="card">
+          <div class="ct">${esc(ev.title_zh || '')}</div>
+          <div class="cs">${esc(ev.summary_zh || '')}</div>
+          <div class="sources">${srcHtml}</div>
+        </div>`;
+      }).join('');
+
+      return `<section class="section" data-section="${esc(sid)}">
+        <div class="st">${esc(title)}</div>
+        ${brief ? `<div class="sb">${esc(brief)}</div>` : ''}
+        ${cards || `<div class="empty">暂无内容（可能是数据源当日稀疏或被过滤）</div>`}
+      </section>`;
+    }).join('');
+
+    main.innerHTML = html || `<div class="empty">没有可渲染的内容：DIGEST.sections 为空。</div>`;
+  }
+
+  // Render right panel KPIs
+  function renderKpis(){
+    const kMetals = byId('kMetals');
+    const kMacro = byId('kMacro');
+    if (!kMetals || !kMacro) return;
+
+    const metals = [];
+    const macro = [];
+
+    for (const k of kpis){
+      const id = (k.id || '').toLowerCase();
+      // crude routing by id / name
+      const bucket = (id.includes('lme') || id.includes('metal') || (k.name||'').includes('金属')) ? metals : macro;
+      bucket.push(k);
+    }
+
+    function kpiCard(k){
+      const name = k.name || k.display_name || k.id || '—';
+      const unit = k.unit || '';
+      const val = (k.value !== undefined) ? fmtNum(k.value) : '—';
+      const delta = (k.delta !== undefined && k.delta !== null) ? k.delta : null;
+      const color = k.color || '#64748B';
+      const deltaTxt = (delta === null) ? '' : (delta >= 0 ? `+${fmtNum(delta)}` : `${fmtNum(delta)}`);
+      const spark = k.spark_svg ? k.spark_svg : ''; // if generator provides
+      const series = Array.isArray(k.series) ? k.series : null;
+
+      let sparkHtml = '';
+      if (spark){
+        sparkHtml = `<div class="spark">${spark}</div>`;
+      } else if (series && series.length >= 2){
+        // ultra-light inline sparkline fallback
+        const w=120,h=26,p=2;
+        const min=Math.min(...series), max=Math.max(...series), span=(max-min)||1;
+        const pts=series.map((v,i)=> {
+          const x=p+(w-2*p)*(i/(series.length-1));
+          const y=p+(h-2*p)*(1-((v-min)/span));
+          return [x,y];
+        });
+        let d=`M ${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+        for (let i=1;i<pts.length;i++) d += ` L ${pts[i][0].toFixed(2)} ${pts[i][1].toFixed(2)}`;
+        sparkHtml = `<svg viewBox="0 0 ${w} ${h}" class="spark"><path d="${d}" fill="none" stroke="${esc(color)}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
+      } else {
+        sparkHtml = `<div class="muted">—</div>`;
+      }
+
+      return `<div class="kpi">
+        <div class="k-head">
+          <span class="dot" style="background:${esc(color)}"></span>
+          <span class="k-name">${esc(name)}</span>
+          <span class="k-val">${esc(val)}${unit ? `<span class="k-unit">${esc(unit)}</span>`:''}</span>
+        </div>
+        ${deltaTxt ? `<div class="k-delta">${esc(deltaTxt)}</div>` : `<div class="k-delta muted"> </div>`}
+        ${sparkHtml}
+      </div>`;
+    }
+
+    kMetals.innerHTML = metals.map(kpiCard).join('') || `<div class="muted">暂无 KPI</div>`;
+    kMacro.innerHTML = macro.map(kpiCard).join('') || `<div class="muted">暂无 KPI</div>`;
+  }
+
+  function bindControls(){
+    // pills
+    document.querySelectorAll('.pill[data-view]').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        view = p.getAttribute('data-view') || 'all';
+        renderAll();
       });
-    } else if(tab==='algo'){
-      pbody.innerHTML=`<div class="row"><div><div style="font-size:13px;font-weight:850">时效</div><div class="label">timeliness</div></div><input class="input" id="w1" value="${W.timeliness.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">权威</div><div class="label">authority</div></div><input class="input" id="w2" value="${W.authority.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">相关</div><div class="label">relevance</div></div><input class="input" id="w3" value="${W.relevance.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">影响</div><div class="label">impact</div></div><input class="input" id="w4" value="${W.impact.toFixed(2)}"/></div>
-      <div class="row"><div><div style="font-size:13px;font-weight:850">新颖</div><div class="label">novelty</div></div><input class="input" id="w5" value="${W.novelty.toFixed(2)}"/></div>
-      <button class="btn" id="saveW" style="margin-top:6px">保存并归一化</button>
-      <div class="note">生成端可读取该权重以实现“选题闭环”。</div>`;
-      document.getElementById('saveW').addEventListener('click',()=>{
-        const vals=[parseFloat(w1.value),parseFloat(w2.value),parseFloat(w3.value),parseFloat(w4.value),parseFloat(w5.value)]
-          .map(v=>isFinite(v)?Math.max(0.01,Math.min(0.9,v)):0.2);
-        const sum=vals.reduce((a,b)=>a+b,0);
-        W.timeliness=+(vals[0]/sum).toFixed(2); W.authority=+(vals[1]/sum).toFixed(2); W.relevance=+(vals[2]/sum).toFixed(2);
-        W.impact=+(vals[3]/sum).toFixed(2); W.novelty=+(vals[4]/sum).toFixed(2);
-        save(); alert('已保存：'+JSON.stringify(W));
+    });
+
+    // search
+    const q = byId('q');
+    if (q){
+      q.addEventListener('input', () => {
+        query = q.value.trim();
+        renderAll();
       });
-    } else if(tab==='config'){
-      pbody.innerHTML=`<div style="font-size:13px;font-weight:900;margin-bottom:6px">自由扩展类目与数据维度</div>
-      <div class="note"><b>类目</b>：在 <code>digest_config.json</code> 的 <code>sections</code> 里新增一条，生成器会自动渲染导航与板块。<br><br>
-      <b>数据维度</b>：在 <code>digest_config.json</code> 的 <code>kpis</code> 里新增 FRED 序列（或未来接入 LME 授权源），右侧会自动出现 KPI 卡 + 趋势小图。</div>`;
+    }
+
+    // settings overlay open/close
+    const overlay = byId('overlay');
+    const btnSettings = byId('btnSettings');
+    const btnClose = byId('btnClose');
+    if (btnSettings && overlay){
+      btnSettings.addEventListener('click', () => overlay.classList.add('show'));
+    }
+    if (btnClose && overlay){
+      btnClose.addEventListener('click', () => overlay.classList.remove('show'));
+    }
+    // home scroll
+    const btnHome = byId('btnHome');
+    if (btnHome){
+      btnHome.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
     }
   }
-  tabs.forEach(t=>t.addEventListener('click',()=>renderSettings(t.dataset.tab)));
-  document.getElementById('btnSettings').addEventListener('click',()=>{overlay.classList.add('open'); renderSettings('general');});
-  document.getElementById('btnClose').addEventListener('click',()=>overlay.classList.remove('open'));
-  overlay.addEventListener('click',(e)=>{if(e.target===overlay) overlay.classList.remove('open');});
 
-  document.getElementById('btnExport').addEventListener('click',()=>{
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
-    const payload={generated_at:new Date().toISOString(),items:[]};
-    for(const k of keys){ try{const o=JSON.parse(localStorage.getItem(k)); payload.items.push({id:k.replace(fbPrefix,''),v:o.v,t:o.t});}catch(e){} }
-    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
-    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='digest_feedback_'+(D.date||'')+'.json'; a.click();
-  });
-  document.getElementById('btnClearFB').addEventListener('click',()=>{
-    const keys=Object.keys(localStorage).filter(k=>k.startsWith(fbPrefix));
-    keys.forEach(k=>localStorage.removeItem(k)); updateFBCount(); try { render(); } catch (e) { console.error(e); main.innerHTML = '<div class="section"><div class="section-head"><div><div class="sect-title">渲染失败</div><div class="sect-sub">请查看浏览器控制台错误</div></div></div><div class="brief">'+String(e)+'</div></div>'; }
+  function renderAll(){
+    if (!activeSectionId && sections[0]?.id) activeSectionId = sections[0].id;
+    renderNav();
+    renderMain();
+    renderKpis();
 
-  });
+    // feedback count (localStorage)
+    try{
+      const fb = JSON.parse(localStorage.getItem('digest_fb') || '[]');
+      const fbCount = byId('fbCount');
+      if (fbCount) fbCount.textContent = String(Array.isArray(fb) ? fb.length : 0);
+    }catch(e){}
+  }
+
+  // Boot
+  bindControls();
+  renderAll();
 })();
 </script>
 </body></html>
