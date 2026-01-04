@@ -121,7 +121,7 @@ button,input,select,textarea{font-family:var(--font)}
   box-shadow:0 16px 48px rgba(0,0,0,0.18);
 }
 #settingsModal .panel h3{ margin:0 0 8px 0; font-size:16px; }
-#settingsModal .panel pre{
+#settingsModal .panel pre{ white-space:pre-wrap; word-break:break-word; overflow:auto;
   margin:10px 0 14px 0; padding:12px; border-radius:12px;
   background:rgba(148,163,184,0.12);
   border:1px solid rgba(148,163,184,0.25);
@@ -589,4 +589,87 @@ document.addEventListener("DOMContentLoaded", ()=>{
     </div>
   </div>
 </div>
+<script>
+/* === v15 PATCH v3: robust buttons (no ID dependency) + safer settings payload === */
+
+function _findClickableByText(txt){
+  const candidates = Array.from(document.querySelectorAll("button, a"));
+  return candidates.find(el => (el.textContent || "").trim() === txt) || null;
+}
+
+function _scrollAllToTop(){
+  // Window
+  try { window.scrollTo({top:0, behavior:"smooth"}); } catch(e){ window.scrollTo(0,0); }
+
+  // Scrollable containers (limited but robust)
+  const nodes = Array.from(document.querySelectorAll("div, main, section, aside"));
+  for (const el of nodes){
+    const cs = getComputedStyle(el);
+    const oy = cs.overflowY;
+    if ((oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight + 4){
+      try { el.scrollTo({top:0, behavior:"smooth"}); } catch(e){ el.scrollTop = 0; }
+    }
+  }
+}
+
+function _openSettingsModal(){
+  const modal = document.getElementById("settingsModal");
+  const pre = document.getElementById("settingsPre");
+  if (!modal) return;
+
+  const d = window.DIGEST || {};
+  // Show meta + KPI summary only (avoid massive payload)
+  const payload = {
+    date: d.date || d.meta?.date,
+    generated_at_utc: d.generated_at_utc || d.generatedAt || d.meta?.generated_at_utc,
+    sections: Array.isArray(d.sections) ? d.sections.map(s => ({id:s.id, title:s.title, items:(s.items||[]).length})) : undefined,
+    kpis: d.kpis ? d.kpis : (d.kpi_groups ? d.kpi_groups : undefined),
+  };
+
+  if (pre) pre.textContent = JSON.stringify(payload, null, 2);
+  modal.style.display = "flex";
+}
+
+function _closeSettingsModal(){
+  const modal = document.getElementById("settingsModal");
+  if (!modal) return;
+  modal.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  // Bind buttons by ID if present; otherwise bind by visible text.
+  const btnTop = document.getElementById("btnTop") || _findClickableByText("回到顶部");
+  if (btnTop){
+    btnTop.addEventListener("click", (e)=>{ e.preventDefault(); _scrollAllToTop(); });
+  }
+
+  const btnSettings = document.getElementById("btnSettings") || _findClickableByText("设置");
+  if (btnSettings){
+    btnSettings.addEventListener("click", (e)=>{ e.preventDefault(); _openSettingsModal(); });
+  }
+
+  const modal = document.getElementById("settingsModal");
+  const closeBtn = document.getElementById("settingsClose");
+  const copyBtn = document.getElementById("settingsCopy");
+  const pre = document.getElementById("settingsPre");
+
+  if (closeBtn) closeBtn.addEventListener("click", (e)=>{ e.preventDefault(); _closeSettingsModal(); });
+  if (modal) modal.addEventListener("click", (e)=>{ if (e.target === modal) _closeSettingsModal(); });
+  document.addEventListener("keydown", (e)=>{ if (e.key === "Escape") _closeSettingsModal(); });
+
+  if (copyBtn){
+    copyBtn.addEventListener("click", async (e)=>{
+      e.preventDefault();
+      try{
+        await navigator.clipboard.writeText(pre ? (pre.textContent || "") : "");
+        copyBtn.textContent = "已复制";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }catch(err){
+        copyBtn.textContent = "复制失败";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }
+    });
+  }
+});
+</script>
 </body></html>
