@@ -93,6 +93,42 @@ button,input,select,textarea{font-family:var(--font)}
 .dot{width:8px;height:8px;border-radius:999px;display:inline-block}
 .spark{width:100%;height:26px;margin-top:8px}
 .k-unit{opacity:.7;font-size:12px;margin-left:4px}
+/* === v15 PATCH: KPI color rule (red/green) + buttons === */
+:root{
+  --kpi-up:#16A34A;   /* green */
+  --kpi-down:#DC2626; /* red */
+  --kpi-flat:#64748B; /* slate */
+}
+.kpi-dot{ width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:8px; flex:0 0 auto;}
+.kpi-dot.up{ background:var(--kpi-up); }
+.kpi-dot.down{ background:var(--kpi-down); }
+.kpi-dot.flat{ background:var(--kpi-flat); }
+
+.kpi-spark path.up{ stroke:var(--kpi-up) !important; }
+.kpi-spark path.down{ stroke:var(--kpi-down) !important; }
+.kpi-spark path.flat{ stroke:var(--kpi-flat) !important; }
+
+#settingsModal{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(0,0,0,0.35); z-index:9999;
+}
+#settingsModal .panel{
+  width:min(720px, calc(100vw - 48px));
+  max-height:min(80vh, 720px);
+  overflow:auto;
+  background:#fff; border-radius:16px; padding:18px 18px 14px 18px;
+  border:1px solid rgba(148,163,184,0.35);
+  box-shadow:0 16px 48px rgba(0,0,0,0.18);
+}
+#settingsModal .panel h3{ margin:0 0 8px 0; font-size:16px; }
+#settingsModal .panel pre{
+  margin:10px 0 14px 0; padding:12px; border-radius:12px;
+  background:rgba(148,163,184,0.12);
+  border:1px solid rgba(148,163,184,0.25);
+  font-size:12px; line-height:1.45;
+}
+#settingsModal .actions{ display:flex; gap:10px; justify-content:flex-end; }
+
 </style></head>
 <body>
 <div class="container">
@@ -392,4 +428,165 @@ button,input,select,textarea{font-family:var(--font)}
   renderAll();
 })();
 </script>
+
+<script>
+/* === v15 PATCH: enforce KPI red/green + wire buttons === */
+function _kpiTrendClass(delta){
+  const d = Number(delta);
+  if (!isFinite(d) || d === 0) return "flat";
+  return d > 0 ? "up" : "down";
+}
+function _formatDelta(delta, deltaPct){
+  const d = Number(delta);
+  const p = Number(deltaPct);
+  let s1 = (isFinite(d) ? (d>0?"+":"") + d.toFixed(3) : "—");
+  if (isFinite(p)) s1 += " (" + (p>0?"+":"") + (p*100).toFixed(2) + "%)";
+  return s1;
+}
+function _renderSparkSVG(series, cls){
+  if (!Array.isArray(series) || series.length < 2) return "";
+  const w = 140, h = 34, pad = 3;
+  const nums = series.map(v => Number(v)).filter(v => isFinite(v));
+  if (nums.length < 2) return "";
+  const min = Math.min(...nums), max = Math.max(...nums);
+  const span = (max-min) || 1;
+  const innerW = w - pad*2, innerH = h - pad*2;
+  const pts = nums.map((v,i)=>{
+    const x = pad + innerW * (i/(nums.length-1));
+    const y = pad + innerH * (1-((v-min)/span));
+    return [x,y];
+  });
+  let d = `M ${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+  for(let i=1;i<pts.length;i++) d += ` L ${pts[i][0].toFixed(2)} ${pts[i][1].toFixed(2)}`;
+  return `
+    <svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+      <path class="${cls}" d="${d}" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  `;
+}
+
+(function(){
+  if (!window.DIGEST) return;
+
+  const originalRenderRight = window.renderRightPanel;
+  window.renderRightPanel = function(){
+    const digest = window.DIGEST || {};
+    const container = document.querySelector("#rightPanelKpis");
+    if (!container) return originalRenderRight ? originalRenderRight() : undefined;
+
+    const groups = digest.kpi_groups || digest.kpis || [];
+    const normGroups = Array.isArray(groups) && groups.length && groups[0] && groups[0].items
+      ? groups
+      : [{ title: "KPI", items: Array.isArray(groups) ? groups : [] }];
+
+    container.innerHTML = "";
+    normGroups.forEach(g=>{
+      const sec = document.createElement("div");
+      sec.className = "kpi-group";
+      sec.innerHTML = `<div class="kpi-group-title">${g.title || ""}</div>`;
+      const grid = document.createElement("div");
+      grid.className = "kpi-grid";
+
+      (g.items || []).forEach(m=>{
+        const delta = (m.delta != null) ? m.delta : (m.change != null ? m.change : 0);
+        const deltaPct = (m.delta_pct != null) ? m.delta_pct : (m.change_pct != null ? m.change_pct : null);
+        const cls = _kpiTrendClass(delta);
+        const val = (m.value != null && isFinite(Number(m.value))) ? Number(m.value) : null;
+
+        const card = document.createElement("div");
+        card.className = "kpi-card";
+
+        const name = m.display_name || m.name || m.title || m.key || "KPI";
+        const unit = m.unit || "";
+
+        card.innerHTML = `
+          <div class="kpi-top">
+            <div class="kpi-name">
+              <span class="kpi-dot ${cls}"></span>
+              <span>${name}</span>
+            </div>
+            <div class="kpi-value">${val==null ? "—" : (Number.isInteger(val) ? val.toString() : val.toFixed(3))} <span class="kpi-unit">${unit}</span></div>
+          </div>
+          <div class="kpi-sub ${cls}">${_formatDelta(delta, deltaPct)}</div>
+          <div class="kpi-spark-wrap">${_renderSparkSVG(m.series || m.trend || m.values || [], cls) || '<div class="kpi-spark-empty">—</div>'}</div>
+        `;
+        grid.appendChild(card);
+      });
+
+      sec.appendChild(grid);
+      container.appendChild(sec);
+    });
+
+    const ts = document.querySelector("#kpiUpdatedAt");
+    if (ts) ts.textContent = (digest.generated_at || digest.generatedAt || "—");
+  };
+})();
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const btnTop = document.querySelector("#btnTop");
+  if (btnTop){
+    btnTop.addEventListener("click", (e)=>{
+      e.preventDefault();
+      window.scrollTo({top:0, behavior:"smooth"});
+      const mid = document.querySelector("#midColumnScroll");
+      if (mid) mid.scrollTo({top:0, behavior:"smooth"});
+      const left = document.querySelector("#leftColumnScroll");
+      if (left) left.scrollTo({top:0, behavior:"smooth"});
+      const right = document.querySelector("#rightColumnScroll");
+      if (right) right.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  const btnSettings = document.querySelector("#btnSettings");
+  const modal = document.querySelector("#settingsModal");
+  const closeBtn = document.querySelector("#settingsClose");
+  const copyBtn = document.querySelector("#settingsCopy");
+  const pre = document.querySelector("#settingsPre");
+
+  function openSettings(){
+    if (!modal) return;
+    if (pre) pre.textContent = JSON.stringify(window.DIGEST?.meta || window.DIGEST || {}, null, 2);
+    modal.style.display = "flex";
+  }
+  function closeSettings(){
+    if (!modal) return;
+    modal.style.display = "none";
+  }
+
+  if (btnSettings) btnSettings.addEventListener("click", (e)=>{ e.preventDefault(); openSettings(); });
+  if (closeBtn) closeBtn.addEventListener("click", (e)=>{ e.preventDefault(); closeSettings(); });
+  if (modal) modal.addEventListener("click", (e)=>{ if (e.target === modal) closeSettings(); });
+  document.addEventListener("keydown", (e)=>{ if (e.key === "Escape") closeSettings(); });
+
+  if (copyBtn){
+    copyBtn.addEventListener("click", async (e)=>{
+      e.preventDefault();
+      try{
+        const txt = (pre && pre.textContent) ? pre.textContent : "";
+        await navigator.clipboard.writeText(txt);
+        copyBtn.textContent = "已复制";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }catch(err){
+        copyBtn.textContent = "复制失败";
+        setTimeout(()=>copyBtn.textContent="复制配置", 1200);
+      }
+    });
+  }
+
+  if (typeof window.renderRightPanel === "function") {
+    try { window.renderRightPanel(); } catch(e) {}
+  }
+});
+</script>
+<div id="settingsModal" aria-hidden="true">
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Settings">
+    <h3>设置</h3>
+    <div style="font-size:12px; opacity:0.75;">用于快速自检渲染输入（不会写回配置）。</div>
+    <pre id="settingsPre"></pre>
+    <div class="actions">
+      <button id="settingsCopy" class="btn">复制配置</button>
+      <button id="settingsClose" class="btn primary">关闭</button>
+    </div>
+  </div>
+</div>
 </body></html>
