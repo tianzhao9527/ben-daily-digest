@@ -94,7 +94,6 @@
     {"series": "PALUMUSDM", "title": "铝", "unit": "$/t", "lookback": 40},
     {"series": "PZINCUSDM", "title": "锌", "unit": "$/t", "lookback": 40},
     {"series": "PNICKUSDM", "title": "镍", "unit": "$/t", "lookback": 40},
-    {"series": "DCOILWTICO", "title": "WTI原油", "unit": "$/桶", "lookback": 40},
-    {"series": "GOLDPMGBD228NLBM", "title": "黄金", "unit": "$/盎司", "lookback": 40}
+    {"series": "DCOILWTICO", "title": "WTI原油", "unit": "$/桶", "lookback": 40}
   ]
 }

@@ -117,39 +117,44 @@ a:hover{text-decoration:underline}
   font-size:12px;line-height:1.7;color:var(--text);white-space:pre-wrap;
 }
 
-/* 卡片网格 */
-.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+/* 卡片网格 - 优化可读性 */
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .event-card{
-  background:var(--card);border:1px solid var(--line);border-radius:10px;
-  padding:14px;transition:all .15s;display:flex;flex-direction:column;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px;transition:all .15s;display:flex;flex-direction:column;
 }
-.event-card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,113,227,.05)}
+.event-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,113,227,.08)}
+.event-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .event-region{
-  display:inline-block;font-size:10px;font-weight:500;
-  padding:2px 6px;border-radius:4px;margin-bottom:6px;
+  display:inline-block;font-size:10px;font-weight:600;
+  padding:3px 8px;border-radius:4px;
 }
-.event-region.cn{background:rgba(255,59,48,.06);color:var(--danger)}
-.event-region.us{background:rgba(0,113,227,.06);color:var(--accent)}
-.event-region.eu{background:rgba(255,149,0,.06);color:#ff9500}
-.event-region.asia{background:rgba(52,199,89,.06);color:var(--success)}
+.event-region.cn{background:rgba(255,59,48,.08);color:var(--danger)}
+.event-region.us{background:rgba(0,113,227,.08);color:var(--accent)}
+.event-region.eu{background:rgba(255,149,0,.08);color:#ff9500}
+.event-region.asia{background:rgba(52,199,89,.08);color:var(--success)}
 .event-region.global{background:var(--chip);color:var(--muted)}
-.event-title{font-size:13px;font-weight:600;line-height:1.4;margin-bottom:6px;color:var(--text)}
-.event-summary{font-size:12px;line-height:1.6;color:var(--muted);flex:1;margin-bottom:10px}
-.event-sources{font-size:10px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.event-date{font-size:10px;color:var(--muted);font-weight:500}
+.event-title{font-size:14px;font-weight:600;line-height:1.5;margin-bottom:8px;color:var(--text)}
+.event-summary{font-size:13px;line-height:1.7;color:var(--muted);flex:1;margin-bottom:12px}
+.event-sources{font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
 .event-sources a{color:var(--accent);font-weight:500}
 .event-footer{
   display:flex;justify-content:space-between;align-items:center;
-  margin-top:8px;padding-top:8px;border-top:1px solid var(--line);
+  margin-top:10px;padding-top:10px;border-top:1px solid var(--line);
 }
+.event-score{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.score-bar{width:40px;height:4px;background:var(--chip);border-radius:2px;overflow:hidden}
+.score-fill{height:100%;background:var(--accent);border-radius:2px}
 .feedback-btns{display:flex;gap:4px}
 .fb-btn{
-  width:26px;height:26px;border:1px solid var(--line);background:transparent;
-  border-radius:5px;cursor:pointer;font-size:12px;transition:all .15s;color:var(--muted);
+  width:28px;height:28px;border:1px solid var(--line);background:transparent;
+  border-radius:6px;cursor:pointer;font-size:12px;transition:all .15s;color:var(--muted);
 }
 .fb-btn:hover{background:var(--chip)}
 .fb-btn.active.good{background:rgba(52,199,89,.1);border-color:var(--success);color:var(--success)}
 .fb-btn.active.bad{background:rgba(255,59,48,.1);border-color:var(--danger);color:var(--danger)}
-.empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:12px;background:var(--chip);border-radius:10px}
+.empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:13px;background:var(--chip);border-radius:10px}
 
 /* 右侧 */
 .right{min-height:0}
@@ -293,6 +298,7 @@ a:hover{text-decoration:underline}
     </div>
     <div class="settings-tabs">
       <button class="settings-tab active" data-tab="general">通用</button>
+      <button class="settings-tab" data-tab="sections">类目管理</button>
       <button class="settings-tab" data-tab="weights">重要性系数</button>
       <button class="settings-tab" data-tab="algo">算法</button>
       <button class="settings-tab" data-tab="data">数据源</button>
@@ -393,16 +399,25 @@ a:hover{text-decoration:underline}
             const evId = `${sec.id}-${idx}`;
             const fb = feedbackData[evId] || 0;
             const sources = (ev.sources || []).slice(0, 3);
+            const evDate = ev.date || (sources[0]?.published_at) || '';
+            const scorePercent = Math.round((ev.score || 0.5) * 100);
             return `
               <div class="event-card" data-evid="${evId}">
-                <span class="event-region ${ev.region || 'global'}">${regionLabels[ev.region] || '全球'}</span>
+                <div class="event-header">
+                  <span class="event-region ${ev.region || 'global'}">${regionLabels[ev.region] || '全球'}</span>
+                  <span class="event-date">${evDate || ''}</span>
+                </div>
                 <div class="event-title">${esc(ev.title_zh)}</div>
                 <div class="event-summary">${esc(ev.summary_zh)}</div>
                 <div class="event-sources">
                   ${sources.map(s => `<a href="${esc(s.url)}" target="_blank">${esc(s.source || s.title || '来源')}</a>`).join(' · ')}
                 </div>
                 <div class="event-footer">
-                  <span style="font-size:10px;color:var(--muted)">重要性: ${((ev.score || 0.5) * 100).toFixed(0)}%</span>
+                  <div class="event-score">
+                    <span>重要性</span>
+                    <div class="score-bar"><div class="score-fill" style="width:${scorePercent}%"></div></div>
+                    <span>${scorePercent}%</span>
+                  </div>
                   <div class="feedback-btns">
                     <button class="fb-btn ${fb === 1 ? 'active good' : ''}" data-fb="1" data-evid="${evId}">+</button>
                     <button class="fb-btn ${fb === -1 ? 'active bad' : ''}" data-fb="-1" data-evid="${evId}">-</button>
@@ -561,6 +576,35 @@ a:hover{text-decoration:underline}
           <div class="settings-row"><div class="settings-label">深色模式</div><div class="settings-toggle" id="toggleDark"></div></div>
         </div>
       `,
+      sections: `
+        <div class="settings-section">
+          <div class="settings-section-title">当前类目 (${sections.length}个)</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">修改类目需编辑 digest_config_v15.json 文件，T+1生效</p>
+          ${sections.map((sec, i) => `
+            <div class="settings-row">
+              <div class="settings-label">${i+1}. ${esc(sec.name)}<small>ID: ${esc(sec.id)}</small></div>
+              <div style="font-size:11px;color:var(--muted)">${sec.total_count || 0} 条</div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">添加新类目</div>
+          <p style="font-size:11px;color:var(--muted);line-height:1.6">
+            在 <code>digest_config_v15.json</code> 的 <code>sections</code> 数组中添加：
+          </p>
+          <div class="config-preview" style="margin-top:8px">{
+  "id": "new_section",
+  "name": "新板块名称",
+  "gnews_queries": [
+    "关键词1",
+    "关键词2"
+  ]
+}</div>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px">
+            提交后将在次日(T+1)生效
+          </p>
+        </div>
+      `,
       weights: `
         <div class="settings-section">
           <div class="settings-section-title">重要性系数</div>
@@ -579,32 +623,33 @@ a:hover{text-decoration:underline}
           </div>
           <div class="settings-row">
             <div class="settings-label">24小时内新闻<small>recency_24h</small></div>
-            <input type="number" class="settings-input" value="${weights.recency_24h || 1.2}" step="0.1" min="0.5" max="3">
+            <input type="number" class="settings-input" value="${weights.recency_24h || 1.3}" step="0.1" min="0.5" max="3">
           </div>
           <div class="settings-row">
-            <div class="settings-label">关键词匹配<small>keyword_match</small></div>
-            <input type="number" class="settings-input" value="${weights.keyword_match || 1.2}" step="0.1" min="0.5" max="3">
+            <div class="settings-label">48小时内新闻<small>recency_48h</small></div>
+            <input type="number" class="settings-input" value="${weights.recency_48h || 1.1}" step="0.1" min="0.5" max="3">
           </div>
         </div>
         <div class="settings-section">
-          <p style="font-size:11px;color:var(--muted)">修改配置文件 digest_config_v15.json 中的 importance_weights 字段后重新运行生成脚本</p>
+          <p style="font-size:11px;color:var(--muted)">修改 digest_config_v15.json 中的 importance_weights 字段后重新运行</p>
         </div>
       `,
       algo: `
         <div class="settings-section">
           <div class="settings-section-title">算法参数</div>
-          <div class="settings-row"><div class="settings-label">LLM提供商<small>翻译和摘要</small></div><div>${esc(meta.llm_provider || 'DeepSeek')}</div></div>
-          <div class="settings-row"><div class="settings-label">LLM模型</div><div>${esc(meta.llm_model || 'deepseek-chat')}</div></div>
+          <div class="settings-row"><div class="settings-label">LLM提供商<small>支持自动fallback</small></div><div>${esc(meta.llm_provider || 'DeepSeek/Qwen/OpenAI')}</div></div>
           <div class="settings-row"><div class="settings-label">每板块条目数<small>items_per_section</small></div><div>${meta.items_per_section || 15}</div></div>
           <div class="settings-row"><div class="settings-label">原始抓取限制<small>limit_raw</small></div><div>${meta.limit_raw || 25}</div></div>
           <div class="settings-row"><div class="settings-label">中国查询增强</div><div>${meta.china_queries_enabled ? '已启用' : '未启用'}</div></div>
           <div class="settings-row"><div class="settings-label">arXiv论文抓取</div><div>${meta.arxiv_enabled ? '已启用' : '未启用'}</div></div>
         </div>
         <div class="settings-section">
-          <div class="settings-section-title">API密钥配置</div>
-          <p style="font-size:11px;color:var(--muted);line-height:1.6">
-            在 GitHub Secrets 中设置 <code>DEEPSEEK_API_KEY</code><br>
-            路径: 仓库 Settings → Secrets and variables → Actions → New repository secret
+          <div class="settings-section-title">API密钥配置 (GitHub Secrets)</div>
+          <p style="font-size:11px;color:var(--muted);line-height:1.8">
+            支持多LLM自动切换，按优先级：<br>
+            1. <code>DEEPSEEK_API_KEY</code> - DeepSeek (推荐)<br>
+            2. <code>QWEN_API_KEY</code> - 通义千问<br>
+            3. <code>OPENAI_API_KEY</code> - OpenAI GPT
           </p>
         </div>
       `,
@@ -615,6 +660,11 @@ a:hover{text-decoration:underline}
           <div class="settings-row"><div class="settings-label">新闻数据<small>Google News RSS</small></div><div style="color:var(--success)">正常</div></div>
           <div class="settings-row"><div class="settings-label">中国新闻<small>Google News zh-CN</small></div><div style="color:var(--success)">已启用</div></div>
           <div class="settings-row"><div class="settings-label">学术论文<small>arXiv API</small></div><div style="color:var(--success)">已启用</div></div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">定时任务</div>
+          <div class="settings-row"><div class="settings-label">抓取时间</div><div>北京时间 07:00</div></div>
+          <div class="settings-row"><div class="settings-label">时效性过滤</div><div>7天内</div></div>
         </div>
       `,
       config: `

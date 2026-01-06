@@ -110,6 +110,7 @@ class Event:
     summary_zh: str
     region: str = "global"
     score: float = 0.5
+    date: str = ""
     sources: list = dataclasses.field(default_factory=list)
 
 # -------------------------
@@ -415,16 +416,98 @@ def _spark_svg(values: list[float], stroke: str) -> str:
     return f'<svg class="spark" viewBox="0 0 100 44" preserveAspectRatio="none"><path d="{d}" stroke="{stroke}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 # -------------------------
-# DeepSeek API (替代OpenAI)
+# 多LLM API支持 (DeepSeek -> Qwen -> OpenAI)
 # -------------------------
 
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+QWEN_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 
-def _deepseek_headers() -> dict:
-    key = os.environ.get("DEEPSEEK_API_KEY", "")
-    if not key:
-        raise RuntimeError("DEEPSEEK_API_KEY is not set")
-    return {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+def _get_llm_config() -> list[dict]:
+    """返回可用的LLM配置列表，按优先级排序"""
+    configs = []
+    
+    # DeepSeek
+    if os.environ.get("DEEPSEEK_API_KEY"):
+        configs.append({
+            "name": "DeepSeek",
+            "url": DEEPSEEK_URL,
+            "key": os.environ["DEEPSEEK_API_KEY"],
+            "model": "deepseek-chat",
+        })
+    
+    # Qwen (阿里通义千问)
+    if os.environ.get("QWEN_API_KEY"):
+        configs.append({
+            "name": "Qwen",
+            "url": QWEN_URL,
+            "key": os.environ["QWEN_API_KEY"],
+            "model": "qwen-plus",
+        })
+    
+    # OpenAI
+    if os.environ.get("OPENAI_API_KEY"):
+        configs.append({
+            "name": "OpenAI",
+            "url": OPENAI_URL,
+            "key": os.environ["OPENAI_API_KEY"],
+            "model": "gpt-4o-mini",
+        })
+    
+    return configs
+
+def llm_chat_json(messages: list[dict], *, timeout=(15, 120), max_tokens: int = 3000) -> tuple[dict, str]:
+    """调用LLM API，自动fallback到下一个可用的模型
+    返回: (结果dict, 使用的模型名称)
+    """
+    configs = _get_llm_config()
+    
+    if not configs:
+        raise RuntimeError("No LLM API key configured. Set DEEPSEEK_API_KEY, QWEN_API_KEY, or OPENAI_API_KEY")
+    
+    last_error = None
+    
+    for cfg in configs:
+        try:
+            log(f"[digest] trying LLM: {cfg['name']} ({cfg['model']})")
+            
+            payload = {
+                "model": cfg["model"],
+                "messages": messages,
+                "temperature": 0.2,
+                "max_tokens": max_tokens,
+            }
+            
+            headers = {
+                "Authorization": f"Bearer {cfg['key']}",
+                "Content-Type": "application/json",
+            }
+            
+            def _post() -> requests.Response:
+                r = requests.post(cfg["url"], headers=headers, 
+                                 data=json.dumps(payload), timeout=timeout)
+                if r.status_code >= 400:
+                    raise requests.HTTPError(f"{r.status_code} {r.text[:300]}", response=r)
+                return r
+            
+            resp = retry(_post, name=cfg["name"], tries=2, base_sleep=1.5)
+            data = resp.json()
+            content = data["choices"][0]["message"]["content"]
+            log(f"[digest] {cfg['name']} response length: {len(content)}")
+            
+            obj = extract_first_json_object(content)
+            if obj is None:
+                log(f"[digest] {cfg['name']} non-JSON: {content[:200]}...")
+                raise ValueError(f"{cfg['name']} did not return JSON")
+            
+            return obj, cfg["name"]
+            
+        except Exception as e:
+            log(f"[digest] {cfg['name']} failed: {type(e).__name__}: {e}")
+            last_error = e
+            continue
+    
+    raise last_error or RuntimeError("All LLM providers failed")
 
 def fix_json_string(s: str) -> str:
     # 移除markdown代码块
@@ -518,41 +601,16 @@ def extract_first_json_object(text: str) -> dict | None:
                     return None
     return None
 
-def deepseek_chat_json(messages: list[dict], *, timeout=(15, 120), max_tokens: int = 3000) -> dict:
-    """调用DeepSeek API"""
-    # 不使用response_format，通过prompt强制JSON输出
-    payload = {
-        "model": "deepseek-chat",
-        "messages": messages,
-        "temperature": 0.2,
-        "max_tokens": max_tokens,
-    }
-
-    def _post() -> requests.Response:
-        r = requests.post(DEEPSEEK_URL, headers=_deepseek_headers(), 
-                         data=json.dumps(payload), timeout=timeout)
-        if r.status_code >= 400:
-            raise requests.HTTPError(f"{r.status_code} {r.text[:400]}", response=r)
-        return r
-
-    resp = retry(_post, name="deepseek", tries=3, base_sleep=2.0)
-    data = resp.json()
-    content = data["choices"][0]["message"]["content"]
-    log(f"[digest] deepseek raw response length: {len(content)}")
-    
-    obj = extract_first_json_object(content)
-    if obj is None:
-        # 记录原始响应以便调试
-        log(f"[digest] deepseek non-JSON response: {content[:500]}...")
-        raise ValueError("DeepSeek did not return JSON object")
-    return obj
+# llm_chat_json 已在上面定义
 
 # -------------------------
 # LLM Section Pack (强制中文翻译+结构化总结)
 # -------------------------
 
-def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event]]:
-    """使用DeepSeek生成中文摘要和事件卡"""
+def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event], str]:
+    """使用LLM生成中文摘要和事件卡
+    返回: (brief_zh, events, llm_name)
+    """
     
     lines = []
     for it in raw_items[: min(len(raw_items), max(18, items_per_section * 2))]:
@@ -571,12 +629,13 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
 【重要】你必须只返回一个JSON对象，不要有任何其他文字、markdown或代码块。
 
 JSON格式：
-{"brief_zh":"板块总结(中文,300字,包含【核心动态】【趋势研判】【决策参考】三部分)","events":[{"title_zh":"中文标题(20字内)","summary_zh":"中文摘要(100字)","region":"cn或global","score":0.5,"sources":[{"title":"原标题","url":"链接","source":"来源"}]}]}
+{"brief_zh":"板块总结(中文,300字,包含【核心动态】【趋势研判】【决策参考】三部分)","events":[{"title_zh":"中文标题(20字内)","summary_zh":"中文摘要(100字)","region":"cn或global","score":0.5,"date":"YYYY-MM-DD","sources":[{"title":"原标题","url":"链接","source":"来源"}]}]}
 
 要求：
 1. 所有英文必须翻译成中文
 2. 优先选择中国相关新闻(is_china=true)
-3. 只返回JSON，不要任何解释"""
+3. date字段保留原始日期
+4. 只返回JSON，不要任何解释"""
 
     user_content = f"板块：{section.name}\n新闻列表：\n{json.dumps(lines, ensure_ascii=False)}\n\n请生成{items_per_section}条events，只返回JSON："
 
@@ -585,7 +644,7 @@ JSON格式：
         {"role": "user", "content": user_content},
     ]
     
-    obj = deepseek_chat_json(messages, max_tokens=3500)
+    obj, llm_name = llm_chat_json(messages, max_tokens=3500)
 
     brief_zh = (obj.get("brief_zh") or "").strip()
     evs = obj.get("events") or []
@@ -600,6 +659,7 @@ JSON格式：
                 if region not in ("cn", "us", "eu", "asia", "global"):
                     region = guess_region(title_zh)
                 score = float(e.get("score") if e.get("score") is not None else 0.5)
+                date = str(e.get("date") or "")[:10]
                 sources = e.get("sources") if isinstance(e.get("sources"), list) else []
                 sources2 = []
                 for s in sources[:4]:
@@ -608,17 +668,19 @@ JSON格式：
                             "title": str(s.get("title") or "")[:140],
                             "url": str(s.get("url") or ""),
                             "source": str(s.get("source") or ""),
-                            "published_at": str(s.get("date") or s.get("published_at") or ""),
+                            "published_at": date or str(s.get("date") or s.get("published_at") or ""),
                         })
                 if title_zh and summary_zh:
-                    events.append(Event(title_zh=title_zh, summary_zh=summary_zh, region=region, score=score, sources=sources2))
+                    ev = Event(title_zh=title_zh, summary_zh=summary_zh, region=region, score=score, sources=sources2)
+                    ev.date = date  # 添加日期属性
+                    events.append(ev)
             except:
                 continue
 
     if len(events) < max(2, items_per_section // 4):
         raise ValueError(f"LLM returned too few events: {len(events)}")
     
-    return brief_zh, events
+    return brief_zh, events, llm_name
 
 # -------------------------
 # Top 5 重要新闻生成
@@ -671,7 +733,8 @@ def llm_generate_top5_summary(events: list[dict]) -> list[dict]:
     ]
     
     try:
-        obj = deepseek_chat_json(messages, max_tokens=1500)
+        obj, llm_name = llm_chat_json(messages, max_tokens=1500)
+        log(f"[digest] top5 generated by {llm_name}")
         return obj.get("top5", [])
     except Exception as e:
         log(f"[digest] top5 summary failed: {e}")
@@ -706,6 +769,7 @@ def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_secti
             summary_zh=summary,
             region=it.region,
             score=0.6 if it.region == "cn" else 0.4,
+            date=it.published_at or "",
             sources=[{"title": it.title[:100], "url": it.url, "source": it.source, "published_at": it.published_at or ""}],
         ))
     
@@ -858,16 +922,18 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
 
         brief_zh = ""
         events: list[Event] = []
+        llm_used = ""
         if raw_items:
             try:
-                brief_zh, events = llm_section_pack(sec, raw_items, items_per_section=items_per_section)
-                log(f"[digest] llm pack success ({sid}): events={len(events)}")
+                brief_zh, events, llm_used = llm_section_pack(sec, raw_items, items_per_section=items_per_section)
+                log(f"[digest] llm pack success ({sid}) by {llm_used}: events={len(events)}")
             except Exception as e:
                 log(f"[digest] llm pack failed ({sid}): {type(e).__name__}: {e}")
                 traceback.print_exc()
                 brief_zh, events = fallback_pack(sec, raw_items, items_per_section=items_per_section)
+                llm_used = "fallback"
         else:
-            brief_zh = "【核心动态】今日该板块暂无可用内容。\n【关键数据】无\n【趋势研判】无\n【决策参考】请关注其他信息源。"
+            brief_zh = "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。"
             events = []
 
         cn_events = sum(1 for e in events if e.region == "cn")
