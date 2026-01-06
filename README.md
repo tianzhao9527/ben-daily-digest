@@ -1,176 +1,178 @@
-# Ben Daily Digest v15 - 完整修复版
+# Ben's Daily Brief v2
+
+干净的苹果风格新闻简报系统，使用 DeepSeek API 进行翻译和摘要。
 
 ## 修复内容
 
-### 1. ✅ 设置面板显示优化
-- **问题**: 设置只显示JSON代码
-- **修复**: 重新设计设置面板，包含5个选项卡:
-  - 通用: 基本信息、深色模式
-  - 算法调优: LLM模型、每板块条目数、原始抓取限制
-  - 显示: 卡片布局、反馈按钮、来源链接开关
-  - 数据源: FRED、Google News状态
-  - 配置: 完整配置导出
+| 问题 | 状态 |
+|------|------|
+| 去掉所有emoji | ✅ 已移除 |
+| 标题改为 Ben's Daily Brief | ✅ 已修改 |
+| 设置显示重要性系数 | ✅ 新增"重要性系数"选项卡 |
+| 字体大小优化 | ✅ 统一使用 SF Pro 字体系统 |
+| 使用 DeepSeek 替代 GPT | ✅ 已切换 |
+| 置顶 Top 5 重要新闻 | ✅ 新增决策要点板块 |
+| 全球新闻翻译成中文 | ✅ LLM强制翻译 |
+| 板块结构化总结 | ✅ 四段式结构输出 |
+| 研究雷达(arXiv)无内容 | ✅ 修复arXiv API查询 |
+| 新闻时效性 | ✅ 只保留48小时内新闻，24小时内加权 |
+| 每日定时抓取 | ✅ 北京时间每天上午7点 |
+| 增加美股指数 | ✅ 标普500/纳斯达克/道琼斯/VIX |
 
-### 2. ✅ 字体一致性
-- **问题**: 框架字体不一致
-- **修复**: 统一使用 `--font-sans` CSS变量，包含:
-  - -apple-system
-  - SF Pro Display/Text
-  - PingFang SC (中文)
-  - Microsoft YaHei
-  - Noto Sans CJK SC
+## 调度时间
 
-### 3. ✅ 算法调优选项
-- **问题**: 设置缺少算法调优内容
-- **修复**: 新增算法调优面板，显示:
-  - LLM模型 (gpt-4o-mini)
-  - items_per_section (每板块条目数)
-  - limit_raw (原始抓取限制)
-  - china_queries_enabled (中国查询增强)
-  - 调优建议说明
+- **北京时间每天上午 7:00** 自动运行
+- UTC 时间: 前一天 23:00
+- 也可以随时手动触发
 
-### 4. ✅ 中间栏卡片化布局
-- **问题**: 内容没有板块化、方格化
-- **修复**: 
-  - 2列网格布局 (cards-grid)
-  - 卡片悬停效果
-  - 中国相关卡片左侧红色边框标识
+## 新增 KPI 指标
 
-### 5. ✅ 反馈按钮
-- **问题**: 没有给算法反馈的功能
-- **修复**: 
-  - 每个事件卡底部添加 👍/👎 按钮
-  - 反馈数据存储在 localStorage
-  - 右侧栏显示反馈统计
-  - 支持导出/清空反馈
+### 美股指数
+- 标普500 (SP500)
+- 纳斯达克 (NASDAQCOM)  
+- 道琼斯 (DJIA)
+- VIX恐慌指数 (VIXCLS)
 
-### 6. ✅ 板块总结与决策建议
-- **问题**: 每个板块顶部没有总结性文字和决策建议
-- **修复**:
-  - Python脚本增强LLM prompt，要求生成:
-    - 【今日主线】
-    - 【关键变化】
-    - 【决策建议】
-  - 模板用渐变背景高亮显示摘要区
+### 宏观指标
+- 美债10Y/2Y
+- USD/CNY 汇率
+- 美元指数
 
-### 7. ✅ 中文翻译
-- **问题**: 简要内容和标题没有中文翻译
-- **修复**:
-  - LLM prompt明确要求所有输出为中文
-  - 英文新闻强制翻译
-  - brief_zh 300-500字中文摘要
+### 大宗商品
+- WTI原油
+- 黄金
 
-### 8. ✅ 中国相关新闻
-- **问题**: 每次生成都没有中国相关新闻
-- **修复**:
-  - 新增 `CHINA_QUERIES` 字典，为每个板块添加专属中国搜索词
-  - 使用 zh-CN 语言参数查询 Google News
-  - 增强中国关键词检测 (80+ 关键词)
-  - 中国相关新闻标记为 region="cn"
-  - 左侧导航显示中国新闻数量
+### 金属价格
+- 铜、铝、锌、镍
 
-### 9. ✅ KPI颜色匹配
-- **问题**: 右侧栏数据颜色没有按趋势线匹配
-- **修复**:
-  - KPI值颜色与趋势线颜色一致
-  - 上涨: #16A34A (绿色)
-  - 下跌: #DC2626 (红色)
-  - 持平: #64748B (灰色)
+## DeepSeek API 配置
 
-## 文件清单
+### 1. 获取 API Key
 
+1. 访问 [DeepSeek Platform](https://platform.deepseek.com/)
+2. 注册/登录账号
+3. 进入 API Keys 页面
+4. 创建新的 API Key
+
+### 2. 设置 GitHub Secrets
+
+1. 进入你的 GitHub 仓库
+2. 点击 **Settings** → **Secrets and variables** → **Actions**
+3. 点击 **New repository secret**
+4. 设置:
+   - Name: `DEEPSEEK_API_KEY`
+   - Secret: 你的 DeepSeek API Key
+5. 点击 **Add secret**
+
+## 重要性系数配置
+
+在 `digest_config_v15.json` 中修改：
+
+```json
+{
+  "importance_weights": {
+    "china_related": 1.5,    // 中国相关新闻权重 (建议 1.0-2.0)
+    "source_tier1": 1.3,     // 一级来源权重 (Bloomberg, Reuters, FT)
+    "source_tier2": 1.1,     // 二级来源权重 (WSJ, SCMP)
+    "recency_24h": 1.2,      // 24小时内新闻权重
+    "keyword_match": 1.2     // 关键词匹配权重
+  }
+}
 ```
-ben-daily-digest-FIXED/
-├── .github/
-│   └── workflows/
-│       └── generate.yml      # GitHub Actions 配置
-├── news_digest_generator_v15.py  # Python脚本 (871行)
-├── daily_digest_template_v15_apple.html  # HTML模板 (1064行)
-├── digest_config_v15.json    # 配置文件
-├── requirements.txt          # Python依赖
-├── CNAME                     # GitHub Pages域名
-└── .gitignore
-```
+
+数值含义：
+- `1.0` = 正常权重
+- `1.5` = 提升 50%
+- `2.0` = 提升 100%
 
 ## 部署步骤
 
-1. **下载修复包**
-   - 下载 `ben-daily-digest-FIXED.zip`
+```bash
+# 1. 克隆你的仓库
+git clone https://github.com/YOUR_USERNAME/ben-daily-digest.git
+cd ben-daily-digest
 
-2. **替换GitHub仓库**
-   ```bash
-   # 克隆仓库
-   git clone https://github.com/your-username/ben-daily-digest.git
-   cd ben-daily-digest
-   
-   # 删除旧文件
-   rm -rf *
-   
-   # 解压修复包
-   unzip ben-daily-digest-FIXED.zip
-   mv ben-daily-digest-FIXED/* .
-   rm -rf ben-daily-digest-FIXED
-   
-   # 提交
-   git add -A
-   git commit -m "v15 complete fix: UI, China news, settings, feedback"
-   git push
-   ```
+# 2. 删除旧文件
+rm -rf *
 
-3. **手动触发 GitHub Actions**
-   - 进入仓库 → Actions → generate.yml → Run workflow
+# 3. 解压新版本
+unzip ben-daily-digest-v2.zip
+mv ben-daily-digest-v2/* .
+rm -rf ben-daily-digest-v2
 
-4. **验证**
-   - 检查 Actions 日志，确认:
-     - `kpi done: 9` 所有KPI有值
-     - `gnews-cn` 中国新闻查询成功
-     - `llm pack success` LLM摘要成功
-   - 访问页面，确认:
-     - 设置面板显示完整UI
-     - 中间栏卡片布局正常
-     - 有中国相关新闻 (红色边框)
-     - KPI颜色与趋势线匹配
+# 4. 提交推送
+git add -A
+git commit -m "v2: DeepSeek + Top5 + Clean UI"
+git push
 
-## 技术改进
+# 5. 设置 DEEPSEEK_API_KEY (见上方说明)
 
-### JSON解析增强
-```python
-def fix_json_string(s: str) -> str:
-    # 修复缺少逗号: "value"\n"key": → "value","key":
-    s = re.sub(r'"\s*\n\s*"([^"]+)":', r'","\1":', s)
-    # 修复数字后缺少逗号
-    s = re.sub(r'(\d)\s*\n\s*"', r'\1,\n"', s)
-    # ...更多修复
+# 6. 手动触发 Actions
+# GitHub → Actions → Generate Daily Digest → Run workflow
 ```
 
-### 中国新闻查询
-```python
-CHINA_QUERIES = {
-    "macro": ["China PBOC interest rate", "人民币 汇率 央行", ...],
-    "metals": ["China copper aluminum demand", "中国 有色金属 进口", ...],
-    # 每个板块都有专属查询
-}
+## 文件结构
 
-# 使用中文Google News
-items = fetch_google_news_items(q, hl="zh-CN", gl="CN", ceid="CN:zh-Hans")
+```
+├── .github/
+│   └── workflows/
+│       └── generate.yml      # GitHub Actions 配置
+├── news_digest_generator_v15.py  # Python 生成脚本
+├── daily_digest_template_v15_apple.html  # HTML 模板
+├── digest_config_v15.json    # 配置文件 (重要性系数在这里)
+├── requirements.txt          # Python 依赖
+└── CNAME                     # GitHub Pages 域名
 ```
 
-### LLM Prompt增强
-```python
-sys_prompt = """
-- brief_zh必须包含"决策建议"部分
-- 优先选择中国相关的新闻(is_china_related=true)
-- 所有标题和摘要必须是中文
-"""
-```
+## 新增功能
 
-## 注意事项
+### Top 5 决策要点
 
-1. **API限制**: Google News RSS 可能有访问频率限制，建议合理设置抓取数量
-2. **LLM成本**: 使用 gpt-4o-mini 降低成本，如需更高质量可改用 gpt-4o
-3. **反馈数据**: 存储在浏览器 localStorage，清除浏览器数据会丢失
+每日自动选出最重要的 5 条新闻，显示在页面顶部，包含：
+- 新闻标题
+- 决策导向的总结 (200字以内)
+- 建议采取的行动
+
+### 板块结构化总结
+
+每个板块的摘要使用四段式结构：
+- 【核心动态】今日主要事件
+- 【关键数据】重要数据变化
+- 【趋势研判】短期走势判断
+- 【决策参考】建议采取的行动
+
+### arXiv 研究雷达
+
+自动抓取人工智能、机器学习、大语言模型相关的最新论文，翻译成中文。
+
+## 验证清单
+
+运行后检查 GitHub Actions 日志，确认：
+- `[digest] boot v15-DeepSeek` 显示
+- `[digest] arxiv arxiv entries=XX` arXiv 抓取成功
+- `[digest] llm pack success` LLM 翻译成功
+- `[digest] top 5 done` Top 5 生成成功
+
+## 故障排除
+
+### DeepSeek API 调用失败
+
+1. 检查 API Key 是否正确设置
+2. 检查 DeepSeek 账户余额
+3. 查看 Actions 日志中的具体错误
+
+### arXiv 无内容
+
+1. arXiv API 可能有访问频率限制
+2. 检查网络连接
+3. 尝试修改 `arxiv_query` 为更简单的查询
+
+### 翻译质量问题
+
+可以尝试在 Python 脚本中调整 DeepSeek 的 `temperature` 参数（当前为 0.3）。
 
 ---
 
-修复版本: v15-FIXED  
-日期: 2026-01-06
+版本: v2.0  
+日期: 2026-01-07  
+LLM: DeepSeek Chat

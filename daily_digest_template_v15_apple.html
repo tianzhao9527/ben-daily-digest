@@ -1,549 +1,300 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Daily Digest · {{DATE}}</title>
+<title>{{TITLE}}</title>
 <style>
-/* ========== 基础变量 ========== */
 :root{
   --bg:#f5f5f7;
   --card:#fff;
   --text:#1d1d1f;
   --muted:#86868b;
-  --line:rgba(0,0,0,.08);
-  --shadow:0 4px 24px rgba(0,0,0,.06);
-  --r:16px;
-  --r2:12px;
+  --line:rgba(0,0,0,.06);
+  --shadow:0 2px 12px rgba(0,0,0,.04);
+  --r:14px;
   --accent:#0071e3;
-  --chip:rgba(0,0,0,.04);
+  --chip:rgba(0,0,0,.03);
   --success:#34c759;
   --danger:#ff3b30;
-  --warning:#ff9500;
-  --font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
 }
 [data-theme="dark"]{
-  --bg:#000;
-  --card:rgba(28,28,30,.92);
-  --text:#f5f5f7;
-  --muted:#98989d;
-  --line:rgba(255,255,255,.1);
-  --shadow:0 8px 32px rgba(0,0,0,.4);
-  --chip:rgba(255,255,255,.06);
+  --bg:#000;--card:rgba(28,28,30,.92);--text:#f5f5f7;--muted:#98989d;
+  --line:rgba(255,255,255,.08);--shadow:0 4px 24px rgba(0,0,0,.3);--chip:rgba(255,255,255,.05);
 }
-
-/* ========== 全局样式 ========== */
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:var(--font-sans)}
-body{background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
+html,body{height:100%;font-family:var(--font);-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-size:13px;line-height:1.5}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* ========== 布局 ========== */
 .container{
-  max-width:1520px;
-  margin:0 auto;
-  padding:16px;
-  display:grid;
-  gap:16px;
-  grid-template-columns:280px minmax(0,1fr) 360px;
-  height:100vh;
-  overflow:hidden;
+  max-width:1480px;margin:0 auto;padding:12px;
+  display:grid;gap:12px;grid-template-columns:260px minmax(0,1fr) 340px;
+  height:100vh;overflow:hidden;
 }
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
 }
 
-/* ========== 左侧栏 ========== */
+/* 左侧 */
 .left{min-height:0}
-.brand{padding:16px;border-bottom:1px solid var(--line)}
-.brand-title{font-size:17px;font-weight:700;letter-spacing:-0.3px}
-.brand-sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.4}
-.controls{padding:12px 16px;border-bottom:1px solid var(--line)}
+.brand{padding:16px 14px;border-bottom:1px solid var(--line)}
+.brand-title{font-size:15px;font-weight:600;letter-spacing:-0.2px;color:var(--text)}
+.brand-sub{margin-top:4px;font-size:11px;color:var(--muted);line-height:1.4}
+.controls{padding:10px 14px;border-bottom:1px solid var(--line)}
 .search{
-  width:100%;
-  border:1px solid var(--line);
-  background:var(--chip);
-  padding:10px 12px;
-  border-radius:10px;
-  outline:none;
-  color:var(--text);
-  font-size:13px;
-  font-family:var(--font-sans);
+  width:100%;border:1px solid var(--line);background:var(--chip);
+  padding:8px 10px;border-radius:8px;outline:none;color:var(--text);
+  font-size:12px;font-family:var(--font);
 }
 .search:focus{border-color:var(--accent)}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pills{display:flex;gap:6px;margin-top:8px}
 .pill{
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:20px;
-  border:1px solid var(--line);
-  color:var(--muted);
-  background:transparent;
-  cursor:pointer;
-  font-family:var(--font-sans);
-  transition:all .15s ease;
+  font-size:11px;padding:5px 10px;border-radius:16px;
+  border:1px solid var(--line);color:var(--muted);background:transparent;
+  cursor:pointer;font-family:var(--font);transition:all .15s;
 }
 .pill:hover{background:var(--chip)}
 .pill.active{color:#fff;border-color:var(--accent);background:var(--accent)}
-.nav{flex:1;overflow:auto;padding:8px}
+.nav{flex:1;overflow:auto;padding:6px}
 .nav-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 12px;
-  border-radius:10px;
-  color:var(--text);
-  font-size:13px;
-  font-weight:500;
-  cursor:pointer;
-  transition:background .15s;
-  margin-bottom:2px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 10px;border-radius:8px;color:var(--text);
+  font-size:12px;font-weight:500;cursor:pointer;transition:background .15s;margin-bottom:1px;
 }
 .nav-item:hover{background:var(--chip)}
-.nav-item.active{background:rgba(0,113,227,.1);color:var(--accent)}
+.nav-item.active{background:rgba(0,113,227,.08);color:var(--accent)}
 .nav-item .badge{
-  font-size:11px;
-  font-weight:600;
-  color:var(--muted);
-  background:var(--chip);
-  padding:2px 8px;
-  border-radius:10px;
+  font-size:10px;font-weight:600;color:var(--muted);
+  background:var(--chip);padding:2px 6px;border-radius:8px;
 }
-.nav-item.active .badge{background:rgba(0,113,227,.15);color:var(--accent)}
-.left-foot{
-  padding:12px 16px;
-  border-top:1px solid var(--line);
-  display:flex;
-  gap:8px;
-}
+.nav-item.active .badge{background:rgba(0,113,227,.12);color:var(--accent)}
+.left-foot{padding:10px 14px;border-top:1px solid var(--line);display:flex;gap:6px}
 .btn{
-  flex:1;
-  border:1px solid var(--line);
-  background:var(--card);
-  color:var(--text);
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:12px;
-  font-family:var(--font-sans);
-  cursor:pointer;
-  transition:all .15s;
+  flex:1;border:1px solid var(--line);background:var(--card);color:var(--text);
+  padding:7px 10px;border-radius:7px;font-size:11px;font-family:var(--font);
+  cursor:pointer;transition:all .15s;
 }
 .btn:hover{background:var(--chip);border-color:var(--accent)}
 .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn.primary:hover{opacity:.9}
 
-/* ========== 中间栏 ========== */
+/* 中间 */
 .main{min-height:0}
-.topbar{
-  padding:16px 20px;
-  border-bottom:1px solid var(--line);
-  background:var(--card);
-}
-.topbar-title{font-size:20px;font-weight:700;letter-spacing:-0.4px}
-.topbar-meta{margin-top:4px;font-size:12px;color:var(--muted)}
-.main-scroll{flex:1;overflow:auto;padding:20px}
+.topbar{padding:14px 18px;border-bottom:1px solid var(--line);background:var(--card)}
+.topbar-title{font-size:18px;font-weight:600;letter-spacing:-0.3px}
+.topbar-meta{margin-top:3px;font-size:11px;color:var(--muted)}
+.main-scroll{flex:1;overflow:auto;padding:16px 18px}
 
-/* 板块样式 */
-.section{margin-bottom:32px;scroll-margin-top:20px}
-.section-header{margin-bottom:16px}
-.section-title{font-size:17px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
-.section-title .cn-badge{
-  font-size:10px;
-  font-weight:600;
-  color:#fff;
-  background:var(--danger);
-  padding:2px 6px;
-  border-radius:4px;
+/* Top 5 板块 */
+.top5-section{
+  margin-bottom:24px;padding:16px;
+  background:linear-gradient(135deg,rgba(0,113,227,.03),rgba(52,199,89,.02));
+  border:1px solid rgba(0,113,227,.08);border-radius:var(--r);
 }
-/* 板块摘要（决策建议）*/
+.top5-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.top5-title::before{content:'';width:3px;height:14px;background:var(--accent);border-radius:2px}
+.top5-list{display:flex;flex-direction:column;gap:10px}
+.top5-item{
+  padding:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;transition:all .15s;
+}
+.top5-item:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,113,227,.06)}
+.top5-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.top5-item-summary{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.top5-item-action{
+  font-size:11px;color:var(--accent);font-weight:500;
+  padding:4px 8px;background:rgba(0,113,227,.06);border-radius:4px;display:inline-block;
+}
+
+/* 板块 */
+.section{margin-bottom:28px;scroll-margin-top:16px}
+.section-header{margin-bottom:12px}
+.section-title{font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-count{font-size:11px;color:var(--muted);font-weight:400}
 .section-brief{
-  margin-top:12px;
-  padding:16px;
-  background:linear-gradient(135deg,rgba(0,113,227,.04),rgba(52,199,89,.04));
-  border:1px solid rgba(0,113,227,.12);
-  border-radius:var(--r2);
-  font-size:13px;
-  line-height:1.7;
-  color:var(--text);
-  white-space:pre-wrap;
+  margin-top:10px;padding:14px;background:var(--chip);
+  border:1px solid var(--line);border-radius:10px;
+  font-size:12px;line-height:1.7;color:var(--text);white-space:pre-wrap;
 }
-.section-brief strong{color:var(--accent)}
 
 /* 卡片网格 */
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .event-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--r2);
-  padding:16px;
-  transition:all .2s ease;
-  display:flex;
-  flex-direction:column;
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:14px;transition:all .15s;display:flex;flex-direction:column;
 }
-.event-card:hover{
-  border-color:var(--accent);
-  box-shadow:0 4px 16px rgba(0,113,227,.1);
-  transform:translateY(-2px);
-}
-.event-card.cn-related{border-left:3px solid var(--danger)}
-.event-title{
-  font-size:14px;
-  font-weight:600;
-  line-height:1.4;
-  margin-bottom:8px;
-  color:var(--text);
-}
+.event-card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,113,227,.05)}
 .event-region{
-  display:inline-block;
-  font-size:10px;
-  font-weight:600;
-  padding:2px 6px;
-  border-radius:4px;
-  margin-bottom:8px;
+  display:inline-block;font-size:10px;font-weight:500;
+  padding:2px 6px;border-radius:4px;margin-bottom:6px;
 }
-.event-region.cn{background:rgba(255,59,48,.1);color:var(--danger)}
-.event-region.us{background:rgba(0,113,227,.1);color:var(--accent)}
-.event-region.eu{background:rgba(255,149,0,.1);color:var(--warning)}
-.event-region.asia{background:rgba(52,199,89,.1);color:var(--success)}
+.event-region.cn{background:rgba(255,59,48,.06);color:var(--danger)}
+.event-region.us{background:rgba(0,113,227,.06);color:var(--accent)}
+.event-region.eu{background:rgba(255,149,0,.06);color:#ff9500}
+.event-region.asia{background:rgba(52,199,89,.06);color:var(--success)}
 .event-region.global{background:var(--chip);color:var(--muted)}
-.event-summary{
-  font-size:13px;
-  line-height:1.6;
-  color:var(--muted);
-  flex:1;
-  margin-bottom:12px;
-}
-.event-sources{
-  font-size:11px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  padding-top:10px;
-  margin-top:auto;
-}
+.event-title{font-size:13px;font-weight:600;line-height:1.4;margin-bottom:6px;color:var(--text)}
+.event-summary{font-size:12px;line-height:1.6;color:var(--muted);flex:1;margin-bottom:10px}
+.event-sources{font-size:10px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
 .event-sources a{color:var(--accent);font-weight:500}
-.event-sources a:hover{text-decoration:underline}
-/* 反馈按钮 */
 .event-footer{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:10px;
-  padding-top:10px;
-  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:8px;padding-top:8px;border-top:1px solid var(--line);
 }
-.feedback-btns{display:flex;gap:6px}
+.feedback-btns{display:flex;gap:4px}
 .fb-btn{
-  width:28px;
-  height:28px;
-  border:1px solid var(--line);
-  background:transparent;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:14px;
-  transition:all .15s;
+  width:26px;height:26px;border:1px solid var(--line);background:transparent;
+  border-radius:5px;cursor:pointer;font-size:12px;transition:all .15s;color:var(--muted);
 }
 .fb-btn:hover{background:var(--chip)}
-.fb-btn.active.good{background:rgba(52,199,89,.15);border-color:var(--success);color:var(--success)}
-.fb-btn.active.bad{background:rgba(255,59,48,.15);border-color:var(--danger);color:var(--danger)}
+.fb-btn.active.good{background:rgba(52,199,89,.1);border-color:var(--success);color:var(--success)}
+.fb-btn.active.bad{background:rgba(255,59,48,.1);border-color:var(--danger);color:var(--danger)}
+.empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:12px;background:var(--chip);border-radius:10px}
 
-/* 空状态 */
-.empty{
-  padding:40px 20px;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  background:var(--chip);
-  border-radius:var(--r2);
-  border:1px dashed var(--line);
-}
-
-/* ========== 右侧栏 ========== */
+/* 右侧 */
 .right{min-height:0}
-.right-header{
-  padding:16px;
-  border-bottom:1px solid var(--line);
-}
-.right-title{font-size:15px;font-weight:700}
-.right-sub{margin-top:4px;font-size:11px;color:var(--muted)}
-.right-scroll{flex:1;overflow:auto;padding:12px}
-.kpi-group{margin-bottom:16px}
+.right-header{padding:14px;border-bottom:1px solid var(--line)}
+.right-title{font-size:14px;font-weight:600}
+.right-sub{margin-top:3px;font-size:10px;color:var(--muted)}
+.right-scroll{flex:1;overflow:auto;padding:10px}
+.kpi-group{margin-bottom:14px}
 .kpi-group-title{
-  font-size:11px;
-  font-weight:700;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:0.5px;
-  padding:8px 4px;
-  border-bottom:1px solid var(--line);
-  margin-bottom:8px;
+  font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.4px;padding:6px 4px;border-bottom:1px solid var(--line);margin-bottom:6px;
 }
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.kpi-card{
-  background:var(--chip);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:12px;
-}
-.kpi-name{
-  font-size:11px;
-  color:var(--muted);
-  font-weight:500;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom:6px;
-}
-.kpi-dot{width:6px;height:6px;border-radius:50%}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.kpi-card{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:10px}
+.kpi-name{font-size:10px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.kpi-dot{width:5px;height:5px;border-radius:50%}
 .kpi-dot.up{background:var(--success)}
 .kpi-dot.down{background:var(--danger)}
 .kpi-dot.flat{background:var(--muted)}
-.kpi-value{
-  font-size:18px;
-  font-weight:700;
-  color:var(--text);
-  font-variant-numeric:tabular-nums;
-}
-.kpi-unit{font-size:12px;font-weight:400;color:var(--muted);margin-left:2px}
-.kpi-delta{font-size:11px;margin-top:4px}
+.kpi-value{font-size:16px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.kpi-unit{font-size:10px;font-weight:400;color:var(--muted);margin-left:2px}
+.kpi-delta{font-size:10px;margin-top:3px}
 .kpi-delta.up{color:var(--success)}
 .kpi-delta.down{color:var(--danger)}
 .kpi-delta.flat{color:var(--muted)}
-.kpi-spark{width:100%;height:28px;margin-top:8px}
-.kpi-spark path.up{stroke:var(--success)}
-.kpi-spark path.down{stroke:var(--danger)}
-.kpi-spark path.flat{stroke:var(--muted)}
-/* 反馈统计 */
-.feedback-stats{
-  margin-top:16px;
-  padding:12px;
-  background:var(--chip);
-  border-radius:10px;
-  border:1px solid var(--line);
-}
-.feedback-stats-title{font-size:12px;font-weight:600;margin-bottom:8px}
-.feedback-stats-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
-.feedback-actions{display:flex;gap:8px;margin-top:10px}
-.feedback-actions .btn{flex:1;font-size:11px;padding:6px 8px}
+.kpi-spark{width:100%;height:24px;margin-top:6px}
+.kpi-spark path{stroke-width:1.5}
+.feedback-stats{margin-top:14px;padding:10px;background:var(--chip);border-radius:8px;border:1px solid var(--line)}
+.feedback-stats-title{font-size:11px;font-weight:600;margin-bottom:6px}
+.feedback-stats-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:3px}
+.feedback-actions{display:flex;gap:6px;margin-top:8px}
+.feedback-actions .btn{flex:1;font-size:10px;padding:5px 6px}
 
-/* ========== 设置面板 ========== */
+/* 设置面板 */
 .overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.5);
-  backdrop-filter:blur(4px);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
+  position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);
+  display:none;justify-content:center;align-items:center;z-index:1000;
 }
 .overlay.show{display:flex}
 .settings-panel{
-  width:min(600px,90vw);
-  max-height:85vh;
-  background:var(--card);
-  border-radius:var(--r);
-  box-shadow:0 20px 60px rgba(0,0,0,.3);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
+  width:min(560px,90vw);max-height:85vh;background:var(--card);border-radius:var(--r);
+  box-shadow:0 16px 48px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;
 }
 .settings-header{
-  padding:20px 24px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  padding:16px 20px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
 }
-.settings-title{font-size:18px;font-weight:700}
+.settings-title{font-size:16px;font-weight:600}
 .settings-close{
-  width:32px;
-  height:32px;
-  border:none;
-  background:var(--chip);
-  border-radius:8px;
-  cursor:pointer;
-  font-size:18px;
-  color:var(--muted);
+  width:28px;height:28px;border:none;background:var(--chip);border-radius:6px;
+  cursor:pointer;font-size:16px;color:var(--muted);
 }
 .settings-close:hover{background:var(--line);color:var(--text)}
-.settings-tabs{
-  display:flex;
-  gap:4px;
-  padding:12px 24px;
-  border-bottom:1px solid var(--line);
-  background:var(--chip);
-}
+.settings-tabs{display:flex;gap:3px;padding:10px 20px;border-bottom:1px solid var(--line);background:var(--chip)}
 .settings-tab{
-  padding:8px 16px;
-  border-radius:8px;
-  font-size:13px;
-  font-weight:500;
-  color:var(--muted);
-  cursor:pointer;
-  border:none;
-  background:transparent;
-  font-family:var(--font-sans);
-  transition:all .15s;
+  padding:6px 12px;border-radius:6px;font-size:12px;font-weight:500;color:var(--muted);
+  cursor:pointer;border:none;background:transparent;font-family:var(--font);transition:all .15s;
 }
 .settings-tab:hover{background:var(--card)}
-.settings-tab.active{background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.settings-body{flex:1;overflow:auto;padding:24px}
-.settings-section{margin-bottom:24px}
-.settings-section-title{
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:12px;
-  color:var(--text);
-}
+.settings-tab.active{background:var(--card);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.settings-body{flex:1;overflow:auto;padding:20px}
+.settings-section{margin-bottom:20px}
+.settings-section-title{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--text)}
 .settings-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--line);
 }
 .settings-row:last-child{border-bottom:none}
-.settings-label{
-  font-size:13px;
-  color:var(--text);
-}
-.settings-label small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.settings-label{font-size:12px;color:var(--text)}
+.settings-label small{display:block;font-size:10px;color:var(--muted);margin-top:1px}
 .settings-input{
-  width:140px;
-  padding:8px 12px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  font-size:13px;
-  font-family:var(--font-sans);
-  background:var(--card);
-  color:var(--text);
+  width:100px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;
+  font-size:12px;font-family:var(--font);background:var(--card);color:var(--text);text-align:right;
 }
 .settings-input:focus{outline:none;border-color:var(--accent)}
-.settings-select{
-  width:140px;
-  padding:8px 12px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  font-size:13px;
-  font-family:var(--font-sans);
-  background:var(--card);
-  color:var(--text);
-}
 .settings-toggle{
-  position:relative;
-  width:44px;
-  height:24px;
-  background:var(--line);
-  border-radius:12px;
-  cursor:pointer;
-  transition:background .2s;
+  position:relative;width:40px;height:22px;background:var(--line);
+  border-radius:11px;cursor:pointer;transition:background .2s;
 }
 .settings-toggle.active{background:var(--success)}
 .settings-toggle::after{
-  content:'';
-  position:absolute;
-  top:2px;
-  left:2px;
-  width:20px;
-  height:20px;
-  background:#fff;
-  border-radius:50%;
-  transition:transform .2s;
-  box-shadow:0 2px 4px rgba(0,0,0,.2);
+  content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;
+  background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15);
 }
-.settings-toggle.active::after{transform:translateX(20px)}
-/* 配置预览 */
+.settings-toggle.active::after{transform:translateX(18px)}
 .config-preview{
-  background:var(--chip);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:16px;
-  font-family:ui-monospace,monospace;
-  font-size:11px;
-  line-height:1.5;
-  max-height:300px;
-  overflow:auto;
-  white-space:pre-wrap;
-  word-break:break-all;
+  background:var(--chip);border:1px solid var(--line);border-radius:6px;
+  padding:12px;font-family:ui-monospace,monospace;font-size:10px;line-height:1.5;
+  max-height:240px;overflow:auto;white-space:pre-wrap;word-break:break-all;
 }
 
-/* ========== 响应式 ========== */
-@media (max-width:1200px){
-  .container{grid-template-columns:280px 1fr}
-  .right{display:none}
-}
-@media (max-width:900px){
-  .container{grid-template-columns:1fr;height:auto}
-  .left{display:none}
-  .cards-grid{grid-template-columns:1fr}
-}
+@media (max-width:1200px){.container{grid-template-columns:260px 1fr}.right{display:none}}
+@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- 左侧栏 -->
   <aside class="card left">
     <div class="brand">
-      <div class="brand-title">📊 Ben Daily Digest</div>
+      <div class="brand-title">Ben's Daily Brief</div>
       <div class="brand-sub">金属贸易 · 地缘政治 · AI算力 · 市场数据</div>
     </div>
     <div class="controls">
       <input type="text" class="search" id="searchInput" placeholder="搜索新闻..."/>
       <div class="pills">
         <button class="pill active" data-view="all">全部</button>
-        <button class="pill" data-view="cn">🇨🇳 中国</button>
-        <button class="pill" data-view="global">🌍 国际</button>
+        <button class="pill" data-view="cn">中国</button>
+        <button class="pill" data-view="global">国际</button>
       </div>
     </div>
     <nav class="nav" id="navList"></nav>
     <div class="left-foot">
-      <button class="btn" id="btnSettings">⚙️ 设置</button>
-      <button class="btn" id="btnTop">↑ 顶部</button>
+      <button class="btn" id="btnSettings">设置</button>
+      <button class="btn" id="btnTop">返回顶部</button>
     </div>
   </aside>
 
-  <!-- 中间栏 -->
   <main class="card main">
     <div class="topbar">
       <div class="topbar-title" id="pageTitle">每日简报</div>
-      <div class="topbar-meta">
-        <span id="pageDate">{{DATE}}</span> · 
-        更新于 <span id="pageTime">—</span>
-      </div>
+      <div class="topbar-meta"><span id="pageDate">{{DATE}}</span> · 更新于 <span id="pageTime">—</span></div>
     </div>
     <div class="main-scroll" id="mainContent"></div>
   </main>
 
-  <!-- 右侧栏 -->
   <aside class="card right">
     <div class="right-header">
-      <div class="right-title">📈 关键指标</div>
+      <div class="right-title">关键指标</div>
       <div class="right-sub">数据来源: FRED · 更新于 <span id="kpiTime">—</span></div>
     </div>
     <div class="right-scroll" id="kpiContent"></div>
   </aside>
 </div>
 
-<!-- 设置面板 -->
 <div class="overlay" id="settingsOverlay">
   <div class="settings-panel">
     <div class="settings-header">
-      <div class="settings-title">⚙️ 设置</div>
+      <div class="settings-title">设置</div>
       <button class="settings-close" id="settingsClose">×</button>
     </div>
     <div class="settings-tabs">
       <button class="settings-tab active" data-tab="general">通用</button>
-      <button class="settings-tab" data-tab="algo">算法调优</button>
-      <button class="settings-tab" data-tab="display">显示</button>
+      <button class="settings-tab" data-tab="weights">重要性系数</button>
+      <button class="settings-tab" data-tab="algo">算法</button>
       <button class="settings-tab" data-tab="data">数据源</button>
       <button class="settings-tab" data-tab="config">配置</button>
     </div>
@@ -551,36 +302,31 @@ a:hover{text-decoration:underline}
   </div>
 </div>
 
-<script>
-window.DIGEST = {{ DIGEST_JSON | safe }};
-</script>
-
+<script>window.DIGEST = {{ DIGEST_JSON | safe }};</script>
 <script>
 (function(){
   const D = window.DIGEST || {};
   const sections = Array.isArray(D.sections) ? D.sections : [];
   const kpis = Array.isArray(D.kpis) ? D.kpis : [];
   const meta = D.meta || {};
+  const top5 = Array.isArray(D.top5) ? D.top5 : [];
 
-  // State
   let currentView = 'all';
   let searchQuery = '';
   let activeSection = sections[0]?.id || '';
   let feedbackData = JSON.parse(localStorage.getItem('digest_feedback') || '{}');
 
-  // Helpers
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => document.querySelectorAll(sel);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const fmtNum = (x, decimals=2) => {
+  const fmtNum = (x, d=2) => {
     if (x === null || x === undefined || !isFinite(Number(x))) return '—';
     const n = Number(x);
-    if (Math.abs(n) >= 1000) return n.toLocaleString('zh-CN', {maximumFractionDigits: decimals});
+    if (Math.abs(n) >= 1000) return n.toLocaleString('zh-CN', {maximumFractionDigits: d});
     if (Math.abs(n) >= 100) return n.toFixed(1);
-    return n.toFixed(decimals).replace(/\.?0+$/, '');
+    return n.toFixed(d).replace(/\.?0+$/, '');
   };
 
-  // Filters
   function passesView(region) {
     if (currentView === 'all') return true;
     if (currentView === 'cn') return region === 'cn';
@@ -593,26 +339,16 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
     return text.toLowerCase().includes(searchQuery.toLowerCase());
   }
 
-  // Render Navigation
   function renderNav() {
     const nav = $('#navList');
     if (!nav) return;
-    
     nav.innerHTML = sections.map(sec => {
-      const events = (sec.events || []).filter(e => 
-        passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh)
-      );
-      const cnCount = events.filter(e => e.region === 'cn').length;
+      const events = (sec.events || []).filter(e => passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh));
       const isActive = sec.id === activeSection;
-      
-      return `
-        <div class="nav-item ${isActive ? 'active' : ''}" data-sid="${esc(sec.id)}">
-          <span>${esc(sec.name)}</span>
-          <span class="badge">${events.length}${cnCount > 0 ? ' <span style="color:var(--danger)">🇨🇳${cnCount}</span>' : ''}</span>
-        </div>
-      `;
+      return `<div class="nav-item ${isActive ? 'active' : ''}" data-sid="${esc(sec.id)}">
+        <span>${esc(sec.name)}</span><span class="badge">${events.length}</span>
+      </div>`;
     }).join('');
-
     $$('.nav-item').forEach(item => {
       item.addEventListener('click', () => {
         activeSection = item.dataset.sid;
@@ -623,17 +359,33 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
     });
   }
 
-  // Render Main Content
   function renderMain() {
     const main = $('#mainContent');
     if (!main) return;
 
-    const html = sections.map(sec => {
-      const events = (sec.events || []).filter(e => 
-        passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh)
-      );
-      const cnCount = events.filter(e => e.region === 'cn').length;
-      const brief = sec.brief_zh || sec.brief_cn || '';
+    // Top 5 Section
+    let top5Html = '';
+    if (top5.length > 0) {
+      top5Html = `
+        <div class="top5-section">
+          <div class="top5-title">今日决策要点</div>
+          <div class="top5-list">
+            ${top5.map(item => `
+              <div class="top5-item">
+                <div class="top5-item-title">${esc(item.title || '')}</div>
+                <div class="top5-item-summary">${esc(item.summary || '')}</div>
+                ${item.action ? `<span class="top5-item-action">${esc(item.action)}</span>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    const sectionsHtml = sections.map(sec => {
+      const events = (sec.events || []).filter(e => passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh));
+      const brief = sec.brief_zh || '';
+      const regionLabels = {cn:'中国',us:'美国',eu:'欧洲',asia:'亚洲',global:'全球'};
 
       const cardsHtml = events.length > 0 ? `
         <div class="cards-grid">
@@ -641,10 +393,8 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
             const evId = `${sec.id}-${idx}`;
             const fb = feedbackData[evId] || 0;
             const sources = (ev.sources || []).slice(0, 3);
-            const regionLabels = {cn:'中国',us:'美国',eu:'欧洲',asia:'亚洲',global:'全球'};
-            
             return `
-              <div class="event-card ${ev.region === 'cn' ? 'cn-related' : ''}" data-evid="${evId}">
+              <div class="event-card" data-evid="${evId}">
                 <span class="event-region ${ev.region || 'global'}">${regionLabels[ev.region] || '全球'}</span>
                 <div class="event-title">${esc(ev.title_zh)}</div>
                 <div class="event-summary">${esc(ev.summary_zh)}</div>
@@ -652,10 +402,10 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
                   ${sources.map(s => `<a href="${esc(s.url)}" target="_blank">${esc(s.source || s.title || '来源')}</a>`).join(' · ')}
                 </div>
                 <div class="event-footer">
-                  <span style="font-size:11px;color:var(--muted)">重要性: ${(ev.score * 100).toFixed(0)}%</span>
+                  <span style="font-size:10px;color:var(--muted)">重要性: ${((ev.score || 0.5) * 100).toFixed(0)}%</span>
                   <div class="feedback-btns">
-                    <button class="fb-btn ${fb === 1 ? 'active good' : ''}" data-fb="1" data-evid="${evId}">👍</button>
-                    <button class="fb-btn ${fb === -1 ? 'active bad' : ''}" data-fb="-1" data-evid="${evId}">👎</button>
+                    <button class="fb-btn ${fb === 1 ? 'active good' : ''}" data-fb="1" data-evid="${evId}">+</button>
+                    <button class="fb-btn ${fb === -1 ? 'active bad' : ''}" data-fb="-1" data-evid="${evId}">-</button>
                   </div>
                 </div>
               </div>
@@ -667,10 +417,7 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
       return `
         <section class="section" data-section="${esc(sec.id)}">
           <div class="section-header">
-            <div class="section-title">
-              ${esc(sec.name)}
-              ${cnCount > 0 ? `<span class="cn-badge">🇨🇳 ${cnCount}</span>` : ''}
-            </div>
+            <div class="section-title">${esc(sec.name)} <span class="section-count">${events.length} 条</span></div>
           </div>
           ${brief ? `<div class="section-brief">${esc(brief)}</div>` : ''}
           ${cardsHtml}
@@ -678,9 +425,8 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
       `;
     }).join('');
 
-    main.innerHTML = html || '<div class="empty">没有可显示的内容</div>';
+    main.innerHTML = top5Html + sectionsHtml || '<div class="empty">没有可显示的内容</div>';
 
-    // Bind feedback buttons
     $$('.fb-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const evId = btn.dataset.evid;
@@ -693,20 +439,21 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
     });
   }
 
-  // Render KPIs
   function renderKpis() {
     const container = $('#kpiContent');
     if (!container) return;
 
-    // Group KPIs
-    const metalsKeywords = ['copper', 'aluminum', 'zinc', 'nickel', 'lead', 'tin', '铜', '铝', '锌', '镍', '铅', '锡', 'lme'];
-    const metals = [];
-    const macro = [];
+    const metalsKw = ['copper', 'aluminum', 'zinc', 'nickel', 'lead', 'tin', '铜', '铝', '锌', '镍', '铅', '锡'];
+    const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', '标普', '纳斯达克', '道琼斯', '恐慌'];
+    const commodityKw = ['oil', 'gold', 'wti', '原油', '黄金'];
     
+    const stocks = [], metals = [], commodities = [], macro = [];
     kpis.forEach(k => {
       const id = (k.id || k.name || '').toLowerCase();
-      const bucket = metalsKeywords.some(kw => id.includes(kw)) ? metals : macro;
-      bucket.push(k);
+      if (stocksKw.some(kw => id.includes(kw))) stocks.push(k);
+      else if (metalsKw.some(kw => id.includes(kw))) metals.push(k);
+      else if (commodityKw.some(kw => id.includes(kw))) commodities.push(k);
+      else macro.push(k);
     });
 
     function kpiCard(k) {
@@ -716,7 +463,7 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
       const delta = k.delta;
       const deltaPct = k.delta_pct;
       const direction = k.direction || 'flat';
-      const color = k.color || '#64748B';
+      const color = k.color || '#8E8E93';
       
       let deltaStr = '';
       if (delta !== null && delta !== undefined && isFinite(delta)) {
@@ -726,11 +473,10 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
         }
       }
 
-      // Spark SVG
       let sparkHtml = '';
       const series = k.series_values || k.series || [];
       if (series.length >= 2) {
-        const w = 100, h = 28, pad = 2;
+        const w = 100, h = 24, pad = 2;
         const nums = series.map(Number).filter(isFinite);
         if (nums.length >= 2) {
           const min = Math.min(...nums), max = Math.max(...nums);
@@ -739,22 +485,14 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
             pad + (w - pad * 2) * (i / (nums.length - 1)),
             pad + (h - pad * 2) * (1 - (v - min) / span)
           ]);
-          const d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} ` + 
-                    pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
-          sparkHtml = `
-            <svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
-              <path class="${direction}" d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          `;
+          const d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} ` + pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+          sparkHtml = `<svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="${color}" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
         }
       }
 
       return `
         <div class="kpi-card">
-          <div class="kpi-name">
-            <span class="kpi-dot ${direction}"></span>
-            <span>${esc(name)}</span>
-          </div>
+          <div class="kpi-name"><span class="kpi-dot ${direction}"></span><span>${esc(name)}</span></div>
           <div class="kpi-value" style="color:${color}">${val}<span class="kpi-unit">${esc(unit)}</span></div>
           <div class="kpi-delta ${direction}">${deltaStr || '—'}</div>
           ${sparkHtml}
@@ -763,56 +501,40 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
     }
 
     let html = '';
-    if (macro.length) {
-      html += `
-        <div class="kpi-group">
-          <div class="kpi-group-title">宏观指标</div>
-          <div class="kpi-grid">${macro.map(kpiCard).join('')}</div>
-        </div>
-      `;
-    }
-    if (metals.length) {
-      html += `
-        <div class="kpi-group">
-          <div class="kpi-group-title">金属价格</div>
-          <div class="kpi-grid">${metals.map(kpiCard).join('')}</div>
-        </div>
-      `;
-    }
+    if (stocks.length) html += `<div class="kpi-group"><div class="kpi-group-title">美股指数</div><div class="kpi-grid">${stocks.map(kpiCard).join('')}</div></div>`;
+    if (macro.length) html += `<div class="kpi-group"><div class="kpi-group-title">宏观指标</div><div class="kpi-grid">${macro.map(kpiCard).join('')}</div></div>`;
+    if (commodities.length) html += `<div class="kpi-group"><div class="kpi-group-title">大宗商品</div><div class="kpi-grid">${commodities.map(kpiCard).join('')}</div></div>`;
+    if (metals.length) html += `<div class="kpi-group"><div class="kpi-group-title">金属价格</div><div class="kpi-grid">${metals.map(kpiCard).join('')}</div></div>`;
 
-    // Feedback stats
     const fbCount = Object.values(feedbackData).filter(v => v !== 0).length;
     const goodCount = Object.values(feedbackData).filter(v => v === 1).length;
     const badCount = Object.values(feedbackData).filter(v => v === -1).length;
     
     html += `
       <div class="feedback-stats">
-        <div class="feedback-stats-title">📝 反馈统计 (本机)</div>
-        <div class="feedback-stats-row"><span>已反馈条目</span><span>${fbCount}</span></div>
-        <div class="feedback-stats-row"><span>👍 有价值</span><span>${goodCount}</span></div>
-        <div class="feedback-stats-row"><span>👎 无关</span><span>${badCount}</span></div>
+        <div class="feedback-stats-title">反馈统计</div>
+        <div class="feedback-stats-row"><span>已反馈</span><span>${fbCount}</span></div>
+        <div class="feedback-stats-row"><span>有价值</span><span>${goodCount}</span></div>
+        <div class="feedback-stats-row"><span>无关</span><span>${badCount}</span></div>
         <div class="feedback-actions">
-          <button class="btn" id="btnExportFb">导出反馈</button>
+          <button class="btn" id="btnExportFb">导出</button>
           <button class="btn" id="btnClearFb">清空</button>
         </div>
       </div>
     `;
 
-    container.innerHTML = html || '<div class="empty">暂无 KPI 数据</div>';
+    container.innerHTML = html;
 
-    // Bind feedback actions
     $('#btnExportFb')?.addEventListener('click', () => {
-      const data = JSON.stringify(feedbackData, null, 2);
-      const blob = new Blob([data], {type: 'application/json'});
-      const url = URL.createObjectURL(blob);
+      const blob = new Blob([JSON.stringify(feedbackData, null, 2)], {type: 'application/json'});
       const a = document.createElement('a');
-      a.href = url;
-      a.download = `digest_feedback_${D.date || 'export'}.json`;
+      a.href = URL.createObjectURL(blob);
+      a.download = `feedback_${D.date || 'export'}.json`;
       a.click();
     });
     
     $('#btnClearFb')?.addEventListener('click', () => {
-      if (confirm('确定清空所有反馈数据？')) {
+      if (confirm('确定清空所有反馈？')) {
         feedbackData = {};
         localStorage.removeItem('digest_feedback');
         renderKpis();
@@ -820,142 +542,86 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
     });
   }
 
-  // Render Settings
   function renderSettings(tab = 'general') {
     const body = $('#settingsBody');
     if (!body) return;
+    const weights = meta.importance_weights || {};
 
     const tabs = {
       general: `
         <div class="settings-section">
           <div class="settings-section-title">基本信息</div>
-          <div class="settings-row">
-            <div class="settings-label">生成日期</div>
-            <div>${esc(D.date || '—')}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">生成时间 (北京时间)</div>
-            <div>${esc(D.generated_at_bjt || D.generated_at_utc || '—')}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">板块数量</div>
-            <div>${sections.length}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">KPI 指标数</div>
-            <div>${kpis.length}</div>
-          </div>
+          <div class="settings-row"><div class="settings-label">生成日期</div><div>${esc(D.date || '—')}</div></div>
+          <div class="settings-row"><div class="settings-label">生成时间</div><div>${esc(D.generated_at_bjt || '—')}</div></div>
+          <div class="settings-row"><div class="settings-label">板块数量</div><div>${sections.length}</div></div>
+          <div class="settings-row"><div class="settings-label">KPI指标数</div><div>${kpis.length}</div></div>
         </div>
         <div class="settings-section">
           <div class="settings-section-title">主题</div>
+          <div class="settings-row"><div class="settings-label">深色模式</div><div class="settings-toggle" id="toggleDark"></div></div>
+        </div>
+      `,
+      weights: `
+        <div class="settings-section">
+          <div class="settings-section-title">重要性系数</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">调整以下系数影响新闻重要性排序（需重新生成生效）</p>
           <div class="settings-row">
-            <div class="settings-label">深色模式</div>
-            <div class="settings-toggle" id="toggleDark"></div>
+            <div class="settings-label">中国相关新闻<small>china_related</small></div>
+            <input type="number" class="settings-input" value="${weights.china_related || 1.5}" step="0.1" min="0.5" max="3">
           </div>
+          <div class="settings-row">
+            <div class="settings-label">一级来源 (Bloomberg, Reuters)<small>source_tier1</small></div>
+            <input type="number" class="settings-input" value="${weights.source_tier1 || 1.3}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">二级来源 (WSJ, SCMP)<small>source_tier2</small></div>
+            <input type="number" class="settings-input" value="${weights.source_tier2 || 1.1}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">24小时内新闻<small>recency_24h</small></div>
+            <input type="number" class="settings-input" value="${weights.recency_24h || 1.2}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">关键词匹配<small>keyword_match</small></div>
+            <input type="number" class="settings-input" value="${weights.keyword_match || 1.2}" step="0.1" min="0.5" max="3">
+          </div>
+        </div>
+        <div class="settings-section">
+          <p style="font-size:11px;color:var(--muted)">修改配置文件 digest_config_v15.json 中的 importance_weights 字段后重新运行生成脚本</p>
         </div>
       `,
       algo: `
         <div class="settings-section">
           <div class="settings-section-title">算法参数</div>
-          <div class="settings-row">
-            <div class="settings-label">
-              LLM 模型
-              <small>用于生成摘要和翻译</small>
-            </div>
-            <div>${esc(meta.model || 'gpt-4o-mini')}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">
-              每板块最大条目
-              <small>items_per_section</small>
-            </div>
-            <div>${meta.items_per_section || 15}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">
-              原始抓取限制
-              <small>limit_raw</small>
-            </div>
-            <div>${meta.limit_raw || 25}</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">
-              中国查询增强
-              <small>自动添加中国相关搜索词</small>
-            </div>
-            <div>${meta.china_queries_enabled ? '✅ 已启用' : '❌ 未启用'}</div>
-          </div>
+          <div class="settings-row"><div class="settings-label">LLM提供商<small>翻译和摘要</small></div><div>${esc(meta.llm_provider || 'DeepSeek')}</div></div>
+          <div class="settings-row"><div class="settings-label">LLM模型</div><div>${esc(meta.llm_model || 'deepseek-chat')}</div></div>
+          <div class="settings-row"><div class="settings-label">每板块条目数<small>items_per_section</small></div><div>${meta.items_per_section || 15}</div></div>
+          <div class="settings-row"><div class="settings-label">原始抓取限制<small>limit_raw</small></div><div>${meta.limit_raw || 25}</div></div>
+          <div class="settings-row"><div class="settings-label">中国查询增强</div><div>${meta.china_queries_enabled ? '已启用' : '未启用'}</div></div>
+          <div class="settings-row"><div class="settings-label">arXiv论文抓取</div><div>${meta.arxiv_enabled ? '已启用' : '未启用'}</div></div>
         </div>
         <div class="settings-section">
-          <div class="settings-section-title">调优建议</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">
-            <p>• 增加 <code>items_per_section</code> 可获得更多事件卡</p>
-            <p>• 增加 <code>limit_raw</code> 可扩大候选池</p>
-            <p>• 使用 gpt-4o 可提升翻译和摘要质量</p>
-            <p>• 中国查询增强会为每个板块添加专属中文搜索</p>
-          </div>
-        </div>
-      `,
-      display: `
-        <div class="settings-section">
-          <div class="settings-section-title">显示选项</div>
-          <div class="settings-row">
-            <div class="settings-label">卡片布局列数</div>
-            <select class="settings-select" id="selectCols">
-              <option value="1">1 列</option>
-              <option value="2" selected>2 列</option>
-              <option value="3">3 列</option>
-            </select>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">显示反馈按钮</div>
-            <div class="settings-toggle active" id="toggleFeedback"></div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">显示来源链接</div>
-            <div class="settings-toggle active" id="toggleSources"></div>
-          </div>
+          <div class="settings-section-title">API密钥配置</div>
+          <p style="font-size:11px;color:var(--muted);line-height:1.6">
+            在 GitHub Secrets 中设置 <code>DEEPSEEK_API_KEY</code><br>
+            路径: 仓库 Settings → Secrets and variables → Actions → New repository secret
+          </p>
         </div>
       `,
       data: `
         <div class="settings-section">
           <div class="settings-section-title">数据源状态</div>
-          <div class="settings-row">
-            <div class="settings-label">
-              KPI 数据
-              <small>FRED (Federal Reserve)</small>
-            </div>
-            <div style="color:var(--success)">✅ 正常</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">
-              新闻数据
-              <small>Google News RSS</small>
-            </div>
-            <div style="color:var(--success)">✅ 正常</div>
-          </div>
-          <div class="settings-row">
-            <div class="settings-label">
-              中国新闻
-              <small>Google News zh-CN</small>
-            </div>
-            <div style="color:var(--success)">✅ 已启用</div>
-          </div>
-        </div>
-        <div class="settings-section">
-          <div class="settings-section-title">数据源说明</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">
-            <p><strong>FRED:</strong> 美联储经济数据，包括利率、汇率、大宗商品价格</p>
-            <p><strong>Google News:</strong> 全球新闻聚合，支持多语言搜索</p>
-            <p><strong>注意:</strong> 部分网站可能有访问限制，建议使用代理</p>
-          </div>
+          <div class="settings-row"><div class="settings-label">KPI数据<small>FRED</small></div><div style="color:var(--success)">正常</div></div>
+          <div class="settings-row"><div class="settings-label">新闻数据<small>Google News RSS</small></div><div style="color:var(--success)">正常</div></div>
+          <div class="settings-row"><div class="settings-label">中国新闻<small>Google News zh-CN</small></div><div style="color:var(--success)">已启用</div></div>
+          <div class="settings-row"><div class="settings-label">学术论文<small>arXiv API</small></div><div style="color:var(--success)">已启用</div></div>
         </div>
       `,
       config: `
         <div class="settings-section">
           <div class="settings-section-title">生成器配置</div>
           <div class="config-preview" id="configPreview">${JSON.stringify(meta, null, 2)}</div>
-          <div style="margin-top:12px;display:flex;gap:8px">
+          <div style="margin-top:10px;display:flex;gap:6px">
             <button class="btn" id="btnCopyConfig">复制配置</button>
             <button class="btn" id="btnExportDigest">导出完整数据</button>
           </div>
@@ -965,48 +631,34 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
 
     body.innerHTML = tabs[tab] || tabs.general;
 
-    // Bind settings interactions
     $('#toggleDark')?.addEventListener('click', function() {
       this.classList.toggle('active');
       document.documentElement.setAttribute('data-theme', this.classList.contains('active') ? 'dark' : 'light');
     });
-
     $('#btnCopyConfig')?.addEventListener('click', () => {
       navigator.clipboard.writeText(JSON.stringify(meta, null, 2));
-      alert('配置已复制到剪贴板');
+      alert('已复制');
     });
-
     $('#btnExportDigest')?.addEventListener('click', () => {
       const blob = new Blob([JSON.stringify(D, null, 2)], {type: 'application/json'});
-      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
+      a.href = URL.createObjectURL(blob);
       a.download = `digest_${D.date || 'export'}.json`;
       a.click();
     });
   }
 
-  // Render All
   function renderAll() {
     renderNav();
     renderMain();
     renderKpis();
-    
-    // Update header
     $('#pageDate').textContent = D.date || '—';
-    $('#pageTime').textContent = D.generated_at_bjt || D.generated_at_utc || '—';
-    $('#kpiTime').textContent = D.generated_at_bjt || D.generated_at_utc || '—';
+    $('#pageTime').textContent = D.generated_at_bjt || '—';
+    $('#kpiTime').textContent = D.generated_at_bjt || '—';
   }
 
-  // Bind Controls
   function bindControls() {
-    // Search
-    $('#searchInput')?.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderAll();
-    });
-
-    // View pills
+    $('#searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderAll(); });
     $$('.pill').forEach(pill => {
       pill.addEventListener('click', () => {
         $$('.pill').forEach(p => p.classList.remove('active'));
@@ -1015,24 +667,9 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
         renderAll();
       });
     });
-
-    // Settings
-    $('#btnSettings')?.addEventListener('click', () => {
-      $('#settingsOverlay').classList.add('show');
-      renderSettings('general');
-    });
-    
-    $('#settingsClose')?.addEventListener('click', () => {
-      $('#settingsOverlay').classList.remove('show');
-    });
-    
-    $('#settingsOverlay')?.addEventListener('click', (e) => {
-      if (e.target === e.currentTarget) {
-        $('#settingsOverlay').classList.remove('show');
-      }
-    });
-
-    // Settings tabs
+    $('#btnSettings')?.addEventListener('click', () => { $('#settingsOverlay').classList.add('show'); renderSettings('general'); });
+    $('#settingsClose')?.addEventListener('click', () => { $('#settingsOverlay').classList.remove('show'); });
+    $('#settingsOverlay')?.addEventListener('click', (e) => { if (e.target === e.currentTarget) $('#settingsOverlay').classList.remove('show'); });
     $$('.settings-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         $$('.settings-tab').forEach(t => t.classList.remove('active'));
@@ -1040,25 +677,13 @@ window.DIGEST = {{ DIGEST_JSON | safe }};
         renderSettings(tab.dataset.tab);
       });
     });
-
-    // Scroll to top
-    $('#btnTop')?.addEventListener('click', () => {
-      $('#mainContent')?.scrollTo({top: 0, behavior: 'smooth'});
-    });
-
-    // Keyboard
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        $('#settingsOverlay').classList.remove('show');
-      }
-    });
+    $('#btnTop')?.addEventListener('click', () => { $('#mainContent')?.scrollTo({top: 0, behavior: 'smooth'}); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('#settingsOverlay').classList.remove('show'); });
   }
 
-  // Boot
   bindControls();
   renderAll();
 })();
 </script>
-
 </body>
 </html>

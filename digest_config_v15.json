@@ -1,198 +1,100 @@
 {
   "items_per_section": 15,
-  "cluster_threshold": 0.42,
-  "limit_raw": 90,
-  "max_sources": 5,
-  "deny_tlds": [
-    ".cn"
-  ],
+  "limit_raw": 25,
+  "importance_weights": {
+    "china_related": 1.5,
+    "source_tier1": 1.3,
+    "source_tier2": 1.1,
+    "recency_24h": 1.2,
+    "recency_48h": 1.0,
+    "keyword_match": 1.2
+  },
   "sections": [
     {
       "id": "macro",
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
-      "queries": [
-        "US Treasury yields outlook Fed pricing inflation jobs",
-        "USD CNY FX policy capital flows emerging markets risk sentiment",
-        "global equity volatility VIX credit spreads"
-      ],
       "gnews_queries": [
-        "US Treasury yields outlook Fed pricing inflation jobs",
-        "USD CNY FX policy capital flows emerging markets risk sentiment",
-        "global equity volatility VIX credit spreads"
+        "US Treasury yields Fed inflation",
+        "USD CNY exchange rate PBOC",
+        "global equity market VIX"
       ]
     },
     {
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
-      "queries": [
-        "OFAC sanctions update enforcement action guidance",
-        "EU sanctions package Russia export controls compliance",
-        "US export controls semiconductor AI chips restrictions"
-      ],
-      "feeds": [],
       "gnews_queries": [
-        "OFAC sanctions update enforcement action guidance",
-        "EU sanctions package Russia export controls compliance",
-        "US export controls semiconductor AI chips restrictions"
+        "OFAC sanctions enforcement",
+        "EU sanctions Russia export controls",
+        "US export controls semiconductor chips"
       ]
     },
     {
       "id": "compute",
       "name": "AI 计算基础设施（算力·电力·冷却）",
-      "queries": [
-        "data center power demand grid connection GPU supply chain HBM",
-        "AI chip export controls cloud GPU pricing capacity",
-        "liquid cooling data center PUE regulation"
-      ],
       "gnews_queries": [
-        "data center power demand grid connection GPU supply chain HBM",
-        "AI chip export controls cloud GPU pricing capacity",
-        "liquid cooling data center PUE regulation"
+        "data center power GPU supply chain",
+        "AI chip export controls Nvidia",
+        "liquid cooling data center infrastructure"
       ]
     },
     {
       "id": "metals",
       "name": "大宗 / 金属（LME·供需·库存）",
-      "queries": [
-        "LME copper aluminium nickel zinc inventory premium spread",
-        "scrap copper trade flows sanctions freight",
-        "energy transition metals demand supply"
-      ],
       "gnews_queries": [
-        "LME copper aluminium nickel zinc inventory premium spread",
-        "scrap copper trade flows sanctions freight",
-        "energy transition metals demand supply"
+        "LME copper aluminium nickel zinc",
+        "copper scrap trade flows",
+        "energy transition metals demand"
       ]
     },
     {
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
-      "queries": [
-        "EU CBAM guidance reporting requirements transition period",
-        "Verra methodology update registry integrity",
-        "carbon credit quality additionality audit"
-      ],
-      "feeds": [],
       "gnews_queries": [
-        "EU CBAM guidance reporting requirements transition period",
-        "Verra methodology update registry integrity",
-        "carbon credit quality additionality audit"
+        "EU CBAM carbon border adjustment",
+        "carbon credit market Verra",
+        "carbon trading ETS price"
       ]
     },
     {
       "id": "sea",
       "name": "东南亚供应链（制造·转移·关键矿产）",
-      "queries": [
-        "Vietnam manufacturing investment supply chain relocation",
-        "Indonesia nickel export policy smelter investment",
-        "Thailand Malaysia electronics supply chain incentives"
-      ],
       "gnews_queries": [
-        "Vietnam manufacturing investment supply chain relocation",
-        "Indonesia nickel export policy smelter investment",
-        "Thailand Malaysia electronics supply chain incentives"
+        "Vietnam manufacturing supply chain",
+        "Indonesia nickel smelter investment",
+        "Thailand Malaysia electronics"
       ]
     },
     {
       "id": "frontier",
       "name": "前沿学科雷达（量子·聚变·材料·生物）",
-      "queries": [
-        "quantum computing error correction breakthrough",
-        "fusion energy high-temperature superconducting magnets",
-        "new materials battery solid-state electrolyte breakthrough",
-        "synthetic biology biomanufacturing platform"
-      ],
       "gnews_queries": [
-        "quantum computing error correction breakthrough",
-        "fusion energy high-temperature superconducting magnets",
-        "new materials battery solid-state electrolyte breakthrough",
-        "synthetic biology biomanufacturing platform"
+        "quantum computing breakthrough",
+        "fusion energy superconducting",
+        "solid state battery breakthrough",
+        "synthetic biology platform"
       ]
     },
     {
       "id": "arxiv",
       "name": "研究雷达（arXiv）",
       "type": "arxiv",
-      "arxiv_query": "cat:cs.LG OR cat:cs.AI OR cat:cs.CL"
+      "arxiv_query": "all:artificial intelligence OR all:machine learning OR all:large language model"
     }
   ],
   "kpis": [
-    {
-      "series": "DGS10",
-      "title": "美债10Y",
-      "unit": "%",
-      "lookback": 40
-    },
-    {
-      "series": "DEXCHUS",
-      "title": "USD/CNY",
-      "unit": "",
-      "lookback": 40
-    },
-    {
-      "series": "DTWEXBGS",
-      "title": "美元指数（广义）",
-      "unit": "",
-      "lookback": 40
-    },
-    {
-      "series": "PCOPPUSDM",
-      "title": "铜（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PALUMUSDM",
-      "title": "铝（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PZINCUSDM",
-      "title": "锌（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PNICKUSDM",
-      "title": "镍（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PLEADUSDM",
-      "title": "铅（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    },
-    {
-      "series": "PTINUSDM",
-      "title": "锡（Proxy）",
-      "unit": "$/t",
-      "lookback": 40
-    }
-  ],
-  "alerts": [
-    {
-      "series": "DGS10",
-      "op": ">",
-      "value": 4.3,
-      "severity": "warn",
-      "message": "融资成本上行：审视现金流与折现敏感业务"
-    },
-    {
-      "series": "DEXCHUS",
-      "op": ">",
-      "value": 7.2,
-      "severity": "warn",
-      "message": "汇率压力：复核进口成本、结算币种与对冲方案"
-    },
-    {
-      "series": "PCOPPUSDM",
-      "op": "abs>",
-      "value": 80,
-      "severity": "info",
-      "message": "铜价波动放大：复核报价有效期与库存策略"
-    }
+    {"series": "DGS10", "title": "美债10Y", "unit": "%", "lookback": 40},
+    {"series": "DGS2", "title": "美债2Y", "unit": "%", "lookback": 40},
+    {"series": "DEXCHUS", "title": "USD/CNY", "unit": "", "lookback": 40},
+    {"series": "DTWEXBGS", "title": "美元指数", "unit": "", "lookback": 40},
+    {"series": "SP500", "title": "标普500", "unit": "", "lookback": 40},
+    {"series": "NASDAQCOM", "title": "纳斯达克", "unit": "", "lookback": 40},
+    {"series": "DJIA", "title": "道琼斯", "unit": "", "lookback": 40},
+    {"series": "VIXCLS", "title": "VIX恐慌指数", "unit": "", "lookback": 40},
+    {"series": "PCOPPUSDM", "title": "铜", "unit": "$/t", "lookback": 40},
+    {"series": "PALUMUSDM", "title": "铝", "unit": "$/t", "lookback": 40},
+    {"series": "PZINCUSDM", "title": "锌", "unit": "$/t", "lookback": 40},
+    {"series": "PNICKUSDM", "title": "镍", "unit": "$/t", "lookback": 40},
+    {"series": "DCOILWTICO", "title": "WTI原油", "unit": "$/桶", "lookback": 40},
+    {"series": "GOLDAMGBD228NLBM", "title": "黄金", "unit": "$/盎司", "lookback": 40}
   ]
 }
