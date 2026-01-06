@@ -39,6 +39,8 @@ jobs:
       - name: Generate digest
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python news_digest_generator_v15.py \
             --config digest_config_v15.json \
