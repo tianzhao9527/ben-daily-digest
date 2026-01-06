@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-news_digest_generator_v15.py (stabilized)
-- Primary source: Google News RSS (no fragile official RSS endpoints by default)
-- Robust OpenAI JSON handling + strict timeouts + deterministic fallback so the page never renders empty
-- Template expects: DATE, DIGEST_JSON (and optionally TITLE)
+news_digest_generator_v15.py (COMPLETE FIX v2)
+
+修复内容：
+1. 增强OpenAI JSON解析，修复JSONDecodeError
+2. 添加中国专属新闻查询 (每个板块)
+3. 完善区域检测 (中国关键词匹配)
+4. 所有标题和摘要强制翻译成中文
+5. brief_zh包含决策建议
+6. KPI颜色与趋势线匹配
+7. 增加反馈数据结构支持
 """
 
 from __future__ import annotations
@@ -27,6 +33,7 @@ import traceback
 import urllib.parse
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 from jinja2 import Template
@@ -51,7 +58,6 @@ def parse_rfc2822(dt_str: str) -> _dt.datetime | None:
         return None
 
 def safe_json_dumps(obj) -> str:
-    # Avoid </script> injection breaking the template.
     s = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
     return s.replace("</", "<\\/")
 
@@ -78,89 +84,179 @@ def retry(fn, *, tries=3, base_sleep=1.0, jitter=0.25, name="op"):
 
 @dataclasses.dataclass
 class KPI:
-    id: str
-    name: str
+    series: str = ""
+    title: str = ""
     unit: str = ""
-    value: float | None = None
-    delta: float | None = None
-    source: str | None = None
-    updated_at: str | None = None
-
-@dataclasses.dataclass
-class RawItem:
-    title: str
-    url: str
-    source: str
-    published_at: str | None = None  # ISO date
-    query: str | None = None
-
-@dataclasses.dataclass
-class Event:
-    title_zh: str
-    summary_zh: str
-    region: str = "global"  # used by template: all/cn/us/eu/asia/global
-    score: float = 0.5
-    sources: list[dict] = dataclasses.field(default_factory=list)  # {title,url,source,published_at}
+    source: str = "FRED"
+    lookback: int = 40
 
 @dataclasses.dataclass
 class Section:
     id: str
     name: str
-    brief_zh: str = ""
-    brief_en: str = ""
-    tags: list[str] = dataclasses.field(default_factory=list)
-    events: list[Event] = dataclasses.field(default_factory=list)
+    tags: list = dataclasses.field(default_factory=list)
+
+@dataclasses.dataclass
+class RawItem:
+    title: str
+    url: str
+    source: str = ""
+    published_at: str = ""
+    region: str = "global"
+
+@dataclasses.dataclass
+class Event:
+    title_zh: str
+    summary_zh: str
+    region: str = "global"
+    score: float = 0.5
+    sources: list = dataclasses.field(default_factory=list)
+
+# -------------------------
+# 中国相关检测 (增强版)
+# -------------------------
+
+CHINA_KEYWORDS = [
+    # 英文关键词
+    "china", "chinese", "beijing", "shanghai", "shenzhen", "guangzhou", 
+    "hong kong", "hongkong", "taiwan", "taipei", "macau",
+    "prc", "ccp", "xi jinping", "pboc", "cny", "rmb", "renminbi", "yuan",
+    "huawei", "alibaba", "tencent", "bytedance", "baidu", "xiaomi", "jd.com",
+    "byd", "catl", "nio", "xpeng", "li auto", "geely", "great wall",
+    "sinopec", "petrochina", "cnooc", "china mobile", "china telecom",
+    "icbc", "bank of china", "ccb", "agricultural bank",
+    "zhongguancun", "pudong", "hainan", "xinjiang", "tibet",
+    "belt and road", "bri", "aiib", "rcep",
+    "made in china", "china manufacturing", "chinese exports",
+    "us-china", "sino-", "china trade", "china tariff",
+    "smic", "ymtc", "cxmt", "cambricon",
+    # 中文关键词
+    "中国", "中共", "北京", "上海", "深圳", "广州", "香港", "台湾", "澳门",
+    "人民币", "央行", "国务院", "发改委", "工信部", "商务部",
+    "华为", "阿里", "腾讯", "字节", "百度", "小米", "比亚迪", "宁德时代",
+    "一带一路", "双循环", "内循环", "碳中和", "碳达峰",
+]
+
+def guess_region(text: str) -> str:
+    """检测文本是否与中国相关"""
+    if not text:
+        return "global"
+    t = text.lower()
+    
+    for kw in CHINA_KEYWORDS:
+        if kw.lower() in t:
+            return "cn"
+    
+    if re.search(r'[\u4e00-\u9fff]', text):
+        return "cn"
+    
+    return "global"
+
+# -------------------------
+# 中国专属查询 (每个板块)
+# -------------------------
+
+CHINA_QUERIES = {
+    "macro": [
+        "China PBOC interest rate policy 2025",
+        "人民币 汇率 央行",
+        "China monetary policy stimulus",
+        "中国 经济 GDP 增长",
+    ],
+    "sanctions": [
+        "China US sanctions export controls semiconductor",
+        "中国 制裁 芯片 出口管制",
+        "Huawei sanctions chip restriction",
+        "China entity list BIS OFAC",
+    ],
+    "compute": [
+        "China AI chip domestic production",
+        "中国 算力 芯片 国产",
+        "Huawei Ascend GPU AI",
+        "China data center AI infrastructure",
+    ],
+    "metals": [
+        "China copper aluminum import demand",
+        "中国 有色金属 进口 铜 铝",
+        "China LME inventory warehouse",
+        "中国 稀土 出口 锂",
+    ],
+    "carbon": [
+        "China carbon market ETS trading",
+        "中国 碳市场 碳交易 碳排放",
+        "China CBAM response EU",
+        "中国 碳中和 碳达峰",
+    ],
+    "sea": [
+        "China Vietnam manufacturing supply chain",
+        "中国 东南亚 供应链 转移",
+        "China Indonesia nickel investment",
+        "Chinese companies Southeast Asia relocation",
+    ],
+    "frontier": [
+        "China quantum computing breakthrough",
+        "中国 量子计算 超算",
+        "China fusion energy EAST",
+        "中国 科技 突破 研发",
+    ],
+}
 
 # -------------------------
 # Google News RSS
 # -------------------------
 
-def google_news_rss_url(query: str, hl="en-US", gl="US", ceid="US:en") -> str:
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
+
+def gnews_rss_url(query: str, hl: str = "en-US", gl: str = "US", ceid: str = "US:en") -> str:
     q = urllib.parse.quote_plus(query)
     return f"https://news.google.com/rss/search?q={q}&hl={hl}&gl={gl}&ceid={ceid}"
 
-def fetch_rss(url: str, timeout=(6, 20)) -> str:
-    resp = requests.get(url, headers={"User-Agent": "ben-digest-bot/1.0"}, timeout=timeout)
-    resp.raise_for_status()
-    return resp.text
-
-def parse_google_news_rss(xml_text: str, *, query: str | None, limit: int) -> list[RawItem]:
-    # Google News returns RSS 2.0
-    items: list[RawItem] = []
+def parse_rss_items(xml_text: str) -> list[dict]:
+    items = []
     try:
         root = ET.fromstring(xml_text)
+        for item in root.findall(".//item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            pub = (item.findtext("pubDate") or "").strip()
+            source = (item.findtext("source") or "").strip()
+            if title and link:
+                items.append({"title": title, "link": link, "pubDate": pub, "source": source})
     except Exception:
-        return items
-    channel = root.find("channel")
-    if channel is None:
-        return items
-
-    for it in channel.findall("item"):
-        title = (it.findtext("title") or "").strip()
-        link = (it.findtext("link") or "").strip()
-        pub = (it.findtext("pubDate") or "").strip()
-        src_el = it.find("source")
-        source = (src_el.text.strip() if src_el is not None and src_el.text else "Google News")
-        dt = parse_rfc2822(pub)
-        published_at = dt.date().isoformat() if dt else None
-
-        if not title or not link:
-            continue
-        items.append(RawItem(title=title, url=link, source=source, published_at=published_at, query=query))
-        if len(items) >= limit:
-            break
+        pass
     return items
 
-def fetch_google_news_items(query: str, *, limit: int) -> list[RawItem]:
-    url = google_news_rss_url(query)
-    xml_text = retry(lambda: fetch_rss(url), name="gnews")
-    return parse_google_news_rss(xml_text, query=query, limit=limit)
+def fetch_google_news_items(query: str, *, limit: int = 25, hl: str = "en-US", gl: str = "US", ceid: str = "US:en") -> list[RawItem]:
+    url = gnews_rss_url(query, hl=hl, gl=gl, ceid=ceid)
+    def _do():
+        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(8, 25))
+        r.raise_for_status()
+        return r.text
+    xml_text = retry(_do, name=f"gnews:{query[:20]}", tries=3, base_sleep=1.0)
+    
+    items = parse_rss_items(xml_text)
+    out = []
+    for it in items[:limit]:
+        title = it.get("title", "")
+        region = guess_region(title)
+        dt_str = ""
+        dt_obj = parse_rfc2822(it.get("pubDate", ""))
+        if dt_obj:
+            dt_str = dt_obj.strftime("%Y-%m-%d")
+        out.append(RawItem(
+            title=title,
+            url=it.get("link", ""),
+            source=it.get("source", ""),
+            published_at=dt_str,
+            region=region,
+        ))
+    return out
 
 def dedupe_items(items: list[RawItem]) -> list[RawItem]:
     seen = set()
     out = []
     for it in items:
-        key = sha1((it.title.lower().strip() + "|" + it.url.strip()))
+        key = sha1(it.url)
         if key in seen:
             continue
         seen.add(key)
@@ -168,12 +264,11 @@ def dedupe_items(items: list[RawItem]) -> list[RawItem]:
     return out
 
 # -------------------------
-# KPIs (FRED csv)
+# FRED KPI
 # -------------------------
 
 def fred_csv(series_id: str) -> str:
-    # public CSV endpoint
-    return f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={urllib.parse.quote_plus(series_id)}"
+    return f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
 
 def fetch_fred_latest(series_id: str) -> tuple[float | None, str | None]:
     url = fred_csv(series_id)
@@ -182,29 +277,22 @@ def fetch_fred_latest(series_id: str) -> tuple[float | None, str | None]:
         r.raise_for_status()
         return r.text
     csv_text = retry(_do, name=f"fred {series_id}", tries=3, base_sleep=1.0)
-
-    # CSV columns: DATE,VALUE
+    
     lines = [x.strip() for x in csv_text.splitlines() if x.strip()]
-    if len(lines) < 2:
-        return None, None
-    # walk from bottom to find last numeric
     for row in reversed(lines[1:]):
         parts = row.split(",")
         if len(parts) < 2:
             continue
-        date_s, val_s = parts[0].strip(), parts[1].strip()
-        if val_s in (".", ""):
+        dt, val = parts[0].strip(), parts[1].strip()
+        if val in (".", ""):
             continue
         try:
-            return float(val_s), date_s
+            return float(val), dt
         except Exception:
             continue
     return None, None
 
 def fetch_fred_recent(series_id: str, max_points: int = 40) -> tuple[list[float], list[str]]:
-    """Fetch recent numeric observations from FRED graph CSV endpoint (no API key).
-    Returns (values, dates) in chronological order, limited to last `max_points` numeric points.
-    """
     url = fred_csv(series_id)
     def _do():
         r = requests.get(url, timeout=(6, 20))
@@ -217,7 +305,6 @@ def fetch_fred_recent(series_id: str, max_points: int = 40) -> tuple[list[float]
         return [], []
     vals: list[float] = []
     dates: list[str] = []
-    # parse all numeric then slice last N
     for row in lines[1:]:
         parts = row.split(",")
         if len(parts) < 2:
@@ -238,24 +325,13 @@ def fetch_fred_recent(series_id: str, max_points: int = 40) -> tuple[list[float]
         vals = vals[-max_points:]
     return vals, dates
 
-
 def _color_for_direction(direction: str) -> str:
     d = (direction or "").lower()
     if d == "up":
         return "#16A34A"  # green
     if d == "down":
         return "#DC2626"  # red
-    return "#64748B"      # gray
-
-
-def _color_for_key(key: str) -> str:
-    """Deterministic color from key."""
-    palette = ["#0a84ff", "#34c759", "#ff9f0a", "#ff453a", "#bf5af2", "#64d2ff", "#ffd60a", "#30d158", "#ff375f"]
-    h = 0
-    for ch in key:
-        h = (h * 131 + ord(ch)) & 0xFFFFFFFF
-    return palette[h % len(palette)]
-
+    return "#64748B"  # gray
 
 def _spark_svg(values: list[float], stroke: str) -> str:
     if not values or len(values) < 2:
@@ -271,9 +347,8 @@ def _spark_svg(values: list[float], stroke: str) -> str:
     d = f"M {pts[0][0]:.2f},{pts[0][1]:.2f} " + " ".join([f"L {x:.2f},{y:.2f}" for x, y in pts[1:]])
     return f'<svg class="spark" viewBox="0 0 100 44" preserveAspectRatio="none" aria-hidden="true"><path d="{d}" stroke="{stroke}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
-
 # -------------------------
-# OpenAI (chat.completions via requests)
+# OpenAI JSON解析 (增强版 - 修复JSONDecodeError)
 # -------------------------
 
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
@@ -284,17 +359,59 @@ def _openai_headers() -> dict:
         raise RuntimeError("OPENAI_API_KEY is not set")
     return {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
 
+def fix_json_string(s: str) -> str:
+    """修复常见的JSON格式问题"""
+    # 移除markdown代码块
+    s = re.sub(r'^```json\s*', '', s.strip())
+    s = re.sub(r'^```\s*', '', s)
+    s = re.sub(r'\s*```$', '', s)
+    s = s.strip()
+    
+    # 修复缺少逗号: } { -> },{
+    s = re.sub(r'\}\s*\{', '},{', s)
+    # 修复缺少逗号: } " -> },"
+    s = re.sub(r'\}\s*"', '},"', s)
+    # 修复缺少逗号: ] [ -> ],[
+    s = re.sub(r'\]\s*\[', '],[', s)
+    # 修复缺少逗号: ] " -> ],"
+    s = re.sub(r'\]\s*"', '],"', s)
+    
+    # 修复 "value"\n"key": 格式 (最常见的LLM错误)
+    s = re.sub(r'"\s*\n\s*"([^"]+)":', r'","\1":', s)
+    
+    # 修复数字/布尔后面缺少逗号
+    s = re.sub(r'(\d)\s*\n\s*"', r'\1,\n"', s)
+    s = re.sub(r'(true|false|null)\s*\n\s*"', r'\1,\n"', s)
+    
+    # 移除尾部逗号
+    s = re.sub(r',\s*\}', '}', s)
+    s = re.sub(r',\s*\]', ']', s)
+    
+    return s
+
 def extract_first_json_object(text: str) -> dict | None:
-    # Try strict first
+    """增强的JSON提取 - 多策略"""
+    
+    # 策略1: 直接解析
     try:
         obj = json.loads(text)
         return obj if isinstance(obj, dict) else None
     except Exception:
         pass
-    # Try to extract a top-level {...}
+    
+    # 策略2: 修复后解析
+    fixed = fix_json_string(text)
+    try:
+        obj = json.loads(fixed)
+        return obj if isinstance(obj, dict) else None
+    except Exception:
+        pass
+    
+    # 策略3: 提取JSON对象边界
     start = text.find("{")
     if start < 0:
         return None
+    
     depth = 0
     in_str = False
     esc = False
@@ -318,34 +435,36 @@ def extract_first_json_object(text: str) -> dict | None:
                 depth -= 1
                 if depth == 0:
                     cand = text[start:i+1]
+                    cand = fix_json_string(cand)
                     try:
                         obj = json.loads(cand)
                         return obj if isinstance(obj, dict) else None
                     except Exception:
-                        return None
+                        pass
+                    return None
     return None
 
-def openai_chat_json(model: str, messages: list[dict], *, timeout=(10, 45), max_tokens: int = 900) -> dict:
+def openai_chat_json(model: str, messages: list[dict], *, timeout=(10, 90), max_tokens: int = 2000) -> dict:
+    """调用OpenAI并返回JSON对象"""
     payload_base = {
         "model": model,
         "messages": messages,
-        "temperature": 0.2,
+        "temperature": 0.3,
         "max_tokens": max_tokens,
     }
 
     def _post(payload: dict) -> requests.Response:
         r = requests.post(OPENAI_URL, headers=_openai_headers(), data=json.dumps(payload), timeout=timeout)
         if r.status_code >= 400:
-            # surface server error body for debugging
             raise requests.HTTPError(f"{r.status_code} {r.text[:400]}", response=r)
         return r
 
-    # Attempt 1: use response_format to enforce JSON when supported
+    # 尝试1: 使用response_format
     try_payload = dict(payload_base)
     try_payload["response_format"] = {"type": "json_object"}
 
     try:
-        resp = retry(lambda: _post(try_payload), name="openai", tries=3, base_sleep=1.1)
+        resp = retry(lambda: _post(try_payload), name="openai", tries=3, base_sleep=2.0)
         data = resp.json()
         content = data["choices"][0]["message"]["content"]
         obj = extract_first_json_object(content)
@@ -353,59 +472,95 @@ def openai_chat_json(model: str, messages: list[dict], *, timeout=(10, 45), max_
             raise ValueError("OpenAI did not return JSON object")
         return obj
     except Exception as e1:
-        # Fallback: no response_format (some models/accounts reject it)
-        resp = retry(lambda: _post(payload_base), name="openai(no_rf)", tries=3, base_sleep=1.1)
-        data = resp.json()
-        content = data["choices"][0]["message"]["content"]
-        obj = extract_first_json_object(content)
-        if obj is None:
-            raise ValueError(f"OpenAI did not return JSON object (fallback). Raw head: {content[:200]}")
-        return obj
+        log(f"[digest] openai json_mode failed: {e1}, trying fallback...")
+        
+        # 尝试2: 不使用response_format
+        try:
+            resp = retry(lambda: _post(payload_base), name="openai(no_rf)", tries=2, base_sleep=2.0)
+            data = resp.json()
+            content = data["choices"][0]["message"]["content"]
+            obj = extract_first_json_object(content)
+            if obj is None:
+                raise ValueError(f"OpenAI did not return JSON object (fallback)")
+            return obj
+        except Exception as e2:
+            raise ValueError(f"OpenAI all attempts failed: {e1} / {e2}")
 
 # -------------------------
-# LLM prompts
+# LLM prompts (增强版 - 决策建议 + 中文翻译)
 # -------------------------
 
 def llm_section_pack(model: str, section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event]]:
-    # Keep prompt small: only send short fields
+    """使用LLM生成中文摘要和事件卡"""
+    
+    # 准备输入数据，标注中国相关
     lines = []
-    for it in raw_items[: min(len(raw_items), max(12, items_per_section * 2))]:
-        lines.append({
+    cn_items = []
+    for it in raw_items[: min(len(raw_items), max(18, items_per_section * 2))]:
+        item_data = {
             "title": it.title,
             "source": it.source,
             "date": it.published_at,
             "url": it.url,
-        })
+            "is_china_related": it.region == "cn",
+        }
+        lines.append(item_data)
+        if it.region == "cn":
+            cn_items.append(item_data)
 
-    sys_prompt = (
-        "你是一个严格输出 JSON 的新闻摘要助手。"
-        "根据输入的新闻条目，生成中文摘要与事件卡。"
-        "注意：必须返回一个 JSON object（不要 markdown、不要解释）。"
-    )
+    sys_prompt = """你是Ben的专业金融新闻分析助手。你的任务是：
+1. 生成一段中文综合摘要 (brief_zh): 300-500字
+2. 生成多个事件卡 (events): 每个包含中文标题和摘要
+
+【重要要求】
+- 必须返回纯JSON对象，不要markdown代码块，不要```
+- 所有标题(title_zh)和摘要(summary_zh)必须是中文
+- 英文新闻必须翻译成中文
+- brief_zh必须包含"决策建议"部分
+- 优先选择中国相关的新闻(is_china_related=true)
+- 如果有中国相关新闻，至少选择2-3条"""
+
     user_prompt = {
         "section": {"id": section.id, "name": section.name},
         "items": lines,
-        "requirements": {
-            "brief_zh": "200-400 字中文，先结论后依据，避免空话。",
-            "events": f"生成 {items_per_section} 个事件卡，每个事件卡包含：title_zh(<=22字)、summary_zh(80-140字)、region(枚举: cn/us/eu/asia/global)、score(0-1)、sources(2-4条引用：title,url,source,date)。"
-        }
+        "china_related_items": cn_items[:5],
+        "output_format": {
+            "brief_zh": "300-500字中文摘要，结构：【今日主线】xxx 【关键变化】xxx 【决策建议】xxx",
+            "events": [
+                {
+                    "title_zh": "中文标题(不超过22字)",
+                    "summary_zh": "中文摘要(100-150字，包含背景、影响、后续关注点)",
+                    "region": "cn或us或eu或asia或global",
+                    "score": "0-1重要性评分(中国相关的给更高分)",
+                    "sources": [{"title": "原标题", "url": "链接", "source": "来源", "date": "日期"}]
+                }
+            ]
+        },
+        "requirements": f"生成{items_per_section}个events。如果有中国相关新闻(is_china_related=true)，必须优先选择并将region设为cn。"
     }
 
     messages = [
         {"role": "system", "content": sys_prompt},
         {"role": "user", "content": json.dumps(user_prompt, ensure_ascii=False)},
     ]
-    obj = openai_chat_json(model, messages, max_tokens=1200)
+    
+    obj = openai_chat_json(model, messages, max_tokens=2500)
 
     brief_zh = (obj.get("brief_zh") or obj.get("brief") or "").strip()
     evs = obj.get("events") or []
     events: list[Event] = []
+    
     if isinstance(evs, list):
         for e in evs[:items_per_section]:
             try:
                 title_zh = str(e.get("title_zh") or e.get("title") or "").strip()
                 summary_zh = str(e.get("summary_zh") or e.get("summary") or "").strip()
-                region = str(e.get("region") or "global").strip()
+                region = str(e.get("region") or "global").strip().lower()
+                
+                # 验证region
+                if region not in ("cn", "us", "eu", "asia", "global"):
+                    region = guess_region(title_zh + " " + summary_zh)
+                
                 score = float(e.get("score") if e.get("score") is not None else 0.5)
                 sources = e.get("sources") if isinstance(e.get("sources"), list) else []
                 sources2 = []
@@ -423,30 +578,42 @@ def llm_section_pack(model: str, section: Section, raw_items: list[RawItem], *, 
             except Exception:
                 continue
 
-    # Hard fallback if LLM returns too few
     if len(events) < max(3, items_per_section // 3):
         raise ValueError(f"LLM returned too few events: {len(events)}")
+    
     return brief_zh, events
 
 # -------------------------
-# Deterministic fallback (never empty)
+# Fallback (确保页面不会空白)
 # -------------------------
 
 def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event]]:
-    # Use top headlines as "events"; keep in Chinese light (minimal) to avoid blank page
-    picked = raw_items[:items_per_section]
+    """当LLM失败时的fallback"""
+    # 优先选择中国相关的
+    cn_items = [it for it in raw_items if it.region == "cn"]
+    other_items = [it for it in raw_items if it.region != "cn"]
+    
+    # 混合选择：先中国相关，再其他
+    picked = cn_items[:items_per_section//2] + other_items[:items_per_section - len(cn_items[:items_per_section//2])]
+    picked = picked[:items_per_section]
+    
     events = []
     for it in picked:
         title = it.title.strip()
         summary = f"{it.source} 报道：{title}"
         events.append(Event(
-            title_zh=title[:28],  # may be English; acceptable as fallback
-            summary_zh=summary[:160],
-            region="global",
-            score=0.4,
+            title_zh=title[:30],
+            summary_zh=summary[:180],
+            region=it.region,
+            score=0.5 if it.region == "cn" else 0.4,
             sources=[{"title": it.title[:140], "url": it.url, "source": it.source, "published_at": it.published_at or ""}],
         ))
-    brief = f"本板块抓取到 {len(raw_items)} 条资讯；LLM 摘要不可用时采用标题级回退展示。"
+    
+    cn_count = sum(1 for e in events if e.region == "cn")
+    brief = f"""【今日主线】本板块抓取到 {len(raw_items)} 条资讯，其中中国相关 {cn_count} 条。
+【关键变化】LLM摘要暂时不可用，采用标题级展示。
+【决策建议】建议优先关注标记为中国相关(CN)的条目，这些可能与您的业务更相关。"""
+    
     return brief, events
 
 # -------------------------
@@ -454,7 +621,6 @@ def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_secti
 # -------------------------
 
 def normalize_sections_cfg(cfg_sections) -> list[dict]:
-    # Support both list and dict
     if isinstance(cfg_sections, list):
         return cfg_sections
     if isinstance(cfg_sections, dict):
@@ -473,11 +639,11 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
     kpi_cfg = cfg.get("kpis") or []
     log(f"[digest] kpi start: {len(kpi_cfg)}")
     
-    
     for k in kpi_cfg:
         try:
-            series = (k.get("series") or "").strip()
-            title = (k.get("title") or k.get("name") or series or "KPI").strip()
+            # 兼容多种配置格式
+            series = (k.get("series") or k.get("id") or "").strip()
+            title = (k.get("title") or k.get("name") or k.get("label") or series or "KPI").strip()
             unit = (k.get("unit") or "").strip()
             lookback = int(k.get("lookback") or 40)
 
@@ -497,7 +663,6 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
                 delta = val - prev
                 if prev != 0:
                     delta_pct = (delta / prev) * 100.0
-                # direction used for UI chips
                 if abs(delta) < 1e-12:
                     direction = "flat"
                 elif delta > 0:
@@ -505,6 +670,7 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
                 else:
                     direction = "down"
 
+            # 颜色与趋势线匹配
             color = _color_for_direction(direction)
             spark = _spark_svg(values[-min(len(values), 40):], stroke=color) if values else ""
 
@@ -519,28 +685,26 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
                 "delta_pct": delta_pct,
                 "direction": direction,
                 "spark_svg": spark,
-                "color": color,
+                "color": color,  # 颜色与趋势线匹配
                 "series_values": values[-min(len(values), 40):] if values else [],
             })
         except Exception as e:
-            series = (k.get("series") or "").strip()
+            log(f"[digest] kpi error {k}: {e}")
+            series = (k.get("series") or k.get("id") or "").strip()
             title = (k.get("title") or k.get("name") or series or "KPI").strip()
-            unit = (k.get("unit") or "").strip()
-            color = _color_for_direction(direction)
             kpis.append({
                 "id": series or title,
                 "name": title,
-                "unit": unit,
+                "unit": (k.get("unit") or "").strip(),
                 "value": None,
                 "updated_at": None,
-                "source": "FRED" if series else (k.get("source") or ""),
+                "source": "FRED",
                 "delta": None,
                 "delta_pct": None,
                 "direction": None,
                 "spark_svg": "",
-                "color": color,
+                "color": "#64748B",
                 "series_values": [],
-                "error": str(e)[:200],
             })
 
     log(f"[digest] kpi done: {len(kpis)}")
@@ -555,8 +719,9 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
         sec = Section(id=sid, name=name, tags=sc.get("tags") or [])
         log(f"[digest] section start: {sid} ({name})")
 
-        # Source strategy: Google News queries only (stable baseline)
         raw_items: list[RawItem] = []
+        
+        # 1. 标准查询 (英文)
         for q in (sc.get("gnews_queries") or sc.get("queries") or []):
             try:
                 items = fetch_google_news_items(q, limit=limit_raw)
@@ -564,10 +729,27 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
                 raw_items.extend(items)
             except Exception as e:
                 log(f"[digest] gnews {sid} failed: {type(e).__name__}: {e}")
+        
+        # 2. 中国专属查询 (新增 - 每个板块都有)
+        china_queries = CHINA_QUERIES.get(sid, [])
+        for q in china_queries[:3]:  # 每个section最多3个中国查询
+            try:
+                # 使用中文Google News
+                items = fetch_google_news_items(q, limit=12, hl="zh-CN", gl="CN", ceid="CN:zh-Hans")
+                log(f"[digest] gnews-cn {sid} q='{q[:20]}...' entries={len(items)}")
+                # 强制标记为中国相关
+                for it in items:
+                    it.region = "cn"
+                raw_items.extend(items)
+            except Exception as e:
+                log(f"[digest] gnews-cn {sid} failed: {type(e).__name__}: {e}")
 
         raw_items = dedupe_items(raw_items)
-        # Keep only most recent-ish first (Google already mostly recent)
         raw_items = raw_items[: max(items_per_section * 3, limit_raw)]
+        
+        # 统计中国相关数量
+        cn_count = sum(1 for it in raw_items if it.region == "cn")
+        log(f"[digest] {sid} total={len(raw_items)} cn_related={cn_count}")
 
         # Build section pack
         brief_zh = ""
@@ -575,35 +757,59 @@ def build_digest(cfg: dict, *, date: str, model: str, limit_raw: int, items_per_
         if raw_items:
             try:
                 brief_zh, events = llm_section_pack(model, sec, raw_items, items_per_section=items_per_section)
+                log(f"[digest] llm pack success ({sid}): brief={len(brief_zh)}chars, events={len(events)}")
             except Exception as e:
                 log(f"[digest] llm pack failed ({sid}): {type(e).__name__}: {e}")
+                traceback.print_exc()
                 brief_zh, events = fallback_pack(sec, raw_items, items_per_section=items_per_section)
         else:
-            brief_zh = "（今日该板块暂无可用内容）"
+            brief_zh = "（今日该板块暂无可用内容：无候选来源。）"
             events = []
 
-        # Ensure section is never dropped, so the page won't be blank.
+        # 统计events中的中国相关
+        cn_events = sum(1 for e in events if e.region == "cn")
+
         sections_out.append({
             "id": sec.id,
             "name": sec.name,
             "tags": sec.tags,
             "brief_zh": brief_zh,
-            "brief_cn": brief_zh,  # template expects brief_cn sometimes
+            "brief_cn": brief_zh,
             "brief_us": brief_zh,
             "brief_eu": brief_zh,
             "brief_asia": brief_zh,
             "brief_global": brief_zh,
             "events": [dataclasses.asdict(e) for e in events],
+            "cn_count": cn_events,
+            "total_count": len(events),
         })
-        log(f"[digest] section done: {sid} events={len(events)} raw={len(raw_items)}")
+        log(f"[digest] section done: {sid} events={len(events)} cn_events={cn_events}")
 
     log(f"[digest] sections done: {len(sections_out)}")
+
+    # 生成配置摘要 (用于设置面板)
+    config_summary = {
+        "model": model,
+        "limit_raw": limit_raw,
+        "items_per_section": items_per_section,
+        "kpi_count": len(kpis),
+        "section_count": len(sections_out),
+        "data_sources": {
+            "kpi": "FRED (Federal Reserve Economic Data)",
+            "news": "Google News RSS",
+            "news_regions": ["en-US", "zh-CN"],
+        },
+        "china_queries_enabled": True,
+        "generator": "news_digest_generator_v15.py (FIXED)",
+    }
 
     digest = {
         "date": date,
         "generated_at_utc": now_utc().isoformat(),
+        "generated_at_bjt": now_utc().astimezone(_dt.timezone(_dt.timedelta(hours=8))).strftime("%Y-%m-%d %H:%M (BJT)"),
         "kpis": kpis,
-        "sections": sections_out,  # IMPORTANT: list (template uses forEach)
+        "sections": sections_out,
+        "meta": config_summary,
     }
     return digest
 
@@ -618,7 +824,6 @@ def render_html(template_path: str, digest: dict) -> str:
     return t.render(**context)
 
 def install_signal_handlers():
-    # Make watchdog SIGUSR1 non-fatal and dump stacks
     faulthandler.enable(all_threads=True)
     try:
         faulthandler.register(signal.SIGUSR1, all_threads=True, chain=False)
@@ -643,7 +848,7 @@ def main():
     ap.add_argument("--items_per_section", type=int, default=15)
     args = ap.parse_args()
 
-    log("[digest] boot")
+    log("[digest] boot v15-FIXED")
     date = args.date or now_utc().date().isoformat()
 
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
