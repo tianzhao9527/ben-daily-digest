@@ -144,16 +144,17 @@ def calculate_importance(item: RawItem, weights: dict) -> float:
     elif any(s in source_lower for s in TIER2_SOURCES):
         score *= weights.get("source_tier2", 1.1)
     
-    # 时效性加权：24小时内的新闻更重要
+    # 时效性加权：越新越重要
     if item.published_at:
         try:
             pub_date = _dt.datetime.strptime(item.published_at, "%Y-%m-%d")
             pub_date = pub_date.replace(tzinfo=_dt.timezone.utc)
-            hours_ago = (now_utc() - pub_date).total_seconds() / 3600
-            if hours_ago <= 24:
-                score *= weights.get("recency_24h", 1.2)
-            elif hours_ago <= 48:
-                score *= weights.get("recency_48h", 1.0)
+            days_ago = (now_utc() - pub_date).total_seconds() / 86400
+            if days_ago <= 1:  # 24小时内
+                score *= weights.get("recency_24h", 1.3)
+            elif days_ago <= 2:  # 48小时内
+                score *= weights.get("recency_48h", 1.1)
+            # 超过2天的不加权
         except:
             pass
     
@@ -326,12 +327,13 @@ def dedupe_items(items: list[RawItem]) -> list[RawItem]:
         out.append(it)
     return out
 
-def filter_by_recency(items: list[RawItem], max_hours: int = 48) -> list[RawItem]:
-    """过滤只保留最近N小时内的新闻"""
+def filter_by_recency(items: list[RawItem], max_days: int = 7) -> list[RawItem]:
+    """过滤只保留最近N天内的新闻"""
     now = now_utc()
-    cutoff = now - _dt.timedelta(hours=max_hours)
+    cutoff = now - _dt.timedelta(days=max_days)
     
     out = []
+    filtered_count = 0
     for it in items:
         if not it.published_at:
             # 没有日期的新闻，假设是最近的
@@ -343,9 +345,14 @@ def filter_by_recency(items: list[RawItem], max_hours: int = 48) -> list[RawItem
             pub_date = pub_date.replace(tzinfo=_dt.timezone.utc)
             if pub_date >= cutoff:
                 out.append(it)
+            else:
+                filtered_count += 1
         except:
             # 解析失败，保留
             out.append(it)
+    
+    if filtered_count > 0:
+        log(f"[digest] recency filter: removed {filtered_count} old items (>{max_days} days)")
     
     return out
 
@@ -420,10 +427,18 @@ def _deepseek_headers() -> dict:
     return {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
 
 def fix_json_string(s: str) -> str:
-    s = re.sub(r'^```json\s*', '', s.strip())
-    s = re.sub(r'^```\s*', '', s)
-    s = re.sub(r'\s*```$', '', s)
+    # 移除markdown代码块
+    s = re.sub(r'^```json\s*\n?', '', s.strip())
+    s = re.sub(r'^```\s*\n?', '', s)
+    s = re.sub(r'\n?```$', '', s)
     s = s.strip()
+    
+    # 移除可能的前缀文字（如 "以下是JSON："）
+    json_start = s.find('{')
+    if json_start > 0:
+        s = s[json_start:]
+    
+    # 修复常见格式问题
     s = re.sub(r'\}\s*\{', '},{', s)
     s = re.sub(r'\}\s*"', '},"', s)
     s = re.sub(r'\]\s*\[', '],[', s)
@@ -433,23 +448,47 @@ def fix_json_string(s: str) -> str:
     s = re.sub(r'(true|false|null)\s*\n\s*"', r'\1,\n"', s)
     s = re.sub(r',\s*\}', '}', s)
     s = re.sub(r',\s*\]', ']', s)
+    
     return s
 
 def extract_first_json_object(text: str) -> dict | None:
+    if not text:
+        return None
+        
+    # 尝试1: 直接解析
     try:
         obj = json.loads(text)
         return obj if isinstance(obj, dict) else None
     except:
         pass
+    
+    # 尝试2: 修复后解析
     fixed = fix_json_string(text)
     try:
         obj = json.loads(fixed)
         return obj if isinstance(obj, dict) else None
     except:
         pass
+    
+    # 尝试3: 查找JSON边界
     start = text.find("{")
     if start < 0:
         return None
+    
+    # 从后往前找最后一个}
+    end = text.rfind("}")
+    if end <= start:
+        return None
+    
+    candidate = text[start:end+1]
+    candidate = fix_json_string(candidate)
+    try:
+        obj = json.loads(candidate)
+        return obj if isinstance(obj, dict) else None
+    except:
+        pass
+    
+    # 尝试4: 逐字符匹配括号
     depth = 0
     in_str = False
     esc = False
@@ -481,12 +520,12 @@ def extract_first_json_object(text: str) -> dict | None:
 
 def deepseek_chat_json(messages: list[dict], *, timeout=(15, 120), max_tokens: int = 3000) -> dict:
     """调用DeepSeek API"""
+    # 不使用response_format，通过prompt强制JSON输出
     payload = {
         "model": "deepseek-chat",
         "messages": messages,
-        "temperature": 0.3,
+        "temperature": 0.2,
         "max_tokens": max_tokens,
-        "response_format": {"type": "json_object"},
     }
 
     def _post() -> requests.Response:
@@ -499,8 +538,12 @@ def deepseek_chat_json(messages: list[dict], *, timeout=(15, 120), max_tokens: i
     resp = retry(_post, name="deepseek", tries=3, base_sleep=2.0)
     data = resp.json()
     content = data["choices"][0]["message"]["content"]
+    log(f"[digest] deepseek raw response length: {len(content)}")
+    
     obj = extract_first_json_object(content)
     if obj is None:
+        # 记录原始响应以便调试
+        log(f"[digest] deepseek non-JSON response: {content[:500]}...")
         raise ValueError("DeepSeek did not return JSON object")
     return obj
 
@@ -518,44 +561,28 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
             "source": it.source,
             "date": it.published_at,
             "url": it.url,
-            "is_china_related": it.region == "cn",
+            "is_china": it.region == "cn",
             "abstract": it.abstract[:200] if it.abstract else "",
         })
 
-    sys_prompt = """你是Ben的专业金融新闻分析助手。你必须：
-1. 将所有英文内容翻译成中文
-2. 生成结构化的板块总结 (brief_zh)
-3. 生成多个事件卡 (events)
+    # 简化prompt，确保JSON输出
+    sys_prompt = """你是专业金融新闻分析师。请分析以下新闻并返回JSON格式结果。
 
-【输出格式要求】
-返回纯JSON对象，结构如下：
-{
-  "brief_zh": "板块总结，500字以内，包含：\n【核心动态】xxx\n【关键数据】xxx\n【趋势研判】xxx\n【决策参考】xxx",
-  "events": [
-    {
-      "title_zh": "中文标题，不超过25字",
-      "summary_zh": "中文摘要，100-150字，包含背景、影响、关注点",
-      "region": "cn或us或eu或asia或global",
-      "score": 0.5,
-      "sources": [{"title": "原标题", "url": "链接", "source": "来源", "date": "日期"}]
-    }
-  ]
-}
+【重要】你必须只返回一个JSON对象，不要有任何其他文字、markdown或代码块。
 
-【重要】
-- 所有内容必须是中文，英文新闻必须翻译
-- brief_zh必须使用【】标记的四段式结构
-- 优先选择中国相关新闻(is_china_related=true)"""
+JSON格式：
+{"brief_zh":"板块总结(中文,300字,包含【核心动态】【趋势研判】【决策参考】三部分)","events":[{"title_zh":"中文标题(20字内)","summary_zh":"中文摘要(100字)","region":"cn或global","score":0.5,"sources":[{"title":"原标题","url":"链接","source":"来源"}]}]}
 
-    user_prompt = {
-        "section": {"id": section.id, "name": section.name},
-        "items": lines,
-        "requirements": f"生成{items_per_section}个events，所有标题和摘要必须翻译成中文"
-    }
+要求：
+1. 所有英文必须翻译成中文
+2. 优先选择中国相关新闻(is_china=true)
+3. 只返回JSON，不要任何解释"""
+
+    user_content = f"板块：{section.name}\n新闻列表：\n{json.dumps(lines, ensure_ascii=False)}\n\n请生成{items_per_section}条events，只返回JSON："
 
     messages = [
         {"role": "system", "content": sys_prompt},
-        {"role": "user", "content": json.dumps(user_prompt, ensure_ascii=False)},
+        {"role": "user", "content": user_content},
     ]
     
     obj = deepseek_chat_json(messages, max_tokens=3500)
@@ -588,7 +615,7 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
             except:
                 continue
 
-    if len(events) < max(3, items_per_section // 3):
+    if len(events) < max(2, items_per_section // 4):
         raise ValueError(f"LLM returned too few events: {len(events)}")
     
     return brief_zh, events
@@ -630,21 +657,17 @@ def llm_generate_top5_summary(events: list[dict]) -> list[dict]:
     if not events:
         return []
     
-    sys_prompt = """你是Ben的决策支持助手。为以下重要新闻生成简洁的决策导向总结。
+    # 简化prompt
+    sys_prompt = """为以下重要新闻生成中文总结。只返回JSON，格式：
+{"top5":[{"title":"中文标题","summary":"总结(150字,说明对决策的影响)","action":"建议行动(30字)"}]}
+不要任何其他文字。"""
 
-【输出格式】
-返回JSON：{"top5": [{"title": "标题", "summary": "总结(200字以内，说明对决策的影响)", "action": "建议采取的行动(50字以内)"}]}
-
-【要求】
-- 总结必须是中文
-- 重点说明对业务/投资决策的影响
-- action要具体可操作"""
-
-    user_prompt = {"events": [{"title": e.get("title_zh", ""), "summary": e.get("summary_zh", ""), "region": e.get("region", "")} for e in events]}
+    items = [{"title": e.get("title_zh", ""), "summary": e.get("summary_zh", "")[:100]} for e in events[:5]]
+    user_content = f"新闻：{json.dumps(items, ensure_ascii=False)}\n只返回JSON："
 
     messages = [
         {"role": "system", "content": sys_prompt},
-        {"role": "user", "content": json.dumps(user_prompt, ensure_ascii=False)},
+        {"role": "user", "content": user_content},
     ]
     
     try:
@@ -652,14 +675,15 @@ def llm_generate_top5_summary(events: list[dict]) -> list[dict]:
         return obj.get("top5", [])
     except Exception as e:
         log(f"[digest] top5 summary failed: {e}")
-        # Fallback
-        return [{"title": e.get("title_zh", ""), "summary": e.get("summary_zh", "")[:200], "action": "关注后续发展"} for e in events]
+        # Fallback：直接使用原始数据
+        return [{"title": e.get("title_zh", "")[:30], "summary": e.get("summary_zh", "")[:150], "action": "关注后续发展"} for e in events[:5]]
 
 # -------------------------
 # Fallback
 # -------------------------
 
 def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event]]:
+    """当LLM失败时的fallback - 尽量保持中文"""
     cn_items = [it for it in raw_items if it.region == "cn"]
     other_items = [it for it in raw_items if it.region != "cn"]
     picked = cn_items[:items_per_section//2] + other_items[:items_per_section - len(cn_items[:items_per_section//2])]
@@ -667,19 +691,28 @@ def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_secti
     
     events = []
     for it in picked:
+        # 标题：如果已经是中文就保留，否则截断
+        title = it.title.strip()
+        if len(title) > 50:
+            title = title[:47] + "..."
+        
+        # 摘要：来源+标题
+        summary = f"来源 {it.source}：{title}"
+        if len(summary) > 200:
+            summary = summary[:197] + "..."
+        
         events.append(Event(
-            title_zh=it.title[:30],
-            summary_zh=f"{it.source} 报道：{it.title}"[:180],
+            title_zh=title,
+            summary_zh=summary,
             region=it.region,
-            score=0.5 if it.region == "cn" else 0.4,
-            sources=[{"title": it.title[:140], "url": it.url, "source": it.source, "published_at": it.published_at or ""}],
+            score=0.6 if it.region == "cn" else 0.4,
+            sources=[{"title": it.title[:100], "url": it.url, "source": it.source, "published_at": it.published_at or ""}],
         ))
     
     cn_count = sum(1 for e in events if e.region == "cn")
     brief = f"""【核心动态】本板块抓取到 {len(raw_items)} 条资讯，其中中国相关 {cn_count} 条。
-【关键数据】LLM摘要暂时不可用，采用标题级展示。
-【趋势研判】请根据原文链接进一步分析。
-【决策参考】建议优先关注中国相关条目。"""
+【趋势研判】LLM翻译暂时不可用，显示原始标题。
+【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。"""
     
     return brief, events
 
@@ -811,8 +844,8 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
                     log(f"[digest] gnews-cn {sid} failed: {e}")
 
         raw_items = dedupe_items(raw_items)
-        # 时效性过滤：只保留48小时内的新闻
-        raw_items = filter_by_recency(raw_items, max_hours=48)
+        # 时效性过滤：只保留7天内的新闻（放宽以确保有足够内容）
+        raw_items = filter_by_recency(raw_items, max_days=7)
         raw_items = raw_items[: max(items_per_section * 3, limit_raw)]
         
         # 计算重要性分数
