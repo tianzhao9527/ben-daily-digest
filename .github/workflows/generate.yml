@@ -3,12 +3,8 @@ name: Generate Daily Digest
 on:
   workflow_dispatch:
   schedule:
-    # GitHub Actions cron is UTC.
-    # Beijing 06:00 = UTC 22:00 (previous day).
-    # Every 8 hours cadence: 22:00 / 06:00 / 14:00 UTC = 06:00 / 14:00 / 22:00 Beijing.
-    - cron: "0 22 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 14 * * *"
+    # Beijing 07:00 = UTC 23:00 (previous day)
+    - cron: "0 23 * * *"
 
 permissions:
   contents: write
@@ -42,9 +38,14 @@ jobs:
 
       - name: Generate digest
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
-          python news_digest_generator_v15.py             --config digest_config_v15.json             --template daily_digest_template_v15_apple.html             --out index.html             --limit_raw 25             --items_per_section 15             --model gpt-4o-mini
+          python news_digest_generator_v15.py \
+            --config digest_config_v15.json \
+            --template daily_digest_template_v15_apple.html \
+            --out index.html \
+            --limit_raw 25 \
+            --items_per_section 15
 
       - name: Commit & push (index.html)
         run: |
