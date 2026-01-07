@@ -511,10 +511,27 @@ def llm_chat_json(messages: list[dict], *, timeout=(15, 120), max_tokens: int = 
     raise last_error or RuntimeError("All LLM providers failed")
 
 def fix_json_string(s: str) -> str:
-    # 移除markdown代码块
-    s = re.sub(r'^```json\s*\n?', '', s.strip())
-    s = re.sub(r'^```\s*\n?', '', s)
-    s = re.sub(r'\n?```$', '', s)
+    """清理LLM返回的JSON字符串，移除markdown代码块等"""
+    if not s:
+        return s
+    
+    s = s.strip()
+    
+    # 移除markdown代码块 - 更健壮的方法
+    # 处理 ```json 或 ``` 开头
+    if s.startswith('```'):
+        # 找到第一个换行符后的内容
+        first_newline = s.find('\n')
+        if first_newline > 0:
+            s = s[first_newline + 1:]
+        else:
+            s = s[3:]  # 只有 ``` 没有换行
+    
+    # 移除结尾的 ```
+    if s.rstrip().endswith('```'):
+        s = s.rstrip()
+        s = s[:-3].rstrip()
+    
     s = s.strip()
     
     # 移除可能的前缀文字（如 "以下是JSON："）
@@ -672,10 +689,12 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
                     except:
                         continue
 
-            if len(events) >= max(2, items_per_section // 4):
+            # 根据原始数据量调整最小要求
+            min_events = min(len(raw_items), max(1, items_per_section // 4))
+            if len(events) >= min_events:
                 return brief_zh, events, llm_name
             else:
-                raise ValueError(f"LLM returned only {len(events)} events")
+                raise ValueError(f"LLM returned only {len(events)} events, need at least {min_events}")
                 
         except Exception as e:
             last_error = e
