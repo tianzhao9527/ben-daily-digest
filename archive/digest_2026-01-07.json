@@ -1,7 +1,7 @@
 {
   "date": "2026-01-07",
-  "generated_at_utc": "2026-01-07T18:00:28.551864+00:00",
-  "generated_at_bjt": "2026-01-08 02:00",
+  "generated_at_utc": "2026-01-07T23:54:57.913532+00:00",
+  "generated_at_bjt": "2026-01-08 07:54",
   "kpis": [
     {
       "id": "SP500",
@@ -282,16 +282,15 @@
       "id": "DGS10",
       "name": "美债10Y",
       "unit": "%",
-      "value": 4.17,
-      "updated_at": "2026-01-05",
+      "value": 4.18,
+      "updated_at": "2026-01-06",
       "source": "FRED",
-      "delta": -0.020000000000000462,
-      "delta_pct": -0.477326968973758,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,7.00 L 5.41,19.00 L 7.82,19.00 L 10.23,15.00 L 12.64,25.00 L 15.05,19.00 L 17.46,13.00 L 19.87,15.00 L 22.28,17.00 L 24.69,15.00 L 27.10,21.00 L 29.51,29.00 L 31.92,33.00 L 34.33,39.00 L 36.74,41.00 L 39.15,37.00 L 41.56,23.00 L 43.97,23.00 L 46.38,29.00 L 48.79,19.00 L 51.21,13.00 L 53.62,7.00 L 56.03,5.00 L 58.44,15.00 L 60.85,13.00 L 63.26,3.00 L 65.67,5.00 L 68.08,11.00 L 70.49,9.00 L 72.90,17.00 L 75.31,9.00 L 77.72,7.00 L 80.13,5.00 L 82.54,11.00 L 84.95,13.00 L 87.36,17.00 L 89.77,13.00 L 92.18,5.00 L 94.59,3.00 L 97.00,7.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.009999999999999787,
+      "delta_pct": 0.23980815347721313,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.00 L 5.41,19.00 L 7.82,15.00 L 10.23,25.00 L 12.64,19.00 L 15.05,13.00 L 17.46,15.00 L 19.87,17.00 L 22.28,15.00 L 24.69,21.00 L 27.10,29.00 L 29.51,33.00 L 31.92,39.00 L 34.33,41.00 L 36.74,37.00 L 39.15,23.00 L 41.56,23.00 L 43.97,29.00 L 46.38,19.00 L 48.79,13.00 L 51.21,7.00 L 53.62,5.00 L 56.03,15.00 L 58.44,13.00 L 60.85,3.00 L 63.26,5.00 L 65.67,11.00 L 68.08,9.00 L 70.49,17.00 L 72.90,9.00 L 75.31,7.00 L 77.72,5.00 L 80.13,11.00 L 82.54,13.00 L 84.95,17.00 L 87.36,13.00 L 89.77,5.00 L 92.18,3.00 L 94.59,7.00 L 97.00,5.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        4.17,
         4.11,
         4.11,
         4.13,
@@ -330,23 +329,23 @@
         4.14,
         4.18,
         4.19,
-        4.17
+        4.17,
+        4.18
       ]
     },
     {
       "id": "DGS2",
       "name": "美债2Y",
       "unit": "%",
-      "value": 3.46,
-      "updated_at": "2026-01-05",
+      "value": 3.47,
+      "updated_at": "2026-01-06",
       "source": "FRED",
-      "delta": -0.010000000000000231,
-      "delta_pct": -0.2881844380403525,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,14.40 L 7.82,18.20 L 10.23,12.50 L 12.64,16.30 L 15.05,12.50 L 17.46,4.90 L 19.87,8.70 L 22.28,12.50 L 24.69,12.50 L 27.10,18.20 L 29.51,25.80 L 31.92,35.30 L 34.33,41.00 L 36.74,37.20 L 39.15,33.40 L 41.56,20.10 L 43.97,25.80 L 46.38,29.60 L 48.79,23.90 L 51.21,16.30 L 53.62,14.40 L 56.03,6.80 L 58.44,20.10 L 60.85,23.90 L 63.26,23.90 L 65.67,25.80 L 68.08,31.50 L 70.49,29.60 L 72.90,35.30 L 75.31,31.50 L 77.72,39.10 L 80.13,31.50 L 82.54,33.40 L 84.95,35.30 L 87.36,37.20 L 89.77,37.20 L 92.18,33.40 L 94.59,33.40 L 97.00,35.30\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.010000000000000231,
+      "delta_pct": 0.2890173410404691,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,13.00 L 5.41,17.00 L 7.82,11.00 L 10.23,15.00 L 12.64,11.00 L 15.05,3.00 L 17.46,7.00 L 19.87,11.00 L 22.28,11.00 L 24.69,17.00 L 27.10,25.00 L 29.51,35.00 L 31.92,41.00 L 34.33,37.00 L 36.74,33.00 L 39.15,19.00 L 41.56,25.00 L 43.97,29.00 L 46.38,23.00 L 48.79,15.00 L 51.21,13.00 L 53.62,5.00 L 56.03,19.00 L 58.44,23.00 L 60.85,23.00 L 63.26,25.00 L 65.67,31.00 L 68.08,29.00 L 70.49,35.00 L 72.90,31.00 L 75.31,39.00 L 77.72,31.00 L 80.13,33.00 L 82.54,35.00 L 84.95,37.00 L 87.36,37.00 L 89.77,33.00 L 92.18,33.00 L 94.59,35.00 L 97.00,33.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        3.63,
         3.57,
         3.55,
         3.58,
@@ -385,23 +384,23 @@
         3.45,
         3.47,
         3.47,
-        3.46
+        3.46,
+        3.47
       ]
     },
     {
       "id": "T10Y2Y",
       "name": "10Y-2Y利差",
       "unit": "%",
-      "value": 0.71,
-      "updated_at": "2026-01-06",
+      "value": 0.68,
+      "updated_at": "2026-01-07",
       "source": "FRED",
-      "delta": 0.0,
-      "delta_pct": 0.0,
-      "direction": "flat",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,37.38 L 5.41,33.76 L 7.82,35.57 L 10.23,41.00 L 12.64,39.19 L 15.05,41.00 L 17.46,39.19 L 19.87,37.38 L 22.28,35.57 L 24.69,35.57 L 27.10,35.57 L 29.51,30.14 L 31.92,30.14 L 34.33,35.57 L 36.74,35.57 L 39.15,35.57 L 41.56,30.14 L 43.97,31.95 L 46.38,28.33 L 48.79,30.14 L 51.21,26.52 L 53.62,31.95 L 56.03,28.33 L 58.44,22.90 L 60.85,13.86 L 63.26,13.86 L 65.67,13.86 L 68.08,13.86 L 70.49,15.67 L 72.90,12.05 L 75.31,3.00 L 77.72,8.43 L 80.13,12.05 L 82.54,12.05 L 84.95,13.86 L 87.36,10.24 L 89.77,6.62 L 92.18,4.81 L 94.59,6.62 L 97.00,6.62\" stroke=\"#8E8E93\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#8E8E93",
+      "delta": -0.029999999999999916,
+      "delta_pct": -4.2253521126760445,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.76 L 5.41,35.57 L 7.82,41.00 L 10.23,39.19 L 12.64,41.00 L 15.05,39.19 L 17.46,37.38 L 19.87,35.57 L 22.28,35.57 L 24.69,35.57 L 27.10,30.14 L 29.51,30.14 L 31.92,35.57 L 34.33,35.57 L 36.74,35.57 L 39.15,30.14 L 41.56,31.95 L 43.97,28.33 L 46.38,30.14 L 48.79,26.52 L 51.21,31.95 L 53.62,28.33 L 56.03,22.90 L 58.44,13.86 L 60.85,13.86 L 63.26,13.86 L 65.67,13.86 L 68.08,15.67 L 70.49,12.05 L 72.90,3.00 L 75.31,8.43 L 77.72,12.05 L 80.13,12.05 L 82.54,13.86 L 84.95,10.24 L 87.36,6.62 L 89.77,4.81 L 92.18,6.62 L 94.59,6.62 L 97.00,12.05\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        0.54,
         0.56,
         0.55,
         0.52,
@@ -440,7 +439,8 @@
         0.71,
         0.72,
         0.71,
-        0.71
+        0.71,
+        0.68
       ]
     },
     {
@@ -722,19 +722,15 @@
       "id": "DCOILWTICO",
       "name": "WTI原油",
       "unit": "$/桶",
-      "value": 57.89,
-      "updated_at": "2025-12-29",
+      "value": 58.1,
+      "updated_at": "2026-01-05",
       "source": "FRED",
-      "delta": 1.2899999999999991,
-      "delta_pct": 2.279151943462896,
+      "delta": 0.8900000000000006,
+      "delta_pct": 1.5556720852997739,
       "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,5.57 L 5.41,3.24 L 7.82,3.00 L 10.23,5.45 L 12.64,11.32 L 15.05,12.28 L 17.46,10.48 L 19.87,8.09 L 22.28,17.90 L 24.69,16.46 L 27.10,8.51 L 29.51,9.76 L 31.92,4.68 L 34.33,12.10 L 36.74,13.29 L 39.15,20.53 L 41.56,19.04 L 43.97,24.18 L 46.38,20.83 L 48.79,22.21 L 51.21,16.88 L 53.62,20.83 L 56.03,19.16 L 58.44,14.79 L 60.85,12.34 L 63.26,19.46 L 65.67,23.29 L 68.08,21.67 L 70.49,27.12 L 72.90,28.01 L 75.31,31.84 L 77.72,41.00 L 80.13,37.23 L 82.54,36.33 L 84.95,32.86 L 87.36,24.60 L 89.77,22.39 L 92.18,21.37 L 94.59,34.06 L 97.00,26.34\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,9.95 L 5.41,10.95 L 7.82,9.07 L 10.23,6.57 L 12.64,16.84 L 15.05,15.33 L 17.46,7.01 L 19.87,8.32 L 22.28,3.00 L 24.69,10.76 L 27.10,12.01 L 29.51,19.59 L 31.92,18.02 L 34.33,23.41 L 36.74,19.90 L 39.15,21.34 L 41.56,15.77 L 43.97,19.90 L 46.38,18.15 L 48.79,13.58 L 51.21,11.01 L 53.62,18.46 L 56.03,22.47 L 58.44,20.78 L 60.85,26.48 L 63.26,27.42 L 65.67,31.42 L 68.08,41.00 L 70.49,37.06 L 72.90,36.12 L 75.31,32.49 L 77.72,23.85 L 80.13,21.53 L 82.54,20.47 L 84.95,33.74 L 87.36,25.66 L 89.77,26.29 L 92.18,29.61 L 94.59,29.92 L 97.00,24.35\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#34C759",
       "series_values": [
-        61.36,
-        61.75,
-        61.79,
-        61.38,
         60.4,
         60.24,
         60.54,
@@ -770,26 +766,26 @@
         58.55,
         58.72,
         56.6,
-        57.89
+        57.89,
+        57.79,
+        57.26,
+        57.21,
+        58.1
       ]
     },
     {
       "id": "DCOILBRENTEU",
       "name": "布伦特原油",
       "unit": "$/桶",
-      "value": 63.1,
-      "updated_at": "2025-12-29",
+      "value": 63.0,
+      "updated_at": "2026-01-05",
       "source": "FRED",
-      "delta": -0.6000000000000014,
-      "delta_pct": -0.9419152276295155,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,5.27 L 5.41,3.00 L 7.82,7.86 L 10.23,17.59 L 12.64,18.43 L 15.05,16.42 L 17.46,21.03 L 19.87,15.52 L 22.28,28.35 L 24.69,26.67 L 27.10,18.17 L 29.51,20.05 L 31.92,9.03 L 34.33,16.03 L 36.74,16.94 L 39.15,22.52 L 41.56,9.23 L 43.97,14.67 L 46.38,9.35 L 48.79,13.44 L 51.21,14.15 L 53.62,13.18 L 56.03,18.69 L 58.44,16.23 L 60.85,13.63 L 63.26,11.88 L 65.67,19.15 L 68.08,23.56 L 70.49,20.31 L 72.90,28.42 L 75.31,26.86 L 77.72,30.49 L 80.13,41.00 L 82.54,36.59 L 84.95,36.07 L 87.36,31.79 L 89.77,26.15 L 92.18,16.55 L 94.59,16.55 L 97.00,20.44\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 1.0200000000000031,
+      "delta_pct": 1.6456921587608957,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,14.18 L 5.41,11.79 L 7.82,17.26 L 10.23,10.71 L 12.64,25.97 L 15.05,23.97 L 17.46,13.87 L 19.87,16.10 L 22.28,3.00 L 24.69,11.32 L 27.10,12.40 L 29.51,19.03 L 31.92,3.23 L 34.33,9.71 L 36.74,3.39 L 39.15,8.24 L 41.56,9.09 L 43.97,7.93 L 46.38,14.48 L 48.79,11.56 L 51.21,8.47 L 53.62,6.39 L 56.03,15.02 L 58.44,20.27 L 60.85,16.41 L 63.26,26.05 L 65.67,24.20 L 68.08,28.51 L 70.49,41.00 L 72.90,35.76 L 75.31,35.14 L 77.72,30.05 L 80.13,23.35 L 82.54,11.94 L 84.95,11.94 L 87.36,16.57 L 89.77,22.73 L 92.18,30.05 L 94.59,25.20 L 97.00,17.34\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        65.44,
-        65.79,
-        65.04,
-        63.54,
         63.41,
         63.72,
         63.01,
@@ -825,25 +821,26 @@
         62.22,
         63.7,
         63.7,
-        63.1
+        63.1,
+        62.3,
+        61.35,
+        61.98,
+        63.0
       ]
     },
     {
       "id": "DHHNGSP",
       "name": "天然气",
       "unit": "$/MMBtu",
-      "value": 4.35,
-      "updated_at": "2025-12-29",
+      "value": 2.82,
+      "updated_at": "2026-01-05",
       "source": "FRED",
-      "delta": 1.0399999999999996,
-      "delta_pct": 31.419939577039262,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,38.37 L 5.41,39.99 L 7.82,37.97 L 10.23,35.74 L 12.64,39.79 L 15.05,40.19 L 17.46,36.96 L 19.87,32.91 L 22.28,31.90 L 24.69,31.10 L 27.10,35.14 L 29.51,35.14 L 31.92,37.36 L 34.33,32.91 L 36.74,33.12 L 39.15,28.27 L 41.56,27.66 L 43.97,24.43 L 46.38,24.02 L 48.79,24.63 L 51.21,15.13 L 53.62,5.22 L 56.03,10.28 L 58.44,9.67 L 60.85,9.06 L 63.26,3.00 L 65.67,3.00 L 68.08,11.69 L 70.49,14.52 L 72.90,19.98 L 75.31,25.64 L 77.72,29.07 L 80.13,35.54 L 82.54,33.93 L 84.95,29.68 L 87.36,35.54 L 89.77,33.72 L 92.18,39.59 L 94.59,41.00 L 97.00,19.98\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": -1.1800000000000002,
+      "delta_pct": -29.500000000000004,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,28.97 L 5.41,32.18 L 7.82,32.50 L 10.23,29.94 L 12.64,26.73 L 15.05,25.93 L 17.46,25.29 L 19.87,28.49 L 22.28,28.49 L 24.69,30.26 L 27.10,26.73 L 29.51,26.89 L 31.92,23.04 L 34.33,22.56 L 36.74,20.00 L 39.15,19.68 L 41.56,20.16 L 43.97,12.62 L 46.38,4.76 L 48.79,8.77 L 51.21,8.29 L 53.62,7.81 L 56.03,3.00 L 58.44,3.00 L 60.85,9.89 L 63.26,12.14 L 65.67,16.47 L 68.08,20.96 L 70.49,23.68 L 72.90,28.81 L 75.31,27.53 L 77.72,24.16 L 80.13,28.81 L 82.54,27.37 L 84.95,32.02 L 87.36,33.14 L 89.77,16.47 L 92.18,15.67 L 94.59,22.08 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        3.44,
-        3.36,
-        3.46,
         3.57,
         3.37,
         3.35,
@@ -880,7 +877,10 @@
         3.67,
         3.38,
         3.31,
-        4.35
+        4.35,
+        4.4,
+        4.0,
+        2.82
       ]
     },
     {
@@ -1114,7 +1114,7 @@
         "USD CNY exchange rate PBOC",
         "global equity market VIX"
       ],
-      "brief_zh": "【核心动态】本板块抓取到 11 条资讯，其中中国相关 7 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
+      "brief_zh": "【核心动态】本板块抓取到 13 条资讯，其中中国相关 7 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
       "events": [
         {
           "title_zh": "CNY at a glance: what next as the yuan moves be...",
@@ -1185,7 +1185,7 @@
           "sources": [
             {
               "title": "PBOC sets USD/ CNY central rate at 7.0173 (vs. estimate at 6.9730) - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMzl6VHFNaUpMRzI5U1RkQWFLNTJpc0lIU3pFdDNIb1BLTlBrcmFXREVVbWNxaTZvUVFEWEY3S01VSHBSdDl0bTdwbUlGVmgyOTI5X21ZcXhNSDliME1aMUZFQ203eWxROTZlNVlzdTFUV0paU0NBbTg4ZENlQWMxQUpnNkJaZDJLWEkyeWhMZXdZVEkzQW1IZEtvZktrMGVtdmJlQzEtQWMtMzJx0gGyAUFVX3lxTE1OQ3Y5OUFHSS04TU9lcVZjX3VPOFN4WGhDeGc5akVtTHpWVDFGSFR0aFkwV0U5eDZFQllUaV9BMWVUT0ZodHR1V2JNS0NVS0RqTlc5ZnE2VlRoRGlwOFNwZ2tFN1d4UzhtaFFDS3BkRnNyUGsyQWx2ZG9vQVJjX2dkdDhzbmRiQXk2NHBxNEhOeEIzN3dQWkdPZmRjMWEwaUJXaVdidGp1LXliU2h3MFFzM1E?oc=5",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMzl6VHFNaUpMRzI5U1RkQWFLNTJpc0lIU3pFdDNIb1BLTlBrcmFXREVVbWNxaTZvUVFEWEY3S01VSHBSdDl0bTdwbUlGVmgyOTI5X21ZcXhNSDliME1aMUZFQ203eWxROTZlNVlzdTFUV0paU0NBbTg4ZENlQWMxQUpnNkJaZDJLWEkyeWhMZXdZVEkzQW1IZEtvZktrMGVtdmJlQzEtQWMtMzJx?oc=5",
               "source": "investingLive",
               "published_at": "2026-01-06"
             }
@@ -1250,10 +1250,25 @@
               "published_at": "2026-01-06"
             }
           ]
+        },
+        {
+          "title_zh": "A rise in VIX is typically accompanied by marke...",
+          "summary_zh": "来源 bollywoodhelpline.com：A rise in VIX is typically accompanied by marke...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "A rise in VIX is typically accompanied by market downspikes driven by domestic or global macroeconom",
+              "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTFVIc0hic3ZyaThQeDJ6LWZaM3FYbGN1bk1jQlBTalVvN21naWZyTWdrTEN1eEpRRExtTHFYTDBYODJhaXdib2xUaUxQdkZkRFR4ekxsTlZRaVdwN3BUeFE4NDRBQTJRdno5NTVNSG9OM19UZEFZQnp1SUVSOXBBOGZSUURCR3Q1NTdBb21LakhVVk80OXY2dDlQRlBhR2JiWGhac0k5S1VGZm0xMFpGTE9QdDlwUHBkTkJXU3lreUlVS3dlM1Q3WnkxRTI1Tk9tZHQ5ZllTd1ljdTNKU1pMSWU3QXZTR2Iy?oc=5",
+              "source": "bollywoodhelpline.com",
+              "published_at": "2026-01-07"
+            }
+          ]
         }
       ],
       "cn_count": 7,
-      "total_count": 9
+      "total_count": 10
     },
     {
       "id": "sanctions",
@@ -1264,17 +1279,17 @@
         "EU sanctions Russia export controls",
         "US export controls semiconductor chips"
       ],
-      "brief_zh": "【核心动态】本板块抓取到 2 条资讯，其中中国相关 2 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
+      "brief_zh": "近期地缘政治与科技制裁领域动态聚焦于半导体出口管制措施的有效性及其长期影响。分析指出，美国对华芯片出口管制正在产生预期效果，限制了中国获取先进计算与人工智能芯片的能力。同时，有观点认为，相较于在稀土等原材料领域的博弈，针对半导体技术的出口管制将是更持久、更核心的竞争手段。这些措施旨在遏制中国在关键科技领域的发展，反映了科技供应链安全已成为大国战略竞争的前沿。相关讨论持续进行，评估其长期经济与战略影响。",
       "events": [
         {
-          "title_zh": "The Burn and the Choke: Why Semiconductor Contr...",
-          "summary_zh": "来源 War on the Rocks：The Burn and the Choke: Why Semiconductor Contr...",
-          "region": "cn",
+          "title_zh": "灼烧与扼杀：为何半导体管制将比中国稀土更具持久性",
+          "summary_zh": "文章分析认为，在美中科技竞争中，针对半导体技术的出口管制是比稀土博弈更核心、更持久的战略手段。",
+          "region": "global",
           "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "The Burn and the Choke: Why Semiconductor Controls Will Outlast China’s Rare Earth Weapon - War on t",
+              "title": "The Burn and the Choke: Why Semiconductor Controls Will Outlast China’s Rare Ear",
               "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOT25ialdCb3pXdDBFZjZ5R0FxRnBzTWd5c2dGTHgzSHk5d19VZFE4V1NDdGlITmNlSncwZEItSUxMdFJNLS1yMGFuaEkwejZXWVRiV3lKVm9yTEhZc0l5Wm4zaEtzUXltc0lpdy03NTRMcHpyX1VhNGx5YUNSRklpdEMxRHRDaGxHR3ZkVG1LVkV1Z3MyUkQyQk5mbktCTzdQV0dBSjFHaVJnbUNsNDloWGdTSENUc3pOR184VVpZZw?oc=5",
               "source": "War on the Rocks",
               "published_at": "2026-01-05"
@@ -1282,9 +1297,9 @@
           ]
         },
         {
-          "title_zh": "America's chip export controls are working - No...",
-          "summary_zh": "来源 Noahpinion | Noah Smith：America's chip export controls are working - No...",
-          "region": "cn",
+          "title_zh": "美国芯片出口管制正在奏效",
+          "summary_zh": "评论指出，美国对中国的芯片出口管制措施正在发挥作用，有效限制了中国获取先进计算与人工智能芯片。",
+          "region": "global",
           "score": 0.6,
           "date": "2026-01-02",
           "sources": [
@@ -1297,7 +1312,7 @@
           ]
         }
       ],
-      "cn_count": 2,
+      "cn_count": 0,
       "total_count": 2
     },
     {
@@ -1309,26 +1324,11 @@
         "AI chip export controls Nvidia",
         "liquid cooling data center infrastructure"
       ],
-      "brief_zh": "近期关于人工智能算力基础设施的新闻集中在中国市场的快速发展，尤其是AI数据中心的建设和芯片需求的增长。特斯拉的马斯克表示，中国在AI算力方面将超越其他国家，并且将解决芯片短缺问题。此外，台湾的电力芯片制造商也寄希望于AI数据中心和汽车订单来推动2026年的增长。整体来看，AI算力的需求正在推动相关产业的快速发展。",
+      "brief_zh": "近期关于中国AI算力的新闻引起了广泛关注。马斯克表示，中国的AI算力将远超其他国家，并且芯片问题也会得到解决。此外，台湾的电力芯片制造商预计将在2026年依靠AI数据中心和汽车订单实现增长。中国的AI芯片需求持续上升，Nvidia在应对地缘政治和供应链压力方面面临挑战。国内AI芯片的整合也在加速，百度和华为在GPU云服务中占据主导地位。整体来看，中国在AI算力领域的快速发展将对全球市场产生深远影响。",
       "events": [
         {
-          "title_zh": "特斯拉马斯克：中国AI算力将远超其他国家，而且会解决芯片问题",
-          "summary_zh": "马斯克在最近的发言中指出，中国在人工智能算力方面将超越其他国家，并且预计将解决芯片短缺的问题。这一观点引发了广泛关注，显示出中国在AI领域的快速发展潜力。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA0NXZ1eVBZZ0szMWtCRzlIMDM5allmWW1HMzJON1FMQzUxcHNGclc0OFkza2hRaWdNa3B5OFBiNGhGaGVRcXBvbHgxOVE4ZTVmdDVEV3JiZWdWaGpmcWRmd2RLN3JOc0tCd0ZLWGtManAxUWRmRlNtdW9CMGk?oc=5",
-              "source": "新浪财经",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
           "title_zh": "马斯克：中国AI算力将远超其他国家 芯片问题也会解决",
-          "summary_zh": "马斯克在发言中强调，中国在人工智能算力方面的优势将使其在全球市场中占据领先地位，并且将有效解决当前的芯片短缺问题。这一声明引发了行业内外的广泛讨论。",
+          "summary_zh": "马斯克表示，中国的AI算力将领先全球，并且芯片问题将得到解决，这一观点引发了广泛讨论。",
           "region": "cn",
           "score": 0.8,
           "date": "2026-01-07",
@@ -1343,7 +1343,7 @@
         },
         {
           "title_zh": "中国算力，以何强壮？",
-          "summary_zh": "文章探讨了中国在人工智能算力领域的快速发展，分析了其在全球市场中的竞争力和未来潜力。随着技术的进步和市场需求的增加，中国的AI算力基础设施正在不断增强。",
+          "summary_zh": "文章探讨了中国在AI算力方面的快速发展及其对全球市场的影响，强调了技术和政策的双重驱动。",
           "region": "cn",
           "score": 0.7,
           "date": "2026-01-04",
@@ -1357,10 +1357,25 @@
           ]
         },
         {
-          "title_zh": "台湾电力芯片制造商寄希望于AI数据中心和汽车订单",
-          "summary_zh": "台湾的电力芯片制造商预计，AI数据中心和汽车订单将推动其在2026年的增长。这一趋势反映了AI技术在多个行业中的应用潜力。",
+          "title_zh": "马斯克称中国AI算力将领先世界 关键优势在这一能力",
+          "summary_zh": "马斯克指出，中国在AI算力方面的领先地位源于其强大的技术能力和政策支持，这将影响全球竞争格局。",
           "region": "cn",
-          "score": 0.7,
+          "score": 0.75,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "原标题",
+              "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9DUExteGNJaWFiZEE2WXc3djNpUFR1NUNubmk1MTBsRldPR3MxOXd6a3FiMHQ1UmVEeTJwR2oxN2MyUjFQb1QycmotVjE5UWxhWTEzSW81bjlHZDdzYWUwSTJoU29ESnJMRUdzMjc0dUVwbXg4?oc=5",
+              "source": "新浪新闻_手机新浪网",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "台湾电力芯片制造商依靠AI数据中心实现增长",
+          "summary_zh": "台湾的电力芯片制造商预计将在2026年通过AI数据中心和汽车订单实现显著增长，反映出市场需求的变化。",
+          "region": "cn",
+          "score": 0.65,
           "date": "2026-01-04",
           "sources": [
             {
@@ -1372,8 +1387,8 @@
           ]
         },
         {
-          "title_zh": "中国的AI芯片需求：Nvidia应对地缘政治和供应链压力",
-          "summary_zh": "Nvidia在中国市场的AI芯片需求面临地缘政治和供应链压力的挑战。尽管如此，Nvidia仍在积极寻求在中国市场的机会，以满足不断增长的需求。",
+          "title_zh": "中国的AI芯片需求持续上升",
+          "summary_zh": "随着AI技术的发展，中国对AI芯片的需求不断增加，Nvidia在应对地缘政治和供应链压力方面面临挑战。",
           "region": "cn",
           "score": 0.7,
           "date": "2026-01-07",
@@ -1387,8 +1402,38 @@
           ]
         },
         {
-          "title_zh": "美国的芯片出口管制正在发挥作用",
-          "summary_zh": "美国对芯片出口的管制措施正在取得成效，限制了对中国的高端芯片出口。这一政策旨在保护美国的技术优势，同时也对全球供应链产生了深远影响。",
+          "title_zh": "中国GPU云服务整合加速",
+          "summary_zh": "百度和华为在国内GPU云服务中占据主导地位，推动了中国AI芯片的整合与发展。",
+          "region": "cn",
+          "score": 0.68,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "原标题",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZmpWU2dFVEh0S1NhcURvTVFOeXNYQ0tBeG1nTVl6eDZuUXA5ekNZSGQyZGF3b3ZWd2g0aTZoUVpTelFSalpyZUQ1WkZoNlFDNVk0VlFXUENmMFZ4bGltbnBJcC1YZnl6Ujd0R1lwNDBwNzZpVGphcm9rR2QxbWJDaVg2bVZwTHZ2LUx5eENUQmFnSDJSV1N5OXdsRHhYdWlPUHZzcXRmRFVzOG05bTdJdFlrYjFUeVlCTV9NalFHU2VQa0xw?oc=5",
+              "source": "Tom's Hardware",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国AI芯片市场的未来",
+          "summary_zh": "随着AI技术的快速发展，中国的AI芯片市场前景广阔，预计将吸引更多投资和技术创新。",
+          "region": "cn",
+          "score": 0.65,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "原标题",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPOVZ3RHhOc29TMmhwa0RHOE5zdmNHZGFCM0Y4ZTl2b3NfaEJ3c3doZmxyN0JsUXIyMkFZSUtoT3JLZXVvdVhMaGhXZjZfdERMMHRuc1VDTC01dkh4OUl2WVJNUFlUX3Q2a3BjVWZzZmxTaFNBR2lpZ0RZVGw2Q1ppNjVpYW9kZngtUGtpRkRvWUE2LXlRNm4yRw?oc=5",
+              "source": "富途牛牛",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国的芯片出口管制措施有效",
+          "summary_zh": "美国的芯片出口管制措施正在发挥作用，影响了中国市场的AI芯片供应链。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-02",
@@ -1402,62 +1447,32 @@
           ]
         },
         {
-          "title_zh": "Nvidia的H200不太可能影响中国芯片的需求",
-          "summary_zh": "市场分析认为，Nvidia的新款H200芯片不太可能对中国市场的芯片需求造成负面影响。相反，随着AI技术的普及，需求可能会进一步增长。",
+          "title_zh": "中国AI算力的未来展望",
+          "summary_zh": "中国在AI算力领域的快速发展将对全球市场产生深远影响，未来将继续吸引国际关注。",
           "region": "cn",
-          "score": 0.6,
+          "score": 0.7,
           "date": "2026-01-07",
           "sources": [
             {
               "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPOVZ3RHhOc29TMmhwa0RHOE5zdmNHZGFCM0Y4ZTl2b3NfaEJ3c3doZmxyN0JsUXIyMkFZSUtoT3JLZXVvdVhMaGhXZjZfdERMMHRuc1VDTC01dkh4OUl2WVJNUFlUX3Q2a3BjVWZzZmxTaFNBR2lpZ0RZVGw2Q1ppNjVpYW9kZngtUGtpRkRvWUE2LXlRNm4yRw?oc=5",
-              "source": "富途牛牛",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA0NXZ1eVBZZ0szMWtCRzlIMDM5allmWW1HMzJON1FMQzUxcHNGclc0OFkza2hRaWdNa3B5OFBiNGhGaGVRcXBvbHgxOVE4ZTVmdDVEV3JiZWdWaGpmcWRmd2RLN3JOc0tCd0ZLWGtManAxUWRmRlNtdW9CMGk?oc=5",
+              "source": "新浪网",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "Nvidia首席执行官不排除向中国提供‘Rubin’",
-          "summary_zh": "Nvidia的首席执行官表示，未来可能会向中国市场提供新一代的‘Rubin’芯片。这一表态引发了对Nvidia在中国市场策略的广泛讨论。",
+          "title_zh": "美国在AI竞争中落后于中国？",
+          "summary_zh": "有分析认为，美国在AI技术和市场竞争中可能落后于中国，需采取措施应对挑战。",
           "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE02aTJkSmJBaFF3MFBiSnNTbjl0THhMNUhzMkZQMkV3eXRWNnIxY3BpM3htMHpOVEJUWGVaSUtGMVdNMXZSZVJlNXVsTnctZWJNX1JJSFczbWRQbFlHM3dpSWdPVHM1d3lXUElVbFJ3aERJd9IBd0FVX3lxTFBLWVdUT0JRX0dGRnhqaGpPNDh0WGlzd0paYlNkRnVwNUVzTTJpSW1vTEhMOFJhblRkUk5qdEI1Vy1HUFM4Y0VHY1lTR2VpNGdOVWdpaDUyWXV3dUlKZzNrdlY3LWRId2ZHZnVjSEtiREFDVndkUGpF?oc=5",
-              "source": "Wccftech",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国的GPU云服务围绕百度和华为整合",
-          "summary_zh": "中国的GPU云服务市场正在围绕百度和华为进行整合，随着国内AI芯片的规模化生产，市场竞争愈发激烈。",
-          "region": "cn",
-          "score": 0.6,
+          "score": 0.65,
           "date": "2026-01-06",
           "sources": [
             {
               "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZmpWU2dFVEh0S1NhcURvTVFOeXNYQ0tBeG1nTVl6eDZuUXA5ekNZSGQyZGF3b3ZWd2g0aTZoUVpTelFSalpyZUQ1WkZoNlFDNVk0VlFXUENmMFZ4bGltbnBJcC1YZnl6Ujd0R1lwNDBwNzZpVGphcm9rR2QxbWJDaVg2bVZwTHZ2LUx5eENUQmFnSDJSV1N5OXdsRHhYdWlPUHZzcXRmRFVzOG05bTdJdFlrYjFUeVlCTV9NalFHU2VQa0xw?oc=5",
-              "source": "Tom's Hardware",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcnZyVzNNTXVjak9pZlI4RU5abmVvYlN6WC1NOG9RTFVoWHZRcTgySkxDOHFqbFdRZlQ2UVVjN1A3aV9zMnAtNmR2VTJqWTFyeU1Dckh2Vy1ScW8zdU1GRTM2WGN4ZkpDUjBxZmU5Z1hIYTBrM2c5YVdWWjJlWGlQNm1ac2czQmhkUmVwSA?oc=5",
+              "source": "The Verge",
               "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Nvidia在2026年做出重大举措",
-          "summary_zh": "Nvidia近期宣布了一系列重大举措，旨在进一步巩固其在AI芯片市场的领导地位。这些举措可能会影响未来的市场格局。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-03",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNLXVOVWRvTUFWN3JiTXo0NTZPQ3VJeFZaeGFuQ1hyUHFLdjc3aEpGZXVpenh2VWpnMnhpNkNneFN4VXNRTzA4c1pOUW5oaFN3RjJGLUFUOU9rRjFJYXZrVi1xcFRXcVpoLThSdDktU2NjWTRtN3JvUFBtdlFoUFBkUHdHaXNIbU9PQUtEMjlZRmdiRkg0QjFCeg?oc=5",
-              "source": "The Motley Fool",
-              "published_at": "2026-01-03"
             }
           ]
         }
@@ -1474,17 +1489,17 @@
         "copper scrap trade flows",
         "energy transition metals demand"
       ],
-      "brief_zh": "【核心动态】本板块抓取到 1 条资讯，其中中国相关 1 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
+      "brief_zh": "2026年1月6日，上海金属市场发布每日评论，指出上海期货交易所金属价格全线上涨，其中铜价表现尤为强劲，出现大幅飙升。该报告反映了当日中国金属市场的整体乐观情绪，铜作为重要的工业金属，其价格波动受到供需关系、库存水平及宏观经济预期等多重因素影响。此次普涨可能源于市场对需求改善的预期或短期供应紧张的担忧。",
       "events": [
         {
-          "title_zh": "SMM Daily Comments (May 18):SHFE Metals Rose Ac...",
-          "summary_zh": "来源 Shanghai Metals Market：SMM Daily Comments (May 18):SHFE Metals Rose Ac...",
+          "title_zh": "SMM每日评论：沪期所金属全线上涨 铜价飙升",
+          "summary_zh": "2026年1月6日，上海金属市场报告显示，上海期货交易所金属价格普遍上涨，其中铜价大幅攀升，反映市场乐观情绪。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "SMM Daily Comments (May 18):SHFE Metals Rose Across the Board with Copper Soaring, LME Metals Mostly",
+              "title": "SMM Daily Comments (May 18):SHFE Metals Rose Across the Board with Copper Soarin",
               "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNM1A5OUhURHVJRURnM2RtV2dPQ1ZPdWdoSGstaUtHVV9IUzdGd1YzRUN2b016TFJVNFZ0a0R4Szd3TDA1bHJHN2ZpYTQ0Tlpzak81STFYSExOVHplMHRqaHdrazN5ZjFTMERLTnhIdGhZVThXeWExNnlFVEo1SEtsNTFmc2JtNkkxNFFkU1R0dzd3ZWlmdDlmOGVLTGk5VDhZeEVkd0JaazFBZDU2emN2Z2JEMXJLMjN1cEZHZjlfWGhGaWVnYzJRckxPSWw2SHZ2WjVEWk5wc3k4anVJQ2EzeW9lakVINDBmdV9ueVduZVJtcksxV0RMLQ?oc=5",
               "source": "Shanghai Metals Market",
               "published_at": "2026-01-06"
@@ -1504,32 +1519,17 @@
         "carbon credit market Verra",
         "carbon trading ETS price"
       ],
-      "brief_zh": "【核心动态】本板块抓取到 21 条资讯，其中中国相关 3 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
+      "brief_zh": "欧盟碳边境税（CBAM）于2026年正式实施，旨在通过对高碳排放商品征税来保护欧盟市场，促进全球碳定价。此政策引发了国际间的广泛关注，尤其是对中国等主要出口国的影响。各国对这一政策的反应不一，部分国家寻求减免措施以保护本国农业和工业。与此同时，碳市场的变化也为全球气候行动带来了新的机遇和挑战。",
       "events": [
         {
-          "title_zh": "China Threatens EU After Carbon Border Tax Take...",
-          "summary_zh": "来源 Caixin Global：China Threatens EU After Carbon Border Tax Take...",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "China Threatens EU After Carbon Border Tax Takes Effect - Caixin Global",
-              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWUhtdnplV0JnZXhGMmtMMHdtcWhjenIxaGMweFlsVF83Q2ozMHdnRU9OajdnN1VQdmgxUmhsYVNBOUcxUndTdTZqVVowbTJkQ0d3WU5tZ05xaF95Nl9ncl9EdTRjVUYzRzdPYm9DRXdBMXhoNzU3TmlFMGcwc2xoX3hrS3ZGVVNtaVZVVVZVTzU4QUV6SDdYWXZydTlrM0t2TDZRdmdoektzY2tJcl9J?oc=5",
-              "source": "Caixin Global",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "China Calls EU Carbon Border Tax Unfair, Warns ...",
-          "summary_zh": "来源 Bloomberg.com：China Calls EU Carbon Border Tax Unfair, Warns ...",
+          "title_zh": "中国对欧盟碳边境税表示不满，警告将采取反制措施",
+          "summary_zh": "中国对欧盟实施的碳边境税表示不满，称这一措施不公平，并警告可能采取反制措施，影响双边贸易关系。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-01",
           "sources": [
             {
-              "title": "China Calls EU Carbon Border Tax Unfair, Warns of Counter-Moves - Bloomberg.com",
+              "title": "中国对欧盟碳边境税表示不满，警告将采取反制措施",
               "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQUWlZX1VWNlA5eHRYM2t3dzVTd2EySG1KV0M1VHpMV1ViYzFNQW0tUzcydS1wTjJJQm1ZZE1XZHFWa2VFdzdGX1hEZ0ZUNHVIenVQVnRvbUVnV3E0WFUtUU1SaUJVR2ZJNkNER0NmU3AtbHdyUFJaa2JMZWxNNXBfRW02ZzRkUngzOHhMb1QxMEJLR0oyZXJ4U0Nva0tyRTZaS09vaUltem1wUVdvaTAyblFmNA?oc=5",
               "source": "Bloomberg.com",
               "published_at": "2026-01-01"
@@ -1537,164 +1537,14 @@
           ]
         },
         {
-          "title_zh": "今日碳价：【CEA】全国碳市场每日综合价格行情及成交信息20260105 - 中国碳排放交易网",
-          "summary_zh": "来源 中国碳排放交易网：今日碳价：【CEA】全国碳市场每日综合价格行情及成交信息20260105 - 中国碳排放交易网",
+          "title_zh": "欧盟碳边境税正式生效，重塑钢铁和水泥进口市场",
+          "summary_zh": "欧盟的碳边境税于2026年正式生效，旨在为钢铁和水泥等高碳排放商品设定公平的市场环境，影响全球贸易格局。",
           "region": "cn",
           "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "今日碳价：【CEA】全国碳市场每日综合价格行情及成交信息20260105 - 中国碳排放交易网",
-              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ZQmplTXdkMDRKd1F1UjlwRnNSVkNIZTNJdGl1NnVITWxRR3h1SmxxUHR4Wm1LTy03X3ZKdElpYXRyZGhLakhVTzZ6QkktQ1M3bk1aS2FmN25wQ3hTUGNYeG5YcEdQUE82Snc?oc=5",
-              "source": "中国碳排放交易网",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "The EU’s CBAM enters a New Phase: Why the EU’s ...",
-          "summary_zh": "来源 ClearBlue Markets：The EU’s CBAM enters a New Phase: Why the EU’s ...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "The EU’s CBAM enters a New Phase: Why the EU’s Carbon Border Tax Matters - ClearBlue Markets",
-              "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPekpTaHI2M0JBNmRtWjVtZXZ4MzNzaEJ2RmZoa29kVzFaWXB0UEk2MmVyTnJsR3BrM1dZbDdqajlUMktvWGpBTFRJczV3a0dFcTV4bzRLU28yYmhMbVJybERrVi1Qc3BGZ0EzNDZ2cmVUeU8xVGYwMmdCc2lSYUI1cXlEdmF1cWEtRTFIYl9fTWRrYmpWcUxRWEw4RGdSdEJhX1oxa3NqQVBnakw3SmR6N09ZWko1ZEVwZEl3eWdYeUdRQk9EQ2ZFOdIByAFBVV95cUxPekpTaHI2M0JBNmRtWjVtZXZ4MzNzaEJ2RmZoa29kVzFaWXB0UEk2MmVyTnJsR3BrM1dZbDdqajlUMktvWGpBTFRJczV3a0dFcTV4bzRLU28yYmhMbVJybERrVi1Qc3BGZ0EzNDZ2cmVUeU8xVGYwMmdCc2lSYUI1cXlEdmF1cWEtRTFIYl9fTWRrYmpWcUxRWEw4RGdSdEJhX1oxa3NqQVBnakw3SmR6N09ZWko1ZEVwZEl3eWdYeUdRQk9EQ2ZFOQ?oc=5",
-              "source": "ClearBlue Markets",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "France Says EU Set to Suspend Carbon Border Tax...",
-          "summary_zh": "来源 Bloomberg.com：France Says EU Set to Suspend Carbon Border Tax...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "France Says EU Set to Suspend Carbon Border Tax on Fertilizers - Bloomberg.com",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeTgzcVVBakhuT21NWUtnWVk1UWVmQlpQdV9Wa1VSRlZRNFVoWjJjYjlKakhKMmJfRURoYU5SeEtBeGVCSjRud0Zna3p0VV9vTl90LXc2aW9aMWpBY0lFYjF5UG5XaUxMc0w0bDdPTVFmNXFJbXRESzZwQzFKZlNxQ1ZzbXVzMENaSHpwdV9KSHl2R01CcWNmcXphUE1XS0RmSWV4eGZDNHo4NmhJSUc1VEt6dw?oc=5",
-              "source": "Bloomberg.com",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU Expands CBAM: A Review Shows It Urges Other ...",
-          "summary_zh": "来源 CarbonCredits.com：EU Expands CBAM: A Review Shows It Urges Other ...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "EU Expands CBAM: A Review Shows It Urges Other Countries to Use Carbon Pricing - CarbonCredits.com",
-              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZXotaVpQRVgyTEh4OVY0a1dYb3g5ZnQ4c2FqeFI2bjBCSzVERF9OQ2ZjSnhuZGtZNUxhcjlURzdnZk9jenpabVV2TktmMk56X3dhYVRBTk9uWVJKbnNwNHBwaEhxaG1pd2ZVR0dsLWFFdHhfaEpqcUZvY1UycjN3SXdnY1V3akQ1NlRFelhBdFczQUYyYTkzdmhmQS1XYzJUT2plNVVoSQ?oc=5",
-              "source": "CarbonCredits.com",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "Italy, France seek relief on fertilisers from E...",
-          "summary_zh": "来源 Euronews.com：Italy, France seek relief on fertilisers from E...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Italy, France seek relief on fertilisers from EU's carbon border tax - Euronews.com",
-              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZVJrWU9qb05hMF9hZ2d5eU1HZkhZN3RXbXplR1NWNnVaQndLN2hmSUwwZlhncmF1NHZEMWphYkl2Si1tb0J5SmhFQmlBYWZUWFRESWxFRXh2WVk4ZW1saHVFQWtjdzBCQlI2al9CcUtYTlpBQTVuaE1XU2dQN0E3c1B5emxSTE9TTFA3cVc3cG51RXJVcDFKbWlMVGNKVXY1a3BsRmVDd0x4MEE5dnY0M21tVmRobDFNdHhv?oc=5",
-              "source": "Euronews.com",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU Carbon Border Adjustment Mechanism Begins Ch...",
-          "summary_zh": "来源 European Business Magazine：EU Carbon Border Adjustment Mechanism Begins Ch...",
-          "region": "global",
-          "score": 0.4,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "EU Carbon Border Adjustment Mechanism Begins Charging Fees: A New Era in Climate Policy - European B",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJaZVdBdlA1VE50T0NHa0RkY3FlUV9KSlJuUlotT2R4YjU5cTE1Y3JOdWNrd0lmNjc5Y3l0dk5ZbllKNDdVTHlwLWtMdl85SkpZN2FIYkJleUo2QmhkWS1zSHRSb0JjemM4dVNwVUE0aW5qYTFGakVMVzdhamNYU2tZTEdxLU5xWEdwSnRWbWI1dXhNOTJvUzVscjExZnh5QTN6SHF6RkVOb9IB0wFBVV95cUxQQUpxRDNxcEJLQm1nRGpMZ20tQnNSdWFoaVc0R0dwNGNXMDQtaGJRZUdtQWU3MlIwTGZJRndtazU3SjBLc1duLVNUY1prQVVQQXlXQkpkdzNwZWtpaUMzb25XUXF5MUc0WFJsWkNEeHloY0dtYVB3WDl6TDhYcHBzMFV1SFJGa1Y1ZlRWcUpxT2tFcDZSWVhDdGZ4SGNabmRaUU02UkQzU0F5bTV5TGZ1eFd3QllBekVyQTBleGotZGJzWjlxejBnUzdHUDlhZHpWdUVn?oc=5",
-              "source": "European Business Magazine",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU’s new ‘green tariff’ rules on high-carbon go...",
-          "summary_zh": "来源 The Guardian：EU’s new ‘green tariff’ rules on high-carbon go...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-01",
-          "sources": [
-            {
-              "title": "EU’s new ‘green tariff’ rules on high-carbon goods come into force | Environment - The Guardian",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRGYzVzdhRWxlZGk5RmdWMTNpMlpuTWxiY1ZXMUlRU0wwMEJocXFJanlSSml1TVhmRTBUZjg3XzkzaldvbnQ5YTlza0FpdVU1NTQyX0JKcDNpZkloR0lzWEFLZUZ6bURWN2N1ZkpjVll6NkRpeTZZVXFKV0Z0aUFxOGJpTENERk1JQ0RKeTNzZXN3cEk2bmh0MTVXOHlDcExURXNTV3NWNjVGZkVlVEU2TDhiNVp0Zw?oc=5",
-              "source": "The Guardian",
-              "published_at": "2026-01-01"
-            }
-          ]
-        },
-        {
-          "title_zh": "Thailand demonstrates aluminium export resilien...",
-          "summary_zh": "来源 alcircle：Thailand demonstrates aluminium export resilien...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Thailand demonstrates aluminium export resilience; remains hopeful amidst CBAM challenges - alcircle",
-              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQVlVxczNuYUFudklyUmhpVlhnN0dfbkNIOE1ScTZXLVVyQ3pjZkNhMlF3NDNmcHp4eXRTaTRINmI1bVY4TjBPQ29IMDhxMmNFcTJ1cERyb2RvQVk3VFhyc3hBcGNjaC15YXB0amVHZG40OFZ2RkN0S09tSFo5aldpcjV4dDlOX1owdl9kclBvdGxFdEJhcmFjakNObk05NlNSTUZ2aHFqbElsOWRv?oc=5",
-              "source": "alcircle",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU Carbon Border Tax and Chemical Rules Take Ef...",
-          "summary_zh": "来源 Mexico Business News：EU Carbon Border Tax and Chemical Rules Take Ef...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "EU Carbon Border Tax and Chemical Rules Take Effect in 2026 - Mexico Business News",
-              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPV0RPZU5qenhjU3JjbnRmQ21qNmxsaTRuUEZfcmJJS3NsakFhSFYyTG1PeXA5OXZVNklPZEo3UWlnZnBtS2VoV3o2R0d2eVNraHN4TllVUnlGUjdQMVh0OWtOaTVTRkdtRERQQ1hoWEdyR1BoOG4tOVU5a1FuY1UyQk9jZm1NOGl6V2JjVVlpZWZ5V3B5UDVhcVpCUEM0dkdI?oc=5",
-              "source": "Mexico Business News",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU’s amendments to CBAM: possibility for relief...",
-          "summary_zh": "来源 Balkan Green Energy News：EU’s amendments to CBAM: possibility for relief...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "EU’s amendments to CBAM: possibility for relief, but January 1 brought market uncertainty - Balkan G",
-              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPck1uNmJGZ3luQjVhOGpsRVU0Qk5zall0NHRoR2VZaTROeVhybTExMmotN21rSWEybzQxMlNlaVNGeHlTMjBsS0FEdlAxNmhBeTB4bjc0blJvY1pEX2VUakgtMlVoLW1yM2xJWDQ0WTNpS00tOU8xYlI2cjg5OVNrbWFMb1ZleG94ZDBNakxnVENKY09hRDB1NlZrWWJpVFdra0xldExCQVVxcVpwa2MzUkdvMm8yeXluY2ZTUQ?oc=5",
-              "source": "Balkan Green Energy News",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "EU enforces carbon border tax to level playing ...",
-          "summary_zh": "来源 Indonesia Business Post：EU enforces carbon border tax to level playing ...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "EU enforces carbon border tax to level playing field for steel, cement imports - Indonesia Business ",
+              "title": "欧盟碳边境税正式生效，重塑钢铁和水泥进口市场",
               "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNVGlLdzBnSnZQcUwydFo5bHFmT0VQX2lOcGVZOXhUekQ5VERWQ3FTb3dFUXpRQ1NNV3UxYWg2d1VUQW8tSE8zZDFKN09XN1RFZy1vWk4wNVhjMlhIYXd0WGxJREJIOGMyVmt4NDFVRlBkWkwxdExGZzdtY0ZVTXFJRGNEV2g0ODJHVkhyRUxLMW41QnpTWmVPN29TU1pTZW1rcUFRdkRtUUFsT0FSckFHN2FCU2RvaVBVV01BVVc4bFBYU0xBNFRxekNOa0Y1bEdVemc?oc=5",
               "source": "Indonesia Business Post",
               "published_at": "2026-01-05"
@@ -1702,14 +1552,14 @@
           ]
         },
         {
-          "title_zh": "Europe’s carbon border tax enters force for hyd...",
-          "summary_zh": "来源 H2 View：Europe’s carbon border tax enters force for hyd...",
-          "region": "global",
-          "score": 0.4,
+          "title_zh": "欧盟碳边境税对氢能、钢铁和氨等行业的影响",
+          "summary_zh": "欧盟的碳边境税将影响氢能、钢铁和氨等行业，促使企业加快减排步伐，推动绿色转型。",
+          "region": "cn",
+          "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "Europe’s carbon border tax enters force for hydrogen, steel, ammonia and more - H2 View",
+              "title": "欧盟碳边境税对氢能、钢铁和氨等行业的影响",
               "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRE83bTU0cHJtcHBXOXNnT29yMmtLOWswYlE1NDRQQWhPQzdkTkRfWExtSzA1M1pnUTJtRGtOaFVsdXVaeDM3M2Z2Y2JXVE51alJVUThLOFlEM2h2VXhfbFlrazdmY0FlNjU5UjVwR0lPM25fNTFrTV9IYlJPZFl1Rkg0eXVuMF9YZkhZVUFadVFLalpsczIwUkdxXy04RmEweHJZYmEzTlZIM0hkRm5IbHZRSVNJeUhvMGdsZ2pR?oc=5",
               "source": "H2 View",
               "published_at": "2026-01-05"
@@ -1717,23 +1567,83 @@
           ]
         },
         {
-          "title_zh": "CBAM: EU's carbon border levy enters into force...",
-          "summary_zh": "来源 BusinessGreen：CBAM: EU's carbon border levy enters into force...",
-          "region": "global",
-          "score": 0.4,
+          "title_zh": "欧盟碳边境税可能暂停对化肥的征收",
+          "summary_zh": "欧盟可能会暂停对化肥的碳边境税，以防市场受到损害，法国部长对此表示关注。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "欧盟可能暂停对化肥的征收",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV8yanN4YlVKWnpzWUV5d1I1cXpxb09jX2pVMjJqdDZYanBOcld6ZWpZVF9NNmpxVnNhTmdMcTVkVUdMZDB4TjhDdVBpM1NtV0dQam9kRDdudThtR29DNUd5aGpuR1F4V05VTC1DWVktb0xLand3cmluTnhPQlRDSThuVHNpNXB1ZWNtTXE2aWJlU0lxQ2w1Nm0wZF9zV0dHd19BUjVOMWUzM292?oc=5",
+              "source": "Anadolu",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟扩大碳边境税，推动其他国家采用碳定价",
+          "summary_zh": "欧盟的碳边境税扩展至更多商品，鼓励其他国家采用碳定价机制，以应对气候变化。",
+          "region": "cn",
+          "score": 0.6,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "CBAM: EU's carbon border levy enters into force - BusinessGreen",
-              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPYVJGeUU3TnVrejNBT2JkUzBTN2U5Yy02WUpWc0p4Qk1rc05RUlpuUFFNdlJZaEtVZmg3N2RfdVcyaXNSeG1GVW90Q2NQS0ZDTnBwSHdqdWNuaE45dk8tSE9jakxiZlh6cHhjZDFDYUcxdWR0VUhLQnpnbmc5NzdUMGprTW8zWlZGTGM4?oc=5",
-              "source": "BusinessGreen",
+              "title": "欧盟扩大碳边境税，推动其他国家采用碳定价",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZXotaVpQRVgyTEh4OVY0a1dYb3g5ZnQ4c2FqeFI2bjBCSzVERF9OQ2ZjSnhuZGtZNUxhcjlURzdnZk9jenpabVV2TktmMk56X3dhYVRBTk9uWVJKbnNwNHBwaEhxaG1pd2ZVR0dsLWFFdHhfaEpqcUZvY1UycjN3SXdnY1V3akQ1NlRFelhBdFczQUYyYTkzdmhmQS1XYzJUT2plNVVoSQ?oc=5",
+              "source": "CarbonCredits.com",
               "published_at": "2026-01-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟碳边境税对重型商品出口商的影响",
+          "summary_zh": "欧盟的碳边境税将影响重型商品的出口商，要求他们为二氧化碳排放付费，改变市场格局。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-01",
+          "sources": [
+            {
+              "title": "欧盟碳边境税对重型商品出口商的影响",
+              "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZFU0MHRMdHg5X0Y3UFRFeVdISXlhMFkybkhfV2V6cUxhRWhnTEhjSUNRaVpXaS1mZ0w4WjBfSWJuTUdKRXl2dVQ0OFoxRzdPM0VZR2RPTFRXU1BzR0kzdXRhWWlhaFVTa2d0Y1NheDJLQlZmWTEyRXk0bndmTFl3RXdUTjhHTnNtYm4wVzBaaGYxLWZrZF80YlhyWXFFem1Qc3JaeDc0c0QzWXVHNW94RjIwZVdNckxMWFJ6LXZrUF9HUmFCcnNBMVVnYTRQUQ?oc=5",
+              "source": "Euronews.com",
+              "published_at": "2026-01-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟碳边境调整机制开始收费，气候政策新纪元",
+          "summary_zh": "欧盟碳边境调整机制正式开始收费，标志着气候政策进入新纪元，影响全球贸易和环境政策。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "欧盟碳边境调整机制开始收费，气候政策新纪元",
+              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJaZVdBdlA1VE50T0NHa0RkY3FlUV9KSlJuUlotT2R4YjU5cTE1Y3JOdWNrd0lmNjc5Y3l0dk5ZbllKNDdVTHlwLWtMdl85SkpZN2FIYkJleUo2QmhkWS1zSHRSb0JjemM4dVNwVUE0aW5qYTFGakVMVzdhamNYU2tZTEdxLU5xWEdwSnRWbWI1dXhNOTJvUzVscjExZnh5QTN6SHF6RkVOb9IB0wFBVV95cUxQQUpxRDNxcEJLQm1nRGpMZ20tQnNSdWFoaVc0R0dwNGNXMDQtaGJRZUdtQWU3MlIwTGZJRndtazU3SjBLc1duLVNUY1prQVVQQXlXQkpkdzNwZWtpaUMzb25XUXF5MUc0WFJsWkNEeHloY0dtYVB3WDl6TDhYcHBzMFV1SFJGa1Y1ZlRWcUpxT2tFcDZSWVhDdGZ4SGNabmRaUU02UkQzU0F5bTV5TGZ1eFd3QllBekVyQTBleGotZGJzWjlxejBnUzdHUDlhZHpWdUVn?oc=5",
+              "source": "European Business Magazine",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "今日碳价：全国碳市场每日综合价格行情及成交信息",
+          "summary_zh": "中国碳排放交易网发布全国碳市场每日综合价格行情及成交信息，为市场参与者提供参考。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "今日碳价：全国碳市场每日综合价格行情及成交信息",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ZQmplTXdkMDRKd1F1UjlwRnNSVkNIZTNJdGl1NnVITWxRR3h1SmxxUHR4Wm1LTy03X3ZKdElpYXRyZGhLakhVTzZ6QkktQ1M3bk1aS2FmN25wQ3hTUGNYeG5YcEdQUE82Snc?oc=5",
+              "source": "中国碳排放交易网",
+              "published_at": "2026-01-06"
             }
           ]
         }
       ],
-      "cn_count": 3,
-      "total_count": 15
+      "cn_count": 8,
+      "total_count": 8
     },
     {
       "id": "sea",
@@ -1744,7 +1654,7 @@
         "Indonesia nickel smelter investment",
         "Thailand Malaysia electronics"
       ],
-      "brief_zh": "近期东南亚供应链动态聚焦于制造业转移与关键矿产布局。越南作为新兴制造中心备受关注，计划于2026年举办工业供应链连接活动，并积极推动英特尔等企业提升半导体后端产能，以吸引全球企业在供应链中断背景下转向越南。同时，韩国企业如韩华投资证券正通过收购海外镍矿股权，确保航空航天等战略产业的镍资源稳定供应，相关直接效益预计超过180亿美元。这些动向显示东南亚在制造业承接和关键矿产供应链中的重要性日益提升，区域供应链格局正在重塑。",
+      "brief_zh": "近期东南亚供应链动态聚焦于制造业转移与关键矿产开发。越南积极推动工业供应链整合，计划于2026年举办相关活动，并吸引英特尔等国际企业扩大半导体后端产能，以应对全球供应链中断。同时，印度尼西亚在镍矿加工领域获得重大投资，Wanatiara Persada公司投入6亿美元建设镍铁冶炼厂，凸显东南亚在全球关键矿产供应链中的地位提升。韩国企业如韩华投资证券也通过收购海外镍矿股权，加强其航空航天供应链安全。整体来看，东南亚正成为全球制造业转移和关键矿产供应链多元化的重要枢纽。",
       "events": [
         {
           "title_zh": "越南计划2026年举办工业供应链连接活动",
@@ -1763,7 +1673,7 @@
         },
         {
           "title_zh": "越南敦促英特尔提升半导体后端产能",
-          "summary_zh": "越南政府呼吁英特尔公司扩大其在越南的半导体后端制造能力，以强化本土半导体供应链。",
+          "summary_zh": "越南政府呼吁英特尔公司扩大其在越南的半导体后端制造能力，以加强当地高科技供应链。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-02",
@@ -1778,7 +1688,7 @@
         },
         {
           "title_zh": "全球企业为何在供应链中断时转向越南",
-          "summary_zh": "分析指出，在全球供应链面临挑战之际，越南因其制造潜力和战略位置成为跨国公司的投资热点。",
+          "summary_zh": "在全球供应链面临中断的背景下，国际公司正将制造业务转向越南，以利用其稳定的生产环境和成本优势。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-01",
@@ -1792,8 +1702,23 @@
           ]
         },
         {
-          "title_zh": "韩华投资证券收购镍矿股权以巩固韩国航空航天供应链",
-          "summary_zh": "韩华投资证券通过收购海外镍矿股权，旨在确保韩国航空航天产业关键原材料的稳定供应。",
+          "title_zh": "Wanatiara Persada镍铁冶炼厂获6亿美元投资",
+          "summary_zh": "印度尼西亚Wanatiara Persada公司的镍铁冶炼项目在年底前获得6亿美元投资，以支持其运营。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Wanatiara Persada ferronickel smelter: $600m invested in operation by the end of",
+              "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUnNPajlSb0l4U0xmRlZ6Wi1xQmxuSHR1aVljVUlVeTNpTlRldktIMVp4S2ZOVWtRVnJEVFZ1aWNHQTNBMm5wWnlGZGJGc3EzbjdYYjJKaVhUODI4SU9wR0RKOEIzUGNaTFNHX0xyd183eVNaUFdhZmdRZVBRcmtZTkZmenZlWHVWbFVqd1hWUHdKaUp5MWwySFVYb0czd2hhVzdBSHZwMTg1cU5la2YxRFpxc2ZNWV9KSTN4YURYSXU2bDlpOTZZZkJpT3I?oc=5",
+              "source": "Shanghai Metals Market",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "韩华投资证券收购镍矿股权以加强韩国航空航天供应链",
+          "summary_zh": "韩华投资证券公司通过收购海外镍矿股权，旨在巩固韩国航空航天产业的供应链安全。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
@@ -1807,8 +1732,8 @@
           ]
         },
         {
-          "title_zh": "韩华投资证券完成海外镍矿收购顾问工作",
-          "summary_zh": "韩华投资证券宣布已完成为收购海外镍矿资产提供咨询服务的项目，加强资源获取。",
+          "title_zh": "韩华投资证券完成海外镍矿收购顾问服务",
+          "summary_zh": "韩华投资证券公司已完成为收购海外镍矿资产提供咨询服务的项目，支持关键矿产供应链。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
@@ -1822,23 +1747,8 @@
           ]
         },
         {
-          "title_zh": "韩华确保稳定镍供应，直接效益超180亿美元",
-          "summary_zh": "报道称，韩华通过确保稳定的镍供应，为相关产业带来的直接经济效益预计超过180亿美元。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "[Click eStock] \"Spear Secures Stable Nickel Supply...Direct Benefits Exceed 180 \"",
-              "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ocnl4N0lwa3gwMjhLeGZvSEpZYWhxWmdZU3JPY1NITENXZERoU25ZdUR5ekVVUTU4WmREMkNpZEhqS0ctQS1lUjRBdUtWZEhrS2lEbUd1QzFmS2p0Yklwa0lB?oc=5",
-              "source": "아시아경제",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
           "title_zh": "东南亚制造业、农业与贸易概况",
-          "summary_zh": "大英百科全书概述东南亚地区在制造业、农业和贸易领域的发展现状及其在全球供应链中的角色。",
+          "summary_zh": "《大英百科全书》概述东南亚地区的制造业、农业和贸易状况，强调其在全球供应链中的角色。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-05",
@@ -1852,7 +1762,7 @@
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 2,
       "total_count": 7
     },
     {
@@ -1865,17 +1775,17 @@
         "solid state battery breakthrough",
         "synthetic biology platform"
       ],
-      "brief_zh": "在量子计算和固态电池技术方面，中国的研究取得了重要进展。中国的“人造太阳”在核聚变领域打破了科学家认为无法突破的限制，标志着向可控核聚变能源的迈进。同时，固态电池技术也在电动摩托车领域取得了突破，多个公司展示了其新型固态电池的应用，预计将大幅提升电动摩托车的续航能力和安全性。这些技术的进步将对未来的能源和交通方式产生深远影响。",
+      "brief_zh": "【核心动态】本板块抓取到 32 条资讯，其中中国相关 6 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
       "events": [
         {
-          "title_zh": "中国“人造太阳”打破核聚变限制",
-          "summary_zh": "中国的“人造太阳”在核聚变研究中取得了突破，打破了科学家认为无法突破的限制，标志着向可控核聚变能源的迈进。",
+          "title_zh": "China’s “artificial sun” just broke a fusion li...",
+          "summary_zh": "来源 ScienceDaily：China’s “artificial sun” just broke a fusion li...",
           "region": "cn",
-          "score": 0.8,
+          "score": 0.6,
           "date": "2026-01-04",
           "sources": [
             {
-              "title": "原标题",
+              "title": "China’s “artificial sun” just broke a fusion limit scientists thought was unbreakable - ScienceDaily",
               "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9OMWxTcExhYWlXNl90UlVqRjFCbTVReDBNMGw3c1JmbEItRzFTOTY1VFVwNGx3VngxbjVXVzZCQTRUZS1CX29obEtfakJvNUhPTHFLN2VjT19JUllYTFRKemNoN0N2NExidGlCYVdBcw?oc=5",
               "source": "ScienceDaily",
               "published_at": "2026-01-04"
@@ -1883,14 +1793,14 @@
           ]
         },
         {
-          "title_zh": "中国人造太阳在核聚变能源追求中突破关键障碍",
-          "summary_zh": "中国的“人造太阳”在追求核聚变能源的过程中，成功突破了关键障碍，展示了未来能源的潜力。",
+          "title_zh": "China’s Artificial Sun Breaks Key Barrier in Pu...",
+          "summary_zh": "来源 GreekReporter.com：China’s Artificial Sun Breaks Key Barrier in Pu...",
           "region": "cn",
-          "score": 0.75,
+          "score": 0.6,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "原标题",
+              "title": "China’s Artificial Sun Breaks Key Barrier in Pursuit of Fusion Energy - GreekReporter.com",
               "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4tcWlGRDJvVDg4RjBjTjZ5VndHUjFBWkotVGZySmtIU1BqQWNnWVdTSWpNRHFnZXZmWEdad0JCNlVLQU44eUg2cUdoUFRnWGVzS2liMmpnMGk4N2RnYjJjQUNobUU0V281aWg4SjliZGpHNzh6VlN1V2NaMkY?oc=5",
               "source": "GreekReporter.com",
               "published_at": "2026-01-02"
@@ -1898,74 +1808,44 @@
           ]
         },
         {
-          "title_zh": "Verge推出固态电池摩托车",
-          "summary_zh": "Verge Motorcycles推出了首款搭载固态电池的电动摩托车，标志着电动摩托车技术的重大进步。",
+          "title_zh": "Verge Motorcycles introduces solid-state batter...",
+          "summary_zh": "来源 Electric & Hybrid Vehicle Technology International：Verge Motorcycles introduces solid-state batter...",
           "region": "cn",
-          "score": 0.7,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUm81WDhyaHpZQVJDVGVmYVZiVEdiQVMtUS1RNTluVjBHNFRiS0xYSDJQTWIyNXZPdk9rTzN5N2xSU3BaTk5BVGZJTVZiUmx2WEQ5UUhMZHdvNTRyQkJGdlNRc084bnQ1QkVOLW1yanJadzZyT2YwdmNHS2Fmd2JXbVYza0NBRVkwMkdZ?oc=5",
-              "source": "Automotive World",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "Verge推出370英里续航的电动摩托车",
-          "summary_zh": "Verge Motorcycles推出了一款续航370英里的电动摩托车，搭载固态电池，展示了电动交通工具的未来。",
-          "region": "cn",
-          "score": 0.65,
+          "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTMzQUlpM2d2MFZtYTMycklSZjRXZHFHaVVFUHdLcUd1MHVQVUlqZFZWaGVmTl9TempfTnZVdzgxZlV5bjdQMEhoWFUzTmJ0LVA2c0Zja19tNHhFUDYwS3FnMkZDZXkwM3FGdkVWMVpfRDF1ZHY4MWR4dUExRW1XUlRSR3djM19VUFY2SmM5X2pJUQ?oc=5",
-              "source": "Interesting Engineering",
+              "title": "Verge Motorcycles introduces solid-state batteries with 10-minute charging capability - Electric & H",
+              "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOcms3TDJlYkVHSUVGQTV3enppQWg2UG0ySUhQRHRfX19ySWZGZ2JUX2RkNXFleHpWZmpsZDJDZkoxWnM3RGcwRlVpRGlwdHM5U2E1d2lpcEJqcUEwOWpsQlRKQnRvQmY4OXVnc1pxVHFMUXY1Q1ZGNmxBMGk4Z0xRcTRCME9sOGFsMGhLbjA3dnJjUlIwRU5lQ0NueHBCcXd1WTVZSFRlMEI5ME9fVWFVd3F1bGU5NHYtaFlNZTdnaVFlU3luWXlURk9BbHVaTGVibDNwNkgyZDlEb3M3UXEzcTc4aTcyRktVRld2T09sYw?oc=5",
+              "source": "Electric & Hybrid Vehicle Technology International",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "DONUT LAB在CES上展示世界首款量产固态电池",
-          "summary_zh": "DONUT LAB在CES上展示了世界首款量产的固态电池，标志着电动交通工具的未来。",
+          "title_zh": "[SMM Analysis] Two Milestones for Semi-Solid ES...",
+          "summary_zh": "来源 Shanghai Metals Market：[SMM Analysis] Two Milestones for Semi-Solid ES...",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "[SMM Analysis] Two Milestones for Semi-Solid ESS Battery in 2025, Big Players to Reshape Competitive",
+              "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOcWNPaVpaTXh3bTNqcTdDU3JIaWZiYXAzX3FfMS1nNjNhTS14MFZfOGUzd05LTUItSV9ZMkE3dzJ5dGc5T0xoX2RpdUdHeEpOTC01c1hBbmlNeGt5TUxPd2lHa05BUUZoRVMtcFo0R3pFZ2lOdmZid2FDRzV5cm5tWHp4NG5jS0pHczVNVXVqLUh2TGRER2pzQkZaZHZmeDJkTWVvUlVHTEtJS0hqbkhUMkZDdzBSaHppTHJQTTdkaEJ5WDhyQ3U0NUhvM0U1QjhsUGxnM0JIaVN3XzlERkR6Tkd6NkptWG5YZmhuSXhvNnFDUQ?oc=5",
+              "source": "Shanghai Metals Market",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "No More Waiting: Donut Lab Brings Solid-State B...",
+          "summary_zh": "来源 Electric Cars Report：No More Waiting: Donut Lab Brings Solid-State B...",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSlFwSmVZbS1SVTFvMnV2cU5qaTlwaGxtengtbmxhR1VBZkI1R3ZVTWptNl9zVXpjMHoxcjFpek92VEdfOHZwb2Juai01REw5QjVIaUNuS2RHcDk3UzJSOU8zMFlDaWpKZ1V0eDhxZ3hCWHNTMXhmWFJlTGt5YWpRZHpMaVZJYWZjdUwwNC1pcHE0eEQ4Y3EwX2MwVHU?oc=5",
-              "source": "THE PACK – Electric motorcycle",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "Verge宣布全球首款搭载固态电池的摩托车",
-          "summary_zh": "Verge Motorcycles宣布推出全球首款搭载固态电池的摩托车，标志着电动摩托车技术的重大突破。",
-          "region": "cn",
-          "score": 0.55,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNLUpjUHcwTkZ4RXBIQm8tWlR3cXNhMzB3aDZCU2JRZHRMSVFFR185VUtzS3J4RVpLanZQcVRXY1hJUDh1MDRtSy1BWGQ5bUl5V1FzdGJRcVl2OHBJSFlTV0JDUXdzb2lmbTBuYU45LV8tY1ZKN3QxM3B0WU9CQU9zRnpIa2lWaTRUcHhEejd3LXhwdG9xLXlEczJyQnZPNm95ZkZUbzRqWnp5UFhOcUxiYTFSNGJId2VaS2dtcHNDSFpJU2hDN2N0UlFyTGdReksweEFsUFlCWENGaU5Dcy1TdUdkbUtVOHpZV3Frekl2TXZ5Q1ZRT0ZuVXJha01BS0s5ZjR2ajJYTUs?oc=5",
-              "source": "TechRadar",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "DONUT LAB将固态电池带入道路",
-          "summary_zh": "DONUT LAB宣布其固态电池技术将应用于电动交通工具，推动电动化进程。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "原标题",
+              "title": "No More Waiting: Donut Lab Brings Solid-State Batteries to the Road - Electric Cars Report",
               "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVW9XNHZYNXU5eFVfNC0zOWliUVQxSTJxdFdRTGNsdVRsRzdsR2QzMFVoNEZHYU9fSmRaZHU1U255UTNqTTFuemFvQTF4dTJsaVZBd2NRZ3FWRW5NeWI3STFIdFpBdVMwLXpyYjlIc1Y1eDdlbHhVdUhrTGFQVnpCRVYwblZ5QnJvZ2swSm0wVEhRQ1lSaEkydzRPdEF1MHE3M1dadGxvV0E5Zw?oc=5",
               "source": "Electric Cars Report",
               "published_at": "2026-01-05"
@@ -1973,311 +1853,195 @@
           ]
         },
         {
-          "title_zh": "Verge摩托车公司转向自家固态电池",
-          "summary_zh": "Verge Motorcycles宣布将使用自家研发的固态电池，提升电动摩托车的性能和安全性。",
+          "title_zh": "Inx Technology Solid-State Battery Layout: Phas...",
+          "summary_zh": "来源 Shanghai Metals Market：Inx Technology Solid-State Battery Layout: Phas...",
           "region": "cn",
-          "score": 0.45,
+          "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNERxdzcwQmhPMVVZZC1CLWNBdXdhS25QZlhxNDA4ZHNIdkdTVXNickNTSldQaVltWHdlLUlHd3NReTFHQnc2bThTS25JNm84TlUzMUQ4TG9WR0hPUWNkaHRXNE54SDhMQ1NzSVNRc00tNFRfT1VVOGR0VEp3YjgwOWt0U1B4bTZvSV9qcnRMZ0pGY2o2SHF2elpYTTEzTTQ?oc=5",
-              "source": "electrive.com",
+              "title": "Inx Technology Solid-State Battery Layout: Phase I 2 GWh Production Line at East China Base Complete",
+              "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQWUZuUTRBZFFZTnpDWHB6MWhydTB6WFl6b3BWMF9CUG1telpNVlhEUHZiZ3hDVlZnd3BZc2l1OTNvT1VtbGRPZHFKaEMwZy1VWUFuek1tOE9UTHBXVVVFMHdvcV9xMURMLWdSWW9lM2MyNmpTR2tNYmdydEVFTG5TLVhCcDlLMzhfbVVncjhYSXNqSkc5QWZ3Q2pwRFFwejQ3c00zZHBScEcxYmd3NmNYV2RQWFZHWjZjZnhub29LUWcyaklUMUdSYWJWNE1VdWZWX0JoY3NTQnphNjBtcVd5RnhsTGVsOU5SZW4xU295aHo?oc=5",
+              "source": "Shanghai Metals Market",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "固态电池技术在电动摩托车中的应用",
-          "summary_zh": "固态电池技术的进步将大幅提升电动摩托车的续航能力和安全性，推动电动交通工具的发展。",
-          "region": "cn",
+          "title_zh": "Quantum computing momentum grows: D-Wave announ...",
+          "summary_zh": "来源 Fast Company：Quantum computing momentum grows: D-Wave announ...",
+          "region": "global",
           "score": 0.4,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92WEVmWnEyUEFRNmNwRC1ETHRSNTdjRnFwZGlYN0o5TG5YZHZFNGo3bmV6T3JNWFFxSjVIbnEwc1FUN2QwVWp2eXR2eEZYSGlqS3ZKZnhRc1NVazItVk9MSmRzVlMycTVRdmVmYXQ4UFgwMktkSTBj?oc=5",
-              "source": "thebuzzevnews.com",
+              "title": "Quantum computing momentum grows: D-Wave announces first major breakthrough of 2026 - Fast Company",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYUhhbWVReU1OWDZvNHhBY05SclZBM1dHeVNfY0ptdDlYcXMzREQ0c2ZsY1pXX2RCaDNjNGFncDIwSE9kd25uaVYwbWs4UzdTZG5FbEFoU0hhY3YxRm1YTlBkdHlkUi1HcTE5dnFKWVh6RGMzNHhHZXY3eVEyeDQ4cEJtZlpGOE94c0FaZlVzZ3Jram5YRGVxVURydE05MmprZnMxd0dOUmtnR0NMc3pDVE81OUM?oc=5",
+              "source": "Fast Company",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "固态电池技术的未来",
-          "summary_zh": "固态电池技术的快速发展将为电动摩托车和其他电动交通工具带来新的机遇，推动绿色出行。",
-          "region": "cn",
-          "score": 0.35,
+          "title_zh": "Breakthrough in Quantum Computing: First Secure...",
+          "summary_zh": "来源 Sci.News：Breakthrough in Quantum Computing: First Secure...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Breakthrough in Quantum Computing: First Secure Method to Back Up Quantum Information - Sci.News",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE01ZjRtYkdpVUhRak5Nc0pBRFlLWGVCQXdHV2dGMnluSXZlUGl3YnB3ODZrdnpjY2gybE9tWDdPdVlEd29WYU1MOU81eWJJaERtNloyajY3U19qeVg2elh3NV96WVJOd0Nyb3A2MjBTUWx5OXV0OFl0RmotZ2pWUXM?oc=5",
+              "source": "Sci.News",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave Quantum touts tech breakthrough that let...",
+          "summary_zh": "来源 Sherwood News：D-Wave Quantum touts tech breakthrough that let...",
+          "region": "global",
+          "score": 0.4,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPSFRiY2VMNGhTbFVBbWM2dXlwSm1DNU94YVJGckpUZXpRLXZHVGxBLXB6MU82MUVFX0toYzlLTWtja0NUY2R2eFlaOFFoVkVnOW5ITmtxQnRhSnlCUVRmdkpnTFB3M1BzS21lbzF3UEJxbTZkQktmRC1sWmlyM0dyaTYzcFNuel9PSnVfbi1VY0tEOGhwQUZZQi1tZVNTQnVQbkFobDlvVGVoSGVicVgteV9ZOGJsdTJvSF8wNnpJejd5dEhP?oc=5",
-              "source": "MotoPinas.com",
+              "title": "D-Wave Quantum touts tech breakthrough that lets gate models scale - Sherwood News",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeGE0eFd1eGR2RjJEUjdrRDdZUEdqQ1M4cVVZSXU3OWFvZjJDa3E2aTU0bDB1OHZaZjZ1dzNWTTRrdmVCQk1uNUJYTmF3cHNXQzlneXFOamlxWmdXYm5VMS1IWTh0QmFCczBtQ1ZrUUJ4dTBTZ1RRb0dobEhwLXNWVVhrbUg5SjhjYjBuTThreFJjcnotYzJEX1NLXzg0UQ?oc=5",
+              "source": "Sherwood News",
               "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave Quantum (QBTS) Stock Rises on Breakthrou...",
+          "summary_zh": "来源 TipRanks：D-Wave Quantum (QBTS) Stock Rises on Breakthrou...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "D-Wave Quantum (QBTS) Stock Rises on Breakthrough That Solves a Key Quantum Challenge - TipRanks",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWEg2NzJEOFdNRDFRanJuY3ZHRV96SU8xZGxlRlRIYTVZdy1qM1dFajJnSGVaSjVzQjNpTHdWUjE1TnlPY1k5cVU0SXFPVHlwbk1GTkY3Skp0UjViS2QzbW9SVEtNMHdoMGpEekpITUZxNFdkaWREMmhMQjNobXNzQjBOOGhTOGNQcURTQ1RjVUpubFdEVWRQb2huOEZnN2pORU9PczhXSkJvaTBjUWFhVDh3Yw?oc=5",
+              "source": "TipRanks",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave Gate-Model Quantum Computing Breakthroug...",
+          "summary_zh": "来源 Quantum Zeitgeist：D-Wave Gate-Model Quantum Computing Breakthroug...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "D-Wave Gate-Model Quantum Computing Breakthrough - Quantum Zeitgeist",
+              "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRXY4V0ZUaW51b25OTWF5QmFtR0hmT2dpUFN6WTE3UUFXd0hPSmktUWN0WGVIcTdCeFFDNVRTeXk2ZTZ2V016VXE0bTZxX3Y0UXVuU25KbFFIa2NWLXh4TFllV21feUQwcEV5ZDU1cjJLQVR6VnRXdHZuZmFMWVNvdDBRWkU?oc=5",
+              "source": "Quantum Zeitgeist",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave achieves breakthrough in scalable quantu...",
+          "summary_zh": "来源 Investing.com South Africa：D-Wave achieves breakthrough in scalable quantu...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "D-Wave achieves breakthrough in scalable quantum computing control By Investing.com - Investing.com ",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUGoxY3E2SXIwQl9vUjNiOTVuY3IxMkZPVnBPTmZTM1JDU0FUMWxlY0J5ajg0ajQ1bDBLR3VKa3ppWGd4dzhpbUhyR3BOREVjejRjUFhaTUdGOGg3U1N4RnlCVF83WTVGRWludjhFVTV1Y3lCYmRhVU43eU9DeTF2bE1MYnVWU3ktLXlqVG0ydVlIelNyYnlXNTh5NFJhdWtQZlZobnJqNUl1SE5fcUgwSmEtVFI4ejNrYUtwNDdB?oc=5",
+              "source": "Investing.com South Africa",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave Quantum Inc Breakthrough in Gate-Model Q...",
+          "summary_zh": "来源 TradingView — Track All Markets：D-Wave Quantum Inc Breakthrough in Gate-Model Q...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "D-Wave Quantum Inc Breakthrough in Gate-Model Quantum Computing - TradingView — Track All Markets",
+              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPR3pLM1dnTWRWMEprVTlxZmUzRm9mNlJYVDdZRXM0Uy03b0t6bkFkZHNkUUM1eS1ha3NiNzM4Um1PSkFMQkszNF92aUUyWGpFSmdZVE53RXFyZllfekpxUmVXRmZ0U29ZWW9zT0ZmOTV5WEdUZ2I1YWZHVHZwMS1ybW1ybVdfeGJHcm91Zk9TOFFNQzBnZ3Vfa0VRaXp1ZlpUVmpxTVcyV0c0RXR2eXBDR1B0dW9JalJNcnl2QTk2eTU0czA?oc=5",
+              "source": "TradingView — Track All Markets",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave Quantum Unveils Breakthrough in Gate-Mod...",
+          "summary_zh": "来源 TipRanks：D-Wave Quantum Unveils Breakthrough in Gate-Mod...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "D-Wave Quantum Unveils Breakthrough in Gate-Model Computing - TipRanks",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeHJuSGpMc1NGV0thUW9LY2Q3b1d2Tk94QWpkbUpHSWoxZjAzbTZ6LS1JZ1M1S1d1RDJZR2dBZzJCMGhRNjVSV3VIQkExQ0ViX1h1cjJ1ajhPOFhWUU5Tb3Zvd05RSEdHcjRpTmlGamdQSEp6OUZtZDFZVnpVWWk0SEpKREgtS19zVmtVTmZialJPSVVwYng3aEE3dHNfTHhVbi1IVjNuVDV3U1VaazU5TA?oc=5",
+              "source": "TipRanks",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "Donut Lab unveils world’s first production-read...",
+          "summary_zh": "来源 THE PACK – Electric motorcycle news：Donut Lab unveils world’s first production-read...",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Donut Lab unveils world’s first production-ready solid-state battery at CES - THE PACK – Electric mo",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSlFwSmVZbS1SVTFvMnV2cU5qaTlwaGxtengtbmxhR1VBZkI1R3ZVTWptNl9zVXpjMHoxcjFpek92VEdfOHZwb2Juai01REw5QjVIaUNuS2RHcDk3UzJSOU8zMFlDaWpKZ1V0eDhxZ3hCWHNTMXhmWFJlTGt5YWpRZHpMaVZJYWZjdUwwNC1pcHE0eEQ4Y3EwX2MwVHU?oc=5",
+              "source": "THE PACK – Electric motorcycle news",
+              "published_at": "2026-01-05"
             }
           ]
         }
       ],
-      "cn_count": 10,
-      "total_count": 10
+      "cn_count": 6,
+      "total_count": 15
     },
     {
       "id": "arxiv",
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "2026年1月6日，arXiv预印本平台发布了一系列涵盖人工智能、宇宙学、量子计算等多个前沿领域的研究论文。人工智能方面，研究涉及多模态内容生成、时空推理、无监督学习、深度估计、软体机器人控制、智能体记忆架构、隐式水印及医学报告生成等。宇宙学方面，探讨了重黑洞在标准汽笛宇宙学中的作用以及CHIME与普朗克数据的联合分析。基础科学领域包括大正则典型性、向量线性安全聚合的密钥容量区域以及量子处理器上的浅层电路监督学习。此外，还有关于图计算模型国际研讨会论文集和幻想3D生物生成设计的研究。这些工作展现了跨学科研究的活跃进展。",
-      "events": [
-        {
-          "title_zh": "重黑洞在标准汽笛宇宙学中同样重要",
-          "summary_zh": "研究探讨了重黑洞在利用引力波作为标准汽笛进行宇宙学测量中的作用，扩展了相关宇宙学模型的理解。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Heavy Black-Holes Also Matter in Standard Siren Cosmology",
-              "url": "http://arxiv.org/abs/2601.03257v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Muses：无需外部数据设计、组合、生成不存在的幻想3D生物",
-          "summary_zh": "提出了一种名为Muses的方法，用于自主设计和生成虚构的幻想3D生物模型，无需依赖现有数据集。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without",
-              "url": "http://arxiv.org/abs/2601.03256v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "用于涌现通信解释的自动语义规则检测（ASRD）",
-          "summary_zh": "提出ASRD框架，旨在自动检测和解释智能体在涌现通信过程中形成的语义规则，提升通信的可解释性。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Automated Semantic Rules Detection (ASRD) for Emergent Communication Interpretat",
-              "url": "http://arxiv.org/abs/2601.03254v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "大正则典型性",
-          "summary_zh": "研究了大正则系综中的典型性原理，探讨了粒子数可变系统中统计力学基础的一个理论概念。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Grand-Canonical Typicality",
-              "url": "http://arxiv.org/abs/2601.03253v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "InfiniDepth：基于神经网络的任意分辨率与细粒度深度估计",
-          "summary_zh": "提出InfiniDepth模型，利用神经网络实现任意图像分辨率的精细深度估计，提升了深度感知的灵活性和精度。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural ",
-              "url": "http://arxiv.org/abs/2601.03252v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "NavAI：用于虚拟现实环境中导航任务的可泛化LLM框架",
-          "summary_zh": "提出了NavAI，一个基于大语言模型的可泛化框架，用于处理虚拟现实环境中的复杂导航任务。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "NavAI: A Generalizable LLM Framework for Navigation Tasks in Virtual Reality Env",
-              "url": "http://arxiv.org/abs/2601.03251v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "用于多媒体内容生成的多功能多模态智能体",
-          "summary_zh": "研究提出了一种多功能多模态智能体，能够协同生成文本、图像等多种形式的多媒体内容。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "A Versatile Multimodal Agent for Multimedia Content Generation",
-              "url": "http://arxiv.org/abs/2601.03250v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "第16届图计算模型国际研讨会论文集",
-          "summary_zh": "收录了第16届图计算模型国际研讨会的研究成果，涵盖了图计算模型领域的最新进展和理论。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Proceedings 16th International Workshop on Graph Computation Models",
-              "url": "http://arxiv.org/abs/2601.03249v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "STReasoner：通过空间-时间增强赋能LLM进行时间序列推理",
-          "summary_zh": "提出STReasoner框架，通过引入空间-时间增强机制，提升大语言模型在时间序列数据上的推理能力。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spa",
-              "url": "http://arxiv.org/abs/2601.03248v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "基于数据的软体机器人肌肉非线性谱建模与控制",
-          "summary_zh": "研究利用数据驱动方法，对软体机器人肌肉进行非线性谱建模，并实现精确控制。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Nonlinear Spectral Modeling and Control of Soft-Robotic Muscles from Data",
-              "url": "http://arxiv.org/abs/2601.03247v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "从噪声和不完整数据中进行自监督学习",
-          "summary_zh": "探讨了在数据存在噪声且不完整的情况下，如何进行有效的自监督学习，提升模型的鲁棒性。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Self-Supervised Learning from Noisy and Incomplete Data",
-              "url": "http://arxiv.org/abs/2601.03244v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "SLIM：通过潜在空间混淆区域实现隐蔽低覆盖率黑盒水印",
-          "summary_zh": "提出SLIM方法，在潜在空间中创建混淆区域，实现对深度学习模型的隐蔽、低覆盖率黑盒水印嵌入。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zo",
-              "url": "http://arxiv.org/abs/2601.03242v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "论向量线性安全聚合中个体密钥速率的容量区域",
-          "summary_zh": "研究了在向量线性安全聚合场景下，个体用户密钥速率可达的容量区域理论界限。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "On the Capacity Region of Individual Key Rates in Vector Linear Secure Aggregati",
-              "url": "http://arxiv.org/abs/2601.03241v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "CHIME HI发射与普朗克CMB透镜的挤压双谱：当前状态",
-          "summary_zh": "联合分析CHIME的氢线发射数据和普朗克卫星的宇宙微波背景透镜数据，报告了挤压双谱分析的当前进展。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "The Squeezed Bispectrum from CHIME HI Emission and Planck CMB Lensing: Current S",
-              "url": "http://arxiv.org/abs/2601.03240v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "PET-TURTLE：用于不平衡数据聚类的深度无监督支持向量机",
-          "summary_zh": "提出PET-TURTLE方法，将深度神经网络与无监督支持向量机结合，专门用于处理不平衡数据的聚类问题。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "PET-TURTLE: Deep Unsupervised Support Vector Machines for Imbalanced Data Cluste",
-              "url": "http://arxiv.org/abs/2601.03237v1",
-              "source": "arXiv",
-              "published_at": "2026-01-06"
-            }
-          ]
-        }
-      ],
+      "brief_zh": "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。",
+      "events": [],
       "cn_count": 0,
-      "total_count": 15
+      "total_count": 0
     }
   ],
   "top5": [
     {
-      "title": "马斯克看好中国AI算力与芯片发展",
-      "summary": "马斯克预测中国在人工智能算力方面将远超其他国家，并有望解决芯片短缺问题。这一观点突显了中国在AI领域的全球竞争力，可能影响全球科技企业的战略布局和投资决策，促使其他国家加速相关技术研发以保持竞争力。",
-      "action": "关注中国AI技术进展，评估合作或竞争策略。"
+      "title": "马斯克：中国AI算力将远超其他国家 芯片问题也会解决",
+      "summary": "马斯克预测中国AI算力将领先全球，并认为其芯片问题将得到解决。这一观点挑战了当前西方对中国技术封锁有效性的主流叙事，可能影响全球投资者和决策者对中美科技竞争格局的长期判断，促使各方重新评估技术封锁的长期效果与供应链韧性。",
+      "action": "关注中国AI及芯片产业自主进展，调整长期技术投资策略。"
     },
     {
-      "title": "越南计划2026年举办工业供应链活动",
-      "summary": "越南宣布将于2026年举办“越南工业2026”活动，旨在连接国内工业供应链，推动制造业发展。此举可能提升越南在全球供应链中的地位，吸引更多跨国企业投资，影响区域制造业格局和供应链多元化趋势。",
-      "action": "评估越南制造业潜力，考虑供应链布局调整。"
+      "title": "马斯克称中国AI算力将领先世界 关键优势在这一能力",
+      "summary": "马斯克将中国AI算力的预期领先归因于其强大的技术能力和政策支持。这凸显了国家战略与产业政策在尖端科技竞争中的核心作用，可能促使其他国家反思并加强自身的AI产业政策与投入，以应对未来全球AI格局的变化。",
+      "action": "评估并强化本国AI产业政策与生态建设。"
     },
     {
-      "title": "越南敦促英特尔扩大半导体产能",
-      "summary": "越南政府呼吁英特尔提升在越南的半导体后端制造能力，以强化本土半导体供应链。这反映了越南在半导体领域的战略野心，可能加速全球半导体产业向东南亚转移，影响芯片供应安全和区域经济合作。",
-      "action": "关注越南半导体产业动态，探索供应链合作机会。"
+      "title": "灼烧与扼杀：为何半导体管制将比中国稀土更具持久性",
+      "summary": "分析指出，美国对华半导体出口管制是比稀土博弈更核心、持久的战略手段。这揭示了科技竞争已聚焦于产业链最上游与最关键的“卡脖子”环节，决策者需认识到这是一场长期、高强度的体系对抗，将深刻影响全球科技供应链布局与国家安全战略。",
+      "action": "制定长期、系统的半导体自主与供应链安全战略。"
     },
     {
-      "title": "全球企业供应链中断时转向越南",
-      "summary": "分析指出，在全球供应链面临挑战时，越南因其制造潜力和战略位置成为跨国公司的投资热点。这一趋势可能重塑全球供应链地图，促使企业重新评估风险分散策略，推动越南经济快速增长和区域影响力提升。",
-      "action": "研究越南投资环境，优化供应链风险管理。"
+      "title": "美国芯片出口管制正在奏效",
+      "summary": "评论认为美国对华芯片出口管制措施正在有效限制中国获取先进计算与AI芯片。这表明短期内的技术封锁取得了一定战术效果，可能强化美国继续乃至加码管制的决心，同时迫使中国加速自主替代，加剧全球科技体系的分化风险。",
+      "action": "在遵守管制前提下，寻求替代供应链或加速技术突破。"
+    },
+    {
+      "title": "越南计划2026年举办工业供应链连接活动",
+      "summary": "越南计划于2026年举办大型工业供应链连接活动，旨在强化本国制造业。这反映了全球供应链多元化、“中国+1”战略的持续深化，越南正积极争取在全球制造业重组中占据更有利位置，可能吸引更多跨国企业投资布局，影响区域产业竞争格局。",
+      "action": "关注越南制造业机遇，评估供应链多元化布局选项。"
     }
   ],
   "meta": {
