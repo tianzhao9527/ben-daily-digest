@@ -292,11 +292,15 @@ a:hover{text-decoration:underline}
   .right{display:none}
 }
 @media (max-width:900px){
-  .container{grid-template-columns:1fr;height:auto}
+  .container{grid-template-columns:1fr;height:auto;padding-bottom:60px}
   .left{display:none}
+  .right{display:none}
   .cards-grid{grid-template-columns:1fr}
   .top5-list{grid-template-columns:1fr}
   .topbar{position:sticky;top:0;z-index:100}
+  /* 移动端显示控制 */
+  .left.mobile-show{display:flex;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg)}
+  .right.mobile-show{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg)}
 }
 @media (max-width:600px){
   html{font-size:14px}
@@ -316,6 +320,25 @@ a:hover{text-decoration:underline}
   .top5-item-summary{font-size:12px}
   .kpi-grid{grid-template-columns:1fr 1fr}
 }
+
+/* 移动端底部导航 */
+.mobile-nav{
+  display:none;position:fixed;bottom:0;left:0;right:0;height:56px;
+  background:var(--card);border-top:1px solid var(--line);
+  z-index:300;padding:0 20px;
+}
+@media (max-width:900px){
+  .mobile-nav{display:flex;justify-content:space-around;align-items:center}
+}
+.mobile-nav-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:8px 0;cursor:pointer;color:var(--muted);transition:color .15s;
+  background:none;border:none;font-family:var(--font);
+}
+.mobile-nav-item.active{color:var(--accent)}
+.mobile-nav-item:hover{color:var(--text)}
+.mobile-nav-icon{font-size:20px}
+.mobile-nav-label{font-size:10px;font-weight:500}
 </style>
 </head>
 <body>
@@ -357,6 +380,26 @@ a:hover{text-decoration:underline}
     <div class="right-scroll" id="kpiContent"></div>
   </aside>
 </div>
+
+<!-- 移动端底部导航 -->
+<nav class="mobile-nav">
+  <button class="mobile-nav-item active" data-view="main">
+    <span class="mobile-nav-icon">📰</span>
+    <span class="mobile-nav-label">新闻</span>
+  </button>
+  <button class="mobile-nav-item" data-view="nav">
+    <span class="mobile-nav-icon">☰</span>
+    <span class="mobile-nav-label">导航</span>
+  </button>
+  <button class="mobile-nav-item" data-view="kpi">
+    <span class="mobile-nav-icon">📊</span>
+    <span class="mobile-nav-label">指标</span>
+  </button>
+  <button class="mobile-nav-item" data-view="settings">
+    <span class="mobile-nav-icon">⚙</span>
+    <span class="mobile-nav-label">设置</span>
+  </button>
+</nav>
 
 <div class="overlay" id="settingsOverlay">
   <div class="settings-panel">
@@ -675,15 +718,15 @@ a:hover{text-decoration:underline}
                   <div class="editor-item-sub">ID: ${esc(sec.id)} · 关键词: ${(sec.gnews_queries || []).length}个</div>
                 </div>
                 <div class="editor-item-actions">
-                  <button class="editor-btn edit-section" data-idx="${i}" title="编辑">✎</button>
-                  <button class="editor-btn danger del-section" data-idx="${i}" title="删除">×</button>
+                  <button type="button" class="editor-btn edit-section" data-idx="${i}" title="编辑">✎</button>
+                  <button type="button" class="editor-btn danger del-section" data-idx="${i}" title="删除">×</button>
                 </div>
               </div>
             `).join('')}
           </div>
-          <button class="editor-add" id="addSection">+ 添加新类目</button>
+          <button type="button" class="editor-add" id="addSection">+ 添加新类目</button>
           <div class="export-btns">
-            <button class="btn" id="exportSections">导出类目JSON</button>
+            <button type="button" class="btn" id="exportSections">导出类目JSON</button>
           </div>
         </div>
       `,
@@ -743,15 +786,15 @@ a:hover{text-decoration:underline}
                   <div class="editor-item-sub">FRED: ${esc(k.series)} ${k.unit ? '· 单位: ' + esc(k.unit) : ''}</div>
                 </div>
                 <div class="editor-item-actions">
-                  <button class="editor-btn edit-kpi" data-idx="${i}" title="编辑">✎</button>
-                  <button class="editor-btn danger del-kpi" data-idx="${i}" title="删除">×</button>
+                  <button type="button" class="editor-btn edit-kpi" data-idx="${i}" title="编辑">✎</button>
+                  <button type="button" class="editor-btn danger del-kpi" data-idx="${i}" title="删除">×</button>
                 </div>
               </div>
             `).join('')}
           </div>
-          <button class="editor-add" id="addKpi">+ 添加新指标</button>
+          <button type="button" class="editor-add" id="addKpi">+ 添加新指标</button>
           <div class="export-btns">
-            <button class="btn" id="exportKpis">导出KPI JSON</button>
+            <button type="button" class="btn" id="exportKpis">导出KPI JSON</button>
           </div>
         </div>
       `,
@@ -761,8 +804,8 @@ a:hover{text-decoration:underline}
           <p style="font-size:11px;color:var(--muted);margin-bottom:12px">将编辑后的配置导出为 digest_config_v15.json</p>
           <div class="config-preview" id="configPreview">${JSON.stringify(buildFullConfig(), null, 2)}</div>
           <div class="export-btns">
-            <button class="btn" id="btnCopyConfig">复制配置</button>
-            <button class="btn" id="btnDownloadConfig">下载配置文件</button>
+            <button type="button" class="btn" id="btnCopyConfig">复制配置</button>
+            <button type="button" class="btn" id="btnDownloadConfig">下载配置文件</button>
           </div>
         </div>
         <div class="settings-section">
@@ -787,6 +830,46 @@ a:hover{text-decoration:underline}
   }
 
   function bindSettingsEvents(tab) {
+    const body = $('#settingsBody');
+    if (!body) return;
+    
+    // 使用事件委托处理所有按钮点击
+    body.onclick = (e) => {
+      const target = e.target.closest('button');
+      if (!target) return;
+      
+      // 编辑类目
+      if (target.classList.contains('edit-section')) {
+        e.preventDefault();
+        showSectionEditor(parseInt(target.dataset.idx));
+        return;
+      }
+      // 删除类目
+      if (target.classList.contains('del-section')) {
+        e.preventDefault();
+        if (confirm('确定删除此类目？')) {
+          editConfig.sections.splice(parseInt(target.dataset.idx), 1);
+          renderSettings('sections');
+        }
+        return;
+      }
+      // 编辑KPI
+      if (target.classList.contains('edit-kpi')) {
+        e.preventDefault();
+        showKpiEditor(parseInt(target.dataset.idx));
+        return;
+      }
+      // 删除KPI
+      if (target.classList.contains('del-kpi')) {
+        e.preventDefault();
+        if (confirm('确定删除此指标？')) {
+          editConfig.kpis.splice(parseInt(target.dataset.idx), 1);
+          renderSettings('data');
+        }
+        return;
+      }
+    };
+    
     // 通用事件
     $('#toggleDark')?.addEventListener('click', function() {
       this.classList.toggle('active');
@@ -803,36 +886,13 @@ a:hover{text-decoration:underline}
       downloadJSON({importance_weights: editConfig.importance_weights}, 'importance_weights.json');
     });
 
-    // 类目编辑
-    $$('.edit-section').forEach(btn => {
-      btn.addEventListener('click', () => showSectionEditor(parseInt(btn.dataset.idx)));
-    });
-    $$('.del-section').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (confirm('确定删除此类目？')) {
-          editConfig.sections.splice(parseInt(btn.dataset.idx), 1);
-          renderSettings('sections');
-        }
-      });
-    });
-    $('#addSection')?.addEventListener('click', () => showSectionEditor(-1));
+    // 添加按钮
+    $('#addSection')?.addEventListener('click', (e) => { e.preventDefault(); showSectionEditor(-1); });
     $('#exportSections')?.addEventListener('click', () => {
       downloadJSON({sections: editConfig.sections}, 'sections.json');
     });
 
-    // KPI编辑
-    $$('.edit-kpi').forEach(btn => {
-      btn.addEventListener('click', () => showKpiEditor(parseInt(btn.dataset.idx)));
-    });
-    $$('.del-kpi').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (confirm('确定删除此指标？')) {
-          editConfig.kpis.splice(parseInt(btn.dataset.idx), 1);
-          renderSettings('data');
-        }
-      });
-    });
-    $('#addKpi')?.addEventListener('click', () => showKpiEditor(-1));
+    $('#addKpi')?.addEventListener('click', (e) => { e.preventDefault(); showKpiEditor(-1); });
     $('#exportKpis')?.addEventListener('click', () => {
       downloadJSON({kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))}, 'kpis.json');
     });
@@ -859,6 +919,9 @@ a:hover{text-decoration:underline}
   }
 
   function showSectionEditor(idx) {
+    // 先移除已有的编辑器表单
+    document.querySelectorAll('.editor-form').forEach(el => el.remove());
+    
     const isNew = idx < 0;
     const sec = isNew ? {id: '', name: '', gnews_queries: []} : {...editConfig.sections[idx]};
     const queries = (sec.gnews_queries || []).join('\n');
@@ -882,8 +945,8 @@ a:hover{text-decoration:underline}
           </div>
         </div>
         <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
-          <button class="btn" id="cancelSec">取消</button>
-          <button class="btn" id="saveSec" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
+          <button type="button" class="btn" id="cancelSec">取消</button>
+          <button type="button" class="btn" id="saveSec" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
         </div>
       </div>
     `;
@@ -907,6 +970,9 @@ a:hover{text-decoration:underline}
   }
 
   function showKpiEditor(idx) {
+    // 先移除已有的编辑器表单
+    document.querySelectorAll('.editor-form').forEach(el => el.remove());
+    
     const isNew = idx < 0;
     const kpi = isNew ? {series: '', title: '', unit: ''} : {...editConfig.kpis[idx]};
     
@@ -927,8 +993,8 @@ a:hover{text-decoration:underline}
           </div>
         </div>
         <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
-          <button class="btn" id="cancelKpi">取消</button>
-          <button class="btn" id="saveKpi" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
+          <button type="button" class="btn" id="cancelKpi">取消</button>
+          <button type="button" class="btn" id="saveKpi" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
         </div>
       </div>
     `;
@@ -982,6 +1048,29 @@ a:hover{text-decoration:underline}
     });
     $('#btnTop')?.addEventListener('click', () => { $('#mainContent')?.scrollTo({top: 0, behavior: 'smooth'}); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('#settingsOverlay').classList.remove('show'); });
+    
+    // 移动端导航
+    $$('.mobile-nav-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
+        $$('.mobile-nav-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // 隐藏所有面板
+        $('.left')?.classList.remove('mobile-show');
+        $('.right')?.classList.remove('mobile-show');
+        
+        if (view === 'nav') {
+          $('.left')?.classList.add('mobile-show');
+        } else if (view === 'kpi') {
+          $('.right')?.classList.add('mobile-show');
+        } else if (view === 'settings') {
+          $('#settingsOverlay')?.classList.add('show');
+          $$('.mobile-nav-item').forEach(b => b.classList.remove('active'));
+          $$('.mobile-nav-item[data-view="main"]')[0]?.classList.add('active');
+        }
+      });
+    });
   }
 
   bindControls();

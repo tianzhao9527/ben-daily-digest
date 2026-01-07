@@ -94,6 +94,7 @@ class Section:
     id: str
     name: str
     tags: list = dataclasses.field(default_factory=list)
+    gnews_queries: list = dataclasses.field(default_factory=list)
 
 @dataclasses.dataclass
 class RawItem:
@@ -873,7 +874,8 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
     for sc in sections_cfg:
         sid = sc.get("id")
         name = sc.get("name") or sid
-        sec = Section(id=sid, name=name, tags=sc.get("tags") or [])
+        queries = sc.get("gnews_queries") or sc.get("queries") or []
+        sec = Section(id=sid, name=name, tags=sc.get("tags") or [], gnews_queries=queries)
         log(f"[digest] section start: {sid} ({name})")
 
         raw_items: list[RawItem] = []
@@ -889,7 +891,7 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
                 log(f"[digest] arxiv {sid} failed: {e}")
         else:
             # 标准Google News查询
-            for q in (sc.get("gnews_queries") or sc.get("queries") or []):
+            for q in queries:
                 try:
                     items = fetch_google_news_items(q, limit=limit_raw)
                     log(f"[digest] gnews {sid} q='{q[:24]}...' entries={len(items)}")
@@ -944,6 +946,7 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
             "id": sec.id,
             "name": sec.name,
             "tags": sec.tags,
+            "gnews_queries": sec.gnews_queries,  # 保留原始查询关键词
             "brief_zh": brief_zh,
             "events": [dataclasses.asdict(e) for e in events],
             "cn_count": cn_events,
