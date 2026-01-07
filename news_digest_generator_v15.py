@@ -613,74 +613,76 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
     """
     
     lines = []
-    for it in raw_items[: min(len(raw_items), max(18, items_per_section * 2))]:
+    for it in raw_items[: min(len(raw_items), max(15, items_per_section * 2))]:
         lines.append({
-            "title": it.title,
-            "source": it.source,
-            "date": it.published_at,
-            "url": it.url,
-            "is_china": it.region == "cn",
-            "abstract": it.abstract[:200] if it.abstract else "",
+            "t": it.title[:80],  # 标题
+            "s": it.source[:30],  # 来源
+            "d": it.published_at or "",  # 日期
+            "u": it.url,  # 链接
+            "cn": it.region == "cn",  # 是否中国相关
         })
 
-    # 简化prompt，确保JSON输出
-    sys_prompt = """你是专业金融新闻分析师。请分析以下新闻并返回JSON格式结果。
+    # 极简prompt
+    sys_prompt = f"""将以下新闻翻译成中文并整理。只返回JSON，格式：
+{{"brief_zh":"总结(200字)","events":[{{"title_zh":"中文标题","summary_zh":"摘要(80字)","region":"cn或global","score":0.6,"date":"日期","sources":[{{"title":"原标题","url":"链接","source":"来源"}}]}}]}}
+要求：1.标题和摘要必须是中文 2.优先选cn=true的 3.生成{items_per_section}条"""
 
-【重要】你必须只返回一个JSON对象，不要有任何其他文字、markdown或代码块。
-
-JSON格式：
-{"brief_zh":"板块总结(中文,300字,包含【核心动态】【趋势研判】【决策参考】三部分)","events":[{"title_zh":"中文标题(20字内)","summary_zh":"中文摘要(100字)","region":"cn或global","score":0.5,"date":"YYYY-MM-DD","sources":[{"title":"原标题","url":"链接","source":"来源"}]}]}
-
-要求：
-1. 所有英文必须翻译成中文
-2. 优先选择中国相关新闻(is_china=true)
-3. date字段保留原始日期
-4. 只返回JSON，不要任何解释"""
-
-    user_content = f"板块：{section.name}\n新闻列表：\n{json.dumps(lines, ensure_ascii=False)}\n\n请生成{items_per_section}条events，只返回JSON："
+    user_content = f"新闻({section.name}):\n{json.dumps(lines, ensure_ascii=False)}"
 
     messages = [
         {"role": "system", "content": sys_prompt},
         {"role": "user", "content": user_content},
     ]
     
-    obj, llm_name = llm_chat_json(messages, max_tokens=3500)
+    # 尝试多次
+    last_error = None
+    for attempt in range(2):
+        try:
+            obj, llm_name = llm_chat_json(messages, max_tokens=3000)
+            
+            brief_zh = (obj.get("brief_zh") or "").strip()
+            evs = obj.get("events") or []
+            events: list[Event] = []
+            
+            if isinstance(evs, list):
+                for e in evs[:items_per_section]:
+                    try:
+                        title_zh = str(e.get("title_zh") or e.get("title") or "").strip()
+                        summary_zh = str(e.get("summary_zh") or e.get("summary") or "").strip()
+                        region = str(e.get("region") or "global").strip().lower()
+                        if region not in ("cn", "us", "eu", "asia", "global"):
+                            region = guess_region(title_zh)
+                        score = float(e.get("score") if e.get("score") is not None else 0.5)
+                        date = str(e.get("date") or "")[:10]
+                        sources = e.get("sources") if isinstance(e.get("sources"), list) else []
+                        sources2 = []
+                        for s in sources[:3]:
+                            if isinstance(s, dict):
+                                sources2.append({
+                                    "title": str(s.get("title") or "")[:100],
+                                    "url": str(s.get("url") or ""),
+                                    "source": str(s.get("source") or ""),
+                                    "published_at": date or str(s.get("date") or s.get("published_at") or ""),
+                                })
+                        if title_zh and summary_zh:
+                            ev = Event(title_zh=title_zh, summary_zh=summary_zh, region=region, score=score, sources=sources2)
+                            ev.date = date
+                            events.append(ev)
+                    except:
+                        continue
 
-    brief_zh = (obj.get("brief_zh") or "").strip()
-    evs = obj.get("events") or []
-    events: list[Event] = []
+            if len(events) >= max(2, items_per_section // 4):
+                return brief_zh, events, llm_name
+            else:
+                raise ValueError(f"LLM returned only {len(events)} events")
+                
+        except Exception as e:
+            last_error = e
+            log(f"[digest] section pack attempt {attempt+1} failed: {e}")
+            time.sleep(1)
+            continue
     
-    if isinstance(evs, list):
-        for e in evs[:items_per_section]:
-            try:
-                title_zh = str(e.get("title_zh") or e.get("title") or "").strip()
-                summary_zh = str(e.get("summary_zh") or e.get("summary") or "").strip()
-                region = str(e.get("region") or "global").strip().lower()
-                if region not in ("cn", "us", "eu", "asia", "global"):
-                    region = guess_region(title_zh)
-                score = float(e.get("score") if e.get("score") is not None else 0.5)
-                date = str(e.get("date") or "")[:10]
-                sources = e.get("sources") if isinstance(e.get("sources"), list) else []
-                sources2 = []
-                for s in sources[:4]:
-                    if isinstance(s, dict):
-                        sources2.append({
-                            "title": str(s.get("title") or "")[:140],
-                            "url": str(s.get("url") or ""),
-                            "source": str(s.get("source") or ""),
-                            "published_at": date or str(s.get("date") or s.get("published_at") or ""),
-                        })
-                if title_zh and summary_zh:
-                    ev = Event(title_zh=title_zh, summary_zh=summary_zh, region=region, score=score, sources=sources2)
-                    ev.date = date  # 添加日期属性
-                    events.append(ev)
-            except:
-                continue
-
-    if len(events) < max(2, items_per_section // 4):
-        raise ValueError(f"LLM returned too few events: {len(events)}")
-    
-    return brief_zh, events, llm_name
+    raise last_error or RuntimeError("Section pack failed")
 
 # -------------------------
 # Top 5 重要新闻生成

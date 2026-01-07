@@ -87,23 +87,23 @@ a:hover{text-decoration:underline}
 
 /* Top 5 板块 */
 .top5-section{
-  margin-bottom:24px;padding:16px;
-  background:linear-gradient(135deg,rgba(0,113,227,.03),rgba(52,199,89,.02));
-  border:1px solid rgba(0,113,227,.08);border-radius:var(--r);
+  margin-bottom:24px;padding:20px;
+  background:linear-gradient(135deg,rgba(0,113,227,.04),rgba(52,199,89,.03));
+  border:1px solid rgba(0,113,227,.1);border-radius:var(--r);
 }
-.top5-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.top5-title::before{content:'';width:3px;height:14px;background:var(--accent);border-radius:2px}
-.top5-list{display:flex;flex-direction:column;gap:10px}
+.top5-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.top5-title::before{content:'';width:4px;height:18px;background:var(--accent);border-radius:2px}
+.top5-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .top5-item{
-  padding:12px;background:var(--card);border:1px solid var(--line);
-  border-radius:10px;transition:all .15s;
+  padding:16px;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;transition:all .15s;display:flex;flex-direction:column;
 }
-.top5-item:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,113,227,.06)}
-.top5-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
-.top5-item-summary{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.top5-item:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,113,227,.08)}
+.top5-item-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5}
+.top5-item-summary{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px;flex:1}
 .top5-item-action{
-  font-size:11px;color:var(--accent);font-weight:500;
-  padding:4px 8px;background:rgba(0,113,227,.06);border-radius:4px;display:inline-block;
+  font-size:12px;color:var(--accent);font-weight:500;
+  padding:6px 12px;background:rgba(0,113,227,.06);border-radius:6px;display:inline-block;
 }
 
 /* 板块 */
@@ -156,37 +156,42 @@ a:hover{text-decoration:underline}
 .fb-btn.active.bad{background:rgba(255,59,48,.1);border-color:var(--danger);color:var(--danger)}
 .empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:13px;background:var(--chip);border-radius:10px}
 
-/* 右侧 */
+/* 右侧 - KPI紧凑布局 */
 .right{min-height:0}
-.right-header{padding:14px;border-bottom:1px solid var(--line)}
-.right-title{font-size:14px;font-weight:600}
-.right-sub{margin-top:3px;font-size:10px;color:var(--muted)}
-.right-scroll{flex:1;overflow:auto;padding:10px}
-.kpi-group{margin-bottom:14px}
+.right-header{padding:12px;border-bottom:1px solid var(--line)}
+.right-title{font-size:13px;font-weight:600}
+.right-sub{margin-top:2px;font-size:9px;color:var(--muted)}
+.right-scroll{flex:1;overflow:auto;padding:8px}
+.kpi-group{margin-bottom:10px}
 .kpi-group-title{
   font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;
-  letter-spacing:0.4px;padding:6px 4px;border-bottom:1px solid var(--line);margin-bottom:6px;
+  letter-spacing:0.4px;padding:5px 4px;border-bottom:1px solid var(--line);margin-bottom:5px;
+  display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;
 }
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.kpi-card{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:10px}
-.kpi-name{font-size:10px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.kpi-group-title:hover{color:var(--text)}
+.kpi-group-title::after{content:'▾';font-size:10px;transition:transform .2s}
+.kpi-group.collapsed .kpi-group-title::after{transform:rotate(-90deg)}
+.kpi-group.collapsed .kpi-grid{display:none}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.kpi-card{background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:8px}
+.kpi-name{font-size:9px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:3px;margin-bottom:3px}
 .kpi-dot{width:5px;height:5px;border-radius:50%}
 .kpi-dot.up{background:var(--success)}
 .kpi-dot.down{background:var(--danger)}
 .kpi-dot.flat{background:var(--muted)}
-.kpi-value{font-size:16px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
-.kpi-unit{font-size:10px;font-weight:400;color:var(--muted);margin-left:2px}
-.kpi-delta{font-size:10px;margin-top:3px}
+.kpi-value{font-size:14px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.kpi-unit{font-size:9px;font-weight:400;color:var(--muted);margin-left:1px}
+.kpi-delta{font-size:9px;margin-top:2px}
 .kpi-delta.up{color:var(--success)}
 .kpi-delta.down{color:var(--danger)}
 .kpi-delta.flat{color:var(--muted)}
-.kpi-spark{width:100%;height:24px;margin-top:6px}
-.kpi-spark path{stroke-width:1.5}
-.feedback-stats{margin-top:14px;padding:10px;background:var(--chip);border-radius:8px;border:1px solid var(--line)}
-.feedback-stats-title{font-size:11px;font-weight:600;margin-bottom:6px}
-.feedback-stats-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:3px}
-.feedback-actions{display:flex;gap:6px;margin-top:8px}
-.feedback-actions .btn{flex:1;font-size:10px;padding:5px 6px}
+.kpi-spark{width:100%;height:18px;margin-top:4px}
+.kpi-spark path{stroke-width:1.2}
+.feedback-stats{margin-top:10px;padding:8px;background:var(--chip);border-radius:6px;border:1px solid var(--line)}
+.feedback-stats-title{font-size:10px;font-weight:600;margin-bottom:5px}
+.feedback-stats-row{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:2px}
+.feedback-actions{display:flex;gap:4px;margin-top:6px}
+.feedback-actions .btn{flex:1;font-size:9px;padding:4px 5px}
 
 /* 设置面板 */
 .overlay{
@@ -245,9 +250,72 @@ a:hover{text-decoration:underline}
   padding:12px;font-family:ui-monospace,monospace;font-size:10px;line-height:1.5;
   max-height:240px;overflow:auto;white-space:pre-wrap;word-break:break-all;
 }
+/* 可视化编辑器样式 */
+.editor-item{
+  display:flex;align-items:center;gap:8px;padding:10px 12px;
+  background:var(--chip);border:1px solid var(--line);border-radius:8px;margin-bottom:6px;
+}
+.editor-item:hover{border-color:var(--accent)}
+.editor-item-main{flex:1;min-width:0}
+.editor-item-title{font-size:12px;font-weight:500;color:var(--text)}
+.editor-item-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.editor-item-actions{display:flex;gap:4px}
+.editor-btn{
+  width:26px;height:26px;border:1px solid var(--line);background:var(--card);
+  border-radius:5px;cursor:pointer;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;
+}
+.editor-btn:hover{background:var(--chip);color:var(--text)}
+.editor-btn.danger:hover{background:rgba(255,59,48,.1);color:var(--danger);border-color:var(--danger)}
+.editor-input{
+  flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:6px;
+  font-size:12px;font-family:var(--font);background:var(--card);color:var(--text);
+}
+.editor-input:focus{outline:none;border-color:var(--accent)}
+.editor-input.sm{width:80px;flex:none;text-align:center}
+.editor-add{
+  width:100%;padding:10px;border:2px dashed var(--line);border-radius:8px;
+  background:transparent;cursor:pointer;font-size:12px;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s;
+}
+.editor-add:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,113,227,.03)}
+.editor-form{padding:12px;background:var(--chip);border-radius:8px;margin-bottom:10px}
+.editor-form-row{display:flex;gap:8px;margin-bottom:8px}
+.editor-form-row:last-child{margin-bottom:0}
+.editor-form-label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
+.editor-form-group{flex:1}
+.export-btns{display:flex;gap:8px;margin-top:12px}
+.export-btns .btn{flex:1}
 
-@media (max-width:1200px){.container{grid-template-columns:260px 1fr}.right{display:none}}
-@media (max-width:900px){.container{grid-template-columns:1fr;height:auto}.left{display:none}.cards-grid{grid-template-columns:1fr}}
+/* 响应式布局 */
+@media (max-width:1200px){
+  .container{grid-template-columns:240px 1fr}
+  .right{display:none}
+}
+@media (max-width:900px){
+  .container{grid-template-columns:1fr;height:auto}
+  .left{display:none}
+  .cards-grid{grid-template-columns:1fr}
+  .top5-list{grid-template-columns:1fr}
+  .topbar{position:sticky;top:0;z-index:100}
+}
+@media (max-width:600px){
+  html{font-size:14px}
+  .main{padding:12px}
+  .topbar{padding:12px 16px}
+  .topbar-title{font-size:16px}
+  .section{margin-bottom:20px}
+  .section-title{font-size:14px}
+  .section-brief{padding:12px;font-size:12px}
+  .event-card{padding:14px}
+  .event-title{font-size:13px}
+  .event-summary{font-size:12px}
+  .top5-section{padding:14px}
+  .top5-title{font-size:14px}
+  .top5-item{padding:12px}
+  .top5-item-title{font-size:13px}
+  .top5-item-summary{font-size:12px}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -458,17 +526,21 @@ a:hover{text-decoration:underline}
     const container = $('#kpiContent');
     if (!container) return;
 
+    const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', 'nikkei', '标普', '纳斯达克', '道琼斯', '恐慌', '日经'];
+    const fxKw = ['dex', 'usd', 'cny', 'jpy', 'eur', '汇率', '美元指数'];
+    const ratesKw = ['dgs', 'fed', 't10y', '美债', '利率', '利差', '基金'];
+    const energyKw = ['oil', 'wti', 'brent', 'gas', '原油', '天然气'];
     const metalsKw = ['copper', 'aluminum', 'zinc', 'nickel', 'lead', 'tin', '铜', '铝', '锌', '镍', '铅', '锡'];
-    const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', '标普', '纳斯达克', '道琼斯', '恐慌'];
-    const commodityKw = ['oil', 'gold', 'wti', '原油', '黄金'];
     
-    const stocks = [], metals = [], commodities = [], macro = [];
+    const stocks = [], fx = [], rates = [], energy = [], metals = [];
     kpis.forEach(k => {
       const id = (k.id || k.name || '').toLowerCase();
       if (stocksKw.some(kw => id.includes(kw))) stocks.push(k);
+      else if (ratesKw.some(kw => id.includes(kw))) rates.push(k);
+      else if (fxKw.some(kw => id.includes(kw))) fx.push(k);
+      else if (energyKw.some(kw => id.includes(kw))) energy.push(k);
       else if (metalsKw.some(kw => id.includes(kw))) metals.push(k);
-      else if (commodityKw.some(kw => id.includes(kw))) commodities.push(k);
-      else macro.push(k);
+      else rates.push(k);
     });
 
     function kpiCard(k) {
@@ -516,9 +588,10 @@ a:hover{text-decoration:underline}
     }
 
     let html = '';
-    if (stocks.length) html += `<div class="kpi-group"><div class="kpi-group-title">美股指数</div><div class="kpi-grid">${stocks.map(kpiCard).join('')}</div></div>`;
-    if (macro.length) html += `<div class="kpi-group"><div class="kpi-group-title">宏观指标</div><div class="kpi-grid">${macro.map(kpiCard).join('')}</div></div>`;
-    if (commodities.length) html += `<div class="kpi-group"><div class="kpi-group-title">大宗商品</div><div class="kpi-grid">${commodities.map(kpiCard).join('')}</div></div>`;
+    if (stocks.length) html += `<div class="kpi-group"><div class="kpi-group-title">股票指数</div><div class="kpi-grid">${stocks.map(kpiCard).join('')}</div></div>`;
+    if (rates.length) html += `<div class="kpi-group"><div class="kpi-group-title">利率债券</div><div class="kpi-grid">${rates.map(kpiCard).join('')}</div></div>`;
+    if (fx.length) html += `<div class="kpi-group"><div class="kpi-group-title">外汇汇率</div><div class="kpi-grid">${fx.map(kpiCard).join('')}</div></div>`;
+    if (energy.length) html += `<div class="kpi-group"><div class="kpi-group-title">能源商品</div><div class="kpi-grid">${energy.map(kpiCard).join('')}</div></div>`;
     if (metals.length) html += `<div class="kpi-group"><div class="kpi-group-title">金属价格</div><div class="kpi-grid">${metals.map(kpiCard).join('')}</div></div>`;
 
     const fbCount = Object.values(feedbackData).filter(v => v !== 0).length;
@@ -540,6 +613,13 @@ a:hover{text-decoration:underline}
 
     container.innerHTML = html;
 
+    // KPI分组折叠
+    $$('.kpi-group-title').forEach(title => {
+      title.addEventListener('click', () => {
+        title.parentElement.classList.toggle('collapsed');
+      });
+    });
+
     $('#btnExportFb')?.addEventListener('click', () => {
       const blob = new Blob([JSON.stringify(feedbackData, null, 2)], {type: 'application/json'});
       const a = document.createElement('a');
@@ -557,10 +637,17 @@ a:hover{text-decoration:underline}
     });
   }
 
+  // 可编辑配置存储
+  let editConfig = {
+    importance_weights: JSON.parse(JSON.stringify(meta.importance_weights || {})),
+    sections: sections.map(s => ({id: s.id, name: s.name, gnews_queries: s.gnews_queries || [], type: s.type || 'gnews'})),
+    kpis: kpis.map(k => ({series: k.id || k.series, title: k.name || k.title, unit: k.unit || ''}))
+  };
+
   function renderSettings(tab = 'general') {
     const body = $('#settingsBody');
     if (!body) return;
-    const weights = meta.importance_weights || {};
+    const weights = editConfig.importance_weights;
 
     const tabs = {
       general: `
@@ -568,8 +655,8 @@ a:hover{text-decoration:underline}
           <div class="settings-section-title">基本信息</div>
           <div class="settings-row"><div class="settings-label">生成日期</div><div>${esc(D.date || '—')}</div></div>
           <div class="settings-row"><div class="settings-label">生成时间</div><div>${esc(D.generated_at_bjt || '—')}</div></div>
-          <div class="settings-row"><div class="settings-label">板块数量</div><div>${sections.length}</div></div>
-          <div class="settings-row"><div class="settings-label">KPI指标数</div><div>${kpis.length}</div></div>
+          <div class="settings-row"><div class="settings-label">板块数量</div><div>${editConfig.sections.length}</div></div>
+          <div class="settings-row"><div class="settings-label">KPI指标数</div><div>${editConfig.kpis.length}</div></div>
         </div>
         <div class="settings-section">
           <div class="settings-section-title">主题</div>
@@ -578,124 +665,290 @@ a:hover{text-decoration:underline}
       `,
       sections: `
         <div class="settings-section">
-          <div class="settings-section-title">当前类目 (${sections.length}个)</div>
-          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">修改类目需编辑 digest_config_v15.json 文件，T+1生效</p>
-          ${sections.map((sec, i) => `
-            <div class="settings-row">
-              <div class="settings-label">${i+1}. ${esc(sec.name)}<small>ID: ${esc(sec.id)}</small></div>
-              <div style="font-size:11px;color:var(--muted)">${sec.total_count || 0} 条</div>
-            </div>
-          `).join('')}
-        </div>
-        <div class="settings-section">
-          <div class="settings-section-title">添加新类目</div>
-          <p style="font-size:11px;color:var(--muted);line-height:1.6">
-            在 <code>digest_config_v15.json</code> 的 <code>sections</code> 数组中添加：
-          </p>
-          <div class="config-preview" style="margin-top:8px">{
-  "id": "new_section",
-  "name": "新板块名称",
-  "gnews_queries": [
-    "关键词1",
-    "关键词2"
-  ]
-}</div>
-          <p style="font-size:11px;color:var(--muted);margin-top:8px">
-            提交后将在次日(T+1)生效
-          </p>
+          <div class="settings-section-title">类目管理 (${editConfig.sections.length}个)</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">可视化编辑类目，完成后导出JSON替换配置文件</p>
+          <div id="sectionsList">
+            ${editConfig.sections.map((sec, i) => `
+              <div class="editor-item" data-idx="${i}">
+                <div class="editor-item-main">
+                  <div class="editor-item-title">${esc(sec.name)}</div>
+                  <div class="editor-item-sub">ID: ${esc(sec.id)} · 关键词: ${(sec.gnews_queries || []).length}个</div>
+                </div>
+                <div class="editor-item-actions">
+                  <button class="editor-btn edit-section" data-idx="${i}" title="编辑">✎</button>
+                  <button class="editor-btn danger del-section" data-idx="${i}" title="删除">×</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <button class="editor-add" id="addSection">+ 添加新类目</button>
+          <div class="export-btns">
+            <button class="btn" id="exportSections">导出类目JSON</button>
+          </div>
         </div>
       `,
       weights: `
         <div class="settings-section">
           <div class="settings-section-title">重要性系数</div>
-          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">调整以下系数影响新闻重要性排序（需重新生成生效）</p>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">调整系数后导出JSON替换配置文件</p>
           <div class="settings-row">
             <div class="settings-label">中国相关新闻<small>china_related</small></div>
-            <input type="number" class="settings-input" value="${weights.china_related || 1.5}" step="0.1" min="0.5" max="3">
+            <input type="number" class="settings-input weight-input" data-key="china_related" value="${weights.china_related || 1.5}" step="0.1" min="0.5" max="3">
           </div>
           <div class="settings-row">
-            <div class="settings-label">一级来源 (Bloomberg, Reuters)<small>source_tier1</small></div>
-            <input type="number" class="settings-input" value="${weights.source_tier1 || 1.3}" step="0.1" min="0.5" max="3">
+            <div class="settings-label">一级来源<small>source_tier1 (Bloomberg, Reuters)</small></div>
+            <input type="number" class="settings-input weight-input" data-key="source_tier1" value="${weights.source_tier1 || 1.3}" step="0.1" min="0.5" max="3">
           </div>
           <div class="settings-row">
-            <div class="settings-label">二级来源 (WSJ, SCMP)<small>source_tier2</small></div>
-            <input type="number" class="settings-input" value="${weights.source_tier2 || 1.1}" step="0.1" min="0.5" max="3">
+            <div class="settings-label">二级来源<small>source_tier2 (WSJ, SCMP)</small></div>
+            <input type="number" class="settings-input weight-input" data-key="source_tier2" value="${weights.source_tier2 || 1.1}" step="0.1" min="0.5" max="3">
           </div>
           <div class="settings-row">
             <div class="settings-label">24小时内新闻<small>recency_24h</small></div>
-            <input type="number" class="settings-input" value="${weights.recency_24h || 1.3}" step="0.1" min="0.5" max="3">
+            <input type="number" class="settings-input weight-input" data-key="recency_24h" value="${weights.recency_24h || 1.2}" step="0.1" min="0.5" max="3">
           </div>
           <div class="settings-row">
             <div class="settings-label">48小时内新闻<small>recency_48h</small></div>
-            <input type="number" class="settings-input" value="${weights.recency_48h || 1.1}" step="0.1" min="0.5" max="3">
+            <input type="number" class="settings-input weight-input" data-key="recency_48h" value="${weights.recency_48h || 1.0}" step="0.1" min="0.5" max="3">
           </div>
-        </div>
-        <div class="settings-section">
-          <p style="font-size:11px;color:var(--muted)">修改 digest_config_v15.json 中的 importance_weights 字段后重新运行</p>
+          <div class="export-btns">
+            <button class="btn" id="exportWeights">导出权重JSON</button>
+          </div>
         </div>
       `,
       algo: `
         <div class="settings-section">
           <div class="settings-section-title">算法参数</div>
-          <div class="settings-row"><div class="settings-label">LLM提供商<small>支持自动fallback</small></div><div>${esc(meta.llm_provider || 'DeepSeek/Qwen/OpenAI')}</div></div>
-          <div class="settings-row"><div class="settings-label">每板块条目数<small>items_per_section</small></div><div>${meta.items_per_section || 15}</div></div>
-          <div class="settings-row"><div class="settings-label">原始抓取限制<small>limit_raw</small></div><div>${meta.limit_raw || 25}</div></div>
-          <div class="settings-row"><div class="settings-label">中国查询增强</div><div>${meta.china_queries_enabled ? '已启用' : '未启用'}</div></div>
-          <div class="settings-row"><div class="settings-label">arXiv论文抓取</div><div>${meta.arxiv_enabled ? '已启用' : '未启用'}</div></div>
+          <div class="settings-row"><div class="settings-label">LLM提供商<small>自动fallback</small></div><div>DeepSeek → Qwen → OpenAI</div></div>
+          <div class="settings-row"><div class="settings-label">每板块条目数</div><div>${meta.items_per_section || 15}</div></div>
+          <div class="settings-row"><div class="settings-label">原始抓取限制</div><div>${meta.limit_raw || 25}</div></div>
         </div>
         <div class="settings-section">
-          <div class="settings-section-title">API密钥配置 (GitHub Secrets)</div>
+          <div class="settings-section-title">API密钥配置</div>
           <p style="font-size:11px;color:var(--muted);line-height:1.8">
-            支持多LLM自动切换，按优先级：<br>
-            1. <code>DEEPSEEK_API_KEY</code> - DeepSeek (推荐)<br>
-            2. <code>QWEN_API_KEY</code> - 通义千问<br>
-            3. <code>OPENAI_API_KEY</code> - OpenAI GPT
+            在 GitHub Secrets 中设置：<br>
+            <code>DEEPSEEK_API_KEY</code> · <code>QWEN_API_KEY</code> · <code>OPENAI_API_KEY</code>
           </p>
         </div>
       `,
       data: `
         <div class="settings-section">
-          <div class="settings-section-title">数据源状态</div>
-          <div class="settings-row"><div class="settings-label">KPI数据<small>FRED</small></div><div style="color:var(--success)">正常</div></div>
-          <div class="settings-row"><div class="settings-label">新闻数据<small>Google News RSS</small></div><div style="color:var(--success)">正常</div></div>
-          <div class="settings-row"><div class="settings-label">中国新闻<small>Google News zh-CN</small></div><div style="color:var(--success)">已启用</div></div>
-          <div class="settings-row"><div class="settings-label">学术论文<small>arXiv API</small></div><div style="color:var(--success)">已启用</div></div>
-        </div>
-        <div class="settings-section">
-          <div class="settings-section-title">定时任务</div>
-          <div class="settings-row"><div class="settings-label">抓取时间</div><div>北京时间 07:00</div></div>
-          <div class="settings-row"><div class="settings-label">时效性过滤</div><div>7天内</div></div>
+          <div class="settings-section-title">KPI指标管理 (${editConfig.kpis.length}个)</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">编辑FRED数据系列，完成后导出JSON</p>
+          <div id="kpisList">
+            ${editConfig.kpis.map((k, i) => `
+              <div class="editor-item" data-idx="${i}">
+                <div class="editor-item-main">
+                  <div class="editor-item-title">${esc(k.title)}</div>
+                  <div class="editor-item-sub">FRED: ${esc(k.series)} ${k.unit ? '· 单位: ' + esc(k.unit) : ''}</div>
+                </div>
+                <div class="editor-item-actions">
+                  <button class="editor-btn edit-kpi" data-idx="${i}" title="编辑">✎</button>
+                  <button class="editor-btn danger del-kpi" data-idx="${i}" title="删除">×</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <button class="editor-add" id="addKpi">+ 添加新指标</button>
+          <div class="export-btns">
+            <button class="btn" id="exportKpis">导出KPI JSON</button>
+          </div>
         </div>
       `,
       config: `
         <div class="settings-section">
-          <div class="settings-section-title">生成器配置</div>
-          <div class="config-preview" id="configPreview">${JSON.stringify(meta, null, 2)}</div>
-          <div style="margin-top:10px;display:flex;gap:6px">
+          <div class="settings-section-title">导出完整配置</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">将编辑后的配置导出为 digest_config_v15.json</p>
+          <div class="config-preview" id="configPreview">${JSON.stringify(buildFullConfig(), null, 2)}</div>
+          <div class="export-btns">
             <button class="btn" id="btnCopyConfig">复制配置</button>
-            <button class="btn" id="btnExportDigest">导出完整数据</button>
+            <button class="btn" id="btnDownloadConfig">下载配置文件</button>
           </div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">导出今日数据</div>
+          <button class="btn" id="btnExportDigest" style="width:100%">导出完整新闻数据 JSON</button>
         </div>
       `
     };
 
     body.innerHTML = tabs[tab] || tabs.general;
+    bindSettingsEvents(tab);
+  }
 
+  function buildFullConfig() {
+    return {
+      items_per_section: meta.items_per_section || 15,
+      limit_raw: meta.limit_raw || 25,
+      importance_weights: editConfig.importance_weights,
+      sections: editConfig.sections,
+      kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))
+    };
+  }
+
+  function bindSettingsEvents(tab) {
+    // 通用事件
     $('#toggleDark')?.addEventListener('click', function() {
       this.classList.toggle('active');
       document.documentElement.setAttribute('data-theme', this.classList.contains('active') ? 'dark' : 'light');
     });
+
+    // 权重编辑
+    $$('.weight-input').forEach(input => {
+      input.addEventListener('change', (e) => {
+        editConfig.importance_weights[e.target.dataset.key] = parseFloat(e.target.value);
+      });
+    });
+    $('#exportWeights')?.addEventListener('click', () => {
+      downloadJSON({importance_weights: editConfig.importance_weights}, 'importance_weights.json');
+    });
+
+    // 类目编辑
+    $$('.edit-section').forEach(btn => {
+      btn.addEventListener('click', () => showSectionEditor(parseInt(btn.dataset.idx)));
+    });
+    $$('.del-section').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (confirm('确定删除此类目？')) {
+          editConfig.sections.splice(parseInt(btn.dataset.idx), 1);
+          renderSettings('sections');
+        }
+      });
+    });
+    $('#addSection')?.addEventListener('click', () => showSectionEditor(-1));
+    $('#exportSections')?.addEventListener('click', () => {
+      downloadJSON({sections: editConfig.sections}, 'sections.json');
+    });
+
+    // KPI编辑
+    $$('.edit-kpi').forEach(btn => {
+      btn.addEventListener('click', () => showKpiEditor(parseInt(btn.dataset.idx)));
+    });
+    $$('.del-kpi').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (confirm('确定删除此指标？')) {
+          editConfig.kpis.splice(parseInt(btn.dataset.idx), 1);
+          renderSettings('data');
+        }
+      });
+    });
+    $('#addKpi')?.addEventListener('click', () => showKpiEditor(-1));
+    $('#exportKpis')?.addEventListener('click', () => {
+      downloadJSON({kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))}, 'kpis.json');
+    });
+
+    // 配置导出
     $('#btnCopyConfig')?.addEventListener('click', () => {
-      navigator.clipboard.writeText(JSON.stringify(meta, null, 2));
-      alert('已复制');
+      navigator.clipboard.writeText(JSON.stringify(buildFullConfig(), null, 2));
+      alert('已复制到剪贴板');
+    });
+    $('#btnDownloadConfig')?.addEventListener('click', () => {
+      downloadJSON(buildFullConfig(), 'digest_config_v15.json');
     });
     $('#btnExportDigest')?.addEventListener('click', () => {
-      const blob = new Blob([JSON.stringify(D, null, 2)], {type: 'application/json'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `digest_${D.date || 'export'}.json`;
-      a.click();
+      downloadJSON(D, `digest_${D.date || 'export'}.json`);
     });
+  }
+
+  function downloadJSON(data, filename) {
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  }
+
+  function showSectionEditor(idx) {
+    const isNew = idx < 0;
+    const sec = isNew ? {id: '', name: '', gnews_queries: []} : {...editConfig.sections[idx]};
+    const queries = (sec.gnews_queries || []).join('\n');
+    
+    const html = `
+      <div class="editor-form">
+        <div class="editor-form-row">
+          <div class="editor-form-group">
+            <label class="editor-form-label">类目ID (英文)</label>
+            <input type="text" class="editor-input" id="secId" value="${esc(sec.id)}" placeholder="例如: metals">
+          </div>
+          <div class="editor-form-group">
+            <label class="editor-form-label">显示名称</label>
+            <input type="text" class="editor-input" id="secName" value="${esc(sec.name)}" placeholder="例如: 大宗金属">
+          </div>
+        </div>
+        <div class="editor-form-row">
+          <div class="editor-form-group" style="flex:1">
+            <label class="editor-form-label">搜索关键词 (每行一个)</label>
+            <textarea class="editor-input" id="secQueries" rows="4" style="width:100%;resize:vertical" placeholder="LME copper price&#10;aluminum market">${esc(queries)}</textarea>
+          </div>
+        </div>
+        <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
+          <button class="btn" id="cancelSec">取消</button>
+          <button class="btn" id="saveSec" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
+        </div>
+      </div>
+    `;
+    
+    const list = $('#sectionsList');
+    if (list) {
+      list.insertAdjacentHTML('beforebegin', html);
+      $('#cancelSec').onclick = () => { document.querySelector('.editor-form').remove(); };
+      $('#saveSec').onclick = () => {
+        const newSec = {
+          id: $('#secId').value.trim(),
+          name: $('#secName').value.trim(),
+          gnews_queries: $('#secQueries').value.split('\n').map(s => s.trim()).filter(Boolean)
+        };
+        if (!newSec.id || !newSec.name) { alert('请填写ID和名称'); return; }
+        if (isNew) editConfig.sections.push(newSec);
+        else editConfig.sections[idx] = newSec;
+        renderSettings('sections');
+      };
+    }
+  }
+
+  function showKpiEditor(idx) {
+    const isNew = idx < 0;
+    const kpi = isNew ? {series: '', title: '', unit: ''} : {...editConfig.kpis[idx]};
+    
+    const html = `
+      <div class="editor-form">
+        <div class="editor-form-row">
+          <div class="editor-form-group">
+            <label class="editor-form-label">FRED系列ID</label>
+            <input type="text" class="editor-input" id="kpiSeries" value="${esc(kpi.series)}" placeholder="例如: PCOPPUSDM">
+          </div>
+          <div class="editor-form-group">
+            <label class="editor-form-label">显示名称</label>
+            <input type="text" class="editor-input" id="kpiTitle" value="${esc(kpi.title)}" placeholder="例如: 铜">
+          </div>
+          <div class="editor-form-group" style="flex:0.5">
+            <label class="editor-form-label">单位</label>
+            <input type="text" class="editor-input" id="kpiUnit" value="${esc(kpi.unit)}" placeholder="$/t">
+          </div>
+        </div>
+        <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
+          <button class="btn" id="cancelKpi">取消</button>
+          <button class="btn" id="saveKpi" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
+        </div>
+      </div>
+    `;
+    
+    const list = $('#kpisList');
+    if (list) {
+      list.insertAdjacentHTML('beforebegin', html);
+      $('#cancelKpi').onclick = () => { document.querySelector('.editor-form').remove(); };
+      $('#saveKpi').onclick = () => {
+        const newKpi = {
+          series: $('#kpiSeries').value.trim(),
+          title: $('#kpiTitle').value.trim(),
+          unit: $('#kpiUnit').value.trim()
+        };
+        if (!newKpi.series || !newKpi.title) { alert('请填写系列ID和名称'); return; }
+        if (isNew) editConfig.kpis.push(newKpi);
+        else editConfig.kpis[idx] = newKpi;
+        renderSettings('data');
+      };
+    }
   }
 
   function renderAll() {
