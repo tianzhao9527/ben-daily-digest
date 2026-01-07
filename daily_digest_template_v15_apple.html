@@ -82,7 +82,34 @@ a:hover{text-decoration:underline}
 .main{min-height:0}
 .topbar{padding:14px 18px;border-bottom:1px solid var(--line);background:var(--card)}
 .topbar-title{font-size:18px;font-weight:600;letter-spacing:-0.3px}
-.topbar-meta{margin-top:3px;font-size:11px;color:var(--muted)}
+.topbar-meta{margin-top:3px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+
+/* 日期选择器 */
+.date-picker-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  background:none;border:none;font-size:11px;color:var(--accent);
+  cursor:pointer;padding:2px 6px;border-radius:4px;font-family:var(--font);font-weight:500;
+}
+.date-picker-btn:hover{background:rgba(0,113,227,.08)}
+.date-picker-arrow{font-size:9px;transition:transform .2s}
+.date-picker-btn.open .date-picker-arrow{transform:rotate(180deg)}
+.date-dropdown{
+  display:none;position:absolute;top:70px;left:18px;right:18px;
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:50;max-height:300px;overflow:hidden;
+}
+.date-dropdown.show{display:block}
+.date-dropdown-header{padding:10px 14px;font-size:12px;font-weight:600;border-bottom:1px solid var(--line);color:var(--text)}
+.date-dropdown-list{max-height:240px;overflow-y:auto}
+.date-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;cursor:pointer;font-size:12px;border-bottom:1px solid var(--line);
+}
+.date-item:hover{background:var(--chip)}
+.date-item.active{background:rgba(0,113,227,.08);color:var(--accent);font-weight:500}
+.date-item:last-child{border-bottom:none}
+.date-item-day{color:var(--muted);font-size:11px}
+.date-loading{padding:20px;text-align:center;font-size:12px;color:var(--muted)}
 .main-scroll{flex:1;overflow:auto;padding:16px 18px}
 
 /* Top 5 板块 */
@@ -293,14 +320,19 @@ a:hover{text-decoration:underline}
 }
 @media (max-width:900px){
   .container{grid-template-columns:1fr;height:auto;padding-bottom:60px}
-  .left{display:none}
-  .right{display:none}
+  .left{display:none !important}
+  .right{display:none !important}
   .cards-grid{grid-template-columns:1fr}
   .top5-list{grid-template-columns:1fr}
   .topbar{position:sticky;top:0;z-index:100}
-  /* 移动端显示控制 */
-  .left.mobile-show{display:flex;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg)}
-  .right.mobile-show{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg)}
+  /* 移动端显示控制 - 使用 !important 确保覆盖 */
+  .left.mobile-show{display:flex !important;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg);overflow-y:auto}
+  .right.mobile-show{display:flex !important;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg);overflow-y:auto}
+  /* 移动端面板关闭按钮 */
+  .mobile-close{display:block !important;position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:var(--chip);border:1px solid var(--line);font-size:18px;cursor:pointer;z-index:10}
+}
+@media (min-width:901px){
+  .mobile-close{display:none}
 }
 @media (max-width:600px){
   html{font-size:14px}
@@ -345,6 +377,7 @@ a:hover{text-decoration:underline}
 
 <div class="container">
   <aside class="card left">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('mobile-show')">×</button>
     <div class="brand">
       <div class="brand-title">Ben's Daily Brief</div>
       <div class="brand-sub">金属贸易 · 地缘政治 · AI算力 · 市场数据</div>
@@ -367,12 +400,26 @@ a:hover{text-decoration:underline}
   <main class="card main">
     <div class="topbar">
       <div class="topbar-title" id="pageTitle">每日简报</div>
-      <div class="topbar-meta"><span id="pageDate">{{DATE}}</span> · 更新于 <span id="pageTime">—</span></div>
+      <div class="topbar-meta">
+        <button class="date-picker-btn" id="datePickerBtn">
+          <span id="pageDate">{{DATE}}</span>
+          <span class="date-picker-arrow">▾</span>
+        </button>
+        · 更新于 <span id="pageTime">—</span>
+      </div>
+    </div>
+    <!-- 日期选择下拉 -->
+    <div class="date-dropdown" id="dateDropdown">
+      <div class="date-dropdown-header">选择日期</div>
+      <div class="date-dropdown-list" id="dateList">
+        <div class="date-loading">加载中...</div>
+      </div>
     </div>
     <div class="main-scroll" id="mainContent"></div>
   </main>
 
   <aside class="card right">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('mobile-show')">×</button>
     <div class="right-header">
       <div class="right-title">关键指标</div>
       <div class="right-sub">数据来源: FRED · 更新于 <span id="kpiTime">—</span></div>
@@ -423,15 +470,17 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   const D = window.DIGEST || {};
-  const sections = Array.isArray(D.sections) ? D.sections : [];
-  const kpis = Array.isArray(D.kpis) ? D.kpis : [];
-  const meta = D.meta || {};
-  const top5 = Array.isArray(D.top5) ? D.top5 : [];
+  let sections = Array.isArray(D.sections) ? D.sections : [];
+  let kpis = Array.isArray(D.kpis) ? D.kpis : [];
+  let meta = D.meta || {};
+  let top5 = Array.isArray(D.top5) ? D.top5 : [];
+  let currentDate = D.date || '';
 
   let currentView = 'all';
   let searchQuery = '';
   let activeSection = sections[0]?.id || '';
   let feedbackData = JSON.parse(localStorage.getItem('digest_feedback') || '{}');
+  let availableDates = [];
 
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => document.querySelectorAll(sel);
@@ -833,20 +882,31 @@ a:hover{text-decoration:underline}
     const body = $('#settingsBody');
     if (!body) return;
     
-    // 使用事件委托处理所有按钮点击
+    // 使用事件委托处理所有按钮和输入
     body.onclick = (e) => {
       const target = e.target.closest('button');
       if (!target) return;
       
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // 添加类目
+      if (target.id === 'addSection' || target.classList.contains('editor-add') && target.textContent.includes('类目')) {
+        showSectionEditor(-1);
+        return;
+      }
+      // 添加KPI
+      if (target.id === 'addKpi' || target.classList.contains('editor-add') && target.textContent.includes('指标')) {
+        showKpiEditor(-1);
+        return;
+      }
       // 编辑类目
       if (target.classList.contains('edit-section')) {
-        e.preventDefault();
         showSectionEditor(parseInt(target.dataset.idx));
         return;
       }
       // 删除类目
       if (target.classList.contains('del-section')) {
-        e.preventDefault();
         if (confirm('确定删除此类目？')) {
           editConfig.sections.splice(parseInt(target.dataset.idx), 1);
           renderSettings('sections');
@@ -855,59 +915,62 @@ a:hover{text-decoration:underline}
       }
       // 编辑KPI
       if (target.classList.contains('edit-kpi')) {
-        e.preventDefault();
         showKpiEditor(parseInt(target.dataset.idx));
         return;
       }
       // 删除KPI
       if (target.classList.contains('del-kpi')) {
-        e.preventDefault();
         if (confirm('确定删除此指标？')) {
           editConfig.kpis.splice(parseInt(target.dataset.idx), 1);
           renderSettings('data');
         }
         return;
       }
+      // 导出类目JSON
+      if (target.id === 'exportSections') {
+        downloadJSON({sections: editConfig.sections}, 'sections.json');
+        return;
+      }
+      // 导出KPI JSON
+      if (target.id === 'exportKpis') {
+        downloadJSON({kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))}, 'kpis.json');
+        return;
+      }
+      // 导出权重
+      if (target.id === 'exportWeights') {
+        downloadJSON({importance_weights: editConfig.importance_weights}, 'importance_weights.json');
+        return;
+      }
+      // 复制配置
+      if (target.id === 'btnCopyConfig') {
+        navigator.clipboard.writeText(JSON.stringify(buildFullConfig(), null, 2));
+        alert('已复制到剪贴板');
+        return;
+      }
+      // 下载配置
+      if (target.id === 'btnDownloadConfig') {
+        downloadJSON(buildFullConfig(), 'digest_config_v15.json');
+        return;
+      }
+      // 导出数据
+      if (target.id === 'btnExportDigest') {
+        downloadJSON(D, `digest_${D.date || 'export'}.json`);
+        return;
+      }
+      // 深色模式
+      if (target.id === 'toggleDark') {
+        target.classList.toggle('active');
+        document.documentElement.setAttribute('data-theme', target.classList.contains('active') ? 'dark' : 'light');
+        return;
+      }
     };
-    
-    // 通用事件
-    $('#toggleDark')?.addEventListener('click', function() {
-      this.classList.toggle('active');
-      document.documentElement.setAttribute('data-theme', this.classList.contains('active') ? 'dark' : 'light');
-    });
 
-    // 权重编辑
-    $$('.weight-input').forEach(input => {
-      input.addEventListener('change', (e) => {
+    // 权重编辑 - change事件需要单独处理
+    body.onchange = (e) => {
+      if (e.target.classList.contains('weight-input')) {
         editConfig.importance_weights[e.target.dataset.key] = parseFloat(e.target.value);
-      });
-    });
-    $('#exportWeights')?.addEventListener('click', () => {
-      downloadJSON({importance_weights: editConfig.importance_weights}, 'importance_weights.json');
-    });
-
-    // 添加按钮
-    $('#addSection')?.addEventListener('click', (e) => { e.preventDefault(); showSectionEditor(-1); });
-    $('#exportSections')?.addEventListener('click', () => {
-      downloadJSON({sections: editConfig.sections}, 'sections.json');
-    });
-
-    $('#addKpi')?.addEventListener('click', (e) => { e.preventDefault(); showKpiEditor(-1); });
-    $('#exportKpis')?.addEventListener('click', () => {
-      downloadJSON({kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))}, 'kpis.json');
-    });
-
-    // 配置导出
-    $('#btnCopyConfig')?.addEventListener('click', () => {
-      navigator.clipboard.writeText(JSON.stringify(buildFullConfig(), null, 2));
-      alert('已复制到剪贴板');
-    });
-    $('#btnDownloadConfig')?.addEventListener('click', () => {
-      downloadJSON(buildFullConfig(), 'digest_config_v15.json');
-    });
-    $('#btnExportDigest')?.addEventListener('click', () => {
-      downloadJSON(D, `digest_${D.date || 'export'}.json`);
-    });
+      }
+    };
   }
 
   function downloadJSON(data, filename) {
@@ -1026,6 +1089,103 @@ a:hover{text-decoration:underline}
     $('#kpiTime').textContent = D.generated_at_bjt || '—';
   }
 
+  // 日期格式化
+  function formatDateDisplay(dateStr) {
+    const d = new Date(dateStr);
+    const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    return {
+      date: dateStr,
+      day: days[d.getDay()],
+      display: `${d.getMonth() + 1}月${d.getDate()}日`
+    };
+  }
+
+  // 加载可用日期列表
+  async function loadAvailableDates() {
+    try {
+      const resp = await fetch('archive/index.json');
+      if (resp.ok) {
+        const data = await resp.json();
+        availableDates = data.dates || [];
+        renderDateList();
+      }
+    } catch (e) {
+      console.log('No archive index found');
+      // 如果没有历史索引，只显示当前日期
+      availableDates = currentDate ? [currentDate] : [];
+      renderDateList();
+    }
+  }
+
+  // 渲染日期列表
+  function renderDateList() {
+    const list = $('#dateList');
+    if (!list) return;
+    
+    if (availableDates.length === 0) {
+      list.innerHTML = '<div class="date-loading">暂无历史数据</div>';
+      return;
+    }
+    
+    list.innerHTML = availableDates.map(date => {
+      const info = formatDateDisplay(date);
+      const isActive = date === currentDate;
+      return `
+        <div class="date-item${isActive ? ' active' : ''}" data-date="${date}">
+          <span>${info.date}</span>
+          <span class="date-item-day">${info.day}</span>
+        </div>
+      `;
+    }).join('');
+    
+    // 绑定点击事件
+    list.querySelectorAll('.date-item').forEach(item => {
+      item.addEventListener('click', () => loadHistoryDigest(item.dataset.date));
+    });
+  }
+
+  // 加载历史简报
+  async function loadHistoryDigest(date) {
+    if (date === currentDate) {
+      $('#dateDropdown')?.classList.remove('show');
+      $('#datePickerBtn')?.classList.remove('open');
+      return;
+    }
+    
+    try {
+      const resp = await fetch(`archive/digest_${date}.json`);
+      if (!resp.ok) throw new Error('Not found');
+      
+      const data = await resp.json();
+      
+      // 更新全局数据
+      sections = Array.isArray(data.sections) ? data.sections : [];
+      kpis = Array.isArray(data.kpis) ? data.kpis : [];
+      meta = data.meta || {};
+      top5 = Array.isArray(data.top5) ? data.top5 : [];
+      currentDate = data.date || date;
+      activeSection = sections[0]?.id || '';
+      
+      // 更新显示
+      $('#pageDate').textContent = currentDate;
+      $('#pageTime').textContent = data.generated_at_bjt?.split(' ')[1] || '—';
+      
+      // 关闭下拉菜单
+      $('#dateDropdown')?.classList.remove('show');
+      $('#datePickerBtn')?.classList.remove('open');
+      
+      // 重新渲染
+      renderAll();
+      renderDateList();
+      
+      // 滚动到顶部
+      $('#mainContent')?.scrollTo({top: 0});
+      
+    } catch (e) {
+      alert(`无法加载 ${date} 的简报数据`);
+    }
+  }
+
   function bindControls() {
     $('#searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderAll(); });
     $$('.pill').forEach(pill => {
@@ -1047,7 +1207,30 @@ a:hover{text-decoration:underline}
       });
     });
     $('#btnTop')?.addEventListener('click', () => { $('#mainContent')?.scrollTo({top: 0, behavior: 'smooth'}); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('#settingsOverlay').classList.remove('show'); });
+    document.addEventListener('keydown', (e) => { 
+      if (e.key === 'Escape') {
+        $('#settingsOverlay').classList.remove('show');
+        $('#dateDropdown')?.classList.remove('show');
+        $('#datePickerBtn')?.classList.remove('open');
+      }
+    });
+    
+    // 日期选择器
+    $('#datePickerBtn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dropdown = $('#dateDropdown');
+      const btn = $('#datePickerBtn');
+      dropdown?.classList.toggle('show');
+      btn?.classList.toggle('open');
+    });
+    
+    // 点击外部关闭日期选择器
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.date-dropdown') && !e.target.closest('.date-picker-btn')) {
+        $('#dateDropdown')?.classList.remove('show');
+        $('#datePickerBtn')?.classList.remove('open');
+      }
+    });
     
     // 移动端导航
     $$('.mobile-nav-item').forEach(btn => {
@@ -1075,6 +1258,7 @@ a:hover{text-decoration:underline}
 
   bindControls();
   renderAll();
+  loadAvailableDates();  // 加载可用日期列表
 })();
 </script>
 </body>

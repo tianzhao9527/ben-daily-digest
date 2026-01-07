@@ -1029,6 +1029,7 @@ def main():
     ap.add_argument("--date", default=None)
     ap.add_argument("--limit_raw", type=int, default=25)
     ap.add_argument("--items_per_section", type=int, default=15)
+    ap.add_argument("--archive_dir", default="archive")  # 历史存档目录
     args = ap.parse_args()
 
     log("[digest] boot v15-DeepSeek")
@@ -1047,6 +1048,37 @@ def main():
     html_out = render_html(args.template, digest)
     Path(args.out).write_text(html_out, encoding="utf-8")
     log(f"[digest] wrote: {args.out}")
+    
+    # 保存历史存档
+    archive_dir = Path(args.archive_dir)
+    archive_dir.mkdir(exist_ok=True)
+    
+    # 保存当天的digest JSON
+    archive_file = archive_dir / f"digest_{date}.json"
+    archive_file.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
+    log(f"[digest] archived: {archive_file}")
+    
+    # 更新索引文件
+    index_file = archive_dir / "index.json"
+    if index_file.exists():
+        try:
+            index_data = json.loads(index_file.read_text(encoding="utf-8"))
+        except:
+            index_data = {"dates": []}
+    else:
+        index_data = {"dates": []}
+    
+    # 添加新日期（避免重复）
+    if date not in index_data["dates"]:
+        index_data["dates"].append(date)
+        index_data["dates"].sort(reverse=True)  # 最新的在前面
+    
+    # 保留最近90天
+    index_data["dates"] = index_data["dates"][:90]
+    index_data["updated_at"] = now_utc().isoformat()
+    
+    index_file.write_text(json.dumps(index_data, ensure_ascii=False, indent=2), encoding="utf-8")
+    log(f"[digest] index updated: {len(index_data['dates'])} dates")
 
 if __name__ == "__main__":
     try:
