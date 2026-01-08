@@ -257,6 +257,263 @@ def fetch_google_news_items(query: str, *, limit: int = 25, hl: str = "en-US", g
     return out
 
 # -------------------------
+# 通用RSS源抓取
+# -------------------------
+
+# 预定义的RSS源配置
+RSS_FEEDS = {
+    # === 中国财经 (RSSHub) ===
+    "cls_telegraph": {
+        "url": "https://rsshub.app/cls/telegraph",
+        "name": "财联社电报",
+        "region": "cn",
+        "category": "finance"
+    },
+    "cls_depth": {
+        "url": "https://rsshub.app/cls/depth/1000",
+        "name": "财联社深度",
+        "region": "cn",
+        "category": "finance"
+    },
+    "sina_finance": {
+        "url": "https://rss.sina.com.cn/roll/finance/hot_roll.xml",
+        "name": "新浪财经",
+        "region": "cn",
+        "category": "finance"
+    },
+    "sina_stock": {
+        "url": "https://rss.sina.com.cn/roll/stock/hot_roll.xml",
+        "name": "新浪股票",
+        "region": "cn",
+        "category": "finance"
+    },
+    "eastmoney": {
+        "url": "https://rsshub.app/eastmoney/report",
+        "name": "东方财富",
+        "region": "cn",
+        "category": "finance"
+    },
+    "jin10": {
+        "url": "https://rsshub.app/jin10",
+        "name": "金十数据",
+        "region": "cn",
+        "category": "finance"
+    },
+    "gelonghui": {
+        "url": "https://rsshub.app/gelonghui/live",
+        "name": "格隆汇",
+        "region": "cn",
+        "category": "finance"
+    },
+    "wallstreetcn": {
+        "url": "https://rsshub.app/wallstreetcn/news/global",
+        "name": "华尔街见闻",
+        "region": "cn",
+        "category": "finance"
+    },
+    "caixin": {
+        "url": "https://rsshub.app/caixin/latest",
+        "name": "财新网",
+        "region": "cn",
+        "category": "finance"
+    },
+    
+    # === 全球财经 ===
+    "reuters_business": {
+        "url": "https://feeds.reuters.com/reuters/businessNews",
+        "name": "Reuters Business",
+        "region": "global",
+        "category": "finance"
+    },
+    "reuters_markets": {
+        "url": "https://feeds.reuters.com/reuters/companyNews",
+        "name": "Reuters Markets",
+        "region": "global",
+        "category": "finance"
+    },
+    "bbc_business": {
+        "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+        "name": "BBC Business",
+        "region": "global",
+        "category": "finance"
+    },
+    "cnbc": {
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+        "name": "CNBC",
+        "region": "global",
+        "category": "finance"
+    },
+    "ft": {
+        "url": "https://www.ft.com/rss/home",
+        "name": "Financial Times",
+        "region": "global",
+        "category": "finance"
+    },
+    
+    # === 科技新闻 ===
+    "techcrunch": {
+        "url": "https://techcrunch.com/feed/",
+        "name": "TechCrunch",
+        "region": "global",
+        "category": "tech"
+    },
+    "wired": {
+        "url": "https://www.wired.com/feed/rss",
+        "name": "Wired",
+        "region": "global",
+        "category": "tech"
+    },
+    "arstechnica": {
+        "url": "https://feeds.arstechnica.com/arstechnica/index",
+        "name": "Ars Technica",
+        "region": "global",
+        "category": "tech"
+    },
+    "theverge": {
+        "url": "https://www.theverge.com/rss/index.xml",
+        "name": "The Verge",
+        "region": "global",
+        "category": "tech"
+    },
+    "36kr": {
+        "url": "https://rsshub.app/36kr/newsflashes",
+        "name": "36氪",
+        "region": "cn",
+        "category": "tech"
+    },
+    
+    # === 全球新闻 ===
+    "bbc_world": {
+        "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+        "name": "BBC World",
+        "region": "global",
+        "category": "news"
+    },
+    "aljazeera": {
+        "url": "https://www.aljazeera.com/xml/rss/all.xml",
+        "name": "Al Jazeera",
+        "region": "global",
+        "category": "news"
+    },
+    "npr": {
+        "url": "https://feeds.npr.org/1001/rss.xml",
+        "name": "NPR News",
+        "region": "global",
+        "category": "news"
+    },
+    "guardian": {
+        "url": "https://www.theguardian.com/world/rss",
+        "name": "The Guardian",
+        "region": "global",
+        "category": "news"
+    },
+    
+    # === 商品/金属 ===
+    "kitco": {
+        "url": "https://www.kitco.com/rss/all_news.xml",
+        "name": "Kitco Metals",
+        "region": "global",
+        "category": "metals"
+    },
+    "mining": {
+        "url": "https://www.mining.com/feed/",
+        "name": "Mining.com",
+        "region": "global",
+        "category": "metals"
+    },
+}
+
+def fetch_rss_feed(feed_config: dict, *, limit: int = 20) -> list[RawItem]:
+    """抓取通用RSS源"""
+    url = feed_config.get("url", "")
+    feed_name = feed_config.get("name", "RSS")
+    default_region = feed_config.get("region", "global")
+    
+    if not url:
+        return []
+    
+    def _do():
+        headers = {
+            "User-Agent": USER_AGENT,
+            "Accept": "application/rss+xml, application/xml, text/xml, */*"
+        }
+        r = requests.get(url, headers=headers, timeout=(10, 30))
+        r.raise_for_status()
+        return r.text
+    
+    try:
+        xml_text = retry(_do, name=f"rss:{feed_name[:15]}", tries=3, base_sleep=1.5)
+    except Exception as e:
+        log(f"[digest] rss {feed_name} failed: {e}")
+        return []
+    
+    items = []
+    try:
+        root = ET.fromstring(xml_text)
+        
+        # 支持RSS 2.0和Atom格式
+        # RSS 2.0
+        for item in root.findall(".//item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            pub = (item.findtext("pubDate") or "").strip()
+            desc = (item.findtext("description") or "").strip()[:300]
+            source = feed_name
+            
+            if title and link:
+                region = guess_region(title) if guess_region(title) == "cn" else default_region
+                dt_str = ""
+                dt_obj = parse_rfc2822(pub)
+                if dt_obj:
+                    dt_str = dt_obj.strftime("%Y-%m-%d")
+                
+                items.append(RawItem(
+                    title=title,
+                    url=link,
+                    source=source,
+                    published_at=dt_str,
+                    region=region,
+                    abstract=desc,
+                ))
+        
+        # Atom格式
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
+        for entry in root.findall(".//atom:entry", ns):
+            title = (entry.findtext("atom:title", namespaces=ns) or "").strip()
+            link_el = entry.find("atom:link[@rel='alternate']", ns) or entry.find("atom:link", ns)
+            link = link_el.get("href", "") if link_el is not None else ""
+            pub = (entry.findtext("atom:published", namespaces=ns) or 
+                   entry.findtext("atom:updated", namespaces=ns) or "")[:10]
+            summary = (entry.findtext("atom:summary", namespaces=ns) or "").strip()[:300]
+            
+            if title and link:
+                region = guess_region(title) if guess_region(title) == "cn" else default_region
+                items.append(RawItem(
+                    title=title,
+                    url=link,
+                    source=feed_name,
+                    published_at=pub,
+                    region=region,
+                    abstract=summary,
+                ))
+    except Exception as e:
+        log(f"[digest] rss {feed_name} parse error: {e}")
+    
+    return items[:limit]
+
+def fetch_multiple_rss_feeds(feed_ids: list[str], *, limit_per_feed: int = 15) -> list[RawItem]:
+    """抓取多个RSS源"""
+    all_items = []
+    for feed_id in feed_ids:
+        if feed_id in RSS_FEEDS:
+            items = fetch_rss_feed(RSS_FEEDS[feed_id], limit=limit_per_feed)
+            log(f"[digest] rss {feed_id} entries={len(items)}")
+            all_items.extend(items)
+        else:
+            log(f"[digest] rss {feed_id} not found in RSS_FEEDS")
+    return all_items
+
+# -------------------------
 # arXiv RSS
 # -------------------------
 
@@ -1118,7 +1375,13 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
             except Exception as e:
                 log(f"[digest] arxiv {sid} failed: {e}")
         else:
-            # 标准Google News查询
+            # 1. RSS源查询（优先）
+            rss_feeds = sc.get("rss_feeds") or []
+            if rss_feeds:
+                rss_items = fetch_multiple_rss_feeds(rss_feeds, limit_per_feed=15)
+                raw_items.extend(rss_items)
+            
+            # 2. 标准Google News查询
             for q in queries:
                 try:
                     items = fetch_google_news_items(q, limit=limit_raw)
@@ -1127,7 +1390,7 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
                 except Exception as e:
                     log(f"[digest] gnews {sid} failed: {e}")
             
-            # 中国专属查询
+            # 3. 中国专属查询
             china_queries = CHINA_QUERIES.get(sid, [])
             for q in china_queries[:2]:
                 try:

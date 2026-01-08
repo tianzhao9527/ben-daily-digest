@@ -13,85 +13,85 @@
     {
       "id": "macro",
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "rss_feeds": ["cls_telegraph", "sina_finance", "wallstreetcn", "reuters_business"],
       "gnews_queries": [
         "Federal Reserve interest rate decision",
         "US Treasury yields bond market",
         "USD CNY yuan exchange rate",
-        "stock market index S&P Nasdaq",
-        "central bank monetary policy inflation"
+        "stock market index S&P Nasdaq"
       ]
     },
     {
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "rss_feeds": ["bbc_world", "reuters_business", "aljazeera"],
       "gnews_queries": [
         "US sanctions OFAC Treasury",
         "EU sanctions Russia trade",
         "China US trade tariffs",
-        "export controls technology chips",
-        "geopolitical risk international trade"
+        "export controls technology chips"
       ]
     },
     {
       "id": "ai",
       "name": "AI / 大模型（GPT·LLM·应用）",
+      "rss_feeds": ["36kr", "techcrunch", "theverge", "arstechnica"],
       "gnews_queries": [
         "ChatGPT OpenAI artificial intelligence",
         "Claude Anthropic AI model",
         "large language model LLM",
-        "generative AI enterprise business",
-        "AI regulation policy government",
-        "machine learning deep learning"
+        "generative AI enterprise business"
       ]
     },
     {
       "id": "compute",
       "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "rss_feeds": ["36kr", "techcrunch", "wired"],
       "gnews_queries": [
         "Nvidia GPU AI chip",
         "data center cloud computing",
         "semiconductor chip manufacturing",
-        "AI infrastructure investment",
-        "AMD Intel AI processor"
+        "AI infrastructure investment"
       ]
     },
     {
       "id": "ev",
       "name": "新能源汽车（电池·充电·智驾）",
+      "rss_feeds": ["36kr", "cls_telegraph"],
       "gnews_queries": [
         "Tesla electric vehicle sales",
         "BYD EV battery China",
         "autonomous driving self-driving",
         "EV charging infrastructure",
-        "solid state battery technology",
-        "lithium battery supply chain"
+        "solid state battery technology"
       ]
     },
     {
       "id": "metals",
       "name": "大宗 / 金属（LME·供需·库存）",
+      "rss_feeds": ["kitco", "mining", "reuters_markets"],
       "gnews_queries": [
         "copper price LME market",
         "aluminum nickel zinc metal",
         "copper scrap recycling trade",
-        "critical minerals rare earth",
-        "metal commodity trading"
+        "critical minerals rare earth"
       ]
     },
     {
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "rss_feeds": ["bbc_business", "guardian"],
       "gnews_queries": [
         "EU carbon border CBAM",
         "carbon credit trading market",
         "carbon neutrality net zero",
-        "emissions trading ETS price",
-        "climate change policy carbon"
+        "emissions trading ETS price"
       ]
     },
     {
       "id": "sea",
       "name": "东南亚供应链（制造·转移·关键矿产）",
+      "rss_feeds": ["reuters_business", "aljazeera"],
       "gnews_queries": [
         "Vietnam manufacturing investment",
         "Indonesia nickel mining smelter",
@@ -103,23 +103,23 @@
     {
       "id": "space",
       "name": "宇宙探索（航天·卫星·深空）",
+      "rss_feeds": ["techcrunch", "arstechnica", "wired"],
       "gnews_queries": [
         "SpaceX Starship launch rocket",
         "NASA space mission exploration",
         "Starlink satellite constellation",
-        "China space station moon",
-        "Blue Origin rocket launch"
+        "China space station moon"
       ]
     },
     {
       "id": "frontier",
       "name": "前沿科技（量子·聚变·生物）",
+      "rss_feeds": ["techcrunch", "wired", "arstechnica"],
       "gnews_queries": [
         "quantum computing breakthrough",
         "nuclear fusion energy reactor",
         "gene editing CRISPR biotechnology",
-        "superconductor material science",
-        "synthetic biology research"
+        "superconductor material science"
       ]
     },
     {
