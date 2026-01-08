@@ -93,8 +93,9 @@ a:hover{text-decoration:underline}
 .date-picker-btn:hover{background:rgba(0,113,227,.08)}
 .date-picker-arrow{font-size:9px;transition:transform .2s}
 .date-picker-btn.open .date-picker-arrow{transform:rotate(180deg)}
+.topbar-meta{position:relative}
 .date-dropdown{
-  display:none;position:absolute;top:70px;left:18px;
+  display:none;position:absolute;top:100%;left:0;margin-top:8px;
   background:var(--card);border:1px solid var(--line);border-radius:12px;
   box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:50;width:280px;overflow:hidden;
 }
@@ -428,19 +429,19 @@ a:hover{text-decoration:underline}
           <span class="date-picker-arrow">▾</span>
         </button>
         · 更新于 <span id="pageTime">—</span>
+        <!-- 日期选择下拉 - 月日历 -->
+        <div class="date-dropdown" id="dateDropdown">
+          <div class="date-dropdown-header">
+            <button class="date-nav-btn" id="prevMonth">‹</button>
+            <span id="calendarTitle">2026年1月</span>
+            <button class="date-nav-btn" id="nextMonth">›</button>
+          </div>
+          <div class="date-dropdown-weekdays">
+            <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+          </div>
+          <div class="date-dropdown-grid" id="dateGrid"></div>
+        </div>
       </div>
-    </div>
-    <!-- 日期选择下拉 - 月日历 -->
-    <div class="date-dropdown" id="dateDropdown">
-      <div class="date-dropdown-header">
-        <button class="date-nav-btn" id="prevMonth">‹</button>
-        <span id="calendarTitle">2026年1月</span>
-        <button class="date-nav-btn" id="nextMonth">›</button>
-      </div>
-      <div class="date-dropdown-weekdays">
-        <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
-      </div>
-      <div class="date-dropdown-grid" id="dateGrid"></div>
     </div>
     <div class="main-scroll" id="mainContent"></div>
   </main>
@@ -694,63 +695,45 @@ a:hover{text-decoration:underline}
 
     let html = '';
     
-    // === 市场情绪仪表盘 (Apple风格) ===
+    // === 市场情绪仪表盘 (紧凑版) ===
     const sentimentAngle = -90 + avgSentiment * 180; // -90 to 90 degrees
     const sentimentLabel = avgSentiment >= 0.6 ? '偏多' : avgSentiment <= 0.4 ? '偏空' : '中性';
-    const sentimentColor = avgSentiment >= 0.6 ? 'var(--success)' : avgSentiment <= 0.4 ? 'var(--danger)' : 'var(--muted)';
+    const sentimentColor = avgSentiment >= 0.6 ? '#34c759' : avgSentiment <= 0.4 ? '#ff3b30' : '#8e8e93';
     html += `
       <div class="kpi-group">
         <div class="kpi-group-title">市场情绪</div>
-        <div style="padding:16px;background:var(--chip);border-radius:12px;margin-bottom:8px">
-          <div style="position:relative;width:140px;height:80px;margin:0 auto 12px">
-            <svg width="140" height="80" viewBox="0 0 140 80" style="display:block">
-              <defs>
-                <linearGradient id="sentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#ff3b30" stop-opacity="0.9"/>
-                  <stop offset="35%" stop-color="#ff9500" stop-opacity="0.9"/>
-                  <stop offset="65%" stop-color="#ffcc00" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#34c759" stop-opacity="0.9"/>
-                </linearGradient>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              <!-- 背景轨道 -->
-              <path d="M 15 70 A 55 55 0 0 1 125 70" fill="none" stroke="var(--line)" stroke-width="12" stroke-linecap="round"/>
-              <!-- 渐变进度 -->
-              <path d="M 15 70 A 55 55 0 0 1 125 70" fill="none" stroke="url(#sentGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${avgSentiment * 173} 173"/>
-              <!-- 指针 -->
-              <g transform="rotate(${sentimentAngle}, 70, 70)">
-                <line x1="70" y1="70" x2="70" y2="25" stroke="var(--text)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
-              </g>
-              <!-- 中心点 -->
-              <circle cx="70" cy="70" r="8" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
-              <circle cx="70" cy="70" r="4" fill="var(--text)"/>
-            </svg>
-          </div>
-          <div style="text-align:center">
-            <div style="font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-1px">${avgSentiment.toFixed(2)}</div>
-            <div style="font-size:11px;color:${sentimentColor};font-weight:600;margin-top:2px">${sentimentLabel}</div>
-          </div>
-          <div style="display:flex;justify-content:center;gap:20px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)">
-            <div style="text-align:center">
-              <div style="width:32px;height:32px;border-radius:50%;background:rgba(52,199,89,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px">
-                <span style="font-size:14px;font-weight:700;color:var(--success)">${posCount}</span>
-              </div>
-              <div style="font-size:9px;color:var(--muted)">看多</div>
+        <div style="padding:12px;background:var(--chip);border-radius:10px;margin-bottom:8px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <!-- 迷你仪表盘 -->
+            <div style="position:relative;width:56px;height:32px;flex-shrink:0">
+              <svg width="56" height="32" viewBox="0 0 56 32">
+                <defs>
+                  <linearGradient id="sentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ff3b30"/>
+                    <stop offset="50%" stop-color="#ffcc00"/>
+                    <stop offset="100%" stop-color="#34c759"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 6 28 A 22 22 0 0 1 50 28" fill="none" stroke="var(--line)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M 6 28 A 22 22 0 0 1 50 28" fill="none" stroke="url(#sentGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="${avgSentiment * 69} 69"/>
+                <circle cx="28" cy="28" r="3" fill="var(--text)"/>
+                <g transform="rotate(${sentimentAngle}, 28, 28)">
+                  <line x1="28" y1="28" x2="28" y2="10" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round"/>
+                </g>
+              </svg>
             </div>
-            <div style="text-align:center">
-              <div style="width:32px;height:32px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;border:1px solid var(--line)">
-                <span style="font-size:14px;font-weight:700">${neuCount}</span>
+            <!-- 数值和标签 -->
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:baseline;gap:6px">
+                <span style="font-size:22px;font-weight:700;font-variant-numeric:tabular-nums">${avgSentiment.toFixed(2)}</span>
+                <span style="font-size:11px;font-weight:600;color:${sentimentColor}">${sentimentLabel}</span>
               </div>
-              <div style="font-size:9px;color:var(--muted)">中性</div>
-            </div>
-            <div style="text-align:center">
-              <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,59,48,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px">
-                <span style="font-size:14px;font-weight:700;color:var(--danger)">${negCount}</span>
+              <!-- 分布条 -->
+              <div style="display:flex;gap:4px;margin-top:6px;font-size:10px;color:var(--muted)">
+                <span style="color:#34c759">▲${posCount}</span>
+                <span>—${neuCount}</span>
+                <span style="color:#ff3b30">▼${negCount}</span>
               </div>
-              <div style="font-size:9px;color:var(--muted)">看空</div>
             </div>
           </div>
         </div>

@@ -233,10 +233,10 @@ def parse_rss_items(xml_text: str) -> list[dict]:
 def fetch_google_news_items(query: str, *, limit: int = 25, hl: str = "en-US", gl: str = "US", ceid: str = "US:en") -> list[RawItem]:
     url = gnews_rss_url(query, hl=hl, gl=gl, ceid=ceid)
     def _do():
-        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(8, 25))
+        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(5, 15))
         r.raise_for_status()
         return r.text
-    xml_text = retry(_do, name=f"gnews:{query[:20]}", tries=3, base_sleep=1.0)
+    xml_text = retry(_do, name=f"gnews:{query[:20]}", tries=2, base_sleep=0.5)
     
     items = parse_rss_items(xml_text)
     out = []
@@ -261,20 +261,9 @@ def fetch_google_news_items(query: str, *, limit: int = 25, hl: str = "en-US", g
 # -------------------------
 
 # 预定义的RSS源配置
+# 只保留经过验证可用的源
 RSS_FEEDS = {
-    # === 中国财经 (RSSHub) ===
-    "cls_telegraph": {
-        "url": "https://rsshub.app/cls/telegraph",
-        "name": "财联社电报",
-        "region": "cn",
-        "category": "finance"
-    },
-    "cls_depth": {
-        "url": "https://rsshub.app/cls/depth/1000",
-        "name": "财联社深度",
-        "region": "cn",
-        "category": "finance"
-    },
+    # === 中国财经 (官方RSS，不依赖RSSHub) ===
     "sina_finance": {
         "url": "https://rss.sina.com.cn/roll/finance/hot_roll.xml",
         "name": "新浪财经",
@@ -287,70 +276,40 @@ RSS_FEEDS = {
         "region": "cn",
         "category": "finance"
     },
-    "eastmoney": {
-        "url": "https://rsshub.app/eastmoney/report",
-        "name": "东方财富",
-        "region": "cn",
-        "category": "finance"
-    },
-    "jin10": {
-        "url": "https://rsshub.app/jin10",
-        "name": "金十数据",
-        "region": "cn",
-        "category": "finance"
-    },
-    "gelonghui": {
-        "url": "https://rsshub.app/gelonghui/live",
-        "name": "格隆汇",
-        "region": "cn",
-        "category": "finance"
-    },
-    "wallstreetcn": {
-        "url": "https://rsshub.app/wallstreetcn/news/global",
-        "name": "华尔街见闻",
-        "region": "cn",
-        "category": "finance"
-    },
-    "caixin": {
-        "url": "https://rsshub.app/caixin/latest",
-        "name": "财新网",
+    "ifeng_finance": {
+        "url": "https://finance.ifeng.com/rss/index.xml",
+        "name": "凤凰财经",
         "region": "cn",
         "category": "finance"
     },
     
-    # === 全球财经 ===
-    "reuters_business": {
-        "url": "https://feeds.reuters.com/reuters/businessNews",
-        "name": "Reuters Business",
-        "region": "global",
-        "category": "finance"
-    },
-    "reuters_markets": {
-        "url": "https://feeds.reuters.com/reuters/companyNews",
-        "name": "Reuters Markets",
-        "region": "global",
-        "category": "finance"
-    },
+    # === 全球财经 (稳定源) ===
     "bbc_business": {
         "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
         "name": "BBC Business",
         "region": "global",
         "category": "finance"
     },
-    "cnbc": {
-        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-        "name": "CNBC",
+    "cnbc_world": {
+        "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html",
+        "name": "CNBC World",
         "region": "global",
         "category": "finance"
     },
-    "ft": {
-        "url": "https://www.ft.com/rss/home",
-        "name": "Financial Times",
+    "marketwatch": {
+        "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
+        "name": "MarketWatch",
+        "region": "global",
+        "category": "finance"
+    },
+    "yahoo_finance": {
+        "url": "https://finance.yahoo.com/news/rssindex",
+        "name": "Yahoo Finance",
         "region": "global",
         "category": "finance"
     },
     
-    # === 科技新闻 ===
+    # === 科技新闻 (稳定源) ===
     "techcrunch": {
         "url": "https://techcrunch.com/feed/",
         "name": "TechCrunch",
@@ -375,10 +334,10 @@ RSS_FEEDS = {
         "region": "global",
         "category": "tech"
     },
-    "36kr": {
-        "url": "https://rsshub.app/36kr/newsflashes",
-        "name": "36氪",
-        "region": "cn",
+    "engadget": {
+        "url": "https://www.engadget.com/rss.xml",
+        "name": "Engadget",
+        "region": "global",
         "category": "tech"
     },
     
@@ -401,30 +360,37 @@ RSS_FEEDS = {
         "region": "global",
         "category": "news"
     },
-    "guardian": {
+    "guardian_world": {
         "url": "https://www.theguardian.com/world/rss",
         "name": "The Guardian",
         "region": "global",
         "category": "news"
     },
+    "ap_news": {
+        "url": "https://rsshub.app/apnews/topics/apf-topnews",
+        "name": "AP News",
+        "region": "global",
+        "category": "news",
+        "backup_url": "https://news.google.com/rss/search?q=site:apnews.com&hl=en-US"
+    },
     
     # === 商品/金属 ===
-    "kitco": {
-        "url": "https://www.kitco.com/rss/all_news.xml",
-        "name": "Kitco Metals",
-        "region": "global",
-        "category": "metals"
-    },
     "mining": {
         "url": "https://www.mining.com/feed/",
         "name": "Mining.com",
         "region": "global",
         "category": "metals"
     },
+    "oilprice": {
+        "url": "https://oilprice.com/rss/main",
+        "name": "OilPrice",
+        "region": "global",
+        "category": "commodities"
+    },
 }
 
 def fetch_rss_feed(feed_config: dict, *, limit: int = 20) -> list[RawItem]:
-    """抓取通用RSS源"""
+    """抓取通用RSS源 - 优化版：快速失败，不浪费时间"""
     url = feed_config.get("url", "")
     feed_name = feed_config.get("name", "RSS")
     default_region = feed_config.get("region", "global")
@@ -437,14 +403,17 @@ def fetch_rss_feed(feed_config: dict, *, limit: int = 20) -> list[RawItem]:
             "User-Agent": USER_AGENT,
             "Accept": "application/rss+xml, application/xml, text/xml, */*"
         }
-        r = requests.get(url, headers=headers, timeout=(10, 30))
+        # 缩短超时：连接5秒，读取10秒
+        r = requests.get(url, headers=headers, timeout=(5, 10))
         r.raise_for_status()
         return r.text
     
     try:
-        xml_text = retry(_do, name=f"rss:{feed_name[:15]}", tries=3, base_sleep=1.5)
+        # 只重试1次，快速失败
+        xml_text = retry(_do, name=f"rss:{feed_name[:15]}", tries=2, base_sleep=0.5)
     except Exception as e:
-        log(f"[digest] rss {feed_name} failed: {e}")
+        # 静默失败，不打印详细错误
+        log(f"[digest] rss {feed_name} skipped")
         return []
     
     items = []
@@ -497,20 +466,35 @@ def fetch_rss_feed(feed_config: dict, *, limit: int = 20) -> list[RawItem]:
                     abstract=summary,
                 ))
     except Exception as e:
-        log(f"[digest] rss {feed_name} parse error: {e}")
+        pass  # 静默处理解析错误
     
+    if items:
+        log(f"[digest] rss {feed_name} entries={len(items[:limit])}")
     return items[:limit]
 
 def fetch_multiple_rss_feeds(feed_ids: list[str], *, limit_per_feed: int = 15) -> list[RawItem]:
-    """抓取多个RSS源"""
+    """并发抓取多个RSS源"""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    
     all_items = []
-    for feed_id in feed_ids:
-        if feed_id in RSS_FEEDS:
-            items = fetch_rss_feed(RSS_FEEDS[feed_id], limit=limit_per_feed)
-            log(f"[digest] rss {feed_id} entries={len(items)}")
-            all_items.extend(items)
-        else:
-            log(f"[digest] rss {feed_id} not found in RSS_FEEDS")
+    valid_feeds = [(fid, RSS_FEEDS[fid]) for fid in feed_ids if fid in RSS_FEEDS]
+    
+    if not valid_feeds:
+        return []
+    
+    # 并发抓取，最多3个线程
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {
+            executor.submit(fetch_rss_feed, cfg, limit=limit_per_feed): fid
+            for fid, cfg in valid_feeds
+        }
+        for future in as_completed(futures, timeout=30):
+            try:
+                items = future.result()
+                all_items.extend(items)
+            except Exception:
+                pass  # 静默处理
+    
     return all_items
 
 # -------------------------
@@ -1375,32 +1359,44 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
             except Exception as e:
                 log(f"[digest] arxiv {sid} failed: {e}")
         else:
-            # 1. RSS源查询（优先）
+            from concurrent.futures import ThreadPoolExecutor, as_completed
+            
+            # 1. RSS源查询（并发）
             rss_feeds = sc.get("rss_feeds") or []
             if rss_feeds:
                 rss_items = fetch_multiple_rss_feeds(rss_feeds, limit_per_feed=15)
                 raw_items.extend(rss_items)
             
-            # 2. 标准Google News查询
+            # 2. Google News查询（并发）
+            all_queries = []
             for q in queries:
-                try:
-                    items = fetch_google_news_items(q, limit=limit_raw)
-                    log(f"[digest] gnews {sid} q='{q[:24]}...' entries={len(items)}")
-                    raw_items.extend(items)
-                except Exception as e:
-                    log(f"[digest] gnews {sid} failed: {e}")
+                all_queries.append(("en", q, limit_raw, "en-US", "US", "US:en"))
             
-            # 3. 中国专属查询
+            # 中国专属查询
             china_queries = CHINA_QUERIES.get(sid, [])
             for q in china_queries[:2]:
-                try:
-                    items = fetch_google_news_items(q, limit=10, hl="zh-CN", gl="CN", ceid="CN:zh-Hans")
-                    log(f"[digest] gnews-cn {sid} q='{q[:20]}...' entries={len(items)}")
-                    for it in items:
-                        it.region = "cn"
-                    raw_items.extend(items)
-                except Exception as e:
-                    log(f"[digest] gnews-cn {sid} failed: {e}")
+                all_queries.append(("cn", q, 10, "zh-CN", "CN", "CN:zh-Hans"))
+            
+            # 并发抓取所有查询
+            with ThreadPoolExecutor(max_workers=4) as executor:
+                futures = {}
+                for qtype, q, lim, hl, gl, ceid in all_queries:
+                    future = executor.submit(fetch_google_news_items, q, limit=lim, hl=hl, gl=gl, ceid=ceid)
+                    futures[future] = (qtype, q)
+                
+                for future in as_completed(futures, timeout=60):
+                    qtype, q = futures[future]
+                    try:
+                        items = future.result()
+                        if qtype == "cn":
+                            for it in items:
+                                it.region = "cn"
+                            log(f"[digest] gnews-cn {sid} q='{q[:20]}...' entries={len(items)}")
+                        else:
+                            log(f"[digest] gnews {sid} q='{q[:24]}...' entries={len(items)}")
+                        raw_items.extend(items)
+                    except Exception as e:
+                        log(f"[digest] gnews {sid} failed: {q[:20]}...")
 
         raw_items = dedupe_items(raw_items)
         # 时效性过滤：先尝试14天，如果不足则放宽到30天

@@ -1,113 +1,109 @@
-# Ben Daily Digest v3.1
+# Ben Daily Digest v3.2
 
 智能新闻简报生成器 - 金属贸易/地缘政治/AI算力专注版
 
-## v3.1 新功能：多源RSS聚合
+## v3.2 性能优化
 
-### 📰 新增RSS源支持
+### ⚡ 速度提升
 
-#### 中国财经（通过RSSHub）
-| ID | 名称 | 说明 |
-|----|------|------|
-| `cls_telegraph` | 财联社电报 | 7x24快讯 |
-| `cls_depth` | 财联社深度 | 深度报道 |
-| `sina_finance` | 新浪财经 | 财经要闻 |
-| `sina_stock` | 新浪股票 | 股票新闻 |
-| `eastmoney` | 东方财富 | 研报资讯 |
-| `jin10` | 金十数据 | 市场快讯 |
-| `gelonghui` | 格隆汇 | 港美股 |
-| `wallstreetcn` | 华尔街见闻 | 全球资讯 |
-| `caixin` | 财新网 | 深度财经 |
-| `36kr` | 36氪 | 科技创投 |
+| 优化项 | 之前 | 之后 |
+|--------|------|------|
+| 总运行时间 | ~22分钟 | ~8-10分钟 |
+| RSS重试次数 | 3次 | 2次 |
+| RSS超时 | 10s+30s | 5s+10s |
+| GNews重试 | 3次 | 2次 |
+| GNews超时 | 8s+25s | 5s+15s |
+| 抓取方式 | 串行 | **并发** |
+
+### 🔄 并发抓取
+
+```python
+# RSS源：3个线程并发
+ThreadPoolExecutor(max_workers=3)
+
+# Google News：4个线程并发
+ThreadPoolExecutor(max_workers=4)
+```
+
+### 📰 可用RSS源（经验证）
+
+#### 中国财经
+| ID | 名称 | URL |
+|----|------|-----|
+| `sina_finance` | 新浪财经 | 官方RSS，稳定 |
+| `sina_stock` | 新浪股票 | 官方RSS，稳定 |
+| `ifeng_finance` | 凤凰财经 | 官方RSS |
 
 #### 全球财经
-| ID | 名称 | 说明 |
+| ID | 名称 | 状态 |
 |----|------|------|
-| `reuters_business` | Reuters Business | 路透商业 |
-| `reuters_markets` | Reuters Markets | 路透市场 |
-| `bbc_business` | BBC Business | BBC商业 |
-| `cnbc` | CNBC | 美国财经 |
-| `ft` | Financial Times | 金融时报 |
+| `bbc_business` | BBC Business | ✅稳定 |
+| `cnbc_world` | CNBC World | ✅稳定 |
+| `marketwatch` | MarketWatch | ✅稳定 |
+| `yahoo_finance` | Yahoo Finance | ✅稳定 |
 
 #### 科技新闻
-| ID | 名称 | 说明 |
+| ID | 名称 | 状态 |
 |----|------|------|
-| `techcrunch` | TechCrunch | 科技创业 |
-| `wired` | Wired | 科技文化 |
-| `arstechnica` | Ars Technica | 深度科技 |
-| `theverge` | The Verge | 科技新闻 |
+| `techcrunch` | TechCrunch | ✅稳定 |
+| `wired` | Wired | ✅稳定 |
+| `arstechnica` | Ars Technica | ✅稳定 |
+| `theverge` | The Verge | ✅稳定 |
+| `engadget` | Engadget | ✅稳定 |
 
 #### 全球新闻
-| ID | 名称 | 说明 |
+| ID | 名称 | 状态 |
 |----|------|------|
-| `bbc_world` | BBC World | BBC国际 |
-| `aljazeera` | Al Jazeera | 半岛电视台 |
-| `npr` | NPR News | 美国公共广播 |
-| `guardian` | The Guardian | 卫报 |
+| `bbc_world` | BBC World | ✅稳定 |
+| `aljazeera` | Al Jazeera | ✅稳定 |
+| `npr` | NPR News | ✅稳定 |
+| `guardian_world` | The Guardian | ✅稳定 |
 
-#### 商品/金属
-| ID | 名称 | 说明 |
+#### 商品
+| ID | 名称 | 状态 |
 |----|------|------|
-| `kitco` | Kitco Metals | 贵金属资讯 |
-| `mining` | Mining.com | 矿业新闻 |
+| `mining` | Mining.com | ✅稳定 |
+| `oilprice` | OilPrice | ✅稳定 |
 
-### 📋 配置示例
+### ❌ 已移除（不可用）
+
+| 源 | 原因 |
+|----|------|
+| RSSHub (财联社/36氪等) | 403限流 |
+| Reuters feeds | DNS解析失败 |
+| Kitco | 404 |
+| FT | 付费墙 |
+
+### 📊 当前配置
 
 ```json
 {
-  "id": "macro",
-  "name": "宏观 / 市场",
-  "rss_feeds": ["cls_telegraph", "sina_finance", "reuters_business"],
-  "gnews_queries": ["Federal Reserve interest rate"]
+  "macro": ["sina_finance", "bbc_business", "marketwatch"],
+  "sanctions": ["bbc_world", "aljazeera", "guardian_world"],
+  "ai": ["techcrunch", "theverge", "arstechnica"],
+  "compute": ["techcrunch", "wired", "engadget"],
+  "ev": ["techcrunch", "engadget"],
+  "metals": ["mining", "oilprice"],
+  "carbon": ["bbc_business", "guardian_world"],
+  "sea": ["aljazeera", "bbc_world"],
+  "space": ["techcrunch", "arstechnica", "wired"],
+  "frontier": ["techcrunch", "wired", "arstechnica"]
 }
 ```
-
-### 🔄 数据流
-
-```
-┌─────────────────────────────────────────────────┐
-│                  Section处理                     │
-├─────────────────────────────────────────────────┤
-│  1. RSS源 (rss_feeds)                           │
-│     └── 财联社、新浪、Reuters、BBC等             │
-│  2. Google News (gnews_queries)                 │
-│     └── 英文关键词搜索                           │
-│  3. 中国专属查询 (CHINA_QUERIES)                 │
-│     └── 中文关键词搜索                           │
-│  4. 去重 + 时效过滤 (14-30天)                    │
-│  5. LLM处理 (DeepSeek/Qwen)                     │
-│     └── 翻译、摘要、情感分析                      │
-└─────────────────────────────────────────────────┘
-```
-
-### 📊 当前配置的RSS源
-
-| 板块 | RSS源 |
-|------|-------|
-| 宏观/市场 | 财联社、新浪、华尔街见闻、Reuters |
-| 地缘/制裁 | BBC World、Reuters、Al Jazeera |
-| AI/大模型 | 36氪、TechCrunch、The Verge、Ars |
-| 算力/芯片 | 36氪、TechCrunch、Wired |
-| 新能源车 | 36氪、财联社 |
-| 大宗/金属 | Kitco、Mining.com、Reuters |
-| 碳/CBAM | BBC Business、Guardian |
-| 东南亚 | Reuters、Al Jazeera |
-| 宇宙探索 | TechCrunch、Ars、Wired |
-| 前沿科技 | TechCrunch、Wired、Ars |
 
 ## 其他v3功能
 
 ### 📊 KPI增强
-- **MA5/MA20均线** - 橙色MA5，紫色MA20
-- **支撑/阻力位** - 基于20日高低点
+- MA5/MA20均线
+- 支撑/阻力位
 
-### 🎯 市场情绪仪表盘
-- Apple风格渐变圆弧
+### 🎯 市场情绪
+- Apple风格仪表盘
 - 看多/中性/看空分布
 
-### 📅 月日历选择器
+### 📅 月日历
 - 简约月历视图
-- 有数据的日期带蓝点
+- 有数据标记
 
 ## GitHub Secrets
 
@@ -115,41 +111,24 @@
 |--------|------|------|
 | DEEPSEEK_API_KEY | ✓ | DeepSeek API |
 | QWEN_API_KEY | 可选 | 通义千问备用 |
-| GNEWS_API_KEY | ✓ | GNews新闻API |
-| FRED_API_KEY | ✓ | FRED经济数据 |
+| GNEWS_API_KEY | ✓ | GNews API |
+| FRED_API_KEY | ✓ | FRED数据 |
 
-## 自定义RSS源
+## 自建RSSHub
 
-在 `news_digest_generator_v15.py` 中的 `RSS_FEEDS` 字典添加：
+如需财联社等源，建议自建RSSHub：
 
+```bash
+docker run -d -p 1200:1200 diygod/rsshub
+```
+
+然后修改 `RSS_FEEDS` 中的URL：
 ```python
-RSS_FEEDS = {
-    "my_custom_feed": {
-        "url": "https://example.com/rss.xml",
-        "name": "My Feed",
-        "region": "cn",  # cn 或 global
-        "category": "finance"
-    },
-    # ...
+"cls_telegraph": {
+    "url": "http://localhost:1200/cls/telegraph",
+    ...
 }
 ```
-
-然后在配置中使用：
-```json
-{
-  "id": "macro",
-  "rss_feeds": ["my_custom_feed", "cls_telegraph"]
-}
-```
-
-## RSSHub说明
-
-部分中国RSS源依赖 [RSSHub](https://docs.rsshub.app/)，默认使用官方实例 `rsshub.app`。
-
-如果访问不稳定，可以：
-1. 自建RSSHub实例
-2. 使用其他公共实例如 `rsshub.rssforever.com`
-3. 修改代码中的URL前缀
 
 ## 许可
 
