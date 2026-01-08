@@ -738,31 +738,88 @@ def repair_truncated_json(text: str) -> str | None:
 # LLM Section Pack (强制中文翻译+结构化总结)
 # -------------------------
 
-def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event], str]:
+def dedupe_raw_items(raw_items: list[RawItem], threshold: float = 0.6) -> list[tuple[RawItem, list[RawItem]]]:
+    """
+    对新闻进行去重，相似的新闻合并为一组
+    返回: [(主新闻, [相似新闻列表]), ...]
+    """
+    if not raw_items:
+        return []
+    
+    def normalize(text: str) -> set:
+        """提取关键词集合用于比较"""
+        # 移除标点和常见词
+        text = re.sub(r'[^\w\s]', ' ', text.lower())
+        words = set(text.split())
+        # 移除停用词
+        stopwords = {'the', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'of', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'shall', 'can', 'need', 'dare', 'ought', 'used', 'to', 'that', 'this', 'these', 'those', 'it', 'its', 'as', 'with', 'by', 'from', 'up', 'about', 'into', 'over', 'after'}
+        return words - stopwords
+    
+    def similarity(a: set, b: set) -> float:
+        """Jaccard相似度"""
+        if not a or not b:
+            return 0.0
+        return len(a & b) / len(a | b)
+    
+    # 计算每个新闻的关键词集合
+    item_words = [(it, normalize(it.title)) for it in raw_items]
+    
+    # 聚类
+    used = set()
+    groups = []
+    
+    for i, (item, words) in enumerate(item_words):
+        if i in used:
+            continue
+        
+        group = [item]
+        similar_items = []
+        used.add(i)
+        
+        for j, (other_item, other_words) in enumerate(item_words):
+            if j in used:
+                continue
+            if similarity(words, other_words) >= threshold:
+                similar_items.append(other_item)
+                used.add(j)
+        
+        groups.append((item, similar_items))
+    
+    return groups
+
+def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event], str, dict]:
     """使用LLM生成中文摘要和事件卡
-    返回: (brief_zh, events, llm_name)
+    返回: (brief_zh, events, llm_name, extra_data)
+    extra_data包含: sentiment, keywords等
     """
     
-    # 限制发送给LLM的新闻数量，减少输出长度避免截断
-    max_input = min(len(raw_items), items_per_section + 5)  # 最多发送 items_per_section + 5 条
+    # 先进行去重
+    deduped_groups = dedupe_raw_items(raw_items, threshold=0.5)
+    
+    # 限制发送给LLM的新闻数量
+    max_input = min(len(deduped_groups), items_per_section + 5)
     
     lines = []
-    for it in raw_items[:max_input]:
-        lines.append({
-            "t": it.title[:60],  # 标题截短
-            "s": it.source[:20],  # 来源截短
-            "d": it.published_at or "",  # 日期
-            "u": it.url[:100],  # URL截短
-            "cn": it.region == "cn",  # 是否中国相关
-        })
+    for main_item, similar_items in deduped_groups[:max_input]:
+        entry = {
+            "t": main_item.title[:60],
+            "s": main_item.source[:20],
+            "d": main_item.published_at or "",
+            "u": main_item.url[:100],
+            "cn": main_item.region == "cn",
+        }
+        # 如果有相似新闻，添加来源数量
+        if similar_items:
+            entry["similar_count"] = len(similar_items)
+            entry["similar_sources"] = [it.source[:15] for it in similar_items[:3]]
+        lines.append(entry)
 
-    # 要求生成的events数量 - 不超过10条以减少输出
     target_events = min(items_per_section, 10)
     
-    # 极简prompt - 强调只返回纯JSON
+    # 增强prompt - 添加情感分析
     sys_prompt = f"""将新闻翻译成中文并整理。返回纯JSON（不要```json标记）：
-{{"brief_zh":"总结(150字内)","events":[{{"title_zh":"中文标题(20字内)","summary_zh":"摘要(50字内)","region":"cn或global","score":0.6,"date":"日期","sources":[{{"title":"标题","url":"链接","source":"来源"}}]}}]}}
-要求：1.中文 2.优先cn=true 3.生成{target_events}条 4.不要markdown"""
+{{"brief_zh":"总结(150字内)","sentiment":"positive/negative/neutral","sentiment_score":0.5,"keywords":["关键词1","关键词2"],"events":[{{"title_zh":"中文标题(20字内)","summary_zh":"摘要(50字内)","region":"cn或global","score":0.6,"date":"日期","sentiment":"positive/negative/neutral","sources":[{{"title":"标题","url":"链接","source":"来源"}}]}}]}}
+要求：1.中文 2.优先cn=true 3.生成{target_events}条 4.不要markdown 5.sentiment_score范围0-1(0看空,1看多) 6.提取3-5个关键词"""
 
     user_content = f"新闻({section.name}):\n{json.dumps(lines, ensure_ascii=False)}"
 
@@ -771,8 +828,9 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
         {"role": "user", "content": user_content},
     ]
     
-    # 尝试多次
     last_error = None
+    extra_data = {"sentiment": "neutral", "sentiment_score": 0.5, "keywords": [], "deduped_count": len(raw_items) - len(deduped_groups)}
+    
     for attempt in range(2):
         try:
             obj, llm_name = llm_chat_json(messages, max_tokens=4500)
@@ -781,8 +839,13 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
             evs = obj.get("events") or []
             events: list[Event] = []
             
+            # 提取情感和关键词
+            extra_data["sentiment"] = obj.get("sentiment", "neutral")
+            extra_data["sentiment_score"] = float(obj.get("sentiment_score", 0.5))
+            extra_data["keywords"] = obj.get("keywords", [])[:5]
+            
             if isinstance(evs, list):
-                for e in evs[:items_per_section]:
+                for idx, e in enumerate(evs[:items_per_section]):
                     try:
                         title_zh = str(e.get("title_zh") or e.get("title") or "").strip()
                         summary_zh = str(e.get("summary_zh") or e.get("summary") or "").strip()
@@ -791,6 +854,8 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
                             region = guess_region(title_zh)
                         score = float(e.get("score") if e.get("score") is not None else 0.5)
                         date = str(e.get("date") or "")[:10]
+                        
+                        # 合并相似新闻的来源
                         sources = e.get("sources") if isinstance(e.get("sources"), list) else []
                         sources2 = []
                         for s in sources[:3]:
@@ -801,6 +866,19 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
                                     "source": str(s.get("source") or ""),
                                     "published_at": date or str(s.get("date") or s.get("published_at") or ""),
                                 })
+                        
+                        # 如果对应的原始新闻有相似项，添加额外来源
+                        if idx < len(deduped_groups):
+                            _, similar_items = deduped_groups[idx]
+                            for sim_item in similar_items[:2]:
+                                if len(sources2) < 5:
+                                    sources2.append({
+                                        "title": sim_item.title[:100],
+                                        "url": sim_item.url,
+                                        "source": sim_item.source,
+                                        "published_at": sim_item.published_at or "",
+                                    })
+                        
                         if title_zh and summary_zh:
                             ev = Event(title_zh=title_zh, summary_zh=summary_zh, region=region, score=score, sources=sources2)
                             ev.date = date
@@ -808,10 +886,9 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
                     except:
                         continue
 
-            # 根据原始数据量调整最小要求
             min_events = min(len(raw_items), max(1, items_per_section // 4))
             if len(events) >= min_events:
-                return brief_zh, events, llm_name
+                return brief_zh, events, llm_name, extra_data
             else:
                 raise ValueError(f"LLM returned only {len(events)} events, need at least {min_events}")
                 
@@ -886,7 +963,7 @@ def llm_generate_top5_summary(events: list[dict]) -> list[dict]:
 # Fallback
 # -------------------------
 
-def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event]]:
+def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_section: int) -> tuple[str, list[Event], dict]:
     """当LLM失败时的fallback - 尽量保持中文"""
     cn_items = [it for it in raw_items if it.region == "cn"]
     other_items = [it for it in raw_items if it.region != "cn"]
@@ -919,7 +996,8 @@ def fallback_pack(section: Section, raw_items: list[RawItem], *, items_per_secti
 【趋势研判】LLM翻译暂时不可用，显示原始标题。
 【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。"""
     
-    return brief, events
+    extra_data = {"sentiment": "neutral", "sentiment_score": 0.5, "keywords": [], "deduped_count": 0}
+    return brief, events, extra_data
 
 # -------------------------
 # Digest build
@@ -1065,14 +1143,16 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
         brief_zh = ""
         events: list[Event] = []
         llm_used = ""
+        extra_data = {"sentiment": "neutral", "sentiment_score": 0.5, "keywords": [], "deduped_count": 0}
+        
         if raw_items:
             try:
-                brief_zh, events, llm_used = llm_section_pack(sec, raw_items, items_per_section=items_per_section)
-                log(f"[digest] llm pack success ({sid}) by {llm_used}: events={len(events)}")
+                brief_zh, events, llm_used, extra_data = llm_section_pack(sec, raw_items, items_per_section=items_per_section)
+                log(f"[digest] llm pack success ({sid}) by {llm_used}: events={len(events)} deduped={extra_data.get('deduped_count', 0)}")
             except Exception as e:
                 log(f"[digest] llm pack failed ({sid}): {type(e).__name__}: {e}")
                 traceback.print_exc()
-                brief_zh, events = fallback_pack(sec, raw_items, items_per_section=items_per_section)
+                brief_zh, events, extra_data = fallback_pack(sec, raw_items, items_per_section=items_per_section)
                 llm_used = "fallback"
         else:
             brief_zh = "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。"
@@ -1084,11 +1164,16 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
             "id": sec.id,
             "name": sec.name,
             "tags": sec.tags,
-            "gnews_queries": sec.gnews_queries,  # 保留原始查询关键词
+            "gnews_queries": sec.gnews_queries,
             "brief_zh": brief_zh,
             "events": [dataclasses.asdict(e) for e in events],
             "cn_count": cn_events,
             "total_count": len(events),
+            "sentiment": extra_data.get("sentiment", "neutral"),
+            "sentiment_score": extra_data.get("sentiment_score", 0.5),
+            "keywords": extra_data.get("keywords", []),
+            "deduped_count": extra_data.get("deduped_count", 0),
+            "raw_count": len(raw_items),
         }
         sections_out.append(section_data)
         
