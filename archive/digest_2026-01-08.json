@@ -1,7 +1,7 @@
 {
   "date": "2026-01-08",
-  "generated_at_utc": "2026-01-08T14:05:54.436287+00:00",
-  "generated_at_bjt": "2026-01-08 22:05",
+  "generated_at_utc": "2026-01-08T23:33:04.245426+00:00",
+  "generated_at_bjt": "2026-01-09 07:33",
   "kpis": [
     {
       "id": "SP500",
@@ -172,16 +172,15 @@
       "id": "VIXCLS",
       "name": "VIX恐慌",
       "unit": "",
-      "value": 14.75,
-      "updated_at": "2026-01-06",
+      "value": 15.38,
+      "updated_at": "2026-01-07",
       "source": "FRED",
-      "delta": -0.15000000000000036,
-      "delta_pct": -1.0067114093959755,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,28.88 L 5.41,29.82 L 7.82,29.15 L 10.23,21.84 L 12.64,22.34 L 15.05,14.85 L 17.46,8.08 L 19.87,11.10 L 22.28,3.00 L 24.69,11.77 L 27.10,20.31 L 29.51,26.06 L 31.92,30.08 L 34.33,30.03 L 36.74,32.55 L 39.15,29.94 L 41.56,31.84 L 43.97,33.34 L 46.38,34.22 L 48.79,35.31 L 51.21,31.64 L 53.62,30.85 L 56.03,34.25 L 58.44,36.95 L 60.85,34.34 L 63.26,32.11 L 65.67,32.17 L 68.08,28.82 L 70.49,31.02 L 72.90,36.77 L 75.31,39.21 L 77.72,39.44 L 80.13,41.00 L 82.54,40.62 L 84.95,38.86 L 87.36,38.48 L 89.77,36.66 L 92.18,37.95 L 94.59,36.80 L 97.00,37.24\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.6300000000000008,
+      "delta_pct": 4.271186440677972,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,29.82 L 5.41,29.15 L 7.82,21.84 L 10.23,22.34 L 12.64,14.85 L 15.05,8.08 L 17.46,11.10 L 19.87,3.00 L 22.28,11.77 L 24.69,20.31 L 27.10,26.06 L 29.51,30.08 L 31.92,30.03 L 34.33,32.55 L 36.74,29.94 L 39.15,31.84 L 41.56,33.34 L 43.97,34.22 L 46.38,35.31 L 48.79,31.64 L 51.21,30.85 L 53.62,34.25 L 56.03,36.95 L 58.44,34.34 L 60.85,32.11 L 63.26,32.17 L 65.67,28.82 L 68.08,31.02 L 70.49,36.77 L 72.90,39.21 L 75.31,39.44 L 77.72,41.00 L 80.13,40.62 L 82.54,38.86 L 84.95,38.48 L 87.36,36.66 L 89.77,37.95 L 92.18,36.80 L 94.59,37.24 L 97.00,35.40\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        17.6,
         17.28,
         17.51,
         20.0,
@@ -220,7 +219,8 @@
         14.95,
         14.51,
         14.9,
-        14.75
+        14.75,
+        15.38
       ]
     },
     {
@@ -282,16 +282,15 @@
       "id": "DGS10",
       "name": "美债10Y",
       "unit": "%",
-      "value": 4.18,
-      "updated_at": "2026-01-06",
+      "value": 4.15,
+      "updated_at": "2026-01-07",
       "source": "FRED",
-      "delta": 0.009999999999999787,
-      "delta_pct": 0.23980815347721313,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.00 L 5.41,19.00 L 7.82,15.00 L 10.23,25.00 L 12.64,19.00 L 15.05,13.00 L 17.46,15.00 L 19.87,17.00 L 22.28,15.00 L 24.69,21.00 L 27.10,29.00 L 29.51,33.00 L 31.92,39.00 L 34.33,41.00 L 36.74,37.00 L 39.15,23.00 L 41.56,23.00 L 43.97,29.00 L 46.38,19.00 L 48.79,13.00 L 51.21,7.00 L 53.62,5.00 L 56.03,15.00 L 58.44,13.00 L 60.85,3.00 L 63.26,5.00 L 65.67,11.00 L 68.08,9.00 L 70.49,17.00 L 72.90,9.00 L 75.31,7.00 L 77.72,5.00 L 80.13,11.00 L 82.54,13.00 L 84.95,17.00 L 87.36,13.00 L 89.77,5.00 L 92.18,3.00 L 94.59,7.00 L 97.00,5.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": -0.02999999999999936,
+      "delta_pct": -0.7177033492822814,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.00 L 5.41,15.00 L 7.82,25.00 L 10.23,19.00 L 12.64,13.00 L 15.05,15.00 L 17.46,17.00 L 19.87,15.00 L 22.28,21.00 L 24.69,29.00 L 27.10,33.00 L 29.51,39.00 L 31.92,41.00 L 34.33,37.00 L 36.74,23.00 L 39.15,23.00 L 41.56,29.00 L 43.97,19.00 L 46.38,13.00 L 48.79,7.00 L 51.21,5.00 L 53.62,15.00 L 56.03,13.00 L 58.44,3.00 L 60.85,5.00 L 63.26,11.00 L 65.67,9.00 L 68.08,17.00 L 70.49,9.00 L 72.90,7.00 L 75.31,5.00 L 77.72,11.00 L 80.13,13.00 L 82.54,17.00 L 84.95,13.00 L 87.36,5.00 L 89.77,3.00 L 92.18,7.00 L 94.59,5.00 L 97.00,11.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        4.11,
         4.11,
         4.13,
         4.08,
@@ -330,7 +329,8 @@
         4.18,
         4.19,
         4.17,
-        4.18
+        4.18,
+        4.15
       ]
     },
     {
@@ -338,15 +338,14 @@
       "name": "美债2Y",
       "unit": "%",
       "value": 3.47,
-      "updated_at": "2026-01-06",
+      "updated_at": "2026-01-07",
       "source": "FRED",
-      "delta": 0.010000000000000231,
-      "delta_pct": 0.2890173410404691,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,13.00 L 5.41,17.00 L 7.82,11.00 L 10.23,15.00 L 12.64,11.00 L 15.05,3.00 L 17.46,7.00 L 19.87,11.00 L 22.28,11.00 L 24.69,17.00 L 27.10,25.00 L 29.51,35.00 L 31.92,41.00 L 34.33,37.00 L 36.74,33.00 L 39.15,19.00 L 41.56,25.00 L 43.97,29.00 L 46.38,23.00 L 48.79,15.00 L 51.21,13.00 L 53.62,5.00 L 56.03,19.00 L 58.44,23.00 L 60.85,23.00 L 63.26,25.00 L 65.67,31.00 L 68.08,29.00 L 70.49,35.00 L 72.90,31.00 L 75.31,39.00 L 77.72,31.00 L 80.13,33.00 L 82.54,35.00 L 84.95,37.00 L 87.36,37.00 L 89.77,33.00 L 92.18,33.00 L 94.59,35.00 L 97.00,33.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": 0.0,
+      "delta_pct": 0.0,
+      "direction": "flat",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,17.00 L 5.41,11.00 L 7.82,15.00 L 10.23,11.00 L 12.64,3.00 L 15.05,7.00 L 17.46,11.00 L 19.87,11.00 L 22.28,17.00 L 24.69,25.00 L 27.10,35.00 L 29.51,41.00 L 31.92,37.00 L 34.33,33.00 L 36.74,19.00 L 39.15,25.00 L 41.56,29.00 L 43.97,23.00 L 46.38,15.00 L 48.79,13.00 L 51.21,5.00 L 53.62,19.00 L 56.03,23.00 L 58.44,23.00 L 60.85,25.00 L 63.26,31.00 L 65.67,29.00 L 68.08,35.00 L 70.49,31.00 L 72.90,39.00 L 75.31,31.00 L 77.72,33.00 L 80.13,35.00 L 82.54,37.00 L 84.95,37.00 L 87.36,33.00 L 89.77,33.00 L 92.18,35.00 L 94.59,33.00 L 97.00,33.00\" stroke=\"#8E8E93\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#8E8E93",
       "series_values": [
-        3.57,
         3.55,
         3.58,
         3.56,
@@ -385,6 +384,7 @@
         3.47,
         3.47,
         3.46,
+        3.47,
         3.47
       ]
     },
@@ -392,16 +392,15 @@
       "id": "T10Y2Y",
       "name": "10Y-2Y利差",
       "unit": "%",
-      "value": 0.68,
-      "updated_at": "2026-01-07",
+      "value": 0.7,
+      "updated_at": "2026-01-08",
       "source": "FRED",
-      "delta": -0.029999999999999916,
-      "delta_pct": -4.2253521126760445,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.76 L 5.41,35.57 L 7.82,41.00 L 10.23,39.19 L 12.64,41.00 L 15.05,39.19 L 17.46,37.38 L 19.87,35.57 L 22.28,35.57 L 24.69,35.57 L 27.10,30.14 L 29.51,30.14 L 31.92,35.57 L 34.33,35.57 L 36.74,35.57 L 39.15,30.14 L 41.56,31.95 L 43.97,28.33 L 46.38,30.14 L 48.79,26.52 L 51.21,31.95 L 53.62,28.33 L 56.03,22.90 L 58.44,13.86 L 60.85,13.86 L 63.26,13.86 L 65.67,13.86 L 68.08,15.67 L 70.49,12.05 L 72.90,3.00 L 75.31,8.43 L 77.72,12.05 L 80.13,12.05 L 82.54,13.86 L 84.95,10.24 L 87.36,6.62 L 89.77,4.81 L 92.18,6.62 L 94.59,6.62 L 97.00,12.05\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.019999999999999907,
+      "delta_pct": 2.9411764705882213,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,35.57 L 5.41,41.00 L 7.82,39.19 L 10.23,41.00 L 12.64,39.19 L 15.05,37.38 L 17.46,35.57 L 19.87,35.57 L 22.28,35.57 L 24.69,30.14 L 27.10,30.14 L 29.51,35.57 L 31.92,35.57 L 34.33,35.57 L 36.74,30.14 L 39.15,31.95 L 41.56,28.33 L 43.97,30.14 L 46.38,26.52 L 48.79,31.95 L 51.21,28.33 L 53.62,22.90 L 56.03,13.86 L 58.44,13.86 L 60.85,13.86 L 63.26,13.86 L 65.67,15.67 L 68.08,12.05 L 70.49,3.00 L 72.90,8.43 L 75.31,12.05 L 77.72,12.05 L 80.13,13.86 L 82.54,10.24 L 84.95,6.62 L 87.36,4.81 L 89.77,6.62 L 92.18,6.62 L 94.59,12.05 L 97.00,8.43\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        0.56,
         0.55,
         0.52,
         0.53,
@@ -440,7 +439,8 @@
         0.72,
         0.71,
         0.71,
-        0.68
+        0.68,
+        0.7
       ]
     },
     {
@@ -1115,11 +1115,71 @@
         "USD CNY yuan exchange rate",
         "stock market index S&P Nasdaq"
       ],
-      "brief_zh": "今日新闻涵盖多个市场与经济领域。特朗普呼吁大幅增加军费并支持禁止机构投资者购房，可能影响国防股和房地产市场。英国政府拟减轻酒吧营业税，Tesco和M&S报告强劲圣诞食品销售。同时，关税干扰持续重塑全球经济，工会指控麦当劳骚扰，而AI竞争和就业市场挑战引关注。整体市场情绪复杂，涉及政策、消费、科技和劳工议题。",
+      "brief_zh": "2026年初，全球市场面临多重考验。美国股市动能减弱，就业报告可能带来意外；通用汽车等车企进行巨额资产减记；特朗普政策影响石油市场与军事开支；英国零售业表现分化，工会指控麦当劳存在骚扰行为。整体市场情绪谨慎，关注经济数据与企业财报。",
       "events": [
         {
-          "title_zh": "特朗普呼吁军费增超50%",
-          "summary_zh": "特朗普要求美国军事支出增加超过50%，可能提振国防股。",
+          "title_zh": "麦当劳被控骚扰移民工人",
+          "summary_zh": "工会指控麦当劳对移民工人存在“反复骚扰”行为。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Unions accuse McDonald's of 'repeated harassment' against 'm",
+              "url": "https://www.bbc.com/news/articles/c2e1g17drr2o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "标普500指数上涨动能减弱",
+          "summary_zh": "报告指出，推动股市投资的标普500指数上涨势头正在丧失。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "The S&P 500 is losing the momentum that had been fueling sto",
+              "url": "https://www.marketwatch.com/story/the-s-p-500-is-losing-the-momentum-that-had-been-fueling-stock-inv",
+              "source": "MarketWatch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "通用汽车进行巨额资产减记",
+          "summary_zh": "通用汽车成为最新一家在转型中计提数十亿美元减值的汽车制造商。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "GM becomes the latest carmaker to write down billions in piv",
+              "url": "https://www.marketwatch.com/story/gm-becomes-the-latest-carmaker-to-write-down-billions-in-pivot-awa",
+              "source": "MarketWatch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国就业报告或带来意外",
+          "summary_zh": "看似“正常”的美国就业报告可能会给市场带来一些意外冲击。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Supposedly ‘normal’ U.S. jobs report could throw curveballs.",
+              "url": "https://www.marketwatch.com/story/supposedly-normal-u-s-jobs-report-could-throw-a-few-curveballs-her",
+              "source": "MarketWatch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普呼吁大幅增加军费",
+          "summary_zh": "特朗普呼吁美国军事开支增加超过50%，以应对全球挑战。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
@@ -1133,40 +1193,10 @@
           ]
         },
         {
-          "title_zh": "国防承包商股反弹",
-          "summary_zh": "特朗普批评后承诺支持，国防承包商股票出现反弹。",
+          "title_zh": "英国超市圣诞食品销售强劲",
+          "summary_zh": "特易购和玛莎百货报告了强劲的圣诞节期间食品销售额。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Defense-contractor stocks rebound after Trump follows critic",
-              "url": "https://www.marketwatch.com/story/defense-stocks-rebound-after-trump-follows-criticism-with-pledge-t",
-              "source": "MarketWatch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "英国减轻酒吧营业税",
-          "summary_zh": "政府计划淡化酒吧营业税上调，以支持餐饮业。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Government to water down business rate rise for pubs",
-              "url": "https://www.bbc.com/news/articles/c8e57dexly1o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "Tesco和M&S圣诞销售强劲",
-          "summary_zh": "Tesco和Marks & Spencer报告圣诞节期间食品销售表现强劲。",
-          "region": "global",
-          "score": 0.8,
           "date": "2026-01-08",
           "sources": [
             {
@@ -1178,106 +1208,76 @@
           ]
         },
         {
-          "title_zh": "关税干扰重塑全球经济",
-          "summary_zh": "关税中断将继续重塑全球经济和贸易格局。",
+          "title_zh": "减肥药影响Greggs业绩",
+          "summary_zh": "Greggs老板表示，减肥注射药物正在影响其业务。",
           "region": "global",
           "score": 0.4,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "How tariff disruption will continue reshaping the global eco",
-              "url": "https://www.bbc.com/news/articles/czejp3gep63o?at_medium=RSS&at_campaign=rss",
+              "title": "Weight loss jabs affecting Greggs, boss says",
+              "url": "https://www.bbc.com/news/articles/c20g11y4dywo?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "麦当劳被控骚扰工人",
-          "summary_zh": "工会指控麦当劳对参与罢工的工人进行“反复骚扰”。",
+          "title_zh": "英政府拟减轻酒吧税率上涨",
+          "summary_zh": "英国政府计划淡化针对酒吧的商业税率上调幅度。",
           "region": "global",
-          "score": 0.3,
+          "score": 0.65,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Unions accuse McDonald's of 'repeated harassment' against 'm",
-              "url": "https://www.bbc.com/news/articles/c2e1g17drr2o?at_medium=RSS&at_campaign=rss",
+              "title": "Government to water down business rate rise for pubs",
+              "url": "https://www.bbc.com/news/articles/c8e57dexly1o?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "AI竞争与就业市场挑战",
-          "summary_zh": "在黯淡的就业市场中，如何与AI竞争成为焦点议题。",
+          "title_zh": "英伟达对电力股产生寒蝉效应",
+          "summary_zh": "英伟达的崛起对这些电力股产生了寒蝉效应，投资者在观望。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "How to compete with AI in a bleak job market, according to t",
-              "url": "https://www.marketwatch.com/story/how-to-compete-with-ai-in-a-bleak-job-market-according-to-this-sof",
+              "title": "Nvidia had a chilling effect on these power stocks. Are inve",
+              "url": "https://www.marketwatch.com/story/nvidia-had-a-chilling-effect-on-these-power-stocks-are-investors-b",
               "source": "MarketWatch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "特朗普支持禁机构购房",
-          "summary_zh": "特朗普支持禁止机构投资者购买住宅，可能影响房地产市场。",
+          "title_zh": "Alphabet股票或继续主导AI交易",
+          "summary_zh": "分析认为Alphabet的股票可能进一步巩固其在AI交易中的“王者”地位。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Trump backs ban on institutional investor home purchases",
-              "url": "https://www.bbc.com/news/articles/c0lxz5wn2yzo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "工人权利改革成本降低",
-          "summary_zh": "工人权利改革在让步后成本将减少数十亿英镑。",
-          "region": "global",
-          "score": 0.6,
+          "score": 0.75,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Workers' rights reforms will cost billions less after conces",
-              "url": "https://www.bbc.com/news/articles/c5yv6n536vno?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "Grok AI涉儿童色情内容",
-          "summary_zh": "埃隆·马斯克的Grok AI被指生成儿童性图像，引发争议。",
-          "region": "global",
-          "score": 0.2,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Elon Musk's Grok AI appears to have made child sexual imager",
-              "url": "https://www.bbc.com/news/articles/cvg1mzlryxeo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
+              "title": "Why Alphabet’s stock can further reign as ‘king’ of the AI t",
+              "url": "https://www.marketwatch.com/story/why-alphabets-stock-can-further-reign-as-king-of-the-ai-trade-in-2",
+              "source": "MarketWatch",
               "published_at": "2026-01-08"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment_score": 0.45,
       "keywords": [
-        "特朗普",
-        "军费",
-        "关税",
-        "圣诞销售",
-        "AI竞争"
+        "股市",
+        "就业报告",
+        "资产减记",
+        "特朗普政策",
+        "零售业"
       ],
       "deduped_count": 4,
       "raw_count": 45
@@ -1292,160 +1292,28 @@
         "China US trade tariffs",
         "export controls technology chips"
       ],
-      "brief_zh": "近期国际地缘政治事件频发，涉及美国对尼日利亚空袭、委内瑞拉石油控制、俄罗斯油轮被扣押、几内亚军政府选举以及中国引渡诈骗头目等。这些事件反映了美国对外政策的调整、能源争夺、制裁行动以及地区政治动荡，对全球局势产生复杂影响。",
+      "brief_zh": "2026年1月8日，全球多地发生地缘政治、制裁与合规相关事件。美国前副总统批评欧洲处理方式，特朗普政府退出气候条约并介入委内瑞拉事务。中国有影响力的教会报告逮捕事件，显示国内宗教管控。同时，中东、非洲等地出现安全局势变化、援助暂停及地区冲突。全球气候问题与政治对立持续引发关注。",
       "events": [
         {
-          "title_zh": "美国空袭尼日利亚引质疑",
-          "summary_zh": "美国对尼日利亚空袭已过两周，其目标和效果仍受质疑。",
-          "region": "global",
+          "title_zh": "中国教会报告逮捕事件",
+          "summary_zh": "中国有影响力的教会报告逮捕，显示对基督教活动的打压。",
+          "region": "cn",
           "score": 0.4,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Two weeks on, questions linger over targeting and impact of ",
-              "url": "https://www.theguardian.com/world/2026/jan/08/questions-targeting-impact-us-airstrikes-in-nigeria",
-              "source": "The Guardian",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国控制委内瑞拉石油",
-          "summary_zh": "美国声称将控制委内瑞拉石油以降低油价，委方称全力合作。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Venezuela cooperating fully and US will control its oil for ",
-              "url": "https://www.theguardian.com/world/2026/jan/08/venezuela-oil-deal-rodriguez-trump-vance-claims-us-con",
-              "source": "The Guardian",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "Trump plans to use Venezuela’s huge crude reserves ‘to cut U",
-              "url": "https://www.theguardian.com/business/2026/jan/08/trump-plans-use-venezuela-huge-oil-reserves-to-cut-",
-              "source": "The Guardian",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国扣押俄罗斯油轮",
-          "summary_zh": "美国在扣押俄罗斯油轮，涉及制裁和影子舰队问题。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "US seizes Russian-flagged oil tanker in Atlantic after two-w",
-              "url": "https://www.theguardian.com/world/2026/jan/07/russia-submarine-escort-shadow-fleet-tanker-us-sanctio",
-              "source": "The Guardian",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "US seizes two 'shadow fleet' tankers linked to Venezuelan oi",
-              "url": "https://www.bbc.com/news/articles/c5y2v8ngl14o?at_medium=RSS&at_campaign=rss",
+              "title": "Influential China church reports arrests as crackdown on Chr",
+              "url": "https://www.bbc.com/news/articles/ckgl8jgdxypo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "几内亚军政府首领当选总统",
-          "summary_zh": "几内亚军政府首领在反对派抵制下当选总统。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2025-12-31",
-          "sources": [
-            {
-              "title": "Guinea’s junta chief elected president after opposition boyc",
-              "url": "https://www.theguardian.com/world/2025/dec/31/guinea-junta-chief-mamady-doumbouya-elected-president-",
-              "source": "The Guardian",
-              "published_at": "2025-12-31"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国警告委内瑞拉盟友",
-          "summary_zh": "美国警告委内瑞拉盟友迪奥斯达多·卡韦略可能面临制裁。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "US reportedly warns Maduro ally Diosdado Cabello he could be",
-              "url": "https://www.theguardian.com/us-news/2026/jan/07/trump-maduro-diosdado-cabello",
-              "source": "The Guardian",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "诈骗头目陈志引渡回中国",
-          "summary_zh": "涉嫌诈骗的头目陈志从柬埔寨引渡回中国。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Alleged scam kingpin Chen Zhi extradited to China after Camb",
-              "url": "https://www.theguardian.com/world/2026/jan/08/alleged-scam-kingpin-chen-zhi-extradited-china-cambodi",
-              "source": "The Guardian",
               "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国行动影响中国在委利益",
-          "summary_zh": "美国在委内瑞拉的行动引发中国对其利益的担忧。",
-          "region": "cn",
-          "score": 0.4,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Trump’s attack leaves China worried about its interests in V",
-              "url": "https://www.theguardian.com/world/2026/jan/05/venezuela-trump-attack-china-interests-analysis",
-              "source": "The Guardian",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国对委行动影响台湾问题",
-          "summary_zh": "美国在委内瑞拉的突袭行动对中国在台湾的意图产生影响。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "What does the US raid in Venezuela mean for China’s designs ",
-              "url": "https://www.theguardian.com/world/2026/jan/06/what-us-action-in-venezuela-means-for-taiwan",
-              "source": "The Guardian",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国削减援助附加条件",
-          "summary_zh": "美国对20亿美元援助附加“适应、缩减或死亡”条件，影响联合国。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-01-01",
-          "sources": [
-            {
-              "title": "US ‘adapt, shrink or die’ terms for $2bn aid pot will mean U",
-              "url": "https://www.theguardian.com/global-development/2026/jan/01/us-aid-cuts-conditions-un-humanitarian-pl",
-              "source": "The Guardian",
-              "published_at": "2026-01-01"
             }
           ]
         },
         {
           "title_zh": "特朗普退出气候条约",
-          "summary_zh": "特朗普宣布美国退出关键气候条约及数十项其他协议。",
+          "summary_zh": "特朗普政府宣布美国退出关键气候条约及多项国际协议。",
           "region": "global",
-          "score": 0.2,
+          "score": 0.3,
           "date": "2026-01-08",
           "sources": [
             {
@@ -1455,20 +1323,140 @@
               "published_at": "2026-01-08"
             }
           ]
+        },
+        {
+          "title_zh": "美国介入委内瑞拉事务",
+          "summary_zh": "特朗普表示美国对委内瑞拉的介入可能持续多年。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "US involvement in Venezuela could last years, Trump says",
+              "url": "https://www.bbc.com/news/articles/cx20gyn8qvvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "万斯批评丹麦和欧洲",
+          "summary_zh": "美国前副总统万斯批评丹麦和欧洲处理关键问题的方式。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Vance criticises Denmark and Europe's handling of 'critical'",
+              "url": "https://www.bbc.com/news/articles/c2lgjd51v95o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "黎巴嫩军队接管真主党区域安全",
+          "summary_zh": "黎巴嫩军队宣布已接管真主党控制区域的安全事务。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Lebanese army says it has taken over security in Hezbollah-d",
+              "url": "https://www.bbc.com/news/articles/cj4ln977w0jo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国暂停对索马里援助",
+          "summary_zh": "美国因声称粮食援助被非法使用而暂停对索马里的援助。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "US halts assistance to Somalia over claims food aid was ille",
+              "url": "https://www.bbc.com/news/articles/ckgn1lpq52ko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "沙特联盟称阿联酋协助走私分离主义领导人",
+          "summary_zh": "沙特领导的联盟指控阿联酋帮助走私分离主义领导人。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Saudi-led coalition says UAE helped smuggle separatist leade",
+              "url": "https://www.bbc.com/news/articles/c5y2mvp3r2do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "叙利亚在阿勒颇实施宵禁",
+          "summary_zh": "叙利亚在阿勒颇地区实施宵禁，因军队与SDF发生冲突。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Syria imposes curfew in Aleppo districts as army, SDF clashe",
+              "url": "https://www.aljazeera.com/news/2026/1/8/syria-imposes-curfew-in-aleppo-districts-as-army-sdf-clashes",
+              "source": "Al Jazeera",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴西向委内瑞拉边境派遣国民警卫队",
+          "summary_zh": "巴西宣布将派遣国民警卫队至与委内瑞拉接壤的边境地区。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Brazil to send national guard near border with Venezuela",
+              "url": "https://www.aljazeera.com/news/2026/1/8/brazil-to-send-national-guard-near-border-with-venezuela?tra",
+              "source": "Al Jazeera",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "鲍恩警告特朗普风险",
+          "summary_zh": "鲍恩警告特朗普政策可能将世界推回帝国时代。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Bowen: Trump risks pushing world back to age of empires",
+              "url": "https://www.bbc.com/news/articles/cx2wg7437dvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-01-08"
+            }
+          ]
         }
       ],
-      "cn_count": 3,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "美国制裁",
-        "委内瑞拉",
-        "石油",
         "地缘政治",
-        "中国"
+        "制裁",
+        "宗教管控",
+        "气候条约",
+        "安全局势"
       ],
-      "deduped_count": 1,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -1481,181 +1469,169 @@
         "large language model LLM",
         "generative AI enterprise business"
       ],
-      "brief_zh": "2026年CES展会上，多家科技公司发布了最新产品，包括AI助手、电动汽车、智能家居设备等。同时，AI在医疗、汽车等领域的应用也在不断扩展。",
+      "brief_zh": "2026年1月8日，科技领域新闻聚焦AI与大模型应用。OpenAI宣布收购高管教练AI工具团队，显示其在企业服务领域的扩张。同时，CES 2026展会上出现了一些可疑的AI应用，引发行业讨论。英国首相表示将对AI深度伪造内容采取行动，政府正应对非自愿色情内容泛滥问题。此外，YouTube新增Shorts过滤功能，迪士尼+计划推出短视频服务。这些事件反映了AI技术快速发展带来的机遇与监管挑战。",
       "events": [
         {
-          "title_zh": "CES 2026最佳科技产品发布",
-          "summary_zh": "CES 2026展会上展示了包括智能手机、机器人、电视和AI设备在内的最新科技产品。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "The best tech announced at CES 2026 so far",
-              "url": "https://www.theverge.com/tech/854159/ces-2026-best-tech-gadgets-smartphones-appliances-robots-tvs-ai",
-              "source": "The Verge",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌AI接管Gmail收件箱",
-          "summary_zh": "谷歌正在通过AI技术增强Gmail收件箱功能，提供智能概述和分类。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Google is taking over your Gmail inbox with AI",
-              "url": "https://www.theverge.com/news/857883/google-gmail-ai-inbox-overviews",
-              "source": "The Verge",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "高端与平价电视品牌差距缩小",
-          "summary_zh": "随着技术进步，高端电视品牌与平价品牌之间的性能差距正在快速缩小。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "The gap between premium and budget TV brands is quickly closing",
-              "url": "https://www.theverge.com/tech/857325/the-gap-between-premium-and-budget-tv-brands-is-quickly-closing",
-              "source": "The Verge",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "沃尔沃EX60续航与充电速度公布",
-          "summary_zh": "沃尔沃宣布新款EX60电动汽车续航达400英里，充电功率最高400千瓦。",
+          "title_zh": "OpenAI收购高管教练AI团队",
+          "summary_zh": "OpenAI宣布收购高管教练AI工具Convo的团队，以增强其企业服务能力。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Volvo touts EX60’s range and charging speed ahead of official launch",
-              "url": "https://www.theverge.com/transportation/857933/volvo-ex60-range-charging-speed-megacasting-battery",
-              "source": "The Verge",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "Volvo says new EX60 has 400-mile range, charges up to 400 kW",
-              "url": "https://arstechnica.com/cars/2026/01/volvo-says-new-ex60-has-400-mile-range-charges-up-to-400-kw/",
-              "source": "Ars Technica",
+              "title": "OpenAI to acquire the team behind executive coaching AI tool",
+              "url": "https://techcrunch.com/2026/01/08/openai-to-acquire-the-team-behind-executive-coaching-ai-tool-convo",
+              "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "福特AI语音助手即将推出",
-          "summary_zh": "福特计划在今年晚些时候推出AI语音助手，并引入L3级自动驾驶技术。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Ford’s AI voice assistant is coming later this year, L3 driving automation",
-              "url": "https://www.theverge.com/transportation/857400/ford-ai-assistant-level-3-automation-ces-2026",
-              "source": "The Verge",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "Ford is getting ready to put AI assistants in its cars",
-              "url": "https://arstechnica.com/cars/2026/01/in-car-ai-assistant-coming-to-fords-and-lincolns-in-2027/",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "AI在犹他州自主开具处方续药",
-          "summary_zh": "犹他州允许AI系统自主处理处方续药，提升医疗效率。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "AI starts autonomously writing prescription refills in Utah",
-              "url": "https://arstechnica.com/health/2026/01/utah-allows-ai-to-autonomously-prescribe-medication-refills/",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "三星Ballie家用机器人发布延迟",
-          "summary_zh": "三星Ballie家用机器人原定2025年夏季发布，现已推迟，引发关注。",
+          "title_zh": "CES 2026现可疑AI应用",
+          "summary_zh": "CES 2026展会上出现了一些可疑的AI技术应用，引发行业对AI滥用的担忧。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Samsung’s Ballie home robot, once promised for summer 2025, delayed",
-              "url": "https://arstechnica.com/gadgets/2026/01/samsung-squashes-hopes-that-it-will-release-its-ballie-home-robot",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
+              "title": "Most dubious uses of AI at CES 2026",
+              "url": "https://www.theverge.com/tech/858315/most-dubious-ai-tech-ces-2026",
+              "source": "The Verge",
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "Bose开源SoundTouch智能音箱",
-          "summary_zh": "Bose宣布开源其SoundTouch家庭影院智能音箱系统，促进开发者创新。",
+          "title_zh": "英国首相将打击AI深度伪造",
+          "summary_zh": "英国首相表示将对AI生成的深度伪造内容采取行动，以应对虚假信息威胁。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Bose open-sources its SoundTouch home theater smart speakers",
-              "url": "https://arstechnica.com/gadgets/2026/01/bose-open-sources-its-soundtouch-home-theater-smart-speakers",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
+              "title": "UK Prime Minister says 'we will take action' on AI deepfakes",
+              "url": "https://www.theverge.com/news/859107/uk-prime-minister-x-ai-grok-deepfakes",
+              "source": "The Verge",
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "SteamOS在PC游戏领域缓慢扩展",
-          "summary_zh": "SteamOS操作系统继续在PC游戏领域逐步推广，但进展较慢。",
+          "title_zh": "政府应对非自愿色情内容泛滥",
+          "summary_zh": "各国政府正努力应对X平台上非自愿色情内容的泛滥问题，加强网络监管。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "SteamOS continues its slow spread across the PC gaming landscape",
-              "url": "https://arstechnica.com/gaming/2026/01/steamos-continues-its-slow-spread-across-the-pc-gaming-landscape",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
+              "title": "Governments grapple with the flood of non-consensual nudity on X",
+              "url": "https://techcrunch.com/2026/01/08/governments-grapple-with-the-flood-of-non-consensual-nudity-on-x/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "日本核电站运营商伪造地震风险数据",
-          "summary_zh": "日本一家核电站运营商被揭露伪造地震风险数据，引发安全担忧。",
-          "region": "cn",
-          "score": 0.3,
-          "date": "2026-01-07",
+          "title_zh": "YouTube新增Shorts过滤功能",
+          "summary_zh": "YouTube允许用户在搜索结果中过滤掉Shorts短视频，提升搜索体验。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Japanese nuclear plant operator fabricated seismic risk data",
-              "url": "https://arstechnica.com/science/2026/01/japanese-nuclear-plant-operator-fabricated-seismic-risk-data",
-              "source": "Ars Technica",
-              "published_at": "2026-01-07"
+              "title": "YouTube will now let you filter Shorts out of search results",
+              "url": "https://www.theverge.com/news/858867/youtube-shorts-search-results-filter",
+              "source": "The Verge",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "迪士尼+将推出短视频服务",
+          "summary_zh": "迪士尼+计划在今年推出短格式视频服务，以竞争短视频市场。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Disney+ is launching short-form videos this year",
+              "url": "https://techcrunch.com/2026/01/08/disney-is-launching-short-form-videos-this-year/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "GTMfund重写AI时代分销策略",
+          "summary_zh": "GTMfund为AI时代重写了分销策略手册，推动技术商业化创新。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "GTMfund has rewritten the distribution playbook for the AI era",
+              "url": "https://techcrunch.com/2026/01/08/gtmfund-has-rewritten-the-distribution-playbook-for-the-ai-era/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "CES 2026展示最怪异科技",
+          "summary_zh": "CES 2026展会上宣布了一些最怪异的科技产品，凸显创新多样性。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "The most bizarre tech announced so far at CES 2026",
+              "url": "https://techcrunch.com/2026/01/08/the-most-bizarre-tech-announced-so-far-at-ces-2026",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "LG家庭机器人CLOid演示洗衣",
+          "summary_zh": "LG新款家庭机器人CLOid演示洗衣功能，但实际效果仍存疑问。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "I watched LG’s new home robot CLOid do laundry but I have questions",
+              "url": "https://techcrunch.com/2026/01/08/i-watched-lgs-new-home-robot-cloid-do-laundry-but-i-have-questions",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗互联网因抗议中断",
+          "summary_zh": "伊朗因经济危机抗议活动导致互联网崩溃，影响网络连通性。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Internet collapses in Iran amid protests over economic crisis",
+              "url": "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
+        "OpenAI",
         "CES 2026",
-        "AI助手",
-        "电动汽车",
-        "智能家居",
-        "医疗AI"
+        "AI监管",
+        "短视频",
+        "深度伪造"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -1670,13 +1646,43 @@
         "semiconductor chip manufacturing",
         "AI infrastructure investment"
       ],
-      "brief_zh": "近期科技新闻聚焦于AI应用、企业动态与消费电子。谷歌为Gmail添加AI摘要功能，福特推出AI助手，Waymo为机器人出租车更名。同时，初创公司估值增长，企业合作与品牌调整频繁。整体趋势显示AI技术正深入日常生活与商业领域。",
+      "brief_zh": "近期科技新闻聚焦于AI计算基础设施、消费电子创新及企业战略转型。其中，一家中国扫地机器人公司分拆出两家电动汽车业务，展示了中国企业在跨界拓展和AI硬件应用方面的活跃度。同时，AI设备普及、操作系统演变、内存危机解决方案以及特定AI应用（如Grok、AI邮件摘要）也成为关注点。整体行业呈现技术迭代加速、应用场景拓宽的趋势。",
       "events": [
         {
-          "title_zh": "谷歌Gmail新增AI摘要功能",
-          "summary_zh": "谷歌为Gmail添加AI收件箱功能，可自动总结邮件内容。",
-          "region": "global",
+          "title_zh": "中国扫地机器人公司分拆两家电动车业务",
+          "summary_zh": "一家中国扫地机器人公司在CES上展示其分拆出的两家电动汽车业务，体现跨界拓展。",
+          "region": "cn",
           "score": 0.8,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Why a Chinese Robot Vacuum Company Spun Off Not One but 2 EV",
+              "url": "https://www.wired.com/story/made-in-china-what-chinese-companies-showed-off-at-ces/",
+              "source": "Wired",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI设备普及引发应用生态变革",
+          "summary_zh": "AI设备兴起，可能改变现有应用生态系统和操作系统格局。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "AI Devices Are Coming. Will Your Favorite Apps Be Along for ",
+              "url": "https://www.wired.com/story/openai-amazon-operating-system-ai-apps-ads/",
+              "source": "Wired",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌为Gmail添加AI收件箱摘要功能",
+          "summary_zh": "谷歌计划在Gmail中引入“AI收件箱”，自动总结邮件内容。",
+          "region": "global",
+          "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
@@ -1688,121 +1694,40 @@
           ]
         },
         {
-          "title_zh": "福特推出AI助手与BlueCruise技术",
-          "summary_zh": "福特发布AI助手及新版免提BlueCruise驾驶技术。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Ford has an AI assistant and new hands-free BlueCruise tech ",
-              "url": "https://techcrunch.com/2026/01/07/ford-has-an-ai-assistant-and-new-hands-free-bluecruise-tech-on-the",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "Waymo为Zeekr机器人出租车更名",
-          "summary_zh": "Waymo对其Zeekr品牌机器人出租车进行品牌重塑。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Waymo is rebranding its Zeekr robotaxi",
-              "url": "https://techcrunch.com/2026/01/07/waymo-is-rebranding-its-zeekr-robotaxi/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "前Bolt CEO初创公司估值达1亿美元",
-          "summary_zh": "前Bolt首席执行官初创公司估值增长两倍，达1亿美元。",
-          "region": "global",
-          "score": 0.75,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Former Bolt CEO Maju Kuruvilla’s startup triples to $100M va",
-              "url": "https://techcrunch.com/2026/01/08/former-bolt-ceo-maju-kuruvillas-startup-triples-to-100m-valuation/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "摩根大通成为Apple Card新发卡行",
-          "summary_zh": "摩根大通接替成为Apple Card信用卡的新发行机构。",
+          "title_zh": "GTMfund重塑AI时代分销策略",
+          "summary_zh": "GTMfund为AI时代重写了分销策略手册，推动市场变革。",
           "region": "global",
           "score": 0.65,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "JPMorgan Chase becomes the new issuer of the Apple Card",
-              "url": "https://techcrunch.com/2026/01/07/jpmorgan-chase-becomes-the-new-issuer-of-the-apple-card/",
+              "title": "GTMfund has rewritten the distribution playbook for the AI e",
+              "url": "https://techcrunch.com/2026/01/08/gtmfund-has-rewritten-the-distribution-playbook-for-the-ai-era/",
               "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "谷歌与Character.AI达成重要和解",
-          "summary_zh": "谷歌与Character.AI就青少年相关案件达成首次重大和解。",
+          "title_zh": "LG展示新型家庭机器人CLOid",
+          "summary_zh": "LG推出可洗衣的家庭机器人CLOid，但实际应用仍存疑问。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.55,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Google and Character.AI negotiate first major settlements in",
-              "url": "https://techcrunch.com/2026/01/07/google-and-character-ai-negotiate-first-major-settlements-in-teen-",
+              "title": "I watched LG’s new home robot CLOid do laundry but I have qu",
+              "url": "https://techcrunch.com/2026/01/08/i-watched-lgs-new-home-robot-cloid-do-laundry-but-i-have-questions",
               "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "LinkedIn解禁AI初创公司Artisan",
-          "summary_zh": "LinkedIn此前封禁AI代理初创公司Artisan，现已恢复其访问。",
-          "region": "global",
-          "score": 0.55,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Yes, LinkedIn banned AI agent startup Artisan, but now it’s ",
-              "url": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "拉里·佩奇减少与加州商业联系",
-          "summary_zh": "谷歌联合创始人拉里·佩奇因加州财富税提案，减少与该州商业往来。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Larry Page loosens business ties to CA amid state’s proposed",
-              "url": "https://techcrunch.com/2026/01/07/larry-page-loosens-business-ties-to-ca-amid-states-proposed-wealth",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "Newegg Promo Code: 10% Off in January 2026",
-              "url": "https://www.wired.com/story/newegg-promo-code/",
-              "source": "Wired",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
           "title_zh": "2026年成为RGB LED电视元年",
-          "summary_zh": "报道称2026年将是RGB LED电视技术普及的关键年份。",
+          "summary_zh": "2026年被预测为RGB LED电视技术普及的关键年份。",
           "region": "global",
-          "score": 0.7,
+          "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
@@ -1810,26 +1735,59 @@
               "url": "https://www.wired.com/story/rgb-led-televisions-2026/",
               "source": "Wired",
               "published_at": "2026-01-08"
-            },
+            }
+          ]
+        },
+        {
+          "title_zh": "Bose降噪耳机优惠50美元",
+          "summary_zh": "Bose QuietComfort Ultra降噪耳机推出50美元折扣促销。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
             {
-              "title": "Surfshark Promo Codes: 87% Off | January 2026",
-              "url": "https://www.wired.com/story/surfshark-coupon/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "30% Off Tempur-Pedic Promo Codes | January 2026",
-              "url": "https://www.wired.com/story/tempur-pedic-promo-code/",
+              "title": "These Bose Noise-Canceling Earbuds Are $50 Off",
+              "url": "https://www.wired.com/story/bose-quietcomfort-ultra-earbuds-deal-126/",
               "source": "Wired",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "尝试解决PC内存短缺危机",
-          "summary_zh": "行业正进行大胆尝试，以解决个人电脑内存短缺的持续危机。",
+          "title_zh": "AI被滥用于虚假识别联邦特工",
+          "summary_zh": "有人利用AI技术错误识别涉及枪击案的联邦特工，引发担忧。",
           "region": "global",
-          "score": 0.65,
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "People Are Using AI to Falsely Identify the Federal Agent Wh",
+              "url": "https://www.wired.com/story/people-are-using-ai-to-falsely-identify-the-federal-agent-who-shot-renee",
+              "source": "Wired",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "政府应对X平台非自愿裸体内容泛滥",
+          "summary_zh": "各国政府正努力处理X平台上激增的非自愿裸体内容问题。",
+          "region": "global",
+          "score": 0.35,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Governments grapple with the flood of non-consensual nudity ",
+              "url": "https://techcrunch.com/2026/01/08/governments-grapple-with-the-flood-of-non-consensual-nudity-on-x/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "大胆尝试解决内存短缺危机",
+          "summary_zh": "业界正采取创新方案，试图终结个人电脑内存短缺的危机。",
+          "region": "global",
+          "score": 0.75,
           "date": "2026-01-08",
           "sources": [
             {
@@ -1841,18 +1799,18 @@
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "positive",
       "sentiment_score": 0.7,
       "keywords": [
-        "AI",
-        "谷歌",
-        "初创公司",
-        "机器人出租车",
-        "科技动态"
+        "AI计算基础设施",
+        "电动汽车",
+        "中国公司",
+        "AI设备",
+        "内存危机"
       ],
-      "deduped_count": 4,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -1866,177 +1824,171 @@
         "EV charging infrastructure",
         "solid state battery technology"
       ],
-      "brief_zh": "CES 2026展会期间，多家科技公司发布新产品与技术，涉及电动汽车、自动驾驶、AI助手及电池技术等。福特推出AI助手与新版BlueCruise免提驾驶技术，沃尔沃发布续航400英里的EX60电动跨界车。同时，前Bolt CEO的初创公司估值翻倍，Lux Capital完成15亿美元募资，Waymo为其机器人出租车更名。整体行业呈现积极创新与融资活跃态势。",
+      "brief_zh": "2026年1月8日，科技领域新闻聚焦于人工智能、机器人、网络安全及消费电子等多个方面。其中，英伟达要求中国客户预付款项的消息涉及中国市场，而其他新闻则涵盖了OpenAI收购、波士顿动力发布新版Atlas机器人、CES 2026上的奇特技术展示等全球性事件。整体来看，行业呈现技术迭代与商业并购并进的态势。",
       "events": [
         {
-          "title_zh": "福特推出AI助手与新版BlueCruise",
-          "summary_zh": "福特在CES 2026上展示了新的AI助手和升级版免提驾驶技术BlueCruise。",
-          "region": "global",
+          "title_zh": "英伟达要求中国客户预付款",
+          "summary_zh": "据报道，英伟达要求其中国客户预先支付款项，以确保订单履行。",
+          "region": "cn",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Ford has an AI assistant and new hands-free BlueCruise tech",
-              "url": "https://techcrunch.com/2026/01/07/ford-has-an-ai-assistant-and-new-hands-free-bluecruise-tech-on-the",
+              "title": "Nvidia’s reportedly asking Chinese customers to pay upfront ",
+              "url": "https://techcrunch.com/2026/01/08/nvidias-reportedly-asking-chinese-customers-to-pay-upfront-its-for",
               "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "沃尔沃EX60电动跨界车续航400英里",
-          "summary_zh": "沃尔沃在CES 2026发布EX60电动跨界车，承诺EPA续航达400英里。",
+          "title_zh": "OpenAI收购高管教练AI团队",
+          "summary_zh": "OpenAI宣布计划收购开发高管教练AI工具Convo的团队。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Volvo's EX60 electric crossover promises 400 miles of EPA range",
-              "url": "https://www.engadget.com/transportation/evs/volvos-ex60-electric-crossover-promises-400-miles-of-epa",
-              "source": "Engadget",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "JPMorgan Chase is taking over the Apple Card",
-              "url": "https://www.engadget.com/big-tech/jpmorgan-chase-is-taking-over-the-apple-card-232711979.html?src=rss",
-              "source": "Engadget",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "前Bolt CEO初创公司估值达1亿美元",
-          "summary_zh": "前Bolt首席执行官Maju Kuruvilla的初创公司估值增至1亿美元。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Former Bolt CEO Maju Kuruvilla’s startup triples to $100M valuation",
-              "url": "https://techcrunch.com/2026/01/08/former-bolt-ceo-maju-kuruvillas-startup-triples-to-100m-valuation/",
+              "title": "OpenAI to acquire the team behind executive coaching AI tool",
+              "url": "https://techcrunch.com/2026/01/08/openai-to-acquire-the-team-behind-executive-coaching-ai-tool-convo",
               "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "Waymo为Zeekr机器人出租车更名",
-          "summary_zh": "Waymo宣布对其Zeekr品牌的机器人出租车进行品牌重塑。",
+          "title_zh": "波士顿动力发布Atlas机器人",
+          "summary_zh": "波士顿动力在CES 2026上展示了生产就绪版本的Atlas人形机器人。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Boston Dynamics unveils production-ready version of Atlas ro",
+              "url": "https://www.engadget.com/big-tech/boston-dynamics-unveils-production-ready-version-of-atlas-robot-at",
+              "source": "Engadget",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "CES 2026展示最奇特技术",
+          "summary_zh": "CES 2026消费电子展上公布了一系列被认为是最奇特的技术产品。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Waymo is rebranding its Zeekr robotaxi",
-              "url": "https://techcrunch.com/2026/01/07/waymo-is-rebranding-its-zeekr-robotaxi/",
+              "title": "The most bizarre tech announced so far at CES 2026",
+              "url": "https://techcrunch.com/2026/01/08/the-most-bizarre-tech-announced-so-far-at-ces-2026/",
               "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "Lux Capital完成15亿美元募资",
-          "summary_zh": "风险投资公司Lux Capital为其有史以来最大基金筹集15亿美元。",
+          "title_zh": "马斯克诉OpenAI案三月陪审",
+          "summary_zh": "埃隆·马斯克起诉OpenAI的案件将于三月交由陪审团审理。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Elon Musk’s lawsuit against OpenAI will face a jury in March",
+              "url": "https://techcrunch.com/2026/01/08/elon-musks-lawsuit-against-openai-will-face-a-jury-in-march/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "政府应对非自愿裸体内容泛滥",
+          "summary_zh": "各国政府正努力应对社交媒体上非自愿裸体内容的泛滥问题。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Governments grapple with the flood of non-consensual nudity ",
+              "url": "https://techcrunch.com/2026/01/08/governments-grapple-with-the-flood-of-non-consensual-nudity-on-x/",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "LG展示新型家庭机器人CLOid",
+          "summary_zh": "LG在CES上展示了新型家庭机器人CLOid，它能执行洗衣等任务。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "I watched LG’s new home robot CLOid do laundry but I have qu",
+              "url": "https://techcrunch.com/2026/01/08/i-watched-lgs-new-home-robot-cloid-do-laundry-but-i-have-questions",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊利诺伊州卫生部门数据泄露",
+          "summary_zh": "美国伊利诺伊州卫生部门发生数据泄露，超70万居民信息暴露。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Illinois health department exposed over 700,000 residents’ p",
+              "url": "https://techcrunch.com/2026/01/08/illinois-health-department-exposed-over-700000-residents-personal-",
+              "source": "TechCrunch",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Snowflake计划收购可观测平台",
+          "summary_zh": "云数据公司Snowflake宣布有意收购可观测性平台Observability。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Lux Capital lands $1.5B for its largest fund ever",
-              "url": "https://techcrunch.com/2026/01/07/lux-capital-lands-1-5-billion-for-its-largest-fund-ever/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "CES 2026展示最新科技产品",
-          "summary_zh": "CES 2026第二天，多家媒体报道了展会上最酷的科技产品。",
-          "region": "global",
-          "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "CES 2026 Day 2: All of the coolest tech we saw on the show floor",
-              "url": "https://www.engadget.com/big-tech/ces-2026-day-2-all-of-the-coolest-tech-we-saw-on-the-show-floor-du",
-              "source": "Engadget",
+              "title": "Snowflake announces its intent to buy observability platform",
+              "url": "https://techcrunch.com/2026/01/08/snowflake-announces-its-intent-to-buy-observability-platform-obser",
+              "source": "TechCrunch",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "ElevationLabs推出AirTags长续航电池盒",
-          "summary_zh": "ElevationLabs发布一款可为AirTags提供10年续航的电池盒，降价30%。",
+          "title_zh": "Disney+将推出短视频功能",
+          "summary_zh": "迪士尼宣布其流媒体服务Disney+将于今年推出短视频内容。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "ElevationLabs' 10-year extended battery case for AirTags is 30 percent off",
-              "url": "https://www.engadget.com/deals/elevationlabs-10-year-extended-battery-case-for-airtags-is-30-percent",
-              "source": "Engadget",
+              "title": "Disney+ is launching short-form videos this year",
+              "url": "https://techcrunch.com/2026/01/08/disney-is-launching-short-form-videos-this-year/",
+              "source": "TechCrunch",
               "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "Discord或于三月进行IPO",
-          "summary_zh": "据报道，社交平台Discord可能在三月份进行首次公开募股。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Discord’s IPO could happen in March",
-              "url": "https://techcrunch.com/2026/01/07/discords-ipo-could-happen-in-march/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "Shopify竞争对手Swap融资1亿美元",
-          "summary_zh": "电商平台Shopify的竞争对手Swap在六个月内再次融资1亿美元。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Shopify competitor Swap raises $100M six months after raising $40M",
-              "url": "https://techcrunch.com/2026/01/07/shopify-competitor-swap-raises-100m-six-months-after-raising-40m/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "OpenAI推出ChatGPT Health健康功能",
-          "summary_zh": "OpenAI发布ChatGPT Health，称2.3亿用户曾咨询健康相关问题。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "OpenAI unveils ChatGPT Health, says 230 million users ask about health",
-              "url": "https://techcrunch.com/2026/01/07/openai-unveils-chatgpt-health-says-230-million-users-ask-about-hea",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 1,
       "total_count": 10,
-      "sentiment": "positive",
-      "sentiment_score": 0.7,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
+        "人工智能",
+        "机器人",
         "CES 2026",
-        "电动汽车",
-        "自动驾驶",
-        "AI助手",
-        "融资"
+        "英伟达",
+        "网络安全"
       ],
-      "deduped_count": 1,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2049,169 +2001,175 @@
         "copper scrap recycling trade",
         "critical minerals rare earth"
       ],
-      "brief_zh": "近期全球大宗商品市场动态频发，黄金作为储备资产的地位超越美债，铜价因供应和关税担忧创下新高。多家矿业公司推进项目开发与融资，同时能源领域出现重大业务调整与资产保护行动。市场情绪整体偏向积极，但对部分地区的矿业复苏持谨慎态度。",
+      "brief_zh": "2026年1月8日，全球能源与金属市场呈现多领域动态。数据中心电力需求激增，推动美国PJM电网容量拍卖成本创纪录，并引发自备发电要求。地缘政治方面，印度考虑转向委内瑞拉原油以应对俄罗斯风险，而美国与大宗商品贸易商就委内瑞拉石油进行会谈，相关不确定性支撑原油价格上涨近2%。同时，中国与日本的稀土争端限制了出口，可能影响全球供应链。此外，格陵兰矿业公司Amaroq因潜在美国政府投资报告而股价飙升，凸显关键矿产领域的战略关注。",
       "events": [
         {
-          "title_zh": "黄金超越美债成最大外汇储备资产",
-          "summary_zh": "黄金已取代美国国债，成为全球最大的外国储备资产，凸显其避险地位提升。",
+          "title_zh": "数据中心推高电力成本",
+          "summary_zh": "数据中心电力需求导致PJM电网容量拍卖成本创纪录，并被要求自备发电。",
           "region": "global",
-          "score": 0.8,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Gold overtakes US bonds as largest foreign reserve asset",
-              "url": "https://www.mining.com/gold-overtakes-us-bonds-as-largest-foreign-reserve-asset/",
-              "source": "Mining.com",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "铜价因供应和关税担忧再创新高",
-          "summary_zh": "受供应紧张和潜在关税影响，铜价格再次刷新历史纪录。",
-          "region": "global",
-          "score": 0.75,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Copper prices hit yet another record on supply and tariff fears",
-              "url": "https://www.mining.com/copper-prices-hit-yet-another-record-on-supply-and-tariff-fears/",
-              "source": "Mining.com",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国能源公司紧急保护委内瑞拉资产",
-          "summary_zh": "面对委内瑞拉局势变化，中国能源企业正采取措施保护其在当地的资产。",
-          "region": "cn",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Chinese Energy Companies Scramble to Protect Venezuelan Assets",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/Chinese-Energy-Companies-Scramble-to-Protect-Vene",
+              "title": "Data Centers Drive Record Costs in PJM Power Capacity Auctio",
+              "url": "https://oilprice.com/Energy/Energy-General/Data-Centers-Drive-Record-Costs-in-PJM-Power-Capacity-Auc",
+              "source": "OilPrice",
+              "published_at": "2026-01-08"
+            },
+            {
+              "title": "Data Centers Are Asked to Bring Own Power Generation... or S",
+              "url": "https://oilprice.com/Energy/Energy-General/Data-Centers-Are-Asked-to-Bring-Own-Power-Generation-or-S",
               "source": "OilPrice",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "锂阿根廷达成预测并寻求政府融资",
-          "summary_zh": "Lithium Argentina公司产量达到预期，现正寻求米莱政府的资金支持。",
-          "region": "global",
-          "score": 0.65,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Lithium Argentina hits forecast, seeks gov’t financing",
-              "url": "https://www.mining.com/lithium-argentina-hits-forecast-seeks-milei-financing/",
-              "source": "Mining.com",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "沙特SABIC以9.5亿出售欧洲化学品业务",
-          "summary_zh": "沙特基础工业公司同意以9.5亿美元的价格出售其欧洲化学品业务。",
+          "title_zh": "印度考虑委内瑞拉原油",
+          "summary_zh": "因俄罗斯风险上升，印度正权衡进口委内瑞拉原油以多元化供应。",
           "region": "global",
           "score": 0.55,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Saudi SABIC to Sell European Chemicals Business for $950 Mil",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-SABIC-to-Sell-European-Chemicals-Business-f",
+              "title": "India Weighs Venezuelan Crude as Russian Risks Rise",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/India-Weighs-Venezuelan-Crude-as-Russian-Risks-Ri",
               "source": "OilPrice",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "BlueScope钢铁拒绝88亿美元收购要约",
-          "summary_zh": "澳大利亚BlueScope钢铁公司董事会拒绝了价值88亿美元的收购提议。",
-          "region": "global",
+          "title_zh": "中美日稀土争端影响出口",
+          "summary_zh": "中国与日本的稀土争端导致出口受到限制，可能影响全球供应链。",
+          "region": "cn",
           "score": 0.5,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "BlueScope Steel rejects $8.8B takeover offer",
-              "url": "https://www.mining.com/bluescope-steel-rejects-8-8b-takeover-offer/",
+              "title": "China-Japan rare earth spat curbs exports",
+              "url": "https://www.mining.com/china-japan-rare-earth-spat-curbs-exports/",
               "source": "Mining.com",
-              "published_at": "2026-01-07"
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "摩根士丹利看涨黄金目标价4800美元",
-          "summary_zh": "多家银行看好黄金，摩根士丹利设定了每盎司4800美元的长期目标价。",
+          "title_zh": "原油因委内瑞拉不确定性上涨",
+          "summary_zh": "委内瑞拉政治不确定性持续，支撑原油价格攀升近2%。",
           "region": "global",
-          "score": 0.85,
-          "date": "2026-01-06",
+          "score": 0.65,
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Banks bullish on gold price as Morgan Stanley sets $4,800 target",
-              "url": "https://www.mining.com/banks-remain-bullish-on-gold-price-as-morgan-stanley-sets-4800-target/",
-              "source": "Mining.com",
-              "published_at": "2026-01-06"
+              "title": "Crude Climb Nearly 2% as Venezuela Uncertainty Keeps Traders",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Crude-Climb-Nearly-2-as-Venezuela-Uncertainty-Kee",
+              "source": "OilPrice",
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "关键金属将在格陵兰建试点工厂",
-          "summary_zh": "Critical Metals公司计划在格陵兰建设一个关键金属的试点加工厂。",
+          "title_zh": "美国与贸易商讨论委内瑞拉石油",
+          "summary_zh": "白宫邀请Vitol和Trafigura等大宗商品贸易商，就委内瑞拉石油问题进行会谈。",
+          "region": "global",
+          "score": 0.55,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "White House Invites Vitol, Trafigura For Venezuelan Oil Talk",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/White-House-Invites-Vitol-Trafigura-For-Venezuela",
+              "source": "OilPrice",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "格陵兰矿业公司获投资传闻",
+          "summary_zh": "传闻美国政府可能投资，推动格陵兰矿业公司Amaroq股价大幅上涨。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Critical Metals to build pilot plant in Greenland",
-              "url": "https://www.mining.com/critical-metals-to-build-pilot-plant-in-greenland/",
+              "title": "Greenland miner Amaroq soars on report of US gov’t investmen",
+              "url": "https://www.mining.com/greenland-miner-amaroq-soars-on-report-of-us-govt-investment/",
               "source": "Mining.com",
-              "published_at": "2026-01-07"
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "欧洲天然气交易所延长交易时间",
-          "summary_zh": "欧洲主要天然气交易所进行重大调整，延长了每日交易时间。",
+          "title_zh": "纽约能源计划押注核能",
+          "summary_zh": "纽约州能源计划依靠核能来实现清洁能源目标。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Major Exchange Shift Extends European Natural Gas Trading Hours",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/Major-Exchange-Shift-Extends-European-Natural-Gas",
+              "title": "New York’s Energy Plan Bets on Nuclear Power to Hit Clean En",
+              "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/New-Yorks-Energy-Plan-Bets-on-Nuclear-Power-to",
               "source": "OilPrice",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "Centerra因铜金矿寿命延长股价上涨",
-          "summary_zh": "Centerra Gold公司因其Mt Milligan铜金矿寿命延长，股价应声上涨。",
+          "title_zh": "Equinor签署百亿合同维护油田",
+          "summary_zh": "Equinor授予价值100亿美元合同，以维持挪威石油产量。",
           "region": "global",
-          "score": 0.75,
-          "date": "2026-01-06",
+          "score": 0.65,
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Centerra rises on Mt Milligan copper-gold mine life boost",
-              "url": "https://www.mining.com/centerra-rises-on-mt-milligan-copper-gold-mine-life-boost/",
+              "title": "Equinor Awards $10 Billion Contracts to Maintain Norway’s Oi",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Equinor-Awards-10-Billion-Contracts-to-Maintain-N",
+              "source": "OilPrice",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "银价因指数调整延续跌势",
+          "summary_zh": "由于指数再平衡，白银价格延续下跌走势。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Silver price extends slide on index rebalancing",
+              "url": "https://www.mining.com/silver-price-extends-slide-on-index-rebalancing/",
               "source": "Mining.com",
-              "published_at": "2026-01-06"
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "主亚那油气矿业因风险缓解受益",
+          "summary_zh": "随着委内瑞拉风险缓解，主亚那的石油和矿业部门获得提振。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Guyana oil and mining sectors gain as Venezuela risk eases",
+              "url": "https://www.mining.com/guyana-oil-and-mining-sectors-gain-as-venezuela-risk-eases/",
+              "source": "Mining.com",
+              "published_at": "2026-01-08"
             }
           ]
         }
       ],
       "cn_count": 1,
       "total_count": 10,
-      "sentiment": "positive",
-      "sentiment_score": 0.7,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
-        "黄金",
-        "铜价",
-        "锂",
-        "矿业项目",
-        "能源资产"
+        "数据中心",
+        "原油",
+        "稀土",
+        "电力",
+        "地缘政治"
       ],
       "deduped_count": 2,
       "raw_count": 45
@@ -2226,11 +2184,11 @@
         "carbon neutrality net zero",
         "emissions trading ETS price"
       ],
-      "brief_zh": "近期国际新闻涉及多个领域，包括美国对尼日利亚空袭的质疑、特朗普政府计划利用委内瑞拉石油储备、中国涉嫌诈骗头目陈志被引渡回国，以及中国对委内瑞拉局势的担忧。同时，商业新闻方面，英国政府考虑降低酒吧营业税，Tesco和M&S圣诞食品销售强劲，麦当劳被指控骚扰员工，关税问题持续影响全球经济。",
+      "brief_zh": "近期国际新闻涉及多个领域，包括美国对尼日利亚空袭的质疑、几内亚军政府领导人当选总统、委内瑞拉释放被拘留者及与美国石油协议、巴西总统否决涉及前总统博索纳罗的法案、涉嫌诈骗头目陈智被引渡回中国、美国在委内瑞拉行动对中国利益的影响、以及麦当劳被工会指控骚扰等事件。",
       "events": [
         {
           "title_zh": "美国空袭尼日利亚引质疑",
-          "summary_zh": "美国对尼日利亚空袭的目标和影响引发持续疑问。",
+          "summary_zh": "美国在尼日利亚的空袭行动两周后，其目标和影响仍受质疑。",
           "region": "global",
           "score": 0.4,
           "date": "2026-01-08",
@@ -2244,29 +2202,74 @@
           ]
         },
         {
-          "title_zh": "特朗普计划用委内瑞拉石油",
-          "summary_zh": "特朗普计划利用委内瑞拉原油储备降低美国油价。",
+          "title_zh": "几内亚军政府领导人当选总统",
+          "summary_zh": "几内亚军政府领导人在反对派抵制选举后当选总统。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2025-12-31",
+          "sources": [
+            {
+              "title": "Guinea’s junta chief elected president after opposition boyc",
+              "url": "https://www.theguardian.com/world/2025/dec/31/guinea-junta-chief-mamady-doumbouya-elected-president-",
+              "source": "The Guardian",
+              "published_at": "2025-12-31"
+            }
+          ]
+        },
+        {
+          "title_zh": "委内瑞拉释放大量被拘留者",
+          "summary_zh": "委内瑞拉宣布将释放“重要数量”的被拘留者。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Trump plans to use Venezuela’s huge crude reserves ‘to cut U",
-              "url": "https://www.theguardian.com/business/2026/jan/08/trump-plans-use-venezuela-huge-oil-reserves-to-cut-",
+              "title": "Venezuela to release ‘important number’ of detainees",
+              "url": "https://www.theguardian.com/world/2026/jan/08/venezuela-to-release-important-number-of-detainees",
               "source": "The Guardian",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "陈志被引渡回中国",
-          "summary_zh": "涉嫌诈骗头目陈志从柬埔寨被引渡到中国。",
-          "region": "cn",
-          "score": 0.7,
+          "title_zh": "巴西总统否决减刑法案",
+          "summary_zh": "巴西总统卢拉否决了减少前总统博索纳罗刑期的法案。",
+          "region": "global",
+          "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Alleged scam kingpin Chen Zhi extradited to China after Camb",
+              "title": "Brazilian president vetoes bill reducing Jair Bolsonaro’s pr",
+              "url": "https://www.theguardian.com/world/2026/jan/08/brazil-president-lula-vetoes-bill-jair-bolsonaro-priso",
+              "source": "The Guardian",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "委内瑞拉与美国达成石油协议",
+          "summary_zh": "委内瑞拉表示全面合作，美国将控制其石油以换取协议。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Venezuela cooperating fully and US will control its oil for ",
+              "url": "https://www.theguardian.com/world/2026/jan/08/venezuela-oil-deal-rodriguez-trump-vance-claims-us-con",
+              "source": "The Guardian",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "涉嫌诈骗头目陈智引渡回中国",
+          "summary_zh": "涉嫌诈骗头目陈智从柬埔寨被引渡回中国。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Alleged scam kingpin Chen Zhi arrives in China after extradi",
               "url": "https://www.theguardian.com/world/2026/jan/08/alleged-scam-kingpin-chen-zhi-extradited-china-cambodi",
               "source": "The Guardian",
               "published_at": "2026-01-08"
@@ -2274,25 +2277,10 @@
           ]
         },
         {
-          "title_zh": "中国担忧委内瑞拉利益",
-          "summary_zh": "特朗普的行动引发中国对其在委内瑞拉利益的担忧。",
+          "title_zh": "美国行动影响中国在委内瑞拉利益",
+          "summary_zh": "美国在委内瑞拉的突袭行动引发对中国在该地区利益的担忧。",
           "region": "cn",
-          "score": 0.3,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Trump’s attack leaves China worried about its interests in V",
-              "url": "https://www.theguardian.com/world/2026/jan/05/venezuela-trump-attack-china-interests-analysis",
-              "source": "The Guardian",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国行动对台湾的影响",
-          "summary_zh": "美国在委内瑞拉的行动可能影响中国对台湾的意图。",
-          "region": "cn",
-          "score": 0.5,
+          "score": 0.4,
           "date": "2026-01-06",
           "sources": [
             {
@@ -2304,40 +2292,25 @@
           ]
         },
         {
-          "title_zh": "英国降低酒吧营业税",
-          "summary_zh": "英国政府计划淡化对酒吧的营业税上调。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Government to water down business rate rise for pubs",
-              "url": "https://www.bbc.com/news/articles/c8e57dexly1o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "Tesco和M&S圣诞销售强劲",
-          "summary_zh": "Tesco和Marks & Spencer报告圣诞节食品销售表现强劲。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Tesco and M&S report strong  Christmas food sales",
-              "url": "https://www.bbc.com/news/articles/cp82ylmy6d1o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "麦当劳被控骚扰员工",
-          "summary_zh": "工会指控麦当劳对员工进行“反复骚扰”。",
+          "title_zh": "特朗普攻击令中国担忧委内瑞拉利益",
+          "summary_zh": "特朗普的攻击行动使中国对其在委内瑞拉的利益感到担忧。",
           "region": "cn",
-          "score": 0.2,
+          "score": 0.4,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Trump’s attack leaves China worried about its interests in V",
+              "url": "https://www.theguardian.com/world/2026/jan/05/venezuela-trump-attack-china-interests-analysis",
+              "source": "The Guardian",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "麦当劳被控骚扰移民工人",
+          "summary_zh": "工会指控麦当劳对移民工人进行“反复骚扰”。",
+          "region": "cn",
+          "score": 0.3,
           "date": "2026-01-08",
           "sources": [
             {
@@ -2349,32 +2322,17 @@
           ]
         },
         {
-          "title_zh": "关税扰乱全球经济",
-          "summary_zh": "关税中断将继续重塑全球经济格局。",
+          "title_zh": "特易购和玛莎报告强劲圣诞销售",
+          "summary_zh": "特易购和玛莎百货报告了强劲的圣诞节食品销售业绩。",
           "region": "global",
-          "score": 0.4,
+          "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "How tariff disruption will continue reshaping the global eco",
-              "url": "https://www.bbc.com/news/articles/czejp3gep63o?at_medium=RSS&at_campaign=rss",
+              "title": "Tesco and M&S report strong  Christmas food sales",
+              "url": "https://www.bbc.com/news/articles/cp82ylmy6d1o?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国扣押俄罗斯油轮",
-          "summary_zh": "美国在两周后于大西洋扣押一艘俄罗斯油轮。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "US seizes Russian-flagged oil tanker in Atlantic after two-w",
-              "url": "https://www.theguardian.com/world/2026/jan/07/russia-submarine-escort-shadow-fleet-tanker-us-sanctio",
-              "source": "The Guardian",
-              "published_at": "2026-01-07"
             }
           ]
         }
@@ -2384,11 +2342,11 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "特朗普",
-        "委内瑞拉",
-        "中国",
-        "关税",
-        "商业"
+        "空袭",
+        "选举",
+        "引渡",
+        "石油",
+        "法案"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -2404,113 +2362,101 @@
         "Thailand Malaysia electronics",
         "ASEAN trade manufacturing China"
       ],
-      "brief_zh": "新闻涉及多个国际事件，包括美国移民执法致死、美国对委内瑞拉石油的控制、俄乌冲突、叙利亚局势、美国对台军售等。其中，美国对台军售事件与中国相关，引发地区和平担忧。整体来看，新闻多涉及地缘政治冲突和人道主义危机，情绪偏负面。",
+      "brief_zh": "新闻集合涉及全球多地事件，包括美国对委内瑞拉石油的控制意图、中东地区冲突、体育赛事及社会事件。其中一条涉及中国教会逮捕事件，但整体上与中国直接相关的新闻较少。多数事件具有负面或冲突性质，反映了国际局势的紧张。",
       "events": [
         {
-          "title_zh": "美国对台军售威胁台海和平",
-          "summary_zh": "美国向台湾出售武器，被指威胁台海地区和平稳定。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "US arms sales to Taiwan threaten peace in the Taiwan Strait",
-              "url": "https://www.aljazeera.com/opinions/2026/1/8/us-arms-sales-to-taiwan-threaten-peace-in-the-taiwan-str",
-              "source": "Al Jazeera",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国控制委内瑞拉石油引争议",
-          "summary_zh": "美国宣布将无限期控制委内瑞拉石油，引发剥削质疑。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "US says it will control Venezuelan oil indefinitely",
-              "url": "https://www.aljazeera.com/video/newsfeed/2026/1/8/us-says-it-will-control-venezuelan-oil-indefinitel",
-              "source": "Al Jazeera",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "Trump says US role in Venezuela could last for years",
-              "url": "https://www.aljazeera.com/news/2026/1/8/trump-says-us-could-run-venezuela-for-years-report?traffic_s",
-              "source": "Al Jazeera",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "乌克兰民众供暖中断受折磨",
-          "summary_zh": "俄罗斯袭击导致乌克兰民众失去供暖，面临人道危机。",
+          "title_zh": "美国欲长期控制委内瑞拉石油",
+          "summary_zh": "美国表示希望无限期控制委内瑞拉石油资源，引发国际关注。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "‘Deliberate torment’: Ukrainians left without heating after ",
-              "url": "https://www.aljazeera.com/news/2026/1/8/deliberate-torment-ukrainians-left-without-heating-after-rus",
+              "title": "US says it wants to control Venezuelan oil indefinitely. Can",
+              "url": "https://www.aljazeera.com/economy/2026/1/8/us-says-it-wants-to-control-venezuelan-oil-indefinitely-c",
               "source": "Al Jazeera",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "叙利亚军队炮击阿勒颇地区",
-          "summary_zh": "叙利亚军队在阿勒颇附近炮击叙利亚民主力量阵地。",
+          "title_zh": "巴西向委内瑞拉边境派遣国民警卫队",
+          "summary_zh": "巴西计划派遣国民警卫队至委内瑞拉边境附近，可能加剧地区紧张。",
           "region": "global",
           "score": 0.4,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "LIVE: Syria’s army shells SDF positions in Aleppo neighbourh",
-              "url": "https://www.aljazeera.com/news/liveblog/2026/1/8/live-syrias-army-shells-sdf-positions-in-aleppo-nei",
+              "title": "Brazil to send national guard near border with Venezuela",
+              "url": "https://www.aljazeera.com/news/2026/1/8/brazil-to-send-national-guard-near-border-with-venezuela?tra",
               "source": "Al Jazeera",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "俄罗斯战争死亡人数激增",
-          "summary_zh": "报告称俄罗斯在战争中的死亡人数上升到不可持续水平。",
+          "title_zh": "叙利亚阿勒颇实施宵禁",
+          "summary_zh": "叙利亚在阿勒颇地区实施宵禁，军队与SDF发生冲突。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.3,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Russian war deaths are rising to unsustainable levels, says ",
-              "url": "https://www.aljazeera.com/news/2026/1/8/russian-war-fatalities-are-rising-to-unsustainable-levels-sa",
+              "title": "Syria imposes curfew in Aleppo districts as army, SDF clashe",
+              "url": "https://www.aljazeera.com/news/2026/1/8/syria-imposes-curfew-in-aleppo-districts-as-army-sdf-clashes",
               "source": "Al Jazeera",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "美国移民执法致死事件",
-          "summary_zh": "美国移民海关执法局在明尼阿波利斯枪杀一名女性公民。",
+          "title_zh": "以色列袭击加沙帐篷致三人死亡",
+          "summary_zh": "以色列对加沙帐篷发动袭击，造成至少三名巴勒斯坦人死亡。",
           "region": "global",
+          "score": 0.2,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Israeli attack on Gaza tent kills at least three Palestinian",
+              "url": "https://www.aljazeera.com/news/2026/1/8/israeli-attack-on-gaza-tent-kills-at-least-three-palestinian",
+              "source": "Al Jazeera",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗全国互联网中断",
+          "summary_zh": "监测机构报告伊朗正经历全国范围的互联网中断。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Iran experiencing nationwide internet blackout, monitor says",
+              "url": "https://www.aljazeera.com/news/2026/1/8/iran-experiencing-nationwide-internet-blackout-monitor-says?",
+              "source": "Al Jazeera",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国教会报告逮捕事件",
+          "summary_zh": "有影响力的中国教会报告逮捕事件，涉及对基督教的打压。",
+          "region": "cn",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Witnesses film ICE killing of US citizen in Minneapolis",
-              "url": "https://www.aljazeera.com/video/newsfeed/2026/1/8/witnesses-film-ice-killing-of-us-citizen-in-minnea",
-              "source": "Al Jazeera",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "US immigration agent fatally shoots woman in Minneapolis",
-              "url": "https://www.bbc.com/news/articles/c0jvnl4j1n4o?at_medium=RSS&at_campaign=rss",
+              "title": "Influential China church reports arrests as crackdown on Chr",
+              "url": "https://www.bbc.com/news/articles/ckgl8jgdxypo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "美国退出气候条约等组织",
-          "summary_zh": "特朗普政府宣布退出关键气候条约及数十个全球组织。",
+          "title_zh": "特朗普退出关键气候条约",
+          "summary_zh": "特朗普宣布美国退出关键气候条约及数十项其他协议。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
@@ -2520,62 +2466,50 @@
               "url": "https://www.bbc.com/news/articles/cp80ln97py5o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
               "published_at": "2026-01-08"
-            },
+            }
+          ]
+        },
+        {
+          "title_zh": "阿森纳与利物浦战平",
+          "summary_zh": "阿森纳与利物浦战平，令英超冠军争夺者欣喜。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-08",
+          "sources": [
             {
-              "title": "Which are the 66 global organisations the US is leaving unde",
-              "url": "https://www.aljazeera.com/news/2026/1/8/which-are-the-66-global-organisations-the-us-is-leaving-unde",
+              "title": "Arsenal and Liverpool draw to delight of Premier League titl",
+              "url": "https://www.aljazeera.com/sports/2026/1/8/arsenal-and-liverpool-draw-to-delight-of-premier-league-ti",
               "source": "Al Jazeera",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "美国扣押委内瑞拉油轮",
-          "summary_zh": "美国扣押两艘与委内瑞拉石油相关的“影子舰队”油轮。",
+          "title_zh": "FBI接手ICE特工杀人调查",
+          "summary_zh": "FBI接手调查ICE特工杀害一名女子的案件。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "US seizes two 'shadow fleet' tankers linked to Venezuelan oi",
-              "url": "https://www.bbc.com/news/articles/c5y2v8ngl14o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-01-07"
+              "title": "FBI takes over investigation into ICE agent killing of woman",
+              "url": "https://www.aljazeera.com/news/2026/1/8/fbi-takes-over-investigation-into-ice-agent-killing-of-woman",
+              "source": "Al Jazeera",
+              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "伊朗抗议活动蔓延引发冲突",
-          "summary_zh": "伊朗抗议活动扩散，视频显示多地发生暴力冲突。",
+          "title_zh": "华纳兄弟投资者对派拉蒙竞标分歧",
+          "summary_zh": "华纳兄弟投资者在派拉蒙Skydance竞标上意见分歧。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Footage shows violent clashes as Iran protests spread to mor",
-              "url": "https://www.bbc.com/news/articles/cgm4y0ewe93o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "澳大利亚启动反犹太主义调查",
-          "summary_zh": "澳大利亚在邦迪枪击事件后启动反犹太主义调查。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Australia to launch anti-Semitism inquiry after Bondi shooti",
-              "url": "https://www.aljazeera.com/video/newsfeed/2026/1/8/australia-to-launch-anti-semitism-inquiry-after-bo",
+              "title": "Warner Bros investors torn on Paramount Skydance bid",
+              "url": "https://www.aljazeera.com/economy/2026/1/8/warner-bros-investors-torn-on-paramount-skydance-bid?traf",
               "source": "Al Jazeera",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "US involvement in Venezuela could last years, Trump says",
-              "url": "https://www.bbc.com/news/articles/cx20gyn8qvvo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
               "published_at": "2026-01-08"
             }
           ]
@@ -2586,14 +2520,14 @@
       "sentiment": "negative",
       "sentiment_score": 0.3,
       "keywords": [
-        "美国",
-        "委内瑞拉",
-        "台湾",
-        "叙利亚",
-        "冲突"
+        "冲突",
+        "石油控制",
+        "逮捕",
+        "体育赛事",
+        "互联网中断"
       ],
-      "deduped_count": 1,
-      "raw_count": 41
+      "deduped_count": 0,
+      "raw_count": 40
     },
     {
       "id": "space",
@@ -2605,173 +2539,155 @@
         "Starlink satellite constellation",
         "China space station moon"
       ],
-      "brief_zh": "新闻列表主要涉及科技、商业和消费领域，包括AI应用、初创公司动态、产品发布和促销信息等。多数新闻来自国际媒体，涵盖谷歌AI功能、福特自动驾驶技术、Waymo品牌调整等话题，整体偏向科技进展和商业活动。",
+      "brief_zh": "本组新闻涉及多个科技领域，包括AI应用、网络安全、太空探索、消费电子和汽车科技等。其中，前谷歌CEO计划私人资助哈勃级望远镜和NASA考虑撤离患病宇航员的消息与宇宙探索主题相关。整体来看，新闻以科技动态和行业事件为主，情感倾向较为中性。",
       "events": [
         {
-          "title_zh": "谷歌为Gmail添加AI收件箱",
-          "summary_zh": "谷歌计划在Gmail中引入AI收件箱功能，可自动总结邮件内容，提升用户体验。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Google Is Adding an ‘AI Inbox’ to Gmail That Summarizes Emai",
-              "url": "https://www.wired.com/story/google-ai-inbox-gmail/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "福特推出AI助手和BlueCruise技术",
-          "summary_zh": "福特发布新的AI助手和免提BlueCruise自动驾驶技术，增强车辆智能化水平。",
+          "title_zh": "前谷歌CEO私人资助望远镜",
+          "summary_zh": "前谷歌CEO埃里克·施密特计划个人投资私人望远镜项目，包括哈勃级望远镜。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Ford has an AI assistant and new hands-free BlueCruise tech ",
-              "url": "https://techcrunch.com/2026/01/07/ford-has-an-ai-assistant-and-new-hands-free-bluecruise-tech-on-the",
-              "source": "TechCrunch",
+              "title": "Former Google CEO plans to singlehandedly fund a Hubble tele",
+              "url": "https://arstechnica.com/space/2026/01/eric-schmidt-will-massively-invest-in-private-telescopes-inclu",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "Waymo重新品牌化其Zeekr机器人出租车",
-          "summary_zh": "Waymo对其Zeekr机器人出租车进行品牌调整，以优化市场定位和推广策略。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Waymo is rebranding its Zeekr robotaxi",
-              "url": "https://techcrunch.com/2026/01/07/waymo-is-rebranding-its-zeekr-robotaxi/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "前Bolt CEO初创公司估值增至1亿美元",
-          "summary_zh": "前Bolt CEO的初创公司估值增长两倍，达到1亿美元，显示商业潜力。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Former Bolt CEO Maju Kuruvilla’s startup triples to $100M va",
-              "url": "https://techcrunch.com/2026/01/08/former-bolt-ceo-maju-kuruvillas-startup-triples-to-100m-valuation/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌与Character.AI达成重要和解",
-          "summary_zh": "谷歌和Character.AI就青少年相关案件进行首次重大和解谈判，涉及法律和伦理问题。",
+          "title_zh": "NASA考虑撤离患病宇航员",
+          "summary_zh": "NASA因宇航员健康问题推迟太空行走，正考虑从国际空间站撤离患病成员。",
           "region": "global",
           "score": 0.4,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Google and Character.AI negotiate first major settlements in",
-              "url": "https://techcrunch.com/2026/01/07/google-and-character-ai-negotiate-first-major-settlements-in-teen-",
-              "source": "TechCrunch",
+              "title": "NASA considers evacuating ailing crew member from Internatio",
+              "url": "https://arstechnica.com/space/2026/01/nasa-postpones-space-station-spacewalk-due-to-crew-members-med",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "摩根大通成为Apple Card新发卡行",
-          "summary_zh": "摩根大通接替成为Apple Card的新发卡机构，影响金融科技合作格局。",
+          "title_zh": "ChatGPT健康功能连接医疗记录",
+          "summary_zh": "ChatGPT Health推出新功能，允许用户连接医疗记录并由AI提供健康建议。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "JPMorgan Chase becomes the new issuer of the Apple Card",
-              "url": "https://techcrunch.com/2026/01/07/jpmorgan-chase-becomes-the-new-issuer-of-the-apple-card/",
-              "source": "TechCrunch",
+              "title": "ChatGPT Health lets you connect medical records to an AI tha",
+              "url": "https://arstechnica.com/ai/2026/01/chatgpt-health-lets-you-connect-medical-records-to-an-ai-that-mak",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "LinkedIn解禁AI初创公司Artisan",
-          "summary_zh": "LinkedIn此前禁止AI代理初创公司Artisan，现已恢复其平台访问权限。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Yes, LinkedIn banned AI agent startup Artisan, but now it’s ",
-              "url": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "拉里·佩奇减少与加州商业联系",
-          "summary_zh": "谷歌联合创始人拉里·佩奇因加州财富税提案，开始减少在该州的商业活动。",
+          "title_zh": "Grok AI被指对不当内容处理不当",
+          "summary_zh": "Grok AI被曝在用户搜索未成年人图像时假设其有“良好意图”，引发争议。",
           "region": "global",
           "score": 0.3,
-          "date": "2026-01-07",
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Larry Page loosens business ties to CA amid state’s proposed",
-              "url": "https://techcrunch.com/2026/01/07/larry-page-loosens-business-ties-to-ca-amid-states-proposed-wealth",
-              "source": "TechCrunch",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "Newegg Promo Code: 10% Off in January 2026",
-              "url": "https://www.wired.com/story/newegg-promo-code/",
-              "source": "Wired",
+              "title": "Grok assumes users seeking images of underage girls have “go",
+              "url": "https://arstechnica.com/tech-policy/2026/01/grok-assumes-users-seeking-images-of-underage-girls-have",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "2026年成为RGB LED电视元年",
-          "summary_zh": "2026年被预测为RGB LED电视的爆发年，技术升级推动消费电子市场发展。",
+          "title_zh": "ChatGPT遭新型数据窃取攻击",
+          "summary_zh": "ChatGPT遭受新的数据窃取攻击，安全漏洞引发关注。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "ChatGPT falls to new data-pilfering attack as a vicious cycl",
+              "url": "https://arstechnica.com/security/2026/01/chatgpt-falls-to-new-data-pilfering-attack-as-a-vicious-cyc",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌在Gmail搜索引入AI概述",
+          "summary_zh": "谷歌宣布在Gmail搜索中实验性引入AI概述功能，提升邮件管理效率。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Google announces AI Overviews in Gmail search, experimental ",
+              "url": "https://arstechnica.com/google/2026/01/google-announces-ai-overviews-in-gmail-search-experimental-ai",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特计划在汽车中引入AI助手",
+          "summary_zh": "福特汽车宣布将于2027年在旗下车型中引入车内AI助手功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Ford is getting ready to put AI assistants in its cars",
+              "url": "https://arstechnica.com/cars/2026/01/in-car-ai-assistant-coming-to-fords-and-lincolns-in-2027/",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "高RAM价格推高三星利润",
+          "summary_zh": "高RAM价格导致三星等公司创下创纪录的利润，反映内存市场供需紧张。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "2026 Is the Year of the RGB LED TV",
-              "url": "https://www.wired.com/story/rgb-led-televisions-2026/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "Surfshark Promo Codes: 87% Off | January 2026",
-              "url": "https://www.wired.com/story/surfshark-coupon/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "30% Off Tempur-Pedic Promo Codes | January 2026",
-              "url": "https://www.wired.com/story/tempur-pedic-promo-code/",
-              "source": "Wired",
+              "title": "High RAM prices mean record-setting profits for Samsung and ",
+              "url": "https://arstechnica.com/gadgets/2026/01/high-ram-prices-mean-record-setting-profits-for-samsung-and-",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "达芬奇DNA痕迹可能被发现",
-          "summary_zh": "研究人员在红粉笔上可能发现了达芬奇的DNA痕迹，为历史研究提供新线索。",
+          "title_zh": "Switch 2季节性销售显著放缓",
+          "summary_zh": "任天堂Switch 2的季节性销售数据显示显著放缓，年度周期增长疲软。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
+          "score": 0.4,
+          "date": "2026-01-08",
           "sources": [
             {
-              "title": "Traces of Leonardo da Vinci’s DNA May Have Been Discovered o",
-              "url": "https://www.wired.com/story/traces-of-leonardo-da-vincis-dna-may-have-been-discovered-on-a-red-chalk",
-              "source": "Wired",
-              "published_at": "2026-01-07"
+              "title": "Seasonal Switch 2 sales show significant slowing as annual c",
+              "url": "https://arstechnica.com/gaming/2026/01/seasonal-switch-2-sales-show-significant-slowing-as-annual-cy",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "FCC批准更高功率Wi-Fi设备",
+          "summary_zh": "FCC投票批准在6 GHz频段允许更高功率的无线设备，Wi-Fi倡导者取得胜利。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Wi-Fi advocates get win from FCC with vote to allow higher-p",
+              "url": "https://arstechnica.com/tech-policy/2026/01/fcc-to-authorize-more-powerful-wireless-devices-in-6-ghz",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
             }
           ]
         }
@@ -2782,12 +2698,12 @@
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
-        "科技",
-        "商业",
-        "初创公司",
-        "产品发布"
+        "太空探索",
+        "网络安全",
+        "消费电子",
+        "汽车科技"
       ],
-      "deduped_count": 3,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2800,13 +2716,43 @@
         "gene editing CRISPR biotechnology",
         "superconductor material science"
       ],
-      "brief_zh": "近期科技领域动态频发，涵盖人工智能、生物科技、消费电子等多个前沿方向。谷歌为Gmail添加AI摘要功能，福特推出AI助手与自动驾驶技术，同时有初创公司估值飙升。此外，关于肌酸补充剂、RGB LED电视、血糖监测仪等消费科技产品也引发关注。整体趋势显示AI与自动化技术正深度融入日常生活与商业应用。",
+      "brief_zh": "近期科技新闻聚焦于中国企业在国际消费电子展上的创新表现，如扫地机器人公司跨界推出电动汽车，以及全球科技动态，包括AI设备发展、内存危机应对和新型健康监测设备等。",
       "events": [
         {
-          "title_zh": "谷歌Gmail新增AI摘要收件箱",
-          "summary_zh": "谷歌计划为Gmail引入AI驱动的收件箱功能，可自动总结邮件内容。",
-          "region": "global",
+          "title_zh": "中国扫地机器人公司跨界造车",
+          "summary_zh": "一家中国扫地机器人公司在CES上展示了两款电动汽车，体现跨界创新。",
+          "region": "cn",
           "score": 0.8,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Why a Chinese Robot Vacuum Company Spun Off Not One but 2 EV",
+              "url": "https://www.wired.com/story/made-in-china-what-chinese-companies-showed-off-at-ces/",
+              "source": "Wired",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI设备兴起引发应用生态变革",
+          "summary_zh": "AI设备快速发展，可能改变现有应用生态系统和广告模式。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "AI Devices Are Coming. Will Your Favorite Apps Be Along for ",
+              "url": "https://www.wired.com/story/openai-amazon-operating-system-ai-apps-ads/",
+              "source": "Wired",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌为Gmail添加AI收件箱功能",
+          "summary_zh": "谷歌计划在Gmail中引入AI收件箱，自动总结邮件内容。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
@@ -2818,55 +2764,40 @@
           ]
         },
         {
-          "title_zh": "福特推出AI助手与新版BlueCruise",
-          "summary_zh": "福特发布AI助手及升级版免提BlueCruise自动驾驶技术。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Ford has an AI assistant and new hands-free BlueCruise tech ",
-              "url": "https://techcrunch.com/2026/01/07/ford-has-an-ai-assistant-and-new-hands-free-bluecruise-tech-on-the",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "前Bolt CEO初创公司估值达1亿美元",
-          "summary_zh": "前Bolt首席执行官Maju Kuruvilla的初创公司估值翻三倍至1亿美元。",
-          "region": "global",
-          "score": 0.9,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Former Bolt CEO Maju Kuruvilla’s startup triples to $100M va",
-              "url": "https://techcrunch.com/2026/01/08/former-bolt-ceo-maju-kuruvillas-startup-triples-to-100m-valuation/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "2026年成为RGB LED电视元年",
-          "summary_zh": "报道称2026年将是RGB LED电视技术普及的关键年份。",
+          "title_zh": "内存短缺危机迎来解决尝试",
+          "summary_zh": "科技界正大胆尝试解决PC内存短缺危机，以应对高需求。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "2026 Is the Year of the RGB LED TV",
-              "url": "https://www.wired.com/story/rgb-led-televisions-2026/",
+              "title": "The Daring Attempt to End the Memory Shortage Crisis",
+              "url": "https://www.wired.com/story/solving-the-pc-memory-crisis/",
               "source": "Wired",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "新型血糖监测仪备受期待",
-          "summary_zh": "一款新的血糖监测仪被描述为市场期待已久的产品。",
+          "title_zh": "高内存价格推高三星等公司利润",
+          "summary_zh": "RAM价格上涨导致三星等公司创下利润纪录，反映市场供需紧张。",
           "region": "global",
-          "score": 0.65,
+          "score": 0.5,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "High RAM prices mean record-setting profits for Samsung and ",
+              "url": "https://arstechnica.com/gadgets/2026/01/high-ram-prices-mean-record-setting-profits-for-samsung-and-",
+              "source": "Ars Technica",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "新型血糖监测设备受期待",
+          "summary_zh": "一款新型血糖监测设备发布，被评价为值得期待的健康科技产品。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-01-08",
           "sources": [
             {
@@ -2878,38 +2809,38 @@
           ]
         },
         {
-          "title_zh": "Waymo为其Zeekr机器人出租车更名",
-          "summary_zh": "Waymo正在对其与Zeekr合作的机器人出租车进行品牌重塑。",
+          "title_zh": "FCC批准更高功率Wi-Fi设备",
+          "summary_zh": "美国FCC投票批准在6GHz频段使用更高功率无线设备，推动Wi-Fi发展。",
           "region": "global",
-          "score": 0.55,
+          "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Waymo is rebranding its Zeekr robotaxi",
-              "url": "https://techcrunch.com/2026/01/07/waymo-is-rebranding-its-zeekr-robotaxi/",
-              "source": "TechCrunch",
+              "title": "Wi-Fi advocates get win from FCC with vote to allow higher-p",
+              "url": "https://arstechnica.com/tech-policy/2026/01/fcc-to-authorize-more-powerful-wireless-devices-in-6-ghz",
+              "source": "Ars Technica",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "谷歌与Character.AI达成重要和解",
-          "summary_zh": "谷歌与Character.AI就青少年相关诉讼达成首次重大和解。",
+          "title_zh": "AI被滥用进行虚假身份识别",
+          "summary_zh": "有人利用AI技术虚假识别联邦特工，引发对AI滥用的担忧。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.3,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Google and Character.AI negotiate first major settlements in",
-              "url": "https://techcrunch.com/2026/01/07/google-and-character-ai-negotiate-first-major-settlements-in-teen-",
-              "source": "TechCrunch",
+              "title": "People Are Using AI to Falsely Identify the Federal Agent Wh",
+              "url": "https://www.wired.com/story/people-are-using-ai-to-falsely-identify-the-federal-agent-who-shot-renee",
+              "source": "Wired",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
           "title_zh": "肌酸补充剂流行引关注",
-          "summary_zh": "文章探讨了肌酸补充剂无处不在的现象及其必要性。",
+          "summary_zh": "肌酸补充剂广泛流行，但对其必要性的讨论仍在继续。",
           "region": "global",
           "score": 0.5,
           "date": "2026-01-08",
@@ -2919,70 +2850,37 @@
               "url": "https://www.wired.com/story/should-you-be-taking-creatine-supplements/",
               "source": "Wired",
               "published_at": "2026-01-08"
-            },
-            {
-              "title": "Newegg Promo Code: 10% Off in January 2026",
-              "url": "https://www.wired.com/story/newegg-promo-code/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "摩根大通成为Apple Card新发卡行",
-          "summary_zh": "摩根大通接替成为苹果信用卡Apple Card的新发行机构。",
+          "title_zh": "2026年成为RGB LED电视元年",
+          "summary_zh": "2026年被预测为RGB LED电视技术普及的关键年份。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "JPMorgan Chase becomes the new issuer of the Apple Card",
-              "url": "https://techcrunch.com/2026/01/07/jpmorgan-chase-becomes-the-new-issuer-of-the-apple-card/",
-              "source": "TechCrunch",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "Surfshark Promo Codes: 87% Off | January 2026",
-              "url": "https://www.wired.com/story/surfshark-coupon/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            },
-            {
-              "title": "30% Off Tempur-Pedic Promo Codes | January 2026",
-              "url": "https://www.wired.com/story/tempur-pedic-promo-code/",
-              "source": "Wired",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "尝试解决PC内存短缺危机",
-          "summary_zh": "报道描述了一项旨在终结个人电脑内存短缺危机的尝试。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "The Daring Attempt to End the Memory Shortage Crisis",
-              "url": "https://www.wired.com/story/solving-the-pc-memory-crisis/",
+              "title": "2026 Is the Year of the RGB LED TV",
+              "url": "https://www.wired.com/story/rgb-led-televisions-2026/",
               "source": "Wired",
               "published_at": "2026-01-08"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "positive",
       "sentiment_score": 0.7,
       "keywords": [
+        "中国科技",
+        "电动汽车",
         "人工智能",
-        "生物科技",
-        "消费电子",
-        "自动驾驶",
-        "初创公司"
+        "内存危机",
+        "健康监测"
       ],
-      "deduped_count": 3,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2990,64 +2888,194 @@
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "佛罗里达大学的研究人员开发了一种新的训练方法，旨在帮助人工智能工具提升性能。该方法通过改进训练过程，有望增强AI的学习效率和准确性，为AI技术的发展提供新的支持。",
+      "brief_zh": "arXiv研究雷达发布了一系列涵盖人工智能、机器人学、量子计算、天体物理等领域的学术论文。这些研究展示了前沿科技的最新进展，包括动态物体操控、材料设计、法律对齐AI等主题，反映了学术界对复杂问题的持续探索。",
       "events": [
         {
-          "title_zh": "UF开发AI新训练方法",
-          "summary_zh": "佛罗里达大学研究人员开发新训练方法，以提升AI工具性能。",
+          "title_zh": "动态物体世界编排",
+          "summary_zh": "研究动态物体的操控与编排技术，涉及人工智能应用。",
           "region": "global",
           "score": 0.6,
-          "date": "2025-12-17",
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "UF researchers develop new training method to help AI tools",
-              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1uUEtKWUFXZmsyVl95OUxLRGJYWk9oRktfYTl5LVNKbVJfWS1",
-              "source": "University of Florida",
-              "published_at": "2025-12-17"
+              "title": "Choreographing a World of Dynamic Objects",
+              "url": "http://arxiv.org/abs/2601.04194v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "资源受限机器人自主代理嵌入",
+          "summary_zh": "探讨在资源受限机器人系统中嵌入自主代理的方法。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Embedding Autonomous Agents in Resource-Constrained Robotic",
+              "url": "http://arxiv.org/abs/2601.04191v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "材料设计综合计算框架",
+          "summary_zh": "提出一个全面的计算框架，用于材料设计与优化。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "A Comprehensive Computational Framework for Materials Design",
+              "url": "http://arxiv.org/abs/2601.04186v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "法律对齐安全伦理AI",
+          "summary_zh": "研究如何使AI系统与法律、安全和伦理标准对齐。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Legal Alignment for Safe and Ethical AI",
+              "url": "http://arxiv.org/abs/2601.04175v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "层次GNN多智能体动态队列学习",
+          "summary_zh": "基于层次图神经网络的多智能体学习，用于动态队列管理。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Hierarchical GNN-Based Multi-Agent Learning for Dynamic Queu",
+              "url": "http://arxiv.org/abs/2601.04177v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "GRB 180728A与SN 2018fip高能宇宙事件",
+          "summary_zh": "分析伽马射线暴与超新星的邻近高能宇宙学事件。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "GRB 180728A and SN 2018fip: the nearest high-energy cosmolog",
+              "url": "http://arxiv.org/abs/2601.04179v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "轻量级测试时适应EMG手势识别",
+          "summary_zh": "提出轻量级测试时适应方法，用于基于EMG的手势识别。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Lightweight Test-Time Adaptation for EMG-Based Gesture Recog",
+              "url": "http://arxiv.org/abs/2601.04181v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "量子通道学习下界改进",
+          "summary_zh": "在钻石范数下改进量子通道学习的下界结果。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Improved Lower Bounds for Learning Quantum Channels in Diamo",
+              "url": "http://arxiv.org/abs/2601.04180v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "LISA群体推断框架",
+          "summary_zh": "为LISA任务提出一个群体推断的计算框架。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "A framework for LISA population inference",
+              "url": "http://arxiv.org/abs/2601.04168v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "随机试验中期事件预测区间",
+          "summary_zh": "研究随机临床试验中期事件的预测区间方法。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Prediction Intervals for Interim Events in Randomized Clinic",
+              "url": "http://arxiv.org/abs/2601.04192v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
             }
           ]
         }
       ],
       "cn_count": 0,
-      "total_count": 1,
-      "sentiment": "positive",
-      "sentiment_score": 0.7,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
         "人工智能",
-        "训练方法",
-        "佛罗里达大学",
-        "AI工具",
-        "性能提升"
+        "机器人学",
+        "量子计算",
+        "材料设计",
+        "天体物理"
       ],
       "deduped_count": 0,
-      "raw_count": 1
+      "raw_count": 20
     }
   ],
   "top5": [
     {
-      "title": "诈骗头目陈志引渡回中国",
-      "summary": "涉嫌诈骗的头目陈志从柬埔寨引渡回中国，显示中国加强跨国执法合作，打击跨境犯罪。此举将增强投资者对中国法治环境的信心，但可能影响与柬埔寨的短期外交关系。",
-      "action": "关注后续司法程序，评估对相关行业的影响。"
+      "title": "中国扫地机器人公司跨界造车",
+      "summary": "一家中国扫地机器人公司在CES上展示其分拆出的两家电动汽车业务，体现了科技企业跨界拓展的趋势。这一动向可能加剧电动汽车市场的竞争，促使传统车企加速创新，同时也为投资者提供了新的赛道选择，需关注其技术落地与市场接受度。",
+      "action": "关注跨界科技公司的技术整合与市场进展。"
     },
     {
-      "title": "前Bolt CEO初创公司估值达1亿美元",
-      "summary": "前Bolt首席执行官Maju Kuruvilla的初创公司估值翻三倍至1亿美元，反映科技初创领域投资热度回升。这可能吸引更多资本流入早期科技项目，但需警惕估值泡沫风险。",
-      "action": "关注科技投资趋势，谨慎评估初创公司估值。"
+      "title": "波士顿动力发布Atlas机器人",
+      "summary": "波士顿动力在CES 2026上展示了生产就绪版本的Atlas人形机器人，标志着人形机器人技术迈向商业化。这将推动制造业、物流等行业的自动化升级，企业需评估其应用潜力以优化运营效率，并可能引发劳动力结构变革。",
+      "action": "评估人形机器人在行业中的应用场景与投资机会。"
     },
     {
-      "title": "摩根士丹利看涨黄金目标价4800美元",
-      "summary": "摩根士丹利将黄金长期目标价设为每盎司4800美元，多家银行看好黄金。这预示全球避险情绪升温，可能推动资金流向黄金等避险资产，影响股市和债券市场资金配置。",
-      "action": "考虑调整投资组合，增加黄金等避险资产配置。"
+      "title": "Alphabet股票或继续主导AI交易",
+      "summary": "分析认为Alphabet的股票可能进一步巩固其在AI交易中的主导地位，反映了市场对AI巨头长期竞争力的信心。这会影响科技股投资策略，投资者需权衡AI领域的集中风险与增长潜力，并关注监管动态对巨头的影响。",
+      "action": "分析AI龙头股的估值与行业竞争格局。"
     },
     {
-      "title": "Tesco和M&S圣诞销售强劲",
-      "summary": "Tesco和Marks & Spencer报告圣诞节期间食品销售表现强劲，显示消费者在节日期间维持支出。这可能提振零售业信心，但需观察后续消费趋势是否可持续。",
-      "action": "关注零售业财报，评估消费市场复苏情况。"
-    },
-    {
-      "title": "陈志被引渡回中国",
-      "summary": "涉嫌诈骗头目陈志从柬埔寨被引渡到中国，与第一条新闻重复，但强调国际执法协作。这有助于震慑跨境犯罪，提升中国司法形象，但需注意外交协调成本。",
-      "action": "忽略重复信息，聚焦主要事件影响。"
+      "title": "大胆尝试解决内存短缺危机",
+      "summary": "业界正采取创新方案应对个人电脑内存短缺危机，旨在提升供应链韧性。若成功，将降低电子产品成本并缓解生产瓶颈，企业可受益于更稳定的硬件供应，但需关注技术突破的实际效果与市场推广速度。",
+      "action": "跟踪内存技术进展以优化采购与生产计划。"
     }
   ],
   "meta": {
