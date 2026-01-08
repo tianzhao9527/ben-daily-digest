@@ -1,7 +1,7 @@
 {
   "date": "2026-01-08",
-  "generated_at_utc": "2026-01-08T04:27:48.960942+00:00",
-  "generated_at_bjt": "2026-01-08 12:27",
+  "generated_at_utc": "2026-01-08T04:54:51.660981+00:00",
+  "generated_at_bjt": "2026-01-08 12:54",
   "kpis": [
     {
       "id": "SP500",
@@ -1114,131 +1114,161 @@
         "USD CNY exchange rate PBOC",
         "global equity market VIX"
       ],
-      "brief_zh": "【核心动态】本板块抓取到 13 条资讯，其中中国相关 7 条。\n【趋势研判】LLM翻译暂时不可用，显示原始标题。\n【决策参考】建议优先关注中国相关条目，点击来源链接查看详情。",
+      "brief_zh": "近期，中国人民银行（央行）频繁调整人民币汇率中间价，并推出一系列稳汇率措施，包括下调外汇存款准备金率、上调跨境融资宏观审慎调节参数等。同时，央行定调2026年政策方向，市场对降准降息有所期待。这些行动旨在稳定外汇市场，应对人民币波动，并保持社会融资条件相对宽松。",
       "events": [
         {
-          "title_zh": "PBOC sets USD/ CNY reference rate for today at ...",
-          "summary_zh": "来源 investingLive：PBOC sets USD/ CNY reference rate for today at ...",
+          "title_zh": "央行下调外汇存准率稳汇率",
+          "summary_zh": "央行将外汇存款准备金率下调至4%，以稳定外汇市场。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "PBOC sets USD/ CNY reference rate for today at 7.0197 (vs. estimate at ) - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOGtVRFNyM1MwWGdDVTBaOWFpUmJOYk80dE4yeTBNbzRvcWo0Nlg2Nll5bkd6VVphN0ZzU2gyOUU3Qk5MaTIxM1lTY2lybk1fUGJ4R25LTE5nRjZPQThjOHdaak9UNDJ6MFdfRkNpU0Rfa2o3OXJndmhIYktqWkFiZVZVRU9VTWtCSXVBcVFVZkg4T2VWM1hLWk90LTVTd3AxSEZXdktYZi1aWVNqYmxfU2FqNlLSAboBQVVfeXFMTWRreG8yNk8xUHhKQ2FJcEY3cHJzR2Z3UzdteWh4eW1pcllUci1nUUhRQ0czcXFfMDE0WHltamRzRm45bkRETFh2Y09pb050MHNuOWE4WTROdmZWQUdzNlpRNXk1MVB1ZkRmM09iZnR5clZ5OHpEaFZicVVCM1pUdXRvbjkxUXVVNlpwQ2tUTzcwRnd4R3Qzb25wUk16QllVaHZlTkMwRE5rQnhRTjNLRWZVMW9GUmg5dW5B?oc=5",
+              "title": "央行出手稳汇市 外汇存款准备金率将下调至4% - 证券时报",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNT3JPV1RUdDRxT09kVzdEYS1scGphT1N5aGhhRDNzejhiRnF",
+              "source": "证券时报",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "央行上调跨境融资调节参数",
+          "summary_zh": "央行将跨境融资宏观审慎调节参数上调至1.75，以稳定汇率。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "央行再出手稳汇率，跨境融资宏观审慎调节参数上调至1.75 - 证券时报",
+              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQXFrc3hnRF9PNU9IakJVLWkxR2l0aTZUc2xKaXhVUF9EUGo",
+              "source": "证券时报",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "央行定调2026年七大重点工作",
+          "summary_zh": "央行部署2026年工作，包括保持融资宽松和强化虚拟货币监管。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "央行定调2026年七大重点工作：保持社会融资条件相对宽松，强化虚拟货币监管 - 新浪财经",
+              "url": "https://news.google.com/rss/articles/CBMimARBVV95cUxNU3dJLWlXbEdmTGstZ2VrREk2MnNDb2F4N1UxQWlmUDRoNUF",
+              "source": "新浪财经",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "市场期待2026年降准降息",
+          "summary_zh": "央行政策定调，市场对2026年降准降息抱有期待。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "降准降息可期！央行2026年政策定调，非银流动性机制有望破题 - 新浪财经",
+              "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxQS3g1WG1EQVpKZHBhdFMzMDllWmxkQnhtUnBsX1R0UTJrWFI",
+              "source": "新浪财经",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "央行举措提振人民币汇率",
+          "summary_zh": "央行出台措施，中国经济现关键信号，人民币汇率直线拉升。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "央行放大招！中国经济出现关键信号，人民币直线拉升，外资净流出即将缓解？ - 证券时报",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQOHRtY3JVUmNWNUhjR2RtbUlyZWVqWF80OGFxTUpfdTNrdmJ",
+              "source": "证券时报",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "人民币跌破关键水平引关注",
+          "summary_zh": "人民币跌破关键水平，市场关注后续走势。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "CNY at a glance: what next as the yuan moves below the criti",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTU1SRVhRR01TRGktWW9iQmdJYVJWeWZlZEtrdHRYeVFUaTR",
+              "source": "ING THINK economic a",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "央行设人民币中间价7.0197",
+          "summary_zh": "中国人民银行将美元/人民币中间价设定为7.0197。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "PBOC sets USD/ CNY reference rate for today at 7.0197 (vs. e",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOGtVRFNyM1MwWGdDVTBaOWFpUmJOYk80dE4yeTBNbzRvcWo",
               "source": "investingLive",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "CNY at a glance: what next as the yuan moves be...",
-          "summary_zh": "来源 ING THINK economic and financial analysis | ING Think：CNY at a glance: what next as the yuan moves be...",
+          "title_zh": "央行设人民币中间价7.0187",
+          "summary_zh": "中国人民银行将美元/人民币中间价设定为7.0187。",
           "region": "cn",
           "score": 0.6,
-          "date": "2026-01-05",
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "CNY at a glance: what next as the yuan moves below the critical 7.00 threshold? - ING THINK economic",
-              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTU1SRVhRR01TRGktWW9iQmdJYVJWeWZlZEtrdHRYeVFUaTRPdjRReFRTZ2x6YlRuRUxuZmRfamlfZkpHNXNGb3NoWGRPdXhCcWV1T000VmdSaDNLdVl0eFRXWTE1RHUzbnBYYzV1a01jaUpSa1hYa3A1bVBCeDAyOWJkLTU4WVhRVXFxZTdkOF9Ra21LUUNqQjQ4OXR2LWZyWXBSOUFUTWtRdw?oc=5",
-              "source": "ING THINK economic and financial analysis | ING Think",
-              "published_at": "2026-01-05"
+              "title": "PBOC sets USD/ CNY mid-point today at 7.0187 (vs. estimate a",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZlFMWVQ5aEU5TjBwdHEtdnJHVXlJWFhidlo4TUx3YV9oZ1d",
+              "source": "investingLive",
+              "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "The PBOC established the USD/CNY central rate a...",
-          "summary_zh": "来源 VT Markets：The PBOC established the USD/CNY central rate a...",
+          "title_zh": "央行设人民币中间价7.0173",
+          "summary_zh": "中国人民银行将美元/人民币中间价设定为7.0173。",
           "region": "cn",
           "score": 0.6,
-          "date": "2026-01-05",
+          "date": "2026-01-06",
           "sources": [
             {
-              "title": "The PBOC established the USD/CNY central rate at 7.0230, adjusting from the prior 7.0288 - VT Market",
-              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcDlaRUoyVWZrSXdpalRfUmpYeDJMZTFtR1U1Z3lyTTk1M3NVbXJiazc4R1NFaDNIWVN3UzVNSlJzVGNYZV9DT0xOT2ZqMG5rajI0eHQ4TGpxeTA0Yk4yTzdfeVljeEpVVEFQNnh2czRPZ3cxSlQ4YTFTSTFJQWw2SEZOdzJHVU83dExMWURvUjdPZlZwVUdnb0xzUDNFeE1BVEdMLWF4YlRFNExoMjBFcVlsYUhCR1JDR1lrOU9QOTlvVlljLVE?oc=5",
-              "source": "VT Markets",
-              "published_at": "2026-01-05"
+              "title": "PBOC sets USD/ CNY central rate at 7.0173 (vs. estimate at 6",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMzl6VHFNaUpMRzI5U1RkQWFLNTJpc0lIU3pFdDNIb1BLTlB",
+              "source": "investingLive",
+              "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "PBOC sets USD/CNY reference rate at 7.0230 vs. ...",
-          "summary_zh": "来源 FXStreet：PBOC sets USD/CNY reference rate at 7.0230 vs. ...",
+          "title_zh": "央行设人民币中间价7.0230",
+          "summary_zh": "中国人民银行将美元/人民币中间价设定为7.0230。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "PBOC sets USD/CNY reference rate at 7.0230 vs. 7.0288 previous - FXStreet",
-              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUlFvX08xR2Z4WWRSY3lqNEZ0Y3pkSmdybkl5RmNWZHI5bWxZcHZybzFpR2lsajQ2dXdrd1o0bTU1bUtIQXlXeVItN0R5N2JoQzQ1X2RvWWtpSTJmLXQ4WjMtMXBUbVVnbnNfVkZ5MWxKckdpMDdWcUg5c1lfQWIzN0plQXpEYUZoTWY3cF9WR1B1RXdwcXY3U3h3RnBQNWFBalAtRtIBqgFBVV95cUxNZnJVLWVxX1E2Y1FBTVhNTnA1OXNaSVhnRXR6d3Btc25rLWgzSXZpVy1pZlQwS2Q4Z3NPX2t5eDRKSnZBR0Y5eEVINTVhMndSMXNBeFpvMXk2ZjdLNTF3X21uWWZrcEJsaW5lWkwtLTJvNk14V0xqUUl1UElQSmlRREpRUjc1XzJmbk04Y1hWM0tDVUwwa3VWRi11aUZCbGFrV0N2WGlQeTFjQQ?oc=5",
+              "title": "PBOC sets USD/CNY reference rate at 7.0230 vs. 7.0288 previo",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUlFvX08xR2Z4WWRSY3lqNEZ0Y3pkSmdybkl5RmNWZHI5bWx",
               "source": "FXStreet",
               "published_at": "2026-01-05"
             }
           ]
-        },
-        {
-          "title_zh": "PBOC sets USD/ CNY central rate at 7.0173 (vs. ...",
-          "summary_zh": "来源 investingLive：PBOC sets USD/ CNY central rate at 7.0173 (vs. ...",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "PBOC sets USD/ CNY central rate at 7.0173 (vs. estimate at 6.9730) - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMzl6VHFNaUpMRzI5U1RkQWFLNTJpc0lIU3pFdDNIb1BLTlBrcmFXREVVbWNxaTZvUVFEWEY3S01VSHBSdDl0bTdwbUlGVmgyOTI5X21ZcXhNSDliME1aMUZFQ203eWxROTZlNVlzdTFUV0paU0NBbTg4ZENlQWMxQUpnNkJaZDJLWEkyeWhMZXdZVEkzQW1IZEtvZktrMGVtdmJlQzEtQWMtMzJx?oc=5",
-              "source": "investingLive",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "PBOC sets USD/ CNY mid-point today at 7.0187 (v...",
-          "summary_zh": "来源 investingLive：PBOC sets USD/ CNY mid-point today at 7.0187 (v...",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "PBOC sets USD/ CNY mid-point today at 7.0187 (vs. estimate at 6.9896) - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZlFMWVQ5aEU5TjBwdHEtdnJHVXlJWFhidlo4TUx3YV9oZ1dnUWxTNXMxZzhUM3V5WmVxcGNWMTZPUmQ2b1BmR1E5aVNMZlNHV1NnV2pzQThEci00cFpPZlpmVGhmTmU3QVZfZG1kS2c1alM3M3RzX2VYaVZRaHRFM0l1ZE1welBRVExXLXpYVDBrdkQwVG5nLUxaRktsMjZMMXoyMW04VjJMQjF1TU9uYtIBtgFBVV95cUxQX2doSkJVQW5xZlJHWHA2d3RfQjBweUFQWUUwSXJEVXdKU2JpUHJfV3FYeU5oRHY3Y2g3bGJNQ2RYWjV2Q2s4Y2lCVWlUb1FxTV9rVG5MR2s3cXM2dWp1eG1uTjdZVExkZHUzMlcxVFF2a2h6ZlYtNDhFQnVJRVNfVlVpR1VkRG01RVNNZW9wTVNZZTJkRXhXRWFZR0JteHJfRWlnQnduWnMxdDd0VHk2YkoxYWkwQQ?oc=5",
-              "source": "investingLive",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "PBOC is expected to set the USD/CNY reference r...",
-          "summary_zh": "来源 investingLive：PBOC is expected to set the USD/CNY reference r...",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "PBOC is expected to set the USD/CNY reference rate at 6.9730 – Reuters estimate - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVzZrcFlDNkRNZHlSa3EwbEIyVE5yQlQxNllvcUFYNURzVVNFb0ZDZTFoY09UX2EwQ3kydjgxWEVGWl9yMFlnVG1XRDI5NGtEZEN6UlVpOVJkX2Jab2ZGb2sxZGZZb1NkYmRLVVlCNnVUOGJzN2VXMHN1WmhIV2duQ0gzY0Z5ZF9xS3NkMjc5ejBvd0JkSUJiRlNIdmI4N1c5WFNtZGZOcFhrWUdVYzMtRnFFeDVPMW9UanJMSFJZa1PSAcYBQVVfeXFMTlE2Nmh2UFJHVWpXTk0wYU0xeUc4TVdlVGlQSnNyZlMwejB0bFlEMk9aMUwtc29PUnprVGNTSUY1TUxRUTdpdFR5ZkJLXzZvUmhtQl80TDB0VVVpeTBRX0tULXlqcTU4ckQwdUV3M1NBcGJodmhBTnRKekhPM3oxbXdONVNXbVcwX2NvNUwtcWFnOTA3SWNwb01hZUJ0ZmFBRlN0WE9ZbzVnS1ZHOXE4Ni05YWdxZnM2MjZPUzREZ1V1VXdWbFZ3?oc=5",
-              "source": "investingLive",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "A rise in VIX is typically accompanied by marke...",
-          "summary_zh": "来源 bollywoodhelpline.com：A rise in VIX is typically accompanied by marke...",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "A rise in VIX is typically accompanied by market downspikes driven by domestic or global macroeconom",
-              "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTFVIc0hic3ZyaThQeDJ6LWZaM3FYbGN1bk1jQlBTalVvN21naWZyTWdrTEN1eEpRRExtTHFYTDBYODJhaXdib2xUaUxQdkZkRFR4ekxsTlZRaVdwN3BUeFE4NDRBQTJRdno5NTVNSG9OM19UZEFZQnp1SUVSOXBBOGZSUURCR3Q1NTdBb21LakhVVk80OXY2dDlQRlBhR2JiWGhac0k5S1VGZm0xMFpGTE9QdDlwUHBkTkJXU3lreUlVS3dlM1Q3WnkxRTI1Tk9tZHQ5ZllTd1ljdTNKU1pMSWU3QXZTR2Iy?oc=5",
-              "source": "bollywoodhelpline.com",
-              "published_at": "2026-01-07"
-            }
-          ]
         }
       ],
-      "cn_count": 7,
-      "total_count": 8
+      "cn_count": 10,
+      "total_count": 10
     },
     {
       "id": "sanctions",
@@ -1249,40 +1279,40 @@
         "EU sanctions Russia export controls",
         "US export controls semiconductor chips"
       ],
-      "brief_zh": "近期关于半导体出口管制与地缘政治博弈的讨论持续升温。分析指出，美国对华半导体出口管制措施正在产生预期效果，限制了中国获取先进芯片制造技术的能力。同时，有观点认为，与针对中国稀土资源的潜在限制相比，半导体技术管控因其在军事和人工智能领域的核心作用，将成为更持久、更关键的战略遏制工具。这些管制措施反映了中美在高科技领域竞争的长期性，并可能重塑全球半导体供应链格局。",
+      "brief_zh": "近期美国对华半导体出口管制措施持续引发关注。分析指出，这些控制措施正在产生预期效果，旨在长期限制中国获取先进芯片技术，以维护美国的技术领先地位和国家安全利益。相关讨论围绕制裁的有效性、全球供应链影响以及地缘政治竞争展开。",
       "events": [
         {
-          "title_zh": "灼烧与扼喉：为何半导体管制将比中国稀土限制更持久",
-          "summary_zh": "分析认为，相比可能针对中国稀土资源的反制措施，美国对华半导体技术出口管制因其在军事和AI领域的战略核心地位，将成为更长期有效的遏制工具。",
-          "region": "global",
+          "title_zh": "半导体管制将长期持续",
+          "summary_zh": "分析认为美国对华芯片出口控制措施将长期化，旨在遏制中国技术发展。",
+          "region": "cn",
           "score": 0.6,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "The Burn and the Choke: Why Semiconductor Controls Will Outlast China’s Rare Ear",
-              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOT25ialdCb3pXdDBFZjZ5R0FxRnBzTWd5c2dGTHgzSHk5d19VZFE4V1NDdGlITmNlSncwZEItSUxMdFJNLS1yMGFuaEkwejZXWVRiV3lKVm9yTEhZc0l5Wm4zaEtzUXltc0lpdy03NTRMcHpyX1VhNGx5YUNSRklpdEMxRHRDaGxHR3ZkVG1LVkV1Z3MyUkQyQk5mbktCTzdQV0dBSjFHaVJnbUNsNDloWGdTSENUc3pOR184VVpZZw?oc=5",
+              "title": "The Burn and the Choke: Why Semiconductor Controls Will Outl",
+              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOT25ialdCb3pXdDBFZjZ5R0FxRnBzTWd5c2dGTHgzSHk5d19",
               "source": "War on the Rocks",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "美国芯片出口管制正在奏效",
-          "summary_zh": "评论指出，美国对中国的芯片出口管制措施正在发挥作用，有效限制了中国获取先进半导体技术的能力，达到了政策设计的预期目标。",
-          "region": "global",
+          "title_zh": "美芯片出口管制见效",
+          "summary_zh": "评论称美国对华芯片出口控制措施正在取得预期效果。",
+          "region": "cn",
           "score": 0.6,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "America's chip export controls are working - Noahpinion | Noah Smith",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CcnhMSDB2aldkZk1BWGU2OFdxdXplN2FnTmd6bTg5ZXlGbWxreHBmRm84X2dXY3J2YU8tOWh5U0NYc0NYUEd0LUdwSlF2ZkU0WFdGeHEtQ21WU0xxLTZoNDdMMkhaLUwtUmJmbE1tUDQ?oc=5",
-              "source": "Noahpinion | Noah Smith",
+              "title": "America's chip export controls are working - Noahpinion | No",
+              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CcnhMSDB2aldkZk1BWGU2OFdxdXplN2FnTmd6bTg5ZXlGbWx",
+              "source": "Noahpinion | Noah Sm",
               "published_at": "2026-01-02"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 2,
       "total_count": 2
     },
     {
@@ -1294,160 +1324,160 @@
         "AI chip export controls Nvidia",
         "liquid cooling data center infrastructure"
       ],
-      "brief_zh": "近期关于人工智能计算基础设施的新闻集中在中国的AI算力发展、芯片需求以及电力管理等方面。马斯克指出，中国在AI算力方面将领先全球，电力供应是关键因素。同时，台湾的芯片制造商也寄希望于AI数据中心和汽车订单来推动2026年的增长。Nvidia和其他公司在AI芯片和冷却技术方面的创新也引起了广泛关注。",
+      "brief_zh": "近期AI计算基础设施领域动态频繁，涉及算力、电力与冷却技术。英伟达发布新芯片平台并推动数据中心液冷化，同时面临对华出口的地缘政治挑战。中国方面，百度与华为在GPU云市场地位巩固，台湾电源芯片制造商受益于AI数据中心需求。全球范围内，数据中心正转向高压直流供电以应对能耗挑战，液冷技术并购与合作案例增多。",
       "events": [
         {
-          "title_zh": "台湾芯片制造商寄望AI数据中心和汽车订单推动增长",
-          "summary_zh": "台湾的芯片制造商预计，AI数据中心和汽车订单将成为2026年增长的主要动力。这一趋势反映了全球对AI技术的需求不断上升。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-04",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONWhWLTRsMi1NY2g0RE9LdWVJTGlVNkIzZGRjb1luOTV5NlBHeE9JaldVRzN4bUhZQnpsaWZ6NzRLbHg0cTRzaFM5VHFoVVJ6U3c4Q0JjM2p4TWFyTVR0V0VmY2ZCbnBPZjZsNVY1X0U5enVXdllTSXFJXzZjWDRqSlprZ3c3NG9vTktUTzR3?oc=5",
-              "source": "digitimes",
-              "published_at": "2026-01-04"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国AI算力将领先世界，电力成关键因素",
-          "summary_zh": "马斯克表示，中国在AI算力方面将超越其他国家，电力供应将成为关键因素，这将影响未来的技术发展和市场竞争。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE01R3VKR3JEcHNZbFFYa1I4ZndnemZYNC1YalhMZTlPb0FEZEJRX01KbnlCVkVtRlJPYS1veHhfSTk3Y0otSDVjU2xGM2VwbXFwUDJUWHU0ZkZyYThNaFBQY3JxSWR2TlhGeEJrUW5hN3I?oc=5",
-              "source": "中华网",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "马斯克：中国AI算力将领先世界 关键优势在这一能力",
-          "summary_zh": "马斯克强调，中国在AI算力方面的领先地位将依赖于其强大的电力供应能力，这将为AI技术的发展提供支持。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9DUExteGNJaWFiZEE2WXc3djNpUFR1NUNubmk1MTBsRldPR3MxOXd6a3FiMHQ1UmVEeTJwR2oxN2MyUjFQb1QycmotVjE5UWxhWTEzSW81bjlHZDdzYWUwSTJoU29ESnJMRUdzMjc0dUVwbXg4?oc=5",
-              "source": "新浪新闻_手机新浪网",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国算力，以何强壮？",
-          "summary_zh": "分析指出，中国在AI算力方面的快速发展与其强大的电力基础设施密切相关，这为未来的技术创新提供了保障。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-04",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5nenRZY3J2ZEFlX0FNNDh5eGtZX3h4T3oyQXNxbnFIRlI5QVdPMW9IV09pZHprX3phYUN2VVJtaFZRNVZWdHM1WGFqSXpzNUZ2eU1F?oc=5",
-              "source": "华尔街见闻",
-              "published_at": "2026-01-04"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国AI算力将远超其他国家 芯片问题也会解决",
-          "summary_zh": "马斯克表示，中国的AI算力将领先全球，预计未来将解决芯片短缺问题，推动技术进步。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBESGYtdjU0ZWFlV3pmSXl5RkdVVk1PQ0JiOGF2dFU0Smd0SVVZVHVuME5VNEhFbENtc08wQW5jdEhYbHRZZDJyTQ?oc=5",
-              "source": "凤凰网",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国AI算力领先世界，电力成关键因素",
-          "summary_zh": "马斯克指出，中国在AI算力方面将领先全球，电力供应将是关键因素，影响未来的技术发展。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE01R3VKR3JEcHNZbFFYa1I4ZndnemZYNC1YalhMZTlPb0FEZEJRX01KbnlCVkVtRlJPYS1veHhfSTk3Y0otSDVjU2xGM2VwbXFwUDJUWHU0ZkZyYThNaFBQY3JxSWR2TlhGeEJrUW5hN3I?oc=5",
-              "source": "中华网",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国芯片出口管制有效",
-          "summary_zh": "分析指出，美国对芯片的出口管制措施正在发挥作用，影响了全球市场的竞争格局，尤其是在AI领域。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CcnhMSDB2aldkZk1BWGU2OFdxdXplN2FnTmd6bTg5ZXlGbWxreHBmRm84X2dXY3J2YU8tOWh5U0NYc0NYUEd0LUdwSlF2ZkU0WFdGeHEtQ21WU0xxLTZoNDdMMkhaLUwtUmJmbE1tUDQ?oc=5",
-              "source": "Noahpinion | Noah Smith",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "Nvidia的H200芯片对中国芯片需求影响不大",
-          "summary_zh": "市场分析认为，Nvidia的H200芯片不会对中国芯片的需求造成显著影响，预计中国市场将继续增长。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPOVZ3RHhOc29TMmhwa0RHOE5zdmNHZGFCM0Y4ZTl2b3NfaEJ3c3doZmxyN0JsUXIyMkFZSUtoT3JLZXVvdVhMaGhXZjZfdERMMHRuc1VDTC01dkh4OUl2WVJNUFlUX3Q2a3BjVWZzZmxTaFNBR2lpZ0RZVGw2Q1ppNjVpYW9kZngtUGtpRkRvWUE2LXlRNm4yRw?oc=5",
-              "source": "富途牛牛",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "Nvidia推出新AI芯片平台以应对竞争",
-          "summary_zh": "Nvidia在AI芯片领域推出新平台，旨在应对日益激烈的市场竞争，推动技术创新。",
-          "region": "cn",
+          "title_zh": "英伟达新芯片平台发布",
+          "summary_zh": "英伟达发布新AI芯片平台，应对竞争加剧。",
+          "region": "global",
           "score": 0.6,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTkRBTlI1cDdITjkyZlA5NF80Zk1YTG9rQ0syakNXWTM3WjhjUVNaM3N4Y0NDMjhoRWpIbTVtTGE1SlU3RGNRbVdHVnNqRGJDTmtmV18yMWR0OXZ3T1VnVG9uLW1CUTVPaHY1eU9pWHZwLVdoNU5JWFEtekFrVTVOUGtzdGwzbnNtcmk2cTVyYTJPTGJfdElyYXdETnLSAaIBQVVfeXFMTl9HendKd3hyTmZ2b0tkdEN2VDZvZzR6ZUd6VEVDRXRqbkpVWWJSNjJCR3JBWUU1czlGRGRnTnE1cWZLYXdRRzVUWjZVczNnWUNwY3NjOXV1emh0N042blc1MTZLcV9rYkVHT2JNV0R6QmR6Ry1hYlBIaGZwOTRMSTZnQmtKd1h5Y043aE8wWnVLejREdjJMd3Y2Z3Bhbi1NNkJ3?oc=5",
+              "title": "Nvidia unveils new AI chip platform amid rising competition",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTkRBTlI1cDdITjkyZlA5NF80Zk1YTG9rQ0syakNXWTM3Wjh",
               "source": "Inquirer.net",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "Nvidia CEO不排除向中国市场推出新芯片",
-          "summary_zh": "Nvidia首席执行官表示，不排除未来向中国市场推出新款芯片的可能性，以满足不断增长的需求。",
+          "title_zh": "中国GPU云市场整合",
+          "summary_zh": "中国GPU云市场围绕百度和华为巩固，国内需求增长。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "China’s GPU cloud consolidates around Baidu and Huawei as do",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZmpWU2dFVEh0S1NhcURvTVFOeXNYQ0tBeG1nTVl6eDZuUXA",
+              "source": "Tom's Hardware",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "英伟达或向中国提供Rubin芯片",
+          "summary_zh": "英伟达CEO不排除向中国提供Rubin芯片，称新芯片将合规。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE02aTJkSmJBaFF3MFBiSnNTbjl0THhMNUhzMkZQMkV3eXRWNnIxY3BpM3htMHpOVEJUWGVaSUtGMVdNMXZSZVJlNXVsTnctZWJNX1JJSFczbWRQbFlHM3dpSWdPVHM1d3lXUElVbFJ3aERJd9IBd0FVX3lxTFBLWVdUT0JRX0dGRnhqaGpPNDh0WGlzd0paYlNkRnVwNUVzTTJpSW1vTEhMOFJhblRkUk5qdEI1Vy1HUFM4Y0VHY1lTR2VpNGdOVWdpaDUyWXV3dUlKZzNrdlY3LWRId2ZHZnVjSEtiREFDVndkUGpF?oc=5",
+              "title": "NVIDIA CEO Doesn’t Rule Out ‘Rubin’ for China, Says Newer Ch",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE02aTJkSmJBaFF3MFBiSnNTbjl0THhMNUhzMkZQMkV3eXRWNnI",
               "source": "Wccftech",
               "published_at": "2026-01-07"
             }
           ]
+        },
+        {
+          "title_zh": "中国暂停英伟达H200芯片订单",
+          "summary_zh": "中国暂停英伟达H200芯片订单，北京考虑AI战略调整。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "China Halts Nvidia H200 Chip Orders as Beijing Considers AI",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNa1ZsYW9FcUtQdUNYSVk4ZnpDNnhlWGhjcG5XVV9ydlV1UzZ",
+              "source": "Blockonomi",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "台湾电源芯片商受益AI数据中心",
+          "summary_zh": "台湾电源芯片制造商因AI数据中心和汽车订单而获利。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-04",
+          "sources": [
+            {
+              "title": "Taiwan power chipmakers bank on AI data centers and auto ord",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONWhWLTRsMi1NY2g0RE9LdWVJTGlVNkIzZGRjb1luOTV5NlB",
+              "source": "digitimes",
+              "published_at": "2026-01-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI数据中心转向高压直流供电",
+          "summary_zh": "AI数据中心转向高压直流供电，电力管理重要性堪比内存。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "AI data centers pivot to HVDC as power management rivals mem",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNV3JzRGdfS00yT3ZXTGhONnlrZGEwVVBMSG85Y0V2UVlYY1J",
+              "source": "digitimes",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Vertiv收购PurgeRite强化液冷",
+          "summary_zh": "Vertiv收购PurgeRite，以增强液冷服务能力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Vertiv buys PurgeRite to boost liquid cooling services - dat",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbEpCaEYwd2h2N01FcU5zQkxTR3JjdlJORG9CRnE2WEZqYmY",
+              "source": "datacenter.news",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "英伟达服务器推动液冷数据中心",
+          "summary_zh": "英伟达Vera Rubin服务器推动数据中心全面采用液冷技术。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Nvidia's Vera Rubin servers drive data centers to full liqui",
+              "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTnh4ZWdkb2RDVU51STMtUmpZNGpjUGprVlgzTkxXUElKd0I",
+              "source": "digitimes",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国芯片出口管制见效",
+          "summary_zh": "分析称美国芯片出口管制正在发挥作用，影响全球供应链。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-02",
+          "sources": [
+            {
+              "title": "America's chip export controls are working - Noahpinion | No",
+              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CcnhMSDB2aldkZk1BWGU2OFdxdXplN2FnTmd6bTg5ZXlGbWx",
+              "source": "Noahpinion | Noah Sm",
+              "published_at": "2026-01-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普政策允对华销售AI芯片",
+          "summary_zh": "特朗普2025年协议允许英伟达、AMD向中国销售AI芯片。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Trump’s 2025 Deal Allows Nvidia, AMD AI Chip Sales to China",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWlVtRDkyM1hfdHNfT2dNTlVDU3NyRElFY2NSYWNLZzliQkg",
+              "source": "WebProNews",
+              "published_at": "2026-01-05"
+            }
+          ]
         }
       ],
-      "cn_count": 10,
+      "cn_count": 5,
       "total_count": 10
     },
     {
@@ -1459,33 +1489,33 @@
         "copper scrap trade flows",
         "energy transition metals demand"
       ],
-      "brief_zh": "根据上海金属市场（SMM）的每日评论，近期国内外金属市场呈现分化走势。1月6日，上海期货交易所（SHFE）金属价格全线上涨，其中铜价表现尤为强劲，大幅飙升。而在此前的1月4日，伦敦金属交易所（LME）基本金属则普遍收跌，所有黑色金属品种也均录得亏损。这两则报道凸显了短期内中国与国际金属市场在情绪和表现上的差异，可能反映了不同的供需基本面、库存变化或宏观经济预期。",
+      "brief_zh": "上海金属市场发布每日评论，涵盖上海期货交易所和伦敦金属交易所的基本金属价格走势。5月18日，上海期货交易所金属价格普遍上涨；而5月24日，伦敦金属交易所基本金属收盘下跌。",
       "events": [
         {
-          "title_zh": "SMM每日评论（1月6日）：沪期金属全线上涨，铜价飙升",
-          "summary_zh": "上海金属市场报告显示，1月6日上海期货交易所金属价格普遍上涨，其中铜价表现突出，出现大幅攀升。",
+          "title_zh": "5月18日沪期金属普涨",
+          "summary_zh": "上海金属市场评论：5月18日，上海期货交易所金属价格全线上涨。",
           "region": "cn",
           "score": 0.6,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "SMM Daily Comments (May 18):SHFE Metals Rose Across the Board with Copper Soarin",
-              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNM1A5OUhURHVJRURnM2RtV2dPQ1ZPdWdoSGstaUtHVV9IUzdGd1YzRUN2b016TFJVNFZ0a0R4Szd3TDA1bHJHN2ZpYTQ0Tlpzak81STFYSExOVHplMHRqaHdrazN5ZjFTMERLTnhIdGhZVThXeWExNnlFVEo1SEtsNTFmc2JtNkkxNFFkU1R0dzd3ZWlmdDlmOGVLTGk5VDhZeEVkd0JaazFBZDU2emN2Z2JEMXJLMjN1cEZHZjlfWGhGaWVnYzJRckxPSWw2SHZ2WjVEWk5wc3k4anVJQ2EzeW9lakVINDBmdV9ueVduZVJtcksxV0RMLQ?oc=5",
+              "title": "SMM Daily Comments (May 18):SHFE Metals Rose Across the Board",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNM1A5OUhURHVJRURnM2RtV2dPQ1ZPdWdoSGstaUtHVV9IUzd",
               "source": "Shanghai Metals Market",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "SMM每日评论（1月4日）：LME基本金属收跌，黑色金属全线亏损",
-          "summary_zh": "上海金属市场报道，1月4日伦敦金属交易所基本金属收盘走低，所有黑色金属品种均录得损失。",
+          "title_zh": "5月24日LME基本金属收跌",
+          "summary_zh": "上海金属市场评论：5月24日，伦敦金属交易所基本金属收盘下跌。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-04",
           "sources": [
             {
-              "title": "SMM Daily Comments (May 24): LME Base Metals Closed with Losses, All Ferrous Met",
-              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZGl1dGhUQXFBNVhtb1VESWxZOHlyYUs1VGQtT3hqYlZBaGFOaTRpdDZ6QmFGSDJTWHNKVkt1Z215N3hnaUZnNF8yYUdTZGcwX01FSlN3WkpjSGFneFpUb3J5aVRIZTRvbThwUlFlc1hXYWhIYnVEWF9ianBMSVJqeXYybENNeTJKUTNjNmszN1JJSjdKNGdJSXlZUmp3aHY2aS1DaExfUzRRWXZ6TVFCbnRzeF83alZDODNHUVY1VVNiSzZPYTdNNW5Xb0hUV0YtRVA5WTlMdWwzbnprSWJIV2R5YjQyX21JWGpxTlVVbTlfOGI3T1dJeA?oc=5",
+              "title": "SMM Daily Comments (May 24): LME Base Metals Closed with Losses",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZGl1dGhUQXFBNVhtb1VESWxZOHlyYUs1VGQtT3hqYlZBaGF",
               "source": "Shanghai Metals Market",
               "published_at": "2026-01-04"
             }
@@ -1504,131 +1534,161 @@
         "carbon credit market Verra",
         "carbon trading ETS price"
       ],
-      "brief_zh": "欧盟碳边界税（CBAM）政策正在逐步实施，预计将对全球碳市场产生深远影响。此政策旨在通过对进口商品征收碳税，促进全球范围内的碳定价，推动绿色转型。尽管面临来自一些国家的反对和担忧，欧盟仍在推进这一政策，以确保其在应对气候变化方面的领导地位。各国对该政策的反应不一，尤其是农业和钢铁行业受到的影响引发了广泛讨论。",
+      "brief_zh": "2026年初，欧盟碳边境调节机制（CBAM）进入新阶段，开始对钢铁、氢能等产品征收碳关税，引发全球关注。中国对此表示反对并威胁采取反制措施。同时，意大利和法国寻求对化肥的豁免，欧盟可能因市场影响暂停相关征税。全球碳市场持续发展，碳信用交易平台增长显著。中国全国碳市场每日发布碳价行情，显示国内碳交易活跃。",
       "events": [
         {
-          "title_zh": "今日碳价：全国碳市场每日综合价格行情及成交信息",
-          "summary_zh": "中国碳排放交易网发布了全国碳市场的每日综合价格行情及成交信息，为市场参与者提供了最新的碳交易数据。",
+          "title_zh": "中国威胁反制欧盟碳关税",
+          "summary_zh": "中国在欧盟碳边境税生效后表示反对，并威胁采取反制措施。",
           "region": "cn",
-          "score": 0.6,
+          "score": 0.9,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "China Threatens EU After Carbon Border Tax Takes Effect",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWUhtdnplV0JnZXhGMmtMMHdtcWhjenIxaGMweFlsVF83Q2o",
+              "source": "Caixin Global",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国碳市场每日价格行情发布",
+          "summary_zh": "中国碳排放交易网发布2026年1月5日全国碳市场每日综合价格行情及成交信息。",
+          "region": "cn",
+          "score": 0.8,
           "date": "2026-01-06",
           "sources": [
             {
               "title": "今日碳价：【CEA】全国碳市场每日综合价格行情及成交信息20260105",
-              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ZQmplTXdkMDRKd1F1UjlwRnNSVkNIZTNJdGl1NnVITWxRR3h1SmxxUHR4Wm1LTy03X3ZKdElpYXRyZGhLakhVTzZ6QkktQ1M3bk1aS2FmN25wQ3hTUGNYeG5YcEdQUE82Snc?oc=5",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ZQmplTXdkMDRKd1F1UjlwRnNSVkNIZTNJdGl1NnVITWxRR3h",
               "source": "中国碳排放交易网",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "中国威胁欧盟碳边界税实施后反制措施",
-          "summary_zh": "在欧盟碳边界税实施后，中国表示将采取反制措施，强调这一政策可能对中欧贸易关系造成负面影响。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "中国威胁欧盟后碳边界税生效",
-              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWUhtdnplV0JnZXhGMmtMMHdtcWhjenIxaGMweFlsVF83Q2ozMHdnRU9OajdnN1VQdmgxUmhsYVNBOUcxUndTdTZqVVowbTJkQ0d3WU5tZ05xaF95Nl9ncl9EdTRjVUYzRzdPYm9DRXdBMXhoNzU3TmlFMGcwc2xoX3hrS3ZGVVNtaVZVVVZVTzU4QUV6SDdYWXZydTlrM0t2TDZRdmdoektzY2tJcl9J?oc=5",
-              "source": "财新网",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟碳边界税和化学品规则将于2026年生效",
-          "summary_zh": "欧盟决定于2026年实施碳边界税和相关化学品规则，旨在保护本地产业并推动绿色经济转型。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "欧盟碳边界税和化学品规则将于2026年生效",
-              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPV0RPZU5qenhjU3JjbnRmQ21qNmxsaTRuUEZfcmJJS3NsakFhSFYyTG1PeXA5OXZVNklPZEo3UWlnZnBtS2VoV3o2R0d2eVNraHN4TllVUnlGUjdQMVh0OWtOaTVTRkdtRERQQ1hoWEdyR1BoOG4tOVU5a1FuY1UyQk9jZm1NOGl6V2JjVVlpZWZ5V3B5UDVhcVpCUEM0dkdI?oc=5",
-              "source": "墨西哥商业新闻",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟扩大碳边界税，推动其他国家采用碳定价",
-          "summary_zh": "欧盟的碳边界调整机制（CBAM）正在推动其他国家考虑实施碳定价，以应对气候变化的挑战。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "欧盟扩大碳边界税：审查显示其推动其他国家采用碳定价",
-              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZXotaVpQRVgyTEh4OVY0a1dYb3g5ZnQ4c2FqeFI2bjBCSzVERF9OQ2ZjSnhuZGtZNUxhcjlURzdnZk9jenpabVV2TktmMk56X3dhYVRBTk9uWVJKbnNwNHBwaEhxaG1pd2ZVR0dsLWFFdHhfaEpqcUZvY1UycjN3SXdnY1V3akQ1NlRFelhBdFczQUYyYTkzdmhmQS1XYzJUT2plNVVoSQ?oc=5",
-              "source": "碳信用网",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟可能暂停对化肥的碳税",
-          "summary_zh": "欧盟官员表示，如果市场受到损害，可能会暂停对化肥的碳税政策，以保护农业部门的利益。",
-          "region": "cn",
-          "score": 0.6,
+          "title_zh": "欧盟CBAM进入新阶段引关注",
+          "summary_zh": "欧盟碳边境调节机制进入新阶段，开始对进口产品征收碳费用。",
+          "region": "global",
+          "score": 0.85,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "欧盟可能暂停对化肥的碳税",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeTgzcVVBakhuT21NWUtnWVk1UWVmQlpQdV9Wa1VSRlZRNFVoWjJjYjlKakhKMmJfRURoYU5SeEtBeGVCSjRud0Zna3p0VV9vTl90LXc2aW9aMWpBY0lFYjF5UG5XaUxMc0w0bDdPTVFmNXFJbXRESzZwQzFKZlNxQ1ZzbXVzMENaSHpwdV9KSHl2R01CcWNmcXphUE1XS0RmSWV4eGZDNHo4NmhJSUc1VEt6dw?oc=5",
-              "source": "彭博社",
+              "title": "The EU’s CBAM enters a New Phase: Why the EU’s Carbon Border",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPU2Z5QmY4U0JMaEhtRnl3dFRENnNhQjhzQ1NldUVmcWRwT2k",
+              "source": "ClearBlue Markets",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "意大利和法国寻求对化肥的碳边界税豁免",
-          "summary_zh": "意大利和法国政府正在寻求对化肥的碳边界税豁免，以减轻对农业的影响。",
-          "region": "cn",
-          "score": 0.6,
+          "title_zh": "欧盟或暂停化肥碳关税",
+          "summary_zh": "欧盟可能因市场损害暂停对化肥征收碳边境税，法国官员表示。",
+          "region": "global",
+          "score": 0.75,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "意大利和法国寻求对化肥的碳边界税豁免",
-              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZVJrWU9qb05hMF9hZ2d5eU1HZkhZN3RXbXplR1NWNnVaQndLN2hmSUwwZlhncmF1NHZEMWphYkl2Si1tb0J5SmhFQmlBYWZUWFRESWxFRXh2WVk4ZW1saHVFQWtjdzBCQlI2al9CcUtYTlpBQTVuaE1XU2dQN0E3c1B5emxSTE9TTFA3cVc3cG51RXJVcDFKbWlMVGNKVXY1a3BsRmVDd0x4MEE5dnY0M21tVmRobDFNdHhv?oc=5",
-              "source": "欧洲新闻",
+              "title": "EU May Pause Carbon Levy on Fertilizers If Market Damage Eme",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeTgzcVVBakhuT21NWUtnWVk1UWVmQlpQdV9Wa1VSRlZRNFV",
+              "source": "Bloomberg.com",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "欧盟碳边界调整机制开始收费：气候变化的新纪元",
-          "summary_zh": "欧盟碳边界调整机制正式开始收费，标志着应对气候变化的新阶段，旨在促进绿色经济发展。",
-          "region": "cn",
-          "score": 0.6,
+          "title_zh": "意法寻求化肥碳关税豁免",
+          "summary_zh": "意大利和法国寻求从欧盟碳边境税中获得化肥豁免。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Italy and France seek exemption on fertilisers from EU's car",
+              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZVJrWU9qb05hMF9hZ2d5eU1HZkhZN3RXbXplR1NWNnVaQnd",
+              "source": "Euronews.com",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟CBAM开始收费影响多国",
+          "summary_zh": "欧盟碳边境调节机制开始收费，对钢铁、氢能等行业实施。",
+          "region": "global",
+          "score": 0.8,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "欧盟碳边界调整机制开始收费：气候变化的新纪元",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJaZVdBdlA1VE50T0NHa0RkY3FlUV9KSlJuUlotT2R4YjU5cTE1Y3JOdWNrd0lmNjc5Y3l0dk5ZbllKNDdVTHlwLWtMdl85SkpZN2FIYkJleUo2QmhkWS1zSHRSb0JjemM4dVNwVUE0aW5qYTFGakVMVzdhamNYU2tZTEdxLU5xWEdwSnRWbWI1dXhNOTJvUzVscjExZnh5QTN6SHF6RkVOb9IB0wFBVV95cUxQQUpxRDNxcEJLQm1nRGpMZ20tQnNSdWFoaVc0R0dwNGNXMDQtaGJRZUdtQWU3MlIwTGZJRndtazU3SjBLc1duLVNUY1prQVVQQXlXQkpkdzNwZWtpaUMzb25XUXF5MUc0WFJsWkNEeHloY0dtYVB3WDl6TDhYcHBzMFV1SFJGa1Y1ZlRWcUpxT2tFcDZSWVhDdGZ4SGNabmRaUU02UkQzU0F5bTV5TGZ1eFd3QllBekVyQTBleGotZGJzWjlxejBnUzdHUDlhZHpWdUVn?oc=5",
-              "source": "欧洲商业杂志",
+              "title": "EU Carbon Border Adjustment Mechanism Begins Charging Fees: ",
+              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJ",
+              "source": "European Business Ma",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "政府与钢铁行业讨论应对欧盟碳税政策",
-          "summary_zh": "中国政府正在与钢铁行业讨论如何应对欧盟的碳税政策，以减轻对行业的影响。",
-          "region": "cn",
-          "score": 0.6,
+          "title_zh": "韩国讨论应对欧盟碳税政策",
+          "summary_zh": "韩国政府与钢铁行业讨论应对欧盟碳税政策的措施。",
+          "region": "global",
+          "score": 0.65,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "政府与钢铁行业讨论应对欧盟碳税政策",
-              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXb3pyX1Z0UUJDUkpVWlZRWFVPck9wQ09DZ0p3Y2RQalk2dDhWRXpadDZCZzRKaGNxVU56eGM0NnhlS1kybkxiRmlIR08yS09yVWtsbDZ5MGtxUQ?oc=5",
-              "source": "韩联社",
+              "title": "Gov't discusses response to EU's carbon tax policy with stee",
+              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXb3pyX1Z0UUJDUkpVWlZRWFVPck9wQ09DZ0p3Y2RQalk2dDh",
+              "source": "Yonhap News Agency",
               "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "泰国铝出口显韧性应对CBAM",
+          "summary_zh": "泰国铝出口展现韧性，保持对欧盟碳边境税的警惕。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Thailand demonstrates aluminium export resilience; remains h",
+              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTkNQUDlOakJhcTg2eWMwbFF5aGVQMVp6OTdwdk1yMlpRa2F",
+              "source": "alcircle",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "碳信用交易平台市场增长显著",
+          "summary_zh": "碳信用交易平台市场预计将实现显著增长。",
+          "region": "global",
+          "score": 0.55,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "Carbon Credit Trading Platform Market Set for Significant Gr",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTdmM3YyZ2N0SjkxSS13bFU1Q2FVeXNyLVpFRmRLRUtLMjd",
+              "source": "openPR.com",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟碳关税如何影响绿色钢铁",
+          "summary_zh": "分析欧盟碳边境税对绿色钢铁行业的意义和影响。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "What does the EU carbon border tax mean for green steel? - S",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcUlWWTVjYUM5T3Y1UjI5R1pGR1E5T0lNWUh5Mko2Mmc2WEJ",
+              "source": "Sustainable Views",
+              "published_at": "2026-01-06"
             }
           ]
         }
       ],
-      "cn_count": 8,
-      "total_count": 8
+      "cn_count": 2,
+      "total_count": 10
     },
     {
       "id": "sea",
@@ -1639,85 +1699,85 @@
         "Indonesia nickel smelter investment",
         "Thailand Malaysia electronics"
       ],
-      "brief_zh": "近期东南亚供应链动态聚焦于制造业转移与关键矿产开发。越南积极推动工业供应链整合，计划于2026年举办越南工业展以加强产业连接，并鼓励英特尔提升半导体后端产能。在关键矿产领域，印尼的Wanatiara Persada公司投资6亿美元建设镍铁冶炼厂，凸显该国在镍资源加工方面的战略布局。同时，韩国韩华投资证券公司通过收购海外镍矿股权，旨在保障本国航空航天产业的原材料供应。这些动向表明，东南亚地区正通过吸引外资、发展本土制造业和掌控关键矿产资源，在全球供应链重构中争取更有利地位。",
+      "brief_zh": "近期东南亚供应链动态聚焦越南工业发展及关键矿产投资。越南计划2026年举办工业供应链连接活动，并推动英特尔提升半导体后端产能。韩国韩华投资证券通过收购镍矿股权加强电池材料供应链，确保稳定镍供应。这些举措凸显东南亚在制造转移和关键矿产领域的战略重要性。",
       "events": [
         {
-          "title_zh": "越南计划2026年举办工业展以连接供应链",
-          "summary_zh": "越南将于2026年举办越南工业展，旨在加强国内工业供应链的连接与整合，促进产业发展。",
+          "title_zh": "越南2026工业供应链连接计划",
+          "summary_zh": "越南计划2026年举办工业供应链连接活动，促进产业发展。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Viet Industry 2026 to connect Vietnam’s industrial supply chain - Vietnam+ (Viet",
-              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeUVwNWotTVpLLVRNM1NZaUt4bWRZUTRHNnFxUm1CMU8yYVhOOWNmcGNpNC1fak1WREFyblhRMGdGRDdsckdRNUNTQk93bldoVVpfNTRZQzRsMHJ4ZVI5S0YydlhRQ05JcUZjMDZwMVNwajVGckxPRnl3WFFCa1d2Nmd3N2NSYURmWWZBX0VObFd5enBsVFU2M2ViR2ZMLUtKQ1o0RHF3?oc=5",
-              "source": "Vietnam+ (VietnamPlus)",
+              "title": "Viet Industry 2026 to connect Vietnam’s industrial supply ch",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeUVwNWotTVpLLVRNM1NZaUt4bWRZUTRHNnFxUm1CMU8yYVh",
+              "source": "Vietnam+ (VietnamPlu",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "越南敦促英特尔提升半导体后端产能",
-          "summary_zh": "越南政府鼓励英特尔公司扩大在该国的半导体后端制造能力，以强化本土半导体产业链。",
+          "title_zh": "越南促英特尔提升半导体产能",
+          "summary_zh": "越南敦促英特尔增加半导体后端制造能力，以强化供应链。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "Vietnam urges Intel to boost semiconductor backend capacity - digitimes",
-              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdzN2YnozU2lJNldLMEZWTHI0RzJISFNFQTJjakt6djI0SW9XbVBKTmo0LVlJbFV4Q3l5X1g1SV8zXzFfdF8yNUwyODBDLUtFaFplRFNqVUtiNUo5YXZBc203MEdhLVhDRzBEeU9jalJzMlFKVHZoX0RuNndsbXdvcW1fOTdBOC1YUGwwbERGYV9Ub1FfcWtsNDZsa2xwRk0?oc=5",
+              "title": "Vietnam urges Intel to boost semiconductor backend capacity ",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdzN2YnozU2lJNldLMEZWTHI0RzJISFNFQTJjakt6djI0SW9",
               "source": "digitimes",
               "published_at": "2026-01-02"
             }
           ]
         },
         {
-          "title_zh": "印尼Wanatiara Persada镍铁冶炼厂投资6亿美元投产",
-          "summary_zh": "印尼Wanatiara Persada公司的镍铁冶炼项目已投入6亿美元，预计年底前投入运营，增强镍资源加工能力。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Wanatiara Persada ferronickel smelter: $600m invested in operation by the end of",
-              "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUnNPajlSb0l4U0xmRlZ6Wi1xQmxuSHR1aVljVUlVeTNpTlRldktIMVp4S2ZOVWtRVnJEVFZ1aWNHQTNBMm5wWnlGZGJGc3EzbjdYYjJKaVhUODI4SU9wR0RKOEIzUGNaTFNHX0xyd183eVNaUFdhZmdRZVBRcmtZTkZmenZlWHVWbFVqd1hWUHdKaUp5MWwySFVYb0czd2hhVzdBSHZwMTg1cU5la2YxRFpxc2ZNWV9KSTN4YURYSXU2bDlpOTZZZkJpT3I?oc=5",
-              "source": "Shanghai Metals Market",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "韩华投资证券公司收购镍矿股权以保障航空航天供应",
-          "summary_zh": "韩国韩华投资证券公司通过获取海外镍矿股权，旨在加强韩国航空航天产业的原材料供应链安全。",
+          "title_zh": "韩华证券收购镍矿股权稳供应",
+          "summary_zh": "韩华投资证券收购镍矿股权，以加强电池材料供应链。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Hanwha Investment & Securities secures nickel stake to bolster Korea aerospace s",
-              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTXVfUE5zUU8zWWdXLWQtYnpFQThnX2lOTnlNa0xINm1GRDZBckZaNWtUWTItTkNuRkt0SkFLSHo1T015LWNCRjc4SjJLLW5MQXJFQ1pMMklVN0ZOMThYdlhlb3VNNnp2RGt3UVpWVDNtVWpkRGlISVphUVdlQlZtZdIBlAFBVV95cUxPeTdoNTVpZ3JkT2lnd0VJYUF1RS1TcmdPWWR2a2o5MlpFR0JGY1hWNkdJWVVLUGViMHZHRDBkcm8zZWJ0MGU1cUFKRzZwTVBGaURySmZKZ3U5cVZ2TFZ4TFFMNnJrWmtBc3NxMDF4T2ktem5qMGZWZndrMEN3RF9FbFh3ZlV6b056eW1hVldpMU9kX0Rw?oc=5",
+              "title": "Hanwha Investment & Securities secures nickel stake to bolst",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTXVfUE5zUU8zWWdXLWQtYnpFQThnX2lOTnlNa0xINm1GRDZ",
               "source": "Chosunbiz",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "韩华投资证券公司完成海外镍矿收购顾问服务",
-          "summary_zh": "韩国韩华投资证券公司已完成一起海外镍矿资产收购交易的财务顾问工作，助力资源保障。",
+          "title_zh": "韩华证券完成镍矿收购咨询",
+          "summary_zh": "韩华投资证券完成镍矿收购的咨询工作，支持供应链稳定。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Hanwha Investment & Securities Completes Advisory for Acquisition of Overseas Ni",
-              "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9qVXFHclBjLUo3X1hycDRaeE5PVEFreDhaLXY2dHF4SWc5d1JEN19SWFBrMjRMQ3F4SmFJcTFhSmZodm9lcGViTkQzMG9wTDkteXBlS1FsNVVHY2Z0NllVUy1VWQ?oc=5",
+              "title": "Hanwha Investment & Securities Completes Advisory for Acquis",
+              "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9qVXFHclBjLUo3X1hycDRaeE5PVEFreDhaLXY2dHF4SWc5d1J",
               "source": "아시아경제",
               "published_at": "2026-01-07"
             }
           ]
+        },
+        {
+          "title_zh": "Spear确保镍供应稳定",
+          "summary_zh": "Spear公司通过直接采购确保稳定镍供应，强化关键矿产链。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-02",
+          "sources": [
+            {
+              "title": "[Click eStock] \"Spear Secures Stable Nickel Supply...Direct ",
+              "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ocnl4N0lwa3gwMjhLeGZvSEpZYWhxWmdZU3JPY1NITENXZER",
+              "source": "아시아경제",
+              "published_at": "2026-01-02"
+            }
+          ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 5
     },
     {
@@ -1730,160 +1790,160 @@
         "solid state battery breakthrough",
         "synthetic biology platform"
       ],
-      "brief_zh": "近期，中国的“人造太阳”在核聚变领域取得了重要突破，打破了科学家认为无法逾越的限制。这一进展标志着核聚变能源的开发迈出了关键一步，可能为未来的清洁能源提供新的解决方案。此外，固态电池技术也在电动车领域取得了显著进展，多个公司展示了新型固态电池的应用，预示着电动车的续航能力和安全性将得到提升。",
+      "brief_zh": "近期前沿科技领域取得多项突破。量子计算方面，D-Wave公司在门模型量子计算领域宣布重大进展，解决了可扩展性难题。可控核聚变领域，中国的“人造太阳”实验装置成功打破聚变限制，向实用化迈出关键一步。材料科学领域，固态电池技术迎来商业化应用，KAIST实现成本效益突破，Verge公司推出首款搭载固态电池的量产电动摩托车。",
       "events": [
         {
-          "title_zh": "中国“人造太阳”打破核聚变限制",
-          "summary_zh": "中国的“人造太阳”在核聚变领域取得了重要突破，打破了科学家认为无法逾越的限制。这一进展可能为未来的清洁能源提供新的解决方案。",
+          "title_zh": "中国“人造太阳”打破聚变限制",
+          "summary_zh": "中国的“人造太阳”实验装置在可控核聚变研究中取得突破，打破了关键限制，向实现清洁能源目标迈出重要一步。",
           "region": "cn",
           "score": 0.9,
           "date": "2026-01-04",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9OMWxTcExhYWlXNl90UlVqRjFCbTVReDBNMGw3c1JmbEItRzFTOTY1VFVwNGx3VngxbjVXVzZCQTRUZS1CX29obEtfakJvNUhPTHFLN2VjT19JUllYTFRKemNoN0N2NExidGlCYVdBcw?oc=5",
+              "title": "China’s “artificial sun” just broke a fusion limit scientist",
+              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9OMWxTcExhYWlXNl90UlVqRjFCbTVReDBNMGw3c1JmbEItRzF",
               "source": "ScienceDaily",
               "published_at": "2026-01-04"
             }
           ]
         },
         {
-          "title_zh": "中国人造太阳在核聚变能源开发中取得突破",
-          "summary_zh": "中国的“人造太阳”成功打破了核聚变的技术限制，为核聚变能源的实际应用铺平了道路，标志着清洁能源的未来。",
-          "region": "cn",
+          "title_zh": "D-Wave实现门模型量子计算突破",
+          "summary_zh": "D-Wave公司宣布在门模型量子计算领域取得技术突破，解决了可扩展性难题，为量子计算发展带来新动力。",
+          "region": "global",
           "score": 0.85,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4tcWlGRDJvVDg4RjBjTjZ5VndHUjFBWkotVGZySmtIU1BqQWNnWVdTSWpNRHFnZXZmWEdad0JCNlVLQU44eUg2cUdoUFRnWGVzS2liMmpnMGk4N2RnYjJjQUNobUU0V281aWg4SjliZGpHNzh6VlN1V2NaMkY?oc=5",
-              "source": "GreekReporter.com",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "Verge摩托车推出全球首款固态电池摩托车",
-          "summary_zh": "Verge摩托车在CES 2026上展示了全球首款生产固态电池的摩托车，续航达到370英里，标志着电动摩托车技术的重大进步。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTMzQUlpM2d2MFZtYTMycklSZjRXZHFHaVVFUHdLcUd1MHVQVUlqZFZWaGVmTl9TempfTnZVdzgxZlV5bjdQMEhoWFUzTmJ0LVA2c0Zja19tNHhFUDYwS3FnMkZDZXkwM3FGdkVWMVpfRDF1ZHY4MWR4dUExRW1XUlRSR3djM19VUFY2SmM5X2pJUQ?oc=5",
-              "source": "Interesting Engineering",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "固态电池技术在电动车领域的应用",
-          "summary_zh": "固态电池技术的进步使得电动车的续航能力和安全性大幅提升，多个公司在CES上展示了新型固态电池的应用，预示着电动车的未来。",
-          "region": "cn",
-          "score": 0.75,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92WEVmWnEyUEFRNmNwRC1ETHRSNTdjRnFwZGlYN0o5TG5YZHZFNGo3bmV6T3JNWFFxSjVIbnEwc1FUN2QwVWp2eXR2eEZYSGlqS3ZKZnhRc1NVazItVk9MSmRzVlMycTVRdmVmYXQ4UFgwMktkSTBj?oc=5",
-              "source": "thebuzzevnews.com",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "Donut Lab在CES上展示固态电池技术",
-          "summary_zh": "Donut Lab在CES上展示了其固态电池技术，标志着电动摩托车电池技术的未来，可能会改变电动车的市场格局。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPb2RGYWF0TnpSX0U4QnVfVGd3SlBmaHJSbjRCN051eUgwWmZpa2Z2RThrTEtoZFB0cXA5YkpLVlhOeW5OeWxhVnFZQjVaNmZBQ3M1UlVqVEdsR3U5WjZTdDFqaUsyVXNReTZ6WklCOXVRblE5N1hGclZkUWpEQUZYVXRYdkllWFlDaVJONGJVSlpjbjMwUjFVakRMdVZMWDdLLS1vRFAzUHNGTDRzb2JTNzF2OHR3TG1pYWdTVXFfWWczSUp2UVNzMnlfS3ZudFJQTzNHNzBPY0hla1llODVXaGJaYmlQWWFPaFpn?oc=5",
-              "source": "sUAS News",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "固态电池在电动车领域的应用前景",
-          "summary_zh": "固态电池技术的进步为电动车的续航能力和安全性提供了新的解决方案，多个公司在CES上展示了相关技术，预示着电动车的未来。",
-          "region": "cn",
-          "score": 0.65,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92WEVmWnEyUEFRNmNwRC1ETHRSNTdjRnFwZGlYN0o5TG5YZHZFNGo3bmV6T3JNWFFxSjVIbnEwc1FUN2QwVWp2eXR2eEZYSGlqS3ZKZnhRc1NVazItVk9MSmRzVlMycTVRdmVmYXQ4UFgwMktkSTBj?oc=5",
-              "source": "thebuzzevnews.com",
+              "title": "D-Wave Quantum Unveils Breakthrough in Gate-Model Computing ",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeHJuSGpMc1NGV0thUW9LY2Q3b1d2Tk94QWpkbUpHSWoxZjA",
+              "source": "TipRanks",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "Verge摩托车推出固态电池电动摩托车",
-          "summary_zh": "Verge摩托车在CES 2026上展示了其固态电池电动摩托车，续航达到370英里，标志着电动摩托车技术的重大进步。",
-          "region": "cn",
-          "score": 0.6,
+          "title_zh": "KAIST实现固态电池成本效益突破",
+          "summary_zh": "韩国KAIST研究团队在固态电池技术上取得突破，实现了具有成本效益的制造方案，推动电动汽车电池发展。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "KAIST's Solid-state Battery Breakthrough Achieves Cost-effec",
+              "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8zUzlpTEtBWV9NRzhEM3hGaW5tRlBURk42bEFWWEFxTjUzTUk",
+              "source": "Businesskorea",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "首款固态电池电动摩托车亮相",
+          "summary_zh": "Verge公司推出全球首款搭载固态电池的量产电动摩托车，续航达370英里，标志固态电池进入商业化应用。",
+          "region": "global",
+          "score": 0.75,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTMzQUlpM2d2MFZtYTMycklSZjRXZHFHaVVFUHdLcUd1MHVQVUlqZFZWaGVmTl9TempfTnZVdzgxZlV5bjdQMEhoWFUzTmJ0LVA2c0Zja19tNHhFUDYwS3FnMkZDZXkwM3FGdkVWMVpfRDF1ZHY4MWR4dUExRW1XUlRSR3djM19VUFY2SmM5X2pJUQ?oc=5",
-              "source": "Interesting Engineering",
+              "title": "World’s first solid-state battery motorcycle debuts at CES 2",
+              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTMzQUlpM2d2MFZtYTMycklSZjRXZHFHaVVFUHdLcUd1MHV",
+              "source": "Interesting Engineer",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "固态电池技术的未来",
-          "summary_zh": "固态电池技术的进步为电动车的续航能力和安全性提供了新的解决方案，多个公司在CES上展示了相关技术，预示着电动车的未来。",
-          "region": "cn",
+          "title_zh": "量子计算首次实现安全备份方法",
+          "summary_zh": "研究人员宣布首次实现量子计算的安全备份方法，为量子信息的可靠存储和传输提供了新解决方案。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Breakthrough in Quantum Computing: First Secure Method to Ba",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE01ZjRtYkdpVUhRak5Nc0pBRFlLWGVCQXdHV2dGMnluSXZlUGl",
+              "source": "Sci.News",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave量子计算突破推动股价上涨",
+          "summary_zh": "D-Wave公司在量子计算领域的技术突破带动其股票价格上涨，显示出市场对量子计算前景的乐观态度。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "D-Wave Quantum (QBTS) Stock Rises on Breakthrough That Solve",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWEg2NzJEOFdNRDFRanJuY3ZHRV96SU8xZGxlRlRIYTVZdy1",
+              "source": "TipRanks",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "固态电池技术进入电动汽车新时代",
+          "summary_zh": "固态电池技术的进步标志着电动汽车生产进入新纪元，多家公司推出相关产品，推动行业变革。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "A new era in EV production: Solid-state batteries advance - ",
+              "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQVkRxT180RWdoQi1KV21Ka3dGMkV1NUZFLXlhaE9MUno1NE4",
+              "source": "Automotive Manufactu",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "固态电池国防应用潜力显现",
+          "summary_zh": "ESOX公司展示了突破性固态电池技术在国防领域的应用潜力，为军事装备提供新的能源解决方案。",
+          "region": "global",
           "score": 0.55,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92WEVmWnEyUEFRNmNwRC1ETHRSNTdjRnFwZGlYN0o5TG5YZHZFNGo3bmV6T3JNWFFxSjVIbnEwc1FUN2QwVWp2eXR2eEZYSGlqS3ZKZnhRc1NVazItVk9MSmRzVlMycTVRdmVmYXQ4UFgwMktkSTBj?oc=5",
-              "source": "thebuzzevnews.com",
+              "title": "ESOX introduces defence applications of breakthrough solid-s",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUjBId3ZYNGlMUF9YNkdURkZFUG5CbnQyRF9fczlZS3pUTU9",
+              "source": "Aerospace Manufactur",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "Donut Lab展示固态电池技术",
-          "summary_zh": "Donut Lab在CES上展示了其固态电池技术，标志着电动摩托车电池技术的未来，可能会改变电动车的市场格局。",
-          "region": "cn",
+          "title_zh": "Verge推出量产固态电池电动摩托",
+          "summary_zh": "Verge摩托车公司推出首款采用内部固态电池技术的量产电动摩托车，提升续航和性能表现。",
+          "region": "global",
           "score": 0.5,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPb2RGYWF0TnpSX0U4QnVfVGd3SlBmaHJSbjRCN051eUgwWmZpa2Z2RThrTEtoZFB0cXA5YkpLVlhOeW5OeWxhVnFZQjVaNmZBQ3M1UlVqVEdsR3U5WjZTdDFqaUsyVXNReTZ6WklCOXVRblE5N1hGclZkUWpEQUZYVXRYdkllWFlDaVJONGJVSlpjbjMwUjFVakRMdVZMWDdLLS1vRFAzUHNGTDRzb2JTNzF2OHR3TG1pYWdTVXFfWWczSUp2UVNzMnlfS3ZudFJQTzNHNzBPY0hla1llODVXaGJaYmlQWWFPaFpn?oc=5",
-              "source": "sUAS News",
+              "title": "Verge Motorcycles switches to in-house solid-state batteries",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNERxdzcwQmhPMVVZZC1CLWNBdXdhS25QZlhxNDA4ZHNIdkd",
+              "source": "electrive.com",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "固态电池技术的应用前景",
-          "summary_zh": "固态电池技术的进步为电动车的续航能力和安全性提供了新的解决方案，多个公司在CES上展示了相关技术，预示着电动车的未来。",
-          "region": "cn",
+          "title_zh": "D-Wave宣布可扩展量子计算突破",
+          "summary_zh": "D-Wave量子公司宣布在可扩展量子计算方面取得突破性进展，其门模型技术解决了长期存在的难题。",
+          "region": "global",
           "score": 0.45,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "原标题",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92WEVmWnEyUEFRNmNwRC1ETHRSNTdjRnFwZGlYN0o5TG5YZHZFNGo3bmV6T3JNWFFxSjVIbnEwc1FUN2QwVWp2eXR2eEZYSGlqS3ZKZnhRc1NVazItVk9MSmRzVlMycTVRdmVmYXQ4UFgwMktkSTBj?oc=5",
-              "source": "thebuzzevnews.com",
+              "title": "D-Wave achieves breakthrough in scalable quantum computing c",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUGoxY3E2SXIwQl9vUjNiOTVuY3IxMkZPVnBPTmZTM1JDU0F",
+              "source": "Investing.com South ",
               "published_at": "2026-01-06"
             }
           ]
         }
       ],
-      "cn_count": 10,
+      "cn_count": 1,
       "total_count": 10
     },
     {
@@ -1891,11 +1951,11 @@
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "本次arXiv研究雷达涵盖了2026年1月7日发布的20篇预印本论文，涉及人工智能、机器人学、物理学、数学、天文学及生物医学等多个前沿领域。核心主题包括：动态物体世界编排、图上的最优传输离散公式、随机临床试验中期事件预测、资源受限平台的自主智能体嵌入、材料设计的综合计算框架、视频主观测试的实时反馈转型、舒伯特系数饱和性失效、基于肌电信号的手势识别轻量适配、量子信道学习的改进下界、近地伽马射线暴GRB 180728A与超新星SN 2018fip关联、边界优化的声音事件检测、基于分层图神经网络的多智能体动态车道学习、从高噪声数据中稳健发现物理规律的PINN框架、安全伦理AI的法律对齐、尺寸集约的两分量相对论哈密顿量SAP-X2C、循环图上谱张量网络的随机路径压缩、作为上下文验证器的智能体评分量规、多智能体LLM系统的行为退化量化，以及LISA引力波探测器群体推断框架和无授权小区大规模MIMO分布式推断的期望传播算法。这些研究展现了跨学科融合与技术创新趋势。",
+      "brief_zh": "近期arXiv平台发布多领域研究预印本，涵盖人工智能、机器人学、量子计算、天体物理及材料科学等前沿方向。重点包括动态物体操控、自主机器人代理、量子信道学习、伽马射线暴关联研究以及AI法律对齐等主题，反映跨学科技术进展。",
       "events": [
         {
-          "title_zh": "编排动态物体世界",
-          "summary_zh": "研究如何在一个充满动态物体的世界中进行协调与编排，可能涉及机器人规划或多智能体控制。",
+          "title_zh": "动态物体世界编排研究",
+          "summary_zh": "提出动态物体操控新方法，探索机器人交互场景应用。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
@@ -1909,44 +1969,14 @@
           ]
         },
         {
-          "title_zh": "图上最优传输的离散Benamou-Brenier公式",
-          "summary_zh": "提出了在图结构上最优传输问题的离散Benamou-Brenier公式，为网络上的质量传输提供新框架。",
+          "title_zh": "资源受限机器人自主代理嵌入",
+          "summary_zh": "研究在资源受限机器人系统中嵌入自主智能代理的技术框架。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "A discrete Benamou-Brenier formulation of Optimal Transport on graphs",
-              "url": "http://arxiv.org/abs/2601.04193v1",
-              "source": "arXiv",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "随机临床试验中期事件的预测区间",
-          "summary_zh": "针对时间相关的随机临床试验，提出了对中期事件进行预测区间估计的方法。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Prediction Intervals for Interim Events in Randomized Clinical Trials with Time-",
-              "url": "http://arxiv.org/abs/2601.04192v1",
-              "source": "arXiv",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "在资源受限机器人平台中嵌入自主智能体",
-          "summary_zh": "探讨如何将自主智能体嵌入到计算和硬件资源受限的机器人平台中，实现高效运行。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Embedding Autonomous Agents in Resource-Constrained Robotic Platforms",
+              "title": "Embedding Autonomous Agents in Resource-Constrained Robotic",
               "url": "http://arxiv.org/abs/2601.04191v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -1954,14 +1984,14 @@
           ]
         },
         {
-          "title_zh": "材料设计与从头建模的综合计算框架",
-          "summary_zh": "介绍了一个用于材料设计、从头建模和模拟的综合性计算框架，加速新材料发现。",
+          "title_zh": "材料设计综合计算框架",
+          "summary_zh": "构建集成计算平台，加速新材料发现与设计流程。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "A Comprehensive Computational Framework for Materials Design, Ab Initio Modeling",
+              "title": "A Comprehensive Computational Framework for Materials Design",
               "url": "http://arxiv.org/abs/2601.04186v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -1969,23 +1999,8 @@
           ]
         },
         {
-          "title_zh": "通过训练、参与和实时反馈变革视频主观测试",
-          "summary_zh": "提出结合训练、用户参与和实时反馈的新方法，以改变传统的视频主观质量测试流程。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Transforming Video Subjective Testing with Training, Engagement, and Real-Time F",
-              "url": "http://arxiv.org/abs/2601.04184v1",
-              "source": "arXiv",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "舒伯特系数的饱和性质失效",
-          "summary_zh": "证明了在特定条件下，舒伯特系数不满足饱和性质，对代数组合学有重要意义。",
+          "title_zh": "舒伯特系数饱和性失效证明",
+          "summary_zh": "数学研究揭示舒伯特系数不满足饱和性质的新发现。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
@@ -1999,14 +2014,14 @@
           ]
         },
         {
-          "title_zh": "基于肌电手势识别的轻量级测试时适配",
-          "summary_zh": "提出一种轻量级的测试时适配方法，用于提升基于肌电信号的手势识别系统的性能和泛化能力。",
+          "title_zh": "轻量级肌电手势识别适配",
+          "summary_zh": "开发测试时自适应方法，提升肌电信号手势识别效率。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Lightweight Test-Time Adaptation for EMG-Based Gesture Recognition",
+              "title": "Lightweight Test-Time Adaptation for EMG-Based Gesture Recog",
               "url": "http://arxiv.org/abs/2601.04181v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -2014,14 +2029,14 @@
           ]
         },
         {
-          "title_zh": "改进量子信道钻石距离学习的下界",
-          "summary_zh": "在量子信息领域，改进了以钻石距离度量学习量子信道所需样本复杂度的下界。",
+          "title_zh": "量子信道学习下界改进",
+          "summary_zh": "提升钻石范数下量子信道学习复杂性下界，推动量子计算理论。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Improved Lower Bounds for Learning Quantum Channels in Diamond Distance",
+              "title": "Improved Lower Bounds for Learning Quantum Channels in Diamo",
               "url": "http://arxiv.org/abs/2601.04180v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -2029,14 +2044,14 @@
           ]
         },
         {
-          "title_zh": "GRB 180728A与SN 2018fip：最近的高能宇宙伽马射线暴",
-          "summary_zh": "研究了伽马射线暴GRB 180728A及其可能关联的超新星SN 2018fip，这是距离最近的高能宇宙伽马暴之一。",
+          "title_zh": "GRB 180728A与超新星关联研究",
+          "summary_zh": "分析伽马射线暴与邻近超新星关联，探讨高能宇宙学意义。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "GRB 180728A and SN 2018fip: the nearest high-energy cosmological gamma-ray burst",
+              "title": "GRB 180728A and SN 2018fip: the nearest high-energy cosmolog",
               "url": "http://arxiv.org/abs/2601.04179v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -2044,29 +2059,14 @@
           ]
         },
         {
-          "title_zh": "边界感知优化与推理的声音事件检测",
-          "summary_zh": "提出一种在声音事件检测中结合边界感知优化和推理的方法，以提高事件定位的准确性。",
+          "title_zh": "分层GNN多智能体队列学习",
+          "summary_zh": "基于图神经网络的多智能体分层学习框架，优化动态队列控制。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Sound Event Detection with Boundary-Aware Optimization and Inference",
-              "url": "http://arxiv.org/abs/2601.04178v1",
-              "source": "arXiv",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "基于分层GNN的多智能体动态队列跳跃车道与应急学习",
-          "summary_zh": "利用分层图神经网络进行多智能体学习，以管理动态队列跳跃车道和应急车辆通行等交通场景。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Hierarchical GNN-Based Multi-Agent Learning for Dynamic Queue-Jump Lane and Emer",
+              "title": "Hierarchical GNN-Based Multi-Agent Learning for Dynamic Queu",
               "url": "http://arxiv.org/abs/2601.04177v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
@@ -2074,23 +2074,8 @@
           ]
         },
         {
-          "title_zh": "从高噪声数据中稳健发现物理规律：应用于...的PINN框架",
-          "summary_zh": "提出了一个基于物理信息神经网络的框架，能够从高度污染的数据中稳健地发现潜在的物理规律。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Robust Physics Discovery from Highly Corrupted Data: A PINN Framework Applied to",
-              "url": "http://arxiv.org/abs/2601.04176v1",
-              "source": "arXiv",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "安全与伦理AI的法律对齐",
-          "summary_zh": "探讨如何使人工智能系统的行为与法律规范对齐，以确保其安全性和符合伦理要求。",
+          "title_zh": "AI法律对齐确保安全伦理",
+          "summary_zh": "研究AI系统与法律规范对齐框架，促进安全伦理人工智能发展。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
@@ -2104,15 +2089,15 @@
           ]
         },
         {
-          "title_zh": "SAP-X2C：尺寸集约的最简两分量相对论哈密顿量",
-          "summary_zh": "提出了一种名为SAP-X2C的、尺寸集约的最简两分量相对论哈密顿量，用于量子化学计算。",
+          "title_zh": "多智能体行为退化量化分析",
+          "summary_zh": "提出'智能体漂移'概念，量化多智能体系统中行为退化现象。",
           "region": "global",
           "score": 0.6,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "SAP-X2C: Optimally-Simple Two-Component Relativistic Hamiltonian With Size-Inten",
-              "url": "http://arxiv.org/abs/2601.04174v1",
+              "title": "Agent Drift: Quantifying Behavioral Degradation in Multi-Age",
+              "url": "http://arxiv.org/abs/2601.04170v1",
               "source": "arXiv",
               "published_at": "2026-01-07"
             }
@@ -2120,34 +2105,34 @@
         }
       ],
       "cn_count": 0,
-      "total_count": 15
+      "total_count": 10
     }
   ],
   "top5": [
     {
-      "title": "中国“人造太阳”核聚变突破",
-      "summary": "中国的“人造太阳”在核聚变领域取得重要突破，打破了科学家认为无法逾越的技术限制。这一进展为核聚变能源的实际应用铺平了道路，可能为未来清洁能源提供革命性解决方案，对全球能源格局和碳中和目标产生深远影响。",
-      "action": "关注清洁能源投资机会，加强技术跟踪。"
+      "title": "欧盟碳关税生效引发中国反制威胁",
+      "summary": "欧盟碳边境调节机制（CBAM）正式进入收费阶段，对钢铁、氢能等进口产品征收碳费用。中国明确表示反对并威胁采取反制措施，这可能导致中欧贸易摩擦升级，影响相关行业供应链和出口成本，企业需评估碳成本对竞争力的影响并调整贸易策略。",
+      "action": "评估碳成本影响，调整出口策略。"
     },
     {
-      "title": "美国半导体管制效果显现",
-      "summary": "分析指出，美国对华芯片出口管制正在发挥作用，有效限制了中国获取先进半导体技术的能力。由于半导体在军事和AI领域的核心战略地位，这种管制被认为比稀土反制更持久，将持续影响全球科技产业链布局和竞争态势。",
-      "action": "评估供应链风险，加大自主研发投入。"
+      "title": "中国“人造太阳”突破聚变限制",
+      "summary": "中国在可控核聚变实验中取得关键突破，打破了技术限制，向实现清洁、可持续能源迈出重要一步。这一进展可能加速全球能源转型进程，减少对化石燃料的依赖，并为中国在新能源技术领域赢得战略优势，影响未来能源投资方向。",
+      "action": "关注聚变技术进展，布局清洁能源。"
     },
     {
-      "title": "美国芯片管制成长期遏制工具",
-      "summary": "评论认为，相比中国稀土限制，美国对华半导体技术出口管制因其在军事和AI领域的战略核心地位，将成为更长期有效的遏制工具。这一态势将重塑全球半导体产业格局，迫使各国重新评估技术依赖和自主创新战略。",
-      "action": "制定技术自主路线，寻求多元合作。"
+      "title": "D-Wave实现量子计算可扩展突破",
+      "summary": "D-Wave公司在门模型量子计算领域取得技术突破，解决了可扩展性难题，为量子计算实用化带来新动力。这可能加速量子计算在加密、药物研发等领域的应用，推动全球科技竞争格局变化，企业需关注技术迭代对行业的影响。",
+      "action": "跟踪量子计算进展，评估技术应用。"
     },
     {
-      "title": "LME基本金属全线收跌",
-      "summary": "1月4日伦敦金属交易所基本金属收盘走低，所有黑色金属品种均录得损失。这一市场波动反映了全球经济不确定性对大宗商品需求的影响，可能影响相关产业链企业的盈利预期和投资决策。",
-      "action": "关注金属价格走势，调整库存策略。"
+      "title": "欧盟CBAM收费影响全球贸易",
+      "summary": "欧盟碳边境调节机制开始对多国进口产品征收碳费用，直接影响钢铁、氢能等行业。这一政策可能重塑全球贸易规则，增加高碳行业出口成本，迫使各国加速低碳转型，企业需应对合规挑战并探索绿色供应链机会。",
+      "action": "优化碳管理，探索低碳供应链。"
     },
     {
-      "title": "中国核聚变进展标志清洁能源未来",
-      "summary": "中国的“人造太阳”成功打破核聚变技术限制，标志着清洁能源发展的重大里程碑。这一突破可能加速全球能源转型进程，对各国能源政策制定和绿色技术投资方向产生导向作用。",
-      "action": "关注核聚变商业化进程，布局未来能源。"
+      "title": "中欧碳关税争端升级风险",
+      "summary": "中国对欧盟碳关税的反对和反制威胁，叠加CBAM正式收费，可能引发贸易争端。这会影响双边经贸关系，增加企业跨境运营不确定性，决策者需关注政策动态并制定风险缓解方案，以维护供应链稳定和市场准入。",
+      "action": "监测政策变化，制定风险预案。"
     }
   ],
   "meta": {
