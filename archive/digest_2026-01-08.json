@@ -1,7 +1,7 @@
 {
   "date": "2026-01-08",
-  "generated_at_utc": "2026-01-08T09:23:18.391385+00:00",
-  "generated_at_bjt": "2026-01-08 17:23",
+  "generated_at_utc": "2026-01-08T10:17:11.530648+00:00",
+  "generated_at_bjt": "2026-01-08 18:17",
   "kpis": [
     {
       "id": "SP500",
@@ -1110,329 +1110,566 @@
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
       "tags": [],
       "gnews_queries": [
-        "US Treasury yields Fed inflation monetary policy",
-        "USD CNY exchange rate PBOC currency",
-        "global equity market VIX stock index"
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq",
+        "central bank monetary policy inflation"
       ],
-      "brief_zh": "中国央行密集出台稳汇率举措，下调外汇存款准备金率，上调跨境融资参数，并释放降准降息信号，市场关注后续宽松政策落地。",
+      "brief_zh": "美联储内部对利率政策存在分歧，市场预期2026年将降息。美债收益率受就业数据影响下行，油价回落缓解通胀担忧。人民币汇率波动，中国央行引导缓慢升值。美股回调，投资者风险偏好下降。",
       "events": [
         {
-          "title_zh": "央行下调外汇存准率至4%",
-          "summary_zh": "央行宣布下调外汇存款准备金率至4%，稳定人民币汇率预期。",
+          "title_zh": "美联储会议揭示政策分歧",
+          "summary_zh": "最新会议纪要显示美联储官员对利率路径存在明显分歧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2025-12-30",
+          "sources": [
+            {
+              "title": "Minutes of latest Federal Reserve meeting reveal deep divide",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPd2g1cHBla3BUTVI1MUtfRlpqRFhQOWdXQmJObE93T1BBUzZ",
+              "source": "The Guardian",
+              "published_at": "2025-12-30"
+            }
+          ]
+        },
+        {
+          "title_zh": "市场预期美联储2026年降息",
+          "summary_zh": "分析认为经济放缓将迫使美联储在2026年大幅降息。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Opinion: The Fed will be forced into deep rate cuts in 2026 ",
+              "url": "https://news.google.com/rss/articles/CBMi0ANBVV95cUxQTWp1dEdFZFJQMW9CdFVXeHlvaE5aR1ZKeWU0VF9EMXF2aE1",
+              "source": "MarketWatch",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "10年期美债收益率下跌",
+          "summary_zh": "弱于预期的ADP就业数据导致美债收益率下行。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "10-year Treasury yield falls after weak ADP employment data ",
+              "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPczI5QUF6LXlrSVNFemJoX2thRER4M3liMV9DbElvd1E5aEk",
+              "source": "CNBC",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "油价回落缓解通胀担忧",
+          "summary_zh": "原油价格下降增强市场对通胀降温的信心。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Treasuries Advance as Drop in Oil Prices Eases Inflation Fea",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVC13bnVxZFI0dDF3ZWI1ZWpWeGpISjU5NUFVZUkyLTJQVXo",
+              "source": "Bloomberg.com",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "人民币汇率跌破关键点位",
+          "summary_zh": "离岸人民币一度升破7关口，央行中间价引导温和升值。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2025-12-29",
+          "sources": [
+            {
+              "title": "USDCNY: Yuan Climbs Past 7 Per Dollar Onshore for First Time",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZFN2T1FGMFc4Qm9Oa2FCQ0VvQnBuMjRNMVF3cXBrempERnp",
+              "source": "Bloomberg.com",
+              "published_at": "2025-12-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国央行设定人民币中间价",
+          "summary_zh": "2026年1月8日中间价报7.0197，略高于预期。",
           "region": "cn",
           "score": 0.9,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "央行出手稳汇市 外汇存款准备金率将下调至4% - 证券时报",
-              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNT3JPV1RUdDRxT09kVzdEYS1scGphT1N5aGhhRDNzejhiRnF",
-              "source": "证券时报",
+              "title": "PBOC sets USD/ CNY reference rate for today at 7.0197 (vs. e",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOGtVRFNyM1MwWGdDVTBaOWFpUmJOYk80dE4yeTBNbzRvcWo",
+              "source": "investingLive",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "PBOC设定美元兑人民币中间价",
-          "summary_zh": "PBOC将USD/CNY中间价定在7.0230，显示对汇率调控的持续干预。",
-          "region": "cn",
-          "score": 0.65,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "The PBOC established the USD/CNY central rate at 7.0230, adj",
-              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcDlaRUoyVWZrSXdpalRfUmpYeDJMZTFtR1U1Z3lyTTk1M3N",
-              "source": "VT Markets",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "市场预期PBOC中间价为6.9730",
-          "summary_zh": "市场预计PBOC将USD/CNY中间价设于6.9730，反映升值预期。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "PBOC is expected to set the USD/CNY reference rate at 6.9730",
-              "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVzZrcFlDNkRNZHlSa3EwbEIyVE5yQlQxNllvcUFYNURzVVN",
-              "source": "investingLive",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "央行上调跨境融资调节参数",
-          "summary_zh": "央行将跨境融资宏观审慎调节参数上调至1.75，增强资本流入支持。",
-          "region": "cn",
-          "score": 0.85,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "央行再出手稳汇率，跨境融资宏观审慎调节参数上调至1.75 - 证券时报",
-              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQXFrc3hnRF9PNU9IakJVLWkxR2l0aTZUc2xKaXhVUF9EUGo",
-              "source": "证券时报",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "2026年央行七大重点工作发布",
-          "summary_zh": "央行明确2026年保持社融宽松，强化虚拟货币监管等七项重点任务。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "央行定调2026年七大重点工作：保持社会融资条件相对宽松，强化虚拟货币监管 - 新浪财经",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcndoczFXTzFYaDVwZ1VSQlpFOUExSVR3bWhXbHE5TXl4VXB",
-              "source": "新浪财经",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "降准降息预期升温",
-          "summary_zh": "央行释放政策宽松信号，非银流动性机制改革有望推进。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "降准降息可期！央行2026年政策定调，非银流动性机制有望破题 - 新浪财经",
-              "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAyM2I3Qzdma3VOS2M1TkFzOXpVd29tMmxzbUYwZnd5QUdIdFJ",
-              "source": "新浪财经",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "人民币跌破关键点位后走势受关注",
-          "summary_zh": "人民币汇率一度跌破关键水平，市场关注后续政策应对与走向。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "CNY at a glance: what next as the yuan moves below the criti",
-              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTU1SRVhRR01TRGktWW9iQmdJYVJWeWZlZEtrdHRYeVFUaTR",
-              "source": "ING THINK economic a",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "市场等待美国就业数据影响",
-          "summary_zh": "全球市场观望美国最新就业数据，美债收益率和美元走势暂稳。",
+          "title_zh": "以色列发行60亿美元国际债券",
+          "summary_zh": "以色列成功完成自2023年以来首次大规模海外发债。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-01-08",
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "Markets Await US Jobs Data as Treasury Yields and Dollar Con",
-              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMHFsc2VxVXgyWFFuTzE2MnVHcTFoNk5CX3dXMUNoUF9tMHB",
-              "source": "equiti.com",
-              "published_at": "2026-01-08"
+              "title": "Israel raises $6 billion in first international bond offer s",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbGw5RmQzNFVvTDRUSEdfaXg2d18yTDA1Tm5ON3lzVVU2Y1B",
+              "source": "Reuters",
+              "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "央行强化虚拟货币监管",
-          "summary_zh": "央行将加强虚拟货币交易监管，防范金融风险。",
-          "region": "cn",
-          "score": 0.65,
-          "date": "2026-01-06",
+          "title_zh": "美股回调超450点",
+          "summary_zh": "道指大幅下挫，标普500结束连涨趋势。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "央行定调2026年七大重点工作：保持社会融资条件相对宽松，强化虚拟货币监管 - 新浪财经",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcndoczFXTzFYaDVwZ1VSQlpFOUExSVR3bWhXbHE5TXl4VXB",
-              "source": "新浪财经",
-              "published_at": "2026-01-06"
+              "title": "Dow closes more than 450 points lower, S&P 500 pulls back fr",
+              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5ETHRUdmxKV1YybFdpSV9YbFJqM1F4V2UwUVNzU0tYb3haSVl",
+              "source": "CNBC",
+              "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "保持社会融资宽松环境",
-          "summary_zh": "央行强调维持相对宽松的社会融资条件以支持经济增长。",
-          "region": "cn",
-          "score": 0.75,
-          "date": "2026-01-06",
+          "title_zh": "美债市场2025年整体上涨",
+          "summary_zh": "全年债券市场表现强劲，投资者避险情绪升温。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
           "sources": [
             {
-              "title": "央行定调2026年七大重点工作：保持社会融资条件相对宽松，强化虚拟货币监管 - 新浪财经",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcndoczFXTzFYaDVwZ1VSQlpFOUExSVR3bWhXbHE5TXl4VXB",
-              "source": "新浪财经",
-              "published_at": "2026-01-06"
+              "title": "Bond Market Wraps Up 2025 With Broad Gains: Key Takeaways fo",
+              "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMjFzV01SLUVTNWNqeUFmdnU0WHc1MEdzV1dMZHI1SzVjc0p",
+              "source": "Morningstar",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑石发布周度市场评论",
+          "summary_zh": "机构指出市场波动加剧，建议保持防御性配置。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Weekly market commentary - blackrock.com",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUVRpWnpzel9vdWlfUTRyMGZwLVhXN2dmVDBNclBHRzhhNWx",
+              "source": "blackrock.com",
+              "published_at": "2026-01-05"
             }
           ]
         }
       ],
-      "cn_count": 9,
+      "cn_count": 3,
       "total_count": 10,
-      "sentiment": "positive",
-      "sentiment_score": 0.75,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
-        "央行",
-        "汇率",
-        "降准降息",
-        "外汇存款准备金率",
-        "跨境融资"
+        "美联储",
+        "利率政策",
+        "人民币汇率",
+        "美债收益率",
+        "通胀预期"
       ],
-      "deduped_count": 0,
-      "raw_count": 8
+      "deduped_count": 3,
+      "raw_count": 36
     },
     {
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
       "tags": [],
       "gnews_queries": [
-        "OFAC sanctions enforcement compliance",
-        "EU sanctions Russia export controls trade",
-        "US China trade war tariffs export controls"
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips",
+        "geopolitical risk international trade"
       ],
-      "brief_zh": "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。",
-      "events": [],
-      "cn_count": 0,
-      "total_count": 0,
+      "brief_zh": "美国与欧盟持续升级对俄、中、委内瑞拉等地缘政治实体的制裁与贸易限制，重点聚焦半导体、能源和农业领域。中国加强国产芯片设备使用要求，同时多国企业对美贸易政策提出诉讼。中美科技竞争加剧，全球供应链面临重构。",
+      "events": [
+        {
+          "title_zh": "欧盟新增41艘涉俄船只制裁",
+          "summary_zh": "欧盟扩大对俄罗斯影子船队制裁，列入41艘涉嫌运输俄油的船只。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2025-12-26",
+          "sources": [
+            {
+              "title": "EU Sanctions a Further 41 Vessels Thought to Be Part of Russ",
+              "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQakRjX1prZ2NyQVpIMHNkUDhvMGtjaDY5MVVDUXZqbHRxaHJ",
+              "source": "JD Supra",
+              "published_at": "2025-12-26"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国拟2027年加征中国半导体关税",
+          "summary_zh": "美国计划从2027年起对中国半导体产品实施新一轮关税措施。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "US plans fresh China semiconductor tariffs for 2027 - Constr",
+              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYUhhclcySnNrb09iVXNFcVA5azVxWVp4akFmS0FMbEthb2V",
+              "source": "Construction Dive",
+              "published_at": "2026-01-05"
+            },
+            {
+              "title": "U.S. Plans New Semiconductor Tariffs on China Starting in 20",
+              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTUVRRFRta3k0eXJHNUtvVl95U2tKNUZBZGpGWDZ5YlczU0d",
+              "source": "Construction Owners ",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国要求芯片厂五成设备国产化",
+          "summary_zh": "据消息人士称，中国强制要求芯片制造商在扩产时使用至少50%国产设备。",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2025-12-30",
+          "sources": [
+            {
+              "title": "消息人士：中国强制要求芯片制造商增产时使用五成国产设备 - DW",
+              "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxOQldjdkw2UVpvWURQRFdJLS1kczBmck9EYmVXdHRTNEFpTll",
+              "source": "DW",
+              "published_at": "2025-12-30"
+            }
+          ]
+        },
+        {
+          "title_zh": "加拿大总理将访华商讨关税影响",
+          "summary_zh": "加拿大总理卡尼将访华，与中国领导人讨论特朗普关税对双边贸易的影响。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Canada’s Carney to meet Xi in China, as Trump tariffs hurt U",
+              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdHN4bHpub3oyaFg3N2lsWXVMUXFkbVBNZURpV3hDUWU3OEt",
+              "source": "South China Morning ",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国对马杜罗政权油贸实施制裁",
+          "summary_zh": "美国财政部打击支持马杜罗政权的石油交易商和油轮，强化能源制裁。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-01-01",
+          "sources": [
+            {
+              "title": "Treasury Targets Oil Traders And Tankers Aiding Maduro Regim",
+              "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMUg4Yi1Delh2OURkMDAwaGtaNlE5Vk84X2JJcUlrQUNzd2V",
+              "source": "Dallas Express",
+              "published_at": "2026-01-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "中美芯片出口管制博弈加剧",
+          "summary_zh": "美国称其芯片出口管制奏效，但分析指出中国正加速技术自主。",
+          "region": "cn",
+          "score": 0.78,
+          "date": "2026-01-03",
+          "sources": [
+            {
+              "title": "America’s chip export controls are working - Asia Times",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iMkhyOTI1WlBaWnBPeHRsdEVSSTVKVjFCcjVsX0hJSTUzSjE",
+              "source": "Asia Times",
+              "published_at": "2026-01-03"
+            },
+            {
+              "title": "Did America just lose the AI race to China? - The Verge",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcnZyVzNNTXVjak9pZlI4RU5abmVvYlN6WC1NOG9RTFVoWHZ",
+              "source": "The Verge",
+              "published_at": "2026-01-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国大豆行业转向泰国市场",
+          "summary_zh": "因中美贸易战冻结出口，美国大豆产业寻求泰国等替代市场。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "US Soy Sector Targets Thailand as China Trade War Freezes Ex",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE05OXZETEc2R3N2NnpPQnRxZ0I2cmc3STRQdDJIaEQxY0lTTDZ",
+              "source": "Nation Thailand",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普拟对中印征收500%关税",
+          "summary_zh": "消息称特朗普考虑对印度和中国商品征收高达500%的惩罚性关税。",
+          "region": "global",
+          "score": 0.72,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "500% tariffs ahead for India & China? Trump clears Russia sa",
+              "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOMVNCNTNrZllrTXZHTHJxMllQSzR0ZXFFWS13Tm9Tdk15c1p",
+              "source": "Times of India",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "千余企业起诉特朗普政府贸易政策",
+          "summary_zh": "超过1000家企业就特朗普政府的贸易关税政策提起法律诉讼。",
+          "region": "global",
+          "score": 0.68,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "More than 1,000 companies reportedly suing Trump administrat",
+              "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA0SVhrTHozcVNmWFFEZjNWV1VYOEVQZ1I4WjlNOTROcGtKbk0",
+              "source": "Global Times",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "日本半导体出口管制影响全球",
+          "summary_zh": "日本加强对半导体设备出口管制，波及全球科技产业链。",
+          "region": "global",
+          "score": 0.66,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Japan’s Semiconductor Export Controls Impact on Global Tech ",
+              "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9SbF9HWG9RVFdGOERQNWEtQklYZVN0aWJrVVUwUGxQczhPSXg",
+              "source": "Discovery Alert",
+              "published_at": "2026-01-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 5,
+      "total_count": 10,
       "sentiment": "neutral",
-      "sentiment_score": 0.5,
-      "keywords": [],
+      "sentiment_score": 0.45,
+      "keywords": [
+        "制裁",
+        "半导体",
+        "关税",
+        "OFAC",
+        "供应链"
+      ],
       "deduped_count": 0,
-      "raw_count": 0
+      "raw_count": 18
     },
     {
       "id": "ai",
       "name": "AI / 大模型（GPT·LLM·应用）",
       "tags": [],
       "gnews_queries": [
-        "OpenAI GPT Claude AI model",
-        "large language model LLM enterprise",
-        "AI artificial intelligence regulation policy",
-        "generative AI application business"
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business",
+        "AI regulation policy government",
+        "machine learning deep learning"
       ],
-      "brief_zh": "中国量化基金加入DeepSeek，研发大语言模型竞争产品，推动本土AI技术发展。全球AI企业持续布局应用与安全，市场进入关键阶段。",
+      "brief_zh": "OpenAI推出ChatGPT Health，整合用户医疗记录以提供健康建议，日均超4000万人使用。此举引发数据隐私与医患关系变革讨论，同时凸显AI在医疗领域的加速渗透。",
       "events": [
         {
-          "title_zh": "中国量化基金进军大模型赛道",
-          "summary_zh": "某中国量化基金宣布自主研发大语言模型，挑战DeepSeek，加码AI金融应用。",
-          "region": "cn",
+          "title_zh": "OpenAI发布ChatGPT Health",
+          "summary_zh": "OpenAI正式推出ChatGPT Health，连接用户医疗记录提供个性化健康建议。",
+          "region": "global",
           "score": 0.9,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Chinese quant fund joins DeepSeek in AI race with LLM rivall",
-              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVWN4VUQ2XzUyN3owSlJBcFpYVDM1UWVhQllZNUNVUzRfdkR",
-              "source": "South China Morning",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "OpenAI与Anthropic在新AI基准测试中领先",
-          "summary_zh": "最新AI分析基准显示，OpenAI和Anthropic模型表现优异，引领行业标准。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "New Artificial Analysis benchmark shows OpenAI, Anthropic, a",
-              "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOd1dVZWJCbDFQN3FZN3JBc1JYQ0ZKc3NNYjV2ZmRZR0Z3Nll",
-              "source": "the-decoder.com",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Claude Code创始人公开开发工作流",
-          "summary_zh": "Anthropic旗下Claude Code开发者分享高效AI编程实践方法。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "The creator of Claude Code just revealed his workflow, and d",
-              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMUhPQy16ekZIa1pKMk9JcHlVREd6QWs0bDl0MnFqMy1xMnQ",
-              "source": "Venturebeat",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "构建企业知识层安全架构",
-          "summary_zh": "新框架聚焦AI时代企业知识系统的安全防护与访问控制。",
-          "region": "global",
-          "score": 0.65,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Securing the Knowledge Layer: Enterprise Security Architectu",
-              "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNN2tGZlh1aUIyNXE2ajdxYjU2UnJIb192TWRWZ21PQTZnMWd",
-              "source": "Security Boulevard",
+              "title": "Introducing ChatGPT Health - OpenAI",
+              "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1NN182QVdKeERlaTBWeVNNdTlUY19MNGVZZ1VzeEVhY3FIU1d",
+              "source": "OpenAI",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "AI股经历大涨后进入十字路口",
-          "summary_zh": "2025年大幅上涨后，AI股票面临回调压力，投资者观望情绪浓厚。",
+          "title_zh": "超4000万用户用ChatGPT问诊",
+          "summary_zh": "每日超过4000万人使用ChatGPT获取医疗健康问题解答。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.85,
           "date": "2026-01-05",
           "sources": [
             {
-              "title": "AI Stocks At A Crossroads After Big 2025 Gains, Pullbacks - ",
-              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5GUXpWazJCelZMdE04MFlEeG1sNHFLWnhLcWJsWHYxQjRQeUR",
-              "source": "Investor's Business",
+              "title": "More Than 40 Million People Use ChatGPT Daily for Healthcare",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZjhxRDdQMUNBbVhRRV9WS2dYTUVtN1l4c09fTmViei00RXd",
+              "source": "Gizmodo",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "2026年AI商业应用前景展望",
-          "summary_zh": "报告显示，AI在企业中的落地加速，尤其在自动化与决策支持领域。",
+          "title_zh": "ChatGPT鼓励谋杀？安全争议爆发",
+          "summary_zh": "有消息指ChatGPT曾输出鼓励犯罪内容，引发法律诉讼和伦理担忧。",
           "region": "global",
-          "score": 0.75,
+          "score": 0.6,
+          "date": "2026-01-04",
+          "sources": [
+            {
+              "title": "Disturbing Messages Show ChatGPT Encouraging a Murder, Lawsu",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONGFublByY3pJQktRTld4NlJtN0VvZXAtWWxUenI0NFBHbXN",
+              "source": "Futurism",
+              "published_at": "2026-01-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI CEO承认AI代理存在严重缺陷",
+          "summary_zh": "Sam Altman承认其新AI代理系统仍存在可靠性与安全性问题。",
+          "region": "global",
+          "score": 0.65,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "Results and prospects for AI in business applications in 202",
-              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPV3cyVGZrc09LMWZGclFzcFNqcnJibklvdFl3RXMzQnZfUjV",
-              "source": "Computer Weekly",
+              "title": "OpenAI’s CEO just admitted his new AI agents have a serious ",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcjFXcnVsbjBjeUtBMmJpb2phNUgtSzE0b2VrNjEzQllra3Y",
+              "source": "Windows Central",
               "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "ChatGPT将进化为超级个人助手",
+          "summary_zh": "专家预测2026年ChatGPT将成为集健康、生活于一体的超级助理。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "‘In 2026, ChatGPT will evolve into a personal superassistant",
+              "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcVliczBvZklfbEdzWGQwamdKZmFyVVVKd01ScUpueG9QOFV",
+              "source": "The Indian Express",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Sam Altman视苹果为头号AI对手",
+          "summary_zh": "OpenAI计划加强独立性，应对来自Apple的激烈竞争。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "Sam Altman Eyes Apple as OpenAI’s Top AI Rival, Plans Dedica",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRmNDeTMwSlhyd1otUERkRVJmVUZYWG1xbGNUYk9TdFhZYy1",
+              "source": "WebProNews",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "医生vs AI？医疗未来之争",
+          "summary_zh": "ChatGPT Health上线引发对医生角色被替代的广泛讨论。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Doctors vs. AI? What ChatGPT Health Means for the Future of ",
+              "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOWnQ0TTh1UkZqWkRXcWFKa2laVUlUdDNvTTE5c2xRdXhTRkt",
+              "source": "inkl",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic团队抱怨Claude使用限制",
+          "summary_zh": "开发者不满Anthropic突然实施的Claude使用额度管控。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Claude devs complain about surprise usage limits, Anthropic ",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE90N0MyRGdjVExfX1A2aDR1LUhBVURJZS02RUZCNHVuRmNYQm5",
+              "source": "theregister.com",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Claude Code革新移动端AI编程",
+          "summary_zh": "Anthropic推出的Claude Code显著提升移动设备上的AI编码效率。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Anthropic’s Claude Code Revolutionizes Mobile AI Coding in 2",
+              "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQ2plVkVBSnNLUHNMRHhkbDZYX1VXYTNvUS0zdEhuTkVoeU1",
+              "source": "WebProNews",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "提升LLM推理与引用可靠性",
+          "summary_zh": "新研究强调大模型需增强推理能力与参考来源可信度。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Accuracy Is Not Enough: Reasoning and Reference Reliability ",
+              "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPTXJpRy03eGdUR1VkeWJFcncxeUx5cjVLTnNTR1ZjbEZ5NW1",
+              "source": "Cureus",
+              "published_at": "2026-01-05"
             }
           ]
         }
       ],
-      "cn_count": 1,
-      "total_count": 6,
+      "cn_count": 0,
+      "total_count": 10,
       "sentiment": "positive",
       "sentiment_score": 0.75,
       "keywords": [
-        "AI",
-        "大模型",
-        "量化基金",
-        "DeepSeek",
-        "企业安全"
+        "ChatGPT Health",
+        "OpenAI",
+        "医疗AI",
+        "健康数据",
+        "大模型应用"
       ],
       "deduped_count": 0,
-      "raw_count": 6
+      "raw_count": 45
     },
     {
       "id": "compute",
       "name": "AI 计算基础设施（算力·芯片·数据中心）",
       "tags": [],
       "gnews_queries": [
-        "data center GPU Nvidia AI chip",
-        "AI chip export controls semiconductor",
-        "cloud computing infrastructure AI"
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment",
+        "AMD Intel AI processor"
       ],
-      "brief_zh": "英伟达发布新一代AI芯片Rubin，巩固其在AI算力市场的主导地位，同时AMD加速追赶，2026年AI芯片竞争加剧。数据中心与PC端AI芯片布局全面展开。",
+      "brief_zh": "英伟达发布新一代Rubin AI芯片，性能大幅提升，同时中国 reportedly 暂停H200订单，国产光子AI硬件取得能效突破，全球AI算力竞争加剧。",
       "events": [
         {
-          "title_zh": "英伟达发布Rubin AI芯片平台",
-          "summary_zh": "英伟达在CES 2026推出Rubin平台，集成六款新芯片，强化AI超级计算能力。",
+          "title_zh": "英伟达发布Rubin系列AI芯片",
+          "summary_zh": "英伟达推出Rubin平台，含六款新AI芯片，晶体管达3360亿，算力达50petaflops。",
           "region": "global",
-          "score": 0.9,
+          "score": 0.95,
           "date": "2026-01-05",
           "sources": [
             {
@@ -1440,44 +1677,77 @@
               "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1wVTdNYW04bUY5N2s2cWlUR25KZzZ3ZlFxdUZ2MWgwZGFmSUJ",
               "source": "NVIDIA Newsroom",
               "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "Rubin平台重塑内存架构",
-          "summary_zh": "Nvidia Rubin将内存提升为核心组件，解决AI计算瓶颈。",
-          "region": "global",
-          "score": 0.85,
-          "date": "2026-01-05",
-          "sources": [
+            },
             {
-              "title": "Nvidia New Rubin Platform Shows Memory Is No Longer ‘Afterthought’",
-              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPNTdqUEt4QVRpeVUyWUxSX3I4bEI5SjU3X3YzNTducUc5SWM",
-              "source": "Gizmodo",
+              "title": "Nvidia debuts Rubin chip with 336B transistors and 50 petafl",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVFpVX3I4OUhDREw3WVhMQUVpRldwbHFCNnozMEZIZlBPSjB",
+              "source": "SiliconANGLE",
               "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "AMD发布新一代AI PC与数据中心芯片",
-          "summary_zh": "AMD推出新款AI PC芯片，并公布下一代数据中心GPU计划。",
+          "title_zh": "中国暂停英伟达H200订单",
+          "summary_zh": "报道称中国正推动暂停采购英伟达H200芯片，或加速国产替代进程。",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "China reportedly moves to pause Nvidia H200 orders - qz.com",
+              "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1VM21ySXpsQ0dPVjIxcGlLazgzdjFrRXdGb2hEcllkMTdzM0h",
+              "source": "qz.com",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "英伟达CEO称新芯片已全产",
+          "summary_zh": "黄仁勋确认Vera Rubin芯片已进入“全面生产”阶段，供货将提速。",
           "region": "global",
-          "score": 0.75,
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Nvidia CEO Says Next Major AI Chip Is in ‘Full Production’ -",
+              "url": "https://news.google.com/rss/articles/CBMiigNBVV95cUxNY0xFWHpTbzNtbDVoaklxbk1sd2hHTUdaZnRvYXJMUEd5Sml",
+              "source": "Barron's",
+              "published_at": "2026-01-05"
+            },
+            {
+              "title": "Jensen Huang Says Nvidia’s New Vera Rubin Chips Are in ‘Full",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GUFNLdS02amRGWjMtUmpUeGNZRG1CQmRoMkdSYkZka2lOQmZ",
+              "source": "WIRED",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "英伟达推六款新AI芯片及开源模型",
+          "summary_zh": "英伟达发布六款新AI芯片并推出多个开源AI模型，强化生态布局。",
+          "region": "global",
+          "score": 0.78,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "AMD reveals new AI PC chips, details next-gen data center ch",
-              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNGRWR2o4R1piYUZSRmdyQlA1QlR2VVFLSlRTTnN3VkF6OXI",
-              "source": "Yahoo Finance",
+              "title": "Nvidia intros six new AI chips and new open models - AI Busi",
+              "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVk5SdThnN2RSQnFCVHNmaTZBOW54dnJqU3ZfUU9UWDdRRzZ",
+              "source": "AI Business",
+              "published_at": "2026-01-06"
+            },
+            {
+              "title": "NVIDIA Rubin Platform, Open Models, Autonomous Driving: NVID",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFByOGd0Rnl2WmVXYnJvVTktQ3VFeUozR2VBWU9yYzF1dXdMREZ",
+              "source": "NVIDIA Blog",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
           "title_zh": "英伟达市占率达92%",
-          "summary_zh": "2025年英伟达占据全球GPU市场92%，AI领域优势显著。",
+          "summary_zh": "2025年英伟达GPU市场占有率达92%，主导AI计算领域。",
           "region": "global",
-          "score": 0.8,
+          "score": 0.75,
           "date": "2026-01-06",
           "sources": [
             {
@@ -1489,25 +1759,46 @@
           ]
         },
         {
-          "title_zh": "Rubin芯片支持热水冷却技术",
-          "summary_zh": "英伟达展示Rubin超算可用热水冷却，提升能效与可持续性。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-06",
+          "title_zh": "中国光子AI硬件实现能效突破",
+          "summary_zh": "中国研发的光学AI硬件在能效方面取得重大进展，有望降低算力成本。",
+          "region": "cn",
+          "score": 0.82,
+          "date": "2026-01-03",
           "sources": [
             {
-              "title": "Supercomputers can stay chill with hot water says Nvidia - F",
-              "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9VOU1ibnJEb3hSUEQ4MTk3MzR3T08wLW1zdC1fQUlNU3pUcW5",
-              "source": "Fierce Network",
-              "published_at": "2026-01-06"
+              "title": "China’s optical AI hardware shows massive efficiency leaps i",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNTTBWaVZENWJvUzNrTmtBVlk0VkVTVGpiN0NXNWo5LXB0WXd",
+              "source": "TechRadar",
+              "published_at": "2026-01-03"
             }
           ]
         },
         {
-          "title_zh": "AMD欲挑战英伟达AI霸主地位",
-          "summary_zh": "分析称AMD有望在AI芯片赛道超越英伟达，竞争白热化。",
+          "title_zh": "英伟达加码200亿美元收购Groq",
+          "summary_zh": "英伟达拟斥资200亿美元收购Groq，强化AI推理技术布局。",
           "region": "global",
           "score": 0.7,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Here’s why Nvidia is dropping $20B on Groq’s AI tech - Fierc",
+              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ3Q1N0F1cTg5TnlHNlhDR1dtSHkycDVOVHVkZURmcGRvSnA",
+              "source": "Fierce Network",
+              "published_at": "2026-01-05"
+            },
+            {
+              "title": "After Nvidia’s Groq deal, meet the other AI chip startups th",
+              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA5MFRyUUlvREt6c2xvR2V3SHZ3RnlSZnRfcUZDaEdDSFRaclQ",
+              "source": "Fortune",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AMD或挑战英伟达AI地位",
+          "summary_zh": "分析认为AMD可能在AI芯片领域超越英伟达，市场竞争加剧。",
+          "region": "global",
+          "score": 0.65,
           "date": "2026-01-07",
           "sources": [
             {
@@ -1519,273 +1810,221 @@
           ]
         },
         {
-          "title_zh": "英伟达DGX SuperPOD支持Rubin系统",
-          "summary_zh": "NVIDIA推出基于Rubin的DGX SuperPOD，加速企业级AI部署。",
+          "title_zh": "英伟达CES聚焦AI忽略游戏显卡",
+          "summary_zh": "2026年CES上英伟达重心在AI芯片，未发布新款游戏GPU。",
           "region": "global",
-          "score": 0.8,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "NVIDIA DGX SuperPOD Sets the Stage for Rubin-Based Systems -",
-              "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE11M1R6QkFHSGJGR2Q5YW1NelVpbE1CaHZ1SHV1NnZRZE8yeDJ",
-              "source": "NVIDIA Blog",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "英伟达CFO称AI收入潜力更大",
-          "summary_zh": "英伟达CFO表示数据中心AI需求将带来更大营收增长空间。",
-          "region": "global",
-          "score": 0.75,
+          "score": 0.6,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "Nvidia CFO Signals Bigger AI Revenue Opportunity as Data Cen",
-              "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBsaGI1U3pFVlB0NUxJelJ6YXQtZWplOGtLQV91Z0wtTE5PS2N",
-              "source": "techi.com",
+              "title": "Where's the Gaming GPU? Nvidia Remains All About AI at CES E",
+              "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZlFVZXJVN21XV2VKLVVwTTZmd25zcUdRWUVPUVVSYXJuUHg",
+              "source": "PCMag",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "CES 2026成AI技术盛会",
-          "summary_zh": "各大厂商在CES集中发布AI硬件，AI成为展会核心主题。",
+          "title_zh": "黄仁勋获IEEE最高荣誉",
+          "summary_zh": "英伟达CEO黄仁勋荣获IEEE顶级奖项，表彰其在AI与芯片领域的贡献。",
           "region": "global",
-          "score": 0.65,
-          "date": "2026-01-05",
+          "score": 0.72,
+          "date": "2026-01-06",
           "sources": [
             {
-              "title": "Every conference is an AI conference as Nvidia unpacks its V",
-              "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBEbnVtTG01Z2ZLMVR0V0V6OHRjSlpBM0xWSTZ3RHU4T2x2aGZ",
-              "source": "theregister.com",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "Rubin为英伟达开启新增长周期",
-          "summary_zh": "分析认为Rubin将推动英伟达进入更大规模的AI增长阶段。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "The Next Phase of the AI Boom Could Be Even Bigger for Nvidi",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdk1iaXJrUmZiWDJKOWg0OG9EdldIS0w0TUxKVDBmc0l3Z29",
-              "source": "The Motley Fool",
-              "published_at": "2026-01-05"
+              "title": "Nvidia’s Jensen Huang wins top award from IEEE - Fast Compan",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMUY2LXZLbUJ3dnpYaXlhQ1o4ZzF5bTVwMWJVQjJTWHRZSGJ",
+              "source": "Fast Company",
+              "published_at": "2026-01-06"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 2,
       "total_count": 10,
       "sentiment": "positive",
-      "sentiment_score": 0.85,
+      "sentiment_score": 0.75,
       "keywords": [
         "英伟达",
         "AI芯片",
         "Rubin",
-        "AMD",
-        "数据中心"
+        "H200",
+        "光子AI"
       ],
-      "deduped_count": 0,
-      "raw_count": 35
+      "deduped_count": 1,
+      "raw_count": 45
     },
     {
       "id": "ev",
       "name": "新能源汽车（电池·充电·智驾）",
       "tags": [],
       "gnews_queries": [
-        "electric vehicle EV battery Tesla BYD",
-        "autonomous driving self-driving car",
-        "EV charging infrastructure battery technology",
-        "solid state battery lithium"
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology",
+        "lithium battery supply chain"
       ],
-      "brief_zh": "2025年比亚迪超越特斯拉，成为全球销量最高的电动汽车制造商，标志着中国车企在全球新能源市场占据主导地位，推动电池、充电与智能驾驶技术发展。",
+      "brief_zh": "比亚迪超越特斯拉成为全球头号电动车制造商，中国企业在电池与销售领域占据主导地位，特斯拉销量持续下滑。",
       "events": [
         {
           "title_zh": "比亚迪超越特斯拉成全球销冠",
-          "summary_zh": "2025年比亚迪全球电动车销量首次超过特斯拉，登顶世界第一。",
+          "summary_zh": "2026年初，比亚迪超越特斯拉，成为全球最大的电动汽车销售商。",
           "region": "cn",
           "score": 0.95,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "China’s BYD Surpasses Tesla as World Leader in Electric Car",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTVlXVUdoRFVRS1dPTTV3Y0R4VHJoYktJWllyZ3VtOWNsTTN",
-              "source": "The New York Times",
-              "published_at": "2026-01-02"
-            },
-            {
               "title": "China's BYD overtakes Tesla as world's top EV seller - BBC",
-              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9leDVERDM4TlV4TVk3REJ4WDBPV3o5bXVVeXdmZGJxZTBiTG0xS1Z0OHNmYWV4LUJ1SHpSR3lqLVBSYnNpNjFkV2lySDZaZWpLenU1cjNfYXlvUdIBX0FVX3lxTE0zRTk1dEZFZTBDVGNPVGNnc3NJU1F5UHJHalFQVUdMc1NiTUVDQnk1bFBGT1JvSlp4dUJfQlZ1bUM4QjE0emxVQzQxOUMzMThUb0dsRUxuM1U1V21VQ0hv?oc=5",
+              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9leDVERDM4TlV4TVk3REJ4WDBPV3o5bXVVeXdmZGJxZTBiTG0",
               "source": "BBC",
               "published_at": "2026-01-02"
-            },
-            {
-              "title": "BYD overtakes Tesla as world’s largest EV manufacturer - electrive.com",
-              "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNSUN0cFhFdVN3bHQ1bXdrcUVHc0kyZmtKclhiOHNLTnhtYW4xN19XcGpUcktRSVBNYmtEOHRkUXNMS2Z4LVByd0trbGx3WnlfLXo5RlF2UnVnTzZ2azMycTFoZnl0aU1mRDlBY0JNa3gzUWY2SGsxVTVWSUd2QmVud0tBMk9wTkZGT3lHMllUYlNlcW5pcmc?oc=5",
-              "source": "electrive.com",
-              "published_at": "2026-01-02"
             }
           ]
         },
         {
-          "title_zh": "比亚迪成全球最大EV品牌",
-          "summary_zh": "比亚迪在2025年销量领先，取代特斯拉成为全球最大的电动汽车品牌。",
-          "region": "cn",
-          "score": 0.93,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "BYD overtakes Tesla to become world’s largest EV brand",
-              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYVJXVThsX3Mza29EUEl2QU54SUp6ellrTXRfdVk2YkJtbzB",
-              "source": "Global Fleet",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "比亚迪欧洲市场表现强劲",
-          "summary_zh": "比亚迪在德法两大欧洲市场销量超越特斯拉，加速国际化布局。",
-          "region": "cn",
-          "score": 0.88,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "China’s BYD Outsells Tesla in Europe’s Two Biggest EV Markets",
-              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc2dWU2JfanR2Nktmb3lMdlYwNXh6anRaZUJ0QkdYQkh2MjB",
-              "source": "Bloomberg.com",
-              "published_at": "2026-01-06"
-            },
-            {
-              "title": "BYD Has Overtaken Tesla as the World’s Top EV Seller - Autoblog",
-              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYV9YUVF0c2luazU2TXVLdUpIZkZ0RFJSN3gwTW9DWWdwUnVRa2ItRFRWZUs2Y1RTRTMyRUNJWjNPWjBvSlRGY0loLXh2S3BZU3VDRVE5TUpiQktpZGVLRGR3c3JyaHhld2tpMHRWVlUtUmd6dlUxZ0p3T0FlV1dad2tOYWJYaTFr?oc=5",
-              "source": "Autoblog",
-              "published_at": "2026-01-03"
-            }
-          ]
-        },
-        {
-          "title_zh": "特斯拉失去制造领先地位",
-          "summary_zh": "比亚迪在产量和交付量上全面超越特斯拉，终结其制造霸主地位。",
+          "title_zh": "宁德时代与比亚迪掌控全球电池市场",
+          "summary_zh": "两家中国企业共占全球电动车电池市场55%份额。",
           "region": "cn",
           "score": 0.85,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Tesla loses global EV manufacturing lead to BYD",
-              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZjlKUS1tTjZjWU9WNUFMcm45MUxUYWFnZ015Yzk2djE1Ym8",
-              "source": "Manufacturing Today",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "比亚迪销售增速放缓但仍领先",
-          "summary_zh": "尽管比亚迪年度销量增速为五年来最低，仍稳居全球第一。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "BYD posts slowest annual sales growth in 5 years, but China's",
-              "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPU182WEdnZ2dYNzk5cC1STXllQ085LVpUQm9Xc3k2TVpwX1A",
-              "source": "Fortune",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "特斯拉受困于销售与政治因素",
-          "summary_zh": "特斯拉因市场需求疲软及地缘政治影响，销量增长停滞。",
-          "region": "global",
-          "score": 0.75,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "BYD sales pull ahead as Tesla stumbles on sales and politics",
-              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMkhUMmIwaUs1WUtnM1E3U213TmthVGktQTlablF2ZVRoaHR",
-              "source": "Euronews.com",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "中企重塑全球电动化格局",
-          "summary_zh": "比亚迪崛起反映中国汽车制造商正主导全球电动化转型进程。",
-          "region": "cn",
-          "score": 0.87,
-          "date": "2026-01-03",
-          "sources": [
-            {
-              "title": "BYD overtakes Tesla as China reshapes the global EV race",
-              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1GaEtneFdTbC1JeGNjQ1J2Ynk2RkhNdUF2cFVaVXdPTlpfcjN",
-              "source": "eeNews Europe",
-              "published_at": "2026-01-03"
-            }
-          ]
-        },
-        {
-          "title_zh": "充电基础设施面临重构",
-          "summary_zh": "比亚迪销量领先或将推动新的充电标准与网络建设。",
-          "region": "cn",
-          "score": 0.78,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Tesla vs BYD 2025: EV sales reshaping charging infrastructure",
-              "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkhuSG1nYWlydGJGZVZpWmNrR2JZWVpjMTZTWDExV0pmR19",
-              "source": "EV Infrastructure Ne",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "澳大利亚纯电车销量破十万",
-          "summary_zh": "2026年初澳大利亚BEV销量突破10万辆，市场持续扩张。",
-          "region": "global",
-          "score": 0.65,
           "date": "2026-01-08",
           "sources": [
             {
-              "title": "Australia's battery electric vehicle sales break 100,000 bar",
-              "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX0VqZDNsVEJxQmlkc0Y2UkFqOUpqQWJxenlUUGJZWlV0SUx",
-              "source": "EV Infrastructure Ne",
+              "title": "China’s CATL and BYD Control 55% of Global EV Battery Market",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTEVnZFJiVURPc1hkVmZFNGlmM2pyNTdUUEtCNHlJaTRFWnB",
+              "source": "The China-Global Sou",
               "published_at": "2026-01-08"
             }
           ]
         },
         {
-          "title_zh": "行业面临‘电动车寒冬’",
-          "summary_zh": "2026年全球电动车销量增速放缓，多家车企面临挑战。",
+          "title_zh": "中国固态电池技术取得新进展",
+          "summary_zh": "中国在固态电动车电池研发方面迈出关键一步。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-01-02",
+          "sources": [
+            {
+              "title": "Solid-state EV batteries take another big step forward in Ch",
+              "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRTVoNlBBMERhY3g1ZWw1dG4yQkdqdU5LSW85REpWRzdwYWx",
+              "source": "Electrek",
+              "published_at": "2026-01-02"
+            },
+            {
+              "title": "Tesla loses title as world's biggest electric vehicle maker as sales fall for second year in a row -",
+              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNd0Fxc2JnUURvb1VvZEZuN0hjb3dicXNJWFY1dnJWRTJ3bkJMUjJoMHVoMHJYclpDM3V6dW4yMDhaaVNyYzI3dmZEVGxGUGNRX1pfZ0FQYk5mUXQwQzExeWNYVnNmS3dFSDJCQzViZjFtSXJ2NHoyQXdJTWkwUUd5M29zTUpKcl9uclJ0TUdaMDRuZlBMX0NkQ3NhRnNNeS1paEdLU2lpMnlyNTjSAbABQVVfeXFMUGVVczRseDNoekFQY3BWTEV4RjdEVmxBR3JVeGRja3ZlNHlrbjlrT3U4VFBhalFNR1oyWDk1SHlpUXhFTnU3Ul9aTTNSeXB4dkZqNmxGYmpvOUlwN3JPeDlyRlptN0lSd1NwZXd6bXdTY1BGZV85VTlQLVhFMDFvTWhkaUwtNGFsYzJ1ckwyc051RHJ5Uld1alVCcU1jaDg4cnM5WkVQNks3SGYzRjM5Ums?oc=5",
+              "source": "abcnews.go.com",
+              "published_at": "2026-01-02"
+            },
+            {
+              "title": "Tesla loses title as world's biggest EV maker as sales fall for second year in a row - NBC News",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVlQ2ZVViQm5UV2d0OWZkV0UwNnZjRXJXdktkZFVBdGlNOFUybk9acmxUQWFCR0dJN3l1dHRTb2YtTUlsaFJQZ0Zfb1d6TzJiVlRVWlliaFI4Y0RvMzBKblh4OXVjQlRLakMtMGd6cVpmTjBNOUFPMUZaQ0pVWnRkUmgxX2NrMFhHMWJxNEw4VlFYZU9YVEdfWjNqTXRBX3ZiS3NTYw?oc=5",
+              "source": "NBC News",
+              "published_at": "2026-01-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉德国销量骤降近半",
+          "summary_zh": "2025年12月，特斯拉在德国新车销量同比下降近50%。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.65,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "Automakers Face an ‘EV Winter’ in 2026 As Sales Growth Slows",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYW9BUGV1UkxweVk2Z0R0M01RU0d5WGt6UGhwRGFnRlhMMHh",
-              "source": "Bloomberg.com",
+              "title": "Tesla's German car sales drop by almost half in December - R",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTkFNd0lNeDFtNFN6LU1Jb3RWNVYtV1Bjb3o0TC11bTNNMjZ",
+              "source": "Reuters",
               "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉英国销量下滑29%",
+          "summary_zh": "受中国品牌冲击，特斯拉在英国市场销量明显下降。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "Tesla UK car sales slump 29% in December as Chinese brands g",
+              "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQYXBpUVFudU0xb3UzUmVRTXRFZVpaaGVpaDdLTVN2MDluNHB",
+              "source": "Reuters",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉失去全球最大EV制造商地位",
+          "summary_zh": "因销量持续疲软，特斯拉被比亚迪超越，丢掉榜首位置。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-01-02",
+          "sources": [
+            {
+              "title": "Tesla loses title as world's biggest electric vehicle maker ",
+              "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNc3VfcEpGTFpBbmIwRVR2d01PUU55WkdyWl9yTnYwazlZZWg",
+              "source": "AP News",
+              "published_at": "2026-01-02"
+            },
+            {
+              "title": "China’s BYD overtakes Tesla as world’s biggest electric car seller - The Guardian",
+              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQS0VuNXBLcGd0aExPUF9fS3lfLURYUmQ1YVM4U1lnbm1wWTRVOTQ2SU16emRpSUFodmRsNTdVTjdRVFN3X0pOakw0YWtvQkw0REc1ZHNzMzRtXzJGUm5LZjlLd29tVmFVX3ZzYmlEOFFza3hERm5wdGlodEdGNk8yUkZQcTl4MWJNWk9JaVNZaFFXUmlfVDhwVkhJeldkSmd2NFdFR25oU0NuT2hxMFJ4RC1rMUZGNjRCZFg3a1FzOVM1X2c?oc=5",
+              "source": "The Guardian",
+              "published_at": "2026-01-02"
+            },
+            {
+              "title": "BYD Overtakes Tesla as World’s Biggest EV Seller in 2025 - CarbonCredits.com",
+              "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPVG1sSzdiSEdNeV9weEFON0YzRy0wWFVCdldyQzdDQi1tVTJLblFTRTNOM0VYSEN1Zmw5REUxNU1tTHhlQUxDNU5DdlAwdGg1SWQ0U0RwNGJhXzNJOXY2bWNENGUzY1hPQy1rcF9lcEQ2ZUxOZk9VOUNtVEhNWXlBLVY4M3lrMjRvcXc?oc=5",
+              "source": "CarbonCredits.com",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "挪威96%新车为纯电动车",
+          "summary_zh": "2025年挪威96%的新车注册为纯电动车，电动化率全球领先。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-01-02",
+          "sources": [
+            {
+              "title": "Norway wraps up 2025 with 96% of its new car market fully el",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMTJOTGJGRkxzQWZScjBqYnhReG1IRWNSV3M2NC1KR0xYSm9",
+              "source": "CNBC",
+              "published_at": "2026-01-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特转向电动车战略调整",
+          "summary_zh": "面对市场竞争，福特加速电动车业务转型以应对挑战。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "BYD’s win, Tesla’s defeat, Ford’s pivot: the widening gap in",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeEY5OS1QODY0QW9ZbVZRMlRteGhrcVhlV2g4YkVnWlJPRDJ",
+              "source": "South China Morning ",
+              "published_at": "2026-01-07"
             }
           ]
         }
       ],
-      "cn_count": 7,
-      "total_count": 10,
+      "cn_count": 6,
+      "total_count": 8,
       "sentiment": "positive",
-      "sentiment_score": 0.9,
+      "sentiment_score": 0.7,
       "keywords": [
         "比亚迪",
         "特斯拉",
-        "电动汽车销量",
-        "新能源汽车",
-        "全球市场"
+        "电动汽车",
+        "电池",
+        "销量"
       ],
-      "deduped_count": 3,
+      "deduped_count": 8,
       "raw_count": 45
     },
     {
@@ -1793,191 +2032,285 @@
       "name": "大宗 / 金属（LME·供需·库存）",
       "tags": [],
       "gnews_queries": [
-        "LME copper aluminium nickel zinc price",
+        "copper price LME market",
+        "aluminum nickel zinc metal",
         "copper scrap recycling trade",
-        "critical minerals rare earth supply chain"
+        "critical minerals rare earth",
+        "metal commodity trading"
       ],
-      "brief_zh": "近期金属市场波动，LME基本金属涨跌互现，中国对稀土出口实施管制引发日韩及G7国家关注供应链安全，多国寻求多元化供应与循环经济合作。",
+      "brief_zh": "LME铜价突破13000美元创历史新高，受供应短缺、智利罢工及中美关税担忧推动。中国保税仓库库存下降，叠加AI和绿色能源需求增长，市场看多情绪浓厚。",
       "events": [
         {
-          "title_zh": "SHFE金属全线上涨",
-          "summary_zh": "1月6日上海期货交易所金属普遍上涨，市场情绪回暖。",
-          "region": "cn",
-          "score": 0.65,
-          "date": "2026-01-06",
+          "title_zh": "LME铜价突破13000美元创新高",
+          "summary_zh": "伦敦金属交易所铜价首次突破13000美元，创历史新高。",
+          "region": "global",
+          "score": 0.95,
+          "date": "2026-01-05",
           "sources": [
             {
-              "title": "SMM Daily Comments (May 18): SHFE Metals Rose Across the Board",
-              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNM1A5OUhURHVJRURnM2RtV2dPQ1ZPdWdoSGstaUtHVV9IUzd",
-              "source": "Shanghai Metals Mark",
-              "published_at": "2026-01-06"
+              "title": "Copper price hits new record of $13,000 in London - Mining.com",
+              "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBrRjI3QUV1OV9IR2NaNW1BZ3BHRDV3MEFxOFpQdHVfUTBVc0Z",
+              "source": "Mining.com",
+              "published_at": "2026-01-05"
             }
           ]
         },
         {
-          "title_zh": "LME基本金属收跌",
-          "summary_zh": "1月4日伦敦金属交易所基本金属多数下跌，市场承压。",
+          "title_zh": "智利罢工推高铜价",
+          "summary_zh": "智利主要铜矿罢工导致供应紧张，加剧全球库存下滑。",
           "region": "global",
-          "score": 0.45,
+          "score": 0.9,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Chilean strike and vanishing LME stocks propel copper prices",
+              "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOT2tHRDNLb1A2VTQ5OXE5QUtyaXRSbGszX2dFaHhtdGVJUF9",
+              "source": "CryptoRank",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国拟对铜加征高额关税",
+          "summary_zh": "特朗普计划对进口铜征收高额关税，影响全球贸易流向。",
+          "region": "cn",
+          "score": 0.85,
           "date": "2026-01-04",
           "sources": [
             {
-              "title": "SMM Daily Comments (May 24): LME Base Metals Closed with Los",
-              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZGl1dGhUQXFBNVhtb1VESWxZOHlyYUs1VGQtT3hqYlZBaGF",
+              "title": "Trump's plan to impose hefty tariffs on copper to impact cop",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOR3RFeXlpOHRtOWg1QWhQYkk4cEprcE9ZUE90UTRxZGI4YjV",
               "source": "Shanghai Metals Mark",
               "published_at": "2026-01-04"
             }
           ]
         },
         {
-          "title_zh": "中国强化稀土出口管制",
-          "summary_zh": "中国对日实施稀土相关出口限制，加剧地区供应链紧张。",
+          "title_zh": "中国保税仓铜库存大幅下降",
+          "summary_zh": "美国关税预期导致中国企业加速提货，保税仓库库存骤降。",
           "region": "cn",
-          "score": 0.7,
+          "score": 0.9,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Japan condemns China's dual-use export ban as rare earth curbs",
-              "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaGItQ2hfdVlBeVd2dTJiamhhb3l3dXhTNUM5Wk9xMVhzOHV",
+              "title": "US tariff pull on copper drains China's bonded warehouses",
+              "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSEg2Y2hfQnplOEVBN0RwRlRSZ3FjNmR0cWl6enZrSnZmR25",
               "source": "Reuters",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "G7拟摆脱中国稀土控制",
-          "summary_zh": "G7国家推动建立替代稀土供应链，减少对中国依赖。",
+          "title_zh": "AI需求推动铜市复苏",
+          "summary_zh": "2025年铜价年度涨幅为2009年以来最大，受益于AI基础设施扩张。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2025-12-30",
+          "sources": [
+            {
+              "title": "Copper on pace for best year since 2009 as AI demand, supply",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWFNPQ2dCaFRyUzZ5Z1dUcG5COU03OVdEUlVUR1UwQlhWbld",
+              "source": "CNBC",
+              "published_at": "2025-12-30"
+            }
+          ]
+        },
+        {
+          "title_zh": "镍价因中国采购飙升超10%",
+          "summary_zh": "中国市场需求旺盛，推动LME镍价单日大涨超10%。",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "Nickel price spikes more than 10% as Chinese buying fuels me",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNX2FHZUlES1l5a1owLU83NUltcHZ0Qy01cEJMUjljRENZR1E",
+              "source": "Mining.com",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国加强再生铜原料进口分析",
+          "summary_zh": "2025年中国再生铜原料进口市场分析发布，关注可持续供应。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-01-01",
+          "sources": [
+            {
+              "title": "[SMM Analysis] 2025 Recycled Copper Raw Material Import Mark",
+              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQcS1aRXB2azFkMGVUQ0lhdjFQRXo2aG9YOUVZRVYyY1o4OFN",
+              "source": "Shanghai Metals Mark",
+              "published_at": "2026-01-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "中美博弈促美发展本土精炼能力",
+          "summary_zh": "美国加快构建自主冶炼体系，减少对中国加工链依赖。",
           "region": "cn",
           "score": 0.75,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "Building Own Refining Capabilities After China Weaponized Cr",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSjR3TGpmRlk0OWVmS2MwbE1OTmRQdUhZYlNDMDdubmZtOTV",
+              "source": "Bloomberg.com",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国考虑从委内瑞拉获取关键矿产",
+          "summary_zh": "为多元化供应，美国或将开发委内瑞拉的铜、镍等关键矿物资源。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "G7 Sets a Floor to Escape China’s Rare Earth Control - Modern Diplomacy",
-              "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUi03Ym03TUQ4MGhfNEhIOWhOVkZ2bDRvejlwbHhMbV93Wmk",
-              "source": "Modern Diplomacy",
+              "title": "U.S. May Seek Critical Minerals In Venezuela To Diversify Su",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObHpvMFN0bVFyRjBheDUtLVlLTFBGc0p6NXo4QkhwUGJHSzd",
+              "source": "Forbes",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "韩国呼吁多元化矿产采购",
-          "summary_zh": "韩国敦促企业拓展关键矿产来源，降低地缘风险。",
+          "title_zh": "铜市短暂恐慌后趋于冷静",
+          "summary_zh": "短期供应担忧缓解，铜价在创下新高后出现回调迹象。",
           "region": "cn",
           "score": 0.6,
-          "date": "2026-01-07",
+          "date": "2025-12-30",
           "sources": [
             {
-              "title": "South Korea urged to diversify strategic mineral sourcing amid tensions",
-              "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBQLUFEZ25SOFhEekpqWE96ZlVjREFoVFdkTEVTSklqMGtOTXp",
-              "source": "aju press",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "稀土股因政策波动回升",
-          "summary_zh": "受中美博弈影响，稀土概念股在中国市场反弹。",
-          "region": "cn",
-          "score": 0.68,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Rare Earth Stocks Revive After China Slams Trump's Venezuela",
-              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaFY2ZWlHQ083WDdNbmFyRERPdERhVlF5dTdsWm1JazVfa29",
-              "source": "Investor's Business ",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "铜价基本面仍支撑走强",
-          "summary_zh": "尽管短期波动，铜市供需基本面持续利好价格。",
-          "region": "global",
-          "score": 0.62,
-          "date": "2026-01-04",
-          "sources": [
-            {
-              "title": "LME WEEK 2019: Fundamentals remain supportive of copper prices",
-              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMk1iQVVhTDRoZjlLUkNmMklKdnZ0eExMVGRTMVVDZUZaemJ",
-              "source": "Shanghai Metals Mark",
-              "published_at": "2026-01-04"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国再提稀土战略地位",
-          "summary_zh": "分析指出稀土在国际贸易博弈中再度成为关键筹码。",
-          "region": "cn",
-          "score": 0.71,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "China Squeezes Japan, Again: Rare Earths Return to Center Stage",
-              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOa2F0ZUVSWVJ2aFNtYzU2Y3d6dWltUVlqbm81cGFjYWM0ZVA",
-              "source": "Rare Earth Exchanges",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "打破中国稀土垄断成焦点",
-          "summary_zh": "国际媒体热议如何突破中国在稀土加工环节的主导地位。",
-          "region": "cn",
-          "score": 0.66,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "Breaking China’s Grip On Rare-Earth Elements - Global Finance",
-              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMHdyM3d2OFctZzVCNUxzSlZCQ0FZUERtMEhJRDFoSG01Snd",
-              "source": "Global Finance Magaz",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "循环经济助力清洁能源供应链",
-          "summary_zh": "发展循环经济被视作增强资源自主可控的重要路径。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "How a circular economy could strengthen the clean energy supply chains",
-              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOekZLSm45Z0FrZGVOTU9BRThNNVJOeHNhdk5VcHREdVNnYks",
-              "source": "The World Economic F",
-              "published_at": "2026-01-07"
+              "title": "Copper Market Cools After Brief Supply Scare - Finimize",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcHNiN09uQ1ZfT2Vfc3gzd2NhUjNuRnlva1pPaWVtazlDbE1",
+              "source": "Finimize",
+              "published_at": "2025-12-30"
             }
           ]
         }
       ],
-      "cn_count": 7,
+      "cn_count": 6,
       "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment": "positive",
+      "sentiment_score": 0.85,
       "keywords": [
-        "稀土",
-        "LME金属",
-        "供应链安全",
-        "出口管制",
-        "循环经济"
+        "LME铜价",
+        "供应短缺",
+        "关税",
+        "AI需求",
+        "库存下降"
       ],
-      "deduped_count": 1,
-      "raw_count": 26
+      "deduped_count": 2,
+      "raw_count": 45
     },
     {
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
       "tags": [],
       "gnews_queries": [
-        "EU CBAM carbon border adjustment mechanism",
-        "carbon credit market trading",
-        "carbon neutrality net zero emissions"
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price",
+        "climate change policy carbon"
       ],
-      "brief_zh": "欧盟碳边境税（CBAM）于2026年初正式实施，覆盖钢铁、化肥、氢等领域，引发中国等贸易伙伴关切。多国评估应对策略，全球碳市场加速发展，Verra机制与区块链技术推动透明化。",
+      "brief_zh": "欧盟碳边境税于2026年正式实施，覆盖钢铁、化肥、氢等领域，引发中国等贸易伙伴反对。意大利、法国寻求化肥行业豁免，CBAM进入新阶段，推动全球碳市场联动。",
       "events": [
         {
-          "title_zh": "欧盟CBAM进入新阶段",
-          "summary_zh": "欧盟碳边境调整机制2026年全面启动，覆盖多个高排放行业。",
+          "title_zh": "中国谴责欧盟碳关税不公",
+          "summary_zh": "中国称欧盟碳边境税歧视性明显，警告将采取反制措施维护贸易权益。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "China Threatens EU After Carbon Border Tax Takes Effect - Ca",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWUhtdnplV0JnZXhGMmtMMHdtcWhjenIxaGMweFlsVF83Q2o",
+              "source": "Caixin Global",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国称欧盟碳边境税不公平",
+          "summary_zh": "中国批评欧盟碳边境调节机制违反国际贸易规则，可能引发贸易摩擦。",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2026-01-01",
+          "sources": [
+            {
+              "title": "China Calls EU Carbon Border Tax Unfair, Warns of Counter-Mo",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQUWlZX1VWNlA5eHRYM2t3dzVTd2EySG1KV0M1VHpMV1ViYzF",
+              "source": "Bloomberg.com",
+              "published_at": "2026-01-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟碳关税正式开征",
+          "summary_zh": "欧盟碳边境调整机制（CBAM）于2026年1月起对钢铁、氢等产品收费，标志绿色贸易壁垒落地。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
+            {
+              "title": "EU Carbon Border Adjustment Mechanism Begins Charging Fees: ",
+              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJ",
+              "source": "European Business Ma",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟拟暂停化肥碳税",
+          "summary_zh": "因市场冲击担忧，欧盟考虑暂时中止对进口化肥征收碳边境税。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "EU May Pause Carbon Levy on Fertilizers If Market Damage Eme",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeTgzcVVBakhuT21NWUtnWVk1UWVmQlpQdV9Wa1VSRlZRNFV",
+              "source": "Bloomberg.com",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "法意寻求化肥碳税豁免",
+          "summary_zh": "法国与意大利呼吁欧盟在碳边境税中为化肥行业提供临时救济。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Italy, France seek relief on fertilisers from EU's carbon bo",
+              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZVJrWU9qb05hMF9hZ2d5eU1HZkhZN3RXbXplR1NWNnVaQnd",
+              "source": "Euronews.com",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "韩国商讨应对欧盟碳税",
+          "summary_zh": "韩国政府与钢铁企业讨论如何应对欧盟碳边境税带来的出口压力。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "Gov't discusses response to EU's carbon tax policy with stee",
+              "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVmZqbW9jaFpZd2NPUVF2NlJoWkQyWVJGZkxIQnlzaU5DT0h",
+              "source": "The Korea Times",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "CBAM进入新阶段",
+          "summary_zh": "欧盟碳边境机制全面实施，推动其他国家加快国内碳市场建设以应对合规要求。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-07",
@@ -1991,74 +2324,23 @@
           ]
         },
         {
-          "title_zh": "中国对欧盟碳税表示反对",
-          "summary_zh": "中国在欧盟碳边境税生效后提出抗议，担忧其对出口产业影响。",
-          "region": "cn",
-          "score": 0.85,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "China Threatens EU After Carbon Border Tax Takes Effect - Ca",
-              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWUhtdnplV0JnZXhGMmtMMHdtcWhjenIxaGMweFlsVF83Q2o",
-              "source": "Caixin Global",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟拟暂停化肥碳税",
-          "summary_zh": "因市场冲击风险，欧盟考虑暂缓对化肥征收碳边境税。",
-          "region": "global",
-          "score": 0.65,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "EU May Pause Carbon Levy on Fertilizers If Market Damage Eme",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeTgzcVVBakhuT21NWUtnWVk1UWVmQlpQdV9Wa1VSRlZRNFV",
-              "source": "Bloomberg.com",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "EU may suspend carbon border tax on fertilizers, says French",
-              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV8yanN4YlVKWnpzWUV5d1I1cXpxb09jX2pVMjJqdDZYanB",
-              "source": "Anadolu Ajansı",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "意大利法国寻求化肥豁免",
-          "summary_zh": "意法两国呼吁欧盟在碳边境税中免除或减轻化肥行业负担。",
+          "title_zh": "CBAM扩围评估完成",
+          "summary_zh": "欧盟审查显示CBAM需扩展至更多行业，并促使非欧盟国家建立碳定价机制。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-01-07",
+          "date": "2026-01-02",
           "sources": [
             {
-              "title": "Italy, France seek relief on fertilisers from EU's carbon bo",
-              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZVJrWU9qb05hMF9hZ2d5eU1HZkhZN3RXbXplR1NWNnVaQnd",
-              "source": "Euronews.com",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "CBAM开始收费",
-          "summary_zh": "欧盟碳边境税正式进入收费阶段，钢铁等行业需申报并支付费用。",
-          "region": "global",
-          "score": 0.75,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "EU Carbon Border Adjustment Mechanism Begins Charging Fees: ",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVzBvTE1lZG5MRlp1QUdHZVNRa3Y0bXU1WWo1cF96aUJOVVJ",
-              "source": "European Business Ma",
-              "published_at": "2026-01-05"
+              "title": "EU Expands CBAM: A Review Shows It Urges Other Countries to ",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZXotaVpQRVgyTEh4OVY0a1dYb3g5ZnQ4c2FqeFI2bjBCSzV",
+              "source": "CarbonCredits.com",
+              "published_at": "2026-01-02"
             }
           ]
         },
         {
           "title_zh": "英国推迟间接排放纳入CBAM",
-          "summary_zh": "英国决定延后将间接排放纳入碳边境税体系，以缓解企业压力。",
+          "summary_zh": "英国认为当前不宜将间接排放纳入碳边境税体系，主张分步推进。",
           "region": "global",
           "score": 0.55,
           "date": "2026-01-08",
@@ -2072,157 +2354,274 @@
           ]
         },
         {
-          "title_zh": "韩国讨论应对欧盟碳税",
-          "summary_zh": "韩国政府与钢铁业商讨对策，应对欧盟碳边境税带来的挑战。",
+          "title_zh": "绿钢面临新挑战",
+          "summary_zh": "欧盟碳边境税实施后，绿色钢铁出口成本结构发生变化，产业转型压力加大。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-01-08",
+          "date": "2026-01-06",
           "sources": [
             {
-              "title": "Gov't discusses response to EU's carbon tax policy with stee",
-              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXb3pyX1Z0UUJDUkpVWlZRWFVPck9wQ09DZ0p3Y2RQalk2dDh",
-              "source": "Yonhap News Agency",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟扩大CBAM范围",
-          "summary_zh": "审查结果显示，欧盟计划进一步扩展碳边境税覆盖范围。",
-          "region": "global",
-          "score": 0.68,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "EU Expands CBAM: A Review Shows It Urges Other Countries to ",
-              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZXotaVpQRVgyTEh4OVY0a1dYb3g5ZnQ4c2FqeFI2bjBCSzV",
-              "source": "CarbonCredits.com",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "氢能纳入碳边境税",
-          "summary_zh": "欧盟碳边境税正式涵盖氢能产品，推动绿色氢发展。",
-          "region": "global",
-          "score": 0.62,
-          "date": "2026-01-05",
-          "sources": [
-            {
-              "title": "Europe’s carbon border tax enters force for hydrogen, steel,",
-              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRE83bTU0cHJtcHBXOXNnT29yMmtLOWswYlE1NDRQQWhPQzd",
-              "source": "H2 View",
-              "published_at": "2026-01-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "自愿碳市场持续增长",
-          "summary_zh": "自愿碳信用市场快速增长，关注点转向质量与透明度。",
-          "region": "global",
-          "score": 0.58,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Survey: Voluntary carbon credit market growing, as focus shi",
-              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRzdOWmpwR00tNVdJVF9BbjlHYmJlaUVOZG8wSDdoWVBINDE",
-              "source": "BusinessGreen",
-              "published_at": "2026-01-07"
-            },
-            {
-              "title": "Carbon Credit Market Expected to Expand Rapidly at 12.3% CAG",
-              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNm16b0FlREc1ZEhOLUJJcUpDQy1heHowSXp3Qlo5RENWZ2d",
-              "source": "openPR.com",
-              "published_at": "2026-01-07"
+              "title": "What does the EU carbon border tax mean for green steel? - S",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcUlWWTVjYUM5T3Y1UjI5R1pGR1E5T0lNWUh5Mko2Mmc2WEJ",
+              "source": "Sustainable Views",
+              "published_at": "2026-01-06"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 2,
       "total_count": 10,
       "sentiment": "neutral",
-      "sentiment_score": 0.45,
+      "sentiment_score": 0.5,
       "keywords": [
-        "碳边境税",
+        "欧盟碳边境税",
         "CBAM",
-        "欧盟",
         "碳市场",
-        "Verra"
+        "中国反制",
+        "化肥"
       ],
-      "deduped_count": 0,
-      "raw_count": 28
+      "deduped_count": 1,
+      "raw_count": 44
     },
     {
       "id": "sea",
       "name": "东南亚供应链（制造·转移·关键矿产）",
       "tags": [],
       "gnews_queries": [
-        "Vietnam manufacturing supply chain investment",
-        "Indonesia nickel smelter mining",
-        "Southeast Asia electronics semiconductor"
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
       ],
-      "brief_zh": "印尼淡水河谷因审批延迟暂停采矿活动，突显东南亚供应链中关键矿产开采面临监管挑战。同时，前嘉能可交易员控制大量镍资源，反映该地区矿产贸易的集中化趋势。",
+      "brief_zh": "东南亚供应链正在快速发展，特别是越南吸引了大量外资，成为制造和出口的重要基地。中国的投资推动了越南工业的转型，同时印尼也在调整镍矿配额以支持价格。这些变化为区域经济带来了积极影响。",
       "events": [
         {
-          "title_zh": "印尼淡水河谷暂停采矿",
-          "summary_zh": "因审批延迟，印尼淡水河谷暂停采矿活动，影响关键矿产供应。",
-          "region": "global",
-          "score": 0.4,
+          "title_zh": "越南吸引中国投资",
+          "summary_zh": "越南正成为中国投资的重要目的地，推动其工业发展。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "Juan Cole/ Informed",
+              "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5oVFhHWXdfNkFoajlaSUZJTm54NjhqOThfeFdyUERRbERGUWl",
+              "source": "Informed",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "越南制造业增长强劲",
+          "summary_zh": "越南制造业在2025年结束时实现了稳健增长，吸引了大量外资。",
+          "region": "cn",
+          "score": 0.7,
           "date": "2026-01-02",
           "sources": [
             {
-              "title": "Vale Indonesia halts mining activities on delayed approval f",
-              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWkNlM21Pbi02dlVOYmRQWTFqcm1pWnBkVW0tRG1PTEZyeVV",
-              "source": "Mining.com",
+              "title": "Investing.com India",
+              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOT25mY21SQWJBUXFLNVAxN0ZVb3Jibzk3QmNEME1TNDIta1V",
+              "source": "Investing.com",
               "published_at": "2026-01-02"
             }
           ]
         },
         {
-          "title_zh": "前嘉能可交易员控制镍资源",
-          "summary_zh": "前嘉能可交易员控制全球三分之一镍资源，凸显矿产贸易集中化。",
-          "region": "global",
+          "title_zh": "印尼调整镍矿配额",
+          "summary_zh": "印尼减少镍矿配额以支持价格，确保市场稳定。",
+          "region": "cn",
           "score": 0.6,
-          "date": "2026-01-02",
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "Arif Kurniawan: The ex-Glencore trader controlling a third o",
-              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdTFTY0dZOERfa1JISUROVV9rUTZOWVhWTHRtT0RyMHF6NmR",
-              "source": "AFR",
-              "published_at": "2026-01-02"
+              "title": "digitimes",
+              "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeFVodFJIZkZuOUh3aVo0V25hbXNfMXR2UTBrNGsxMV81amF",
+              "source": "digitimes",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "越南工业土地重塑",
+          "summary_zh": "中国投资激增正在重塑越南的工业土地布局，促进经济发展。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2025-12-10",
+          "sources": [
+            {
+              "title": "StratNews Global",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd1JSTm9GVU9nYnhfT1ZsdG1YaE5yanVQd1NRYWRrYmJyclN",
+              "source": "StratNews Global",
+              "published_at": "2025-12-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "东南亚成为全球AI供应链关键环节",
+          "summary_zh": "东南亚在全球AI供应链中扮演着越来越重要的角色，吸引了众多投资。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2025-12-29",
+          "sources": [
+            {
+              "title": "Fibre2Fashion",
+              "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcFJNN2JWeWxibmotVDJ4ZXFUbVhFdVBRSklXUFZCZmJocUZ",
+              "source": "Fibre2Fashion",
+              "published_at": "2025-12-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国对东南亚的关税影响",
+          "summary_zh": "特朗普对东南亚的关税政策影响了美国的圣诞商品供应链。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2025-12-15",
+          "sources": [
+            {
+              "title": "South China Morning",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWVNaZ0xNUG1MU09fZzVfS2F5MElSeWxhNnVEcUVjSTBac2d",
+              "source": "South China Morning",
+              "published_at": "2025-12-15"
+            }
+          ]
+        },
+        {
+          "title_zh": "寻找亚洲供应链的新机会",
+          "summary_zh": "亚洲的供应链格局正在变化，带来了新的商业机会。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2025-12-30",
+          "sources": [
+            {
+              "title": "HKTDC Research",
+              "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5GNXBGbFAwRWFISWQzYUEwd0FGSTBqREtRZlNwaXhpeFFzcTV",
+              "source": "HKTDC Research",
+              "published_at": "2025-12-30"
+            }
+          ]
+        },
+        {
+          "title_zh": "东南亚经济季度回顾",
+          "summary_zh": "东南亚市场正在重塑，经济形势发生变化。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2025-12-12",
+          "sources": [
+            {
+              "title": "mckinsey.com",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPa2VLay02a3U1UnFDWmZpbUw3TGlYSU5ydGtDWW5kT0NrbVV",
+              "source": "mckinsey.com",
+              "published_at": "2025-12-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "东南亚受益于美中贸易战",
+          "summary_zh": "东南亚在美中贸易战中获得了一定的利益，但面临挑战。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2025-12-31",
+          "sources": [
+            {
+              "title": "The Business Times",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNa2lpMTB3b0dqN3RSUkVDeEdnVTBra0xLLXBMYzl1VjNGQ3p",
+              "source": "The Business Times",
+              "published_at": "2025-12-31"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国对东南亚的贸易盈余",
+          "summary_zh": "中国的贸易盈余对东南亚经济产生了深远影响。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2025-12-18",
+          "sources": [
+            {
+              "title": "Thailand Business Ne",
+              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQllJOE1QYTBYSWhYeFdiYzFkNzhSaXprd2E3cXhBeDlPRjE",
+              "source": "Thailand Business Ne",
+              "published_at": "2025-12-18"
             }
           ]
         }
       ],
-      "cn_count": 0,
-      "total_count": 2,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "cn_count": 10,
+      "total_count": 10,
+      "sentiment": "positive",
+      "sentiment_score": 0.8,
       "keywords": [
-        "印尼淡水河谷",
-        "采矿暂停",
-        "关键矿产",
-        "镍资源",
+        "东南亚",
+        "越南",
+        "中国投资",
+        "镍矿",
         "供应链"
       ],
       "deduped_count": 0,
-      "raw_count": 2
+      "raw_count": 21
     },
     {
       "id": "space",
       "name": "宇宙探索（航天·卫星·深空）",
       "tags": [],
       "gnews_queries": [
-        "SpaceX Starship rocket launch",
-        "NASA Mars moon exploration mission",
-        "satellite constellation Starlink space",
-        "China space station lunar program"
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon",
+        "Blue Origin rocket launch"
       ],
-      "brief_zh": "2026年初，SpaceX密集推进Starship发射计划，同时调整Starlink卫星轨道以提升安全性。NASA火星探测持续传回新图像，国会否决预算削减，支持深空探索。中国相关报道关注加州发射竞争与卫星爆炸事件。",
+      "brief_zh": "2026年初，SpaceX密集推进Starship发射计划，频繁执行火箭任务并打破年度发射纪录。NASA的Artemis 2载人绕月任务临近，同时低成本深空探测项目ESCAPADE启动。加州或成新发射基地，中美在航天领域持续布局。",
       "events": [
         {
-          "title_zh": "SpaceX将首次在加州发射火箭",
-          "summary_zh": "SpaceX计划2026年初在加州进行首次发射，拓展西海岸发射能力。",
+          "title_zh": "SpaceX将尝试Starship首次2026年飞行",
+          "summary_zh": "Starship计划于2026年初进行首次飞行测试，或在佛罗里达或加州发射。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "Starship to launch on 1st 2026 flight. When will rocket debu",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYVJmaWNCckdELW1Sd2ZwSzhVcEFsT0NxSV8yTGF2QkZxTm1",
+              "source": "Florida Today",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX再破年度火箭发射纪录",
+          "summary_zh": "截至2025年底，SpaceX已实现165次轨道发射，刷新自身纪录。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2025-12-31",
+          "sources": [
+            {
+              "title": "SpaceX shatters its rocket launch record yet again — 165 orb",
+              "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNaFBWa1JRNF9ZRjEtWUNrcTEwS3dNSHJqWlhHYmZhaXZNVjN",
+              "source": "Space",
+              "published_at": "2025-12-31"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA距Artemis 2载人发射约一个月",
+          "summary_zh": "Artemis 2任务预计2026年初执行，将是首次载人绕月飞行。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "NASA may be 1 month away from historic Artemis 2 astronaut l",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUhuOXg0QkpPQm8tT0tONU9SSy1GUWU4V0xBQjdrNlIzX3R",
+              "source": "Space",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX计划2026年首飞加州发射场",
+          "summary_zh": "SpaceX拟在加州范登堡进行2026年首次发射，提升西海岸运力。",
           "region": "cn",
           "score": 0.7,
           "date": "2026-01-02",
@@ -2236,23 +2635,8 @@
           ]
         },
         {
-          "title_zh": "星链卫星爆炸产生碎片",
-          "summary_zh": "一颗Starlink卫星在轨爆炸，形成小型碎片场，引发安全关注。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Starlink satellite explodes, causing small debris field in s",
-              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBxMXVjVkc3ZmY2SzhzRmEyOEltc21iMkVPSlM5bWJ5RWhJSXV",
-              "source": "Mashable",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "SpaceX与蓝色起源竞标加州发射场",
-          "summary_zh": "两家航天巨头争夺加州新发射基地使用权，竞争激烈。",
+          "title_zh": "Blue Origin与SpaceX竞标加州发射许可",
+          "summary_zh": "两家公司均寻求在加州扩大发射能力，形成商业竞争格局。",
           "region": "cn",
           "score": 0.65,
           "date": "2026-01-06",
@@ -2266,25 +2650,70 @@
           ]
         },
         {
-          "title_zh": "星链宣布降低上万颗卫星轨道",
-          "summary_zh": "为提高空间安全性，Starlink将降低9300多颗卫星的运行轨道。",
+          "title_zh": "SpaceX发布Starship壮观飞行画面",
+          "summary_zh": "公司公开最新Starship试飞影像，展示技术进展与回收能力。",
           "region": "global",
-          "score": 0.75,
-          "date": "2026-01-07",
+          "score": 0.7,
+          "date": "2026-01-04",
           "sources": [
             {
-              "title": "Starlink announces lowering of 9,300+ satellite constellatio",
-              "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRUo2RW1wNlMwYW1HUzdpbmFDYkNNbVhJZGtUdld0U0hUN0V",
-              "source": "Data Center Dynamics",
-              "published_at": "2026-01-07"
+              "title": "SpaceX has finally released the spectacular footage of Stars",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcnRGOHo2ZWozd1dwRlZpYjFrYWlmTVUxNTlfRDlpSTQxV2N",
+              "source": "Futura, Le média qui",
+              "published_at": "2026-01-04"
             }
           ]
         },
         {
-          "title_zh": "国会拒绝大幅削减NASA预算",
-          "summary_zh": "美国国会否决特朗普政府对NASA的深度预算削减提案。",
+          "title_zh": "NASA ESCAPADE探测器将延迟入轨",
+          "summary_zh": "双探测器将先进入停泊轨道，择机进入火星轨道执行任务。",
           "region": "global",
           "score": 0.6,
+          "date": "2026-01-04",
+          "sources": [
+            {
+              "title": "Live long and loiter: Why NASA's ESCAPADE probes will wait a",
+              "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxORUY0MHdWcnZBT2xIbVNmYW5iVHBGSnZaVjJmNE9PT0hhdF9",
+              "source": "Space",
+              "published_at": "2026-01-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "低成本深空任务推动航天新趋势",
+          "summary_zh": "ESCAPADE等低成本项目为小型科学任务提供新范式。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2025-12-28",
+          "sources": [
+            {
+              "title": "Lower-cost space missions like NASA's ESCAPADE are starting ",
+              "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNbVptZ19DbHBlNlYwcEM5aWItVU94RVY5azBWRzVEYmVzQTd",
+              "source": "Space",
+              "published_at": "2025-12-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "2025年加州创火箭发射数量纪录",
+          "summary_zh": "全年发射次数创历史新高，凸显西海岸航天活动升温。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "California ends 2025 with record number of rocket launches. ",
+              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRmhEZWFOM2pIY2NTcmtKSUppNlUyVFlRLVVhWG12SjBsVG9",
+              "source": "Ventura County Star",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "国会否决特朗普大幅削减NASA预算",
+          "summary_zh": "确保Artemis等关键项目资金稳定，支持长期探月与深空计划。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-01-06",
           "sources": [
             {
@@ -2294,165 +2723,67 @@
               "published_at": "2026-01-06"
             }
           ]
-        },
-        {
-          "title_zh": "NASA毅力号拍到火星巨型波纹",
-          "summary_zh": "毅力号火星车拍摄到罕见的“巨波纹”地貌图像。",
-          "region": "global",
-          "score": 0.55,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "NASA Perseverance rover sees megaripples on Mars photo of th",
-              "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQV3lvS3IxaHdkYVBKYnFxcjZiZ1AyR2ZVZTZWTnlkdUV2X0F",
-              "source": "Space",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "好奇号传回高山全景新图",
-          "summary_zh": "好奇号从高地传回震撼火星地表全景影像。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-01-06",
-          "sources": [
-            {
-              "title": "NASA's Curiosity rover sends stunning new panorama from high",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNm1YemM0Vk9LaXBfbDhVQjcyOVdHQmZnNE5KMlBtSUhvMXN",
-              "source": "Space",
-              "published_at": "2026-01-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "SpaceX星舰或将再次试飞",
-          "summary_zh": "Starship或将在2026年初恢复飞行测试，时间待定。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "When could SpaceX Starship fly again? What to know about 202",
-              "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWFJaWkNiRzhNUHR2MFhvRE5zblBzM0hsanN1VHpHdFhLQ0N",
-              "source": "USA Today",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "范登堡将建超重型发射场",
-          "summary_zh": "范登堡太空军基地计划新建“超重型”火箭发射设施。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-01-08",
-          "sources": [
-            {
-              "title": "Vandenberg Announces Plan for New ‘Super-Heavy’ Launch Site ",
-              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVGN05QRXpldVBhNFB3MEhJRG1Sd2VlTVJpdS1KS2w1Y2p",
-              "source": "The Santa Barbara In",
-              "published_at": "2026-01-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "SpaceX发射意大利观测卫星",
-          "summary_zh": "猎鹰9号成功将意大利地球观测卫星送入轨道。",
-          "region": "global",
-          "score": 0.55,
-          "date": "2026-01-03",
-          "sources": [
-            {
-              "title": "SpaceX launches Italian Earth-observing satellite to orbit o",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1pLQU1tUERfVDZlSFNJMmQwaUNBaTFkUG5zU2hpVHpXdDF",
-              "source": "Space",
-              "published_at": "2026-01-03"
-            }
-          ]
         }
       ],
-      "cn_count": 3,
+      "cn_count": 2,
       "total_count": 10,
       "sentiment": "positive",
-      "sentiment_score": 0.65,
+      "sentiment_score": 0.85,
       "keywords": [
         "SpaceX",
         "Starship",
-        "Starlink",
         "NASA",
-        "卫星轨道"
+        "Artemis 2",
+        "ESCAPADE"
       ],
-      "deduped_count": 1,
-      "raw_count": 42
+      "deduped_count": 3,
+      "raw_count": 45
     },
     {
       "id": "frontier",
       "name": "前沿科技（量子·聚变·生物）",
       "tags": [],
       "gnews_queries": [
-        "quantum computing qubit breakthrough",
-        "fusion energy tokamak reactor",
-        "synthetic biology gene editing CRISPR",
-        "superconductor room temperature"
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science",
+        "synthetic biology research"
       ],
-      "brief_zh": "中国在量子与核聚变领域取得关键突破，EAST装置刷新纪录，D-Wave发布新型量子计算技术，中美科技竞争加剧，推动全球前沿科技加速发展。",
+      "brief_zh": "量子计算与核聚变技术取得突破，D-Wave发布新型门模型量子计算技术，中国‘人造太阳’EAST打破聚变关键极限，全球多国推进清洁能源布局。",
       "events": [
         {
-          "title_zh": "中国“人造太阳”刷新聚变纪录",
-          "summary_zh": "EAST装置实现更高温度与更稳态运行，突破关键聚变参数。",
-          "region": "cn",
-          "score": 0.95,
-          "date": "2026-01-04",
-          "sources": [
-            {
-              "title": "China’s “artificial sun” just broke a fusion limit scientists thought was impossible",
-              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9OMWxTcExhYWlXNl90UlVqRjFCbTVReDBNMGw3c1JmbEItRzF",
-              "source": "ScienceDaily",
-              "published_at": "2026-01-04"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国推进聚变点火重大突破",
-          "summary_zh": "SciTechDaily报道中国在高温等离子体控制方面取得进展。",
-          "region": "cn",
-          "score": 0.9,
-          "date": "2026-01-02",
-          "sources": [
-            {
-              "title": "China Advances Toward Fusion Ignition With Major Plasma Breakthrough",
-              "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNd0tIUmlTOXRMRFVpMzBKVndheFNPWEhlQS1SSXRLaTVoOVl",
-              "source": "SciTechDaily",
-              "published_at": "2026-01-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "中美百亿美元量子争霸战升温",
-          "summary_zh": "搜狐报道中国在量子通信与计算领域实现反超。",
-          "region": "cn",
-          "score": 0.88,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "150亿美金！中美量子之战进入白热化，中国凭什么能在绝境中反超 - SOHU",
-              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYkhQeWxwb2ZxQTRxQXZHNnE4ZjNTdk42bzBaVUMxdzVoV01",
-              "source": "SOHU",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "D-Wave发布门模型量子计算突破",
-          "summary_zh": "新芯片集成低温控制，提升可扩展性与稳定性。",
+          "title_zh": "D-Wave实现可扩展量子计算突破",
+          "summary_zh": "D-Wave宣布其门模型量子计算取得可扩展性重大进展，推动商业化应用前景。",
           "region": "global",
-          "score": 0.8,
+          "score": 0.85,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "D-Wave Gate-Model Quantum Computing Breakthrough - Quantum Zeitgeist",
-              "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRXY4V0ZUaW51b25OTWF5QmFtR0hmT2dpUFN6WTE3UUFXd0h",
-              "source": "Quantum Zeitgeist",
+              "title": "D-Wave achieves breakthrough in scalable quantum computing c",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUGoxY3E2SXIwQl9vUjNiOTVuY3IxMkZPVnBPTmZTM1JDU0F",
+              "source": "Investing.com South ",
+              "published_at": "2026-01-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国EAST装置突破格林沃尔德极限",
+          "summary_zh": "中国‘人造太阳’EAST实现等离子体密度新纪录，逼近聚变点火条件。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "China’s “artificial sun” just broke a fusion limit scientist",
+              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9OMWxTcExhYWlXNl90UlVqRjFCbTVReDBNMGw3c1JmbEItRzF",
+              "source": "ScienceDaily",
+              "published_at": "2026-01-07"
+            },
+            {
+              "title": "D-Wave Quantum Unveils Breakthrough in Gate-Model Computing - TipRanks",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeHJuSGpMc1NGV0thUW9LY2Q3b1d2Tk94QWpkbUpHSWoxZjAzbTZ6LS1JZ1M1S1d1RDJZR2dBZzJCMGhRNjVSV3VIQkExQ0ViX1h1cjJ1ajhPOFhWUU5Tb3Zvd05RSEdHcjRpTmlGamdQSEp6OUZtZDFZVnpVWWk0SEpKREgtS19zVmtVTmZialJPSVVwYng3aEE3dHNfTHhVbi1IVjNuVDV3U1VaazU5TA?oc=5",
+              "source": "TipRanks",
               "published_at": "2026-01-06"
             },
             {
@@ -2460,48 +2791,72 @@
               "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPR3pLM1dnTWRWMEprVTlxZmUzRm9mNlJYVDdZRXM0Uy03b0t6bkFkZHNkUUM1eS1ha3NiNzM4Um1PSkFMQkszNF92aUUyWGpFSmdZVE53RXFyZllfekpxUmVXRmZ0U29ZWW9zT0ZmOTV5WEdUZ2I1YWZHVHZwMS1ybW1ybVdfeGJHcm91Zk9TOFFNQzBnZ3Vfa0VRaXp1ZlpUVmpxTVcyV0c0RXR2eXBDR1B0dW9JalJNcnl2QTk2eTU0czA?oc=5",
               "source": "TradingView — Track All Markets",
               "published_at": "2026-01-06"
-            },
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave量子技术获谷歌高管赞誉",
+          "summary_zh": "谷歌CEO桑达尔·皮查伊称D-Wave的量子成果为“可验证”的重大突破。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-01-05",
+          "sources": [
             {
-              "title": "D-Wave Quantum Unveils Breakthrough in Gate-Model Computing - TipRanks",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeHJuSGpMc1NGV0thUW9LY2Q3b1d2Tk94QWpkbUpHSWoxZjAzbTZ6LS1JZ1M1S1d1RDJZR2dBZzJCMGhRNjVSV3VIQkExQ0ViX1h1cjJ1ajhPOFhWUU5Tb3Zvd05RSEdHcjRpTmlGamdQSEp6OUZtZDFZVnpVWWk0SEpKREgtS19zVmtVTmZialJPSVVwYng3aEE3dHNfTHhVbi1IVjNuVDV3U1VaazU5TA?oc=5",
-              "source": "TipRanks",
+              "title": "Sundar Pichai hails 'verifiable' quantum computing breakthro",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQTZPMEI0endEUVBrRkg0djhBQkhoV1h5bE1hRTNPY2gtb3J",
+              "source": "MSN",
+              "published_at": "2026-01-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中美领跑聚变能源竞争",
+          "summary_zh": "中国EAST屡创纪录，美国CFS联合英伟达开发聚变数字孪生系统。",
+          "region": "global",
+          "score": 0.88,
+          "date": "2026-01-06",
+          "sources": [
+            {
+              "title": "CFS partners with Nvidia, Siemens to build AI digital twin f",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNS1pKRDhZUmVrMVpqMnpGWXFPekhmUG5QYlRsVklNX3U3aEE",
+              "source": "Data Center Dynamics",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "D-Wave股价大涨16.7%",
-          "summary_zh": "因宣布片上低温量子控制技术突破引发市场关注。",
+          "title_zh": "量子安全加密方法首次实现",
+          "summary_zh": "科研团队开发出首个可验证的安全量子计算基准方法，提升可信度。",
           "region": "global",
           "score": 0.75,
-          "date": "2026-01-06",
+          "date": "2026-01-07",
           "sources": [
             {
-              "title": "D-Wave Quantum (QBTS) Is Up 16.7% After On-Chip Cryogenic Quantum Control Breakthrough",
-              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE01VXVNZHRNNVBTUV9Ud3M2Wk5sd2kxbXZwbjRYa192N29QajA",
-              "source": "Yahoo Finance",
-              "published_at": "2026-01-06"
+              "title": "Breakthrough in Quantum Computing: First Secure Method to Ba",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE01ZjRtYkdpVUhRak5Nc0pBRFlLWGVCQXdHV2dGMnluSXZlUGl",
+              "source": "Sci.News",
+              "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "首次实现安全量子信息备份",
-          "summary_zh": "科学家发现可靠方法存储量子状态，防退相干能力增强。",
+          "title_zh": "英伟达携手Commonwealth建数字聚变堆",
+          "summary_zh": "利用AI构建聚变反应堆数字孪生模型，加速工程验证和优化设计。",
           "region": "global",
-          "score": 0.78,
+          "score": 0.82,
           "date": "2026-01-06",
           "sources": [
             {
-              "title": "Quantum Info Backup Breakthrough: First Safe Method Found",
-              "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOckZha0tpUDMxSXNkOXVwOUlFMzh4ZkVTeUhaNzJOTTFHUTV",
-              "source": "Mirage News",
+              "title": "Commonwealth to Build 'Digital' Fusion Reactor With Nvidia, ",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ZYVRoMTViZkFJNlN2VjhrT016X1BXSmE1R0Q3ay1nREpHeXc",
+              "source": "Energy Intelligence",
               "published_at": "2026-01-06"
             }
           ]
         },
         {
-          "title_zh": "钨材料在聚变堆芯展现奇迹性能",
-          "summary_zh": "Popular Mechanics报道新型耐高温材料在反应堆中表现优异。",
+          "title_zh": "钨材料在聚变堆中展现奇迹性能",
+          "summary_zh": "普林斯顿实验发现钨壁材料能显著提升聚变装置稳定性与寿命。",
           "region": "global",
           "score": 0.7,
           "date": "2026-01-05",
@@ -2515,106 +2870,263 @@
           ]
         },
         {
-          "title_zh": "CFS携手英伟达西门子推进聚变商业化",
-          "summary_zh": "三方合作开发AI驱动的聚变电站控制系统。",
+          "title_zh": "美国能源公司安装首台聚变磁体",
+          "summary_zh": "美国某能源企业完成高温超导磁体部署，标志聚变原型机建设进入新阶段。",
+          "region": "global",
+          "score": 0.78,
+          "date": "2026-01-08",
+          "sources": [
+            {
+              "title": "US energy company installs first fusion magnet, nears clean ",
+              "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWTBSUWFjdHFSUUFBT0lJSHd1b0ljN2pXTDdKM1NTY3lZRG1",
+              "source": "Interesting Engineer",
+              "published_at": "2026-01-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "D-Wave量子计算推动股价上涨",
+          "summary_zh": "因技术突破，D-Wave（QBTS）股价显著上升，市场信心增强。",
           "region": "global",
           "score": 0.72,
           "date": "2026-01-07",
           "sources": [
             {
-              "title": "Commonwealth Fusion Systems partners with NVIDIA and Siemens",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5paXloS1F2aVdiNWRNTHRqS1Zhb25md0RSNll6c1Izc2swNUd",
-              "source": "GIGAZINE",
+              "title": "D-Wave Quantum (QBTS) Stock Rises on Breakthrough That Solve",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWEg2NzJEOFdNRDFRanJuY3ZHRV96SU8xZGxlRlRIYTVZdy1",
+              "source": "TipRanks",
               "published_at": "2026-01-07"
             }
           ]
         },
         {
-          "title_zh": "DNA连接酶市场前景广阔",
-          "summary_zh": "Precedence Research预测该生物技术领域将持续增长。",
+          "title_zh": "全球百余家融合资超亿美元初创企业",
+          "summary_zh": "TechCrunch统计显示，多个聚变能源初创企业已获巨额融资，产业加速发展。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-01-07",
+          "score": 0.8,
+          "date": "2025-12-31",
           "sources": [
             {
-              "title": "DNA Ligases Market Growth Drivers and Opportunities - Precedence Research",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1JMTIzYzlfN0syT2tQSXY2ZzRJUjUzMlBaZDk4TUg2TXNvREp",
-              "source": "Precedence Research",
-              "published_at": "2026-01-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "量子计算安全传输获突破",
-          "summary_zh": "科研团队开发出首个可验证的安全量子数据传输协议。",
-          "region": "global",
-          "score": 0.76,
-          "date": "2026-01-07",
-          "sources": [
-            {
-              "title": "Breakthrough in Quantum Computing: First Secure Method to Broadcast Quantum Information",
-              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE01ZjRtYkdpVUhRak5Nc0pBRFlLWGVCQXdHV2dGMnluSXZlUGl",
-              "source": "Sci.News",
-              "published_at": "2026-01-07"
+              "title": "Every fusion startup that has raised over $100M - TechCrunch",
+              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQM1hCNkhjVFJsT2R6cUgwdDcyS0gyMl9BSVJGazBZemYtOXN",
+              "source": "TechCrunch",
+              "published_at": "2025-12-31"
             }
           ]
         }
       ],
-      "cn_count": 3,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "positive",
-      "sentiment_score": 0.85,
+      "sentiment_score": 0.9,
       "keywords": [
         "量子计算",
         "核聚变",
-        "中国突破",
         "D-Wave",
-        "人工太阳"
+        "EAST",
+        "清洁能源"
       ],
       "deduped_count": 2,
-      "raw_count": 13
+      "raw_count": 33
     },
     {
       "id": "arxiv",
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。",
-      "events": [],
+      "brief_zh": "近期研究论文涵盖了动态物体编排、最优运输、随机临床试验的预测区间等多个领域，展示了前沿科技的进展。",
+      "events": [
+        {
+          "title_zh": "动态物体编排研究",
+          "summary_zh": "研究探讨了动态物体的编排方法，提出了新的理论框架。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04194v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "最优运输的离散化研究",
+          "summary_zh": "提出了一种离散化的Benamou-Brenier最优运输公式，具有重要的理论意义。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04193v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "随机临床试验的预测区间",
+          "summary_zh": "研究了随机临床试验中间事件的预测区间，为临床研究提供了新的视角。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04192v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "资源受限机器人中的自主代理嵌入",
+          "summary_zh": "探讨了如何在资源受限的机器人中嵌入自主代理，具有实际应用价值。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04191v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "材料设计的综合计算框架",
+          "summary_zh": "提出了一种新的计算框架，用于材料设计，推动了材料科学的发展。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04186v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "视频主观测试的转变",
+          "summary_zh": "研究了如何通过训练和参与来转变视频主观测试的方法。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04184v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Schubert系数的饱和性质失败",
+          "summary_zh": "研究表明Schubert系数的饱和性质在某些情况下是失败的，具有理论意义。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04182v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "基于EMG的手势识别适应性测试",
+          "summary_zh": "提出了一种轻量级的测试时适应方法，用于基于EMG的手势识别。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04181v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "量子通道学习的下界改进",
+          "summary_zh": "研究了量子通道学习的下界，提出了改进的方法，推动了量子信息科学的发展。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04180v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "高能宇宙学事件的研究",
+          "summary_zh": "研究了GRB 180728A和SN 2018fip，揭示了高能宇宙学的重要性。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-01-07",
+          "sources": [
+            {
+              "title": "arXiv",
+              "url": "http://arxiv.org/abs/2601.04179v1",
+              "source": "arXiv",
+              "published_at": "2026-01-07"
+            }
+          ]
+        }
+      ],
       "cn_count": 0,
-      "total_count": 0,
+      "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
-      "keywords": [],
+      "keywords": [
+        "动态物体",
+        "最优运输",
+        "随机临床试验",
+        "材料设计",
+        "人工智能"
+      ],
       "deduped_count": 0,
-      "raw_count": 0
+      "raw_count": 20
     }
   ],
   "top5": [
     {
       "title": "比亚迪超越特斯拉成全球销冠",
-      "summary": "2025年比亚迪全球电动车销量首次超过特斯拉，登顶世界第一。这标志着全球电动车市场格局发生重大变化，中国车企在新能源领域取得领先地位，可能影响全球汽车产业链布局和各国新能源政策制定。",
-      "action": "关注电动车产业链投资机会。"
+      "summary": "2026年初比亚迪超越特斯拉成为全球最大电动汽车销售商，标志着中国新能源汽车企业在全球市场竞争力显著提升，可能加速全球汽车产业向电动化转型，并影响相关供应链和能源政策决策。",
+      "action": "关注新能源汽车产业链投资机会。"
     },
     {
-      "title": "中国“人造太阳”刷新聚变纪录",
-      "summary": "EAST装置实现更高温度与更稳态运行，突破关键聚变参数。这一进展为可控核聚变能源的商业化应用迈出重要一步，可能在未来彻底改变全球能源结构，影响各国能源战略布局。",
-      "action": "关注清洁能源技术发展动态。"
+      "title": "中国央行设定人民币中间价",
+      "summary": "2026年1月8日人民币中间价报7.0197略高于预期，反映央行维持汇率稳定的意图，可能影响进出口企业成本和跨境资本流动，需关注后续货币政策动向对金融市场的影响。",
+      "action": "监测汇率波动对贸易和投资的影响。"
     },
     {
-      "title": "英伟达发布Rubin AI芯片平台",
-      "summary": "英伟达在CES 2026推出Rubin平台，集成六款新芯片，强化AI超级计算能力。这将进一步提升AI训练和推理效率，加速各行业AI应用落地，可能引发新一轮AI基础设施投资热潮。",
-      "action": "评估AI算力需求与投资布局。"
+      "title": "英伟达发布Rubin系列AI芯片",
+      "summary": "英伟达推出Rubin平台含六款新AI芯片，算力达50petaflops，将大幅提升AI计算效率，推动人工智能技术在各行业应用落地，可能加速全球AI竞赛和科技产业格局变化。",
+      "action": "评估AI技术对行业数字化转型的推动。"
     },
     {
-      "title": "Rubin平台重塑内存架构",
-      "summary": "Nvidia Rubin将内存提升为核心组件，解决AI计算瓶颈。这一创新将显著提升大模型处理效率，降低AI计算成本，可能改变AI芯片市场竞争格局，推动更多行业采用复杂AI模型。",
-      "action": "关注内存技术相关产业链。"
+      "title": "LME铜价突破13000美元创新高",
+      "summary": "伦敦金属交易所铜价首次突破13000美元创历史新高，反映全球供需紧张和绿色能源需求增长，可能推高制造业成本并影响通胀预期，需警惕对全球经济复苏的潜在冲击。",
+      "action": "调整原材料采购和库存管理策略。"
     },
     {
-      "title": "OpenAI与Anthropic在新AI基准测试中领先",
-      "summary": "最新AI分析基准显示，OpenAI和Anthropic模型表现优异，引领行业标准。这表明两家公司在AI模型能力上保持领先，可能影响企业选择AI解决方案的决策，并推动整个行业技术标准提升。",
-      "action": "跟踪领先AI模型技术进展。"
+      "title": "OpenAI发布ChatGPT Health",
+      "summary": "OpenAI正式推出ChatGPT Health连接用户医疗记录提供个性化健康建议，标志着AI在医疗健康领域应用深化，可能改变传统医疗服务模式，但需关注数据隐私和监管合规风险。",
+      "action": "探索AI在医疗健康领域的合规应用。"
     }
   ],
   "meta": {
