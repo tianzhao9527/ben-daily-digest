@@ -1,6 +1,6 @@
 {
-  "items_per_section": 15,
-  "limit_raw": 25,
+  "items_per_section": 10,
+  "limit_raw": 30,
   "importance_weights": {
     "china_related": 1.5,
     "source_tier1": 1.3,
@@ -14,64 +14,94 @@
       "id": "macro",
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
       "gnews_queries": [
-        "US Treasury yields Fed inflation",
-        "USD CNY exchange rate PBOC",
-        "global equity market VIX"
+        "US Treasury yields Fed inflation monetary policy",
+        "USD CNY exchange rate PBOC currency",
+        "global equity market VIX stock index"
       ]
     },
     {
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
       "gnews_queries": [
-        "OFAC sanctions enforcement",
-        "EU sanctions Russia export controls",
-        "US export controls semiconductor chips"
+        "OFAC sanctions enforcement compliance",
+        "EU sanctions Russia export controls trade",
+        "US China trade war tariffs export controls"
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "gnews_queries": [
+        "OpenAI GPT Claude AI model",
+        "large language model LLM enterprise",
+        "AI artificial intelligence regulation policy",
+        "generative AI application business"
       ]
     },
     {
       "id": "compute",
-      "name": "AI 计算基础设施（算力·电力·冷却）",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
       "gnews_queries": [
-        "data center power GPU supply chain",
-        "AI chip export controls Nvidia",
-        "liquid cooling data center infrastructure"
+        "data center GPU Nvidia AI chip",
+        "AI chip export controls semiconductor",
+        "cloud computing infrastructure AI"
+      ]
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "gnews_queries": [
+        "electric vehicle EV battery Tesla BYD",
+        "autonomous driving self-driving car",
+        "EV charging infrastructure battery technology",
+        "solid state battery lithium"
       ]
     },
     {
       "id": "metals",
       "name": "大宗 / 金属（LME·供需·库存）",
       "gnews_queries": [
-        "LME copper aluminium nickel zinc",
-        "copper scrap trade flows",
-        "energy transition metals demand"
+        "LME copper aluminium nickel zinc price",
+        "copper scrap recycling trade",
+        "critical minerals rare earth supply chain"
       ]
     },
     {
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
       "gnews_queries": [
-        "EU CBAM carbon border adjustment",
-        "carbon credit market Verra",
-        "carbon trading ETS price"
+        "EU CBAM carbon border adjustment mechanism",
+        "carbon credit market trading",
+        "carbon neutrality net zero emissions"
       ]
     },
     {
       "id": "sea",
       "name": "东南亚供应链（制造·转移·关键矿产）",
       "gnews_queries": [
-        "Vietnam manufacturing supply chain",
-        "Indonesia nickel smelter investment",
-        "Thailand Malaysia electronics"
+        "Vietnam manufacturing supply chain investment",
+        "Indonesia nickel smelter mining",
+        "Southeast Asia electronics semiconductor"
+      ]
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "gnews_queries": [
+        "SpaceX Starship rocket launch",
+        "NASA Mars moon exploration mission",
+        "satellite constellation Starlink space",
+        "China space station lunar program"
       ]
     },
     {
       "id": "frontier",
-      "name": "前沿学科雷达（量子·聚变·材料·生物）",
+      "name": "前沿科技（量子·聚变·生物）",
       "gnews_queries": [
-        "quantum computing breakthrough",
-        "fusion energy superconducting",
-        "solid state battery breakthrough",
-        "synthetic biology platform"
+        "quantum computing qubit breakthrough",
+        "fusion energy tokamak reactor",
+        "synthetic biology gene editing CRISPR",
+        "superconductor room temperature"
       ]
     },
     {

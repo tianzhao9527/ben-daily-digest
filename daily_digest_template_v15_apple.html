@@ -94,21 +94,43 @@ a:hover{text-decoration:underline}
 .date-picker-arrow{font-size:9px;transition:transform .2s}
 .date-picker-btn.open .date-picker-arrow{transform:rotate(180deg)}
 .date-dropdown{
-  display:none;position:absolute;top:70px;left:18px;right:18px;
-  background:var(--card);border:1px solid var(--line);border-radius:10px;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:50;max-height:300px;overflow:hidden;
+  display:none;position:absolute;top:70px;left:18px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:50;width:280px;overflow:hidden;
 }
 .date-dropdown.show{display:block}
-.date-dropdown-header{padding:10px 14px;font-size:12px;font-weight:600;border-bottom:1px solid var(--line);color:var(--text)}
-.date-dropdown-list{max-height:240px;overflow-y:auto}
-.date-item{
+.date-dropdown-header{
+  padding:12px 14px;font-size:13px;font-weight:600;
   display:flex;justify-content:space-between;align-items:center;
-  padding:10px 14px;cursor:pointer;font-size:12px;border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
-.date-item:hover{background:var(--chip)}
-.date-item.active{background:rgba(0,113,227,.08);color:var(--accent);font-weight:500}
-.date-item:last-child{border-bottom:none}
-.date-item-day{color:var(--muted);font-size:11px}
+.date-nav-btn{
+  width:28px;height:28px;border-radius:50%;border:none;background:var(--chip);
+  cursor:pointer;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;
+}
+.date-nav-btn:hover{background:var(--line);color:var(--text)}
+.date-dropdown-weekdays{
+  display:grid;grid-template-columns:repeat(7,1fr);padding:8px 10px 4px;
+  font-size:10px;color:var(--muted);text-align:center;font-weight:500;
+}
+.date-dropdown-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:4px 10px 12px;
+}
+.date-cell{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:12px;border-radius:50%;cursor:pointer;transition:all .15s;
+  position:relative;
+}
+.date-cell:hover{background:var(--chip)}
+.date-cell.other-month{color:var(--muted);opacity:0.4}
+.date-cell.today{font-weight:600;color:var(--accent)}
+.date-cell.active{background:var(--accent);color:#fff;font-weight:600}
+.date-cell.has-data::after{
+  content:'';position:absolute;bottom:2px;width:4px;height:4px;
+  border-radius:50%;background:var(--accent);
+}
+.date-cell.active.has-data::after{background:#fff}
+.date-cell.disabled{opacity:0.3;cursor:not-allowed}
 .date-loading{padding:20px;text-align:center;font-size:12px;color:var(--muted)}
 .main-scroll{flex:1;overflow:auto;padding:16px 18px}
 
@@ -408,12 +430,17 @@ a:hover{text-decoration:underline}
         · 更新于 <span id="pageTime">—</span>
       </div>
     </div>
-    <!-- 日期选择下拉 -->
+    <!-- 日期选择下拉 - 月日历 -->
     <div class="date-dropdown" id="dateDropdown">
-      <div class="date-dropdown-header">选择日期</div>
-      <div class="date-dropdown-list" id="dateList">
-        <div class="date-loading">加载中...</div>
+      <div class="date-dropdown-header">
+        <button class="date-nav-btn" id="prevMonth">‹</button>
+        <span id="calendarTitle">2026年1月</span>
+        <button class="date-nav-btn" id="nextMonth">›</button>
       </div>
+      <div class="date-dropdown-weekdays">
+        <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+      </div>
+      <div class="date-dropdown-grid" id="dateGrid"></div>
     </div>
     <div class="main-scroll" id="mainContent"></div>
   </main>
@@ -667,31 +694,64 @@ a:hover{text-decoration:underline}
 
     let html = '';
     
-    // === 市场情绪仪表盘 ===
+    // === 市场情绪仪表盘 (Apple风格) ===
+    const sentimentAngle = -90 + avgSentiment * 180; // -90 to 90 degrees
+    const sentimentLabel = avgSentiment >= 0.6 ? '偏多' : avgSentiment <= 0.4 ? '偏空' : '中性';
+    const sentimentColor = avgSentiment >= 0.6 ? 'var(--success)' : avgSentiment <= 0.4 ? 'var(--danger)' : 'var(--muted)';
     html += `
       <div class="kpi-group">
         <div class="kpi-group-title">市场情绪</div>
-        <div style="padding:12px;background:var(--chip);border-radius:8px;margin-bottom:8px">
-          <div style="display:flex;justify-content:center;margin-bottom:8px">
-            <svg width="120" height="70" viewBox="0 0 120 70">
+        <div style="padding:16px;background:var(--chip);border-radius:12px;margin-bottom:8px">
+          <div style="position:relative;width:140px;height:80px;margin:0 auto 12px">
+            <svg width="140" height="80" viewBox="0 0 140 80" style="display:block">
               <defs>
-                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color:#ff3b30"/>
-                  <stop offset="50%" style="stop-color:#ff9500"/>
-                  <stop offset="100%" style="stop-color:#34c759"/>
+                <linearGradient id="sentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#ff3b30" stop-opacity="0.9"/>
+                  <stop offset="35%" stop-color="#ff9500" stop-opacity="0.9"/>
+                  <stop offset="65%" stop-color="#ffcc00" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#34c759" stop-opacity="0.9"/>
                 </linearGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
               </defs>
-              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="url(#gaugeGrad)" stroke-width="8" stroke-linecap="round"/>
-              <line x1="60" y1="60" x2="${60 + 40 * Math.cos(Math.PI * (1 - avgSentiment))}" y2="${60 - 40 * Math.sin(Math.PI * (1 - avgSentiment))}" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="60" cy="60" r="6" fill="var(--card)" stroke="var(--text)" stroke-width="2"/>
+              <!-- 背景轨道 -->
+              <path d="M 15 70 A 55 55 0 0 1 125 70" fill="none" stroke="var(--line)" stroke-width="12" stroke-linecap="round"/>
+              <!-- 渐变进度 -->
+              <path d="M 15 70 A 55 55 0 0 1 125 70" fill="none" stroke="url(#sentGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${avgSentiment * 173} 173"/>
+              <!-- 指针 -->
+              <g transform="rotate(${sentimentAngle}, 70, 70)">
+                <line x1="70" y1="70" x2="70" y2="25" stroke="var(--text)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+              </g>
+              <!-- 中心点 -->
+              <circle cx="70" cy="70" r="8" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+              <circle cx="70" cy="70" r="4" fill="var(--text)"/>
             </svg>
           </div>
-          <div style="text-align:center;font-size:20px;font-weight:600">${avgSentiment.toFixed(2)}</div>
-          <div style="text-align:center;font-size:10px;color:var(--muted)">情绪指数 (0看空 - 1看多)</div>
-          <div style="display:flex;justify-content:space-around;margin-top:10px;font-size:11px">
-            <div style="text-align:center"><div style="font-weight:600;color:var(--success)">${posCount}</div><div style="font-size:9px;color:var(--muted)">看多</div></div>
-            <div style="text-align:center"><div style="font-weight:600">${neuCount}</div><div style="font-size:9px;color:var(--muted)">中性</div></div>
-            <div style="text-align:center"><div style="font-weight:600;color:var(--danger)">${negCount}</div><div style="font-size:9px;color:var(--muted)">看空</div></div>
+          <div style="text-align:center">
+            <div style="font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-1px">${avgSentiment.toFixed(2)}</div>
+            <div style="font-size:11px;color:${sentimentColor};font-weight:600;margin-top:2px">${sentimentLabel}</div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:20px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)">
+            <div style="text-align:center">
+              <div style="width:32px;height:32px;border-radius:50%;background:rgba(52,199,89,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px">
+                <span style="font-size:14px;font-weight:700;color:var(--success)">${posCount}</span>
+              </div>
+              <div style="font-size:9px;color:var(--muted)">看多</div>
+            </div>
+            <div style="text-align:center">
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;border:1px solid var(--line)">
+                <span style="font-size:14px;font-weight:700">${neuCount}</span>
+              </div>
+              <div style="font-size:9px;color:var(--muted)">中性</div>
+            </div>
+            <div style="text-align:center">
+              <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,59,48,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px">
+                <span style="font-size:14px;font-weight:700;color:var(--danger)">${negCount}</span>
+              </div>
+              <div style="font-size:9px;color:var(--muted)">看空</div>
+            </div>
           </div>
         </div>
       </div>
@@ -763,20 +823,73 @@ a:hover{text-decoration:underline}
         }
       }
 
-      let sparkHtml = '';
+      // 计算MA5, MA20, 支撑, 阻力
       const series = k.series_values || k.series || [];
-      if (series.length >= 2) {
-        const w = 100, h = 24, pad = 2;
-        const nums = series.map(Number).filter(isFinite);
-        if (nums.length >= 2) {
-          const min = Math.min(...nums), max = Math.max(...nums);
-          const span = (max - min) || 1;
-          const pts = nums.map((v, i) => [
-            pad + (w - pad * 2) * (i / (nums.length - 1)),
-            pad + (h - pad * 2) * (1 - (v - min) / span)
-          ]);
-          const d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} ` + pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
-          sparkHtml = `<svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="${color}" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+      const nums = series.map(Number).filter(isFinite);
+      let ma5 = null, ma20 = null, support = null, resistance = null;
+      if (nums.length >= 5) {
+        ma5 = nums.slice(-5).reduce((a,b) => a+b, 0) / 5;
+      }
+      if (nums.length >= 20) {
+        ma20 = nums.slice(-20).reduce((a,b) => a+b, 0) / 20;
+        support = Math.min(...nums.slice(-20));
+        resistance = Math.max(...nums.slice(-20));
+      }
+
+      let sparkHtml = '';
+      if (nums.length >= 2) {
+        const w = 100, h = 32, pad = 2;
+        const min = Math.min(...nums), max = Math.max(...nums);
+        const span = (max - min) || 1;
+        const toY = v => pad + (h - pad * 2) * (1 - (v - min) / span);
+        const pts = nums.map((v, i) => [pad + (w - pad * 2) * (i / (nums.length - 1)), toY(v)]);
+        const mainLine = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} ` + pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+        
+        // MA5线 (橙色)
+        let ma5Line = '';
+        if (nums.length >= 5) {
+          const ma5Pts = [];
+          for (let i = 4; i < nums.length; i++) {
+            const maVal = nums.slice(i-4, i+1).reduce((a,b)=>a+b,0) / 5;
+            ma5Pts.push([pad + (w - pad * 2) * (i / (nums.length - 1)), toY(maVal)]);
+          }
+          if (ma5Pts.length >= 2) {
+            ma5Line = `<path d="M ${ma5Pts[0][0].toFixed(1)},${ma5Pts[0][1].toFixed(1)} ${ma5Pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ')}" fill="none" stroke="#ff9500" stroke-width="1" opacity="0.6"/>`;
+          }
+        }
+        
+        // MA20线 (紫色)
+        let ma20Line = '';
+        if (nums.length >= 20) {
+          const ma20Pts = [];
+          for (let i = 19; i < nums.length; i++) {
+            const maVal = nums.slice(i-19, i+1).reduce((a,b)=>a+b,0) / 20;
+            ma20Pts.push([pad + (w - pad * 2) * (i / (nums.length - 1)), toY(maVal)]);
+          }
+          if (ma20Pts.length >= 2) {
+            ma20Line = `<path d="M ${ma20Pts[0][0].toFixed(1)},${ma20Pts[0][1].toFixed(1)} ${ma20Pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ')}" fill="none" stroke="#af52de" stroke-width="1" opacity="0.5"/>`;
+          }
+        }
+        
+        sparkHtml = `<svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="height:32px">
+          ${ma20Line}${ma5Line}
+          <path d="${mainLine}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="2.5" fill="${color}"/>
+        </svg>`;
+      }
+
+      // 技术指标行
+      let techHtml = '';
+      if (ma5 !== null || support !== null) {
+        techHtml = `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;font-size:8px;color:var(--muted)">`;
+        if (ma5 !== null) techHtml += `<span style="color:#ff9500">MA5:${fmtNum(ma5,1)}</span>`;
+        if (ma20 !== null) techHtml += `<span style="color:#af52de">MA20:${fmtNum(ma20,1)}</span>`;
+        techHtml += `</div>`;
+        if (support !== null && resistance !== null) {
+          techHtml += `<div style="display:flex;gap:6px;font-size:8px;color:var(--muted);margin-top:2px">
+            <span>支撑:<span style="color:var(--success)">${fmtNum(support,0)}</span></span>
+            <span>阻力:<span style="color:var(--danger)">${fmtNum(resistance,0)}</span></span>
+          </div>`;
         }
       }
 
@@ -786,6 +899,7 @@ a:hover{text-decoration:underline}
           <div class="kpi-value" style="color:${color}">${val}<span class="kpi-unit">${esc(unit)}</span></div>
           <div class="kpi-delta ${direction}">${deltaStr || '—'}</div>
           ${sparkHtml}
+          ${techHtml}
         </div>
       `;
     }
@@ -1277,29 +1391,97 @@ a:hover{text-decoration:underline}
   }
 
   // 渲染日期列表
+  // 月日历相关变量和函数
+  let calendarYear = new Date().getFullYear();
+  let calendarMonth = new Date().getMonth(); // 0-11
+  
   function renderDateList() {
-    const list = $('#dateList');
-    if (!list) return;
+    renderCalendar();
+  }
+  
+  function renderCalendar() {
+    const grid = $('#dateGrid');
+    const title = $('#calendarTitle');
+    if (!grid || !title) return;
     
-    if (availableDates.length === 0) {
-      list.innerHTML = '<div class="date-loading">暂无历史数据</div>';
-      return;
+    title.textContent = `${calendarYear}年${calendarMonth + 1}月`;
+    
+    // 获取当月第一天和最后一天
+    const firstDay = new Date(calendarYear, calendarMonth, 1);
+    const lastDay = new Date(calendarYear, calendarMonth + 1, 0);
+    const startWeekday = firstDay.getDay(); // 0-6
+    const daysInMonth = lastDay.getDate();
+    
+    // 上个月的天数（用于填充）
+    const prevMonthLastDay = new Date(calendarYear, calendarMonth, 0).getDate();
+    
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+    
+    let html = '';
+    
+    // 上个月的日期填充
+    for (let i = startWeekday - 1; i >= 0; i--) {
+      const day = prevMonthLastDay - i;
+      const prevMonth = calendarMonth === 0 ? 12 : calendarMonth;
+      const prevYear = calendarMonth === 0 ? calendarYear - 1 : calendarYear;
+      const dateStr = `${prevYear}-${String(prevMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+      const hasData = availableDates.includes(dateStr);
+      html += `<div class="date-cell other-month${hasData ? ' has-data' : ''}" data-date="${dateStr}">${day}</div>`;
     }
     
-    list.innerHTML = availableDates.map(date => {
-      const info = formatDateDisplay(date);
-      const isActive = date === currentDate;
-      return `
-        <div class="date-item${isActive ? ' active' : ''}" data-date="${date}">
-          <span>${info.date}</span>
-          <span class="date-item-day">${info.day}</span>
-        </div>
-      `;
-    }).join('');
+    // 当月日期
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dateStr = `${calendarYear}-${String(calendarMonth + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+      const isToday = dateStr === todayStr;
+      const isActive = dateStr === currentDate;
+      const hasData = availableDates.includes(dateStr);
+      const isFuture = new Date(dateStr) > today;
+      
+      let cls = 'date-cell';
+      if (isToday) cls += ' today';
+      if (isActive) cls += ' active';
+      if (hasData) cls += ' has-data';
+      if (isFuture) cls += ' disabled';
+      
+      html += `<div class="${cls}" data-date="${dateStr}">${day}</div>`;
+    }
+    
+    // 下个月的日期填充
+    const totalCells = startWeekday + daysInMonth;
+    const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+    for (let day = 1; day <= remainingCells; day++) {
+      const nextMonth = calendarMonth === 11 ? 1 : calendarMonth + 2;
+      const nextYear = calendarMonth === 11 ? calendarYear + 1 : calendarYear;
+      const dateStr = `${nextYear}-${String(nextMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+      html += `<div class="date-cell other-month" data-date="${dateStr}">${day}</div>`;
+    }
+    
+    grid.innerHTML = html;
     
     // 绑定点击事件
-    list.querySelectorAll('.date-item').forEach(item => {
-      item.addEventListener('click', () => loadHistoryDigest(item.dataset.date));
+    grid.querySelectorAll('.date-cell:not(.disabled)').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const date = cell.dataset.date;
+        if (availableDates.includes(date)) {
+          loadHistoryDigest(date);
+        }
+      });
+    });
+  }
+  
+  function initCalendarNav() {
+    $('#prevMonth')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      calendarMonth--;
+      if (calendarMonth < 0) { calendarMonth = 11; calendarYear--; }
+      renderCalendar();
+    });
+    $('#nextMonth')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      calendarMonth++;
+      if (calendarMonth > 11) { calendarMonth = 0; calendarYear++; }
+      renderCalendar();
     });
   }
 
@@ -1490,6 +1672,7 @@ a:hover{text-decoration:underline}
   }
 
   bindControls();
+  initCalendarNav();
   renderAll();
   loadAvailableDates();  // 加载可用日期列表
 })();
