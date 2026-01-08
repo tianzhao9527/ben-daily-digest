@@ -1,14 +1,4 @@
 {
-  "items_per_section": 15,
-  "limit_raw": 25,
-  "importance_weights": {
-    "china_related": 1.5,
-    "source_tier1": 1.3,
-    "source_tier2": 1.1,
-    "recency_24h": 1.2,
-    "recency_48h": 1.0,
-    "keyword_match": 1.2
-  },
   "sections": [
     {
       "id": "macro",
@@ -77,30 +67,69 @@
     {
       "id": "arxiv",
       "name": "研究雷达（arXiv）",
-      "type": "arxiv",
-      "arxiv_query": "all:artificial intelligence OR all:machine learning OR all:large language model"
+      "gnews_queries": []
     }
   ],
   "kpis": [
-    {"series": "SP500", "title": "标普500", "unit": "", "lookback": 40},
-    {"series": "NASDAQCOM", "title": "纳斯达克", "unit": "", "lookback": 40},
-    {"series": "DJIA", "title": "道琼斯", "unit": "", "lookback": 40},
-    {"series": "VIXCLS", "title": "VIX恐慌", "unit": "", "lookback": 40},
-    {"series": "NIKKEI225", "title": "日经225", "unit": "", "lookback": 40},
-    {"series": "DGS10", "title": "美债10Y", "unit": "%", "lookback": 40},
-    {"series": "DGS2", "title": "美债2Y", "unit": "%", "lookback": 40},
-    {"series": "T10Y2Y", "title": "10Y-2Y利差", "unit": "%", "lookback": 40},
-    {"series": "FEDFUNDS", "title": "联邦基金利率", "unit": "%", "lookback": 40},
-    {"series": "DEXCHUS", "title": "USD/CNY", "unit": "", "lookback": 40},
-    {"series": "DEXJPUS", "title": "USD/JPY", "unit": "", "lookback": 40},
-    {"series": "DEXUSEU", "title": "EUR/USD", "unit": "", "lookback": 40},
-    {"series": "DTWEXBGS", "title": "美元指数", "unit": "", "lookback": 40},
-    {"series": "DCOILWTICO", "title": "WTI原油", "unit": "$/桶", "lookback": 40},
-    {"series": "DCOILBRENTEU", "title": "布伦特原油", "unit": "$/桶", "lookback": 40},
-    {"series": "DHHNGSP", "title": "天然气", "unit": "$/MMBtu", "lookback": 40},
-    {"series": "PCOPPUSDM", "title": "铜", "unit": "$/t", "lookback": 40},
-    {"series": "PALUMUSDM", "title": "铝", "unit": "$/t", "lookback": 40},
-    {"series": "PZINCUSDM", "title": "锌", "unit": "$/t", "lookback": 40},
-    {"series": "PNICKUSDM", "title": "镍", "unit": "$/t", "lookback": 40}
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": "%"
+    },
+    {
+      "unit": "%"
+    },
+    {
+      "unit": "%"
+    },
+    {
+      "unit": "%"
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": ""
+    },
+    {
+      "unit": "$/桶"
+    },
+    {
+      "unit": "$/桶"
+    },
+    {
+      "unit": "$/MMBtu"
+    },
+    {
+      "unit": "$/t"
+    },
+    {
+      "unit": "$/t"
+    },
+    {
+      "unit": "$/t"
+    },
+    {
+      "unit": "$/t"
+    }
   ]
 }
