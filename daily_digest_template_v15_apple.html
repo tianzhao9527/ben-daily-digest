@@ -639,6 +639,96 @@ a:hover{text-decoration:underline}
     const container = $('#kpiContent');
     if (!container) return;
 
+    // === v3新增：计算市场情绪 ===
+    let sentimentTotal = 0, sentimentCount = 0;
+    let posCount = 0, neuCount = 0, negCount = 0;
+    sections.forEach(s => {
+      const score = s.sentiment_score;
+      if (typeof score === 'number') { sentimentTotal += score; sentimentCount++; }
+      const sent = s.sentiment;
+      if (sent === 'positive') posCount++;
+      else if (sent === 'negative') negCount++;
+      else neuCount++;
+    });
+    const avgSentiment = sentimentCount > 0 ? sentimentTotal / sentimentCount : 0.5;
+    
+    // === v3新增：收集关键词 ===
+    const wordFreq = {};
+    sections.forEach(s => (s.keywords || []).forEach(k => { wordFreq[k] = (wordFreq[k] || 0) + 1; }));
+    const topKeywords = Object.entries(wordFreq).sort((a, b) => b[1] - a[1]).slice(0, 12);
+    const maxFreq = Math.max(...topKeywords.map(k => k[1]), 1);
+
+    // === v3新增：构建热力图数据 ===
+    const heatmapData = sections.map(s => ({
+      name: s.name?.slice(0, 4) || s.id,
+      count: s.total_count || (s.events || []).length
+    }));
+    const maxCount = Math.max(...heatmapData.map(h => h.count), 1);
+
+    let html = '';
+    
+    // === 市场情绪仪表盘 ===
+    html += `
+      <div class="kpi-group">
+        <div class="kpi-group-title">市场情绪</div>
+        <div style="padding:12px;background:var(--chip);border-radius:8px;margin-bottom:8px">
+          <div style="display:flex;justify-content:center;margin-bottom:8px">
+            <svg width="120" height="70" viewBox="0 0 120 70">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#ff3b30"/>
+                  <stop offset="50%" style="stop-color:#ff9500"/>
+                  <stop offset="100%" style="stop-color:#34c759"/>
+                </linearGradient>
+              </defs>
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="url(#gaugeGrad)" stroke-width="8" stroke-linecap="round"/>
+              <line x1="60" y1="60" x2="${60 + 40 * Math.cos(Math.PI * (1 - avgSentiment))}" y2="${60 - 40 * Math.sin(Math.PI * (1 - avgSentiment))}" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="6" fill="var(--card)" stroke="var(--text)" stroke-width="2"/>
+            </svg>
+          </div>
+          <div style="text-align:center;font-size:20px;font-weight:600">${avgSentiment.toFixed(2)}</div>
+          <div style="text-align:center;font-size:10px;color:var(--muted)">情绪指数 (0看空 - 1看多)</div>
+          <div style="display:flex;justify-content:space-around;margin-top:10px;font-size:11px">
+            <div style="text-align:center"><div style="font-weight:600;color:var(--success)">${posCount}</div><div style="font-size:9px;color:var(--muted)">看多</div></div>
+            <div style="text-align:center"><div style="font-weight:600">${neuCount}</div><div style="font-size:9px;color:var(--muted)">中性</div></div>
+            <div style="text-align:center"><div style="font-weight:600;color:var(--danger)">${negCount}</div><div style="font-size:9px;color:var(--muted)">看空</div></div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // === 关键词云 ===
+    if (topKeywords.length > 0) {
+      html += `
+        <div class="kpi-group">
+          <div class="kpi-group-title">热门关键词</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;padding:10px;background:var(--chip);border-radius:8px;min-height:50px">
+            ${topKeywords.map(([word, count]) => {
+              const size = Math.ceil((count / maxFreq) * 4) + 10;
+              const opacity = 0.5 + (count / maxFreq) * 0.5;
+              return `<span style="font-size:${size}px;padding:3px 8px;background:rgba(0,113,227,${opacity * 0.15});color:rgba(0,113,227,${opacity});border-radius:10px;font-weight:500">${esc(word)}</span>`;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // === 热力图 ===
+    html += `
+      <div class="kpi-group">
+        <div class="kpi-group-title">板块热度</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;background:var(--chip);border-radius:8px">
+          ${heatmapData.map(h => {
+            const intensity = h.count / maxCount;
+            const bg = intensity > 0.7 ? 'rgba(0,113,227,0.7)' : intensity > 0.4 ? 'rgba(0,113,227,0.45)' : intensity > 0.1 ? 'rgba(0,113,227,0.2)' : 'rgba(0,113,227,0.08)';
+            const color = intensity > 0.5 ? '#fff' : 'var(--text)';
+            return `<div style="padding:8px 4px;background:${bg};border-radius:6px;text-align:center;font-size:10px;color:${color}"><div style="font-weight:500">${esc(h.name)}</div><div style="font-size:9px;opacity:0.8">${h.count}</div></div>`;
+          }).join('')}
+        </div>
+      </div>
+    `;
+
+    // === 原有KPI分组 ===
     const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', 'nikkei', '标普', '纳斯达克', '道琼斯', '恐慌', '日经'];
     const fxKw = ['dex', 'usd', 'cny', 'jpy', 'eur', '汇率', '美元指数'];
     const ratesKw = ['dgs', 'fed', 't10y', '美债', '利率', '利差', '基金'];
@@ -700,7 +790,6 @@ a:hover{text-decoration:underline}
       `;
     }
 
-    let html = '';
     if (stocks.length) html += `<div class="kpi-group"><div class="kpi-group-title">股票指数</div><div class="kpi-grid">${stocks.map(kpiCard).join('')}</div></div>`;
     if (rates.length) html += `<div class="kpi-group"><div class="kpi-group-title">利率债券</div><div class="kpi-grid">${rates.map(kpiCard).join('')}</div></div>`;
     if (fx.length) html += `<div class="kpi-group"><div class="kpi-group-title">外汇汇率</div><div class="kpi-grid">${fx.map(kpiCard).join('')}</div></div>`;
