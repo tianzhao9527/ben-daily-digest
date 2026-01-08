@@ -262,8 +262,8 @@ def fetch_google_news_items(query: str, *, limit: int = 25, hl: str = "en-US", g
 
 def fetch_arxiv_items(query: str, *, limit: int = 20) -> list[RawItem]:
     """抓取arXiv论文"""
-    # arXiv API
-    base_url = "http://export.arxiv.org/api/query"
+    # arXiv API - 使用https
+    base_url = "https://export.arxiv.org/api/query"
     params = {
         "search_query": query,
         "start": 0,
@@ -274,15 +274,27 @@ def fetch_arxiv_items(query: str, *, limit: int = 20) -> list[RawItem]:
     url = f"{base_url}?{urllib.parse.urlencode(params)}"
     
     def _do():
-        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(10, 30))
+        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(15, 45))
         r.raise_for_status()
         return r.text
     
     try:
-        xml_text = retry(_do, name="arxiv", tries=3, base_sleep=1.0)
+        # 增加重试次数和睡眠时间
+        xml_text = retry(_do, name="arxiv", tries=4, base_sleep=2.0)
     except Exception as e:
         log(f"[digest] arxiv fetch failed: {e}")
-        return []
+        # 备用：使用Google News搜索AI研究新闻
+        log("[digest] arxiv fallback to Google News...")
+        fallback_items = []
+        try:
+            fallback_items = fetch_google_news_items("AI research paper machine learning", limit=limit)
+            fallback_items.extend(fetch_google_news_items("deep learning neural network study", limit=limit))
+            for it in fallback_items:
+                it.abstract = ""
+            log(f"[digest] arxiv fallback got {len(fallback_items)} items")
+        except Exception as fe:
+            log(f"[digest] arxiv fallback failed: {fe}")
+        return fallback_items[:limit]
     
     items = []
     try:
@@ -1128,8 +1140,12 @@ def build_digest(cfg: dict, *, date: str, limit_raw: int, items_per_section: int
                     log(f"[digest] gnews-cn {sid} failed: {e}")
 
         raw_items = dedupe_items(raw_items)
-        # 时效性过滤：只保留7天内的新闻（放宽以确保有足够内容）
-        raw_items = filter_by_recency(raw_items, max_days=7)
+        # 时效性过滤：先尝试14天，如果不足则放宽到30天
+        filtered_items = filter_by_recency(raw_items, max_days=14)
+        if len(filtered_items) < items_per_section:
+            # 新闻不足，放宽到30天
+            filtered_items = filter_by_recency(raw_items, max_days=30)
+        raw_items = filtered_items
         raw_items = raw_items[: max(items_per_section * 3, limit_raw)]
         
         # 计算重要性分数
@@ -1250,8 +1266,8 @@ def main():
     ap.add_argument("--template", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--date", default=None)
-    ap.add_argument("--limit_raw", type=int, default=25)
-    ap.add_argument("--items_per_section", type=int, default=15)
+    ap.add_argument("--limit_raw", type=int, default=None)
+    ap.add_argument("--items_per_section", type=int, default=None)
     ap.add_argument("--archive_dir", default="archive")  # 历史存档目录
     args = ap.parse_args()
 
@@ -1264,9 +1280,14 @@ def main():
     
     date = args.date or now_utc().date().isoformat()
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
-    log(f"[digest] date={date} limit_raw={args.limit_raw} items={args.items_per_section}")
+    
+    # 从配置文件读取，命令行参数可覆盖
+    limit_raw = args.limit_raw if args.limit_raw is not None else cfg.get("limit_raw", 30)
+    items_per_section = args.items_per_section if args.items_per_section is not None else cfg.get("items_per_section", 10)
+    
+    log(f"[digest] date={date} limit_raw={limit_raw} items={items_per_section}")
 
-    digest = build_digest(cfg, date=date, limit_raw=args.limit_raw, items_per_section=args.items_per_section)
+    digest = build_digest(cfg, date=date, limit_raw=limit_raw, items_per_section=items_per_section)
     log("[digest] render html")
     html_out = render_html(args.template, digest)
     Path(args.out).write_text(html_out, encoding="utf-8")

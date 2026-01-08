@@ -14,94 +14,112 @@
       "id": "macro",
       "name": "宏观 / 市场（利率·汇率·风险偏好）",
       "gnews_queries": [
-        "US Treasury yields Fed inflation monetary policy",
-        "USD CNY exchange rate PBOC currency",
-        "global equity market VIX stock index"
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq",
+        "central bank monetary policy inflation"
       ]
     },
     {
       "id": "sanctions",
       "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
       "gnews_queries": [
-        "OFAC sanctions enforcement compliance",
-        "EU sanctions Russia export controls trade",
-        "US China trade war tariffs export controls"
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips",
+        "geopolitical risk international trade"
       ]
     },
     {
       "id": "ai",
       "name": "AI / 大模型（GPT·LLM·应用）",
       "gnews_queries": [
-        "OpenAI GPT Claude AI model",
-        "large language model LLM enterprise",
-        "AI artificial intelligence regulation policy",
-        "generative AI application business"
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business",
+        "AI regulation policy government",
+        "machine learning deep learning"
       ]
     },
     {
       "id": "compute",
       "name": "AI 计算基础设施（算力·芯片·数据中心）",
       "gnews_queries": [
-        "data center GPU Nvidia AI chip",
-        "AI chip export controls semiconductor",
-        "cloud computing infrastructure AI"
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment",
+        "AMD Intel AI processor"
       ]
     },
     {
       "id": "ev",
       "name": "新能源汽车（电池·充电·智驾）",
       "gnews_queries": [
-        "electric vehicle EV battery Tesla BYD",
-        "autonomous driving self-driving car",
-        "EV charging infrastructure battery technology",
-        "solid state battery lithium"
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology",
+        "lithium battery supply chain"
       ]
     },
     {
       "id": "metals",
       "name": "大宗 / 金属（LME·供需·库存）",
       "gnews_queries": [
-        "LME copper aluminium nickel zinc price",
+        "copper price LME market",
+        "aluminum nickel zinc metal",
         "copper scrap recycling trade",
-        "critical minerals rare earth supply chain"
+        "critical minerals rare earth",
+        "metal commodity trading"
       ]
     },
     {
       "id": "carbon",
       "name": "碳 / CBAM / 碳市场（Verra·EU）",
       "gnews_queries": [
-        "EU CBAM carbon border adjustment mechanism",
-        "carbon credit market trading",
-        "carbon neutrality net zero emissions"
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price",
+        "climate change policy carbon"
       ]
     },
     {
       "id": "sea",
       "name": "东南亚供应链（制造·转移·关键矿产）",
       "gnews_queries": [
-        "Vietnam manufacturing supply chain investment",
-        "Indonesia nickel smelter mining",
-        "Southeast Asia electronics semiconductor"
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
       ]
     },
     {
       "id": "space",
       "name": "宇宙探索（航天·卫星·深空）",
       "gnews_queries": [
-        "SpaceX Starship rocket launch",
-        "NASA Mars moon exploration mission",
-        "satellite constellation Starlink space",
-        "China space station lunar program"
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon",
+        "Blue Origin rocket launch"
       ]
     },
     {
       "id": "frontier",
       "name": "前沿科技（量子·聚变·生物）",
       "gnews_queries": [
-        "quantum computing qubit breakthrough",
-        "fusion energy tokamak reactor",
-        "synthetic biology gene editing CRISPR",
-        "superconductor room temperature"
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science",
+        "synthetic biology research"
       ]
     },
     {
