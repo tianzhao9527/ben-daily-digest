@@ -300,12 +300,12 @@ a:hover{text-decoration:underline}
 .editor-input:focus{outline:none;border-color:var(--accent)}
 .editor-input.sm{width:80px;flex:none;text-align:center}
 .editor-add{
-  width:100%;padding:10px;border:2px dashed var(--line);border-radius:8px;
-  background:transparent;cursor:pointer;font-size:12px;color:var(--muted);
+  width:100%;padding:12px;border:2px dashed var(--accent);border-radius:8px;
+  background:rgba(0,113,227,.03);cursor:pointer;font-size:13px;color:var(--accent);font-weight:500;
   display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s;
 }
-.editor-add:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,113,227,.03)}
-.editor-form{padding:12px;background:var(--chip);border-radius:8px;margin-bottom:10px}
+.editor-add:hover{border-color:var(--accent);color:#fff;background:var(--accent)}
+.editor-form{padding:12px;background:var(--chip);border-radius:8px;margin-bottom:10px;margin-top:10px}
 .editor-form-row{display:flex;gap:8px;margin-bottom:8px}
 .editor-form-row:last-child{margin-bottom:0}
 .editor-form-label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
@@ -1014,22 +1014,30 @@ a:hover{text-decoration:underline}
       </div>
     `;
     
+    // 新增时：表单显示在添加按钮下方；编辑时：显示在列表上方
+    const addBtn = $('#addSection');
     const list = $('#sectionsList');
-    if (list) {
+    if (isNew && addBtn) {
+      addBtn.insertAdjacentHTML('afterend', html);
+    } else if (list) {
       list.insertAdjacentHTML('beforebegin', html);
-      $('#cancelSec').onclick = () => { document.querySelector('.editor-form').remove(); };
-      $('#saveSec').onclick = () => {
-        const newSec = {
-          id: $('#secId').value.trim(),
-          name: $('#secName').value.trim(),
-          gnews_queries: $('#secQueries').value.split('\n').map(s => s.trim()).filter(Boolean)
-        };
-        if (!newSec.id || !newSec.name) { alert('请填写ID和名称'); return; }
-        if (isNew) editConfig.sections.push(newSec);
-        else editConfig.sections[idx] = newSec;
-        renderSettings('sections');
-      };
     }
+    
+    $('#cancelSec').onclick = () => { document.querySelector('.editor-form').remove(); };
+    $('#saveSec').onclick = () => {
+      const newSec = {
+        id: $('#secId').value.trim(),
+        name: $('#secName').value.trim(),
+        gnews_queries: $('#secQueries').value.split('\n').map(s => s.trim()).filter(Boolean)
+      };
+      if (!newSec.id || !newSec.name) { alert('请填写ID和名称'); return; }
+      if (isNew) editConfig.sections.push(newSec);
+      else editConfig.sections[idx] = newSec;
+      renderSettings('sections');
+    };
+    
+    // 滚动到表单位置
+    document.querySelector('.editor-form')?.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 
   function showKpiEditor(idx) {
@@ -1062,22 +1070,30 @@ a:hover{text-decoration:underline}
       </div>
     `;
     
+    // 新增时：表单显示在添加按钮下方；编辑时：显示在列表上方
+    const addBtn = $('#addKpi');
     const list = $('#kpisList');
-    if (list) {
+    if (isNew && addBtn) {
+      addBtn.insertAdjacentHTML('afterend', html);
+    } else if (list) {
       list.insertAdjacentHTML('beforebegin', html);
-      $('#cancelKpi').onclick = () => { document.querySelector('.editor-form').remove(); };
-      $('#saveKpi').onclick = () => {
-        const newKpi = {
-          series: $('#kpiSeries').value.trim(),
-          title: $('#kpiTitle').value.trim(),
-          unit: $('#kpiUnit').value.trim()
-        };
-        if (!newKpi.series || !newKpi.title) { alert('请填写系列ID和名称'); return; }
-        if (isNew) editConfig.kpis.push(newKpi);
-        else editConfig.kpis[idx] = newKpi;
-        renderSettings('data');
-      };
     }
+    
+    $('#cancelKpi').onclick = () => { document.querySelector('.editor-form').remove(); };
+    $('#saveKpi').onclick = () => {
+      const newKpi = {
+        series: $('#kpiSeries').value.trim(),
+        title: $('#kpiTitle').value.trim(),
+        unit: $('#kpiUnit').value.trim()
+      };
+      if (!newKpi.series || !newKpi.title) { alert('请填写系列ID和名称'); return; }
+      if (isNew) editConfig.kpis.push(newKpi);
+      else editConfig.kpis[idx] = newKpi;
+      renderSettings('data');
+    };
+    
+    // 滚动到表单位置
+    document.querySelector('.editor-form')?.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 
   function renderAll() {

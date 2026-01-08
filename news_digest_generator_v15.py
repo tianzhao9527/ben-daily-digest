@@ -553,48 +553,59 @@ def fix_json_string(s: str) -> str:
     return s
 
 def extract_first_json_object(text: str) -> dict | None:
+    """从LLM返回的文本中提取JSON对象，支持各种格式"""
     if not text:
         return None
-        
-    # 尝试1: 直接解析
-    try:
-        obj = json.loads(text)
-        return obj if isinstance(obj, dict) else None
-    except:
-        pass
     
-    # 尝试2: 修复后解析
-    fixed = fix_json_string(text)
-    try:
-        obj = json.loads(fixed)
-        return obj if isinstance(obj, dict) else None
-    except:
-        pass
+    # 先清理markdown代码块
+    cleaned = fix_json_string(text)
     
-    # 尝试3: 查找JSON边界
-    start = text.find("{")
+    # 尝试1: 直接解析清理后的内容
+    try:
+        obj = json.loads(cleaned)
+        if isinstance(obj, dict):
+            return obj
+    except json.JSONDecodeError as e:
+        pass  # 继续尝试其他方法
+    
+    # 尝试2: 查找JSON边界 { ... }
+    start = cleaned.find("{")
     if start < 0:
         return None
     
-    # 从后往前找最后一个}
-    end = text.rfind("}")
+    end = cleaned.rfind("}")
     if end <= start:
+        # JSON可能不完整，尝试修复
+        # 统计未闭合的括号
+        open_braces = cleaned.count('{') - cleaned.count('}')
+        open_brackets = cleaned.count('[') - cleaned.count(']')
+        if open_braces > 0 or open_brackets > 0:
+            # 尝试补全JSON
+            fixed = cleaned + ']' * open_brackets + '}' * open_braces
+            try:
+                obj = json.loads(fixed)
+                if isinstance(obj, dict):
+                    return obj
+            except:
+                pass
         return None
     
-    candidate = text[start:end+1]
-    candidate = fix_json_string(candidate)
+    candidate = cleaned[start:end+1]
+    
+    # 尝试3: 解析截取的内容
     try:
         obj = json.loads(candidate)
-        return obj if isinstance(obj, dict) else None
+        if isinstance(obj, dict):
+            return obj
     except:
         pass
     
-    # 尝试4: 逐字符匹配括号
+    # 尝试4: 逐字符匹配括号找到完整的JSON对象
     depth = 0
     in_str = False
     esc = False
-    for i in range(start, len(text)):
-        ch = text[i]
+    for i in range(start, len(cleaned)):
+        ch = cleaned[i]
         if in_str:
             if esc:
                 esc = False
@@ -611,12 +622,30 @@ def extract_first_json_object(text: str) -> dict | None:
         elif ch == "}":
             depth -= 1
             if depth == 0:
-                cand = fix_json_string(text[start:i+1])
+                cand = cleaned[start:i+1]
                 try:
                     obj = json.loads(cand)
-                    return obj if isinstance(obj, dict) else None
+                    if isinstance(obj, dict):
+                        return obj
                 except:
-                    return None
+                    pass
+                break
+    
+    # 尝试5: 如果JSON被截断，尝试智能修复
+    # 找到最后一个完整的对象或数组
+    try:
+        # 尝试补全常见的截断情况
+        partial = cleaned[start:]
+        for suffix in ['"}]}', '"}]}}', '"]}}', '"}}', ']}', '}}', '}']:
+            try:
+                obj = json.loads(partial + suffix)
+                if isinstance(obj, dict):
+                    return obj
+            except:
+                continue
+    except:
+        pass
+    
     return None
 
 # llm_chat_json 已在上面定义
@@ -656,7 +685,7 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
     last_error = None
     for attempt in range(2):
         try:
-            obj, llm_name = llm_chat_json(messages, max_tokens=3000)
+            obj, llm_name = llm_chat_json(messages, max_tokens=4500)
             
             brief_zh = (obj.get("brief_zh") or "").strip()
             evs = obj.get("events") or []
