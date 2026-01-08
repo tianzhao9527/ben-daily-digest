@@ -553,7 +553,7 @@ def fix_json_string(s: str) -> str:
     return s
 
 def extract_first_json_object(text: str) -> dict | None:
-    """从LLM返回的文本中提取JSON对象，支持各种格式"""
+    """从LLM返回的文本中提取JSON对象，支持各种格式和截断修复"""
     if not text:
         return None
     
@@ -565,40 +565,36 @@ def extract_first_json_object(text: str) -> dict | None:
         obj = json.loads(cleaned)
         if isinstance(obj, dict):
             return obj
-    except json.JSONDecodeError as e:
-        pass  # 继续尝试其他方法
+    except json.JSONDecodeError:
+        pass
     
-    # 尝试2: 查找JSON边界 { ... }
+    # 尝试2: 查找JSON边界并解析
     start = cleaned.find("{")
     if start < 0:
         return None
     
     end = cleaned.rfind("}")
-    if end <= start:
-        # JSON可能不完整，尝试修复
-        # 统计未闭合的括号
-        open_braces = cleaned.count('{') - cleaned.count('}')
-        open_brackets = cleaned.count('[') - cleaned.count(']')
-        if open_braces > 0 or open_brackets > 0:
-            # 尝试补全JSON
-            fixed = cleaned + ']' * open_brackets + '}' * open_braces
-            try:
-                obj = json.loads(fixed)
-                if isinstance(obj, dict):
-                    return obj
-            except:
-                pass
-        return None
+    if end > start:
+        candidate = cleaned[start:end+1]
+        try:
+            obj = json.loads(candidate)
+            if isinstance(obj, dict):
+                return obj
+        except:
+            pass
     
-    candidate = cleaned[start:end+1]
-    
-    # 尝试3: 解析截取的内容
-    try:
-        obj = json.loads(candidate)
-        if isinstance(obj, dict):
-            return obj
-    except:
-        pass
+    # 尝试3: 修复被截断的JSON
+    # 这是最常见的情况 - LLM输出被max_tokens截断
+    truncated_json = cleaned[start:]
+    repaired = repair_truncated_json(truncated_json)
+    if repaired:
+        try:
+            obj = json.loads(repaired)
+            if isinstance(obj, dict):
+                log(f"[digest] JSON repaired successfully")
+                return obj
+        except:
+            pass
     
     # 尝试4: 逐字符匹配括号找到完整的JSON对象
     depth = 0
@@ -631,20 +627,108 @@ def extract_first_json_object(text: str) -> dict | None:
                     pass
                 break
     
-    # 尝试5: 如果JSON被截断，尝试智能修复
-    # 找到最后一个完整的对象或数组
-    try:
-        # 尝试补全常见的截断情况
-        partial = cleaned[start:]
-        for suffix in ['"}]}', '"}]}}', '"]}}', '"}}', ']}', '}}', '}']:
-            try:
-                obj = json.loads(partial + suffix)
-                if isinstance(obj, dict):
-                    return obj
-            except:
+    return None
+
+def repair_truncated_json(text: str) -> str | None:
+    """尝试修复被截断的JSON，特别是events数组被截断的情况"""
+    if not text or not text.strip().startswith('{'):
+        return None
+    
+    # 检查是否有brief_zh字段（我们需要的最低限度）
+    if '"brief_zh"' not in text:
+        return None
+    
+    # 策略1: 找到events数组中最后一个完整的对象
+    # 查找 "events" 数组的开始位置
+    events_match = re.search(r'"events"\s*:\s*\[', text)
+    if events_match:
+        events_start = events_match.end()
+        
+        # 在events数组中找到所有完整的对象（以 } 结尾且后面跟着 , 或 ]）
+        # 使用状态机找到完整的对象
+        complete_objects = []
+        depth = 0
+        in_str = False
+        esc = False
+        obj_start = events_start
+        
+        for i in range(events_start, len(text)):
+            ch = text[i]
+            if in_str:
+                if esc:
+                    esc = False
+                elif ch == '\\':
+                    esc = True
+                elif ch == '"':
+                    in_str = False
                 continue
-    except:
-        pass
+            
+            if ch == '"':
+                in_str = True
+            elif ch == '{':
+                if depth == 0:
+                    obj_start = i
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    # 找到一个完整的对象
+                    complete_objects.append((obj_start, i + 1))
+            elif ch == ']' and depth == 0:
+                # events数组正常结束
+                break
+        
+        if complete_objects:
+            # 截取到最后一个完整对象
+            last_obj_end = complete_objects[-1][1]
+            
+            # 构建修复后的JSON
+            repaired = text[:last_obj_end] + ']}'
+            
+            # 验证是否有效
+            try:
+                json.loads(repaired)
+                return repaired
+            except:
+                pass
+            
+            # 尝试添加更多闭合符号
+            for suffix in [']}', '"]}', '"}]}', '"]}}}']:
+                try:
+                    test = text[:last_obj_end] + suffix
+                    json.loads(test)
+                    return test
+                except:
+                    continue
+    
+    # 策略2: 简单的括号补全
+    open_braces = text.count('{') - text.count('}')
+    open_brackets = text.count('[') - text.count(']')
+    
+    if open_braces > 0 or open_brackets > 0:
+        # 尝试在不同位置截断并补全
+        # 找到最后一个逗号或完整值的位置
+        for trim_chars in [0, 10, 50, 100, 200, 500]:
+            if trim_chars >= len(text):
+                break
+            trimmed = text[:-trim_chars] if trim_chars > 0 else text
+            
+            # 去掉末尾不完整的内容（到最后一个逗号或冒号）
+            last_comma = max(trimmed.rfind(','), trimmed.rfind('}'), trimmed.rfind(']'))
+            if last_comma > 0:
+                trimmed = trimmed[:last_comma+1]
+            
+            # 重新计算需要的闭合符号
+            ob = trimmed.count('{') - trimmed.count('}')
+            ol = trimmed.count('[') - trimmed.count(']')
+            
+            if ob >= 0 and ol >= 0:
+                suffix = ']' * ol + '}' * ob
+                try:
+                    json.loads(trimmed + suffix)
+                    return trimmed + suffix
+                except:
+                    continue
     
     return None
 
@@ -659,20 +743,26 @@ def llm_section_pack(section: Section, raw_items: list[RawItem], *, items_per_se
     返回: (brief_zh, events, llm_name)
     """
     
+    # 限制发送给LLM的新闻数量，减少输出长度避免截断
+    max_input = min(len(raw_items), items_per_section + 5)  # 最多发送 items_per_section + 5 条
+    
     lines = []
-    for it in raw_items[: min(len(raw_items), max(15, items_per_section * 2))]:
+    for it in raw_items[:max_input]:
         lines.append({
-            "t": it.title[:80],  # 标题
-            "s": it.source[:30],  # 来源
+            "t": it.title[:60],  # 标题截短
+            "s": it.source[:20],  # 来源截短
             "d": it.published_at or "",  # 日期
-            "u": it.url,  # 链接
+            "u": it.url[:100],  # URL截短
             "cn": it.region == "cn",  # 是否中国相关
         })
 
-    # 极简prompt
-    sys_prompt = f"""将以下新闻翻译成中文并整理。只返回JSON，格式：
-{{"brief_zh":"总结(200字)","events":[{{"title_zh":"中文标题","summary_zh":"摘要(80字)","region":"cn或global","score":0.6,"date":"日期","sources":[{{"title":"原标题","url":"链接","source":"来源"}}]}}]}}
-要求：1.标题和摘要必须是中文 2.优先选cn=true的 3.生成{items_per_section}条"""
+    # 要求生成的events数量 - 不超过10条以减少输出
+    target_events = min(items_per_section, 10)
+    
+    # 极简prompt - 强调只返回纯JSON
+    sys_prompt = f"""将新闻翻译成中文并整理。返回纯JSON（不要```json标记）：
+{{"brief_zh":"总结(150字内)","events":[{{"title_zh":"中文标题(20字内)","summary_zh":"摘要(50字内)","region":"cn或global","score":0.6,"date":"日期","sources":[{{"title":"标题","url":"链接","source":"来源"}}]}}]}}
+要求：1.中文 2.优先cn=true 3.生成{target_events}条 4.不要markdown"""
 
     user_content = f"新闻({section.name}):\n{json.dumps(lines, ensure_ascii=False)}"
 
