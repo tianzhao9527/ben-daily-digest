@@ -14,7 +14,6 @@
   --chip:rgba(0,0,0,.03);
   --success:#34c759;
   --danger:#ff3b30;
-  --warning:#ff9500;
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
 }
 [data-theme="dark"]{
@@ -84,18 +83,23 @@ a:hover{text-decoration:underline}
 .topbar{padding:14px 18px;border-bottom:1px solid var(--line);background:var(--card)}
 .topbar-title{font-size:18px;font-weight:600;letter-spacing:-0.3px}
 .topbar-meta{margin-top:3px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+
+/* 日期选择器 */
 .date-picker-btn{
   display:inline-flex;align-items:center;gap:4px;
   background:none;border:none;font-size:11px;color:var(--accent);
   cursor:pointer;padding:2px 6px;border-radius:4px;font-family:var(--font);font-weight:500;
 }
 .date-picker-btn:hover{background:rgba(0,113,227,.08)}
+.date-picker-arrow{font-size:9px;transition:transform .2s}
+.date-picker-btn.open .date-picker-arrow{transform:rotate(180deg)}
 .date-dropdown{
   display:none;position:absolute;top:70px;left:18px;right:18px;
   background:var(--card);border:1px solid var(--line);border-radius:10px;
   box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:50;max-height:300px;overflow:hidden;
 }
 .date-dropdown.show{display:block}
+.date-dropdown-header{padding:10px 14px;font-size:12px;font-weight:600;border-bottom:1px solid var(--line);color:var(--text)}
 .date-dropdown-list{max-height:240px;overflow-y:auto}
 .date-item{
   display:flex;justify-content:space-between;align-items:center;
@@ -103,6 +107,9 @@ a:hover{text-decoration:underline}
 }
 .date-item:hover{background:var(--chip)}
 .date-item.active{background:rgba(0,113,227,.08);color:var(--accent);font-weight:500}
+.date-item:last-child{border-bottom:none}
+.date-item-day{color:var(--muted);font-size:11px}
+.date-loading{padding:20px;text-align:center;font-size:12px;color:var(--muted)}
 .main-scroll{flex:1;overflow:auto;padding:16px 18px}
 
 /* Top 5 板块 */
@@ -121,6 +128,10 @@ a:hover{text-decoration:underline}
 .top5-item:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,113,227,.08)}
 .top5-item-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5}
 .top5-item-summary{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px;flex:1}
+.top5-item-action{
+  font-size:12px;color:var(--accent);font-weight:500;
+  padding:6px 12px;background:rgba(0,113,227,.06);border-radius:6px;display:inline-block;
+}
 
 /* 板块 */
 .section{margin-bottom:28px;scroll-margin-top:16px}
@@ -132,16 +143,8 @@ a:hover{text-decoration:underline}
   border:1px solid var(--line);border-radius:10px;
   font-size:12px;line-height:1.7;color:var(--text);white-space:pre-wrap;
 }
-.section-meta{display:flex;gap:12px;margin-top:8px;font-size:11px;color:var(--muted)}
-.section-sentiment{display:flex;align-items:center;gap:4px}
-.sentiment-dot{width:8px;height:8px;border-radius:50%}
-.sentiment-positive{background:var(--success)}
-.sentiment-negative{background:var(--danger)}
-.sentiment-neutral{background:var(--muted)}
-.keywords-inline{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.keyword-tag{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(0,113,227,.08);color:var(--accent)}
 
-/* 卡片网格 - 两列 */
+/* 卡片网格 - 优化可读性 */
 .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .event-card{
   background:var(--card);border:1px solid var(--line);border-radius:12px;
@@ -170,66 +173,52 @@ a:hover{text-decoration:underline}
 .event-score{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
 .score-bar{width:40px;height:4px;background:var(--chip);border-radius:2px;overflow:hidden}
 .score-fill{height:100%;background:var(--accent);border-radius:2px}
+.feedback-btns{display:flex;gap:4px}
+.fb-btn{
+  width:28px;height:28px;border:1px solid var(--line);background:transparent;
+  border-radius:6px;cursor:pointer;font-size:12px;transition:all .15s;color:var(--muted);
+}
+.fb-btn:hover{background:var(--chip)}
+.fb-btn.active.good{background:rgba(52,199,89,.1);border-color:var(--success);color:var(--success)}
+.fb-btn.active.bad{background:rgba(255,59,48,.1);border-color:var(--danger);color:var(--danger)}
+.empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:13px;background:var(--chip);border-radius:10px}
 
-/* 右侧 - 单页滚动 */
+/* 右侧 - KPI紧凑布局 */
 .right{min-height:0}
 .right-header{padding:12px;border-bottom:1px solid var(--line)}
 .right-title{font-size:13px;font-weight:600}
 .right-sub{margin-top:2px;font-size:9px;color:var(--muted)}
 .right-scroll{flex:1;overflow:auto;padding:8px}
-
-/* 情感仪表盘 */
-.sentiment-panel{margin-bottom:16px;padding:12px;background:var(--chip);border-radius:10px}
-.sentiment-panel-title{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:10px}
-.gauge-wrap{display:flex;justify-content:center;margin-bottom:8px}
-.gauge{width:100px;height:50px;position:relative}
-.gauge-bg{width:100px;height:50px;border-radius:50px 50px 0 0;background:linear-gradient(90deg,var(--danger),var(--warning),var(--success));position:relative;overflow:hidden}
-.gauge-mask{position:absolute;bottom:0;left:8px;right:8px;height:32px;background:var(--chip);border-radius:40px 40px 0 0}
-.gauge-needle{position:absolute;bottom:0;left:50%;width:3px;height:40px;background:var(--text);transform-origin:bottom center;margin-left:-1.5px;border-radius:2px;transition:transform .5s}
-.gauge-center{position:absolute;bottom:-4px;left:50%;width:12px;height:12px;background:var(--card);border:2px solid var(--text);border-radius:50%;margin-left:-6px}
-.gauge-value{text-align:center;font-size:18px;font-weight:600}
-.gauge-label{text-align:center;font-size:10px;color:var(--muted)}
-.sentiment-stats{display:flex;justify-content:space-around;margin-top:10px;font-size:11px}
-.sentiment-stat{text-align:center}
-.sentiment-stat-value{font-weight:600}
-.sentiment-stat-label{font-size:9px;color:var(--muted)}
-
-/* 关键词区域 */
-.keywords-panel{margin-bottom:16px}
-.keywords-panel-title{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:8px;padding:0 4px}
-.keywords-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:var(--chip);border-radius:8px;min-height:60px}
-.word-item{padding:4px 10px;border-radius:10px;font-weight:500}
-.word-size-1{font-size:10px;background:rgba(0,113,227,.06);color:rgba(0,113,227,.6)}
-.word-size-2{font-size:11px;background:rgba(0,113,227,.1);color:rgba(0,113,227,.7)}
-.word-size-3{font-size:12px;background:rgba(0,113,227,.14);color:rgba(0,113,227,.8)}
-.word-size-4{font-size:13px;background:rgba(0,113,227,.18);color:var(--accent)}
-.word-size-5{font-size:14px;background:rgba(0,113,227,.22);color:var(--accent);font-weight:600}
-
-/* 去重统计 */
-.dedupe-panel{margin-bottom:16px;padding:10px;background:var(--chip);border-radius:8px}
-.dedupe-panel-title{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:6px}
-.dedupe-stats{font-size:11px;color:var(--text)}
-.dedupe-bar{height:6px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
-.dedupe-bar-fill{height:100%;background:var(--accent);border-radius:3px}
-
-/* KPI区域 */
-.kpi-panel{margin-bottom:10px}
-.kpi-panel-title{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:8px;padding:0 4px}
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.kpi-card{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:10px}
-.kpi-name{font-size:10px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:4px;margin-bottom:4px}
-.kpi-dot{width:6px;height:6px;border-radius:50%}
+.kpi-group{margin-bottom:10px}
+.kpi-group-title{
+  font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.4px;padding:5px 4px;border-bottom:1px solid var(--line);margin-bottom:5px;
+  display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;
+}
+.kpi-group-title:hover{color:var(--text)}
+.kpi-group-title::after{content:'▾';font-size:10px;transition:transform .2s}
+.kpi-group.collapsed .kpi-group-title::after{transform:rotate(-90deg)}
+.kpi-group.collapsed .kpi-grid{display:none}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.kpi-card{background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:8px}
+.kpi-name{font-size:9px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:3px;margin-bottom:3px}
+.kpi-dot{width:5px;height:5px;border-radius:50%}
 .kpi-dot.up{background:var(--success)}
 .kpi-dot.down{background:var(--danger)}
 .kpi-dot.flat{background:var(--muted)}
-.kpi-value{font-size:15px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
-.kpi-unit{font-size:10px;font-weight:400;color:var(--muted);margin-left:2px}
-.kpi-delta{font-size:10px;margin-top:3px}
+.kpi-value{font-size:14px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.kpi-unit{font-size:9px;font-weight:400;color:var(--muted);margin-left:1px}
+.kpi-delta{font-size:9px;margin-top:2px}
 .kpi-delta.up{color:var(--success)}
 .kpi-delta.down{color:var(--danger)}
 .kpi-delta.flat{color:var(--muted)}
-.kpi-spark{width:100%;height:24px;margin-top:6px}
-.kpi-indicators{display:flex;gap:6px;margin-top:4px;font-size:9px;color:var(--muted)}
+.kpi-spark{width:100%;height:18px;margin-top:4px}
+.kpi-spark path{stroke-width:1.2}
+.feedback-stats{margin-top:10px;padding:8px;background:var(--chip);border-radius:6px;border:1px solid var(--line)}
+.feedback-stats-title{font-size:10px;font-weight:600;margin-bottom:5px}
+.feedback-stats-row{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:2px}
+.feedback-actions{display:flex;gap:4px;margin-top:6px}
+.feedback-actions .btn{flex:1;font-size:9px;padding:4px 5px}
 
 /* 设置面板 */
 .overlay{
@@ -261,652 +250,1160 @@ a:hover{text-decoration:underline}
 .settings-body{flex:1;overflow:auto;padding:20px}
 .settings-section{margin-bottom:20px}
 .settings-section-title{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--text)}
-
-/* 编辑器 */
-.editor-list{margin-bottom:12px}
+.settings-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--line);
+}
+.settings-row:last-child{border-bottom:none}
+.settings-label{font-size:12px;color:var(--text)}
+.settings-label small{display:block;font-size:10px;color:var(--muted);margin-top:1px}
+.settings-input{
+  width:100px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;
+  font-size:12px;font-family:var(--font);background:var(--card);color:var(--text);text-align:right;
+}
+.settings-input:focus{outline:none;border-color:var(--accent)}
+.settings-toggle{
+  position:relative;width:40px;height:22px;background:var(--line);
+  border-radius:11px;cursor:pointer;transition:background .2s;
+}
+.settings-toggle.active{background:var(--success)}
+.settings-toggle::after{
+  content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;
+  background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15);
+}
+.settings-toggle.active::after{transform:translateX(18px)}
+.config-preview{
+  background:var(--chip);border:1px solid var(--line);border-radius:6px;
+  padding:12px;font-family:ui-monospace,monospace;font-size:10px;line-height:1.5;
+  max-height:240px;overflow:auto;white-space:pre-wrap;word-break:break-all;
+}
+/* 可视化编辑器样式 */
 .editor-item{
   display:flex;align-items:center;gap:8px;padding:10px 12px;
   background:var(--chip);border:1px solid var(--line);border-radius:8px;margin-bottom:6px;
 }
 .editor-item:hover{border-color:var(--accent)}
 .editor-item-main{flex:1;min-width:0}
-.editor-item-title{font-size:12px;font-weight:500}
+.editor-item-title{font-size:12px;font-weight:500;color:var(--text)}
 .editor-item-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.editor-item-actions{display:flex;gap:4px}
 .editor-btn{
-  width:26px;height:26px;border-radius:6px;border:none;
-  background:transparent;cursor:pointer;font-size:13px;color:var(--muted);
+  width:26px;height:26px;border:1px solid var(--line);background:var(--card);
+  border-radius:5px;cursor:pointer;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;
 }
-.editor-btn:hover{background:var(--line);color:var(--text)}
-.editor-btn.danger:hover{color:var(--danger)}
+.editor-btn:hover{background:var(--chip);color:var(--text)}
+.editor-btn.danger:hover{background:rgba(255,59,48,.1);color:var(--danger);border-color:var(--danger)}
+.editor-input{
+  flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:6px;
+  font-size:12px;font-family:var(--font);background:var(--card);color:var(--text);
+}
+.editor-input:focus{outline:none;border-color:var(--accent)}
+.editor-input.sm{width:80px;flex:none;text-align:center}
 .editor-add{
-  width:100%;padding:10px;border:2px dashed var(--accent);border-radius:8px;
-  background:rgba(0,113,227,.03);cursor:pointer;font-size:12px;color:var(--accent);font-weight:500;
-  text-align:center;font-family:var(--font);
+  width:100%;padding:12px;border:2px dashed var(--accent);border-radius:8px;
+  background:rgba(0,113,227,.03);cursor:pointer;font-size:13px;color:var(--accent);font-weight:500;
+  display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s;
 }
-.editor-add:hover{background:var(--accent);color:#fff}
-.editor-form{padding:12px;background:var(--chip);border-radius:8px;margin:10px 0}
+.editor-add:hover{border-color:var(--accent);color:#fff;background:var(--accent)}
+.editor-form{padding:12px;background:var(--chip);border-radius:8px;margin-bottom:10px;margin-top:10px}
 .editor-form-row{display:flex;gap:8px;margin-bottom:8px}
 .editor-form-row:last-child{margin-bottom:0}
 .editor-form-label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
 .editor-form-group{flex:1}
-.editor-input{
-  width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;
-  background:var(--card);color:var(--text);font-size:12px;font-family:var(--font);
-}
-.editor-input:focus{outline:none;border-color:var(--accent)}
 .export-btns{display:flex;gap:8px;margin-top:12px}
 .export-btns .btn{flex:1}
 
-/* GitHub同步 */
-.github-sync{padding:14px;background:linear-gradient(135deg,rgba(0,113,227,.04),rgba(0,113,227,.08));border-radius:10px;margin-top:16px}
-.github-sync-title{font-size:12px;font-weight:600;margin-bottom:8px}
-.github-sync-desc{font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.5}
-.github-sync-input{
-  width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;
-  background:var(--card);color:var(--text);font-size:11px;font-family:var(--font);margin-bottom:8px;
+/* 响应式布局 */
+@media (max-width:1200px){
+  .container{grid-template-columns:240px 1fr}
+  .right{display:none}
 }
-.github-sync-btn{
-  width:100%;padding:10px;border:none;border-radius:8px;
-  background:var(--accent);color:#fff;font-size:12px;font-weight:500;
-  cursor:pointer;font-family:var(--font);
-}
-.github-sync-btn:hover{opacity:.9}
-.github-sync-status{margin-top:8px;font-size:11px;padding:8px;border-radius:6px}
-.github-sync-status.success{background:rgba(52,199,89,.1);color:var(--success)}
-.github-sync-status.error{background:rgba(255,59,48,.1);color:var(--danger)}
-.github-sync-status.pending{background:rgba(255,149,0,.1);color:var(--warning)}
-
-/* 响应式 */
-@media (max-width:1200px){.container{grid-template-columns:240px 1fr}.right{display:none}}
 @media (max-width:900px){
-  .container{grid-template-columns:1fr;height:auto;min-height:100vh;padding-bottom:70px}
-  .left{display:none !important}.right{display:none !important}
-  .left.mobile-show,.right.mobile-show{display:flex !important;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;border-radius:0}
-  .mobile-close{display:block !important}
+  .container{grid-template-columns:1fr;height:auto;padding-bottom:60px}
+  .left{display:none !important}
+  .right{display:none !important}
   .cards-grid{grid-template-columns:1fr}
   .top5-list{grid-template-columns:1fr}
+  .topbar{position:sticky;top:0;z-index:100}
+  /* 移动端显示控制 - 使用 !important 确保覆盖 */
+  .left.mobile-show{display:flex !important;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg);overflow-y:auto}
+  .right.mobile-show{display:flex !important;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:60px;z-index:200;background:var(--bg);overflow-y:auto}
+  /* 移动端面板关闭按钮 */
+  .mobile-close{display:block !important;position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:var(--chip);border:1px solid var(--line);font-size:18px;cursor:pointer;z-index:10}
 }
-.mobile-close{display:none;position:absolute;top:12px;right:12px;width:32px;height:32px;border:none;background:var(--chip);border-radius:8px;font-size:18px;cursor:pointer;z-index:10}
+@media (min-width:901px){
+  .mobile-close{display:none}
+}
+@media (max-width:600px){
+  html{font-size:14px}
+  .main{padding:12px}
+  .topbar{padding:12px 16px}
+  .topbar-title{font-size:16px}
+  .section{margin-bottom:20px}
+  .section-title{font-size:14px}
+  .section-brief{padding:12px;font-size:12px}
+  .event-card{padding:14px}
+  .event-title{font-size:13px}
+  .event-summary{font-size:12px}
+  .top5-section{padding:14px}
+  .top5-title{font-size:14px}
+  .top5-item{padding:12px}
+  .top5-item-title{font-size:13px}
+  .top5-item-summary{font-size:12px}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+}
+
+/* 移动端底部导航 */
 .mobile-nav{
-  display:none;position:fixed;bottom:0;left:0;right:0;height:60px;
-  background:var(--card);border-top:1px solid var(--line);z-index:300;
-  justify-content:space-around;align-items:center;
+  display:none;position:fixed;bottom:0;left:0;right:0;height:56px;
+  background:var(--card);border-top:1px solid var(--line);
+  z-index:300;padding:0 20px;
 }
-@media (max-width:900px){.mobile-nav{display:flex}}
+@media (max-width:900px){
+  .mobile-nav{display:flex;justify-content:space-around;align-items:center}
+}
 .mobile-nav-item{
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:8px 16px;border-radius:10px;cursor:pointer;
-  border:none;background:transparent;color:var(--muted);font-family:var(--font);
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:8px 0;cursor:pointer;color:var(--muted);transition:color .15s;
+  background:none;border:none;font-family:var(--font);
 }
-.mobile-nav-item:hover,.mobile-nav-item.active{background:var(--chip);color:var(--accent)}
-.mobile-nav-icon{font-size:18px}
-.mobile-nav-label{font-size:10px}
+.mobile-nav-item.active{color:var(--accent)}
+.mobile-nav-item:hover{color:var(--text)}
+.mobile-nav-icon{font-size:20px}
+.mobile-nav-label{font-size:10px;font-weight:500}
 </style>
 </head>
 <body>
+
 <div class="container">
-  <!-- 左侧 -->
   <aside class="card left">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('mobile-show')">×</button>
     <div class="brand">
-      <div class="brand-title">智能简报</div>
-      <div class="brand-sub">v3.0 · 去重 · 情感分析</div>
+      <div class="brand-title">Ben's Daily Brief</div>
+      <div class="brand-sub">金属贸易 · 地缘政治 · AI算力 · 市场数据</div>
     </div>
     <div class="controls">
-      <input type="text" class="search" placeholder="搜索新闻..." id="searchInput"/>
+      <input type="text" class="search" id="searchInput" placeholder="搜索新闻..."/>
       <div class="pills">
-        <button class="pill active" data-filter="all">全部</button>
-        <button class="pill" data-filter="cn">中国</button>
-        <button class="pill" data-filter="global">全球</button>
+        <button class="pill active" data-view="all">全部</button>
+        <button class="pill" data-view="cn">中国</button>
+        <button class="pill" data-view="global">国际</button>
       </div>
     </div>
     <nav class="nav" id="navList"></nav>
     <div class="left-foot">
-      <button class="btn" id="themeBtn">主题</button>
-      <button class="btn primary" id="settingsBtn">设置</button>
+      <button class="btn" id="btnSettings">设置</button>
+      <button class="btn" id="btnTop">返回顶部</button>
     </div>
   </aside>
 
-  <!-- 中间 -->
   <main class="card main">
-    <div class="topbar" style="position:relative">
-      <div class="topbar-title" id="currentSectionTitle">今日要闻</div>
+    <div class="topbar">
+      <div class="topbar-title" id="pageTitle">每日简报</div>
       <div class="topbar-meta">
-        <span id="pageDate"></span>
-        <button class="date-picker-btn" id="datePickerBtn">切换日期 ▾</button>
+        <button class="date-picker-btn" id="datePickerBtn">
+          <span id="pageDate">{{DATE}}</span>
+          <span class="date-picker-arrow">▾</span>
+        </button>
+        · 更新于 <span id="pageTime">—</span>
       </div>
-      <div class="date-dropdown" id="dateDropdown">
-        <div class="date-dropdown-list" id="dateList"></div>
+    </div>
+    <!-- 日期选择下拉 -->
+    <div class="date-dropdown" id="dateDropdown">
+      <div class="date-dropdown-header">选择日期</div>
+      <div class="date-dropdown-list" id="dateList">
+        <div class="date-loading">加载中...</div>
       </div>
     </div>
     <div class="main-scroll" id="mainContent"></div>
   </main>
 
-  <!-- 右侧 - 单页滚动 -->
   <aside class="card right">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('mobile-show')">×</button>
     <div class="right-header">
-      <div class="right-title">数据面板</div>
-      <div class="right-sub">情绪 · 关键词 · 指标</div>
+      <div class="right-title">关键指标</div>
+      <div class="right-sub">数据来源: FRED · 更新于 <span id="kpiTime">—</span></div>
     </div>
-    <div class="right-scroll" id="rightPanel"></div>
+    <div class="right-scroll" id="kpiContent"></div>
   </aside>
 </div>
 
-<!-- 移动端导航 -->
+<!-- 移动端底部导航 -->
 <nav class="mobile-nav">
-  <button class="mobile-nav-item active" data-show="feed"><span class="mobile-nav-icon">N</span><span class="mobile-nav-label">新闻</span></button>
-  <button class="mobile-nav-item" data-show="left"><span class="mobile-nav-icon">≡</span><span class="mobile-nav-label">导航</span></button>
-  <button class="mobile-nav-item" data-show="right"><span class="mobile-nav-icon">D</span><span class="mobile-nav-label">数据</span></button>
-  <button class="mobile-nav-item" data-show="settings"><span class="mobile-nav-icon">⚙</span><span class="mobile-nav-label">设置</span></button>
+  <button class="mobile-nav-item active" data-view="main">
+    <span class="mobile-nav-icon">📰</span>
+    <span class="mobile-nav-label">新闻</span>
+  </button>
+  <button class="mobile-nav-item" data-view="nav">
+    <span class="mobile-nav-icon">☰</span>
+    <span class="mobile-nav-label">导航</span>
+  </button>
+  <button class="mobile-nav-item" data-view="kpi">
+    <span class="mobile-nav-icon">📊</span>
+    <span class="mobile-nav-label">指标</span>
+  </button>
+  <button class="mobile-nav-item" data-view="settings">
+    <span class="mobile-nav-icon">⚙</span>
+    <span class="mobile-nav-label">设置</span>
+  </button>
 </nav>
 
-<!-- 设置面板 -->
 <div class="overlay" id="settingsOverlay">
   <div class="settings-panel">
     <div class="settings-header">
-      <span class="settings-title">设置</span>
-      <button class="settings-close" id="closeSettings">×</button>
+      <div class="settings-title">设置</div>
+      <button class="settings-close" id="settingsClose">×</button>
     </div>
     <div class="settings-tabs">
-      <button class="settings-tab active" data-tab="sections">类目管理</button>
-      <button class="settings-tab" data-tab="kpis">数据源</button>
+      <button class="settings-tab active" data-tab="general">通用</button>
+      <button class="settings-tab" data-tab="sections">类目管理</button>
+      <button class="settings-tab" data-tab="weights">重要性系数</button>
+      <button class="settings-tab" data-tab="algo">算法</button>
+      <button class="settings-tab" data-tab="data">数据源</button>
+      <button class="settings-tab" data-tab="config">配置</button>
       <button class="settings-tab" data-tab="sync">同步</button>
     </div>
-    <div class="settings-body">
-      <div class="tab-pane active" id="pane-sections">
-        <div class="editor-list" id="sectionsList"></div>
-        <button class="editor-add" id="addSection">+ 添加新类目</button>
-        <div class="export-btns"><button class="btn" id="exportSections">导出类目JSON</button></div>
-      </div>
-      <div class="tab-pane" id="pane-kpis" style="display:none">
-        <div class="editor-list" id="kpisList"></div>
-        <button class="editor-add" id="addKpi">+ 添加新指标</button>
-        <div class="export-btns"><button class="btn" id="exportKpis">导出KPI JSON</button></div>
-      </div>
-      <div class="tab-pane" id="pane-sync" style="display:none">
-        <div class="github-sync">
-          <div class="github-sync-title">GitHub 配置同步</div>
-          <div class="github-sync-desc">将配置更改同步到GitHub仓库，T+1生效。支持完整URL或 owner/repo 格式。</div>
-          <input type="text" class="github-sync-input" id="githubRepo" placeholder="tianzhao9527/ben-daily-digest 或完整URL"/>
-          <input type="password" class="github-sync-input" id="githubToken" placeholder="GitHub Personal Access Token"/>
-          <button class="github-sync-btn" id="syncToGithub">同步配置到 GitHub</button>
-          <div class="github-sync-status" id="syncStatus" style="display:none"></div>
-        </div>
-        <div style="margin-top:16px">
-          <div style="font-size:12px;font-weight:500;margin-bottom:8px">手动导出/导入</div>
-          <div class="export-btns">
-            <button class="btn" id="exportFullConfig">导出完整配置</button>
-            <button class="btn" id="importConfig">导入配置</button>
-          </div>
-          <input type="file" id="importConfigFile" accept=".json" style="display:none"/>
-        </div>
-      </div>
-    </div>
+    <div class="settings-body" id="settingsBody"></div>
   </div>
 </div>
+
+<script>window.DIGEST = {{ DIGEST_JSON | safe }};</script>
 <script>
-const D={{DIGEST_JSON}};
-const sections=D.sections||[];
-const kpis=D.kpis||[];
-const top5=D.top5||[];
-let currentSection='top5';
-let currentFilter='all';
-let currentDate=D.date||'';
-let availableDates=[];
+(function(){
+  const D = window.DIGEST || {};
+  let sections = Array.isArray(D.sections) ? D.sections : [];
+  let kpis = Array.isArray(D.kpis) ? D.kpis : [];
+  let meta = D.meta || {};
+  let top5 = Array.isArray(D.top5) ? D.top5 : [];
+  let currentDate = D.date || '';
 
-let editConfig={
-  sections:JSON.parse(JSON.stringify(sections.map(s=>({id:s.id,name:s.name,gnews_queries:s.gnews_queries||[]})))),
-  kpis:JSON.parse(JSON.stringify(kpis.map(k=>({series:k.series,title:k.title,unit:k.unit}))))
-};
+  let currentView = 'all';
+  let searchQuery = '';
+  let activeSection = sections[0]?.id || '';
+  let feedbackData = JSON.parse(localStorage.getItem('digest_feedback') || '{}');
+  let availableDates = [];
 
-const $=s=>document.querySelector(s);
-const $$=s=>document.querySelectorAll(s);
-const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]||c));
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => document.querySelectorAll(sel);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtNum = (x, d=2) => {
+    if (x === null || x === undefined || !isFinite(Number(x))) return '—';
+    const n = Number(x);
+    if (Math.abs(n) >= 1000) return n.toLocaleString('zh-CN', {maximumFractionDigits: d});
+    if (Math.abs(n) >= 100) return n.toFixed(1);
+    return n.toFixed(d).replace(/\.?0+$/, '');
+  };
 
-// 计算整体情感
-function calcSentiment(){
-  let t=0,c=0,p=0,ne=0,n=0;
-  sections.forEach(s=>{
-    const score=s.sentiment_score;
-    if(typeof score==='number'){t+=score;c++}
-    const sent=s.sentiment;
-    if(sent==='positive')p++;else if(sent==='negative')ne++;else n++;
-  });
-  return{score:c>0?t/c:0.5,positive:p,neutral:n,negative:ne};
-}
-
-// 收集关键词
-function collectKeywords(){
-  const w={};
-  sections.forEach(s=>(s.keywords||[]).forEach(k=>{w[k]=(w[k]||0)+1}));
-  return Object.entries(w).sort((a,b)=>b[1]-a[1]).slice(0,15).map(([word,count])=>({word,count}));
-}
-
-// 渲染右侧面板（单页）
-function renderRightPanel(){
-  const sentiment=calcSentiment();
-  const keywords=collectKeywords();
-  const maxKw=Math.max(...keywords.map(k=>k.count),1);
+  function passesView(region) {
+    if (currentView === 'all') return true;
+    if (currentView === 'cn') return region === 'cn';
+    if (currentView === 'global') return region !== 'cn';
+    return true;
+  }
   
-  // 去重统计
-  let totalRaw=0,totalDeduped=0;
-  sections.forEach(s=>{
-    totalRaw+=s.raw_count||s.total_count||0;
-    totalDeduped+=s.deduped_count||0;
-  });
-  const dedupeRate=totalRaw>0?(totalDeduped/totalRaw*100).toFixed(1):0;
-  
-  let html=`
-    <!-- 情感仪表盘 -->
-    <div class="sentiment-panel">
-      <div class="sentiment-panel-title">市场情绪</div>
-      <div class="gauge-wrap">
-        <div class="gauge">
-          <div class="gauge-bg"><div class="gauge-mask"></div>
-            <div class="gauge-needle" style="transform:rotate(${-90+sentiment.score*180}deg)"></div>
-            <div class="gauge-center"></div>
+  function passesSearch(text) {
+    if (!searchQuery) return true;
+    return text.toLowerCase().includes(searchQuery.toLowerCase());
+  }
+
+  function renderNav() {
+    const nav = $('#navList');
+    if (!nav) return;
+    nav.innerHTML = sections.map(sec => {
+      const events = (sec.events || []).filter(e => passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh));
+      const isActive = sec.id === activeSection;
+      return `<div class="nav-item ${isActive ? 'active' : ''}" data-sid="${esc(sec.id)}">
+        <span>${esc(sec.name)}</span><span class="badge">${events.length}</span>
+      </div>`;
+    }).join('');
+    $$('.nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        activeSection = item.dataset.sid;
+        renderAll();
+        const target = document.querySelector(`[data-section="${activeSection}"]`);
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+    });
+  }
+
+  function renderMain() {
+    const main = $('#mainContent');
+    if (!main) return;
+
+    // Top 5 Section
+    let top5Html = '';
+    if (top5.length > 0) {
+      top5Html = `
+        <div class="top5-section">
+          <div class="top5-title">今日决策要点</div>
+          <div class="top5-list">
+            ${top5.map(item => `
+              <div class="top5-item">
+                <div class="top5-item-title">${esc(item.title || '')}</div>
+                <div class="top5-item-summary">${esc(item.summary || '')}</div>
+                ${item.action ? `<span class="top5-item-action">${esc(item.action)}</span>` : ''}
+              </div>
+            `).join('')}
           </div>
         </div>
-      </div>
-      <div class="gauge-value">${sentiment.score.toFixed(2)}</div>
-      <div class="gauge-label">情绪指数 (0看空 - 1看多)</div>
-      <div class="sentiment-stats">
-        <div class="sentiment-stat"><div class="sentiment-stat-value" style="color:var(--success)">${sentiment.positive}</div><div class="sentiment-stat-label">看多</div></div>
-        <div class="sentiment-stat"><div class="sentiment-stat-value">${sentiment.neutral}</div><div class="sentiment-stat-label">中性</div></div>
-        <div class="sentiment-stat"><div class="sentiment-stat-value" style="color:var(--danger)">${sentiment.negative}</div><div class="sentiment-stat-label">看空</div></div>
-      </div>
-    </div>
-    
-    <!-- 关键词 -->
-    <div class="keywords-panel">
-      <div class="keywords-panel-title">热门关键词</div>
-      <div class="keywords-cloud">
-        ${keywords.length?keywords.map(({word,count})=>`<span class="word-item word-size-${Math.min(5,Math.ceil(count/maxKw*5))}">${esc(word)}</span>`).join(''):'<span style="color:var(--muted);font-size:11px">暂无关键词</span>'}
-      </div>
-    </div>
-    
-    <!-- 去重统计 -->
-    <div class="dedupe-panel">
-      <div class="dedupe-panel-title">去重统计</div>
-      <div class="dedupe-stats">原始 <strong>${totalRaw}</strong> 条 → 去重 <strong>${totalDeduped}</strong> 条 (${dedupeRate}%)</div>
-      <div class="dedupe-bar"><div class="dedupe-bar-fill" style="width:${Math.min(100,dedupeRate*2)}%"></div></div>
-    </div>
-    
-    <!-- KPI指标 -->
-    <div class="kpi-panel">
-      <div class="kpi-panel-title">关键指标</div>
-      <div class="kpi-grid">
-  `;
-  
-  kpis.forEach((k,i)=>{
-    const vals=k.values||[];
-    const latest=vals.length>0?vals[vals.length-1]:null;
-    const prev=vals.length>1?vals[vals.length-2]:null;
-    const hasData=latest!==null&&latest!==undefined;
-    
-    let delta=null,deltaClass='flat';
-    if(hasData&&prev!==null&&prev!==undefined&&prev!==0){
-      delta=((latest-prev)/Math.abs(prev)*100).toFixed(2);
-      deltaClass=delta>0?'up':delta<0?'down':'flat';
+      `;
     }
+
+    const sectionsHtml = sections.map(sec => {
+      const events = (sec.events || []).filter(e => passesView(e.region) && passesSearch(e.title_zh + ' ' + e.summary_zh));
+      const brief = sec.brief_zh || '';
+      const regionLabels = {cn:'中国',us:'美国',eu:'欧洲',asia:'亚洲',global:'全球'};
+
+      const cardsHtml = events.length > 0 ? `
+        <div class="cards-grid">
+          ${events.map((ev, idx) => {
+            const evId = `${sec.id}-${idx}`;
+            const fb = feedbackData[evId] || 0;
+            const sources = (ev.sources || []).slice(0, 3);
+            const evDate = ev.date || (sources[0]?.published_at) || '';
+            const scorePercent = Math.round((ev.score || 0.5) * 100);
+            return `
+              <div class="event-card" data-evid="${evId}">
+                <div class="event-header">
+                  <span class="event-region ${ev.region || 'global'}">${regionLabels[ev.region] || '全球'}</span>
+                  <span class="event-date">${evDate || ''}</span>
+                </div>
+                <div class="event-title">${esc(ev.title_zh)}</div>
+                <div class="event-summary">${esc(ev.summary_zh)}</div>
+                <div class="event-sources">
+                  ${sources.map(s => `<a href="${esc(s.url)}" target="_blank">${esc(s.source || s.title || '来源')}</a>`).join(' · ')}
+                </div>
+                <div class="event-footer">
+                  <div class="event-score">
+                    <span>重要性</span>
+                    <div class="score-bar"><div class="score-fill" style="width:${scorePercent}%"></div></div>
+                    <span>${scorePercent}%</span>
+                  </div>
+                  <div class="feedback-btns">
+                    <button class="fb-btn ${fb === 1 ? 'active good' : ''}" data-fb="1" data-evid="${evId}">+</button>
+                    <button class="fb-btn ${fb === -1 ? 'active bad' : ''}" data-fb="-1" data-evid="${evId}">-</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      ` : '<div class="empty">暂无符合条件的内容</div>';
+
+      // v3: 情感和关键词显示
+      const sentiment = sec.sentiment || 'neutral';
+      const sentimentScore = sec.sentiment_score;
+      const keywords = sec.keywords || [];
+      const sentimentLabel = sentiment === 'positive' ? '看多' : sentiment === 'negative' ? '看空' : '中性';
+      const sentimentColor = sentiment === 'positive' ? 'var(--success)' : sentiment === 'negative' ? 'var(--danger)' : 'var(--muted)';
+      
+      let metaHtml = '';
+      if (sentimentScore !== undefined || keywords.length > 0) {
+        metaHtml = '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;font-size:11px">';
+        if (sentimentScore !== undefined) {
+          metaHtml += `<span style="color:${sentimentColor};font-weight:500">● ${sentimentLabel} ${Math.round(sentimentScore * 100)}%</span>`;
+        }
+        if (keywords.length > 0) {
+          metaHtml += keywords.map(k => `<span style="padding:2px 8px;background:rgba(0,113,227,.08);color:var(--accent);border-radius:10px">${esc(k)}</span>`).join('');
+        }
+        metaHtml += '</div>';
+      }
+
+      return `
+        <section class="section" data-section="${esc(sec.id)}">
+          <div class="section-header">
+            <div class="section-title">${esc(sec.name)} <span class="section-count">${events.length} 条</span></div>
+            ${metaHtml}
+          </div>
+          ${brief ? `<div class="section-brief">${esc(brief)}</div>` : ''}
+          ${cardsHtml}
+        </section>
+      `;
+    }).join('');
+
+    main.innerHTML = top5Html + sectionsHtml || '<div class="empty">没有可显示的内容</div>';
+
+    $$('.fb-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const evId = btn.dataset.evid;
+        const val = parseInt(btn.dataset.fb);
+        const current = feedbackData[evId] || 0;
+        feedbackData[evId] = (current === val) ? 0 : val;
+        localStorage.setItem('digest_feedback', JSON.stringify(feedbackData));
+        renderMain();
+      });
+    });
+  }
+
+  function renderKpis() {
+    const container = $('#kpiContent');
+    if (!container) return;
+
+    const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', 'nikkei', '标普', '纳斯达克', '道琼斯', '恐慌', '日经'];
+    const fxKw = ['dex', 'usd', 'cny', 'jpy', 'eur', '汇率', '美元指数'];
+    const ratesKw = ['dgs', 'fed', 't10y', '美债', '利率', '利差', '基金'];
+    const energyKw = ['oil', 'wti', 'brent', 'gas', '原油', '天然气'];
+    const metalsKw = ['copper', 'aluminum', 'zinc', 'nickel', 'lead', 'tin', '铜', '铝', '锌', '镍', '铅', '锡'];
     
-    // MA计算
-    const ma5=vals.length>=5?(vals.slice(-5).reduce((a,b)=>a+b,0)/5).toFixed(1):null;
-    const ma20=vals.length>=20?(vals.slice(-20).reduce((a,b)=>a+b,0)/20).toFixed(1):null;
+    const stocks = [], fx = [], rates = [], energy = [], metals = [];
+    kpis.forEach(k => {
+      const id = (k.id || k.name || '').toLowerCase();
+      if (stocksKw.some(kw => id.includes(kw))) stocks.push(k);
+      else if (ratesKw.some(kw => id.includes(kw))) rates.push(k);
+      else if (fxKw.some(kw => id.includes(kw))) fx.push(k);
+      else if (energyKw.some(kw => id.includes(kw))) energy.push(k);
+      else if (metalsKw.some(kw => id.includes(kw))) metals.push(k);
+      else rates.push(k);
+    });
+
+    function kpiCard(k) {
+      const name = k.name || k.id || '—';
+      const val = fmtNum(k.value, 2);
+      const unit = k.unit || '';
+      const delta = k.delta;
+      const deltaPct = k.delta_pct;
+      const direction = k.direction || 'flat';
+      const color = k.color || '#8E8E93';
+      
+      let deltaStr = '';
+      if (delta !== null && delta !== undefined && isFinite(delta)) {
+        deltaStr = (delta >= 0 ? '+' : '') + fmtNum(delta, 3);
+        if (deltaPct !== null && deltaPct !== undefined && isFinite(deltaPct)) {
+          deltaStr += ` (${deltaPct >= 0 ? '+' : ''}${deltaPct.toFixed(2)}%)`;
+        }
+      }
+
+      let sparkHtml = '';
+      const series = k.series_values || k.series || [];
+      if (series.length >= 2) {
+        const w = 100, h = 24, pad = 2;
+        const nums = series.map(Number).filter(isFinite);
+        if (nums.length >= 2) {
+          const min = Math.min(...nums), max = Math.max(...nums);
+          const span = (max - min) || 1;
+          const pts = nums.map((v, i) => [
+            pad + (w - pad * 2) * (i / (nums.length - 1)),
+            pad + (h - pad * 2) * (1 - (v - min) / span)
+          ]);
+          const d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} ` + pts.slice(1).map(p => `L ${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+          sparkHtml = `<svg class="kpi-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="${color}" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+        }
+      }
+
+      return `
+        <div class="kpi-card">
+          <div class="kpi-name"><span class="kpi-dot ${direction}"></span><span>${esc(name)}</span></div>
+          <div class="kpi-value" style="color:${color}">${val}<span class="kpi-unit">${esc(unit)}</span></div>
+          <div class="kpi-delta ${direction}">${deltaStr || '—'}</div>
+          ${sparkHtml}
+        </div>
+      `;
+    }
+
+    let html = '';
+    if (stocks.length) html += `<div class="kpi-group"><div class="kpi-group-title">股票指数</div><div class="kpi-grid">${stocks.map(kpiCard).join('')}</div></div>`;
+    if (rates.length) html += `<div class="kpi-group"><div class="kpi-group-title">利率债券</div><div class="kpi-grid">${rates.map(kpiCard).join('')}</div></div>`;
+    if (fx.length) html += `<div class="kpi-group"><div class="kpi-group-title">外汇汇率</div><div class="kpi-grid">${fx.map(kpiCard).join('')}</div></div>`;
+    if (energy.length) html += `<div class="kpi-group"><div class="kpi-group-title">能源商品</div><div class="kpi-grid">${energy.map(kpiCard).join('')}</div></div>`;
+    if (metals.length) html += `<div class="kpi-group"><div class="kpi-group-title">金属价格</div><div class="kpi-grid">${metals.map(kpiCard).join('')}</div></div>`;
+
+    const fbCount = Object.values(feedbackData).filter(v => v !== 0).length;
+    const goodCount = Object.values(feedbackData).filter(v => v === 1).length;
+    const badCount = Object.values(feedbackData).filter(v => v === -1).length;
     
-    html+=`
-      <div class="kpi-card">
-        <div class="kpi-name"><span class="kpi-dot ${deltaClass}"></span>${esc(k.title||'未命名')}</div>
-        <div class="kpi-value">${hasData?Number(latest).toLocaleString():'—'}<span class="kpi-unit">${esc(k.unit||'')}</span></div>
-        ${delta!==null?`<div class="kpi-delta ${deltaClass}">${delta>0?'+':''}${delta}%</div>`:'<div class="kpi-delta flat">—</div>'}
-        <canvas class="kpi-spark" id="spark${i}"></canvas>
-        <div class="kpi-indicators">
-          ${ma5?`<span>MA5:${ma5}</span>`:''}
-          ${ma20?`<span>MA20:${ma20}</span>`:''}
+    html += `
+      <div class="feedback-stats">
+        <div class="feedback-stats-title">反馈统计</div>
+        <div class="feedback-stats-row"><span>已反馈</span><span>${fbCount}</span></div>
+        <div class="feedback-stats-row"><span>有价值</span><span>${goodCount}</span></div>
+        <div class="feedback-stats-row"><span>无关</span><span>${badCount}</span></div>
+        <div class="feedback-actions">
+          <button class="btn" id="btnExportFb">导出</button>
+          <button class="btn" id="btnClearFb">清空</button>
         </div>
       </div>
     `;
-  });
-  
-  html+=`</div></div>`;
-  $('#rightPanel').innerHTML=html;
-  
-  // 绘制迷你图
-  kpis.forEach((k,i)=>{
-    const canvas=document.getElementById(`spark${i}`);
-    if(canvas&&k.values?.length>1)drawSparkline(canvas,k.values);
-  });
-}
 
-function drawSparkline(canvas,values){
-  const ctx=canvas.getContext('2d');
-  const dpr=window.devicePixelRatio||1;
-  const rect=canvas.getBoundingClientRect();
-  canvas.width=rect.width*dpr;
-  canvas.height=rect.height*dpr;
-  ctx.scale(dpr,dpr);
-  const w=rect.width,h=rect.height,pad=2;
-  const min=Math.min(...values),max=Math.max(...values),range=max-min||1;
-  const toX=i=>pad+(i/(values.length-1))*(w-pad*2);
-  const toY=v=>h-pad-((v-min)/range)*(h-pad*2);
-  
-  // MA20
-  if(values.length>=20){
-    ctx.beginPath();ctx.strokeStyle='rgba(175,82,222,0.4)';ctx.lineWidth=1;
-    for(let i=19;i<values.length;i++){
-      const ma=values.slice(i-19,i+1).reduce((a,b)=>a+b,0)/20;
-      if(i===19)ctx.moveTo(toX(i),toY(ma));else ctx.lineTo(toX(i),toY(ma));
-    }
-    ctx.stroke();
-  }
-  // MA5
-  if(values.length>=5){
-    ctx.beginPath();ctx.strokeStyle='rgba(255,149,0,0.5)';ctx.lineWidth=1;
-    for(let i=4;i<values.length;i++){
-      const ma=values.slice(i-4,i+1).reduce((a,b)=>a+b,0)/5;
-      if(i===4)ctx.moveTo(toX(i),toY(ma));else ctx.lineTo(toX(i),toY(ma));
-    }
-    ctx.stroke();
-  }
-  // 主线
-  ctx.beginPath();ctx.strokeStyle='#0071e3';ctx.lineWidth=1.5;
-  values.forEach((v,i)=>{if(i===0)ctx.moveTo(toX(i),toY(v));else ctx.lineTo(toX(i),toY(v))});
-  ctx.stroke();
-  // 最新点
-  ctx.beginPath();ctx.fillStyle='#0071e3';
-  ctx.arc(toX(values.length-1),toY(values[values.length-1]),3,0,Math.PI*2);ctx.fill();
-}
+    container.innerHTML = html;
 
-// 渲染导航
-function renderNav(){
-  let html=`<div class="nav-item ${currentSection==='top5'?'active':''}" data-section="top5"><span>今日要闻</span><span class="badge">${top5.length}</span></div>`;
-  sections.forEach(s=>{
-    html+=`<div class="nav-item ${currentSection===s.id?'active':''}" data-section="${s.id}"><span>${esc(s.name)}</span><span class="badge">${s.total_count||0}</span></div>`;
-  });
-  $('#navList').innerHTML=html;
-  $('#navList').querySelectorAll('.nav-item').forEach(item=>{
-    item.onclick=()=>{currentSection=item.dataset.section;renderNav();renderMain();$('#currentSectionTitle').textContent=item.querySelector('span').textContent};
-  });
-}
-
-// 渲染主内容
-function renderMain(){
-  const main=$('#mainContent');
-  
-  if(currentSection==='top5'){
-    let html=`<div class="top5-section"><div class="top5-title">今日要闻 Top 5</div><div class="top5-list">`;
-    top5.forEach((e,i)=>{
-      html+=`<div class="top5-item">
-        <div class="top5-item-title">${i+1}. ${esc(e.title_zh||e.title||'')}</div>
-        <div class="top5-item-summary">${esc(e.summary_zh||e.summary||'')}</div>
-      </div>`;
+    // KPI分组折叠
+    $$('.kpi-group-title').forEach(title => {
+      title.addEventListener('click', () => {
+        title.parentElement.classList.toggle('collapsed');
+      });
     });
-    html+=`</div></div>`;
-    main.innerHTML=html;
-    return;
+
+    $('#btnExportFb')?.addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(feedbackData, null, 2)], {type: 'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `feedback_${D.date || 'export'}.json`;
+      a.click();
+    });
+    
+    $('#btnClearFb')?.addEventListener('click', () => {
+      if (confirm('确定清空所有反馈？')) {
+        feedbackData = {};
+        localStorage.removeItem('digest_feedback');
+        renderKpis();
+      }
+    });
   }
-  
-  const sec=sections.find(s=>s.id===currentSection);
-  if(!sec){main.innerHTML='<div class="empty">选择一个板块查看</div>';return}
-  
-  let events=sec.events||[];
-  if(currentFilter==='cn')events=events.filter(e=>e.region==='cn');
-  else if(currentFilter==='global')events=events.filter(e=>e.region!=='cn');
-  
-  const sentClass=sec.sentiment==='positive'?'sentiment-positive':sec.sentiment==='negative'?'sentiment-negative':'sentiment-neutral';
-  const sentText=sec.sentiment==='positive'?'看多':sec.sentiment==='negative'?'看空':'中性';
-  
-  let html=`
-    <div class="section">
-      <div class="section-header">
-        <div class="section-title">${esc(sec.name)}<span class="section-count">${events.length} 条</span></div>
-        <div class="section-meta">
-          <div class="section-sentiment"><span class="sentiment-dot ${sentClass}"></span>${sentText} ${((sec.sentiment_score||0.5)*100).toFixed(0)}%</div>
+
+  // 可编辑配置存储
+  let editConfig = {
+    importance_weights: JSON.parse(JSON.stringify(meta.importance_weights || {})),
+    sections: sections.map(s => ({id: s.id, name: s.name, gnews_queries: s.gnews_queries || [], type: s.type || 'gnews'})),
+    kpis: kpis.map(k => ({series: k.id || k.series, title: k.name || k.title, unit: k.unit || ''}))
+  };
+
+  function renderSettings(tab = 'general') {
+    const body = $('#settingsBody');
+    if (!body) return;
+    const weights = editConfig.importance_weights;
+
+    const tabs = {
+      general: `
+        <div class="settings-section">
+          <div class="settings-section-title">基本信息</div>
+          <div class="settings-row"><div class="settings-label">生成日期</div><div>${esc(D.date || '—')}</div></div>
+          <div class="settings-row"><div class="settings-label">生成时间</div><div>${esc(D.generated_at_bjt || '—')}</div></div>
+          <div class="settings-row"><div class="settings-label">板块数量</div><div>${editConfig.sections.length}</div></div>
+          <div class="settings-row"><div class="settings-label">KPI指标数</div><div>${editConfig.kpis.length}</div></div>
         </div>
-        ${sec.keywords?.length?`<div class="keywords-inline">${sec.keywords.map(k=>`<span class="keyword-tag">${esc(k)}</span>`).join('')}</div>`:''}
-      </div>
-      <div class="section-brief">${esc(sec.brief_zh||'暂无摘要')}</div>
-    </div>
-    <div class="cards-grid">
-  `;
-  
-  events.forEach(e=>{
-    const sources=e.sources||[];
-    const scoreW=Math.round((e.score||0.5)*100);
-    html+=`
-      <div class="event-card">
-        <div class="event-header">
-          <span class="event-region ${e.region||'global'}">${e.region==='cn'?'中国':e.region==='us'?'美国':e.region==='eu'?'欧洲':e.region==='asia'?'亚洲':'全球'}</span>
-          <span class="event-date">${e.date||''}</span>
+        <div class="settings-section">
+          <div class="settings-section-title">主题</div>
+          <div class="settings-row"><div class="settings-label">深色模式</div><div class="settings-toggle" id="toggleDark"></div></div>
         </div>
-        <div class="event-title">${esc(e.title_zh||e.title||'')}</div>
-        <div class="event-summary">${esc(e.summary_zh||e.summary||'')}</div>
-        ${sources.length?`<div class="event-sources">${sources.slice(0,3).map(s=>`<a href="${esc(s.url)}" target="_blank">${esc(s.source||'来源')}</a>`).join(' · ')}${sources.length>3?` +${sources.length-3}`:''}</div>`:''}
-        <div class="event-footer">
-          <div class="event-score">重要性 <div class="score-bar"><div class="score-fill" style="width:${scoreW}%"></div></div> ${scoreW}%</div>
+      `,
+      sections: `
+        <div class="settings-section">
+          <div class="settings-section-title">类目管理 (${editConfig.sections.length}个)</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">可视化编辑类目，完成后导出JSON替换配置文件</p>
+          <div id="sectionsList">
+            ${editConfig.sections.map((sec, i) => `
+              <div class="editor-item" data-idx="${i}">
+                <div class="editor-item-main">
+                  <div class="editor-item-title">${esc(sec.name)}</div>
+                  <div class="editor-item-sub">ID: ${esc(sec.id)} · 关键词: ${(sec.gnews_queries || []).length}个</div>
+                </div>
+                <div class="editor-item-actions">
+                  <button type="button" class="editor-btn edit-section" data-idx="${i}" title="编辑">✎</button>
+                  <button type="button" class="editor-btn danger del-section" data-idx="${i}" title="删除">×</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <button type="button" class="editor-add" id="addSection">+ 添加新类目</button>
+          <div class="export-btns">
+            <button type="button" class="btn" id="exportSections">导出类目JSON</button>
+          </div>
+        </div>
+      `,
+      weights: `
+        <div class="settings-section">
+          <div class="settings-section-title">重要性系数</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">调整系数后导出JSON替换配置文件</p>
+          <div class="settings-row">
+            <div class="settings-label">中国相关新闻<small>china_related</small></div>
+            <input type="number" class="settings-input weight-input" data-key="china_related" value="${weights.china_related || 1.5}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">一级来源<small>source_tier1 (Bloomberg, Reuters)</small></div>
+            <input type="number" class="settings-input weight-input" data-key="source_tier1" value="${weights.source_tier1 || 1.3}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">二级来源<small>source_tier2 (WSJ, SCMP)</small></div>
+            <input type="number" class="settings-input weight-input" data-key="source_tier2" value="${weights.source_tier2 || 1.1}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">24小时内新闻<small>recency_24h</small></div>
+            <input type="number" class="settings-input weight-input" data-key="recency_24h" value="${weights.recency_24h || 1.2}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="settings-row">
+            <div class="settings-label">48小时内新闻<small>recency_48h</small></div>
+            <input type="number" class="settings-input weight-input" data-key="recency_48h" value="${weights.recency_48h || 1.0}" step="0.1" min="0.5" max="3">
+          </div>
+          <div class="export-btns">
+            <button class="btn" id="exportWeights">导出权重JSON</button>
+          </div>
+        </div>
+      `,
+      algo: `
+        <div class="settings-section">
+          <div class="settings-section-title">算法参数</div>
+          <div class="settings-row"><div class="settings-label">LLM提供商<small>自动fallback</small></div><div>DeepSeek → Qwen → OpenAI</div></div>
+          <div class="settings-row"><div class="settings-label">每板块条目数</div><div>${meta.items_per_section || 15}</div></div>
+          <div class="settings-row"><div class="settings-label">原始抓取限制</div><div>${meta.limit_raw || 25}</div></div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">API密钥配置</div>
+          <p style="font-size:11px;color:var(--muted);line-height:1.8">
+            在 GitHub Secrets 中设置：<br>
+            <code>DEEPSEEK_API_KEY</code> · <code>QWEN_API_KEY</code> · <code>OPENAI_API_KEY</code>
+          </p>
+        </div>
+      `,
+      data: `
+        <div class="settings-section">
+          <div class="settings-section-title">KPI指标管理 (${editConfig.kpis.length}个)</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">编辑FRED数据系列，完成后导出JSON</p>
+          <div id="kpisList">
+            ${editConfig.kpis.map((k, i) => `
+              <div class="editor-item" data-idx="${i}">
+                <div class="editor-item-main">
+                  <div class="editor-item-title">${esc(k.title)}</div>
+                  <div class="editor-item-sub">FRED: ${esc(k.series)} ${k.unit ? '· 单位: ' + esc(k.unit) : ''}</div>
+                </div>
+                <div class="editor-item-actions">
+                  <button type="button" class="editor-btn edit-kpi" data-idx="${i}" title="编辑">✎</button>
+                  <button type="button" class="editor-btn danger del-kpi" data-idx="${i}" title="删除">×</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <button type="button" class="editor-add" id="addKpi">+ 添加新指标</button>
+          <div class="export-btns">
+            <button type="button" class="btn" id="exportKpis">导出KPI JSON</button>
+          </div>
+        </div>
+      `,
+      config: `
+        <div class="settings-section">
+          <div class="settings-section-title">导出完整配置</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px">将编辑后的配置导出为 digest_config_v15.json</p>
+          <div class="config-preview" id="configPreview">${JSON.stringify(buildFullConfig(), null, 2)}</div>
+          <div class="export-btns">
+            <button type="button" class="btn" id="btnCopyConfig">复制配置</button>
+            <button type="button" class="btn" id="btnDownloadConfig">下载配置文件</button>
+          </div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">导出今日数据</div>
+          <button class="btn" id="btnExportDigest" style="width:100%">导出完整新闻数据 JSON</button>
+        </div>
+      `,
+      sync: `
+        <div class="settings-section">
+          <div class="settings-section-title">GitHub 配置同步</div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.6">
+            将配置更改直接同步到GitHub仓库，T+1自动生效。<br>
+            支持完整URL或 owner/repo 格式。
+          </p>
+          <div class="settings-row" style="flex-direction:column;align-items:stretch">
+            <label style="font-size:11px;color:var(--muted);margin-bottom:4px">仓库地址</label>
+            <input type="text" class="settings-input" id="githubRepo" style="width:100%;text-align:left" placeholder="tianzhao9527/ben-daily-digest 或完整URL">
+          </div>
+          <div class="settings-row" style="flex-direction:column;align-items:stretch;margin-top:8px">
+            <label style="font-size:11px;color:var(--muted);margin-bottom:4px">GitHub Token (需要repo权限)</label>
+            <input type="password" class="settings-input" id="githubToken" style="width:100%;text-align:left" placeholder="ghp_xxxx...">
+          </div>
+          <button class="btn primary" id="btnSyncGithub" style="width:100%;margin-top:12px">同步配置到 GitHub</button>
+          <div id="syncStatus" style="margin-top:8px;font-size:11px;padding:8px;border-radius:6px;display:none"></div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-section-title">获取Token说明</div>
+          <p style="font-size:11px;color:var(--muted);line-height:1.8">
+            1. 访问 GitHub → Settings → Developer settings<br>
+            2. Personal access tokens → Tokens (classic)<br>
+            3. Generate new token → 勾选 <code>repo</code> 权限<br>
+            4. 复制生成的 Token
+          </p>
+        </div>
+      `
+    };
+
+    body.innerHTML = tabs[tab] || tabs.general;
+    bindSettingsEvents(tab);
+  }
+
+  function buildFullConfig() {
+    return {
+      items_per_section: meta.items_per_section || 15,
+      limit_raw: meta.limit_raw || 25,
+      importance_weights: editConfig.importance_weights,
+      sections: editConfig.sections,
+      kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))
+    };
+  }
+
+  function bindSettingsEvents(tab) {
+    const body = $('#settingsBody');
+    if (!body) return;
+    
+    // 使用事件委托处理所有按钮和输入
+    body.onclick = (e) => {
+      const target = e.target.closest('button');
+      if (!target) return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // 添加类目
+      if (target.id === 'addSection' || target.classList.contains('editor-add') && target.textContent.includes('类目')) {
+        showSectionEditor(-1);
+        return;
+      }
+      // 添加KPI
+      if (target.id === 'addKpi' || target.classList.contains('editor-add') && target.textContent.includes('指标')) {
+        showKpiEditor(-1);
+        return;
+      }
+      // 编辑类目
+      if (target.classList.contains('edit-section')) {
+        showSectionEditor(parseInt(target.dataset.idx));
+        return;
+      }
+      // 删除类目
+      if (target.classList.contains('del-section')) {
+        if (confirm('确定删除此类目？')) {
+          editConfig.sections.splice(parseInt(target.dataset.idx), 1);
+          renderSettings('sections');
+        }
+        return;
+      }
+      // 编辑KPI
+      if (target.classList.contains('edit-kpi')) {
+        showKpiEditor(parseInt(target.dataset.idx));
+        return;
+      }
+      // 删除KPI
+      if (target.classList.contains('del-kpi')) {
+        if (confirm('确定删除此指标？')) {
+          editConfig.kpis.splice(parseInt(target.dataset.idx), 1);
+          renderSettings('data');
+        }
+        return;
+      }
+      // 导出类目JSON
+      if (target.id === 'exportSections') {
+        downloadJSON({sections: editConfig.sections}, 'sections.json');
+        return;
+      }
+      // 导出KPI JSON
+      if (target.id === 'exportKpis') {
+        downloadJSON({kpis: editConfig.kpis.map(k => ({series: k.series, title: k.title, unit: k.unit, lookback: 40}))}, 'kpis.json');
+        return;
+      }
+      // 导出权重
+      if (target.id === 'exportWeights') {
+        downloadJSON({importance_weights: editConfig.importance_weights}, 'importance_weights.json');
+        return;
+      }
+      // 复制配置
+      if (target.id === 'btnCopyConfig') {
+        navigator.clipboard.writeText(JSON.stringify(buildFullConfig(), null, 2));
+        alert('已复制到剪贴板');
+        return;
+      }
+      // 下载配置
+      if (target.id === 'btnDownloadConfig') {
+        downloadJSON(buildFullConfig(), 'digest_config_v15.json');
+        return;
+      }
+      // 导出数据
+      if (target.id === 'btnExportDigest') {
+        downloadJSON(D, `digest_${D.date || 'export'}.json`);
+        return;
+      }
+      // GitHub同步
+      if (target.id === 'btnSyncGithub') {
+        syncToGithub();
+        return;
+      }
+      // 深色模式
+      if (target.id === 'toggleDark') {
+        target.classList.toggle('active');
+        document.documentElement.setAttribute('data-theme', target.classList.contains('active') ? 'dark' : 'light');
+        return;
+      }
+    };
+
+    // 权重编辑 - change事件需要单独处理
+    body.onchange = (e) => {
+      if (e.target.classList.contains('weight-input')) {
+        editConfig.importance_weights[e.target.dataset.key] = parseFloat(e.target.value);
+      }
+    };
+  }
+
+  function downloadJSON(data, filename) {
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  }
+
+  function showSectionEditor(idx) {
+    // 先移除已有的编辑器表单
+    document.querySelectorAll('.editor-form').forEach(el => el.remove());
+    
+    const isNew = idx < 0;
+    const sec = isNew ? {id: '', name: '', gnews_queries: []} : {...editConfig.sections[idx]};
+    const queries = (sec.gnews_queries || []).join('\n');
+    
+    const html = `
+      <div class="editor-form">
+        <div class="editor-form-row">
+          <div class="editor-form-group">
+            <label class="editor-form-label">类目ID (英文)</label>
+            <input type="text" class="editor-input" id="secId" value="${esc(sec.id)}" placeholder="例如: metals">
+          </div>
+          <div class="editor-form-group">
+            <label class="editor-form-label">显示名称</label>
+            <input type="text" class="editor-input" id="secName" value="${esc(sec.name)}" placeholder="例如: 大宗金属">
+          </div>
+        </div>
+        <div class="editor-form-row">
+          <div class="editor-form-group" style="flex:1">
+            <label class="editor-form-label">搜索关键词 (每行一个)</label>
+            <textarea class="editor-input" id="secQueries" rows="4" style="width:100%;resize:vertical" placeholder="LME copper price&#10;aluminum market">${esc(queries)}</textarea>
+          </div>
+        </div>
+        <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
+          <button type="button" class="btn" id="cancelSec">取消</button>
+          <button type="button" class="btn" id="saveSec" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
         </div>
       </div>
     `;
-  });
-  
-  html+=`</div>`;
-  main.innerHTML=html;
-}
-
-// 渲染设置
-function renderSettings(tab){
-  if(tab==='sections'){
-    $('#sectionsList').innerHTML=editConfig.sections.map((s,i)=>`
-      <div class="editor-item">
-        <div class="editor-item-main">
-          <div class="editor-item-title">${esc(s.name)}</div>
-          <div class="editor-item-sub">ID: ${esc(s.id)} · 关键词: ${(s.gnews_queries||[]).length}个</div>
-        </div>
-        <button class="editor-btn" data-action="edit-section" data-idx="${i}">E</button>
-        <button class="editor-btn danger" data-action="del-section" data-idx="${i}">×</button>
-      </div>
-    `).join('');
-  }
-  if(tab==='kpis'){
-    $('#kpisList').innerHTML=editConfig.kpis.map((k,i)=>`
-      <div class="editor-item">
-        <div class="editor-item-main">
-          <div class="editor-item-title">${esc(k.title)}</div>
-          <div class="editor-item-sub">FRED: ${esc(k.series)} · ${esc(k.unit||'—')}</div>
-        </div>
-        <button class="editor-btn" data-action="edit-kpi" data-idx="${i}">E</button>
-        <button class="editor-btn danger" data-action="del-kpi" data-idx="${i}">×</button>
-      </div>
-    `).join('');
-  }
-}
-
-function showSectionEditor(idx){
-  document.querySelectorAll('.editor-form').forEach(el=>el.remove());
-  const isNew=idx<0;
-  const sec=isNew?{id:'',name:'',gnews_queries:[]}:{...editConfig.sections[idx]};
-  const q=(sec.gnews_queries||[]).join('\n');
-  const html=`<div class="editor-form">
-    <div class="editor-form-row"><div class="editor-form-group"><label class="editor-form-label">类目ID</label><input class="editor-input" id="secId" value="${esc(sec.id)}" placeholder="metals"></div><div class="editor-form-group"><label class="editor-form-label">名称</label><input class="editor-input" id="secName" value="${esc(sec.name)}" placeholder="大宗金属"></div></div>
-    <div class="editor-form-row"><div class="editor-form-group"><label class="editor-form-label">搜索关键词(每行一个)</label><textarea class="editor-input" id="secQueries" rows="3">${esc(q)}</textarea></div></div>
-    <div class="editor-form-row" style="justify-content:flex-end;gap:8px"><button class="btn" id="cancelSec">取消</button><button class="btn primary" id="saveSec">${isNew?'添加':'保存'}</button></div>
-  </div>`;
-  const addBtn=$('#addSection');
-  if(isNew&&addBtn)addBtn.insertAdjacentHTML('afterend',html);else $('#sectionsList').insertAdjacentHTML('beforeend',html);
-  $('#cancelSec').onclick=()=>document.querySelector('.editor-form').remove();
-  $('#saveSec').onclick=()=>{
-    const ns={id:$('#secId').value.trim(),name:$('#secName').value.trim(),gnews_queries:$('#secQueries').value.split('\n').map(s=>s.trim()).filter(Boolean)};
-    if(!ns.id||!ns.name){alert('请填写ID和名称');return}
-    if(isNew)editConfig.sections.push(ns);else editConfig.sections[idx]=ns;
-    document.querySelector('.editor-form').remove();
-    renderSettings('sections');
-  };
-}
-
-function showKpiEditor(idx){
-  document.querySelectorAll('.editor-form').forEach(el=>el.remove());
-  const isNew=idx<0;
-  const kpi=isNew?{series:'',title:'',unit:''}:{...editConfig.kpis[idx]};
-  const html=`<div class="editor-form">
-    <div class="editor-form-row"><div class="editor-form-group"><label class="editor-form-label">FRED系列</label><input class="editor-input" id="kpiSeries" value="${esc(kpi.series)}" placeholder="PCOPPUSDM"></div><div class="editor-form-group"><label class="editor-form-label">名称</label><input class="editor-input" id="kpiTitle" value="${esc(kpi.title)}" placeholder="铜"></div><div class="editor-form-group" style="flex:0.5"><label class="editor-form-label">单位</label><input class="editor-input" id="kpiUnit" value="${esc(kpi.unit)}" placeholder="$/t"></div></div>
-    <div class="editor-form-row" style="justify-content:flex-end;gap:8px"><button class="btn" id="cancelKpi">取消</button><button class="btn primary" id="saveKpi">${isNew?'添加':'保存'}</button></div>
-  </div>`;
-  const addBtn=$('#addKpi');
-  if(isNew&&addBtn)addBtn.insertAdjacentHTML('afterend',html);else $('#kpisList').insertAdjacentHTML('beforeend',html);
-  $('#cancelKpi').onclick=()=>document.querySelector('.editor-form').remove();
-  $('#saveKpi').onclick=()=>{
-    const nk={series:$('#kpiSeries').value.trim(),title:$('#kpiTitle').value.trim(),unit:$('#kpiUnit').value.trim()};
-    if(!nk.series||!nk.title){alert('请填写系列和名称');return}
-    if(isNew)editConfig.kpis.push(nk);else editConfig.kpis[idx]=nk;
-    document.querySelector('.editor-form').remove();
-    renderSettings('kpis');
-  };
-}
-
-// GitHub同步 - 支持完整URL
-async function syncToGithub(){
-  let repo=$('#githubRepo').value.trim();
-  const token=$('#githubToken').value.trim();
-  const st=$('#syncStatus');
-  
-  // 解析完整URL
-  if(repo.includes('github.com/')){
-    const m=repo.match(/github\.com\/([^\/]+\/[^\/]+)/);
-    if(m)repo=m[1].replace(/\.git$/,'');
-  }
-  
-  if(!repo||!repo.includes('/')){alert('请输入有效的仓库地址，如: tianzhao9527/ben-daily-digest');return}
-  if(!token){alert('请输入GitHub Token');return}
-  
-  st.style.display='block';st.className='github-sync-status pending';st.textContent='正在同步...';
-  
-  const config={sections:editConfig.sections,kpis:editConfig.kpis};
-  
-  try{
-    // 获取SHA
-    const gr=await fetch(`https://api.github.com/repos/${repo}/contents/digest_config_v15.json`,{headers:{'Authorization':`token ${token}`}});
-    let sha=null;
-    if(gr.ok){const d=await gr.json();sha=d.sha}
     
-    // 更新
-    const content=btoa(unescape(encodeURIComponent(JSON.stringify(config,null,2))));
-    const pr=await fetch(`https://api.github.com/repos/${repo}/contents/digest_config_v15.json`,{
-      method:'PUT',
-      headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
-      body:JSON.stringify({message:`chore: update config (${new Date().toISOString().slice(0,10)})`,content,sha})
+    // 新增时：表单显示在添加按钮下方；编辑时：显示在列表上方
+    const addBtn = $('#addSection');
+    const list = $('#sectionsList');
+    if (isNew && addBtn) {
+      addBtn.insertAdjacentHTML('afterend', html);
+    } else if (list) {
+      list.insertAdjacentHTML('beforebegin', html);
+    }
+    
+    $('#cancelSec').onclick = () => { document.querySelector('.editor-form').remove(); };
+    $('#saveSec').onclick = () => {
+      const newSec = {
+        id: $('#secId').value.trim(),
+        name: $('#secName').value.trim(),
+        gnews_queries: $('#secQueries').value.split('\n').map(s => s.trim()).filter(Boolean)
+      };
+      if (!newSec.id || !newSec.name) { alert('请填写ID和名称'); return; }
+      if (isNew) editConfig.sections.push(newSec);
+      else editConfig.sections[idx] = newSec;
+      renderSettings('sections');
+    };
+    
+    // 滚动到表单位置
+    document.querySelector('.editor-form')?.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+
+  function showKpiEditor(idx) {
+    // 先移除已有的编辑器表单
+    document.querySelectorAll('.editor-form').forEach(el => el.remove());
+    
+    const isNew = idx < 0;
+    const kpi = isNew ? {series: '', title: '', unit: ''} : {...editConfig.kpis[idx]};
+    
+    const html = `
+      <div class="editor-form">
+        <div class="editor-form-row">
+          <div class="editor-form-group">
+            <label class="editor-form-label">FRED系列ID</label>
+            <input type="text" class="editor-input" id="kpiSeries" value="${esc(kpi.series)}" placeholder="例如: PCOPPUSDM">
+          </div>
+          <div class="editor-form-group">
+            <label class="editor-form-label">显示名称</label>
+            <input type="text" class="editor-input" id="kpiTitle" value="${esc(kpi.title)}" placeholder="例如: 铜">
+          </div>
+          <div class="editor-form-group" style="flex:0.5">
+            <label class="editor-form-label">单位</label>
+            <input type="text" class="editor-input" id="kpiUnit" value="${esc(kpi.unit)}" placeholder="$/t">
+          </div>
+        </div>
+        <div class="editor-form-row" style="justify-content:flex-end;gap:8px">
+          <button type="button" class="btn" id="cancelKpi">取消</button>
+          <button type="button" class="btn" id="saveKpi" style="background:var(--accent);color:#fff">${isNew ? '添加' : '保存'}</button>
+        </div>
+      </div>
+    `;
+    
+    // 新增时：表单显示在添加按钮下方；编辑时：显示在列表上方
+    const addBtn = $('#addKpi');
+    const list = $('#kpisList');
+    if (isNew && addBtn) {
+      addBtn.insertAdjacentHTML('afterend', html);
+    } else if (list) {
+      list.insertAdjacentHTML('beforebegin', html);
+    }
+    
+    $('#cancelKpi').onclick = () => { document.querySelector('.editor-form').remove(); };
+    $('#saveKpi').onclick = () => {
+      const newKpi = {
+        series: $('#kpiSeries').value.trim(),
+        title: $('#kpiTitle').value.trim(),
+        unit: $('#kpiUnit').value.trim()
+      };
+      if (!newKpi.series || !newKpi.title) { alert('请填写系列ID和名称'); return; }
+      if (isNew) editConfig.kpis.push(newKpi);
+      else editConfig.kpis[idx] = newKpi;
+      renderSettings('data');
+    };
+    
+    // 滚动到表单位置
+    document.querySelector('.editor-form')?.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+
+  function renderAll() {
+    renderNav();
+    renderMain();
+    renderKpis();
+    $('#pageDate').textContent = D.date || '—';
+    $('#pageTime').textContent = D.generated_at_bjt || '—';
+    $('#kpiTime').textContent = D.generated_at_bjt || '—';
+  }
+
+  // 日期格式化
+  function formatDateDisplay(dateStr) {
+    const d = new Date(dateStr);
+    const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    return {
+      date: dateStr,
+      day: days[d.getDay()],
+      display: `${d.getMonth() + 1}月${d.getDate()}日`
+    };
+  }
+
+  // 加载可用日期列表
+  async function loadAvailableDates() {
+    try {
+      const resp = await fetch('archive/index.json');
+      if (resp.ok) {
+        const data = await resp.json();
+        availableDates = data.dates || [];
+        renderDateList();
+      }
+    } catch (e) {
+      console.log('No archive index found');
+      // 如果没有历史索引，只显示当前日期
+      availableDates = currentDate ? [currentDate] : [];
+      renderDateList();
+    }
+  }
+
+  // 渲染日期列表
+  function renderDateList() {
+    const list = $('#dateList');
+    if (!list) return;
+    
+    if (availableDates.length === 0) {
+      list.innerHTML = '<div class="date-loading">暂无历史数据</div>';
+      return;
+    }
+    
+    list.innerHTML = availableDates.map(date => {
+      const info = formatDateDisplay(date);
+      const isActive = date === currentDate;
+      return `
+        <div class="date-item${isActive ? ' active' : ''}" data-date="${date}">
+          <span>${info.date}</span>
+          <span class="date-item-day">${info.day}</span>
+        </div>
+      `;
+    }).join('');
+    
+    // 绑定点击事件
+    list.querySelectorAll('.date-item').forEach(item => {
+      item.addEventListener('click', () => loadHistoryDigest(item.dataset.date));
+    });
+  }
+
+  // 加载历史简报
+  async function loadHistoryDigest(date) {
+    if (date === currentDate) {
+      $('#dateDropdown')?.classList.remove('show');
+      $('#datePickerBtn')?.classList.remove('open');
+      return;
+    }
+    
+    try {
+      const resp = await fetch(`archive/digest_${date}.json`);
+      if (!resp.ok) throw new Error('Not found');
+      
+      const data = await resp.json();
+      
+      // 更新全局数据
+      sections = Array.isArray(data.sections) ? data.sections : [];
+      kpis = Array.isArray(data.kpis) ? data.kpis : [];
+      meta = data.meta || {};
+      top5 = Array.isArray(data.top5) ? data.top5 : [];
+      currentDate = data.date || date;
+      activeSection = sections[0]?.id || '';
+      
+      // 更新显示
+      $('#pageDate').textContent = currentDate;
+      $('#pageTime').textContent = data.generated_at_bjt?.split(' ')[1] || '—';
+      
+      // 关闭下拉菜单
+      $('#dateDropdown')?.classList.remove('show');
+      $('#datePickerBtn')?.classList.remove('open');
+      
+      // 重新渲染
+      renderAll();
+      renderDateList();
+      
+      // 滚动到顶部
+      $('#mainContent')?.scrollTo({top: 0});
+      
+    } catch (e) {
+      alert(`无法加载 ${date} 的简报数据`);
+    }
+  }
+
+  async function syncToGithub() {
+    let repo = $('#githubRepo')?.value?.trim() || '';
+    const token = $('#githubToken')?.value?.trim() || '';
+    const statusEl = $('#syncStatus');
+    
+    // 解析完整URL
+    if (repo.includes('github.com/')) {
+      const m = repo.match(/github\.com\/([^\/]+\/[^\/\?#]+)/);
+      if (m) repo = m[1].replace(/\.git$/, '');
+    }
+    
+    if (!repo || !repo.includes('/')) {
+      alert('请输入有效的仓库地址，如: tianzhao9527/ben-daily-digest');
+      return;
+    }
+    if (!token) {
+      alert('请输入GitHub Token');
+      return;
+    }
+    
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.style.background = 'rgba(255,149,0,.1)';
+      statusEl.style.color = '#ff9500';
+      statusEl.textContent = '正在同步...';
+    }
+    
+    const config = buildFullConfig();
+    
+    try {
+      // 获取当前文件SHA
+      const getResp = await fetch(`https://api.github.com/repos/${repo}/contents/digest_config_v15.json`, {
+        headers: { 'Authorization': `token ${token}` }
+      });
+      let sha = null;
+      if (getResp.ok) {
+        const data = await getResp.json();
+        sha = data.sha;
+      }
+      
+      // 更新文件
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(config, null, 2))));
+      const putResp = await fetch(`https://api.github.com/repos/${repo}/contents/digest_config_v15.json`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `chore: update config via web UI (${new Date().toISOString().slice(0,10)})`,
+          content: content,
+          sha: sha
+        })
+      });
+      
+      if (putResp.ok) {
+        if (statusEl) {
+          statusEl.style.background = 'rgba(52,199,89,.1)';
+          statusEl.style.color = '#34c759';
+          statusEl.textContent = '✓ 同步成功！配置将在下次生成时生效（T+1）';
+        }
+      } else {
+        const err = await putResp.json();
+        throw new Error(err.message || '同步失败');
+      }
+    } catch (e) {
+      if (statusEl) {
+        statusEl.style.background = 'rgba(255,59,48,.1)';
+        statusEl.style.color = '#ff3b30';
+        statusEl.textContent = '✗ 同步失败: ' + e.message;
+      }
+    }
+  }
+
+  function bindControls() {
+    $('#searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderAll(); });
+    $$('.pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        $$('.pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentView = pill.dataset.view;
+        renderAll();
+      });
+    });
+    $('#btnSettings')?.addEventListener('click', () => { $('#settingsOverlay').classList.add('show'); renderSettings('general'); });
+    $('#settingsClose')?.addEventListener('click', () => { $('#settingsOverlay').classList.remove('show'); });
+    $('#settingsOverlay')?.addEventListener('click', (e) => { if (e.target === e.currentTarget) $('#settingsOverlay').classList.remove('show'); });
+    $$('.settings-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        $$('.settings-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderSettings(tab.dataset.tab);
+      });
+    });
+    $('#btnTop')?.addEventListener('click', () => { $('#mainContent')?.scrollTo({top: 0, behavior: 'smooth'}); });
+    document.addEventListener('keydown', (e) => { 
+      if (e.key === 'Escape') {
+        $('#settingsOverlay').classList.remove('show');
+        $('#dateDropdown')?.classList.remove('show');
+        $('#datePickerBtn')?.classList.remove('open');
+      }
     });
     
-    if(pr.ok){st.className='github-sync-status success';st.textContent='同步成功！配置将在下次生成时生效（T+1）'}
-    else{const err=await pr.json();throw new Error(err.message||'同步失败')}
-  }catch(e){st.className='github-sync-status error';st.textContent='同步失败: '+e.message}
-}
+    // 日期选择器
+    $('#datePickerBtn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dropdown = $('#dateDropdown');
+      const btn = $('#datePickerBtn');
+      dropdown?.classList.toggle('show');
+      btn?.classList.toggle('open');
+    });
+    
+    // 点击外部关闭日期选择器
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.date-dropdown') && !e.target.closest('.date-picker-btn')) {
+        $('#dateDropdown')?.classList.remove('show');
+        $('#datePickerBtn')?.classList.remove('open');
+      }
+    });
+    
+    // 移动端导航
+    $$('.mobile-nav-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
+        $$('.mobile-nav-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // 隐藏所有面板
+        $('.left')?.classList.remove('mobile-show');
+        $('.right')?.classList.remove('mobile-show');
+        
+        if (view === 'nav') {
+          $('.left')?.classList.add('mobile-show');
+        } else if (view === 'kpi') {
+          $('.right')?.classList.add('mobile-show');
+        } else if (view === 'settings') {
+          $('#settingsOverlay')?.classList.add('show');
+          $$('.mobile-nav-item').forEach(b => b.classList.remove('active'));
+          $$('.mobile-nav-item[data-view="main"]')[0]?.classList.add('active');
+        }
+      });
+    });
+  }
 
-function exportFullConfig(){
-  const config={sections:editConfig.sections,kpis:editConfig.kpis};
-  const blob=new Blob([JSON.stringify(config,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');a.href=url;a.download=`digest_config_${new Date().toISOString().slice(0,10)}.json`;a.click();
-  URL.revokeObjectURL(url);
-}
-
-function importConfig(file){
-  const reader=new FileReader();
-  reader.onload=e=>{
-    try{
-      const c=JSON.parse(e.target.result);
-      if(c.sections)editConfig.sections=c.sections;
-      if(c.kpis)editConfig.kpis=c.kpis;
-      renderSettings('sections');renderSettings('kpis');
-      alert('配置导入成功！');
-    }catch(err){alert('格式错误: '+err.message)}
-  };
-  reader.readAsText(file);
-}
-
-async function loadHistoryDigest(date){
-  try{
-    const r=await fetch(`archive/digest_${date}.json`);
-    if(!r.ok)throw new Error('Not found');
-    const d=await r.json();
-    location.href=`archive/digest_${date}.html`;
-  }catch(e){alert('无法加载: '+e.message)}
-}
-
-async function loadAvailableDates(){
-  try{
-    const r=await fetch('archive/index.json');
-    if(r.ok){const d=await r.json();availableDates=d.dates||[];renderDatePicker()}
-  }catch(e){}
-}
-
-function renderDatePicker(){
-  const list=$('#dateList');
-  if(!availableDates.length){list.innerHTML='<div class="date-item" style="color:var(--muted)">暂无历史</div>';return}
-  list.innerHTML=availableDates.map(d=>`<div class="date-item ${d===currentDate?'active':''}" data-date="${d}">${d}</div>`).join('');
-  list.querySelectorAll('.date-item').forEach(item=>{if(item.dataset.date)item.onclick=()=>loadHistoryDigest(item.dataset.date)});
-}
-
-// 事件绑定
-function bindEvents(){
-  $('#themeBtn').onclick=()=>{const d=document.documentElement.getAttribute('data-theme')==='dark';document.documentElement.setAttribute('data-theme',d?'':'dark');localStorage.setItem('theme',d?'':'dark')};
-  $('#datePickerBtn').onclick=e=>{e.stopPropagation();$('#dateDropdown').classList.toggle('show')};
-  document.addEventListener('click',()=>$('#dateDropdown').classList.remove('show'));
-  $('#settingsBtn').onclick=()=>{$('#settingsOverlay').classList.add('show');renderSettings('sections');renderSettings('kpis')};
-  $('#closeSettings').onclick=()=>$('#settingsOverlay').classList.remove('show');
-  $('#settingsOverlay').onclick=e=>{if(e.target===$('#settingsOverlay'))$('#settingsOverlay').classList.remove('show')};
-  
-  $$('.settings-tab').forEach(tab=>{
-    tab.onclick=()=>{
-      $$('.settings-tab').forEach(t=>t.classList.remove('active'));
-      $$('.tab-pane').forEach(p=>p.style.display='none');
-      tab.classList.add('active');
-      $(`#pane-${tab.dataset.tab}`).style.display='block';
-      renderSettings(tab.dataset.tab);
-    };
-  });
-  
-  $$('.pill[data-filter]').forEach(pill=>{
-    pill.onclick=()=>{$$('.pill[data-filter]').forEach(p=>p.classList.remove('active'));pill.classList.add('active');currentFilter=pill.dataset.filter;renderMain()};
-  });
-  
-  $('#searchInput').oninput=e=>{const q=e.target.value.toLowerCase();$$('.event-card,.top5-item').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(q)?'':'none'})};
-  
-  $$('.mobile-nav-item').forEach(item=>{
-    item.onclick=()=>{
-      $$('.mobile-nav-item').forEach(i=>i.classList.remove('active'));item.classList.add('active');
-      $('.left').classList.remove('mobile-show');$('.right').classList.remove('mobile-show');
-      const show=item.dataset.show;
-      if(show==='left')$('.left').classList.add('mobile-show');
-      else if(show==='right')$('.right').classList.add('mobile-show');
-      else if(show==='settings')$('#settingsOverlay').classList.add('show');
-    };
-  });
-  
-  document.body.onclick=e=>{
-    const t=e.target.closest('button');if(!t)return;
-    const a=t.dataset.action,idx=parseInt(t.dataset.idx);
-    if(a==='edit-section')showSectionEditor(idx);
-    else if(a==='del-section'){if(confirm('确定删除？')){editConfig.sections.splice(idx,1);renderSettings('sections')}}
-    else if(a==='edit-kpi')showKpiEditor(idx);
-    else if(a==='del-kpi'){if(confirm('确定删除？')){editConfig.kpis.splice(idx,1);renderSettings('kpis')}}
-    else if(t.id==='addSection')showSectionEditor(-1);
-    else if(t.id==='addKpi')showKpiEditor(-1);
-    else if(t.id==='exportSections'){const b=new Blob([JSON.stringify(editConfig.sections,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='sections.json';a.click()}
-    else if(t.id==='exportKpis'){const b=new Blob([JSON.stringify(editConfig.kpis,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='kpis.json';a.click()}
-    else if(t.id==='syncToGithub')syncToGithub();
-    else if(t.id==='exportFullConfig')exportFullConfig();
-    else if(t.id==='importConfig')$('#importConfigFile').click();
-  };
-  
-  $('#importConfigFile').onchange=e=>{if(e.target.files[0])importConfig(e.target.files[0])};
-}
-
-// 初始化
-document.addEventListener('DOMContentLoaded',()=>{
-  const st=localStorage.getItem('theme');if(st)document.documentElement.setAttribute('data-theme',st);
-  $('#pageDate').textContent=currentDate||'—';
-  renderNav();renderMain();renderRightPanel();bindEvents();loadAvailableDates();
-});
+  bindControls();
+  renderAll();
+  loadAvailableDates();  // 加载可用日期列表
+})();
 </script>
-</body></html>
+</body>
+</html>

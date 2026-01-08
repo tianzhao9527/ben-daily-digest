@@ -1,76 +1,89 @@
-# Ben's Daily Brief v3.0
+# Ben Daily Digest v3.0
 
-智能新闻简报生成系统 - 支持去重、情感分析、GitHub自动同步
+智能新闻简报生成器 - 金属贸易/地缘政治/AI算力专注版
 
-## ✨ v3.0 新功能
+## v3.0 新功能
 
-| 功能 | 描述 | 状态 |
-|------|------|------|
-| **新闻去重** | 同一事件多来源自动合并，附带所有链接 | ✅ |
-| **情感分析** | 每板块看多/看空/中性评分，整体仪表盘 | ✅ |
-| **热力图** | 8板块×7天新闻密度矩阵 | ✅ |
-| **关键词词云** | 高频关键词可视化 | ✅ |
-| **KPI增强** | MA5/MA20移动平均线，支撑/阻力位 | ✅ |
-| **GitHub同步** | UI直接修改配置，一键同步，T+1生效 | ✅ |
+### 1. 新闻去重
+- Jaccard相似度算法（阈值0.5）
+- 相似新闻自动合并，保留所有来源链接
+- 减少LLM token消耗
 
-## 🔄 新闻去重原理
+### 2. 情感分析
+- 每个板块独立情感判断：看多/中性/看空
+- 情感分数 0-1（0看空，1看多）
+- 在板块标题旁显示
+
+### 3. 关键词提取
+- LLM自动提取3-5个关键词
+- 以标签形式显示在板块头部
+
+### 4. GitHub配置同步
+- 在「设置→同步」tab中配置
+- 支持完整URL或 owner/repo 格式
+- 直接通过API推送配置更改
+- T+1自动生效
+
+## 文件结构
 
 ```
-原始新闻:
-  - Reuters: "央行设定美元中间价为7.18"
-  - Bloomberg: "PBOC sets yuan fixing at 7.18"  
-  - 新华社: "人民币中间价报7.18元"
-
-去重后:
-  ├─ 主标题: 央行设定美元中间价为7.18
-  └─ 来源: Reuters | Bloomberg | 新华社 (3个来源)
+├── news_digest_generator_v15.py    # 主生成脚本
+├── daily_digest_template_v15_apple.html  # HTML模板
+├── digest_config_v15.json          # 配置文件
+├── .github/workflows/generate.yml  # GitHub Actions
+├── archive/                        # 历史存档
+└── requirements.txt
 ```
 
-- 算法: Jaccard相似度 (阈值0.5)
-- 位置: `dedupe_raw_items()` 函数
+## 配置文件说明
 
-## 📊 情感分析
-
-每个板块返回:
 ```json
 {
-  "sentiment": "positive",
-  "sentiment_score": 0.72,
-  "keywords": ["降息", "复苏", "增长"]
+  "items_per_section": 15,
+  "limit_raw": 25,
+  "importance_weights": {...},
+  "sections": [...],
+  "kpis": [...]
 }
 ```
 
-右侧面板显示:
-- 🎯 情绪仪表盘 (指针式)
-- 📈 看多/中性/看空 统计
-- ☁️ 关键词词云
+## GitHub Secrets 配置
 
-## 🔗 GitHub自动同步
+| Secret | 必需 | 说明 |
+|--------|------|------|
+| DEEPSEEK_API_KEY | ✓ | DeepSeek API密钥 |
+| QWEN_API_KEY | 可选 | 通义千问备用 |
+| OPENAI_API_KEY | 可选 | OpenAI备用 |
+| GNEWS_API_KEY | ✓ | GNews新闻API |
+| FRED_API_KEY | ✓ | FRED经济数据API |
 
-### 使用方法
-1. 在设置 → 同步 中输入仓库地址
-2. 输入GitHub Token (需要repo权限)
-3. 点击"同步配置到GitHub"
-4. T+1 GitHub Action运行时生效
+## 本地运行
 
-## 📈 数据面板
+```bash
+pip install -r requirements.txt
+export DEEPSEEK_API_KEY=xxx
+export GNEWS_API_KEY=xxx
+export FRED_API_KEY=xxx
+python news_digest_generator_v15.py
+```
 
-### 情绪面板
-- **仪表盘**: 指针指向当前整体情绪
-- **统计**: 各板块情感分布
+## 设置面板功能
 
-### 指标面板
-- **MA5**: 5日移动平均 (橙色)
-- **MA20**: 20日移动平均 (紫色)
-- **支撑/阻力**: 近20日高低点
+- **通用**: 基本信息、主题切换
+- **类目管理**: 可视化编辑新闻板块
+- **重要性系数**: 调整新闻权重
+- **算法**: 查看LLM配置
+- **数据源**: 编辑KPI指标
+- **配置**: 导出完整配置JSON
+- **同步**: GitHub配置同步（新增）
 
-### 热力图面板
-- **颜色深度**: 新闻数量
-- **去重统计**: 原始 vs 去重
+## 升级指南
 
-## 🚀 部署
+1. 解压替换所有文件
+2. 推送到GitHub
+3. 无需修改Secrets
+4. 如需使用GitHub同步功能，在设置中配置Token
 
-1. Fork仓库
-2. 设置Secrets: `DEEPSEEK_API_KEY`, `FRED_API_KEY`
-3. 启用GitHub Pages
-4. Action每天自动运行
+## 许可
+
+MIT License
