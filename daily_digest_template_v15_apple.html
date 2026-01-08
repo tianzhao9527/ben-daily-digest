@@ -686,13 +686,6 @@ a:hover{text-decoration:underline}
     const topKeywords = Object.entries(wordFreq).sort((a, b) => b[1] - a[1]).slice(0, 12);
     const maxFreq = Math.max(...topKeywords.map(k => k[1]), 1);
 
-    // === v3新增：构建热力图数据 ===
-    const heatmapData = sections.map(s => ({
-      name: s.name?.slice(0, 4) || s.id,
-      count: s.total_count || (s.events || []).length
-    }));
-    const maxCount = Math.max(...heatmapData.map(h => h.count), 1);
-
     let html = '';
     
     // === 市场情绪仪表盘 (紧凑版) ===
@@ -757,21 +750,6 @@ a:hover{text-decoration:underline}
         </div>
       `;
     }
-
-    // === 热力图 ===
-    html += `
-      <div class="kpi-group">
-        <div class="kpi-group-title">板块热度</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;background:var(--chip);border-radius:8px">
-          ${heatmapData.map(h => {
-            const intensity = h.count / maxCount;
-            const bg = intensity > 0.7 ? 'rgba(0,113,227,0.7)' : intensity > 0.4 ? 'rgba(0,113,227,0.45)' : intensity > 0.1 ? 'rgba(0,113,227,0.2)' : 'rgba(0,113,227,0.08)';
-            const color = intensity > 0.5 ? '#fff' : 'var(--text)';
-            return `<div style="padding:8px 4px;background:${bg};border-radius:6px;text-align:center;font-size:10px;color:${color}"><div style="font-weight:500">${esc(h.name)}</div><div style="font-size:9px;opacity:0.8">${h.count}</div></div>`;
-          }).join('')}
-        </div>
-      </div>
-    `;
 
     // === 原有KPI分组 ===
     const stocksKw = ['sp500', 'nasdaq', 'djia', 'dow', 'vix', 'nikkei', '标普', '纳斯达克', '道琼斯', '恐慌', '日经'];
