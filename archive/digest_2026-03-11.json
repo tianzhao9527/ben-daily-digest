@@ -1,0 +1,2513 @@
+{
+  "date": "2026-03-11",
+  "generated_at_utc": "2026-03-11T23:53:49.612115+00:00",
+  "generated_at_bjt": "2026-03-12 07:53",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.64,
+      "updated_at": "2026-02-01",
+      "source": "FRED",
+      "delta": 0.0,
+      "delta_pct": 0.0,
+      "direction": "flat",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,37.85 L 5.41,30.66 L 7.82,25.49 L 10.23,20.09 L 12.64,18.29 L 15.05,14.24 L 17.46,9.07 L 19.87,8.62 L 22.28,7.72 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,3.00 L 51.21,3.00 L 53.62,3.00 L 56.03,7.50 L 58.44,14.24 L 60.85,18.51 L 63.26,22.11 L 65.67,25.49 L 68.08,25.49 L 70.49,25.49 L 72.90,25.49 L 75.31,25.49 L 77.72,25.49 L 80.13,25.49 L 82.54,25.49 L 84.95,27.96 L 87.36,30.88 L 89.77,35.60 L 92.18,39.20 L 94.59,41.00 L 97.00,41.00\" stroke=\"#8E8E93\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#8E8E93",
+      "series_values": [
+        3.78,
+        4.1,
+        4.33,
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 12986.60681818182,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 1195.6427272727287,
+      "delta_pct": 10.140330494217832,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,38.16 L 7.82,35.87 L 10.23,31.34 L 12.64,31.84 L 15.05,32.42 L 17.46,32.75 L 19.87,36.78 L 22.28,35.69 L 24.69,35.12 L 27.10,36.04 L 29.51,36.54 L 31.92,38.93 L 34.33,37.16 L 36.74,35.61 L 39.15,36.01 L 41.56,36.34 L 43.97,33.58 L 46.38,28.22 L 48.79,23.44 L 51.21,26.78 L 53.62,28.65 L 56.03,31.53 L 58.44,29.55 L 60.85,27.59 L 63.26,30.85 L 65.67,32.03 L 68.08,31.56 L 70.49,29.04 L 72.90,26.15 L 75.31,30.16 L 77.72,27.61 L 80.13,25.45 L 82.54,25.90 L 84.95,26.61 L 87.36,24.31 L 89.77,19.00 L 92.18,18.49 L 94.59,11.52 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        7651.082857142857,
+        8049.861363636364,
+        8371.091363636364,
+        9007.346363636363,
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3133.982727272727,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 258.08500000000004,
+      "delta_pct": 8.974067386073125,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,36.43 L 5.41,32.81 L 7.82,31.00 L 10.23,27.32 L 12.64,30.32 L 15.05,34.88 L 17.46,33.29 L 19.87,35.73 L 22.28,39.13 L 24.69,40.08 L 27.10,41.00 L 29.51,39.13 L 31.92,38.76 L 34.33,38.46 L 36.74,38.85 L 39.15,38.49 L 41.56,39.33 L 43.97,37.43 L 46.38,27.16 L 48.79,24.61 L 51.21,27.22 L 53.62,32.87 L 56.03,32.75 L 58.44,28.75 L 60.85,23.49 L 63.26,24.00 L 65.67,25.57 L 68.08,24.41 L 70.49,21.20 L 72.90,21.36 L 75.31,32.16 L 77.72,29.13 L 80.13,26.14 L 82.54,23.08 L 84.95,23.37 L 87.36,21.25 L 89.77,15.97 L 92.18,14.99 L 94.59,12.82 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2255.535238095238,
+        2350.716363636364,
+        2398.206818181818,
+        2494.900909090909,
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3206.733181818182,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 44.558181818181765,
+      "delta_pct": 1.409099174403117,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,16.35 L 5.41,17.50 L 7.82,10.28 L 10.23,3.00 L 12.64,9.58 L 15.05,16.34 L 17.46,24.34 L 19.87,35.90 L 22.28,40.38 L 24.69,39.19 L 27.10,39.17 L 29.51,35.50 L 31.92,37.46 L 34.33,33.55 L 36.74,34.89 L 39.15,34.47 L 41.56,41.00 L 43.97,37.03 L 46.38,26.16 L 48.79,16.83 L 51.21,22.76 L 53.62,24.06 L 56.03,26.34 L 58.44,21.21 L 60.85,10.72 L 63.26,14.84 L 65.67,13.64 L 68.08,22.13 L 70.49,23.21 L 72.90,19.61 L 75.31,30.80 L 77.72,29.53 L 80.13,29.04 L 82.54,24.66 L 84.95,23.53 L 87.36,17.58 L 89.77,8.84 L 92.18,7.83 L 94.59,8.43 L 97.00,6.62\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2967.210476190476,
+        2938.9204545454554,
+        3116.522727272727,
+        3295.878181818182,
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 17710.86363636364,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 2831.833636363639,
+      "delta_pct": 19.032380715433998,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,21.46 L 5.41,12.09 L 7.82,3.00 L 10.23,4.90 L 12.64,8.99 L 15.05,18.12 L 17.46,16.84 L 19.87,21.19 L 22.28,23.58 L 24.69,23.96 L 27.10,25.67 L 29.51,27.80 L 31.92,31.46 L 34.33,34.74 L 36.74,36.29 L 39.15,37.18 L 41.56,36.57 L 43.97,33.76 L 46.38,31.81 L 48.79,27.98 L 51.21,33.50 L 53.62,36.58 L 56.03,36.67 L 58.44,37.03 L 60.85,35.44 L 63.26,38.20 L 65.67,38.96 L 68.08,39.13 L 70.49,39.36 L 72.90,37.34 L 75.31,39.74 L 77.72,39.20 L 80.13,40.12 L 82.54,40.04 L 84.95,40.26 L 87.36,39.85 L 89.77,39.88 L 92.18,41.00 L 94.59,40.45 L 97.00,32.93\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        22032.89285714286,
+        25562.697727272727,
+        28985.92045454545,
+        28271.490909090913,
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "近期全球市场受地缘政治紧张（伊朗局势）影响，能源价格波动，多国协调释放战略石油储备以稳定市场。同时，科技行业在AI领域动作频频，Meta收购AI社交网络，大型科技公司支持Anthropic。美国通胀数据稳定，但战争成本可能转嫁给消费者。中国方面，有报道关注其提振消费的新举措。整体市场情绪偏谨慎，风险与机遇并存。",
+      "events": [
+        {
+          "title_zh": "多国同意创纪录释放紧急石油储备",
+          "summary_zh": "为应对伊朗战争引发的市场动荡，国际能源署协调多国释放战略石油储备以稳定油价。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Countries agree to record release of emergency oil reserves",
+              "url": "https://www.bbc.com/news/articles/cly093xxlzzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            },
+            {
+              "title": "Why the IEA’s largest-ever release of oil reserves is pushin",
+              "url": "https://www.marketwatch.com/story/oil-futures-rise-as-traders-await-decision-on-reserves-3cd81485?mo",
+              "source": "MarketWatch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗战争成本将转嫁给消费者",
+          "summary_zh": "航运巨头警告，伊朗冲突导致的成本上升最终将由消费者承担，加剧通胀压力。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iran war cost will be passed to consumers, shipping giant bo",
+              "url": "https://www.bbc.com/news/articles/c5ykzyd0rkyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国通胀在伊朗冲击前保持稳定",
+          "summary_zh": "最新数据显示美国通胀率保持稳定，但市场担忧即将到来的地缘政治冲击可能改变形势。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "US inflation stable ahead of Iran shock",
+              "url": "https://www.bbc.com/news/articles/cde4w32573xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta收购AI社交网络Moltbook",
+          "summary_zh": "Meta公司收购被称为“AI的社交网络”的Moltbook，加强其在人工智能领域的布局。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Meta buys 'social media network for AI' Moltbook",
+              "url": "https://www.bbc.com/news/articles/cvg1x788dreo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国新举措旨在提振消费",
+          "summary_zh": "报道关注中国通过“投资于人”的新政策推动，旨在刺激国内消费和经济增长。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "'Investing in people': Can China's new push to boost spendin",
+              "url": "https://www.bbc.com/news/articles/c70n5xllp1do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "大型科技公司支持Anthropic对抗特朗普政府",
+          "summary_zh": "多家大型科技公司支持AI公司Anthropic，以应对可能来自特朗普政府的监管挑战。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Big Tech backs Anthropic in fight against Trump administrati",
+              "url": "https://www.bbc.com/news/articles/c4g7k7zdd0zo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "抵押贷款利率因伊朗战争动荡上升",
+          "summary_zh": "伊朗战争引发的市场不确定性导致抵押贷款利率上升，部分贷款交易被取消。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Mortgage rates rise and deals pulled over Iran war turmoil",
+              "url": "https://www.bbc.com/news/articles/c24dm9vgrz7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国航空暂停英国撤侨航班",
+          "summary_zh": "由于地缘政治局势，英国航空公司宣布暂停从英国出发的撤侨航班。",
+          "region": "cn",
+          "score": 0.4,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "British Airways to suspend UK repatriation flights - latest ",
+              "url": "https://www.bbc.com/news/articles/c4ge52x4w37o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "燃油税上调计划因伊朗局势待审",
+          "summary_zh": "鉴于伊朗冲突带来的经济不确定性，政府表示将重新评估燃油税上调计划。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Fuel tax hike plan to be kept under review over Iran, says P",
+              "url": "https://www.bbc.com/news/articles/cvg593l3yd5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "甲骨文股价因AI突破大涨",
+          "summary_zh": "甲骨文公司股价大幅上涨，市场认为其终于在人工智能领域取得了关键进展。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Oracle’s stock surges. Here’s how it finally left the AI pen",
+              "url": "https://www.marketwatch.com/story/oracles-stock-surges-heres-how-it-finally-left-the-ai-penalty-box-",
+              "source": "MarketWatch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "石油储备",
+        "伊朗战争",
+        "人工智能",
+        "通货膨胀",
+        "消费提振"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "本组新闻涵盖多地缘政治事件，包括伊朗局势、乌克兰冲突、中东紧张关系及国际制裁等。其中，中国两会结束受到关注，同时涉及多起暴力袭击和人道主义危机。整体情绪偏向负面，反映国际局势的动荡与不确定性。",
+      "events": [
+        {
+          "title_zh": "中国两会结束总结",
+          "summary_zh": "中国最大政治会议结束，总结会议成果与未来政策方向。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "China's biggest political meeting is ending - what have we l",
+              "url": "https://www.bbc.com/news/articles/cvg80pedxeyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌克兰袭击俄导弹工厂",
+          "summary_zh": "乌克兰声称击中俄罗斯导弹部件工厂，加剧俄乌冲突紧张局势。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ukraine says it has hit Russian 'missile component' plant",
+              "url": "https://www.bbc.com/news/articles/ckg1eqw30l9o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟要求以色列停止定居点暴力",
+          "summary_zh": "欧盟和英国要求以色列停止西岸定居者暴力激增，涉及地缘政治压力。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "EU and UK demand Israel stop surge in West Bank settler viol",
+              "url": "https://www.bbc.com/news/articles/c620vwl97vyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普呼吁伊朗起义",
+          "summary_zh": "特朗普呼吁伊朗起义，但相关教训引发国际关注与讨论。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Bowen: Trump has called for an Iran uprising but the lessons",
+              "url": "https://www.bbc.com/news/articles/cn0znx4xrl9o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "多国同意释放紧急石油储备",
+          "summary_zh": "各国同意创纪录释放紧急石油储备，以应对全球能源市场波动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Countries agree to record release of emergency oil reserves ",
+              "url": "https://www.bbc.com/news/articles/cly093xxlzzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗青年生活受导弹影响",
+          "summary_zh": "年轻伊朗人在导弹威胁下继续生活，反映当地人道主义困境。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "'Even under missiles we carry on living' - how young Iranian",
+              "url": "https://www.bbc.com/news/articles/c1mj1pyrzryo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            },
+            {
+              "title": "Three brothers arrested in Norway over bomb attack on US embassy in Oslo",
+              "url": "https://www.aljazeera.com/news/2026/3/11/three-brothers-arrested-in-norway-over-bomb-attack-on-us-embassy-in-oslo?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国使馆爆炸案三兄弟被捕",
+          "summary_zh": "奥斯陆美国使馆爆炸案后，三兄弟被捕，涉及恐怖主义调查。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Three brothers arrested after explosion at US embassy in Osl",
+              "url": "https://www.bbc.com/news/articles/cx2grl7lrrmo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            },
+            {
+              "title": "South Africa summons new US ambassador over ‘undiplomatic remarks’",
+              "url": "https://www.aljazeera.com/news/2026/3/11/south-africa-summons-new-us-ambassador-over-undiplomatic-remarks?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美驻南非大使因不当言论被召见",
+          "summary_zh": "新任美国驻南非大使因“非外交”言论被召见，引发外交风波。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "New US ambassador to South Africa summoned over 'undiplomati",
+              "url": "https://www.bbc.com/news/articles/c14m1vzmxz3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国援助人员在无人机袭击中丧生",
+          "summary_zh": "法国援助人员在叛军区无人机袭击中丧生，凸显冲突地区危险。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "French aid worker among three killed in drone strikes in reb",
+              "url": "https://www.bbc.com/news/articles/cvgj8veg0gno?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗足球代表团成员获澳大利亚庇护",
+          "summary_zh": "伊朗足球代表团成员获澳大利亚庇护，涉及政治庇护与国际关系。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Member of Iranian football delegation granted Australian asy",
+              "url": "https://www.bbc.com/news/articles/c93j2492d0do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "地缘政治",
+        "制裁",
+        "冲突",
+        "伊朗",
+        "乌克兰"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "新闻涵盖AI、科技、安全、文化等多个领域。英伟达计划推出开源OpenClaw挑战CUDA，AI聊天机器人因煽动暴力引发担忧，AI歌手Tilly Norwood发布歌曲评价极差，凸显AI应用的风险与争议。同时，英特尔加强桌面CPU产品线，谷歌Play商店增加新功能，福特推出AI助手提升车队管理，Nuro在东京测试自动驾驶技术，显示科技行业的持续创新。此外，涉及网络安全事件、政策法规及文化展览等内容。",
+      "events": [
+        {
+          "title_zh": "英伟达计划开源OpenClaw",
+          "summary_zh": "英伟达据报计划推出开源OpenClaw，以竞争CUDA生态系统。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nvidia is reportedly planning its own open source OpenClaw c",
+              "url": "https://arstechnica.com/ai/2026/03/nvidia-is-reportedly-planning-its-own-open-source-openclaw-compet",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI聊天机器人煽动暴力",
+          "summary_zh": "AI聊天机器人被曝建议用户使用枪支或暴力，引发安全担忧。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "\"Use a gun\" or \"beat the crap out of him\": AI chatbot urged ",
+              "url": "https://arstechnica.com/tech-policy/2026/03/use-a-gun-or-beat-the-crap-out-of-him-ai-chatbot-urged-v",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI歌手发布差评歌曲",
+          "summary_zh": "AI演员Tilly Norwood发布歌曲，被评价为有史以来最差。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "AI ‘actor’ Tilly Norwood put out the worst song I’ve ever he",
+              "url": "https://techcrunch.com/2026/03/11/ai-actor-tilly-norwood-put-out-the-worst-song-ive-ever-heard/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "英特尔加强桌面CPU产品线",
+          "summary_zh": "英特尔通过提升Core Ultra系列，巩固其桌面CPU市场地位。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Intel shores up its desktop CPU lineup with boosted Core Ult",
+              "url": "https://arstechnica.com/gadgets/2026/03/intel-shores-up-its-desktop-cpu-lineup-with-boosted-core-ult",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌Play新增游戏功能",
+          "summary_zh": "谷歌Play商店将增加付费游戏、PC游戏、试玩和社区功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Google Play is adding new paid and PC games, game trials, co",
+              "url": "https://techcrunch.com/2026/03/11/google-play-is-adding-new-paid-and-pc-games-game-trials-community-",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特推出AI助手管理车队",
+          "summary_zh": "福特新AI助手帮助车队所有者监控安全带使用情况，提升安全。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ford’s new AI assistant will help fleet owners know if seatb",
+              "url": "https://techcrunch.com/2026/03/11/fords-new-ai-assistant-will-help-fleet-owners-know-if-seatbelts-ar",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Nuro在东京测试自动驾驶",
+          "summary_zh": "Nuro在东京街道测试其自动驾驶车辆技术，推进商业化应用。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s stree",
+              "url": "https://techcrunch.com/2026/03/11/nuro-is-testing-its-autonomous-vehicle-tech-on-tokyos-streets/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "14000台路由器感染恶意软件",
+          "summary_zh": "14000台路由器感染高度抵抗的恶意软件，网络安全受威胁。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "14,000 routers are infected by malware that's highly resista",
+              "url": "https://arstechnica.com/security/2026/03/14000-routers-are-infected-by-malware-thats-highly-resistan",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "币安起诉华尔街日报",
+          "summary_zh": "币安因政府调查报道起诉华尔街日报，涉及受制裁国家交易。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Binance sues WSJ, panicked by gov’t probes into sanctioned c",
+              "url": "https://arstechnica.com/tech-policy/2026/03/binance-sues-wsj-over-report-sparking-government-probes-",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Windows 11推出游戏UI更新",
+          "summary_zh": "Windows 11推出类似Steam Deck的流线型Xbox游戏用户界面。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Windows 11's Steam Deck-ish, streamlined Xbox gaming UI come",
+              "url": "https://arstechnica.com/gadgets/2026/03/windows-11s-steam-deck-ish-streamlined-xbox-gaming-ui-comes-",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "开源",
+        "自动驾驶",
+        "网络安全",
+        "科技政策"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "近期全球科技领域动态频繁，涉及AI应用、自动驾驶、企业并购、融资估值及网络安全等多个方面。其中，AI在娱乐内容生成、客户服务和汽车辅助驾驶等领域持续渗透，但同时也面临法律诉讼和内容质量争议。多家科技公司获得巨额融资或实现估值飙升，显示资本市场对创新技术的持续看好。然而，自动驾驶安全事件和网络攻击威胁也为行业发展带来警示。",
+      "events": [
+        {
+          "title_zh": "AI演员歌曲被评最差",
+          "summary_zh": "AI演员Tilly Norwood发布的歌曲被TechCrunch评为史上最差，引发对AI生成内容质量的讨论。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "AI ‘actor’ Tilly Norwood put out the worst song I’ve ever heard",
+              "url": "https://techcrunch.com/2026/03/11/ai-actor-tilly-norwood-put-out-the-worst-song-ive-ever-heard/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Nuro在东京测试自动驾驶",
+          "summary_zh": "自动驾驶公司Nuro将其技术测试扩展到日本东京的街道上。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s streets",
+              "url": "https://techcrunch.com/2026/03/11/nuro-is-testing-its-autonomous-vehicle-tech-on-tokyos-streets/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特推出AI助手监控安全带",
+          "summary_zh": "福特推出新AI助手，帮助车队管理者监控乘客是否系好安全带。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ford’s new AI assistant will help fleet owners know if seatbelts are fastened",
+              "url": "https://techcrunch.com/2026/03/11/fords-new-ai-assistant-will-help-fleet-owners-know-if-seatbelts-ar",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Zendesk收购AI客服初创公司",
+          "summary_zh": "客户服务软件公司Zendesk收购了AI驱动的客服初创公司Forethought。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Zendesk acquires agentic customer service startup Forethought",
+              "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Netflix或6亿美元收购AI初创",
+          "summary_zh": "据报道，Netflix可能以高达6亿美元的价格收购本·阿弗莱克的AI初创公司。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Netflix may have paid $600 million for Ben Affleck’s AI startup",
+              "url": "https://techcrunch.com/2026/03/11/netflix-may-have-paid-600-million-for-ben-afflecks-ai-startup/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Replit估值六个月飙至90亿",
+          "summary_zh": "协作编程平台Replit在六个月内估值从30亿美元跃升至90亿美元。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Replit snags $9B valuation 6 months after hitting $3B",
+              "url": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特自动驾驶致死事故调查",
+          "summary_zh": "涉及福特BlueCruise系统的致命车祸中，司机可能因分心导致事故。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Drivers in fatal Ford BlueCruise crashes were likely distracted",
+              "url": "https://techcrunch.com/2026/03/11/drivers-in-fatal-ford-bluecruise-crashes-were-likely-distracted-be",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Breakout Ventures募资1.14亿投AI",
+          "summary_zh": "Breakout Ventures筹集1.14亿美元基金，专门用于投资AI科学初创公司。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Breakout Ventures raises $114M fund to back AI science startups",
+              "url": "https://techcrunch.com/2026/03/11/breakout-ventures-raises-114m-fund-to-back-ai-science-startups/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Grammarly因AI功能遭集体诉讼",
+          "summary_zh": "语法检查工具Grammarly因其AI“专家评审”功能面临集体诉讼。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Grammarly Is Facing a Class Action Lawsuit Over Its AI ‘Expert Review’",
+              "url": "https://www.wired.com/story/grammarly-is-facing-a-class-action-lawsuit-over-its-ai-expert-review-fea",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗警告美国科技公司或成目标",
+          "summary_zh": "伊朗警告，随着冲突扩大，美国科技公司可能成为网络攻击目标。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iran Warns US Tech Firms Could Become Targets as War Expands",
+              "url": "https://www.wired.com/story/iran-warns-us-tech-firms-could-become-targets-as-war-expands/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "人工智能",
+        "自动驾驶",
+        "融资",
+        "网络安全",
+        "并购"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "近期科技新闻涉及AI、自动驾驶、企业收购、融资等多个领域。其中，福特BlueCruise自动驾驶系统发生致命事故，驾驶员可能分心；Nuro在东京测试自动驾驶技术；多家公司完成大额融资或收购，如Quince估值达100亿美元。整体来看，科技行业持续发展，但自动驾驶安全引发关注。",
+      "events": [
+        {
+          "title_zh": "福特BlueCruise致命事故",
+          "summary_zh": "福特BlueCruise自动驾驶系统发生致命事故，驾驶员可能因分心导致。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Drivers in fatal Ford BlueCruise crashes were likely distracted",
+              "url": "https://techcrunch.com/2026/03/11/drivers-in-fatal-ford-bluecruise-crashes-were-likely-distracted-be",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Nuro东京测试自动驾驶",
+          "summary_zh": "Nuro在东京街道测试其自动驾驶车辆技术。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s streets",
+              "url": "https://techcrunch.com/2026/03/11/nuro-is-testing-its-autonomous-vehicle-tech-on-tokyos-streets/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            },
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s streets - TechCrunch",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcTJtLW1JUjRPNHhmVmR5RDJvWjRTSEh5RkFTVTBpVVNOQnBKSWVHdlRFajBHQWRrTkJ2XzVkMzVBYjMzNF9GZ0tLSWx2SUlPUEdjSE1yUmtjMXNBNWxQa3IyTWY0Z2JpVnZlQTVnNzlKZHlrZWtPeFFGT1JPSUNqZUNJTDBoUGtYMGVZX1hseGxIdHpkd1dUSFdXTXI?oc=5",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特推AI助手监控安全带",
+          "summary_zh": "福特推出新AI助手，帮助车队所有者监控安全带使用情况。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ford’s new AI assistant will help fleet owners know if seatbelts are used",
+              "url": "https://techcrunch.com/2026/03/11/fords-new-ai-assistant-will-help-fleet-owners-know-if-seatbelts-ar",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "inDrive收购巴基斯坦Krave Mart",
+          "summary_zh": "网约车公司inDrive收购巴基斯坦杂货配送服务Krave Mart。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ride-hailing inDrive acquires Pakistan’s Krave Mart to bolster grocery delivery",
+              "url": "https://techcrunch.com/2026/03/11/ride-hailing-indrive-acquires-pakistans-kravemart-to-bolster-groce",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Quince估值达100亿美元",
+          "summary_zh": "Quince完成5亿美元融资，估值达到100亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Quince hits $10B valuation with giant $500M round led by Iconiq",
+              "url": "https://techcrunch.com/2026/03/11/quince-series-e-10b-valuation-with-500m-round-led-by-iconiq/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Replit估值飙升至90亿美元",
+          "summary_zh": "Replit在6个月内估值从30亿美元升至90亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Replit snags $9B valuation 6 months after hitting $3B",
+              "url": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Breakout Ventures募资1.14亿美元",
+          "summary_zh": "Breakout Ventures筹集1.14亿美元基金，专注于AI科学初创公司。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Breakout Ventures raises $114M fund to back AI science startups",
+              "url": "https://techcrunch.com/2026/03/11/breakout-ventures-raises-114m-fund-to-back-ai-science-startups/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Grammarly禁用生成式AI工具",
+          "summary_zh": "Grammarly暂时禁用其提供生成式AI反馈的工具。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Grammarly has disabled its tool offering generative-AI feedback",
+              "url": "https://www.engadget.com/ai/grammarly-has-disabled-its-tool-offering-generative-ai-feedback-credited",
+              "source": "Engadget",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "iPhone折叠屏手机传闻",
+          "summary_zh": "关于iPhone折叠屏手机的当前传闻汇总。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "iPhone Fold rumors: Everything we know right now",
+              "url": "https://www.engadget.com/mobile/smartphones/iphone-fold-rumors-everything-we-know-right-now-includin",
+              "source": "Engadget",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Valve Steam Machine 2026年发布",
+          "summary_zh": "Valve的Steam Machine游戏机预计2026年发布，已知信息汇总。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Valve's Steam Machine launches in 2026: Everything we know so far",
+              "url": "https://www.engadget.com/gaming/pc/valves-steam-machine-launches-in-2026-everything-we-know-so-far-2",
+              "source": "Engadget",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "自动驾驶",
+        "AI",
+        "融资",
+        "收购",
+        "安全"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "近期大宗商品市场受地缘政治、供需变化及库存调整等多重因素影响。伊朗局势紧张导致霍尔木兹海峡风险上升，推高油价预期；美国原油库存增加，而中国战略储备缓解了部分冲击。同时，印尼镍配额可能引发市场短缺，铝价因亚洲溢价上涨。整体市场情绪复杂，呈现多空交织局面。",
+      "events": [
+        {
+          "title_zh": "中国战略储备缓解全球石油冲击",
+          "summary_zh": "中国利用石油库存缓冲全球石油供应冲击，稳定市场。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "China Stockpiles Soften the Blow of the Global Oil Shock",
+              "url": "https://oilprice.com/Energy/Crude-Oil/China-Stockpiles-Soften-the-Blow-of-the-Global-Oil-Shock.html",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗警告油价或涨至200美元",
+          "summary_zh": "伊朗警告霍尔木兹海峡威胁可能导致油价飙升至每桶200美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iran Warns Oil Could Hit $200 per Barrel as Hormuz Threat Es",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Warns-Oil-Could-Hit-200-per-Barrel-as-Hormuz",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "IEA启动创纪录紧急石油释放",
+          "summary_zh": "国际能源署释放4亿桶紧急石油储备以应对供应危机。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "IEA Launches Record 400-Million-Barrel Emergency Oil Release",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/IEA-Launches-Record-400-Million-Barrel-Emergency-",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国原油库存意外增加",
+          "summary_zh": "美国能源信息署数据显示原油库存上升，而非预期下降。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "EIA Sees Increase, Not Decrease in US Oil Inventories",
+              "url": "https://oilprice.com/Energy/Crude-Oil/EIA-Sees-Increase-Not-Decrease-in-US-Oil-Inventories.html",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "印尼配额或致镍市场短缺",
+          "summary_zh": "麦格理称印尼出口配额可能导致镍市场转为供应短缺。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nickel market could turn deficit due to Indonesia quota, say",
+              "url": "https://www.mining.com/nickel-market-could-turn-deficit-due-to-indonesia-quota-says-macquarie/",
+              "source": "Mining.com",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "铝价因亚洲溢价上涨",
+          "summary_zh": "亚洲溢价报价飙升推动铝价攀升。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Aluminum price climbs as Asia premium offer spikes",
+              "url": "https://www.mining.com/aluminum-price-climbs-as-asia-premium-offer-spikes/",
+              "source": "Mining.com",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗无人机袭击阿曼储油设施",
+          "summary_zh": "伊朗无人机袭击阿曼最大石油储存设施，加剧地缘风险。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iranian Drone Strike Hits Oman’s Largest Oil Storage Facilit",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Iranian-Drone-Strike-Hits-Omans-Largest-Oil-Stora",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "页岩生产商在石油危机中观望",
+          "summary_zh": "页岩生产商在石油危机深化时保持观望，未增加产量。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Shale Producers Stay on the Sidelines as Oil Crisis Deepens",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Shale-Producers-Stay-on-the-Sidelines-as-Oil-Crisis-Deepens.ht",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Talon Metals因钻探结果大涨",
+          "summary_zh": "Talon Metals在明尼苏达州新钻探结果公布后股价飙升。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Talon Metals surges on new Minnesota drill results",
+              "url": "https://www.mining.com/talon-metals-surges-on-new-minnesota-drill-results/",
+              "source": "Mining.com",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "专家警告伊朗环境灾难后果",
+          "summary_zh": "专家警告伊朗冲突可能引发灾难性环境后果。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Experts Warn of Catastrophic Environmental Fallout From Iran",
+              "url": "https://oilprice.com/Energy/Energy-General/Experts-Warn-of-Catastrophic-Environmental-Fallout-From-I",
+              "source": "OilPrice",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "油价",
+        "库存",
+        "地缘政治",
+        "镍",
+        "铝"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "近期全球新闻涉及多个领域，包括地缘政治冲突、社会事件、科技动态和国际关系。其中，苏丹无人机袭击学校、尼日利亚士兵遇袭等事件凸显了地区安全局势的紧张。同时，科技公司Meta打击诈骗账户、中国与朝鲜重启火车交通等新闻也受到关注。整体来看，新闻情绪偏向负面，主要围绕冲突、犯罪和不确定性事件。",
+      "events": [
+        {
+          "title_zh": "苏丹无人机袭击学校致17死",
+          "summary_zh": "苏丹发生无人机袭击学校事件，造成至少17人死亡，凸显地区冲突升级。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "At least 17 killed after drone strikes school in Sudan",
+              "url": "https://www.theguardian.com/world/2026/mar/11/at-least-17-killed-after-drone-strikes-school-in-sudan",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚士兵遭袭65人死亡",
+          "summary_zh": "尼日利亚士兵在东北部遭遇圣战分子袭击，至少65名士兵丧生，安全形势严峻。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "At least 65 Nigerian soldiers killed in jihadist raids in co",
+              "url": "https://www.theguardian.com/world/2026/mar/11/nigerian-soldiers-killed-jihadist-raids-north-east",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta打击诈骗账户禁用15万",
+          "summary_zh": "Meta公司打击东南亚诈骗中心，禁用了超过15万个账户，以应对网络犯罪活动。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Meta disables more than 150,000 accounts in crackdown on sou",
+              "url": "https://www.theguardian.com/technology/2026/mar/11/meta-south-east-asia-criminal-scam-centers",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国与朝鲜重启火车交通",
+          "summary_zh": "中国和朝鲜宣布重启火车交通，结束了因新冠疫情中断六年的跨境运输。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "China-North Korea trains to restart, six years after Covid b",
+              "url": "https://www.theguardian.com/world/2026/mar/10/china-north-korea-trains-to-resume-after-six-year-halt",
+              "source": "The Guardian",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "智利极右翼候选人卡斯崛起",
+          "summary_zh": "智利极右翼候选人何塞·安东尼奥·卡斯，作为皮诺切特支持者，可能改变国家政治方向。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "José Antonio Kast, the Pinochet fan about to swerve Chile to",
+              "url": "https://www.theguardian.com/world/2026/mar/11/jose-antonio-kast-pinochet-fan-chile-far-right",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "各国同意释放紧急石油储备",
+          "summary_zh": "多国同意记录释放紧急石油储备，以应对全球能源市场的不确定性和紧张局势。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Countries agree to record release of emergency oil reserves ",
+              "url": "https://www.bbc.com/news/articles/cly093xxlzzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿根廷向巴西骚乱者提供庇护",
+          "summary_zh": "阿根廷向巴西选举骚乱者提供庇护，这一举动可能影响两国之间的外交关系。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Argentina grants asylum to Brasília rioter in move that may ",
+              "url": "https://www.theguardian.com/world/2026/mar/11/argentina-asylum-brasil-elections",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "海地总统遇刺案审判揭露动机",
+          "summary_zh": "海地总统遇刺案审判显示，贪婪和权力是驱动刺杀的主要动机，案件引发国际关注。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Haiti president’s assassination driven by greed and power, U",
+              "url": "https://www.theguardian.com/world/2026/mar/10/haiti-president-jovenel-moise-trial",
+              "source": "The Guardian",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国驻加拿大领事馆遭枪击",
+          "summary_zh": "美国驻多伦多领事馆发生枪击事件，警方称其为“无目标”袭击，安全局势受关注。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Shots fired at US consulate in Canada in what police call ‘n",
+              "url": "https://www.theguardian.com/world/2026/mar/10/shots-fired-canada-consulate-toronto",
+              "source": "The Guardian",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "新西兰新冠应对获评世界最佳",
+          "summary_zh": "新西兰的新冠疫情应对被列为世界最佳之一，但调查指出仍存在“伤疤”需要修复。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "New Zealand Covid response among world’s best but ‘scars’ re",
+              "url": "https://www.theguardian.com/world/2026/mar/10/new-zealand-covid-response-inquiry-royal-commission-fi",
+              "source": "The Guardian",
+              "published_at": "2026-03-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "无人机袭击",
+        "地缘政治",
+        "Meta账户打击",
+        "中国朝鲜关系",
+        "石油储备"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "2026年3月11日，全球多地发生冲突与安全事件，包括伊拉克油轮遇袭起火、伊朗相关黑客攻击医疗巨头、挪威逮捕涉美使馆爆炸案疑犯等。同时，中国最大的政治会议闭幕引发关注。国际局势紧张，涉及能源、地缘政治和网络安全等多个领域。",
+      "events": [
+        {
+          "title_zh": "中国最大政治会议闭幕",
+          "summary_zh": "BBC报道中国最大的政治会议结束，总结会议成果与影响。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "China's biggest political meeting is ending - what have we l",
+              "url": "https://www.bbc.com/news/articles/cvg80pedxeyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国首相被警告声誉风险",
+          "summary_zh": "新文件显示英国首相曾被告知与某方合作存在声誉风险。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "New files show British PM warned of ‘reputational risks’ wit",
+              "url": "https://www.aljazeera.com/news/2026/3/11/new-files-show-british-pm-warned-of-reputational-risks-with",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊拉克油轮遇袭起火",
+          "summary_zh": "伊拉克水域两艘油轮遭攻击后发生大火，可能影响能源供应。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Massive fires on two oil tankers after attack in Iraqi water",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/11/massive-fires-on-two-oil-tankers-after-attack-in-",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗黑客攻击医疗巨头",
+          "summary_zh": "伊朗相关黑客对医疗巨头Stryker发起报复性网络攻击。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iran-linked hackers hit medical giant Stryker in retaliatory",
+              "url": "https://www.aljazeera.com/news/2026/3/11/iran-linked-hackers-hit-medical-giant-stryker-in-retaliator",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            },
+            {
+              "title": "New US ambassador to South Africa summoned over 'undiplomatic remarks'",
+              "url": "https://www.bbc.com/news/articles/c14m1vzmxz3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "挪威逮捕涉美使馆爆炸案兄弟",
+          "summary_zh": "挪威逮捕三名兄弟，涉嫌参与对美国使馆的炸弹袭击。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Three brothers arrested in Norway over bomb attack on US emb",
+              "url": "https://www.aljazeera.com/news/2026/3/11/three-brothers-arrested-in-norway-over-bomb-attack-on-us-em",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "联合国通过海湾国家决议草案",
+          "summary_zh": "联合国安理会通过了海湾国家提出的决议草案。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "UN Security Council adopts Gulf countries’ draft resolution",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/11/un-security-council-adopts-gulf-countries-draft-r",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非召见美国新大使",
+          "summary_zh": "南非因“不外交言论”召见新任美国大使。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "South Africa summons new US ambassador over ‘undiplomatic re",
+              "url": "https://www.aljazeera.com/news/2026/3/11/south-africa-summons-new-us-ambassador-over-undiplomatic-re",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普回应伊朗学校爆炸报告",
+          "summary_zh": "特朗普表示“不知道”关于美国在伊朗学校爆炸中负有责任的报告。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Trump: ‘I don’t know’ about report US at fault in school str",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/11/trump-i-dont-know-about-report-us-at-fault-in-sch",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟和英国要求以色列停止定居者暴力",
+          "summary_zh": "欧盟和英国要求以色列制止西岸定居者暴力激增。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "EU and UK demand Israel stop surge in West Bank settler viol",
+              "url": "https://www.bbc.com/news/articles/c620vwl97vyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "各国同意紧急释放石油储备",
+          "summary_zh": "多国同意创纪录地释放紧急石油储备以稳定市场。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Countries agree to record release of emergency oil reserves ",
+              "url": "https://www.bbc.com/news/articles/cly093xxlzzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "冲突",
+        "安全事件",
+        "能源",
+        "地缘政治",
+        "网络安全"
+      ],
+      "deduped_count": 2,
+      "raw_count": 42
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "本组新闻主要涉及科技领域的多项动态，包括AI应用、自动驾驶测试、企业收购、融资估值、网络安全及监管争议等。其中，FCC主席就亚马逊批评SpaceX巨型星座项目一事发表强硬言论，成为航天领域的一个焦点。整体来看，科技行业创新活跃，但同时也面临安全与监管挑战。",
+      "events": [
+        {
+          "title_zh": "FCC主席抨击亚马逊批评SpaceX",
+          "summary_zh": "FCC主席在亚马逊批评SpaceX巨型星座项目后发表强硬言论，引发监管争议。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "FCC chair blasts Amazon after it criticizes SpaceX megaconst",
+              "url": "https://arstechnica.com/space/2026/03/fcc-chair-blasts-amazon-after-it-criticizes-spacex-megaconstel",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Nuro在东京测试自动驾驶技术",
+          "summary_zh": "自动驾驶公司Nuro开始在东京街道测试其自动驾驶车辆技术。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s stree",
+              "url": "https://techcrunch.com/2026/03/11/nuro-is-testing-its-autonomous-vehicle-tech-on-tokyos-streets/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Replit估值六个月从30亿跃至90亿",
+          "summary_zh": "编程平台Replit在六个月内估值从30亿美元飙升至90亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Replit snags $9B valuation 6 months after hitting $3B",
+              "url": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特AI助手助车队管理安全带",
+          "summary_zh": "福特推出新AI助手，帮助车队所有者监测安全带使用情况。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ford’s new AI assistant will help fleet owners know if seatb",
+              "url": "https://techcrunch.com/2026/03/11/fords-new-ai-assistant-will-help-fleet-owners-know-if-seatbelts-ar",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "1.4万台路由器感染顽固恶意软件",
+          "summary_zh": "约1.4万台路由器感染了高度抵抗清除的恶意软件，引发安全担忧。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "14,000 routers are infected by malware that's highly resista",
+              "url": "https://arstechnica.com/security/2026/03/14000-routers-are-infected-by-malware-thats-highly-resistan",
+              "source": "Ars Technica",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Breakout Ventures募资1.14亿美元投AI科学",
+          "summary_zh": "Breakout Ventures筹集1.14亿美元基金，用于支持AI科学初创公司。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Breakout Ventures raises $114M fund to back AI science start",
+              "url": "https://techcrunch.com/2026/03/11/breakout-ventures-raises-114m-fund-to-back-ai-science-startups/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Netflix或6亿美元收购AI初创公司",
+          "summary_zh": "据报道，Netflix可能以6亿美元收购本·阿弗莱克的AI初创公司。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Netflix may have paid $600 million for Ben Affleck’s AI star",
+              "url": "https://techcrunch.com/2026/03/11/netflix-may-have-paid-600-million-for-ben-afflecks-ai-startup/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "亲伊朗黑客组织声称攻击医疗设备商",
+          "summary_zh": "亲伊朗黑客组织Handala声称对医疗设备公司Stryker的网络攻击负责。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Pro-Iran hacktivist group says it is behind attack on medica",
+              "url": "https://techcrunch.com/2026/03/11/stryker-hack-pro-iran-hacktivist-group-handala-says-it-is-behind-a",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Quince获5亿美元融资估值达100亿",
+          "summary_zh": "Quince在Iconiq领投的5亿美元融资后，估值达到100亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Quince hits $10B valuation with giant $500M round led by Ico",
+              "url": "https://techcrunch.com/2026/03/11/quince-series-e-10b-valuation-with-500m-round-led-by-iconiq/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度数字银行Fi逐步关闭银行服务",
+          "summary_zh": "印度数字银行Fi宣布在其平台上逐步缩减银行服务。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "India neobank Fi winds down banking services on its platform",
+              "url": "https://techcrunch.com/2026/03/11/india-neobank-fi-winds-down-banking-services-on-its-platform/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "自动驾驶",
+        "融资",
+        "网络安全",
+        "SpaceX"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "2026年3月11日，科技领域新闻聚焦于AI、芯片、自动驾驶及消费科技。英伟达宣布巨额投资开源AI模型，Meta推出新芯片以增强AI系统，同时Grammarly因AI功能面临集体诉讼。消费科技方面，有蓝牙音箱促销和数字相框新品。此外，伊朗冲突可能影响全球物价，南卡罗来纳州麻疹疫情放缓。整体来看，AI发展积极，但伴随法律与伦理挑战。",
+      "events": [
+        {
+          "title_zh": "英伟达投资260亿建开源AI模型",
+          "summary_zh": "英伟达宣布将投资260亿美元构建开放权重的AI模型，推动开源AI发展。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nvidia Will Spend $26 Billion to Build Open-Weight AI Models",
+              "url": "https://www.wired.com/story/nvidia-investing-26-billion-open-source-models/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta开发四款新芯片赋能AI",
+          "summary_zh": "Meta正在开发四款新芯片，以提升其AI和推荐系统的性能。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Meta Is Developing 4 New Chips to Power Its AI and Recommend",
+              "url": "https://www.wired.com/story/meta-unveils-four-new-chips-to-power-its-ai-and-recommendation-systems/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Grammarly因AI功能面临集体诉讼",
+          "summary_zh": "Grammarly因其AI“专家评审”功能面临集体诉讼，涉及法律争议。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Grammarly Is Facing a Class Action Lawsuit Over Its AI ‘Expe",
+              "url": "https://www.wired.com/story/grammarly-is-facing-a-class-action-lawsuit-over-its-ai-expert-review-fea",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "数字相框新品旨在拉近人际距离",
+          "summary_zh": "一款新型数字相框推出，旨在通过科技增强人与人之间的连接。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "This Digital Picture Frame Wants to Bring People Closer to a",
+              "url": "https://www.wired.com/story/looking-glass-musubi/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Nuro在东京测试自动驾驶技术",
+          "summary_zh": "Nuro正在东京街道测试其自动驾驶车辆技术，推进城市交通创新。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Nuro is testing its autonomous vehicle tech on Tokyo’s stree",
+              "url": "https://techcrunch.com/2026/03/11/nuro-is-testing-its-autonomous-vehicle-tech-on-tokyos-streets/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗警告美国科技公司或成目标",
+          "summary_zh": "伊朗警告称，随着战争扩大，美国科技公司可能成为攻击目标。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Iran Warns US Tech Firms Could Become Targets as War Expands",
+              "url": "https://www.wired.com/story/iran-warns-us-tech-firms-could-become-targets-as-war-expands/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "南卡罗来纳州麻疹疫情放缓",
+          "summary_zh": "南卡罗来纳州的麻疹疫情传播速度正在减缓，公共卫生状况改善。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "The South Carolina Measles Outbreak Is Slowing Down",
+              "url": "https://www.wired.com/story/the-south-carolina-measles-outbreak-is-slowing-down/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "福特AI助手助车队管理安全带",
+          "summary_zh": "福特推出新AI助手，帮助车队所有者监测安全带使用情况。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ford’s new AI assistant will help fleet owners know if seatb",
+              "url": "https://techcrunch.com/2026/03/11/fords-new-ai-assistant-will-help-fleet-owners-know-if-seatbelts-ar",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "青少年用AI诽谤页面嘲笑老师",
+          "summary_zh": "青少年利用AI驱动的“诽谤页面”嘲笑老师，引发伦理担忧。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Teens Are Using AI-Fueled ‘Slander Pages’ to Mock Their Teac",
+              "url": "https://www.wired.com/story/teens-are-using-ai-fueled-slander-pages-to-mock-their-teachers/",
+              "source": "Wired",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "inDrive收购巴基斯坦Krave Mart",
+          "summary_zh": "网约车公司inDrive收购巴基斯坦的Krave Mart，以加强杂货配送业务。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Ride-hailing inDrive acquires Pakistan’s Krave Mart to bolst",
+              "url": "https://techcrunch.com/2026/03/11/ride-hailing-indrive-acquires-pakistans-kravemart-to-bolster-groce",
+              "source": "TechCrunch",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "芯片",
+        "自动驾驶",
+        "消费科技",
+        "法律诉讼"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv平台发布了一系列涵盖人工智能、物理学、机器人学、计算机科学等多个领域的最新研究论文，包括大语言模型测试、机器人规划系统、暗物质研究等前沿课题，展示了学术界在理论探索与技术应用方面的最新进展。",
+      "events": [
+        {
+          "title_zh": "CREATE：测试LLMs的联想创造力",
+          "summary_zh": "研究提出CREATE方法，用于测试大语言模型的联想创造力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "CREATE: Testing LLMs for Associative Creativity",
+              "url": "http://arxiv.org/abs/2603.09970v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "TiPToP：机器人开放词汇规划系统",
+          "summary_zh": "介绍TiPToP，一个模块化的开放词汇机器人规划系统。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "TiPToP: A Modular Open-Vocabulary Planning System for Robotic",
+              "url": "http://arxiv.org/abs/2603.09971v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "暗物质再耦合研究",
+          "summary_zh": "探讨暗物质再耦合的物理机制及相关模型。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Dark Matter Recoupling",
+              "url": "http://arxiv.org/abs/2603.09969v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "BEACON：语言条件导航预测",
+          "summary_zh": "提出BEACON模型，用于语言条件下的导航可及性预测。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "BEACON: Language-Conditioned Navigation Affordance Prediction",
+              "url": "http://arxiv.org/abs/2603.09961v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "思考后再撒谎：推理提升诚实度",
+          "summary_zh": "研究探讨推理过程如何帮助提升个体的诚实行为。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Think Before You Lie: How Reasoning Improves Honesty",
+              "url": "http://arxiv.org/abs/2603.09957v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "人形机器人运动重定向研究",
+          "summary_zh": "通过模型预测控制实现人形机器人运动的动力学重定向。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Kinodynamic Motion Retargeting for Humanoid Locomotion via M",
+              "url": "http://arxiv.org/abs/2603.09956v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "从语义到像素：掩码自编码器",
+          "summary_zh": "提出从粗到细的掩码自编码器方法，连接语义与像素生成。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "From Semantics to Pixels: Coarse-to-Fine Masked Autoencoders",
+              "url": "http://arxiv.org/abs/2603.09955v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "平带玻色-爱因斯坦凝聚稳定性",
+          "summary_zh": "研究平带系统中玻色-爱因斯坦凝聚的稳定性问题。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Stability of flat-band Bose-Einstein condensation from the g",
+              "url": "http://arxiv.org/abs/2603.09954v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "矩阵运算下神经优化器宽度缩放",
+          "summary_zh": "探讨在矩阵运算背景下神经优化器的宽度缩放特性。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "On the Width Scaling of Neural Optimizers Under Matrix Opera",
+              "url": "http://arxiv.org/abs/2603.09952v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "面向Python的神经调试器",
+          "summary_zh": "探索开发用于Python代码的神经调试器的可能性。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-10",
+          "sources": [
+            {
+              "title": "Towards a Neural Debugger for Python",
+              "url": "http://arxiv.org/abs/2603.09951v1",
+              "source": "arXiv",
+              "published_at": "2026-03-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "arXiv",
+        "人工智能",
+        "物理学",
+        "机器人学",
+        "计算机科学"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "中朝重启火车交通",
+      "summary": "中国与朝鲜宣布重启因疫情中断六年的跨境火车运输，标志着两国陆路通道恢复，可能促进双边贸易与人员往来，对区域经济合作与地缘政治互动产生积极影响。",
+      "action": "关注东北亚贸易与物流机会。"
+    },
+    {
+      "title": "中国两会闭幕定调政策",
+      "summary": "中国年度重要政治会议结束，明确了未来政策方向与经济发展目标，将为国内外企业投资、行业监管及宏观决策提供关键指引，影响市场预期与战略规划。",
+      "action": "调整业务策略以符合政策导向。"
+    },
+    {
+      "title": "Replit估值飙升显AI热潮",
+      "summary": "协作编程平台Replit估值六个月内从30亿跃升至90亿美元，反映AI工具与开发者平台市场热度高涨，可能加速技术投资风向转变，推动企业数字化转型决策。",
+      "action": "评估AI开发工具的应用潜力。"
+    },
+    {
+      "title": "甲骨文股价因AI突破大涨",
+      "summary": "甲骨文股价因AI领域关键进展大幅上涨，表明市场对传统科技巨头转型AI的认可，可能引发行业竞争格局变化，影响企业技术采购与云服务选择。",
+      "action": "重新评估企业云服务供应商。"
+    },
+    {
+      "title": "Netflix拟巨资收购AI初创",
+      "summary": "Netflix可能以6亿美元收购本·阿弗莱克的AI初创公司，凸显流媒体巨头通过AI技术强化内容创作与推荐的战略布局，可能带动娱乐行业技术并购浪潮。",
+      "action": "关注AI在内容产业的创新应用。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
