@@ -1,0 +1,2485 @@
+{
+  "date": "2026-03-12",
+  "generated_at_utc": "2026-03-12T23:58:38.535885+00:00",
+  "generated_at_bjt": "2026-03-13 07:58",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.64,
+      "updated_at": "2026-02-01",
+      "source": "FRED",
+      "delta": 0.0,
+      "delta_pct": 0.0,
+      "direction": "flat",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,37.85 L 5.41,30.66 L 7.82,25.49 L 10.23,20.09 L 12.64,18.29 L 15.05,14.24 L 17.46,9.07 L 19.87,8.62 L 22.28,7.72 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,3.00 L 51.21,3.00 L 53.62,3.00 L 56.03,7.50 L 58.44,14.24 L 60.85,18.51 L 63.26,22.11 L 65.67,25.49 L 68.08,25.49 L 70.49,25.49 L 72.90,25.49 L 75.31,25.49 L 77.72,25.49 L 80.13,25.49 L 82.54,25.49 L 84.95,27.96 L 87.36,30.88 L 89.77,35.60 L 92.18,39.20 L 94.59,41.00 L 97.00,41.00\" stroke=\"#8E8E93\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#8E8E93",
+      "series_values": [
+        3.78,
+        4.1,
+        4.33,
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 12986.60681818182,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 1195.6427272727287,
+      "delta_pct": 10.140330494217832,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,38.16 L 7.82,35.87 L 10.23,31.34 L 12.64,31.84 L 15.05,32.42 L 17.46,32.75 L 19.87,36.78 L 22.28,35.69 L 24.69,35.12 L 27.10,36.04 L 29.51,36.54 L 31.92,38.93 L 34.33,37.16 L 36.74,35.61 L 39.15,36.01 L 41.56,36.34 L 43.97,33.58 L 46.38,28.22 L 48.79,23.44 L 51.21,26.78 L 53.62,28.65 L 56.03,31.53 L 58.44,29.55 L 60.85,27.59 L 63.26,30.85 L 65.67,32.03 L 68.08,31.56 L 70.49,29.04 L 72.90,26.15 L 75.31,30.16 L 77.72,27.61 L 80.13,25.45 L 82.54,25.90 L 84.95,26.61 L 87.36,24.31 L 89.77,19.00 L 92.18,18.49 L 94.59,11.52 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        7651.082857142857,
+        8049.861363636364,
+        8371.091363636364,
+        9007.346363636363,
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3133.982727272727,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 258.08500000000004,
+      "delta_pct": 8.974067386073125,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,36.43 L 5.41,32.81 L 7.82,31.00 L 10.23,27.32 L 12.64,30.32 L 15.05,34.88 L 17.46,33.29 L 19.87,35.73 L 22.28,39.13 L 24.69,40.08 L 27.10,41.00 L 29.51,39.13 L 31.92,38.76 L 34.33,38.46 L 36.74,38.85 L 39.15,38.49 L 41.56,39.33 L 43.97,37.43 L 46.38,27.16 L 48.79,24.61 L 51.21,27.22 L 53.62,32.87 L 56.03,32.75 L 58.44,28.75 L 60.85,23.49 L 63.26,24.00 L 65.67,25.57 L 68.08,24.41 L 70.49,21.20 L 72.90,21.36 L 75.31,32.16 L 77.72,29.13 L 80.13,26.14 L 82.54,23.08 L 84.95,23.37 L 87.36,21.25 L 89.77,15.97 L 92.18,14.99 L 94.59,12.82 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2255.535238095238,
+        2350.716363636364,
+        2398.206818181818,
+        2494.900909090909,
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3206.733181818182,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 44.558181818181765,
+      "delta_pct": 1.409099174403117,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,16.35 L 5.41,17.50 L 7.82,10.28 L 10.23,3.00 L 12.64,9.58 L 15.05,16.34 L 17.46,24.34 L 19.87,35.90 L 22.28,40.38 L 24.69,39.19 L 27.10,39.17 L 29.51,35.50 L 31.92,37.46 L 34.33,33.55 L 36.74,34.89 L 39.15,34.47 L 41.56,41.00 L 43.97,37.03 L 46.38,26.16 L 48.79,16.83 L 51.21,22.76 L 53.62,24.06 L 56.03,26.34 L 58.44,21.21 L 60.85,10.72 L 63.26,14.84 L 65.67,13.64 L 68.08,22.13 L 70.49,23.21 L 72.90,19.61 L 75.31,30.80 L 77.72,29.53 L 80.13,29.04 L 82.54,24.66 L 84.95,23.53 L 87.36,17.58 L 89.77,8.84 L 92.18,7.83 L 94.59,8.43 L 97.00,6.62\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2967.210476190476,
+        2938.9204545454554,
+        3116.522727272727,
+        3295.878181818182,
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 17710.86363636364,
+      "updated_at": "2026-01-01",
+      "source": "FRED",
+      "delta": 2831.833636363639,
+      "delta_pct": 19.032380715433998,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,21.46 L 5.41,12.09 L 7.82,3.00 L 10.23,4.90 L 12.64,8.99 L 15.05,18.12 L 17.46,16.84 L 19.87,21.19 L 22.28,23.58 L 24.69,23.96 L 27.10,25.67 L 29.51,27.80 L 31.92,31.46 L 34.33,34.74 L 36.74,36.29 L 39.15,37.18 L 41.56,36.57 L 43.97,33.76 L 46.38,31.81 L 48.79,27.98 L 51.21,33.50 L 53.62,36.58 L 56.03,36.67 L 58.44,37.03 L 60.85,35.44 L 63.26,38.20 L 65.67,38.96 L 68.08,39.13 L 70.49,39.36 L 72.90,37.34 L 75.31,39.74 L 77.72,39.20 L 80.13,40.12 L 82.54,40.04 L 84.95,40.26 L 87.36,39.85 L 89.77,39.88 L 92.18,41.00 L 94.59,40.45 L 97.00,32.93\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        22032.89285714286,
+        25562.697727272727,
+        28985.92045454545,
+        28271.490909090913,
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "近期全球市场关注点集中在油价飙升、通胀预期升温、股市波动加剧以及消费者财务困境等方面。油价突破100美元大关，地缘政治紧张加剧供应担忧；美国关键通胀指标升至近四年高位，加剧市场对货币政策的忧虑；标普500指数跌破关键支撑位，预示进一步下跌风险；同时，个人财务压力、关税争议及企业盈利问题也引发广泛关注。",
+      "events": [
+        {
+          "title_zh": "油价突破100美元",
+          "summary_zh": "尽管有释放储备协议，油价仍重回100美元以上，地缘政治紧张推高市场担忧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Oil price back above $100 despite deal to release record amo",
+              "url": "https://www.bbc.com/news/articles/c1w5141vx53o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-12"
+            },
+            {
+              "title": "Trump is scrambling to quell the rise of $100 oil. But the m",
+              "url": "https://www.marketwatch.com/story/trump-is-scrambling-to-quell-the-rise-of-100-oil-but-the-market-ke",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "通胀预期升至近四年高位",
+          "summary_zh": "关键通胀指标录得近四年来最高读数，加剧市场对持续通胀和货币政策收紧的忧虑。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "A key gauge of inflation expectations just logged its highes",
+              "url": "https://www.marketwatch.com/story/a-key-inflation-gauge-just-logged-its-highest-reading-in-almost-4-",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "标普500跌破关键支撑位",
+          "summary_zh": "标普500指数跌破主要支撑位，技术分析预示可能进一步下跌10%，市场情绪悲观。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "The S&P 500 just broke a major support. Another 10% decline ",
+              "url": "https://www.marketwatch.com/story/the-s-p-500-just-broke-a-major-support-another-10-decline-is-likel",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "私人信贷恐慌与债券收益率攀升",
+          "summary_zh": "私人信贷市场恐慌与债券收益率上升形成有毒组合，冲击金融市场稳定。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "A toxic mix of private-credit panic and climbing bond yields",
+              "url": "https://www.marketwatch.com/story/a-toxic-mix-of-private-credit-panic-and-climbing-bond-yields-is-ha",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "消费者寻求关税退款遇阻",
+          "summary_zh": "消费者向零售商寻求关税退款很可能落空，凸显贸易政策对普通人的财务影响。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Shoppers seeking a tariff refund from retailers are likely o",
+              "url": "https://www.marketwatch.com/story/shoppers-seeking-a-tariff-refund-from-retailers-are-likely-out-of-",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            },
+            {
+              "title": "Customer sues Costco for tariff refunds",
+              "url": "https://www.bbc.com/news/articles/cwyxz3xe04yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "教师陷入低收入陷阱",
+          "summary_zh": "一位教师自述陷入低收入陷阱，对未来收入增长感到绝望，反映社会收入不平等问题。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "‘I am stuck in a low-income trap’: I’m a teacher and very go",
+              "url": "https://www.marketwatch.com/story/i-am-stuck-in-a-low-income-trap-im-a-teacher-will-i-ever-earn-six-",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "64岁继承者面临财务困境",
+          "summary_zh": "一位64岁人士继承40万美元但几乎没有储蓄，凸显退休财务规划和社保不足的挑战。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "‘I have no savings’: I’m inheriting $400,000. I’m 64 with $9",
+              "url": "https://www.marketwatch.com/story/i-have-no-savings-im-inheriting-400-000-im-64-with-900-in-social-s",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Adobe财报超预期股价却下跌",
+          "summary_zh": "Adobe公司财报超出预期，但股价仍然下跌，可能反映市场对增长前景或估值的担忧。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Why Adobe’s stock is falling despite an earnings beat",
+              "url": "https://www.marketwatch.com/story/why-adobes-stock-is-falling-despite-an-earnings-beat-b6a67617?mod=",
+              "source": "MarketWatch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗战争凸显全球对海湾石油依赖",
+          "summary_zh": "伊朗战争暴露了世界对海湾石油和天然气的严重依赖，加剧能源安全担忧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "How Iran war laid bare the world's reliance on Gulf oil and ",
+              "url": "https://www.bbc.com/news/articles/c15x1y8d37vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国银行应用显示错误余额",
+          "summary_zh": "劳埃德、苏格兰银行和哈利法克斯银行的应用向客户显示错误余额，引发对金融科技可靠性的质疑。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Lloyds, Bank of Scotland and Halifax apps showed customers o",
+              "url": "https://www.bbc.com/news/articles/c4g23npxpwgo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "油价",
+        "通胀",
+        "股市",
+        "财务压力",
+        "地缘政治"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "本组新闻涉及多地缘政治事件及社会新闻。伊朗新任最高领袖威胁封锁霍尔木兹海峡，引发地区紧张，但伊朗特使随后又表示将保持海峡开放。阿联酋部长呼吁伊朗停止对海湾的袭击。尼泊尔说唱歌手出身的政治家赢得大选。以色列军方撤销对士兵的指控。法国曝出涉及百万辆非法车辆的“幽灵车”丑闻。中国方面，批准了要求少数民族学习国家通用语言的“民族团结”法，另有一名中国公民因试图走私2000只女王凤凰螺被捕。此外，还有莫斯科音乐会袭击案宣判、NASA航天器重返大气层、埃塞俄比亚洪灾等国际事件。",
+      "events": [
+        {
+          "title_zh": "伊朗新领袖威胁封锁霍尔木兹海峡",
+          "summary_zh": "伊朗新任最高领袖誓言将封锁霍尔木兹海峡，加剧地区紧张局势。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Iran's new supreme leader vows to block Strait of Hormuz in ",
+              "url": "https://www.bbc.com/news/articles/cdxg599655vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿联酋部长呼吁伊朗停止袭击",
+          "summary_zh": "阿联酋部长告诉BBC，伊朗必须停止对海湾地区的袭击。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Emirati minister tells BBC Iran must end strikes on Gulf",
+              "url": "https://www.bbc.com/news/articles/cy8lzn2ejpjo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼泊尔说唱歌手政党赢得大选",
+          "summary_zh": "说唱歌手兼政治家巴伦德拉·沙阿领导的政党在尼泊尔选举中获胜。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Rapper-politician Balendra Shah's party wins Nepal election",
+              "url": "https://www.bbc.com/news/articles/c8jxnjvjkg7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列军方撤销士兵指控",
+          "summary_zh": "以色列军方撤销了对被指控士兵的指控。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Israeli military drops charges against soldiers accused of a",
+              "url": "https://www.bbc.com/news/articles/cm2xrz71zm3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国曝出百万辆幽灵车丑闻",
+          "summary_zh": "法国曝出丑闻，允许一百万辆非法“幽灵车”上路。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "France's ghost car scandal that allowed one million illegal ",
+              "url": "https://www.bbc.com/news/articles/cpqw0jgn5xgo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国批准民族团结法",
+          "summary_zh": "中国批准“民族团结”法，要求少数民族学习国家通用语言。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "China approves 'ethnic unity' law requiring minorities to le",
+              "url": "https://www.bbc.com/news/articles/cp9meeek051o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "莫斯科恐袭案19人被判刑",
+          "summary_zh": "莫斯科致命音乐会袭击案，19人被判处监禁。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Nineteen jailed over deadly Moscow concert attack",
+              "url": "https://www.bbc.com/news/articles/c0j5lx75vg3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国公民涉走私女王凤凰螺被捕",
+          "summary_zh": "一名中国公民因试图走私2000只女王凤凰螺被捕。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Chinese national arrested over attempt to smuggle 2,000 quee",
+              "url": "https://www.bbc.com/news/articles/cz7gd57z33zo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA航天器重返地球大气层",
+          "summary_zh": "NASA重达1300磅的航天器重新进入地球大气层。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Nasa spacecraft weighing 1,300lb re-enters Earth's atmospher",
+              "url": "https://www.bbc.com/news/articles/cd9gwdgg38vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊拉克伊朗支持力量基地遭空袭",
+          "summary_zh": "空袭瞄准了伊拉克境内伊朗支持力量的基地。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Air attacks target bases of Iran-backed forces in Iraq",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/12/air-attacks-target-bases-of-iran-backed-forces-in",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "伊朗",
+        "霍尔木兹海峡",
+        "尼泊尔大选",
+        "中国法律",
+        "走私"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "今日科技新闻涵盖多个领域，包括AI应用、网络安全、电动汽车、企业动态和科技政策。其中，Perplexity推出AI个人电脑，Lucid发布中型电动车平台，Rivian公布R2 SUV定价，本田因亏损取消三款美国产电动车。此外，HP面临停止阻止第三方墨盒的压力，苹果MacBook Neo设计更易维修，谷歌地图进行十年最大导航更新。",
+      "events": [
+        {
+          "title_zh": "Perplexity推出AI个人电脑",
+          "summary_zh": "Perplexity发布“个人电脑”，将AI代理引入个人设备，增强AI应用体验。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Perplexity's \"Personal Computer\" brings its AI agents to the",
+              "url": "https://arstechnica.com/ai/2026/03/perplexitys-personal-computer-brings-its-ai-agents-to-the-uh-pers",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Lucid发布中型电动车平台",
+          "summary_zh": "Lucid宣布中型电动车平台，称盈利将依赖该平台，推动电动汽车发展。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Lucid announces midsize EV platform, says profitability lies",
+              "url": "https://arstechnica.com/cars/2026/03/lucid-announces-midsize-ev-platform-says-profitability-lies-wit",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian公布R2 SUV定价",
+          "summary_zh": "Rivian揭示R2 SUV的定价和配置细节，预计将影响电动汽车市场竞争。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Rivian reveals pricing and trim details for its R2 SUV",
+              "url": "https://arstechnica.com/cars/2026/03/rivian-reveals-pricing-and-trim-details-for-its-r2-suv/",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "本田取消三款美国产电动车",
+          "summary_zh": "本田因面临重大亏损，取消三款美国制造的电动汽车计划，反映行业挑战。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Facing heavy losses, Honda cancels its three US-made electri",
+              "url": "https://arstechnica.com/cars/2026/03/facing-heavy-losses-honda-cancels-its-three-us-made-electric-ve",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "HP面临停止阻止第三方墨盒压力",
+          "summary_zh": "HP有新动机停止在其打印机中阻止第三方墨盒，可能影响消费者选择。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "HP has new incentive to stop blocking third-party ink in its",
+              "url": "https://arstechnica.com/gadgets/2026/03/hp-has-new-incentive-to-stop-blocking-third-party-ink-in-its",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果MacBook Neo设计更易维修",
+          "summary_zh": "苹果MacBook Neo采用更模块化设计，使维修更容易且成本更低。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Apple's MacBook Neo makes repairs easier and cheaper than ot",
+              "url": "https://arstechnica.com/gadgets/2026/03/more-modular-design-makes-macbook-neo-easier-to-fix-than-oth",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌地图进行十年最大导航更新",
+          "summary_zh": "谷歌地图获得十年来最大的导航重新设计，提升用户体验和功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Google Maps gets its biggest navigation redesign in a decade",
+              "url": "https://arstechnica.com/gadgets/2026/03/google-maps-gets-its-biggest-navigation-redesign-in-a-decade",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Stryker遭受网络攻击关闭",
+          "summary_zh": "Stryker遭受擦除器攻击导致关闭，调查攻击者、方式和原因。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "The who, what, and why of the attack that has shut down Stry",
+              "url": "https://arstechnica.com/security/2026/03/whats-known-about-wiper-attack-on-stryker-a-major-supplier-",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Live Nation主管承认抬高票价",
+          "summary_zh": "Live Nation主管吹嘘抬高票价并“抢劫”购票者，引发公众批评。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Live Nation director boasted of gouging ticket buyers, \"robb",
+              "url": "https://arstechnica.com/tech-policy/2026/03/live-nation-director-boasted-of-gouging-ticket-buyers-ro",
+              "source": "Ars Technica",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Substack推出内置录音工作室",
+          "summary_zh": "Substack推出内置录音工作室，帮助创作者更方便地制作音频内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Substack launches a built-in recording studio",
+              "url": "https://techcrunch.com/2026/03/12/substack-launches-a-built-in-recording-studio/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "电动汽车",
+        "网络安全",
+        "科技政策",
+        "企业动态"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "2026年3月12日，全球科技领域动态频发，涵盖AI、自动驾驶、机器人、企业软件等多个方向。英伟达GTC大会即将举行，多家初创公司获得高估值，同时也有企业进行裁员调整。整体来看，AI与自动化仍是创新热点，但市场也面临法律与竞争挑战。",
+      "events": [
+        {
+          "title_zh": "英伟达GTC 2026主题演讲预告",
+          "summary_zh": "英伟达CEO黄仁勋将在GTC 2026大会上发表主题演讲，展示最新技术进展。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",
+              "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "人形机器人公司Sunday估值达11.5亿美元",
+          "summary_zh": "人形机器人制造商Sunday完成融资，估值达到11.5亿美元，用于家庭机器人开发。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to b",
+              "url": "https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-ho",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Lucid Motors展示Lunar机器人出租车概念",
+          "summary_zh": "电动汽车公司Lucid Motors推出名为Lunar的机器人出租车概念车，进军自动驾驶领域。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Lucid Motors shows off robotaxi concept called ‘Lunar’",
+              "url": "https://techcrunch.com/2026/03/12/lucid-motors-shows-off-robotaxi-concept-called-lunar/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "销售自动化初创公司Rox AI估值达12亿美元",
+          "summary_zh": "销售自动化初创公司Rox AI获得高估值，达到12亿美元，显示AI在企业应用中的潜力。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Sales automation startup Rox AI hits $1.2B valuation, source",
+              "url": "https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Webflow收购AI内容生成平台Vidoso",
+          "summary_zh": "网站建设平台Webflow收购AI内容生成平台Vidoso，以增强其AI能力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Webflow buys AI content-generation platform Vidoso to bolste",
+              "url": "https://techcrunch.com/2026/03/12/webflow-buys-ai-content-generation-platform-vidoso-to-bolster-its-",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Atlassian效仿Block进行裁员",
+          "summary_zh": "企业软件公司Atlassian跟随Block的步伐，以人工智能为名进行裁员调整。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Atlassian follows Block’s footsteps and cuts staff in the na",
+              "url": "https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-a",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bumble将推出AI约会助手Bee",
+          "summary_zh": "约会应用Bumble计划推出名为Bee的AI约会助手，以提升用户体验。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Bumble to launch an AI dating assistant, ‘Bee’",
+              "url": "https://techcrunch.com/2026/03/12/bumble-to-launch-an-ai-dating-assistant-bee/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "执法机构关闭数万台黑客设备组成的僵尸网络",
+          "summary_zh": "执法机构成功关闭一个由数万台被黑设备组成的大型僵尸网络，打击网络犯罪。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Law enforcement shuts down botnet made of tens of thousands ",
+              "url": "https://techcrunch.com/2026/03/12/law-enforcement-shuts-down-botnet-made-of-tens-of-thousands-of-hac",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "作家起诉Grammarly侵犯作者权益",
+          "summary_zh": "一名作家起诉语法检查工具Grammarly，指控其将作者作品用于AI训练侵犯权益。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "A writer is suing Grammarly for turning her and other author",
+              "url": "https://techcrunch.com/2026/03/12/a-writer-is-suing-grammarly-for-turning-her-and-other-authors-into",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉在英国成为公用事业公司",
+          "summary_zh": "特斯拉在英国注册为公用事业公司，将与Octopus Energy等展开竞争。",
+          "region": "global",
+          "score": 0.55,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Tesla becomes a utility in the UK, setting up showdown with ",
+              "url": "https://techcrunch.com/2026/03/12/tesla-becomes-a-utility-in-the-uk-setting-up-showdown-with-octopus",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "AI",
+        "自动驾驶",
+        "机器人",
+        "初创公司",
+        "估值"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "2026年3月12日，科技领域有多项重要动态，涉及新能源汽车、人工智能、机器人、企业并购及监管等多个方面。其中，Rivian推迟发布低价R2车型，Lucid展示名为“Lunar”的机器人出租车概念，特斯拉在英国成为公用事业公司，引发市场关注。同时，多家AI和机器人初创公司获得高估值，而部分企业则面临裁员或法律诉讼。整体来看，行业在创新与扩张中伴随着挑战与调整。",
+      "events": [
+        {
+          "title_zh": "Rivian推迟发布4.5万美元R2车型",
+          "summary_zh": "Rivian将4.5万美元基础版R2车型的发布时间推迟至2027年底，可能影响其市场扩张计划。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Why Rivian is holding the $45,000 base model R2 until ‘late 2027’",
+              "url": "https://techcrunch.com/2026/03/12/why-rivian-is-holding-the-45000-base-model-r2-until-late-2027/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Lucid展示“Lunar”机器人出租车概念",
+          "summary_zh": "Lucid Motors展示了一款名为“Lunar”的机器人出租车概念车，进军自动驾驶出行领域。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Lucid Motors shows off robotaxi concept called ‘Lunar’",
+              "url": "https://techcrunch.com/2026/03/12/lucid-motors-shows-off-robotaxi-concept-called-lunar/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉在英国成为公用事业公司",
+          "summary_zh": "特斯拉在英国注册为公用事业公司，将与Octopus Energy等展开竞争，拓展能源业务。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Tesla becomes a utility in the UK, setting up showdown with Octopus",
+              "url": "https://techcrunch.com/2026/03/12/tesla-becomes-a-utility-in-the-uk-setting-up-showdown-with-octopus/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "人形机器人公司Sunday估值达11.5亿美元",
+          "summary_zh": "人形机器人制造商Sunday估值达到11.5亿美元，计划建造家用机器人，显示资本看好该领域。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to build home robots",
+              "url": "https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-ho",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "销售自动化初创公司Rox AI估值12亿美元",
+          "summary_zh": "销售自动化初创公司Rox AI估值达到12亿美元，反映AI在企业服务市场的热度。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Sales automation startup Rox AI hits $1.2B valuation, source",
+              "url": "https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Atlassian效仿Block进行裁员",
+          "summary_zh": "Atlassian跟随Block的步伐，以人工智能为名进行裁员，显示企业结构调整趋势。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Atlassian follows Block’s footsteps and cuts staff in the name of AI",
+              "url": "https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-a",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "作家起诉Grammarly侵犯版权",
+          "summary_zh": "一名作家起诉Grammarly，指控其AI工具将作者变成“幽灵写手”，涉及版权争议。",
+          "region": "global",
+          "score": 0.35,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "A writer is suing Grammarly for turning her and other authors into ghosts",
+              "url": "https://techcrunch.com/2026/03/12/a-writer-is-suing-grammarly-for-turning-her-and-other-authors-into",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bumble将推出AI约会助手“Bee”",
+          "summary_zh": "Bumble计划推出名为“Bee”的AI约会助手，旨在提升用户体验和匹配效率。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Bumble to launch an AI dating assistant, ‘Bee’",
+              "url": "https://techcrunch.com/2026/03/12/bumble-to-launch-an-ai-dating-assistant-bee/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Webflow收购AI内容生成平台Vidoso",
+          "summary_zh": "Webflow收购AI内容生成平台Vidoso，以增强其网站建设工具的AI能力。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Webflow buys AI content-generation platform Vidoso to bolster its AI features",
+              "url": "https://techcrunch.com/2026/03/12/webflow-buys-ai-content-generation-platform-vidoso-to-bolster-its-",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "执法部门关闭数万台黑客设备僵尸网络",
+          "summary_zh": "执法部门成功关闭一个由数万台被黑设备组成的僵尸网络，打击网络犯罪活动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Law enforcement shuts down botnet made of tens of thousands of hacked devices",
+              "url": "https://techcrunch.com/2026/03/12/law-enforcement-shuts-down-botnet-made-of-tens-of-thousands-of-hac",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "新能源汽车",
+        "人工智能",
+        "机器人",
+        "估值",
+        "监管"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "近期全球能源与金属市场动态频发。中东地缘冲突持续影响能源供应安全，伊朗警告可能袭击海湾能源设施，乌克兰打击俄罗斯石油出口枢纽，加剧供应风险。同时，能源转型持续推进，美国能源部公布电网升级计划，特斯拉获英国供电许可，力拓生产低碳铝材。矿业方面，多家公司公布新项目投资与生产动态，但Artemis Gold面临生产中断。总体看，地缘风险推高能源价格预期，但绿色转型与具体项目进展带来结构性机会。",
+      "events": [
+        {
+          "title_zh": "伊朗警告或袭击海湾能源设施",
+          "summary_zh": "伊朗警告若其石油设施遭袭，将报复性打击海湾地区能源资产，加剧地缘风险。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Iran Warns Gulf Energy Assets Could Burn if Its Oil Faciliti",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Warns-Gulf-Energy-Assets-Could-Burn-if-Its-O",
+              "source": "OilPrice",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌克兰打击俄石油出口枢纽",
+          "summary_zh": "乌克兰袭击俄罗斯南部主要石油出口管道枢纽，可能影响原油供应。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Ukraine Hits Major Oil Export Pipeline Hub in South Russia",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Hits-Major-Oil-Export-Pipeline-Hub-in-Sou",
+              "source": "OilPrice",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国能源部公布19亿美元电网升级计划",
+          "summary_zh": "美国能源部宣布投入19亿美元推动电网现代化升级，支持能源转型。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "DOE Unveils $1.9 Billion Electric Grid Upgrade Push",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/DOE-Unveils-19-Billion-Electric-Grid-Upgrade-Push",
+              "source": "OilPrice",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉获英国供电许可证",
+          "summary_zh": "特斯拉获得在英国全国范围内供应电力的许可证，拓展能源业务。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Tesla Wins License to Supply Electricity Across the UK",
+              "url": "https://oilprice.com/Energy/Energy-General/Tesla-Wins-License-to-Supply-Electricity-Across-the-UK.ht",
+              "source": "OilPrice",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "力拓生产低碳铝材",
+          "summary_zh": "力拓与Prysmian合作生产低碳铝棒，推进金属行业减排。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Rio Tinto produces low-carbon aluminum rod in partnership wi",
+              "url": "https://www.mining.com/rio-tinto-produces-low-carbon-aluminum-rod-in-partnership-with-prysmian/",
+              "source": "Mining.com",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Artemis Gold面临生产中断",
+          "summary_zh": "Artemis Gold遭遇生产中断，但维持年度产量指引不变。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Artemis Gold faces production outage, guidance intact",
+              "url": "https://www.mining.com/artemis-gold-faces-production-outage-guidance-intact/",
+              "source": "Mining.com",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Cabral Gold在巴西获最佳钻探结果",
+          "summary_zh": "Cabral Gold在巴西项目获最佳钻探结果，股价大涨，投产在即。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Cabral Gold surges on best results as output nears in Brazil",
+              "url": "https://www.mining.com/cabral-gold-surges-on-best-results-as-output-nears-in-brazil/",
+              "source": "Mining.com",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "First Quantum以3.4亿美元出售Çayeli矿",
+          "summary_zh": "First Quantum将土耳其Çayeli铜锌矿以3.4亿美元出售给当地集团。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "First Quantum deals Çayeli mine to Turkish group for $340M",
+              "url": "https://www.mining.com/first-quantum-deals-cayeli-mine-to-turkish-group-for-340m/",
+              "source": "Mining.com",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Resolute Mining批准Doropo金矿项目投资",
+          "summary_zh": "Resolute Mining最终批准科特迪瓦Doropo金矿项目投资，推进开发。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Resolute Mining greenlights Doropo gold project investment",
+              "url": "https://www.mining.com/resolute-mining-greenlights-doropo-gold-project-investment/",
+              "source": "Mining.com",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "富查伊拉油码头遭袭后恢复运营",
+          "summary_zh": "阿联酋富查伊拉石油终端在遭遇无人机袭击后，已恢复运营。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Fujairah Oil Terminals Resume Operations After Drone Attack",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Fujairah-Oil-Terminals-Resume-Operations-After-Dr",
+              "source": "OilPrice",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "地缘冲突",
+        "能源供应",
+        "电网升级",
+        "低碳铝",
+        "黄金项目"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "近期国际新闻涉及多个领域，包括地缘政治冲突、气候变化、科技监管及商业动态。其中，伊朗战争引发的能源危机、苏丹无人机袭击学校事件、以及中国议会通过民族团结法受到关注。整体新闻情绪偏向负面，主要反映全球不稳定因素和挑战。",
+      "events": [
+        {
+          "title_zh": "亚洲应对伊朗战争能源危机",
+          "summary_zh": "伊朗战争导致全球能源供应紧张，亚洲国家正紧急应对由此引发的能源危机。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Asia scrambles to confront energy crisis unleashed by Iran war",
+              "url": "https://www.theguardian.com/world/2026/mar/12/asia-energy-crisis-iran-war",
+              "source": "The Guardian",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "苏丹无人机袭击学校致17死",
+          "summary_zh": "苏丹一所学校遭无人机袭击，造成至少17人死亡，引发国际关注。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "At least 17 killed after drone strikes school in Sudan",
+              "url": "https://www.theguardian.com/world/2026/mar/11/at-least-17-killed-after-drone-strikes-school-in-sudan",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国议会通过民族团结法",
+          "summary_zh": "中国议会预计批准一项新的民族团结法律，旨在加强民族关系。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "China’s rubber-stamp parliament set to approve ‘ethnic unity law’",
+              "url": "https://www.theguardian.com/world/2026/mar/12/china-ethnic-unity-law-parliament",
+              "source": "The Guardian",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴西呼吁放弃化石燃料防洪",
+          "summary_zh": "专家建议巴西咖啡产区放弃化石燃料，以应对致命洪水灾害。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Quit fossil fuels to stem deadly floods in Brazil’s coffee heartland",
+              "url": "https://www.theguardian.com/world/2026/mar/12/quit-fossil-fuels-to-stem-deadly-floods-in-brazils-cof",
+              "source": "The Guardian",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta打击东南亚诈骗账户",
+          "summary_zh": "Meta公司禁用超过15万个账户，以打击东南亚地区的犯罪诈骗中心。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Meta disables more than 150,000 accounts in crackdown on south-east Asia scam centres",
+              "url": "https://www.theguardian.com/technology/2026/mar/11/meta-south-east-asia-criminal-scam-centers",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "智利极右翼候选人引关注",
+          "summary_zh": "智利极右翼候选人何塞·安东尼奥·卡斯特，作为皮诺切特粉丝，可能改变国家政治方向。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "José Antonio Kast, the Pinochet fan about to swerve Chile to the far right",
+              "url": "https://www.theguardian.com/world/2026/mar/11/jose-antonio-kast-pinochet-fan-chile-far-right",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国终止全球健康项目",
+          "summary_zh": "英国政府决定终止其旗舰全球健康项目，引发发展领域担忧。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "UK government axes flagship global health project",
+              "url": "https://www.theguardian.com/global-development/2026/mar/12/uk-government-axes-flagship-global-health",
+              "source": "The Guardian",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "霍尔木兹海峡商船遭袭",
+          "summary_zh": "三艘商船在霍尔木兹海峡遭袭击，地区紧张局势升级。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Three merchant ships struck as tensions rise in Hormuz strait",
+              "url": "https://www.theguardian.com/news/2026/mar/11/us-iran-strait-of-hormuz-mine-boat-attacks",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "加拿大血浆捐赠者死亡事件",
+          "summary_zh": "加拿大两家私人诊所发生血浆捐赠者死亡事件，引发安全担忧。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Two people die after donating plasma at Canadian clinics under investigation",
+              "url": "https://www.theguardian.com/world/2026/mar/12/two-plasma-donors-die-private-canada-clinics",
+              "source": "The Guardian",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "萨尔瓦多大逮捕政策涉犯罪",
+          "summary_zh": "萨尔瓦多的大规模逮捕政策可能构成危害人类罪，引发国际批评。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "El Salvador’s mass arrest policy may have led to crimes against humanity",
+              "url": "https://www.theguardian.com/world/2026/mar/11/el-salvador-mass-incarceration-crimes-against-humanity",
+              "source": "The Guardian",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "能源危机",
+        "无人机袭击",
+        "民族团结法",
+        "气候变化",
+        "科技监管"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "本组新闻涉及多个国际事件，包括伊朗威胁封锁霍尔木兹海峡、尼泊尔选举结果、以色列军方撤销指控、法国幽灵车丑闻、中国通过民族团结法及中国公民走私被捕等。整体情绪复杂，既有地缘政治紧张，也有国内法律与社会事件。",
+      "events": [
+        {
+          "title_zh": "伊朗新领袖威胁封锁海峡",
+          "summary_zh": "伊朗新最高领袖誓言封锁霍尔木兹海峡，引发地区紧张。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Iran's new supreme leader vows to block Strait of Hormuz in",
+              "url": "https://www.bbc.com/news/articles/cdxg599655vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿联酋部长呼吁伊朗停止袭击",
+          "summary_zh": "阿联酋部长通过BBC要求伊朗结束对海湾地区的打击行动。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Emirati minister tells BBC Iran must end strikes on Gulf",
+              "url": "https://www.bbc.com/news/articles/cy8lzn2ejpjo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼泊尔说唱歌手政党赢得选举",
+          "summary_zh": "说唱歌手兼政治家巴伦德拉·沙阿的政党在尼泊尔选举中获胜。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Rapper-politician Balendra Shah's party wins Nepal election",
+              "url": "https://www.bbc.com/news/articles/c8jxnjvjkg7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列军方撤销士兵指控",
+          "summary_zh": "以色列军方撤销了对被指控士兵的指控，引发争议。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Israeli military drops charges against soldiers accused of a",
+              "url": "https://www.bbc.com/news/articles/cm2xrz71zm3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国幽灵车丑闻曝光",
+          "summary_zh": "法国曝出幽灵车丑闻，涉及百万辆非法车辆，引发社会关注。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "France's ghost car scandal that allowed one million illegal",
+              "url": "https://www.bbc.com/news/articles/cpqw0jgn5xgo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国通过民族团结法",
+          "summary_zh": "中国批准民族团结法，要求少数民族学习国家语言，加强统一。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "China approves 'ethnic unity' law requiring minorities to le",
+              "url": "https://www.bbc.com/news/articles/cp9meeek051o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国公民走私皇后被捕",
+          "summary_zh": "一名中国公民因试图走私2000只皇后被捕，涉及非法贸易。",
+          "region": "cn",
+          "score": 0.2,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Chinese national arrested over attempt to smuggle 2,000 quee",
+              "url": "https://www.bbc.com/news/articles/cz7gd57z33zo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗称将保持海峡开放",
+          "summary_zh": "伊朗特使表示德黑兰将保持霍尔木兹海峡开放，缓和紧张局势。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Iran envoy says Tehran will keep Strait of Hormuz open",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/12/iran-envoy-says-tehran-will-keep-strait-of-hormuz",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "卡塔尔拒绝与美国产生裂痕",
+          "summary_zh": "卡塔尔拒绝试图在天然气问题上与美国产生裂痕的企图。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Qatar rejects attempts to ‘drive wedge’ with US over gas pau",
+              "url": "https://www.aljazeera.com/news/2026/3/12/qatar-rejects-attempts-to-drive-wedge-with-us-over-gas-paus",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "空袭瞄准伊拉克伊朗势力",
+          "summary_zh": "空袭针对伊拉克境内伊朗支持的武装力量基地，加剧地区冲突。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Air attacks target bases of Iran-backed forces in Iraq",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/12/air-attacks-target-bases-of-iran-backed-forces-in",
+              "source": "Al Jazeera",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "伊朗",
+        "尼泊尔",
+        "中国",
+        "霍尔木兹海峡",
+        "走私"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "2026年3月12日，科技领域有多项重要动态，包括英伟达GTC大会、多家公司融资或估值提升、新产品发布以及行业整合。整体来看，人工智能、电动汽车和机器人技术是焦点，市场情绪偏向积极，但部分公司面临裁员或法律挑战。",
+      "events": [
+        {
+          "title_zh": "英伟达GTC 2026主题演讲观看指南",
+          "summary_zh": "TechCrunch提供如何观看英伟达CEO黄仁勋GTC 2026主题演讲的指南。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",
+              "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rox AI估值达12亿美元",
+          "summary_zh": "销售自动化初创公司Rox AI估值达到12亿美元，显示市场对其前景看好。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Sales automation startup Rox AI hits $1.2B valuation, source",
+              "url": "https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Lucid展示机器人出租车概念车",
+          "summary_zh": "Lucid Motors展示名为“Lunar”的机器人出租车概念车，进军自动驾驶领域。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Lucid Motors shows off robotaxi concept called ‘Lunar’",
+              "url": "https://techcrunch.com/2026/03/12/lucid-motors-shows-off-robotaxi-concept-called-lunar/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "人形机器人公司Sunday估值11.5亿美元",
+          "summary_zh": "人形机器人制造商Sunday估值达到11.5亿美元，计划建造家用机器人。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to b",
+              "url": "https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-ho",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Webflow收购AI内容平台Vidoso",
+          "summary_zh": "Webflow收购AI内容生成平台Vidoso，以增强其产品能力。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Webflow buys AI content-generation platform Vidoso to bolste",
+              "url": "https://techcrunch.com/2026/03/12/webflow-buys-ai-content-generation-platform-vidoso-to-bolster-its-",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bumble将推出AI约会助手",
+          "summary_zh": "Bumble计划推出名为“Bee”的AI约会助手，提升用户体验。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Bumble to launch an AI dating assistant, ‘Bee’",
+              "url": "https://techcrunch.com/2026/03/12/bumble-to-launch-an-ai-dating-assistant-bee/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "执法机构关闭大型僵尸网络",
+          "summary_zh": "执法机构关闭了由数万台被黑设备组成的僵尸网络，增强网络安全。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Law enforcement shuts down botnet made of tens of thousands ",
+              "url": "https://techcrunch.com/2026/03/12/law-enforcement-shuts-down-botnet-made-of-tens-of-thousands-of-hac",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "作家起诉Grammarly侵犯版权",
+          "summary_zh": "一名作家起诉Grammarly，指控其将作者作品用于AI训练，涉及版权问题。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "A writer is suing Grammarly for turning her and other author",
+              "url": "https://techcrunch.com/2026/03/12/a-writer-is-suing-grammarly-for-turning-her-and-other-authors-into",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特斯拉在英国成为公用事业公司",
+          "summary_zh": "特斯拉在英国注册为公用事业公司，将与Octopus Energy等展开竞争。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Tesla becomes a utility in the UK, setting up showdown with ",
+              "url": "https://techcrunch.com/2026/03/12/tesla-becomes-a-utility-in-the-uk-setting-up-showdown-with-octopus",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Atlassian效仿Block裁员",
+          "summary_zh": "Atlassian效仿Block公司，以人工智能为名进行裁员，引发关注。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Atlassian follows Block’s footsteps and cuts staff in the na",
+              "url": "https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-a",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "positive",
+      "sentiment_score": 0.7,
+      "keywords": [
+        "人工智能",
+        "电动汽车",
+        "机器人",
+        "估值",
+        "产品发布"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "本组新闻涵盖了前沿科技领域的多个动态，包括AI应用、网络安全、企业动态和产品发布。主要事件涉及谷歌在Gemini中可能引入广告、美国立法者试图限制FBI无证监听、以及Rivian推迟发布低价车型等。整体来看，科技行业在监管、商业化和产品创新方面持续演进。",
+      "events": [
+        {
+          "title_zh": "谷歌未排除Gemini引入广告",
+          "summary_zh": "谷歌高管表示，不排除在未来AI助手Gemini中引入广告的可能性。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Google Is Not Ruling Out Ads in Gemini",
+              "url": "https://www.wired.com/story/google-nick-fox-advertising-search-ai-gemini/",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "美立法者欲终止FBI无证监听",
+          "summary_zh": "美国国会议员提出法案，旨在终止联邦调查局的无证监听权限。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "US Lawmakers Move to Kill the FBI’s Warrantless Wiretap Acce",
+              "url": "https://www.wired.com/story/us-lawmakers-move-to-kill-the-fbis-warrantless-wiretap-access/",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian推迟发布4.5万美元R2车型",
+          "summary_zh": "电动汽车公司Rivian将基础版4.5万美元的R2车型发布时间推迟至2027年底。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Why Rivian is holding the $45,000 base model R2 until ‘late ",
+              "url": "https://techcrunch.com/2026/03/12/why-rivian-is-holding-the-45000-base-model-r2-until-late-2027/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "销售自动化初创公司Rox AI估值达12亿美元",
+          "summary_zh": "销售自动化初创公司Rox AI在新一轮融资中估值达到12亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Sales automation startup Rox AI hits $1.2B valuation, source",
+              "url": "https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Substack推出内置录音室",
+          "summary_zh": "新闻通讯平台Substack推出内置录音室功能，以支持创作者制作音频内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Substack launches a built-in recording studio",
+              "url": "https://techcrunch.com/2026/03/12/substack-launches-a-built-in-recording-studio/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌地图集成Gemini推出新界面",
+          "summary_zh": "谷歌地图推出由Gemini AI驱动的新工具“Ask Maps”，提供对话式交互界面。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Google Maps Gets Chatty With a New Gemini-Powered Interface",
+              "url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic因AI技术遭美国防部起诉",
+          "summary_zh": "AI公司Anthropic因涉及国防部的合同纠纷而面临法律诉讼。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "‘Uncanny Valley’: Anthropic’s DOD Lawsuit, War Memes, and AI",
+              "url": "https://www.wired.com/story/uncanny-valley-podcast-anthropic-department-defense-lawsuit-iran-war-mem",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗黑客组织以'Handala'为标志发起反击",
+          "summary_zh": "伊朗黑客组织“Handala”成为该国在网络空间对美国和以色列进行反击的代表形象。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "How ‘Handala’ Became the Face of Iran’s Hacker Counterattack",
+              "url": "https://www.wired.com/story/handala-hacker-group-iran-us-israel-war/",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果发布M5 Max芯片MacBook Pro评测",
+          "summary_zh": "媒体评测苹果新款搭载M5 Max芯片的16英寸MacBook Pro，称其为最快MacBook。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "Apple MacBook Pro Review (M5 Max, 16-inch): The Fastest MacB",
+              "url": "https://www.wired.com/review/macbook-pro-16-inch-m5-max/",
+              "source": "Wired",
+              "published_at": "2026-03-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "如何观看黄仁勋Nvidia GTC 2026主题演讲",
+          "summary_zh": "科技媒体提供指南，介绍如何观看Nvidia CEO黄仁勋在GTC 2026大会上的主题演讲。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-12",
+          "sources": [
+            {
+              "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",
+              "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+              "source": "TechCrunch",
+              "published_at": "2026-03-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "人工智能",
+        "网络安全",
+        "监管",
+        "企业动态",
+        "产品发布"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv平台发布了一系列涵盖人工智能、机器学习、物理学、计算机科学等多个领域的最新研究论文。这些研究包括智能体喜剧生成、光场标记化、神经场热层析成像、视频到音乐生成、自动驾驶中的世界动力学学习、量子模拟、大型语言模型压缩以及差分隐私等前沿主题，展示了学术界在多个技术方向的探索进展。",
+      "events": [
+        {
+          "title_zh": "COMIC：智能体喜剧生成",
+          "summary_zh": "研究提出COMIC方法，用于生成基于智能体的喜剧内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "COMIC: Agentic Sketch Comedy Generation",
+              "url": "http://arxiv.org/abs/2603.11048v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "LiTo：表面光场标记化",
+          "summary_zh": "研究介绍LiTo技术，用于表面光场的标记化表示。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "LiTo: Surface Light Field Tokenization",
+              "url": "http://arxiv.org/abs/2603.11047v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "神经场热层析成像",
+          "summary_zh": "提出一种可微分物理框架，用于神经场热层析成像。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Neural Field Thermal Tomography: A Differentiable Physics Fr",
+              "url": "http://arxiv.org/abs/2603.11045v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "V2M-Zero：视频到音乐生成",
+          "summary_zh": "研究零配对时间对齐的视频到音乐生成方法V2M-Zero。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "V2M-Zero: Zero-Pair Time-Aligned Video-to-Music Generation",
+              "url": "http://arxiv.org/abs/2603.11042v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "DynVLA：自动驾驶动作推理",
+          "summary_zh": "研究DynVLA方法，学习世界动力学以进行自动驾驶动作推理。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "DynVLA: Learning World Dynamics for Action Reasoning in Auto",
+              "url": "http://arxiv.org/abs/2603.11041v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "光学晶格量子模拟",
+          "summary_zh": "研究在光学晶格中实现Emery模型，用于量子模拟。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Realizing the Emery Model in Optical Lattices for Quantum Si",
+              "url": "http://arxiv.org/abs/2603.11037v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "大型神经活动统计结构",
+          "summary_zh": "研究大规模神经活动中的统计结构发现。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Uncovering statistical structure in large-scale neural activ",
+              "url": "http://arxiv.org/abs/2603.11032v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "差分隐私分离研究",
+          "summary_zh": "研究在特定条件下分离不经意和自适应差分隐私。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Separating Oblivious and Adaptive Differential Privacy under",
+              "url": "http://arxiv.org/abs/2603.11029v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM绿色推荐系统",
+          "summary_zh": "提出基于LLM的多智能体推荐系统LLMGreenRec，用于可持续性。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "LLMGreenRec: LLM-Based Multi-Agent Recommender System for Su",
+              "url": "http://arxiv.org/abs/2603.11025v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM压缩新方法",
+          "summary_zh": "研究使用Leech Lattice向量量化进行高效LLM压缩。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-03-11",
+          "sources": [
+            {
+              "title": "Leech Lattice Vector Quantization for Efficient LLM Compress",
+              "url": "http://arxiv.org/abs/2603.11021v1",
+              "source": "arXiv",
+              "published_at": "2026-03-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "人工智能",
+        "机器学习",
+        "量子模拟",
+        "神经场",
+        "差分隐私"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "中国通过民族团结法",
+      "summary": "中国批准民族团结法，要求少数民族学习国家通用语言，旨在加强国家统一和文化认同。此举可能影响民族地区教育政策和社会治理，需关注实施细节及社会反响。",
+      "action": "关注民族地区政策调整，评估社会影响。"
+    },
+    {
+      "title": "通胀预期升至近四年高位",
+      "summary": "关键通胀指标达近四年最高，加剧市场对持续通胀和货币政策收紧的担忧。可能影响央行利率决策，增加企业和消费者成本压力，需警惕经济过热风险。",
+      "action": "调整投资组合，防范通胀风险。"
+    },
+    {
+      "title": "人形机器人公司Sunday估值达11.5亿美元",
+      "summary": "人形机器人制造商Sunday完成融资，估值达11.5亿美元，资金将用于家庭机器人开发。显示资本高度看好人工智能和机器人赛道，可能加速相关技术商业化进程。",
+      "action": "关注机器人产业链投资机会。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
