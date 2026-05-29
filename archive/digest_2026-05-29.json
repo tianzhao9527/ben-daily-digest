@@ -1,0 +1,2194 @@
+{
+  "date": "2026-05-29",
+  "generated_at_utc": "2026-05-29T00:31:17.874916+00:00",
+  "generated_at_bjt": "2026-05-29 08:31",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "全球青年就业机会减少，美国拟发行印有特朗普头像的250美元纸币，欧盟对Temu罚款2亿欧元，油价因美伊谈判突破下跌，全球车企难以与中国竞争。",
+      "events": [
+        {
+          "title_zh": "青年就业机会减少",
+          "summary_zh": "主要机构称太多年轻人机会减少，有申请超400个岗位仍无果。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Opportunities shrinking for too many young people, says majo",
+              "url": "https://www.bbc.com/news/articles/cy026x9jpd0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            },
+            {
+              "title": "'I've applied for more than 400 roles' - how young people ar",
+              "url": "https://www.bbc.com/news/articles/czx2qll4rlyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国拟发行250美元纸币",
+          "summary_zh": "美国政府准备发行印有特朗普头像的250美元纸币。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "US government prepares to print $250 note featuring Trump's ",
+              "url": "https://www.bbc.com/news/articles/clypeyx6nemo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "贸易恶化致酒厂迁往加拿大",
+          "summary_zh": "一家美国酒厂因贸易恶化而迁往加拿大。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "When trade soured, this American liquor maker moved to Canad",
+              "url": "https://www.bbc.com/news/articles/c2l22ypl909o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "宝马称人形机器人是造车未来",
+          "summary_zh": "宝马表示人形机器人是汽车制造的未来。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Humanoid robots 'the future' of car making, says BMW",
+              "url": "https://www.bbc.com/news/articles/cgmpwzzvxr2o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟对Temu罚款2亿欧元",
+          "summary_zh": "欧盟因Temu允许销售非法产品对其罚款2亿欧元。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "EU fines Temu €200m for allowing sale of illegal products",
+              "url": "https://www.bbc.com/news/articles/c1k2ydn1rz8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "油价因美伊谈判突破下跌",
+          "summary_zh": "美伊谈判取得突破，油价下跌。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Oil prices fall after report of breakthrough in US-Iran talk",
+              "url": "https://www.bbc.com/news/articles/cp3p62xddq4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "全球车企难以与中国竞争",
+          "summary_zh": "全球汽车制造商难以与中国竞争。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-05-27",
+          "sources": [
+            {
+              "title": "The world's carmakers are struggling to compete with China",
+              "url": "https://www.bbc.com/news/articles/c4g8vg72z43o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-27"
+            }
+          ]
+        },
+        {
+          "title_zh": "Costco汽油需求创纪录",
+          "summary_zh": "Costco汽油需求创纪录，消费者试图应对高油价。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Costco gas demand hits records, as shoppers try to stay ahea",
+              "url": "https://www.marketwatch.com/story/higher-gas-prices-are-driving-people-to-membership-retailers-and-c",
+              "source": "MarketWatch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗战争推高通胀",
+          "summary_zh": "伊朗战争成本超预期，推高通胀。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "The Iran war costs more than you think — it boosts inflation",
+              "url": "https://www.marketwatch.com/story/the-true-cost-of-the-iran-war-is-billions-more-than-the-pentagon-s",
+              "source": "MarketWatch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "股市出现罕见买入信号",
+          "summary_zh": "估值过高的股市闪现罕见买入信号。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "This overvalued stock market just flashed a rare buy signal",
+              "url": "https://www.marketwatch.com/story/this-overvalued-stock-market-just-flashed-a-rare-buy-signal-05bce4",
+              "source": "MarketWatch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.45,
+      "keywords": [
+        "青年就业",
+        "特朗普纸币",
+        "欧盟罚款",
+        "油价下跌",
+        "中国竞争"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "美伊接近达成协议但尚未成功；以色列扩大加沙控制并打击黎巴嫩；真主党学习乌克兰战争使用光纤；欧盟罚款Temu2亿欧元；美国将巴西帮派列为恐怖组织；肯尼亚学校火灾致16死；葡萄牙创5月高温纪录；瑞士火车站持刀伤人；澳大利亚起诉3M公司；谷歌员工内幕交易被捕。",
+      "events": [
+        {
+          "title_zh": "美伊接近协议但未达成",
+          "summary_zh": "美国副总统万斯称美伊接近协议但尚未成功，伊朗战争直播显示60天休战未获评论。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "US and Iran 'very close' to deal but 'not there yet', Vance",
+              "url": "https://www.bbc.com/news/articles/c87qng40wz9o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            },
+            {
+              "title": "Iran war live: Tehran, Trump yet to comment on 60-day truce",
+              "url": "https://www.aljazeera.com/news/liveblog/2026/5/29/iran-war-live-tehran-trump-yet-to-comment-on-60-da",
+              "source": "Al Jazeera",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列扩大加沙控制",
+          "summary_zh": "内塔尼亚胡下令以军占领加沙70%地区，加沙医院遭袭致多人死亡。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Netanyahu orders Israeli army to seize 70 percent of Gaza",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/5/28/netanyahu-orders-israeli-army-to-seize-70-percent",
+              "source": "Al Jazeera",
+              "published_at": "2026-05-28"
+            },
+            {
+              "title": "Gaza City hospitals say several killed in strike, as Israel",
+              "url": "https://www.bbc.com/news/articles/cn9p40en4ngo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列打击黎巴嫩首都",
+          "summary_zh": "以色列对黎巴嫩首都进行“定点打击”，真主党学习乌克兰战争使用光纤技术。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Israel hits Lebanese capital in 'targeted strike'",
+              "url": "https://www.bbc.com/news/articles/cgqpjwdv7xeo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            },
+            {
+              "title": "Learning from Ukraine war, Hezbollah is now using fibre-opti",
+              "url": "https://www.bbc.com/news/articles/c0r2ydlvk41o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟罚款Temu2亿欧元",
+          "summary_zh": "欧盟因Temu允许销售非法产品对其罚款2亿欧元，涉及合规问题。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "EU fines Temu €200m for allowing sale of illegal products",
+              "url": "https://www.bbc.com/news/articles/c1k2ydn1rz8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国将巴西帮派列为恐怖组织",
+          "summary_zh": "美国将两个巴西帮派指定为恐怖组织，加强制裁和合规措施。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "US to designate two Brazilian gangs as ‘terrorist’ organisat",
+              "url": "https://www.aljazeera.com/news/2026/5/29/us-to-designate-two-brazilian-gangs-as-terrorist-organisati",
+              "source": "Al Jazeera",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "肯尼亚学校火灾致16死",
+          "summary_zh": "肯尼亚学校火灾致16名学生死亡，引发安全质疑。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Questions over safety as 16 pupils die in another Kenya scho",
+              "url": "https://www.bbc.com/news/articles/cx21kkxq81po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "葡萄牙创5月高温纪录",
+          "summary_zh": "葡萄牙打破5月最热日纪录，欧洲遭遇热浪。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Portugal breaks hottest May day record as Europe swelters in",
+              "url": "https://www.bbc.com/news/articles/c3v2yv5207xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞士火车站持刀伤人",
+          "summary_zh": "瑞士火车站发生持刀伤人事件，三人受伤，一人被捕。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Man arrested after three injured in stabbing at Swiss train",
+              "url": "https://www.bbc.com/news/articles/cddpllqv49qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "澳大利亚起诉3M公司",
+          "summary_zh": "澳大利亚因消防泡沫中的“永久化学品”起诉美国3M公司。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Australia sues US giant 3M over 'forever chemicals' in firef",
+              "url": "https://www.bbc.com/news/articles/c3w2yl3p97qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌员工内幕交易被捕",
+          "summary_zh": "谷歌员工利用内部数据交易获利120万美元被起诉。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Google worker charged with using internal data to make $1.2m",
+              "url": "https://www.bbc.com/news/articles/c052yv259jvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "美伊协议",
+        "加沙冲突",
+        "真主党",
+        "欧盟制裁",
+        "恐怖组织"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "AI领域本周动态：Waymo在自动驾驶注册中领先；Anthropic融资650亿美元估值近万亿；Asana收购无代码AI代理构建平台；微软Copilot提速；巴黎成为硅谷外重要AI城市；AI代币期货即将交易；Bluesky推长文对抗X；黑客窃取Signal备份；H1获CVS 4000万美元投资；Corgi估值26亿美元。",
+      "events": [
+        {
+          "title_zh": "Waymo主导自动驾驶注册",
+          "summary_zh": "Waymo在德州自动驾驶注册中领先，特斯拉紧随其后。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "Waymo dominates autonomous vehicle registrations as Tesla tr",
+              "url": "https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-tr",
+              "source": "TechCrunch",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic融资650亿美元",
+          "summary_zh": "Anthropic融资650亿美元，估值近1万亿美元，准备IPO。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Anthropic raises $65 billion, nears $1T valuation ahead of I",
+              "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Asana收购StackAI",
+          "summary_zh": "Asana收购无代码AI代理构建平台StackAI，增强自动化能力。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Asana acquires no-code agent-builder StackAI",
+              "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软Copilot提速并重新设计",
+          "summary_zh": "Microsoft 365 Copilot获得速度提升和更简洁的设计。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Microsoft 365 Copilot gets a speed boost and cleaner design",
+              "url": "https://www.theverge.com/tech/939273/microsoft-365-copilot-redesign",
+              "source": "The Verge",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴黎成硅谷外重要AI城市",
+          "summary_zh": "巴黎可能成为硅谷之外最重要的AI城市，吸引大量投资和人才。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Why Paris may be the most important AI city outside Silicon ",
+              "url": "https://techcrunch.com/2026/05/28/why-paris-may-be-the-most-important-ai-city-outside-silicon-valley",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币期货即将交易",
+          "summary_zh": "像黄金和石油一样，AI代币期货很快将可交易。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Just like gold and oil, we’ll soon be able to trade AI token",
+              "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bluesky推长文对抗X",
+          "summary_zh": "Bluesky推出长文内容功能，以对抗X平台的文章。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Bluesky embraces long-form content to counter X Articles",
+              "url": "https://techcrunch.com/2026/05/28/bluesky-embraces-long-form-content-to-counter-x-articles/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑客窃取Signal备份",
+          "summary_zh": "黑客试图通过新一轮钓鱼攻击窃取Signal用户的备份。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Hackers are trying to steal Signal users’ backups in new wav",
+              "url": "https://techcrunch.com/2026/05/28/hackers-are-trying-to-steal-signal-users-backups-in-new-wave-of-ph",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "H1获CVS 4000万美元投资",
+          "summary_zh": "H1从CVS获得4000万美元投资，证明SaaS初创公司仍能吸引投资。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "H1 secures $40M from CVS, proving SaaS startups can still at",
+              "url": "https://techcrunch.com/2026/05/28/h1-secures-40m-from-cvs-proving-saas-startups-can-still-attract-in",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Corgi估值26亿美元",
+          "summary_zh": "Corgi宣布融资1.06亿美元，估值达26亿美元，三周前估值翻倍。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Corgi announces $106M raise at $2.6B valuation — double what",
+              "url": "https://techcrunch.com/2026/05/28/corgi-announces-106m-raise-at-2-6b-valuation-three-weeks-after-160",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "positive",
+      "sentiment_score": 0.7,
+      "keywords": [
+        "AI",
+        "自动驾驶",
+        "融资",
+        "Anthropic",
+        "微软Copilot"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI计算基础设施领域动态：Anthropic融资650亿美元估值近万亿，Waymo主导自动驾驶注册，互联网正为机器重建，巴黎成硅谷外重要AI城市，Asana收购无代码AI代理构建平台，AI代币期货即将交易。",
+      "events": [
+        {
+          "title_zh": "Anthropic融资650亿美元",
+          "summary_zh": "Anthropic融资650亿美元，估值近1万亿美元，准备IPO。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Anthropic raises $65 billion, nears $1T valuation ahead of I",
+              "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo主导自动驾驶注册",
+          "summary_zh": "Waymo在德克萨斯州自动驾驶注册中占据主导地位，特斯拉紧随其后。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "Waymo dominates autonomous vehicle registrations as Tesla tr",
+              "url": "https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-tr",
+              "source": "TechCrunch",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "互联网正为机器重建",
+          "summary_zh": "互联网正在被重新构建以适应机器需求，AI驱动的基础设施变革。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "The internet is being rebuilt for machines",
+              "url": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴黎成硅谷外重要AI城市",
+          "summary_zh": "巴黎可能成为硅谷以外最重要的AI城市，吸引大量投资和人才。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Why Paris may be the most important AI city outside Silicon ",
+              "url": "https://techcrunch.com/2026/05/28/why-paris-may-be-the-most-important-ai-city-outside-silicon-valley",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Asana收购无代码AI代理平台",
+          "summary_zh": "Asana收购无代码AI代理构建平台StackAI，增强自动化能力。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Asana acquires no-code agent-builder StackAI",
+              "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币期货即将交易",
+          "summary_zh": "像黄金和石油一样，AI代币期货即将可交易，标志AI资产化。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Just like gold and oil, we’ll soon be able to trade AI token",
+              "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Corgi融资1.06亿美元",
+          "summary_zh": "Corgi宣布融资1.06亿美元，估值达26亿美元，三周内翻倍。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Corgi announces $106M raise at $2.6B valuation — double what",
+              "url": "https://techcrunch.com/2026/05/28/corgi-announces-106m-raise-at-2-6b-valuation-three-weeks-after-160",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "H1获CVS 4000万美元投资",
+          "summary_zh": "H1从CVS获得4000万美元融资，证明SaaS初创仍能吸引投资。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "H1 secures $40M from CVS, proving SaaS startups can still at",
+              "url": "https://techcrunch.com/2026/05/28/h1-secures-40m-from-cvs-proving-saas-startups-can-still-attract-in",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Slate Auto将公布电动汽车定价",
+          "summary_zh": "Slate Auto将于6月公布电动汽车定价并接受预订。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Slate Auto will announce pricing and take preorders for its ",
+              "url": "https://techcrunch.com/2026/05/28/slate-auto-will-announce-pricing-and-take-preorders-for-its-ev-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rockstar开发者成立首个工会",
+          "summary_zh": "Rockstar开发者公开成立首个工会，关注员工权益。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Rockstar developers go public with first union",
+              "url": "https://www.engadget.com/2183358/rockstar-developers-go-public-with-first-union/",
+              "source": "Engadget",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "positive",
+      "sentiment_score": 0.7,
+      "keywords": [
+        "AI融资",
+        "自动驾驶",
+        "AI基础设施",
+        "AI代币",
+        "巴黎AI"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "Waymo在自动驾驶汽车注册量上领先特斯拉，Slate Auto将公布电动皮卡定价并开启预订，Oura推出更薄的Ring 5智能戒指，苹果iOS 27将大幅改造Siri。",
+      "events": [
+        {
+          "title_zh": "Waymo自动驾驶注册量领先特斯拉",
+          "summary_zh": "Waymo在德克萨斯州自动驾驶汽车注册量上占据主导地位，超越特斯拉。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "Waymo dominates autonomous vehicle registrations as Tesla tr",
+              "url": "https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-tr",
+              "source": "TechCrunch",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "Slate Auto将公布电动皮卡定价",
+          "summary_zh": "Slate Auto将于近期公布其电动皮卡定价并开启预订。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Slate Auto will announce pricing and take preorders for its ",
+              "url": "https://techcrunch.com/2026/05/28/slate-auto-will-announce-pricing-and-take-preorders-for-its-ev-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Oura推出更薄Ring 5智能戒指",
+          "summary_zh": "Oura Ring 5智能戒指大幅变薄，提升佩戴舒适度。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Oura's Ring 5 is a dramatically thinner smart ring",
+              "url": "https://www.engadget.com/2181878/oura-ring-5-thinner-smart-ring-price-launch-date/",
+              "source": "Engadget",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果iOS 27将大幅改造Siri",
+          "summary_zh": "苹果计划在iOS 27中对Siri进行重大升级，提升智能助手功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Here's what Apple's Siri overhaul for iOS 27 could look like",
+              "url": "https://www.engadget.com/2182861/heres-what-apples-siri-overhaul-for-ios-27-could-look-like/",
+              "source": "Engadget",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic融资650亿美元估值近万亿",
+          "summary_zh": "AI公司Anthropic完成650亿美元融资，估值接近1万亿美元，准备IPO。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Anthropic raises $65 billion, nears $1T valuation ahead of I",
+              "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币期货将可交易",
+          "summary_zh": "未来AI代币期货将像黄金和石油一样可交易，推动AI资产化。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Just like gold and oil, we’ll soon be able to trade AI token",
+              "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴黎成为硅谷外重要AI城市",
+          "summary_zh": "巴黎正崛起为硅谷之外最重要的AI城市，吸引大量投资和人才。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Why Paris may be the most important AI city outside Silicon ",
+              "url": "https://techcrunch.com/2026/05/28/why-paris-may-be-the-most-important-ai-city-outside-silicon-valley",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Corgi融资1.06亿美元估值26亿",
+          "summary_zh": "Corgi宣布融资1.06亿美元，估值达26亿美元，三周内翻倍。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Corgi announces $106M raise at $2.6B valuation — double what",
+              "url": "https://techcrunch.com/2026/05/28/corgi-announces-106m-raise-at-2-6b-valuation-three-weeks-after-160",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rockstar开发者成立首个工会",
+          "summary_zh": "Rockstar游戏开发者公开成立首个工会，争取员工权益。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Rockstar developers go public with first union",
+              "url": "https://www.engadget.com/2183358/rockstar-developers-go-public-with-first-union/",
+              "source": "Engadget",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "H1从CVS获4000万美元融资",
+          "summary_zh": "SaaS初创公司H1从CVS获得4000万美元融资，证明市场吸引力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "H1 secures $40M from CVS, proving SaaS startups can still at",
+              "url": "https://techcrunch.com/2026/05/28/h1-secures-40m-from-cvs-proving-saas-startups-can-still-attract-in",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "Waymo",
+        "特斯拉",
+        "电动汽车",
+        "自动驾驶",
+        "智能戒指"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "美国原油出口创历史新高，同时库存持续下降；夏季热浪可能加剧全球LNG短缺；钒电池有望挑战锂电池地位；太阳能股因关税决策临近而上涨；挪威油气投资预测上调；印度能源投资创纪录；哈萨克斯坦在天然气争端中支持俄罗斯；核能项目推进；锂和锰生产取得进展。",
+      "events": [
+        {
+          "title_zh": "美国原油出口创历史新高",
+          "summary_zh": "美国原油出口因战略储备释放而激增，库存持续下降。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "U.S. Crude Exports Surge To All-Time Highs Amid SPR Releases",
+              "url": "https://oilprice.com/Energy/Crude-Oil/US-Crude-Exports-Surge-To-All-Time-Highs-Amid-SPR-Releases.htm",
+              "source": "OilPrice",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "夏季热浪或加剧LNG短缺",
+          "summary_zh": "全球液化天然气供应可能因夏季热浪而进一步紧张。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Summer Heatwaves May Deepen the Global LNG Crunch",
+              "url": "https://oilprice.com/Energy/Natural-Gas/Summer-Heatwaves-May-Deepen-the-Global-LNG-Crunch.html",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "钒电池或挑战锂电池地位",
+          "summary_zh": "钒电池技术有望打破锂电池在储能领域的主导地位。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Vanadium Batteries Could Break Lithium's Grip on Energy Stor",
+              "url": "https://oilprice.com/Energy/Energy-General/Vanadium-Batteries-Could-Break-Lithiums-Grip-on-Energy-St",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "太阳能股因关税决策上涨",
+          "summary_zh": "太阳能股票因关税决策临近而上涨40%，市场预期积极。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Solar Stocks Surge on Breakout Signals Amid Rising Tariff Te",
+              "url": "https://oilprice.com/Alternative-Energy/Solar-Energy/Solar-Stocks-Surge-on-Breakout-Signals-Amid-Ris",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "伯恩斯坦设定长期油价目标",
+          "summary_zh": "伯恩斯坦将长期油价目标设定为每桶75美元。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Bernstein Sets Long-Term Oil Price Target At $75 Per Barrel",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Bernstein-Sets-Long-Term-Oil-Price-Target-At-75-P",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "挪威油气投资预测上调",
+          "summary_zh": "挪威油气生产商上调投资预测，显示行业信心。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Norway Oil and Gas Producers Increase Investment Forecasts f",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Norway-Oil-and-Gas-Producers-Increase-Investment-",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国原油库存持续下降",
+          "summary_zh": "美国原油和汽油库存继续大幅下降，供应趋紧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "US Crude Oil, Gasoline Inventories Continue Freefall",
+              "url": "https://oilprice.com/Energy/Crude-Oil/US-Crude-Oil-Gasoline-Inventories-Continue-Freefall.html",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "哈萨克斯坦支持俄罗斯天然气争端",
+          "summary_zh": "哈萨克斯坦在14亿美元天然气纠纷中支持俄罗斯立场。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Kazakhstan Sides With Russia in $1.4 Billion Gazprom Dispute",
+              "url": "https://oilprice.com/Energy/Energy-General/Kazakhstan-Sides-With-Russia-in-14-Billion-Gazprom-Disput",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度能源投资创纪录",
+          "summary_zh": "印度2026年能源投资预计达1700亿美元，创历史新高。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "India's Energy Investment Set for Record $170 Billion in 202",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Indias-Energy-Investment-Set-for-Record-170-Billi",
+              "source": "OilPrice",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "锂和锰生产取得进展",
+          "summary_zh": "阿根廷锂生产启动，博茨瓦纳锰项目研究显示成本更高。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Galan achieves first lithium chloride production in Argentin",
+              "url": "https://www.mining.com/galan-achieves-first-lithium-chloride-production-in-argentina/",
+              "source": "Mining.com",
+              "published_at": "2026-05-28"
+            },
+            {
+              "title": "Giyani Metals’ study shows leaner, pricier manganese project",
+              "url": "https://www.mining.com/giyani-metals-study-shows-leaner-pricier-manganese-project-in-botswana/",
+              "source": "Mining.com",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "原油出口",
+        "LNG短缺",
+        "钒电池",
+        "太阳能",
+        "能源投资"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "今日新闻聚焦全球青年就业困境、美国拟印250美元特朗普头像纸币、欧盟对Temu罚款2亿欧元、油价因美伊谈判下跌、汽车业竞争中国等热点，未涉及碳市场或CBAM相关新闻。",
+      "events": [
+        {
+          "title_zh": "青年就业机会减少",
+          "summary_zh": "BBC报道称太多年轻人面临就业机会减少的困境。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Opportunities shrinking for too many young people, says majo",
+              "url": "https://www.bbc.com/news/articles/cy026x9jpd0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国拟印250美元特朗普纸币",
+          "summary_zh": "美国政府准备印制印有特朗普头像的250美元纸币。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "US government prepares to print $250 note featuring Trump's ",
+              "url": "https://www.bbc.com/news/articles/clypeyx6nemo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国酒商因贸易摩擦迁往加拿大",
+          "summary_zh": "贸易关系恶化，一家美国酒类制造商迁至加拿大。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "When trade soured, this American liquor maker moved to Canad",
+              "url": "https://www.bbc.com/news/articles/c2l22ypl909o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "宝马称人形机器人是造车未来",
+          "summary_zh": "宝马表示人形机器人将成为汽车制造的未来。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Humanoid robots 'the future' of car making, says BMW",
+              "url": "https://www.bbc.com/news/articles/cgmpwzzvxr2o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟对Temu罚款2亿欧元",
+          "summary_zh": "欧盟因Temu允许销售非法产品对其罚款2亿欧元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "EU fines Temu €200m for allowing sale of illegal products",
+              "url": "https://www.bbc.com/news/articles/c1k2ydn1rz8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "油价因美伊谈判突破下跌",
+          "summary_zh": "报道称美伊谈判取得突破，油价下跌。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Oil prices fall after report of breakthrough in US-Iran talk",
+              "url": "https://www.bbc.com/news/articles/cp3p62xddq4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "全球车企难以与中国竞争",
+          "summary_zh": "报道指出全球汽车制造商难以与中国竞争。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-05-27",
+          "sources": [
+            {
+              "title": "The world's carmakers are struggling to compete with China",
+              "url": "https://www.bbc.com/news/articles/c4g8vg72z43o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-05-27"
+            }
+          ]
+        },
+        {
+          "title_zh": "肯尼亚女校宿舍火灾致16死",
+          "summary_zh": "肯尼亚一所女校宿舍发生火灾，至少16名学生死亡。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Dormitory fire at Kenyan girls’ school kills at least 16 stu",
+              "url": "https://www.theguardian.com/world/2026/may/28/dormitory-fire-at-kenya-school-students-utumishi-girls",
+              "source": "The Guardian",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国在肯尼亚建埃博拉隔离中心",
+          "summary_zh": "美国在肯尼亚为美国人建造埃博拉隔离中心。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-27",
+          "sources": [
+            {
+              "title": "US building Ebola quarantine center in Kenya for Americans a",
+              "url": "https://www.theguardian.com/us-news/2026/may/27/trump-administration-ebola-quarantine-kenya",
+              "source": "The Guardian",
+              "published_at": "2026-05-27"
+            }
+          ]
+        },
+        {
+          "title_zh": "刚果埃博拉疫情蔓延超应对",
+          "summary_zh": "世卫警告刚果埃博拉疫情蔓延速度超过应对努力。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-25",
+          "sources": [
+            {
+              "title": "Spread of Ebola in DRC ‘outpacing’ response efforts, warns W",
+              "url": "https://www.theguardian.com/world/2026/may/25/spread-of-ebola-in-drc-outpacing-response-efforts-warn",
+              "source": "The Guardian",
+              "published_at": "2026-05-25"
+            },
+            {
+              "title": "EU fines Temu for failing to stop sale of illegal and dangerous products",
+              "url": "https://www.theguardian.com/world/2026/may/28/eu-fines-temu-sale-illegal-dangerous-products",
+              "source": "The Guardian",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "青年就业",
+        "特朗普纸币",
+        "欧盟罚款",
+        "油价下跌",
+        "汽车竞争"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "今日全球新闻聚焦美伊核协议接近达成但仍有分歧、以色列扩大加沙军事行动、欧盟对Temu罚款2亿欧元、澳大利亚起诉3M公司、肯尼亚学校火灾致16名学生死亡等事件。",
+      "events": [
+        {
+          "title_zh": "美伊接近达成协议但仍有分歧",
+          "summary_zh": "美国副总统万斯表示美伊'非常接近'达成协议，但尚未最终确定。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "US and Iran 'very close' to deal but 'not there yet', Vance",
+              "url": "https://www.bbc.com/news/articles/c87qng40wz9o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列下令占领加沙70%领土",
+          "summary_zh": "内塔尼亚胡命令以色列军队占领加沙70%的地区，加剧地区紧张局势。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Netanyahu orders Israeli army to seize 70 percent of Gaza",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/5/28/netanyahu-orders-israeli-army-to-seize-70-percent",
+              "source": "Al Jazeera",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟对Temu罚款2亿欧元",
+          "summary_zh": "欧盟因Temu允许销售非法产品对其处以2亿欧元罚款，加强电商监管。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "EU fines Temu €200m for allowing sale of illegal products",
+              "url": "https://www.bbc.com/news/articles/c1k2ydn1rz8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "澳大利亚起诉3M公司污染环境",
+          "summary_zh": "澳大利亚就消防泡沫中的'永久化学品'起诉美国3M公司，要求赔偿。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Australia sues US giant 3M over 'forever chemicals' in firef",
+              "url": "https://www.bbc.com/news/articles/c3w2yl3p97qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "肯尼亚学校火灾致16名学生死亡",
+          "summary_zh": "肯尼亚一所学校发生火灾，造成16名学生死亡，引发安全质疑。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Questions over safety as 16 pupils die in another Kenya scho",
+              "url": "https://www.bbc.com/news/articles/cx21kkxq81po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "真主党学习乌克兰战争使用光纤通信",
+          "summary_zh": "真主党借鉴乌克兰战争经验，开始使用光纤通信技术以增强隐蔽性。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Learning from Ukraine war, Hezbollah is now using fibre-opti",
+              "url": "https://www.bbc.com/news/articles/c0r2ydlvk41o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "葡萄牙打破五月高温纪录",
+          "summary_zh": "欧洲遭遇热浪，葡萄牙打破五月最高气温纪录，引发气候担忧。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Portugal breaks hottest May day record as Europe swelters in",
+              "url": "https://www.bbc.com/news/articles/c3v2yv5207xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列对黎巴嫩首都发动定点打击",
+          "summary_zh": "以色列对黎巴嫩首都贝鲁特发动'定点打击'，地区冲突升级。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Israel hits Lebanese capital in 'targeted strike'",
+              "url": "https://www.bbc.com/news/articles/cgqpjwdv7xeo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞士火车站持刀伤人事件致3伤",
+          "summary_zh": "瑞士一火车站发生持刀袭击事件，造成3人受伤，嫌疑人被捕。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Man arrested after three injured in stabbing at Swiss train",
+              "url": "https://www.bbc.com/news/articles/cddpllqv49qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国将巴西两黑帮列为恐怖组织",
+          "summary_zh": "美国计划将巴西两个黑帮列为恐怖组织，加强打击跨国犯罪。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "US to designate two Brazilian gangs as ‘terrorist’ organisat",
+              "url": "https://www.aljazeera.com/news/2026/5/29/us-to-designate-two-brazilian-gangs-as-terrorist-organisati",
+              "source": "Al Jazeera",
+              "published_at": "2026-05-29"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "美伊关系",
+        "加沙冲突",
+        "欧盟罚款",
+        "澳大利亚诉讼",
+        "肯尼亚火灾"
+      ],
+      "deduped_count": 0,
+      "raw_count": 40
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "本周科技新闻聚焦AI与自动驾驶领域：Waymo主导自动驾驶注册，Anthropic融资650亿美元估值近万亿，中国初创公司获60亿美元投资研发机器人手，Slate Auto将公布电动车定价，Asana收购无代码AI平台，Bluesky推出长内容功能，黑客攻击Signal备份，AI代币期货即将交易。",
+      "events": [
+        {
+          "title_zh": "Waymo主导自动驾驶注册",
+          "summary_zh": "Waymo在德克萨斯州自动驾驶注册量领先特斯拉",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "Waymo dominates autonomous vehicle registrations as Tesla tr",
+              "url": "https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-tr",
+              "source": "TechCrunch",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic融资650亿美元",
+          "summary_zh": "AI公司Anthropic融资650亿美元，估值接近1万亿美元",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Anthropic raises $65 billion, nears $1T valuation ahead of I",
+              "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国初创公司获60亿美元投资",
+          "summary_zh": "中国初创公司获60亿美元投资，研发通用机器人手",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "The $6 Billion Chinese Startup Trying to Build Hands for Eve",
+              "url": "https://www.wired.com/story/made-in-china-the-dollar6-billion-chinese-startup-making-hands-for-human",
+              "source": "Wired",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Slate Auto将公布电动车定价",
+          "summary_zh": "Slate Auto将于6月公布电动车定价并接受预订",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Slate Auto will announce pricing and take preorders for its ",
+              "url": "https://techcrunch.com/2026/05/28/slate-auto-will-announce-pricing-and-take-preorders-for-its-ev-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Asana收购无代码AI平台",
+          "summary_zh": "Asana收购无代码AI代理构建平台StackAI",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Asana acquires no-code agent-builder StackAI",
+              "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bluesky推出长内容功能",
+          "summary_zh": "Bluesky推出长内容功能以对抗X平台文章",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Bluesky embraces long-form content to counter X Articles",
+              "url": "https://techcrunch.com/2026/05/28/bluesky-embraces-long-form-content-to-counter-x-articles/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑客攻击Signal备份",
+          "summary_zh": "黑客试图通过新型钓鱼攻击窃取Signal用户备份",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Hackers are trying to steal Signal users’ backups in new wav",
+              "url": "https://techcrunch.com/2026/05/28/hackers-are-trying-to-steal-signal-users-backups-in-new-wave-of-ph",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币期货即将交易",
+          "summary_zh": "AI代币期货将像黄金和石油一样可交易",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Just like gold and oil, we’ll soon be able to trade AI token",
+              "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo推出中国制造机器人出租车",
+          "summary_zh": "Waymo推出中国制造的Ojai机器人出租车",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Here Comes Ojai, Waymo’s New Chinese-Made Robotaxi",
+              "url": "https://www.wired.com/story/here-comes-ojai-waymos-new-chinese-made-robotaxi/",
+              "source": "Wired",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴黎成为AI重要城市",
+          "summary_zh": "巴黎可能成为硅谷之外最重要的AI城市",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Why Paris may be the most important AI city outside Silicon ",
+              "url": "https://techcrunch.com/2026/05/28/why-paris-may-be-the-most-important-ai-city-outside-silicon-valley",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "自动驾驶",
+        "融资",
+        "机器人",
+        "网络安全"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "前沿科技领域本周动态：Waymo主导自动驾驶注册，Anthropic融资650亿美元估值近万亿，中国初创公司获60亿美元投资研发仿生手，AI代币期货即将上线交易，网络安全事件频发。",
+      "events": [
+        {
+          "title_zh": "Waymo主导自动驾驶注册",
+          "summary_zh": "Waymo在得克萨斯州自动驾驶注册量领先特斯拉。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-05-29",
+          "sources": [
+            {
+              "title": "Waymo dominates autonomous vehicle registrations as Tesla tr",
+              "url": "https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-tr",
+              "source": "TechCrunch",
+              "published_at": "2026-05-29"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic融资650亿美元",
+          "summary_zh": "AI公司Anthropic融资650亿美元，估值接近1万亿美元，准备IPO。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Anthropic raises $65 billion, nears $1T valuation ahead of I",
+              "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国初创公司研发仿生手",
+          "summary_zh": "一家中国初创公司获60亿美元投资，致力于为人类制造仿生手。",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "The $6 Billion Chinese Startup Trying to Build Hands for Eve",
+              "url": "https://www.wired.com/story/made-in-china-the-dollar6-billion-chinese-startup-making-hands-for-human",
+              "source": "Wired",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币期货即将上线",
+          "summary_zh": "AI代币期货将像黄金和石油一样可交易。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Just like gold and oil, we’ll soon be able to trade AI token",
+              "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑客攻击Signal用户备份",
+          "summary_zh": "黑客试图通过新一轮钓鱼攻击窃取Signal用户备份。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Hackers are trying to steal Signal users’ backups in new wav",
+              "url": "https://techcrunch.com/2026/05/28/hackers-are-trying-to-steal-signal-users-backups-in-new-wave-of-ph",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Asana收购StackAI",
+          "summary_zh": "Asana收购无代码AI代理构建平台StackAI。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Asana acquires no-code agent-builder StackAI",
+              "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bluesky推出长内容功能",
+          "summary_zh": "Bluesky推出长内容功能以对抗X Articles。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Bluesky embraces long-form content to counter X Articles",
+              "url": "https://techcrunch.com/2026/05/28/bluesky-embraces-long-form-content-to-counter-x-articles/",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴黎成为AI重要城市",
+          "summary_zh": "巴黎可能成为硅谷以外最重要的AI城市。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Why Paris may be the most important AI city outside Silicon ",
+              "url": "https://techcrunch.com/2026/05/28/why-paris-may-be-the-most-important-ai-city-outside-silicon-valley",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo推出中国产机器人出租车",
+          "summary_zh": "Waymo推出中国制造的Ojai机器人出租车。",
+          "region": "cn",
+          "score": 0.75,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Here Comes Ojai, Waymo’s New Chinese-Made Robotaxi",
+              "url": "https://www.wired.com/story/here-comes-ojai-waymos-new-chinese-made-robotaxi/",
+              "source": "Wired",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "Corgi融资估值达26亿美元",
+          "summary_zh": "Corgi宣布融资1.06亿美元，估值达26亿美元。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Corgi announces $106M raise at $2.6B valuation — double what",
+              "url": "https://techcrunch.com/2026/05/28/corgi-announces-106m-raise-at-2-6b-valuation-three-weeks-after-160",
+              "source": "TechCrunch",
+              "published_at": "2026-05-28"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "自动驾驶",
+        "AI融资",
+        "网络安全",
+        "机器人",
+        "中国科技"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "苹果在CVPR上展示AI研究，美国能源部解释人工智能概念。",
+      "events": [
+        {
+          "title_zh": "苹果在CVPR预览AI研究",
+          "summary_zh": "苹果在CVPR大会展示AI研究，为WWDC预热。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-05-28",
+          "sources": [
+            {
+              "title": "Apple previews AI research at CVPR before WWDC - Let's Data",
+              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYmxER2FDeDdKemhIMTBCOEJpSlI5VXlSaUJqTGZYbVJodlp",
+              "source": "Let's Data Science",
+              "published_at": "2026-05-28"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国能源部解释人工智能",
+          "summary_zh": "美国能源部发布文章，解释人工智能的基本概念。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-05-22",
+          "sources": [
+            {
+              "title": "DOE Explains...Artificial Intelligence - Department of Energ",
+              "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE41OVprOE5tN2lBVzZuck52RDRvRU9FU0JvNThpald0enFRaUN",
+              "source": "Department of Energy",
+              "published_at": "2026-05-22"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 2,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "苹果",
+        "AI",
+        "CVPR",
+        "美国能源部",
+        "人工智能"
+      ],
+      "deduped_count": 0,
+      "raw_count": 2
+    }
+  ],
+  "top5": [
+    {
+      "title": "全球车企难以与中国竞争",
+      "summary": "全球汽车制造商面临来自中国车企的激烈竞争，中国在电动汽车和供应链方面具有成本和技术优势，可能改变全球汽车产业格局。决策者需关注中国车企的扩张策略，评估对本土市场的冲击。",
+      "action": "加强本土车企创新，制定应对中国竞争的政策。"
+    },
+    {
+      "title": "中国初创公司获60亿美元投资",
+      "summary": "中国一家初创公司获得60亿美元巨额投资，用于研发通用机器人手，显示中国在机器人领域的快速进步。这可能加速自动化技术商业化，影响制造业和劳动力市场。决策者应评估技术突破对产业的影响。",
+      "action": "关注机器人技术发展，调整产业投资策略。"
+    },
+    {
+      "title": "美伊接近协议但未达成",
+      "summary": "美国副总统万斯表示美伊接近达成协议但尚未成功，同时伊朗战争直播显示60天休战未获评论。地缘政治紧张局势可能影响全球能源市场和地区稳定。决策者需准备应对油价波动和外交变化。",
+      "action": "监控中东局势，制定能源安全预案。"
+    },
+    {
+      "title": "Anthropic融资650亿美元",
+      "summary": "Anthropic完成650亿美元融资，估值近1万亿美元，并准备IPO，显示AI行业资本高度集中。这可能推动AI技术快速迭代，但也带来市场泡沫风险。决策者需评估AI投资过热对经济的影响。",
+      "action": "关注AI行业估值，防范投资风险。"
+    },
+    {
+      "title": "Anthropic融资650亿美元",
+      "summary": "Anthropic融资650亿美元，估值近1万亿美元，准备IPO，重复新闻强调AI领域资本涌入。巨额融资可能加速AI研发，但需警惕市场过度投机。决策者应平衡创新与监管。",
+      "action": "加强AI监管，引导理性投资。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
