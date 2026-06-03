@@ -1,0 +1,2507 @@
+{
+  "date": "2026-06-03",
+  "generated_at_utc": "2026-06-03T01:59:43.043057+00:00",
+  "generated_at_bjt": "2026-06-03 09:59",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.63,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": -0.010000000000000231,
+      "delta_pct": -0.2747252747252811,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.99 L 5.41,18.20 L 7.82,14.18 L 10.23,9.04 L 12.64,8.59 L 15.05,7.69 L 17.46,3.00 L 19.87,3.00 L 22.28,3.00 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,7.47 L 51.21,14.18 L 53.62,18.42 L 56.03,22.00 L 58.44,25.35 L 60.85,25.35 L 63.26,25.35 L 65.67,25.35 L 68.08,25.35 L 70.49,25.35 L 72.90,25.35 L 75.31,25.35 L 77.72,27.81 L 80.13,30.72 L 82.54,35.41 L 84.95,38.99 L 87.36,40.78 L 89.77,40.78 L 92.18,40.78 L 94.59,40.78 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64,
+        3.64,
+        3.64,
+        3.63
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 12528.70954545455,
+      "updated_at": "2026-03-01",
+      "source": "FRED",
+      "delta": -422.63545454544874,
+      "delta_pct": -3.2632553186209523,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,37.76 L 5.41,32.97 L 7.82,33.50 L 10.23,34.11 L 12.64,34.46 L 15.05,38.73 L 17.46,37.57 L 19.87,36.97 L 22.28,37.94 L 24.69,38.47 L 27.10,41.00 L 29.51,39.13 L 31.92,37.49 L 34.33,37.91 L 36.74,38.26 L 39.15,35.34 L 41.56,29.67 L 43.97,24.61 L 46.38,28.14 L 48.79,30.12 L 51.21,33.17 L 53.62,31.07 L 56.03,29.00 L 58.44,32.46 L 60.85,33.71 L 63.26,33.20 L 65.67,30.53 L 68.08,27.48 L 70.49,31.73 L 72.90,29.03 L 75.31,26.74 L 77.72,27.22 L 80.13,27.97 L 82.54,25.53 L 84.95,19.92 L 87.36,19.38 L 89.77,12.01 L 92.18,3.00 L 94.59,3.27 L 97.00,6.45\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        8371.091363636364,
+        9007.346363636363,
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182,
+        12951.345,
+        12528.70954545455
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3372.952727272727,
+      "updated_at": "2026-03-01",
+      "source": "FRED",
+      "delta": 307.76422727272666,
+      "delta_pct": 10.040629712421492,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.93 L 5.41,29.97 L 7.82,32.38 L 10.23,36.06 L 12.64,34.78 L 15.05,36.75 L 17.46,39.49 L 19.87,40.26 L 22.28,41.00 L 24.69,39.49 L 27.10,39.19 L 29.51,38.95 L 31.92,39.27 L 34.33,38.97 L 36.74,39.65 L 39.15,38.12 L 41.56,29.83 L 43.97,27.77 L 46.38,29.88 L 48.79,34.44 L 51.21,34.34 L 53.62,31.11 L 56.03,26.87 L 58.44,27.28 L 60.85,28.55 L 63.26,27.62 L 65.67,25.02 L 68.08,25.15 L 70.49,33.87 L 72.90,31.43 L 75.31,29.01 L 77.72,26.54 L 80.13,26.78 L 82.54,25.06 L 84.95,20.81 L 87.36,20.01 L 89.77,18.26 L 92.18,10.34 L 94.59,12.45 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2398.206818181818,
+        2494.900909090909,
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727,
+        3065.1885,
+        3372.952727272727
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3182.2609090909086,
+      "updated_at": "2026-03-01",
+      "source": "FRED",
+      "delta": -141.45159090909146,
+      "delta_pct": -4.255831119842389,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,11.17 L 5.41,4.10 L 7.82,10.49 L 10.23,17.05 L 12.64,24.82 L 15.05,36.04 L 17.46,40.39 L 19.87,39.24 L 22.28,39.22 L 24.69,35.66 L 27.10,37.57 L 29.51,33.76 L 31.92,35.07 L 34.33,34.66 L 36.74,41.00 L 39.15,37.14 L 41.56,26.59 L 43.97,17.53 L 46.38,23.29 L 48.79,24.55 L 51.21,26.76 L 53.62,21.78 L 56.03,11.59 L 58.44,15.60 L 60.85,14.43 L 63.26,22.67 L 65.67,23.72 L 68.08,20.23 L 70.49,31.09 L 72.90,29.86 L 75.31,29.38 L 77.72,25.13 L 80.13,24.03 L 82.54,18.26 L 84.95,9.77 L 87.36,8.79 L 89.77,9.37 L 92.18,7.61 L 94.59,3.00 L 97.00,8.58\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        3116.522727272727,
+        3295.878181818182,
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182,
+        3323.7125,
+        3182.2609090909086
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 17076.29272727273,
+      "updated_at": "2026-03-01",
+      "source": "FRED",
+      "delta": -96.8107727272727,
+      "delta_pct": -0.5637348702130206,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,4.90 L 7.82,8.99 L 10.23,18.12 L 12.64,16.84 L 15.05,21.19 L 17.46,23.58 L 19.87,23.96 L 22.28,25.67 L 24.69,27.80 L 27.10,31.46 L 29.51,34.74 L 31.92,36.29 L 34.33,37.18 L 36.74,36.57 L 39.15,33.76 L 41.56,31.81 L 43.97,27.98 L 46.38,33.50 L 48.79,36.58 L 51.21,36.67 L 53.62,37.03 L 56.03,35.44 L 58.44,38.20 L 60.85,38.96 L 63.26,39.13 L 65.67,39.36 L 68.08,37.34 L 70.49,39.74 L 72.90,39.20 L 75.31,40.12 L 77.72,40.04 L 80.13,40.26 L 82.54,39.85 L 84.95,39.88 L 87.36,41.00 L 89.77,40.45 L 92.18,32.93 L 94.59,34.36 L 97.00,34.61\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        28985.92045454545,
+        28271.490909090913,
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364,
+        17173.1035,
+        17076.29272727273
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "标普500连涨9日但广度信号罕见；AI推动Palo Alto Networks、Alphabet等科技股上涨；GameStop拟回购20亿美元；AI交易拥挤致6%策略失效；太空股Blue Origin预测快速复苏；维密创史上最佳单日涨幅；光学股Lumentum等飙升；维珍银河暴跌；微软测试可穿戴AI设备；Anthropic计划美国上市。",
+      "events": [
+        {
+          "title_zh": "标普500连涨9日但广度信号罕见",
+          "summary_zh": "标普500连续9天上涨，但市场广度发出罕见警告信号。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "The S&P 500 climbs for a 9th straight day — but the ‘breadth",
+              "url": "https://www.marketwatch.com/story/s-p-500-climbing-for-9th-straight-day-but-breadth-sends-a-rare-war",
+              "source": "MarketWatch",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "Palo Alto Networks业绩显示AI是朋友",
+          "summary_zh": "Palo Alto Networks财报显示AI是朋友而非敌人，股价上涨。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Palo Alto Networks’ earnings show AI is a friend, not a foe,",
+              "url": "https://www.marketwatch.com/story/palo-alto-networks-stock-is-rising-as-earnings-show-ai-is-a-friend",
+              "source": "MarketWatch",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "GameStop拟回购20亿美元股票",
+          "summary_zh": "GameStop计划在EBA后回购20亿美元自有股票。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "GameStop wants to buy back $2 billion of its own stock after",
+              "url": "https://www.marketwatch.com/story/gamestop-wants-to-buy-back-2-billion-of-its-own-stock-after-an-eba",
+              "source": "MarketWatch",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI交易拥挤致6%策略失效",
+          "summary_zh": "AI驱动的交易过于拥挤，导致传统的6%解决方案消失。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "The 6% solution is gone: How overcrowded AI-powered trading ",
+              "url": "https://www.marketwatch.com/story/the-6-solution-is-gone-how-overcrowded-ai-powered-trading-has-eras",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Alphabet AI支出提振博通",
+          "summary_zh": "Alphabet持续AI支出为博通带来新亮点。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Alphabet’s relentless AI spending is giving new shine to Bro",
+              "url": "https://www.marketwatch.com/story/alphabets-relentless-ai-spending-is-giving-new-shine-to-broadcoms-",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Blue Origin预测快速复苏推升太空股",
+          "summary_zh": "Blue Origin预测快速复苏，相关太空股上涨。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "This space stock rises as Blue Origin predicts quick recover",
+              "url": "https://www.marketwatch.com/story/this-space-stock-is-rising-as-blue-origin-predicts-quick-recovery-",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "维密创史上最佳单日涨幅",
+          "summary_zh": "Victoria's Secret股价创历史最佳单日表现。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Victoria’s Secret’s stock just had its best day ever. It cam",
+              "url": "https://www.marketwatch.com/story/victorias-secrets-stock-is-on-track-for-its-best-day-ever-it-came-",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "光学股Lumentum等飙升",
+          "summary_zh": "Lumentum、Coherent等光学股因需求激增而大幅上涨。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Why Lumentum, Coherent and other optical stocks rocketed to ",
+              "url": "https://www.marketwatch.com/story/why-lumentum-coherent-and-other-optical-stocks-are-rocketing-towar",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "维珍银河创史上最差单日表现",
+          "summary_zh": "维珍银河股价因重组消息创历史最大单日跌幅。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Why Virgin Galactic’s stock just had its worst day ever, aft",
+              "url": "https://www.marketwatch.com/story/why-virgin-galactics-stock-is-having-its-worst-day-ever-after-a-re",
+              "source": "MarketWatch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软测试可穿戴AI设备",
+          "summary_zh": "微软正在测试面向办公室员工的可穿戴AI设备。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft testing wearable AI gadget aimed at office workers",
+              "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "标普500",
+        "AI",
+        "回购",
+        "科技股",
+        "市场广度"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "美国对伊朗岛屿发动自卫打击，以色列与真主党部分停火但空袭黎巴嫩南部，普京对乌克兰立场强硬，英国夫妇在伊朗上诉失败，微软推出更可靠的量子芯片，加拿大要求续签北美防空协定16年，特朗普任命住房官员为间谍头目，白宫记者晚宴因枪击改期，津巴布韦打击电动三轮车影响农村妇女生计。",
+      "events": [
+        {
+          "title_zh": "美国打击伊朗岛屿",
+          "summary_zh": "美国对伊朗格什姆岛发动自卫打击，伊朗反击科威特目标。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "US launches 'self-defense' strikes on Iranian island and tar",
+              "url": "https://www.bbc.com/news/articles/c5yx135yg53o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-03"
+            },
+            {
+              "title": "US says it attacked Iran’s Qeshm Island; Tehran targets Kuwa",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/6/3/us-says-it-attacked-irans-qeshm-island-tehran-targ",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列空袭黎巴嫩南部",
+          "summary_zh": "以色列空袭黎巴嫩南部，但与真主党部分停火协议仍存。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Israel strikes southern Lebanon but partial truce with Hezbo",
+              "url": "https://www.bbc.com/news/articles/c936zvne0l6o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "普京对乌克兰立场强硬",
+          "summary_zh": "普京在乌克兰问题上不妥协，但公众讨论出现分歧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Putin remains uncompromising on Ukraine, but is public disco",
+              "url": "https://www.bbc.com/news/articles/cy82339793go?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国夫妇伊朗上诉失败",
+          "summary_zh": "英国夫妇在伊朗因间谍罪被判刑，上诉被驳回。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "British couple lose Iran jail sentence appeal, family says",
+              "url": "https://www.bbc.com/news/articles/cjrpwxe82ypo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出更可靠量子芯片",
+          "summary_zh": "微软新量子芯片可靠性提升1000倍，推动技术突破。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft says new quantum chip 1,000 times more reliable th",
+              "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "加拿大要求续签北美防空协定",
+          "summary_zh": "加拿大正式要求将北美防空协定续签16年。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Canada formally requests 16-year renewal of North American f",
+              "url": "https://www.bbc.com/news/articles/cn9prr3w9nlo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普任命住房官员为间谍头目",
+          "summary_zh": "特朗普提名住房官员比尔·普尔特担任美国间谍头目。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Trump taps housing official Bill Pulte to be US spymaster",
+              "url": "https://www.bbc.com/news/articles/cyv2dpyz3dpo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "白宫记者晚宴因枪击改期",
+          "summary_zh": "白宫记者协会晚宴因枪击事件重新安排。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "White House Correspondents' Dinner rescheduled after shootin",
+              "url": "https://www.bbc.com/news/articles/clypky99g0vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "津巴布韦打击电动三轮车",
+          "summary_zh": "津巴布韦打击电动三轮车，影响农村妇女生计。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Zimbabwe’s e-tricycle crackdown puts rural women’s livelihoo",
+              "url": "https://www.aljazeera.com/news/2026/6/3/zimbabwes-e-tricycle-crackdown-puts-rural-womens-livelihoods",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "泰国打击外国公司空壳",
+          "summary_zh": "泰国打击利用空壳公司规避法律的外国企业。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Thailand cracks down on foreign companies using fig leaf of ",
+              "url": "https://www.aljazeera.com/economy/2026/6/3/thailand-cracks-down-on-foreign-companies-using-fig-leaf-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-03"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "地缘政治",
+        "制裁",
+        "伊朗",
+        "以色列",
+        "乌克兰"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "AI领域动态：Uber因员工AI支出超预算而设限；微软推出AI行为测试工具和Scout个人助手；OpenAI发布Codex白领工具；Google推出假电话检测防AI深度伪造；特朗普签署AI监管行政令；Cyera估值达120亿美元；亚马逊Ring因面部识别遭集体诉讼；Focused Energy获2.4亿美元融资。",
+      "events": [
+        {
+          "title_zh": "Uber限制员工AI支出",
+          "summary_zh": "Uber因员工AI支出超预算，设置使用上限。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Uber caps employee AI spending after blowing through budget",
+              "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-fou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出AI行为测试工具",
+          "summary_zh": "微软新工具让开发者通过文本快速创建AI行为测试。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "New Microsoft tool lets devs spin up AI behavior tests using",
+              "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软发布Scout个人助手",
+          "summary_zh": "微软推出受OpenClaw启发的个人助手Scout。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft launches Scout, an OpenClaw-inspired personal assi",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI推出Codex白领工具",
+          "summary_zh": "OpenAI发布新Codex工具，面向白领工作自动化。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "OpenAI launches new Codex tools for white-collar work",
+              "url": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Google推出假电话检测功能",
+          "summary_zh": "Google推出新功能，检测AI深度伪造的假电话。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Google rolls out fake call detection to protect against AI d",
+              "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfak",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普签署AI监管行政令",
+          "summary_zh": "特朗普签署更窄的AI监管行政令，回应行业担忧。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Trump signs narrower executive order on AI oversight after i",
+              "url": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Cyera估值达120亿美元",
+          "summary_zh": "网络安全公司Cyera估值达120亿美元，尽管运营亏损。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operat",
+              "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-los",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊Ring遭面部识别诉讼",
+          "summary_zh": "亚马逊Ring因面部识别功能面临集体诉讼。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Amazon faces class action lawsuit over Ring facial-recogniti",
+              "url": "https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-fea",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Focused Energy获2.4亿美元融资",
+          "summary_zh": "激光聚变初创公司Focused Energy完成2.4亿美元A轮融资。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Focused Energy raises whopping $240M Series A for laser-powe",
+              "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fus",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软为Windows计划Linux工具",
+          "summary_zh": "微软计划为Windows推出Linux工具和RTX Spark桌面。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft plans Linux tools and an RTX Spark desktop for Win",
+              "url": "https://arstechnica.com/gadgets/2026/06/microsoft-plans-linux-tools-and-an-rtx-spark-desktop-for-win",
+              "source": "Ars Technica",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "微软",
+        "Uber",
+        "OpenAI",
+        "监管"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI领域动态密集：Uber因AI支出超预算设限；微软推出AI行为测试工具和Scout助手；OpenAI发布Codex工具；谷歌推出防AI深度伪造通话检测；特朗普签署AI监管行政令；亚马逊因Ring面部识别面临集体诉讼；Anduril前工程师融资4200万美元；Focused Energy获2.4亿美元A轮融资。",
+      "events": [
+        {
+          "title_zh": "Uber限制员工AI支出",
+          "summary_zh": "Uber因AI预算超支，对员工AI使用设限。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Uber caps employee AI spending after blowing through budget",
+              "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-fou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出AI行为测试工具",
+          "summary_zh": "微软新工具让开发者用文本创建AI行为测试。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "New Microsoft tool lets devs spin up AI behavior tests using",
+              "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软发布Scout AI助手",
+          "summary_zh": "微软推出受OpenClaw启发的个人AI助手Scout。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft launches Scout, an OpenClaw-inspired personal assi",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            },
+            {
+              "title": "Meet Microsoft Scout, Your AI Coworker That Never Logs Off",
+              "url": "https://www.wired.com/story/meet-microsoft-scout-your-ai-coworker-that-never-logs-off/",
+              "source": "Wired",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI发布Codex白领工具",
+          "summary_zh": "OpenAI推出新Codex工具，面向白领工作。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "OpenAI launches new Codex tools for white-collar work",
+              "url": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌推出防AI深度伪造通话检测",
+          "summary_zh": "谷歌推出新功能，保护用户免受AI深度伪造电话诈骗。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Google rolls out fake call detection to protect against AI d",
+              "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfak",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            },
+            {
+              "title": "Android Is Fighting Phone Scams With a New Feature to Prove ",
+              "url": "https://www.wired.com/story/android-is-fighting-phone-scams-with-a-new-feature-to-prove-whos-calling",
+              "source": "Wired",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普签署AI监管行政令",
+          "summary_zh": "特朗普签署更窄的AI监管行政令，回应行业游说。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Trump signs narrower executive order on AI oversight after i",
+              "url": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊因Ring面部识别遭集体诉讼",
+          "summary_zh": "亚马逊因Ring面部识别功能面临集体诉讼。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Amazon faces class action lawsuit over Ring facial-recogniti",
+              "url": "https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-fea",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "前Anduril工程师融资4200万美元",
+          "summary_zh": "前Anduril工程师获4200万美元融资，打造复合材料领域的亚马逊。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Ex-Anduril engineer raises $42M to build the Amazon of compo",
+              "url": "https://techcrunch.com/2026/06/02/ex-anduril-engineer-raises-42m-to-build-the-amazon-of-composite-pa",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Focused Energy获2.4亿美元A轮融资",
+          "summary_zh": "Focused Energy获得2.4亿美元A轮融资，用于激光聚变技术。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Focused Energy raises whopping $240M Series A for laser-powe",
+              "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fus",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出AI代理行为控制工具",
+          "summary_zh": "微软为开发者提供更好控制AI代理行为的方法。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft offers devs a better way to control AI agent behav",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-offers-devs-a-better-way-to-control-ai-agent-behavior/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "微软",
+        "Uber",
+        "OpenAI",
+        "谷歌"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "今日科技新闻涵盖Uber员工AI支出超预算、微软推出AI行为测试工具、Google推出假电话检测功能、OpenAI发布Codex工具、特朗普签署AI监管行政令、Meta允许员工休息等，整体偏中性。",
+      "events": [
+        {
+          "title_zh": "Uber限制员工AI支出",
+          "summary_zh": "Uber因员工AI支出超预算，决定设置上限。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Uber caps employee AI spending after blowing through budget",
+              "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-fou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出AI行为测试工具",
+          "summary_zh": "微软新工具让开发者用文本快速测试AI行为。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "New Microsoft tool lets devs spin up AI behavior tests using",
+              "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Google推出假电话检测功能",
+          "summary_zh": "Google推出新功能，保护用户免受AI深度伪造电话诈骗。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Google rolls out fake call detection to protect against AI d",
+              "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfak",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI发布Codex白领工具",
+          "summary_zh": "OpenAI推出新Codex工具，旨在辅助白领工作。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "OpenAI launches new Codex tools for white-collar work",
+              "url": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普签署AI监管行政令",
+          "summary_zh": "特朗普签署缩水版AI网络安全行政令，回应行业担忧。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Trump signs narrower executive order on AI oversight after i",
+              "url": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta允许员工休息30分钟",
+          "summary_zh": "Meta据报道允许员工从其平台休息30分钟。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Meta will reportedly let employees take 30-minute breaks fro",
+              "url": "https://www.engadget.com/2186261/meta-will-reportedly-let-employees-take-30-minute-breaks-from-its-t",
+              "source": "Engadget",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "佛罗里达起诉OpenAI",
+          "summary_zh": "佛罗里达州起诉OpenAI和Sam Altman，指控剥削用户。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-01",
+          "sources": [
+            {
+              "title": "Florida sues OpenAI and Sam Altman over alleged 'exploitatio",
+              "url": "https://www.engadget.com/2184976/florida-sues-openai-and-sam-altman-over-alleged-exploitation-of-use",
+              "source": "Engadget",
+              "published_at": "2026-06-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊面临Ring面部识别诉讼",
+          "summary_zh": "亚马逊因Ring面部识别功能面临集体诉讼。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Amazon faces class action lawsuit over Ring facial-recogniti",
+              "url": "https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-fea",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出Scout个人助手",
+          "summary_zh": "微软推出受OpenClaw启发的个人助手Scout。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft launches Scout, an OpenClaw-inspired personal assi",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Focused Energy融资2.4亿美元",
+          "summary_zh": "Focused Energy获2.4亿美元A轮融资，用于激光聚变技术。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Focused Energy raises whopping $240M Series A for laser-powe",
+              "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fus",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "Uber",
+        "微软",
+        "Google",
+        "OpenAI"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "大宗商品市场面临需求破坏、地缘冲突和库存紧张等多重压力。中国动用战略石油储备应对伊朗战争导致的供应中断，同时放松对地炼的管控以维持燃料产出。铜价因供应担忧获投行看涨，黄金受停火消息和利率预期影响波动。全球石油库存预计将创历史新低。",
+      "events": [
+        {
+          "title_zh": "需求破坏压制油价",
+          "summary_zh": "需求破坏持续压制油价，市场关注其持续时间。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "How Long Can Demand Destruction Keep a Lid on Oil Prices?",
+              "url": "https://oilprice.com/Energy/Oil-Prices/How-Long-Can-Demand-Destruction-Keep-a-Lid-on-Oil-Prices.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度阿曼赌注应对霍尔木兹危机",
+          "summary_zh": "霍尔木兹危机加深，印度押注阿曼的能源供应。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "India’s Oman Bet Looks Timely As Hormuz Crisis Deepens",
+              "url": "https://oilprice.com/Energy/Energy-General/Indias-Oman-Bet-Looks-Timely-As-Hormuz-Crisis-Deepens.htm",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国动用十亿桶储备应对伊朗战争",
+          "summary_zh": "伊朗战争导致供应中断，中国动用战略石油储备。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "China Draws Down Billion-Barrel Stockpile as Iran War Cuts I",
+              "url": "https://oilprice.com/Energy/Crude-Oil/China-Draws-Down-Billion-Barrel-Stockpile-as-Iran-War-Cuts-Imp",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄罗斯对华能源生命线成绞索",
+          "summary_zh": "俄罗斯对华能源出口面临困境，生命线变成绞索。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Russia’s China Energy Lifeline Is Becoming a Noose",
+              "url": "https://oilprice.com/Energy/Natural-Gas/Russias-China-Energy-Lifeline-Is-Becoming-a-Noose.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国原油库存持续下降",
+          "summary_zh": "美国原油库存继续大幅下降，但汽油库存情况不明。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "US Crude Oil Inventories Continue Downward Plunge But Gasoli",
+              "url": "https://oilprice.com/Energy/Crude-Oil/US-Crude-Oil-Inventories-Continue-Downward-Plunge-But-Gasoline",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度LNG购买激增",
+          "summary_zh": "尽管天然气价格高昂，印度LNG购买量仍大幅增长。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Why India’s LNG Buying Surges Despite Costly Gas",
+              "url": "https://oilprice.com/Energy/Natural-Gas/Why-Indias-LNG-Buying-Surges-Despite-Costly-Gas.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "霍尔木兹危机教育交易商公用事业",
+          "summary_zh": "霍尔木兹海峡危机让交易商重新审视公用事业风险。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "What Hormuz Is Teaching Traders About Utilities",
+              "url": "https://oilprice.com/Energy/Energy-General/What-Hormuz-Is-Teaching-Traders-About-Utilities.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "大宗商品市场时间紧迫",
+          "summary_zh": "大宗商品市场面临压力，时间所剩无几。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Commodity Markets Are Living on Borrowed Time",
+              "url": "https://oilprice.com/Energy/Energy-General/Commodity-Markets-Are-Living-on-Borrowed-Time.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "铜价获投行看涨",
+          "summary_zh": "高盛和花旗因供应担忧看涨铜价。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Copper price: Goldman, Citi make bullish calls on supply woe",
+              "url": "https://www.mining.com/copper-price-goldman-citi-make-bullish-calls-on-supply-woes/",
+              "source": "Mining.com",
+              "published_at": "2026-06-02"
+            },
+            {
+              "title": "Elliot pushes Australia’s top gold miner to weigh sale option",
+              "url": "https://www.mining.com/elliot-pushes-australias-top-gold-miner-to-weigh-sale-option/",
+              "source": "Mining.com",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "黄金受停火消息和利率预期波动",
+          "summary_zh": "黄金价格因停火消息和非农数据、加息预期而波动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Gold Seesaws on Ceasefire Headlines as NFP, Rate Hike Fears ",
+              "url": "https://oilprice.com/Metals/Gold/Gold-Seesaws-on-Ceasefire-Headlines-as-NFP-Rate-Hike-Fears-Loom.htm",
+              "source": "OilPrice",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "石油",
+        "库存",
+        "地缘冲突",
+        "铜",
+        "黄金"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "今日新闻涵盖养老金、AI技术、环境罚款、量子芯片、教育价值、体育品牌合作、罢工、幽灵厨房、法律诉讼、国际关系等多元话题，其中中国相关新闻包括斯蒂芬·库里签约中国品牌和中国整治幽灵厨房。",
+      "events": [
+        {
+          "title_zh": "斯蒂芬·库里签约中国品牌",
+          "summary_zh": "NBA球星斯蒂芬·库里在结束与Under Armour合作后，签约中国品牌。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Steph Curry signs with Chinese brand after Under Armour split",
+              "url": "https://www.bbc.com/news/articles/cj9pky3ldddo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国整治幽灵厨房",
+          "summary_zh": "中国采取措施打击幽灵厨房，以遏制恶性食品竞争。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "China goes after 'ghost kitchens' to rein in cut-throat food",
+              "url": "https://www.bbc.com/news/articles/cj4p7zglq5no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软测试可穿戴AI设备",
+          "summary_zh": "微软正在测试一款面向办公室员工的穿戴式AI设备。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft testing wearable AI gadget aimed at office workers",
+              "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软量子芯片可靠性提升千倍",
+          "summary_zh": "微软称其新型量子芯片可靠性比以往高出1000倍。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft says new quantum chip 1,000 times more reliable than previous",
+              "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI公司Anthropic计划在美售股",
+          "summary_zh": "AI巨头Anthropic计划在美国出售股票，估值接近新高。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "AI giant Anthropic plans to sell shares in US as valuation nears record",
+              "url": "https://www.bbc.com/news/articles/c0k203kzp10o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "伦敦地铁罢工谈判失败",
+          "summary_zh": "伦敦地铁罢工在谈判失败后继续进行。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "London Tube strikes go ahead after talks fail",
+              "url": "https://www.bbc.com/news/articles/c4g01xv08weo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "水公司因寄生虫爆发被罚180万英镑",
+          "summary_zh": "一家水务公司因寄生虫爆发被罚款180万英镑。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Water firm fined £1.8m over parasite outbreak",
+              "url": "https://www.bbc.com/news/articles/c62xevydk05o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI被诉协助大规模枪击",
+          "summary_zh": "佛罗里达州诉讼指控OpenAI的ChatGPT协助大规模枪击者。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-01",
+          "sources": [
+            {
+              "title": "OpenAI let ChatGPT aid and abet mass shooters, Florida lawsuit alleges",
+              "url": "https://www.bbc.com/news/articles/czx2j0v8d2xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-01"
+            }
+          ]
+        },
+        {
+          "title_zh": "肯尼亚人担忧美国埃博拉隔离计划",
+          "summary_zh": "肯尼亚人担心美国在肯尼亚设立埃博拉隔离点的计划。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "‘We don’t have another country to run to’: Kenyans fear US plan for Ebola quarantine site",
+              "url": "https://www.theguardian.com/world/2026/jun/02/kenyans-fear-us-plan-for-ebola-quarantine-site",
+              "source": "The Guardian",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "野火肆虐富裕地区但总燃烧面积减少",
+          "summary_zh": "野火对富裕地区造成严重破坏，但总燃烧面积有所减少。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-01",
+          "sources": [
+            {
+              "title": "Wildfires devastating richer areas but fewer hectares burned",
+              "url": "https://www.theguardian.com/world/2026/jun/01/wildfires-devastating-richer-areas-but-fewer-hectares-",
+              "source": "The Guardian",
+              "published_at": "2026-06-01"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "养老金",
+        "量子芯片",
+        "中国品牌",
+        "幽灵厨房"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "东南亚供应链新闻聚焦泰国打击外国公司利用空壳公司规避监管，以及中东冲突、科技进展等全球事件。",
+      "events": [
+        {
+          "title_zh": "泰国打击外国空壳公司",
+          "summary_zh": "泰国打击外国公司利用空壳公司规避监管，影响供应链。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Thailand cracks down on foreign companies using fig leaf of ",
+              "url": "https://www.aljazeera.com/economy/2026/6/3/thailand-cracks-down-on-foreign-companies-using-fig-leaf-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列与真主党部分停火",
+          "summary_zh": "以色列打击黎巴嫩南部，但真主党部分停火。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Israel strikes southern Lebanon but partial truce with Hezbo",
+              "url": "https://www.bbc.com/news/articles/c936zvne0l6o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "美伊互相发动新打击",
+          "summary_zh": "美国与伊朗互相发动新打击，停火谈判停滞。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "US and Iran launch new strikes as ceasefire negotiations sta",
+              "url": "https://www.bbc.com/news/articles/c5yx135yg53o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "普京对乌克兰立场强硬",
+          "summary_zh": "普京对乌克兰问题不妥协，但公众讨论增多。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Putin remains uncompromising on Ukraine, but is public disco",
+              "url": "https://www.bbc.com/news/articles/cy82339793go?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出更可靠量子芯片",
+          "summary_zh": "微软新量子芯片可靠性提高1000倍。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft says new quantum chip 1,000 times more reliable th",
+              "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "加拿大要求续签北美自贸协定",
+          "summary_zh": "加拿大正式要求续签北美自贸协定16年。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Canada formally requests 16-year renewal of North American f",
+              "url": "https://www.bbc.com/news/articles/cn9prr3w9nlo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国夫妇伊朗上诉失败",
+          "summary_zh": "英国夫妇在伊朗上诉失败，家人称。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "British couple lose Iran jail sentence appeal, family says",
+              "url": "https://www.bbc.com/news/articles/cjrpwxe82ypo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "日本钢厂熊袭击事件",
+          "summary_zh": "日本钢厂男子遭熊袭击。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "Watch: Man attacked by bear at steel works in Japan",
+              "url": "https://www.bbc.co.uk/programmes/p0npr053?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-03"
+            }
+          ]
+        },
+        {
+          "title_zh": "意大利移民农场工人被杀",
+          "summary_zh": "意大利四名移民农场工人被杀，两人被捕。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Two arrested after four migrant farm workers killed in Italy",
+              "url": "https://www.bbc.com/news/articles/cvgzr2zxedno?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非调查莫桑比克人被杀",
+          "summary_zh": "南非调查两名莫桑比克男子被杀事件。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "South Africa police investigate killing of two Mozambican me",
+              "url": "https://www.bbc.com/news/articles/clyp4e87dq6o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "泰国",
+        "外国公司",
+        "空壳公司",
+        "供应链",
+        "中东冲突"
+      ],
+      "deduped_count": 2,
+      "raw_count": 42
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "2026年6月2日科技新闻：Uber发现丢失物品包括Squishmallows和假牙；Cyera估值达120亿美元；微软推出AI行为测试工具Scout；OpenAI发布Codex工具；谷歌推出假电话检测功能；亚马逊因Ring面部识别面临集体诉讼；Focused Energy获2.4亿美元融资；特朗普签署AI监管行政令；Palantir合同被指弱点；举报人遭刹车线切断威胁。",
+      "events": [
+        {
+          "title_zh": "Uber发现丢失物品清单",
+          "summary_zh": "Uber公布乘客丢失物品包括Squishmallows、假牙等。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Squishmallows, dentures, and an ‘I Heart Hot Dads’ bag: Uber",
+              "url": "https://techcrunch.com/2026/06/02/squishmallows-dentures-and-an-i-heart-hot-dads-bag-uber-has-found-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Cyera估值达120亿美元",
+          "summary_zh": "Cyera以80倍ARR估值120亿美元，尽管运营亏损。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operat",
+              "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-los",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Cyberdeck趋势兴起",
+          "summary_zh": "Cyberdeck成为拒绝大科技监控的新潮流。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Cyberdecks are having a moment, rejecting big tech surveilla",
+              "url": "https://techcrunch.com/2026/06/02/cyberdeck-tiktok-trend-reject-big-tech/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Uber限制员工AI支出",
+          "summary_zh": "Uber因AI预算超支而限制员工使用。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Uber caps employee AI spending after blowing through budget ",
+              "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-fou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出AI行为测试工具",
+          "summary_zh": "微软新工具让开发者用文本测试AI行为。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "New Microsoft tool lets devs spin up AI behavior tests using",
+              "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Everand捆绑电子书和有声书",
+          "summary_zh": "初创公司Everand推出电子书、有声书和读书俱乐部捆绑服务。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "A startup, Everand, is now bundling e-books, audiobooks, and",
+              "url": "https://techcrunch.com/2026/06/02/a-startup-everand-is-now-bundling-ebooks-audiobooks-and-book-clubs",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "斯科塞斯加入好莱坞AI声音",
+          "summary_zh": "马丁·斯科塞斯成为好莱坞最新AI声音。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Martin Scorsese becomes the latest — and most unlikely — Hol",
+              "url": "https://techcrunch.com/2026/06/02/martin-scorsese-becomes-the-latest-and-most-unlikely-hollywood-voi",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出Scout个人助手",
+          "summary_zh": "微软发布受OpenClaw启发的个人助手Scout。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft launches Scout, an OpenClaw-inspired personal assi",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "前Anduril工程师融资4200万美元",
+          "summary_zh": "前Anduril工程师融资4200万美元打造复合材料亚马逊。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Ex-Anduril engineer raises $42M to build the Amazon of compo",
+              "url": "https://techcrunch.com/2026/06/02/ex-anduril-engineer-raises-42m-to-build-the-amazon-of-composite-pa",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌推出假电话检测功能",
+          "summary_zh": "谷歌推出假电话检测功能以防范AI深度伪造。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Google rolls out fake call detection to protect against AI d",
+              "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfak",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "Uber",
+        "微软",
+        "谷歌",
+        "OpenAI"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "前沿科技领域动态：微软推出AI行为测试工具和Scout助手，谷歌推出防AI深度伪造通话检测，OpenAI发布Codex白领工具，Focused Energy获2.4亿美元聚变融资，Uber限制AI支出，亚马逊面临Ring面部识别诉讼，Palantir合同被指弱点，Cyberdeck趋势兴起。",
+      "events": [
+        {
+          "title_zh": "微软推出AI行为测试工具",
+          "summary_zh": "微软新工具让开发者用文本快速创建AI行为测试",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "New Microsoft tool lets devs spin up AI behavior tests using",
+              "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌推出防AI深度伪造通话检测",
+          "summary_zh": "谷歌推出假通话检测功能，保护用户免受AI深度伪造诈骗",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Google rolls out fake call detection to protect against AI d",
+              "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfak",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Focused Energy获2.4亿美元聚变融资",
+          "summary_zh": "激光聚变初创公司Focused Energy完成2.4亿美元A轮融资",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Focused Energy raises whopping $240M Series A for laser-powe",
+              "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fus",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI发布Codex白领工具",
+          "summary_zh": "OpenAI推出新Codex工具，面向白领工作自动化",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "OpenAI launches new Codex tools for white-collar work",
+              "url": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软推出Scout AI助手",
+          "summary_zh": "微软发布Scout个人助手，灵感来自OpenClaw，永不掉线",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Microsoft launches Scout, an OpenClaw-inspired personal assi",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Uber限制员工AI支出",
+          "summary_zh": "Uber在AI预算超支后，对员工AI支出设限",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Uber caps employee AI spending after blowing through budget ",
+              "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-fou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊面临Ring面部识别诉讼",
+          "summary_zh": "亚马逊因Ring面部识别功能面临集体诉讼",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Amazon faces class action lawsuit over Ring facial-recogniti",
+              "url": "https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-fea",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Palantir合同被指弱点",
+          "summary_zh": "英国政府报告警告Palantir合同成为不可接受弱点",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Palantir Contracts Have Become ‘An Unacceptable Point of Wea",
+              "url": "https://www.wired.com/story/uk-government-palantir-warning-report/",
+              "source": "Wired",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "Cyberdeck趋势兴起",
+          "summary_zh": "Cyberdeck成为潮流，拒绝大科技监控",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Cyberdecks are having a moment, rejecting big tech surveilla",
+              "url": "https://techcrunch.com/2026/06/02/cyberdeck-tiktok-trend-reject-big-tech/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普签署AI监管行政令",
+          "summary_zh": "特朗普签署更窄的AI监管行政令，行业游说后调整",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Trump signs narrower executive order on AI oversight after i",
+              "url": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "微软",
+        "谷歌",
+        "聚变",
+        "网络安全"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv最新研究涵盖LLM评估、安全、医疗诊断、时间序列分类、湍流模型、量子态、引力波等前沿领域，共20篇论文。",
+      "events": [
+        {
+          "title_zh": "LLM工具使用知识缺口诊断",
+          "summary_zh": "提出Agentic基准测试诊断LLM工具使用中的知识缺口。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Diagnosing Knowledge Gaps in LLM Tool Use: An Agentic Benchm",
+              "url": "http://arxiv.org/abs/2606.03657v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM安全测量需基于真实场景",
+          "summary_zh": "强调微调LLM的安全测量应基于真实世界场景。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Safety Measurements for Fine-tuned LLMs Should be Grounded i",
+              "url": "http://arxiv.org/abs/2606.03648v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM医疗分诊中的性别偏差",
+          "summary_zh": "研究LLM医疗分诊中性别依赖的诊断替代现象。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Gender-Dependent Diagnostic Substitution in LLM Medical Tria",
+              "url": "http://arxiv.org/abs/2606.03641v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "可解释时间序列分类模型",
+          "summary_zh": "提出AnchorMoE模型实现可解释的时间序列分类。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "AnchorMoE: Interpretable Time Series Classification via Anch",
+              "url": "http://arxiv.org/abs/2606.03631v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "各向同性湍流衰减变系数模型",
+          "summary_zh": "提出变系数模型描述各向同性湍流衰减。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "A variable-coefficient model for decay of isotropic turbulen",
+              "url": "http://arxiv.org/abs/2606.03642v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "量子相干态双模坍缩与复兴",
+          "summary_zh": "研究量子相干态在腔中的双模坍缩与复兴现象。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Two-mode collapse and revival of quantum coherent state in a",
+              "url": "http://arxiv.org/abs/2606.03630v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "引力波标准汽笛测哈勃常数",
+          "summary_zh": "利用GWTC-4标准汽笛和TDCOSMO独立测量哈勃常数。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Model-independent H0 from GWTC-4 standard sirens and TDCOSMO",
+              "url": "http://arxiv.org/abs/2606.03634v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM自定义任务排名方法",
+          "summary_zh": "提出CoEval方法无需标注即可为自定义任务排名语言模型。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "CoEval: Ranking Language Models for Custom Tasks Without Lab",
+              "url": "http://arxiv.org/abs/2606.03650v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑盒自适应高效有害攻击",
+          "summary_zh": "研究黑盒、自适应、高效、可迁移的有害应用攻击。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "Black-box, Adaptive, Efficient, Transferable, Harmful, Appli",
+              "url": "http://arxiv.org/abs/2606.03647v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        },
+        {
+          "title_zh": "视频隐式消息推理基准",
+          "summary_zh": "提出VidMsg基准测试短视频中的隐式消息推理。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-02",
+          "sources": [
+            {
+              "title": "VidMsg: A Benchmark for Implicit Message Inference in Short ",
+              "url": "http://arxiv.org/abs/2606.03635v1",
+              "source": "arXiv",
+              "published_at": "2026-06-02"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "LLM评估",
+        "安全测量",
+        "医疗分诊",
+        "时间序列",
+        "引力波"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "中国动用十亿桶石油储备应对伊朗战争",
+      "summary": "伊朗战争导致全球石油供应中断，中国动用十亿桶战略石油储备以稳定国内能源市场。此举表明中国对能源安全的重视，可能影响全球油价走势，决策者需关注能源供应链风险。",
+      "action": "评估能源储备策略，加强多元化供应。"
+    },
+    {
+      "title": "斯蒂芬·库里签约中国品牌",
+      "summary": "NBA球星斯蒂芬·库里结束与Under Armour合作，转签中国品牌，显示中国品牌在国际体育营销中的影响力提升。这为中国企业拓展全球市场提供机遇，决策者可考虑加大体育营销投入。",
+      "action": "探索体育品牌合作，提升国际影响力。"
+    },
+    {
+      "title": "美国打击伊朗岛屿引发地区冲突",
+      "summary": "美国对伊朗格什姆岛发动自卫打击，伊朗反击科威特目标，导致中东局势升级。这增加了地区不稳定性和油价波动风险，决策者需制定应急计划以应对地缘政治冲击。",
+      "action": "加强中东局势监控，调整投资组合。"
+    },
+    {
+      "title": "谷歌推出防AI深度伪造通话检测",
+      "summary": "谷歌推出假通话检测功能，利用AI技术识别深度伪造诈骗，保护用户安全。这反映了AI安全领域的创新趋势，决策者应关注相关技术应用，以防范类似风险。",
+      "action": "评估AI安全技术，加强内部防护。"
+    },
+    {
+      "title": "标普500连涨9日但广度信号罕见",
+      "summary": "标普500连续9天上涨，但市场广度发出罕见警告信号，表明上涨可能不具可持续性。这提示投资者需警惕市场回调风险，决策者应重新评估资产配置策略。",
+      "action": "分散投资，降低单一市场风险。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
