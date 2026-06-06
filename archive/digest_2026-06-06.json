@@ -1,0 +1,2332 @@
+{
+  "date": "2026-06-06",
+  "generated_at_utc": "2026-06-06T00:33:04.856773+00:00",
+  "generated_at_bjt": "2026-06-06 08:33",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.63,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": -0.010000000000000231,
+      "delta_pct": -0.2747252747252811,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.99 L 5.41,18.20 L 7.82,14.18 L 10.23,9.04 L 12.64,8.59 L 15.05,7.69 L 17.46,3.00 L 19.87,3.00 L 22.28,3.00 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,7.47 L 51.21,14.18 L 53.62,18.42 L 56.03,22.00 L 58.44,25.35 L 60.85,25.35 L 63.26,25.35 L 65.67,25.35 L 68.08,25.35 L 70.49,25.35 L 72.90,25.35 L 75.31,25.35 L 77.72,27.81 L 80.13,30.72 L 82.54,35.41 L 84.95,38.99 L 87.36,40.78 L 89.77,40.78 L 92.18,40.78 L 94.59,40.78 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64,
+        3.64,
+        3.64,
+        3.63
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 13483.75153846154,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 593.0638111888093,
+      "delta_pct": 4.600715056762011,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,34.18 L 5.41,34.73 L 7.82,35.05 L 10.23,38.93 L 12.64,37.88 L 15.05,37.33 L 17.46,38.21 L 19.87,38.70 L 22.28,41.00 L 24.69,39.30 L 27.10,37.80 L 29.51,38.19 L 31.92,38.51 L 34.33,35.85 L 36.74,30.69 L 39.15,26.08 L 41.56,29.30 L 43.97,31.10 L 46.38,33.87 L 48.79,31.97 L 51.21,30.08 L 53.62,33.22 L 56.03,34.36 L 58.44,33.90 L 60.85,31.47 L 63.26,28.70 L 65.67,32.56 L 68.08,30.10 L 70.49,28.02 L 72.90,28.46 L 75.31,29.14 L 77.72,26.92 L 80.13,21.81 L 82.54,21.32 L 84.95,14.61 L 87.36,6.41 L 89.77,6.65 L 92.18,9.55 L 94.59,7.07 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182,
+        12951.345,
+        12528.70954545455,
+        12890.68772727273,
+        13483.75153846154
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3654.015384615385,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 59.636293706294055,
+      "delta_pct": 1.6591542571880151,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.98 L 5.41,36.97 L 7.82,35.93 L 10.23,37.54 L 12.64,39.77 L 15.05,40.40 L 17.46,41.00 L 19.87,39.77 L 22.28,39.53 L 24.69,39.33 L 27.10,39.59 L 29.51,39.35 L 31.92,39.90 L 34.33,38.65 L 36.74,31.90 L 39.15,30.22 L 41.56,31.94 L 43.97,35.66 L 46.38,35.57 L 48.79,32.94 L 51.21,29.49 L 53.62,29.82 L 56.03,30.86 L 58.44,30.09 L 60.85,27.98 L 63.26,28.09 L 65.67,35.19 L 68.08,33.20 L 70.49,31.23 L 72.90,29.22 L 75.31,29.41 L 77.72,28.01 L 80.13,24.55 L 82.54,23.90 L 84.95,22.47 L 87.36,16.01 L 89.77,17.74 L 92.18,10.03 L 94.59,4.49 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727,
+        3065.1885,
+        3372.952727272727,
+        3594.379090909091,
+        3654.015384615385
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3458.04,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 103.42454545454484,
+      "delta_pct": 3.0830521964717623,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,14.22 L 5.41,19.98 L 7.82,26.80 L 10.23,36.65 L 12.64,40.47 L 15.05,39.46 L 17.46,39.44 L 19.87,36.31 L 22.28,37.99 L 24.69,34.65 L 27.10,35.79 L 29.51,35.43 L 31.92,41.00 L 34.33,37.62 L 36.74,28.35 L 39.15,20.40 L 41.56,25.46 L 43.97,26.56 L 46.38,28.51 L 48.79,24.13 L 51.21,15.19 L 53.62,18.71 L 56.03,17.68 L 58.44,24.92 L 60.85,25.83 L 63.26,22.77 L 65.67,32.30 L 68.08,31.22 L 70.49,30.81 L 72.90,27.07 L 75.31,26.11 L 77.72,21.04 L 80.13,13.59 L 82.54,12.73 L 84.95,13.24 L 87.36,11.70 L 89.77,7.65 L 92.18,12.54 L 94.59,6.58 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182,
+        3323.7125,
+        3182.2609090909086,
+        3354.615454545455,
+        3458.04
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 18879.23461538462,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 1014.3182517482601,
+      "delta_pct": 5.677710609453971,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,13.84 L 7.82,12.32 L 10.23,17.48 L 12.64,20.32 L 15.05,20.76 L 17.46,22.80 L 19.87,25.32 L 22.28,29.68 L 24.69,33.57 L 27.10,35.41 L 29.51,36.46 L 31.92,35.74 L 34.33,32.41 L 36.74,30.09 L 39.15,25.54 L 41.56,32.09 L 43.97,35.76 L 46.38,35.85 L 48.79,36.28 L 51.21,34.40 L 53.62,37.67 L 56.03,38.58 L 58.44,38.78 L 60.85,39.06 L 63.26,36.66 L 65.67,39.50 L 68.08,38.86 L 70.49,39.95 L 72.90,39.86 L 75.31,40.13 L 77.72,39.64 L 80.13,39.67 L 82.54,41.00 L 84.95,40.34 L 87.36,31.42 L 89.77,33.11 L 92.18,33.42 L 94.59,30.93 L 97.00,27.74\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364,
+        17173.1035,
+        17076.29272727273,
+        17864.91636363636,
+        18879.23461538462
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "美国科技股暴跌引发市场恐慌，标普500蒸发1.8万亿美元；AI发展引发监管担忧，特朗普会见AI领袖讨论投资；中国打击软色情和暴力内容；英国心脏基金会关闭150家慈善店；SpaceX估值1.75万亿美元。",
+      "events": [
+        {
+          "title_zh": "美国科技股暴跌",
+          "summary_zh": "标普500蒸发1.8万亿美元，纳斯达克创最大点跌幅，市场对大型科技公司担忧加剧。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "S&P 500 sees $1.8 trillion wipeout, Nasdaq tallies biggest p",
+              "url": "https://www.marketwatch.com/story/s-p-500-sees-1-8-trillion-wipeout-nasdaq-tallies-biggest-point-dro",
+              "source": "MarketWatch",
+              "published_at": "2026-06-05"
+            },
+            {
+              "title": "US stocks slump as fears over Big Tech shake Wall Street",
+              "url": "https://www.bbc.com/news/articles/cwy2yq0dj58o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI发展需人类控制",
+          "summary_zh": "Anthropic呼吁停止无人类参与的AI开发，强调监管必要性。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "We need to stop AI developing without humans, says Anthropic",
+              "url": "https://www.bbc.com/news/articles/cx2124z7g45o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普会见AI领袖",
+          "summary_zh": "特朗普与AI领袖会面，讨论美国对AI公司的投资计划。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Trump to meet AI leaders to discuss US investment in their c",
+              "url": "https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国打击不良内容",
+          "summary_zh": "中国加强监管，打击软色情、暴力和拜金主义内容。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "China cracks down on soft porn, violence and materialism in ",
+              "url": "https://www.bbc.com/news/articles/clypy34pj6yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国心脏基金会关店",
+          "summary_zh": "英国心脏基金会计划关闭150家慈善商店，以应对财务压力。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "British Heart Foundation plans to close 150 charity shops",
+              "url": "https://www.bbc.com/news/articles/cvgzg48d9q0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX估值1.75万亿",
+          "summary_zh": "SpaceX估值达1.75万亿美元，计划进行最大规模股票市场操作。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "SpaceX says it's worth $1.75tn as it targets largest stock m",
+              "url": "https://www.bbc.com/news/articles/cvgz237n40jo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI股市泡沫担忧",
+          "summary_zh": "市场质疑AI股票是否存在泡沫，并讨论其是否即将破裂。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Is there an AI stock market bubble, and is it ready to burst",
+              "url": "https://www.bbc.com/news/videos/c1m2mr7gr27o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普宣布煤炭投资",
+          "summary_zh": "特朗普动用战时权力，宣布7亿美元煤炭投资计划。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Trump announces $700m coal investment using wartime powers",
+              "url": "https://www.bbc.com/news/articles/cy0209r62k5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "世界杯带动酒店业",
+          "summary_zh": "美国为世界杯做准备，酒店业就业岗位激增。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Hospitality jobs boom as US prepares for World Cup",
+              "url": "https://www.bbc.com/news/articles/cdxpx4gel1yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "比特币注意力不足",
+          "summary_zh": "比特币因动量交易者流失而面临‘注意力’赤字，市场动能减弱。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Bitcoin is suffering from an ‘attention’ deficit, as momentu",
+              "url": "https://www.marketwatch.com/story/bitcoin-is-suffering-from-an-attention-deficit-as-momentum-traders",
+              "source": "MarketWatch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "科技股暴跌",
+        "AI监管",
+        "市场恐慌",
+        "中国内容监管",
+        "SpaceX估值"
+      ],
+      "deduped_count": 0,
+      "raw_count": 25
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "特朗普向受关税冲击的农民示好，伊朗足球运动员获美国签证，泽连斯基称普京选择战争，加沙持续遭袭，法国调查以色列战争罪，AI实验室呼吁暂停开发，法官推翻特朗普庇护禁令，美黎停火协议遭质疑，俄乌交换战俘，非洲家庭价值观宪章遭批评。",
+      "events": [
+        {
+          "title_zh": "特朗普向受关税冲击农民示好",
+          "summary_zh": "特朗普向受关税和高价冲击的农民发表讲话，试图争取支持。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Trump makes pitch to farmers hard-hit by tariffs, high price",
+              "url": "https://www.aljazeera.com/news/2026/6/5/trump-makes-pitch-to-farmers-hard-hit-by-tariffs-high-prices",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗足球运动员获美国签证",
+          "summary_zh": "白宫确认伊朗足球运动员获世界杯美国签证，显示外交松动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Iran footballers issued US visas for World Cup, says White H",
+              "url": "https://www.aljazeera.com/sports/2026/6/5/iran-footballers-issued-us-visas-for-world-cup-says-white-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "泽连斯基称普京选择战争",
+          "summary_zh": "泽连斯基指责普京拒绝面对面谈判，选择继续战争。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Zelenskyy: Putin choosing war by rejecting offer for in-pers",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/6/5/zelenskyy-putin-choosing-war-by-rejecting-offer-fo",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "加沙持续遭袭引发恐惧",
+          "summary_zh": "尽管有停火呼吁，以色列持续攻击加沙，民众普遍恐惧。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "‘Pervasive fear’ grips Gaza as Israeli attacks persist despi",
+              "url": "https://www.aljazeera.com/news/2026/6/5/pervasive-fear-grips-gaza-as-israeli-attacks-persist-despite",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国调查以色列战争罪",
+          "summary_zh": "法国对以色列在加沙的行为展开战争罪调查，引发国际关注。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "France opens ‘war crimes’ probe into Israel’s treatment of G",
+              "url": "https://www.aljazeera.com/news/2026/6/5/france-opens-war-crimes-probe-into-israels-treatment-of-gaza",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI实验室呼吁暂停开发",
+          "summary_zh": "Anthropic敦促AI实验室暂停，警告人类可能失去控制。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Anthropic urges AI labs to pause, warns humans risk losing c",
+              "url": "https://www.aljazeera.com/economy/2026/6/5/anthropic-urges-ai-labs-to-pause-warns-humans-risk-losing",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "法官推翻特朗普庇护禁令",
+          "summary_zh": "法官裁定特朗普对三国庇护和签证处理禁令无效。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Judge strikes down Trump bar on asylum, visa processing for ",
+              "url": "https://www.aljazeera.com/news/2026/6/5/judge-strikes-down-trump-bar-on-asylum-visa-processing-for-3",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "美黎停火协议遭质疑",
+          "summary_zh": "最新美国斡旋的黎巴嫩停火协议被指无实际意义。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Is the latest US ceasefire deal for Lebanon meaningless?",
+              "url": "https://www.aljazeera.com/video/inside-story/2026/6/5/is-the-latest-us-ceasefire-deal-for-lebanon-me",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄乌交换185名战俘",
+          "summary_zh": "乌克兰和俄罗斯各交换185名战俘，为近期罕见人道行动。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Ukraine and Russia exchange 185 prisoners of war each",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/6/5/ukraine-and-russia-exchange-185-prisoners-of-war-e",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "非洲家庭价值观宪章遭批",
+          "summary_zh": "非洲家庭价值观宪章被权利组织谴责，称其侵犯LGBTQ+权利。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "‘Family values’ African charter condemned by rights groups a",
+              "url": "https://www.theguardian.com/global-development/2026/jun/05/ghana-african-charter-family-values-gende",
+              "source": "The Guardian",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "特朗普",
+        "伊朗",
+        "加沙",
+        "乌克兰",
+        "制裁"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "AI和大模型领域动态：Reid Hoffman离开微软董事会，Google向SpaceX支付巨额算力费用，Supabase估值翻倍至100亿美元，NSA准备使用Anthropic的AI工具，AirTrunk在印度投资300亿美元建设AI数据中心。",
+      "events": [
+        {
+          "title_zh": "Reid Hoffman离开微软董事会",
+          "summary_zh": "LinkedIn联合创始人Reid Hoffman退出微软董事会，转向创始人模式。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Reid Hoffman is leaving Microsoft’s board to go ‘founder mod",
+              "url": "https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-s",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Google每月向SpaceX支付9.2亿美元算力费",
+          "summary_zh": "Google与SpaceX达成巨额计算服务协议，每月支付9.2亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google will pay SpaceX $920M per month for compute",
+              "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Supabase估值8个月翻倍至100亿美元",
+          "summary_zh": "开源数据库平台Supabase估值在8个月内从50亿美元升至100亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Supabase doubles valuation to $10B in 8 months",
+              "url": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NSA准备使用Anthropic的AI工具",
+          "summary_zh": "美国国家安全局计划将Anthropic的Mythos AI用于网络行动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NSA said to be readying Anthropic’s Mythos for use in cyber ",
+              "url": "https://techcrunch.com/2026/06/05/nsa-said-to-be-readying-anthropics-mythos-for-use-in-cyber-operati",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AirTrunk在印度投资300亿美元建AI数据中心",
+          "summary_zh": "数据中心公司AirTrunk承诺投资300亿美元在印度建设5GW AI数据中心。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "AirTrunk commits $30B to build 5GW of AI data centers in Ind",
+              "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mira Murati谨慎重返公众视野",
+          "summary_zh": "前OpenAI高管Mira Murati在沉寂后谨慎回归公众视线。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Mira Murati steps back into the spotlight, carefully",
+              "url": "https://techcrunch.com/2026/06/04/mira-murati-steps-back-into-the-spotlight-carefully/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "标普500拒绝SpaceX和OpenAI加入",
+          "summary_zh": "标普500指数拒绝SpaceX快速加入，并阻止OpenAI和Anthropic进入。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and A",
+              "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unpr",
+              "source": "Ars Technica",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA让宇航员暂避SpaceX龙飞船",
+          "summary_zh": "NASA因国际空间站问题短暂让宇航员在SpaceX龙飞船中避难。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NASA briefly sheltered space station astronauts in SpaceX’s ",
+              "url": "https://techcrunch.com/2026/06/05/nasa-briefly-sheltered-space-station-astronauts-in-spacexs-dragon-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI代币账单到期引发行业混乱",
+          "summary_zh": "AI代币账单到期，行业争相管理AI成本。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "The token bill comes due: Inside the industry scramble to ma",
+              "url": "https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ai",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "初创公司帮助用户远离手机",
+          "summary_zh": "当前最有趣的初创公司致力于帮助用户减少手机使用时间。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "The most interesting startups right now want to get you off ",
+              "url": "https://techcrunch.com/video/the-most-interesting-startups-right-now-want-to-get-you-off-your-phone/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "大模型",
+        "微软",
+        "Google",
+        "SpaceX"
+      ],
+      "deduped_count": 0,
+      "raw_count": 40
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI计算基础设施领域动态：谷歌每月向SpaceX支付9.2亿美元用于计算服务；AirTrunk承诺300亿美元在印度建设5GW AI数据中心；Supabase估值8个月翻倍至100亿美元；NSA准备使用Anthropic的Mythos进行网络行动；NASA短暂让宇航员避入SpaceX龙飞船。",
+      "events": [
+        {
+          "title_zh": "谷歌每月向SpaceX支付9.2亿美元",
+          "summary_zh": "谷歌与SpaceX达成协议，每月支付9.2亿美元用于计算服务。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google will pay SpaceX $920M per month for compute",
+              "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AirTrunk投资300亿美元建AI数据中心",
+          "summary_zh": "AirTrunk承诺投资300亿美元在印度建设5GW AI数据中心。",
+          "region": "global",
+          "score": 0.85,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "AirTrunk commits $30B to build 5GW of AI data centers in India",
+              "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Supabase估值8个月翻倍至100亿美元",
+          "summary_zh": "Supabase在8个月内估值翻倍，达到100亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Supabase doubles valuation to $10B in 8 months",
+              "url": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NSA准备使用Anthropic的Mythos",
+          "summary_zh": "NSA准备将Anthropic的Mythos用于网络行动。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NSA said to be readying Anthropic’s Mythos for use in cyber operations",
+              "url": "https://techcrunch.com/2026/06/05/nsa-said-to-be-readying-anthropics-mythos-for-use-in-cyber-operati",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA宇航员避入SpaceX龙飞船",
+          "summary_zh": "NASA短暂让空间站宇航员避入SpaceX的龙飞船。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NASA briefly sheltered space station astronauts in SpaceX’s Dragon",
+              "url": "https://techcrunch.com/2026/06/05/nasa-briefly-sheltered-space-station-astronauts-in-spacexs-dragon-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Reid Hoffman离开微软董事会",
+          "summary_zh": "Reid Hoffman离开微软董事会，转向创始人模式。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Reid Hoffman is leaving Microsoft’s board to go ‘founder mod",
+              "url": "https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-s",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "前高管指控IBM掩盖网络安全问题",
+          "summary_zh": "前网络安全高管转为举报人，指控IBM掩盖问题。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Former cyber executive turned whistleblower accuses IBM of c",
+              "url": "https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-coverin",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌和FBI警告勒索软件组织",
+          "summary_zh": "谷歌和FBI警告一个发送虚假IT人员的勒索软件组织。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google and FBI warn of ransomware group that sends fake IT w",
+              "url": "https://techcrunch.com/2026/06/05/google-and-fbi-warn-of-ransomware-group-that-sends-fake-it-workers",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "行业应对AI代币账单到期",
+          "summary_zh": "AI代币账单到期，行业争相管理。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "The token bill comes due: Inside the industry scramble to ma",
+              "url": "https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ai",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mira Murati谨慎重返聚光灯",
+          "summary_zh": "Mira Murati谨慎地重返公众视野。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Mira Murati steps back into the spotlight, carefully",
+              "url": "https://techcrunch.com/2026/06/04/mira-murati-steps-back-into-the-spotlight-carefully/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "positive",
+      "sentiment_score": 0.7,
+      "keywords": [
+        "AI计算",
+        "数据中心",
+        "SpaceX",
+        "谷歌",
+        "投资"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "今日科技新闻涵盖微软董事会变动、风投故事、IBM举报、谷歌与SpaceX合作、通用汽车电池计划、电动自行车创业、NASA宇航员避难、AI数据中心投资等，但无直接新能源汽车电池、充电或智驾相关新闻。",
+      "events": [
+        {
+          "title_zh": "通用汽车电池决定未来",
+          "summary_zh": "通用汽车电动化依赖新电池及工厂",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "GM’s electric future depends on a new battery — and this fac",
+              "url": "https://techcrunch.com/2026/06/05/gms-electric-future-depends-on-a-new-battery-and-this-building/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "电动自行车创业破产潮",
+          "summary_zh": "风投支持的电动自行车初创破产，Lec崛起",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "As VC-backed e-bike startups went bankrupt, bootstrapped Lec",
+              "url": "https://techcrunch.com/2026/06/05/as-vc-backed-e-bike-startups-went-bankrupt-bootstrapped-lectric-gr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA宇航员避难SpaceX",
+          "summary_zh": "NASA短暂让空间站宇航员避入SpaceX龙飞船",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NASA briefly sheltered space station astronauts in SpaceX’s ",
+              "url": "https://techcrunch.com/2026/06/05/nasa-briefly-sheltered-space-station-astronauts-in-spacexs-dragon-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌每月付SpaceX9.2亿",
+          "summary_zh": "谷歌将每月支付SpaceX9.2亿美元用于计算",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google will pay SpaceX $920M per month for compute",
+              "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AirTrunk投300亿建AI数据中心",
+          "summary_zh": "AirTrunk承诺300亿美元在印度建5GW AI数据中心",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "AirTrunk commits $30B to build 5GW of AI data centers in Ind",
+              "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Reid Hoffman离开微软董事会",
+          "summary_zh": "Reid Hoffman离开微软董事会，转向创始人模式",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Reid Hoffman is leaving Microsoft’s board to go ‘founder mod",
+              "url": "https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-s",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "IBM被前高管指控掩盖",
+          "summary_zh": "前网络安全高管举报IBM掩盖问题",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Former cyber executive turned whistleblower accuses IBM of c",
+              "url": "https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-coverin",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Supabase估值翻倍至100亿",
+          "summary_zh": "Supabase在8个月内估值翻倍至100亿美元",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Supabase doubles valuation to $10B in 8 months",
+              "url": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌FBI警告勒索软件",
+          "summary_zh": "谷歌和FBI警告冒充IT人员的勒索软件团伙",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google and FBI warn of ransomware group that sends fake IT w",
+              "url": "https://techcrunch.com/2026/06/05/google-and-fbi-warn-of-ransomware-group-that-sends-fake-it-workers",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mira Murati谨慎重返聚光灯",
+          "summary_zh": "Mira Murati小心地重新回到公众视野",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Mira Murati steps back into the spotlight, carefully",
+              "url": "https://techcrunch.com/2026/06/04/mira-murati-steps-back-into-the-spotlight-carefully/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-04"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "科技新闻",
+        "微软",
+        "谷歌",
+        "SpaceX",
+        "通用汽车"
+      ],
+      "deduped_count": 0,
+      "raw_count": 30
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "【核心动态】今日该板块暂无可用内容。\n【趋势研判】无\n【决策参考】请关注其他信息源。",
+      "events": [],
+      "cn_count": 0,
+      "total_count": 0,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [],
+      "deduped_count": 0,
+      "raw_count": 0
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "今日新闻涵盖AI发展、美国股市、特朗普煤炭投资、英国慈善商店关闭、中国内容监管等。AI领域关注度较高，但市场担忧泡沫风险。特朗普宣布7亿美元煤炭投资引发关注。",
+      "events": [
+        {
+          "title_zh": "Anthropic呼吁AI发展需人类参与",
+          "summary_zh": "Anthropic公司表示需要防止AI在没有人类参与的情况下发展。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "We need to stop AI developing without humans, says Anthropic",
+              "url": "https://www.bbc.com/news/articles/cx2124z7g45o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普将会见AI领袖讨论投资",
+          "summary_zh": "特朗普计划会见AI领袖，讨论美国在AI领域的投资。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Trump to meet AI leaders to discuss US investment in their c",
+              "url": "https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国科技股暴跌引发市场担忧",
+          "summary_zh": "美国股市因大型科技公司担忧而大幅下跌。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "US stocks slump as fears over Big Tech shake Wall Street",
+              "url": "https://www.bbc.com/news/articles/cwy2yq0dj58o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国心脏基金会计划关闭150家慈善店",
+          "summary_zh": "英国心脏基金会宣布计划关闭150家慈善商店。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "British Heart Foundation plans to close 150 charity shops",
+              "url": "https://www.bbc.com/news/articles/cvgzg48d9q0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国打击软色情暴力和物质主义内容",
+          "summary_zh": "中国加强监管，打击网络中的软色情、暴力和物质主义内容。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "China cracks down on soft porn, violence and materialism in ",
+              "url": "https://www.bbc.com/news/articles/clypy34pj6yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普宣布7亿美元煤炭投资",
+          "summary_zh": "特朗普利用战时权力宣布7亿美元煤炭投资计划。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Trump announces $700m coal investment using wartime powers",
+              "url": "https://www.bbc.com/news/articles/cy0209r62k5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX估值1.75万亿美元瞄准最大股票市场",
+          "summary_zh": "SpaceX估值达1.75万亿美元，计划进行大规模股票发行。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "SpaceX says it's worth $1.75tn as it targets largest stock m",
+              "url": "https://www.bbc.com/news/articles/cvgz237n40jo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "非洲家庭价值观宪章遭人权组织谴责",
+          "summary_zh": "非洲国家提出的家庭价值观宪章受到人权组织批评。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "‘Family values’ African charter condemned by rights groups a",
+              "url": "https://www.theguardian.com/global-development/2026/jun/05/ghana-african-charter-family-values-gende",
+              "source": "The Guardian",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "专家批评美国专属埃博拉隔离中心计划",
+          "summary_zh": "专家批评美国计划建立仅限美国人的埃博拉隔离中心。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Experts criticise plan for American-only Ebola quarantine ce",
+              "url": "https://www.theguardian.com/world/2026/jun/04/experts-criticise-plan-for-american-only-ebola-quarant",
+              "source": "The Guardian",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "刚果民主共和国埃博拉疫情或早于1月开始",
+          "summary_zh": "世界卫生组织表示刚果民主共和国埃博拉疫情可能早在1月就已开始。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-03",
+          "sources": [
+            {
+              "title": "DRC Ebola outbreak could have begun as early as January, WHO",
+              "url": "https://www.theguardian.com/global-development/2026/jun/03/drc-ebola-outbreak-could-have-begun-as-ea",
+              "source": "The Guardian",
+              "published_at": "2026-06-03"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "特朗普",
+        "煤炭",
+        "股市",
+        "内容监管"
+      ],
+      "deduped_count": 0,
+      "raw_count": 30
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "今日新闻涵盖俄乌冲突、中国领导人访朝、美国经济、法国社会事件等。俄乌双方拒绝和谈，冲突持续；中国加强内容监管；美国为世界杯做准备；法国因儿童谋杀案引发愤怒。",
+      "events": [
+        {
+          "title_zh": "普京称与泽连斯基会面无意义",
+          "summary_zh": "普京表示拒绝与泽连斯基会面，认为谈判无意义。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Putin says there is 'no point' meeting Zelensky over ending",
+              "url": "https://www.bbc.com/news/articles/cpqpqx5qe40o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌克兰袭击货船并承认无人机爆炸",
+          "summary_zh": "乌克兰袭击货船并承认罗马尼亚无人机爆炸事件。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Ukraine strikes cargo ships and admits Romania drone blast",
+              "url": "https://www.bbc.com/news/articles/c707098wkzpo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "宇航员返回国际空间站",
+          "summary_zh": "宇航员在躲避空气泄漏后返回国际空间站。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Astronauts return to ISS after sheltering during air leak re",
+              "url": "https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国儿童谋杀案引发愤怒",
+          "summary_zh": "法国儿童谋杀案嫌疑人犯罪记录引发公众愤怒。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Fury in France after child murder suspect's criminal record",
+              "url": "https://www.bbc.com/news/articles/c1424v7mk8go?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "撒哈拉沙漠近50人渴死",
+          "summary_zh": "撒哈拉沙漠中近50人因卡车事故渴死。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Nearly 50 people die of thirst in Sahara desert after lorry",
+              "url": "https://www.bbc.com/news/articles/c62r2ldyejro?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国演员詹姆斯·汉迪被刺死",
+          "summary_zh": "美国演员詹姆斯·汉迪被女友儿子刺死。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "US actor James Handy stabbed to death, with girlfriend's son",
+              "url": "https://www.bbc.com/news/articles/czd2dj24jgdo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "荷兰黄金头盔劫案三人被判刑",
+          "summary_zh": "三人因盗窃荷兰古代黄金头盔被判刑。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Three jailed over heist of ancient golden helmet from Dutch",
+              "url": "https://www.bbc.com/news/articles/cy020317g1no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "挪威王储妃等待肺移植",
+          "summary_zh": "挪威王储妃因肺病列入移植等待名单。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Norway's crown princess on lung transplant waiting list, pal",
+              "url": "https://www.bbc.com/news/articles/c9wewqxpq2eo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "珠峰向导靠巧克力存活六天",
+          "summary_zh": "珠峰向导在六天困境中靠巧克力存活。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Everest guide survived six-day ordeal by eating chocolate an",
+              "url": "https://www.bbc.com/news/articles/cn9p91295q8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "习近平将罕见访问朝鲜",
+          "summary_zh": "习近平计划与金正恩会面，进行罕见访朝。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Xi Jinping to meet Kim Jong Un in rare visit to North Korea",
+              "url": "https://www.bbc.com/news/articles/clypym3q7p1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "俄乌冲突",
+        "中国",
+        "美国",
+        "法国",
+        "世界杯"
+      ],
+      "deduped_count": 0,
+      "raw_count": 30
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "2026年6月5日科技新闻：Reid Hoffman离开微软董事会；谷歌每月向SpaceX支付9.2亿美元用于计算；NASA短暂将空间站宇航员安置在SpaceX龙飞船中；Supabase估值8个月内翻倍至100亿美元；GM电动化依赖新电池；多家VC支持的电动自行车初创公司破产；NSA准备使用Anthropic的Mythos进行网络行动；AirTrunk承诺在印度投资300亿美元建设AI数据中心。",
+      "events": [
+        {
+          "title_zh": "NASA宇航员暂避SpaceX龙飞船",
+          "summary_zh": "NASA因安全原因短暂将空间站宇航员安置在SpaceX龙飞船中。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NASA briefly sheltered space station astronauts in SpaceX’s Dragon",
+              "url": "https://techcrunch.com/2026/06/05/nasa-briefly-sheltered-space-station-astronauts-in-spacexs-dragon-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌每月向SpaceX支付9.2亿美元",
+          "summary_zh": "谷歌与SpaceX达成协议，每月支付9.2亿美元用于计算服务。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google will pay SpaceX $920M per month for compute",
+              "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Reid Hoffman离开微软董事会",
+          "summary_zh": "Reid Hoffman宣布离开微软董事会，转向创始人模式。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Reid Hoffman is leaving Microsoft’s board to go ‘founder mod",
+              "url": "https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-s",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Supabase估值8个月翻倍至100亿美元",
+          "summary_zh": "数据库初创公司Supabase在8个月内估值翻倍，达到100亿美元。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Supabase doubles valuation to $10B in 8 months",
+              "url": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "GM电动化依赖新电池工厂",
+          "summary_zh": "通用汽车的未来电动化战略依赖于新电池技术和工厂建设。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "GM’s electric future depends on a new battery — and this fac",
+              "url": "https://techcrunch.com/2026/06/05/gms-electric-future-depends-on-a-new-battery-and-this-building/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "VC电动自行车初创公司破产潮",
+          "summary_zh": "多家VC支持的电动自行车初创公司破产，而自筹资金的Lectric增长。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "As VC-backed e-bike startups went bankrupt, bootstrapped Lec",
+              "url": "https://techcrunch.com/2026/06/05/as-vc-backed-e-bike-startups-went-bankrupt-bootstrapped-lectric-gr",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NSA准备使用Anthropic的Mythos",
+          "summary_zh": "美国国家安全局准备将Anthropic的Mythos用于网络行动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NSA said to be readying Anthropic’s Mythos for use in cyber ",
+              "url": "https://techcrunch.com/2026/06/05/nsa-said-to-be-readying-anthropics-mythos-for-use-in-cyber-operati",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AirTrunk在印度投资300亿美元",
+          "summary_zh": "AirTrunk承诺在印度投资300亿美元建设5GW AI数据中心。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "AirTrunk commits $30B to build 5GW of AI data centers in Ind",
+              "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "前网络安全高管指控IBM掩盖",
+          "summary_zh": "前网络安全高管转为举报人，指控IBM掩盖安全问题。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Former cyber executive turned whistleblower accuses IBM of c",
+              "url": "https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-coverin",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌和FBI警告勒索软件团伙",
+          "summary_zh": "谷歌和FBI警告一个伪装成IT人员的勒索软件团伙。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google and FBI warn of ransomware group that sends fake IT w",
+              "url": "https://techcrunch.com/2026/06/05/google-and-fbi-warn-of-ransomware-group-that-sends-fake-it-workers",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "SpaceX",
+        "NASA",
+        "AI数据中心",
+        "电动自行车",
+        "网络安全"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "前沿科技领域动态：Reid Hoffman离开微软董事会；Google每月向SpaceX支付9.2亿美元计算费用；Supabase估值8个月翻倍至100亿美元；NASA短暂将宇航员安置在SpaceX龙飞船；小型模块化核反应堆首次达到临界；S&P 500拒绝SpaceX、OpenAI和Anthropic上市；婴儿肉毒杆菌爆发原因不明；USB音箱可被远程感染。",
+      "events": [
+        {
+          "title_zh": "Reid Hoffman离开微软董事会",
+          "summary_zh": "LinkedIn联合创始人Reid Hoffman宣布离开微软董事会，转向创始人模式。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Reid Hoffman is leaving Microsoft’s board to go ‘founder mod",
+              "url": "https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-s",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Google每月支付SpaceX 9.2亿美元",
+          "summary_zh": "Google与SpaceX达成协议，每月支付9.2亿美元用于计算服务。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Google will pay SpaceX $920M per month for compute",
+              "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Supabase估值8个月翻倍至100亿美元",
+          "summary_zh": "开源数据库平台Supabase在8个月内估值翻倍，达到100亿美元。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Supabase doubles valuation to $10B in 8 months",
+              "url": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA将宇航员安置在SpaceX龙飞船",
+          "summary_zh": "NASA因国际空间站泄漏问题，短暂将宇航员转移到SpaceX龙飞船避难。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "NASA briefly sheltered space station astronauts in SpaceX’s ",
+              "url": "https://techcrunch.com/2026/06/05/nasa-briefly-sheltered-space-station-astronauts-in-spacexs-dragon-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "小型模块化核反应堆首次达到临界",
+          "summary_zh": "美国首次测试的小型模块化核反应堆成功达到临界状态，标志核能技术进展。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Small modular nuclear reactor reaches criticality in first t",
+              "url": "https://arstechnica.com/science/2026/06/first-us-test-of-modular-reactor-reaches-criticality/",
+              "source": "Ars Technica",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "S&P 500拒绝SpaceX等公司上市",
+          "summary_zh": "S&P 500指数拒绝SpaceX、OpenAI和Anthropic的快速上市请求，不豁免规则。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and A",
+              "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unpr",
+              "source": "Ars Technica",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "婴儿肉毒杆菌爆发原因不明",
+          "summary_zh": "FDA仍无法确定婴儿肉毒杆菌爆发的来源或如何预防。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Baby botulism outbreak: FDA still doesn't know cause—or how ",
+              "url": "https://arstechnica.com/health/2026/06/baby-botulism-outbreak-fda-still-doesnt-know-cause-or-how-to-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "USB音箱可被远程感染PC",
+          "summary_zh": "一款高评价USB音箱被发现可被空中感染，进而感染连接的PC。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "How a USB-connected speaker can infect a PC without ever bei",
+              "url": "https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infec",
+              "source": "Ars Technica",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "前网络安全高管指控IBM掩盖问题",
+          "summary_zh": "一名前网络安全高管转为举报人，指控IBM掩盖网络安全问题。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Former cyber executive turned whistleblower accuses IBM of c",
+              "url": "https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-coverin",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "AirTrunk投资300亿美元建AI数据中心",
+          "summary_zh": "AirTrunk承诺在印度投资300亿美元，建设5GW的AI数据中心。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "AirTrunk commits $30B to build 5GW of AI data centers in Ind",
+              "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "SpaceX",
+        "核反应堆",
+        "AI",
+        "网络安全",
+        "估值"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv最新研究涵盖AI参数高效微调、人形机器人控制、代码生成、视觉语言动作模型、博弈论、3D多模态大模型、宇宙学、引力波探测、扩散模型、强化学习等多个前沿领域。",
+      "events": [
+        {
+          "title_zh": "TailLoR保护参数高效微调主成分",
+          "summary_zh": "提出TailLoR方法，在参数高效微调中保护主成分，提升模型性能。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "TailLoR: Protecting Principal Components in Parameter-Effici",
+              "url": "http://arxiv.org/abs/2606.06494v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "HANDOFF实现人形机器人全身控制",
+          "summary_zh": "提出HANDOFF框架，通过任务空间全身控制实现人形机器人自主操作。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via ",
+              "url": "http://arxiv.org/abs/2606.06493v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "Code2LoRA用超网络生成代码适配器",
+          "summary_zh": "提出Code2LoRA方法，利用超网络为代码语言模型生成适配器，提升效率。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language",
+              "url": "http://arxiv.org/abs/2606.06492v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "TempoVLA学习速度可控视觉语言动作模型",
+          "summary_zh": "提出TempoVLA，实现速度可控的视觉语言动作模型，用于机器人操作。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "TempoVLA: Learning Speed-Controllable Vision-Language-Action",
+              "url": "http://arxiv.org/abs/2606.06491v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "重复博弈中自适应对手的遗憾最小化",
+          "summary_zh": "研究在重复博弈中面对自适应对手时的遗憾最小化策略。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Regret Minimization with Adaptive Opponents in Repeated Game",
+              "url": "http://arxiv.org/abs/2606.06486v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "PAR3D统一3D多模态大模型",
+          "summary_zh": "提出PAR3D，一种具有部件感知表示的3D多模态大语言模型。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "PAR3D: A Unified 3D-MLLM with Part-Aware Representation for ",
+              "url": "http://arxiv.org/abs/2606.06485v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "膨胀子驱动早期QCD约束现象学",
+          "summary_zh": "研究膨胀子驱动的早期QCD约束及其现象学影响。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Phenomenology of Inflaton-Driven Early QCD Confinement and S",
+              "url": "http://arxiv.org/abs/2606.06484v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "短引力波瞬变探测宇宙弦",
+          "summary_zh": "利用短引力波瞬变作为宇宙弦的探针。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Short Gravitational-Wave Transients as Probes of Cosmic Doma",
+              "url": "http://arxiv.org/abs/2606.06478v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "复杂性平衡扩散分裂方法",
+          "summary_zh": "提出复杂性平衡的扩散分裂方法，优化扩散模型性能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "Complexity-Balanced Diffusion Splitting",
+              "url": "http://arxiv.org/abs/2606.06477v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        },
+        {
+          "title_zh": "MLEvolve自动化机器学习自进化框架",
+          "summary_zh": "提出MLEvolve，一种自进化框架实现自动化机器学习。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-04",
+          "sources": [
+            {
+              "title": "MLEvolve: A Self-Evolving Framework for Automated Machine Le",
+              "url": "http://arxiv.org/abs/2606.06473v1",
+              "source": "arXiv",
+              "published_at": "2026-06-04"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "arXiv",
+        "AI",
+        "机器学习",
+        "机器人",
+        "宇宙学"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "习近平将罕见访问朝鲜",
+      "summary": "中国国家主席习近平计划访问朝鲜并与金正恩会面，这是一次罕见的访问。此举可能加强中朝关系，影响地区地缘政治格局，对投资者而言需关注东北亚稳定性和相关贸易政策变化。",
+      "action": "评估中朝合作对区域投资的影响。"
+    },
+    {
+      "title": "NASA宇航员暂避SpaceX龙飞船",
+      "summary": "NASA因安全原因将空间站宇航员临时安置在SpaceX龙飞船中，显示商业航天在关键任务中的可靠性提升。这增强了SpaceX的市场地位，可能加速航天商业化进程，影响相关投资决策。",
+      "action": "关注商业航天板块的投资机会。"
+    },
+    {
+      "title": "美国科技股暴跌",
+      "summary": "标普500蒸发1.8万亿美元，纳斯达克创最大点跌幅，市场对大型科技公司担忧加剧。这预示着科技行业可能面临调整，投资者需重新评估持仓风险，考虑分散投资以应对波动。",
+      "action": "减持科技股，增加防御性资产配置。"
+    },
+    {
+      "title": "加沙持续遭袭引发恐惧",
+      "summary": "尽管有停火呼吁，以色列持续攻击加沙，导致民众普遍恐惧。冲突升级可能影响中东能源供应和全球市场稳定性，投资者需警惕油价波动和地缘政治风险。",
+      "action": "监控能源价格，调整相关投资组合。"
+    },
+    {
+      "title": "谷歌每月向SpaceX支付9.2亿美元",
+      "summary": "谷歌与SpaceX达成协议，每月支付9.2亿美元用于计算服务，显示云计算和卫星通信的深度融合。这凸显了科技巨头对太空基础设施的依赖，可能推动相关产业链发展。",
+      "action": "投资太空计算和云服务相关股票。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
