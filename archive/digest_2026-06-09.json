@@ -1,0 +1,2567 @@
+{
+  "date": "2026-06-09",
+  "generated_at_utc": "2026-06-09T00:27:37.349054+00:00",
+  "generated_at_bjt": "2026-06-09 08:27",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.63,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": -0.010000000000000231,
+      "delta_pct": -0.2747252747252811,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.99 L 5.41,18.20 L 7.82,14.18 L 10.23,9.04 L 12.64,8.59 L 15.05,7.69 L 17.46,3.00 L 19.87,3.00 L 22.28,3.00 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,7.47 L 51.21,14.18 L 53.62,18.42 L 56.03,22.00 L 58.44,25.35 L 60.85,25.35 L 63.26,25.35 L 65.67,25.35 L 68.08,25.35 L 70.49,25.35 L 72.90,25.35 L 75.31,25.35 L 77.72,27.81 L 80.13,30.72 L 82.54,35.41 L 84.95,38.99 L 87.36,40.78 L 89.77,40.78 L 92.18,40.78 L 94.59,40.78 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64,
+        3.64,
+        3.64,
+        3.63
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 13483.75153846154,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 593.0638111888093,
+      "delta_pct": 4.600715056762011,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,34.18 L 5.41,34.73 L 7.82,35.05 L 10.23,38.93 L 12.64,37.88 L 15.05,37.33 L 17.46,38.21 L 19.87,38.70 L 22.28,41.00 L 24.69,39.30 L 27.10,37.80 L 29.51,38.19 L 31.92,38.51 L 34.33,35.85 L 36.74,30.69 L 39.15,26.08 L 41.56,29.30 L 43.97,31.10 L 46.38,33.87 L 48.79,31.97 L 51.21,30.08 L 53.62,33.22 L 56.03,34.36 L 58.44,33.90 L 60.85,31.47 L 63.26,28.70 L 65.67,32.56 L 68.08,30.10 L 70.49,28.02 L 72.90,28.46 L 75.31,29.14 L 77.72,26.92 L 80.13,21.81 L 82.54,21.32 L 84.95,14.61 L 87.36,6.41 L 89.77,6.65 L 92.18,9.55 L 94.59,7.07 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182,
+        12951.345,
+        12528.70954545455,
+        12890.68772727273,
+        13483.75153846154
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3654.015384615385,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 59.636293706294055,
+      "delta_pct": 1.6591542571880151,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.98 L 5.41,36.97 L 7.82,35.93 L 10.23,37.54 L 12.64,39.77 L 15.05,40.40 L 17.46,41.00 L 19.87,39.77 L 22.28,39.53 L 24.69,39.33 L 27.10,39.59 L 29.51,39.35 L 31.92,39.90 L 34.33,38.65 L 36.74,31.90 L 39.15,30.22 L 41.56,31.94 L 43.97,35.66 L 46.38,35.57 L 48.79,32.94 L 51.21,29.49 L 53.62,29.82 L 56.03,30.86 L 58.44,30.09 L 60.85,27.98 L 63.26,28.09 L 65.67,35.19 L 68.08,33.20 L 70.49,31.23 L 72.90,29.22 L 75.31,29.41 L 77.72,28.01 L 80.13,24.55 L 82.54,23.90 L 84.95,22.47 L 87.36,16.01 L 89.77,17.74 L 92.18,10.03 L 94.59,4.49 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727,
+        3065.1885,
+        3372.952727272727,
+        3594.379090909091,
+        3654.015384615385
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3458.04,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 103.42454545454484,
+      "delta_pct": 3.0830521964717623,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,14.22 L 5.41,19.98 L 7.82,26.80 L 10.23,36.65 L 12.64,40.47 L 15.05,39.46 L 17.46,39.44 L 19.87,36.31 L 22.28,37.99 L 24.69,34.65 L 27.10,35.79 L 29.51,35.43 L 31.92,41.00 L 34.33,37.62 L 36.74,28.35 L 39.15,20.40 L 41.56,25.46 L 43.97,26.56 L 46.38,28.51 L 48.79,24.13 L 51.21,15.19 L 53.62,18.71 L 56.03,17.68 L 58.44,24.92 L 60.85,25.83 L 63.26,22.77 L 65.67,32.30 L 68.08,31.22 L 70.49,30.81 L 72.90,27.07 L 75.31,26.11 L 77.72,21.04 L 80.13,13.59 L 82.54,12.73 L 84.95,13.24 L 87.36,11.70 L 89.77,7.65 L 92.18,12.54 L 94.59,6.58 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182,
+        3323.7125,
+        3182.2609090909086,
+        3354.615454545455,
+        3458.04
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 18879.23461538462,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 1014.3182517482601,
+      "delta_pct": 5.677710609453971,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,13.84 L 7.82,12.32 L 10.23,17.48 L 12.64,20.32 L 15.05,20.76 L 17.46,22.80 L 19.87,25.32 L 22.28,29.68 L 24.69,33.57 L 27.10,35.41 L 29.51,36.46 L 31.92,35.74 L 34.33,32.41 L 36.74,30.09 L 39.15,25.54 L 41.56,32.09 L 43.97,35.76 L 46.38,35.85 L 48.79,36.28 L 51.21,34.40 L 53.62,37.67 L 56.03,38.58 L 58.44,38.78 L 60.85,39.06 L 63.26,36.66 L 65.67,39.50 L 68.08,38.86 L 70.49,39.95 L 72.90,39.86 L 75.31,40.13 L 77.72,39.64 L 80.13,39.67 L 82.54,41.00 L 84.95,40.34 L 87.36,31.42 L 89.77,33.11 L 92.18,33.42 L 94.59,30.93 L 97.00,27.74\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364,
+        17173.1035,
+        17076.29272727273,
+        17864.91636363636,
+        18879.23461538462
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "市场关注通胀、AI投资及IPO动态。OpenAI秘密提交IPO，SpaceX计划上市，马斯克称无需魔法即可部署AI数据中心。通胀可能超4%，债券市场期待美联储行动。科技股波动，美光反弹，礼来因试验上涨。尼克斯球票价格大跌。",
+      "events": [
+        {
+          "title_zh": "OpenAI秘密提交IPO",
+          "summary_zh": "OpenAI秘密提交IPO申请，但存在条件限制，加剧与竞争对手的投资竞赛。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files confidentially for IPO — but there’s a catch",
+              "url": "https://www.marketwatch.com/story/openai-files-confidentially-for-ipo-but-theres-a-catch-3f13fc13?mo",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "OpenAI plans to go public, intensifying investment race with",
+              "url": "https://www.bbc.com/news/articles/cd958eqg1n5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "马斯克称SpaceX无需魔法部署AI",
+          "summary_zh": "马斯克表示SpaceX不需要魔法即可将AI数据中心送入轨道，暗示技术突破。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Elon Musk says SpaceX doesn’t need ‘magic’ to put AI data ce",
+              "url": "https://www.marketwatch.com/story/elon-musk-says-spacex-doesnt-need-magic-to-put-ai-data-centers-up-",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX上市或成马斯克最大赌注",
+          "summary_zh": "SpaceX的股票市场发射可能成为马斯克最大的赌博，引发市场关注。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "SpaceX's stock market blast-off could be Musk's biggest gamb",
+              "url": "https://www.bbc.com/news/articles/cy8d9e4lzv1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "通胀风暴酝酿或超4%",
+          "summary_zh": "太平洋地区通胀风暴酝酿，本周可能超过4%，债券市场期待美联储主席行动。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "An inflation storm is brewing in the Pacific Ocean — and you",
+              "url": "https://www.marketwatch.com/story/an-inflation-storm-is-brewing-in-the-pacific-ocean-and-your-portfo",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Inflation could top 4% this week. The bond market wants Fed ",
+              "url": "https://www.marketwatch.com/story/inflation-could-top-4-this-week-the-bond-market-wants-fed-chair-wa",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美光股价大幅反弹",
+          "summary_zh": "美光股价大幅反弹，市场认为内存交易仍然活跃。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Micron’s stock bounces back in a big way: ‘The memory trade ",
+              "url": "https://www.marketwatch.com/story/microns-stock-bounces-back-in-a-big-way-the-memory-trade-is-alive-",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "礼来股价因试验上涨",
+          "summary_zh": "礼来公司下一代减肥药后期试验成功，股价上涨。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Eli Lilly stock rises after late-stage trial of next-generat",
+              "url": "https://www.marketwatch.com/story/eli-lilly-stock-jumps-after-late-stage-trial-of-next-generation-we",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技投资组合或错失AI热潮",
+          "summary_zh": "你的科技投资组合可能站在AI繁荣的错误一边，下一代游戏机可能成本1000美元。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Your tech portfolio could be on the wrong side of the AI boo",
+              "url": "https://www.marketwatch.com/story/your-next-videogame-console-could-cost-1-000-and-it-has-nothing-to",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼克斯球票价格暴跌超50%",
+          "summary_zh": "尼克斯队第三场比赛前，MSG球票价格暴跌超过50%。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Knicks ticket prices plunge more than 50% ahead of Game 3 at",
+              "url": "https://www.marketwatch.com/story/knicks-ticket-prices-plunge-more-than-50-ahead-of-game-3-at-msg-bu",
+              "source": "MarketWatch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "SBF寻求特朗普赦免",
+          "summary_zh": "被监禁的加密货币创始人Sam Bankman-Fried寻求特朗普赦免。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Jailed crypto founder Sam Bankman-Fried seeks Trump pardon",
+              "url": "https://www.bbc.com/news/articles/cjwgd6jqd5do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "股市紧张情绪持续",
+          "summary_zh": "股市紧张情绪持续，受科技股担忧和中东局势影响。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Stock market jitters remain amid tech fears and renewed Midd",
+              "url": "https://www.bbc.com/news/articles/c78yd5g9qx0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "通胀",
+        "AI",
+        "IPO",
+        "美联储",
+        "科技股"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "中东局势紧张，以色列与伊朗冲突持续，特朗普警告内塔尼亚胡。美国中期选举、OpenAI上市、欧盟对俄制裁、菲律宾地震等事件引发关注。中国领导人访朝意义重大。",
+      "events": [
+        {
+          "title_zh": "伊朗战争直播：特朗普警告内塔尼亚胡",
+          "summary_zh": "以色列与伊朗冲突升级，特朗普警告以色列总理，双方暂停打击但威胁报复。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Iran war live: Trump warns Netanyahu as Israel, Tehran halt",
+              "url": "https://www.aljazeera.com/news/liveblog/2026/6/9/iran-war-live-trump-warns-netanyahu-as-israel-tehra",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列袭击加沙致274人死亡",
+          "summary_zh": "幸存者回忆以色列在加沙难民营的袭击，造成274人死亡，引发国际谴责。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Survivors recall Israeli raid that killed 274 in Gaza refuge",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/6/8/survivors-recall-israeli-raid-that-killed-274-in-g",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧盟计划加大对俄制裁",
+          "summary_zh": "欧盟拟追加制裁，使对俄制裁总额达1.5万亿美元，进一步打击俄罗斯经济。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "EU planning to add to $1.5 trillion sanctions hit on Russia",
+              "url": "https://www.aljazeera.com/news/2026/6/8/eu-planning-to-add-to-1-5-trillion-sanctions-hit-on-russia?t",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "联合国人权领袖呼吁解除古巴制裁",
+          "summary_zh": "联合国人权领袖呼吁解除对古巴的制裁，强调人道主义影响。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "UN human rights leader calls for Cuba sanctions to be ‘lifte",
+              "url": "https://www.aljazeera.com/news/2026/6/8/un-human-rights-leader-calls-for-cuba-sanctions-to-be-lifted",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "习近平访朝意义重大",
+          "summary_zh": "中国领导人习近平访问朝鲜，分析其地缘政治意义及对地区局势的影响。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "How significant is Xi Jinping’s visit to North Korea?",
+              "url": "https://www.aljazeera.com/video/inside-story/2026/6/8/how-significant-is-xi-jinpings-visit-to-north-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI申请美国IPO",
+          "summary_zh": "科技巨头OpenAI提交美国首次公开募股申请，引发市场关注。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Tech giant OpenAI files for US initial public offering",
+              "url": "https://www.aljazeera.com/economy/2026/6/8/tech-giant-openai-files-for-us-initial-public-offering?tr",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "菲律宾南部地震致35人死亡",
+          "summary_zh": "菲律宾南部发生强烈地震，造成至少35人死亡，救援工作正在进行。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "At least 35 dead after major earthquake strikes southern Phi",
+              "url": "https://www.bbc.com/news/articles/clyel78e6p5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普提名托德·布兰奇为司法部长",
+          "summary_zh": "特朗普提名托德·布兰奇为司法部长，引发政治争议。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Trump nominates Todd Blanche as attorney general, setting up",
+              "url": "https://www.aljazeera.com/news/2026/6/8/trump-nominates-todd-blanche-as-attorney-general-setting-up-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国中期选举：缅因州面临考验",
+          "summary_zh": "美国四个州举行中期选举初选，缅因州成为焦点。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Maine’s Platner faces test as four US states hold midterm pr",
+              "url": "https://www.aljazeera.com/news/2026/6/8/maines-platner-faces-test-as-four-us-states-hold-midterm-pri",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "意大利调查以色列部长本-格维尔",
+          "summary_zh": "意大利检察官对以色列部长本-格维尔展开调查，涉及国际法问题。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Italian prosecutors to probe Israeli minister Ben-Gvir over",
+              "url": "https://www.aljazeera.com/news/2026/6/8/italian-prosecutors-to-probe-israeli-minister-ben-gvir-over-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "伊朗",
+        "以色列",
+        "制裁",
+        "特朗普",
+        "中东冲突"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "苹果在WWDC 2026上发布iOS 27、macOS 27等系统更新，引入Siri AI和AI修复Safari扩展问题；OpenAI提交IPO申请；Google NotebookLM推出Gemini 3.5；Meta指控NSO违反间谍软件禁令。",
+      "events": [
+        {
+          "title_zh": "苹果WWDC发布iOS 27等更新",
+          "summary_zh": "苹果在WWDC 2026上推出iOS 27、macOS 27等系统，引入Siri AI和AI修复Safari扩展问题。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "44 things coming to your Apple devices that you might have missed from WWDC 2026",
+              "url": "https://www.theverge.com/tech/946260/apple-wwdc-2026-ios-ipados-macos-watchos-visionos-27-features-m",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Apple is using AI to fix Safari’s extension problem",
+              "url": "https://www.theverge.com/tech/946345/apple-safari-ai-update-extensions",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Apple announces watchOS 27, now with Siri AI",
+              "url": "https://www.theverge.com/tech/943145/apple-watch-watchos-27-wwdc-2026",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI提交IPO申请",
+          "summary_zh": "OpenAI紧随Anthropic之后，提交了IPO申请，计划上市。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files for IPO, following Anthropic",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/946335/openai-ipo-s-1-confidential",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Google NotebookLM推出Gemini 3.5",
+          "summary_zh": "Google NotebookLM更新，引入Gemini 3.5和反重力功能。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Gemini 3.5 and Antigravity come to Google NotebookLM",
+              "url": "https://arstechnica.com/ai/2026/06/gemini-3-5-and-antigravity-come-to-google-notebooklm/",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta指控NSO违反间谍软件禁令",
+          "summary_zh": "Meta指控NSO集团通过WhatsApp新漏洞违反间谍软件禁令。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Meta alleges NSO violated spyware injunction with new WhatsApp exploit",
+              "url": "https://arstechnica.com/tech-policy/2026/06/meta-alleges-nso-violated-spyware-injunction-with-new-wh",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果屏幕时间更新被指不足",
+          "summary_zh": "The Verge评论称苹果屏幕时间更新力度太小、太晚。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s Screen Time updates are too little, too late",
+              "url": "https://www.theverge.com/tech/946446/apples-screen-time-updates-are-too-little-too-late",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Instagram允许用户重新整理网格",
+          "summary_zh": "Instagram终于允许所有用户重新整理个人资料网格。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Instagram is finally letting everyone reorganize their profile grid",
+              "url": "https://www.theverge.com/tech/946458/instagram-is-finally-letting-everyone-reorganize-their-grid",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "macOS 27要求Apple Silicon",
+          "summary_zh": "macOS 27不再支持Intel Mac，要求Apple Silicon芯片。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "macOS 27 requires Apple Silicon, as Apple draws down the Intel era",
+              "url": "https://arstechnica.com/gadgets/2026/06/macos-27-requires-apple-silicon-as-apple-draws-down-the-inte",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "OpenAI files confidentially for IPO, following Anthropic",
+              "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果新家长控制旨在保护隐私",
+          "summary_zh": "苹果推出新家长控制功能，旨在防止苹果收集儿童数据。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s new parental controls are for keeping Apple out of the data collection business",
+              "url": "https://www.theverge.com/policy/946331/apple-parental-controls-child-accounts-wwdc",
+              "source": "The Verge",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄罗斯卫星可干扰GPS信号",
+          "summary_zh": "测试表明俄罗斯卫星能够在大陆范围内干扰GPS信号。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Tests suggest Russian satellites can jam GPS on a continental scale",
+              "url": "https://arstechnica.com/space/2026/06/tests-suggest-russian-satellites-can-jam-gps-on-a-continental-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软软件包再次被植入恶意软件",
+          "summary_zh": "几周内第二次，微软软件包被发现含有恶意软件。",
+          "region": "global",
+          "score": 0.0,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "For the 2nd time in weeks, Microsoft packages laced with credential-stealing malware",
+              "url": "https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-cre",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "苹果",
+        "AI",
+        "Siri",
+        "OpenAI",
+        "IPO"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI领域动态密集：OpenAI和Anthropic相继秘密提交IPO；苹果WWDC发布多项AI功能，包括Siri独立应用、AI编辑和图像生成；Waymo收购苹果自动驾驶测试场；微软开源工具遭黑客攻击；美国防部指控阿里、百度等支持中国军事；英国投资十亿美元AI超算。",
+      "events": [
+        {
+          "title_zh": "OpenAI秘密提交IPO申请",
+          "summary_zh": "继Anthropic后，OpenAI也秘密提交IPO申请，AI公司上市潮来临。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files confidentially for IPO, following Anthropic",
+              "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "As OpenAI files for IPO, Sam Altman’s eye-scanning company i",
+              "url": "https://techcrunch.com/2026/06/08/as-openai-files-for-ipo-sam-altmans-eye-scanning-company-is-doing-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布多项AI功能",
+          "summary_zh": "苹果在WWDC推出Siri独立应用、AI编辑照片、图像生成等新功能，追赶AI浪潮。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple plays catch-up at WWDC",
+              "url": "https://techcrunch.com/2026/06/08/apple-plays-catch-up-at-wwdc/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Everything Apple Announced at WWDC 2026",
+              "url": "https://www.wired.com/story/everything-apple-announced-at-wwdc-2026/",
+              "source": "Wired",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果以低价AI吸引小开发者",
+          "summary_zh": "苹果推出更便宜的AI服务，旨在吸引小型开发者加入其生态系统。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple bets cheaper AI will woo small developers",
+              "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "OpenAI Confidentially Files for IPO on the Heels of SpaceX and Anthropic",
+              "url": "https://www.wired.com/story/openai-confidentially-files-for-ipo/",
+              "source": "Wired",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo收购苹果自动驾驶测试场",
+          "summary_zh": "Waymo以2.2亿美元收购苹果自动驾驶测试场，加速自动驾驶技术研发。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Waymo bought Apple’s self-driving car proving ground for $22",
+              "url": "https://techcrunch.com/2026/06/08/waymo-bought-apples-self-driving-car-proving-ground-for-220m/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软开源工具遭黑客攻击",
+          "summary_zh": "微软开源工具被黑客利用窃取AI密码，引发安全担忧。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Microsoft’s open source tools were hacked to steal passwords",
+              "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国防部指控阿里百度支持中国军事",
+          "summary_zh": "美国五角大楼指控阿里巴巴、百度、比亚迪等公司支持中国军事现代化。",
+          "region": "cn",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Pentagon says Alibaba, Baidu, BYD, and Unitree support China",
+              "url": "https://techcrunch.com/2026/06/08/pentagon-says-alibaba-baidu-byd-and-unitree-support-chinas-militar",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果Siri获得独立应用",
+          "summary_zh": "苹果为Siri推出独立应用，提升AI助手功能和用户体验。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple gives Siri its own dedicated app",
+              "url": "https://techcrunch.com/2026/06/08/apple-gives-siri-its-own-dedicated-app/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果照片应用新增AI编辑功能",
+          "summary_zh": "苹果照片应用引入AI编辑功能，用户可更智能地处理图片。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s Photos app is getting new AI editing features",
+              "url": "https://techcrunch.com/2026/06/08/apples-photos-app-is-getting-new-ai-editing-features/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国投资十亿美元AI超算",
+          "summary_zh": "英国押注十亿美元AI超级计算机，旨在发展本土半导体和AI能力。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "The UK Is Betting on a Billion-Dollar AI Supercomputer to Ki",
+              "url": "https://www.wired.com/story/uk-supercomputer-investment-ai-homegrown-semiconductor/",
+              "source": "Wired",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC虚假广告和解",
+          "summary_zh": "苹果因WWDC AI演示虚假广告支付2.5亿美元和解，但演示效果更真实。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s WWDC AI demos looked more real after $250M false ad ",
+              "url": "https://techcrunch.com/2026/06/08/apples-wwdc-ai-demos-looked-more-real-after-250m-false-ad-settleme",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "OpenAI IPO",
+        "苹果WWDC AI",
+        "AI芯片",
+        "数据中心",
+        "自动驾驶"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "今日科技新闻聚焦AI与自动驾驶领域：OpenAI和Anthropic相继提交IPO申请，苹果WWDC发布多项AI功能更新，Waymo收购苹果自动驾驶测试场，五角大楼指控阿里、百度、比亚迪等支持中国军事。",
+      "events": [
+        {
+          "title_zh": "OpenAI秘密提交IPO申请",
+          "summary_zh": "继Anthropic后，OpenAI也向SEC秘密提交IPO文件，准备上市。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files confidentially for IPO, following Anthropic",
+              "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "OpenAI files SEC paperwork to go public",
+              "url": "https://www.engadget.com/2190079/openai-files-sec-paperwork-to-go-public/",
+              "source": "Engadget",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布多项AI更新",
+          "summary_zh": "苹果在WWDC上推出Siri独立应用、AI编辑照片、智能工作流等功能，追赶AI潮流。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple plays catch-up at WWDC",
+              "url": "https://techcrunch.com/2026/06/08/apple-plays-catch-up-at-wwdc/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo收购苹果自动驾驶测试场",
+          "summary_zh": "Waymo以2.2亿美元收购苹果自动驾驶测试场，加速无人驾驶技术研发。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Waymo bought Apple’s self-driving car proving ground for $22",
+              "url": "https://techcrunch.com/2026/06/08/waymo-bought-apples-self-driving-car-proving-ground-for-220m/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "五角大楼指控比亚迪等支持中国军事",
+          "summary_zh": "美国五角大楼称阿里巴巴、百度、比亚迪和宇树科技支持中国军事现代化。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Pentagon says Alibaba, Baidu, BYD, and Unitree support China",
+              "url": "https://techcrunch.com/2026/06/08/pentagon-says-alibaba-baidu-byd-and-unitree-support-chinas-militar",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果AI功能吸引小型开发者",
+          "summary_zh": "苹果降低AI服务价格，旨在吸引小型开发者使用其AI工具。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple bets cheaper AI will woo small developers",
+              "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果Siri获独立应用",
+          "summary_zh": "苹果在WWDC上为Siri推出独立应用，提升语音助手功能。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple gives Siri its own dedicated app",
+              "url": "https://techcrunch.com/2026/06/08/apple-gives-siri-its-own-dedicated-app/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果照片应用新增AI编辑功能",
+          "summary_zh": "苹果照片应用引入AI编辑功能，可自动完成句子和照片编辑。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s Photos app is getting new AI editing features",
+              "url": "https://techcrunch.com/2026/06/08/apples-photos-app-is-getting-new-ai-editing-features/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta移除智能眼镜面部识别代码",
+          "summary_zh": "Meta悄悄从其智能眼镜中移除面部识别代码，引发隐私关注。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Meta quietly removes face-recognition code from its smart gl",
+              "url": "https://www.engadget.com/2190115/meta-quietly-removes-face-recognition-code-from-its-smart-glasses-a",
+              "source": "Engadget",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌降低AI Plus计划价格",
+          "summary_zh": "谷歌削减AI Plus计划价格并增加存储空间，以吸引更多用户。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Google cuts the price of its AI Plus plan and doubles the st",
+              "url": "https://www.engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage/",
+              "source": "Engadget",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软开源工具被黑客攻击",
+          "summary_zh": "微软开源工具遭黑客入侵，用于窃取AI模型密码。",
+          "region": "global",
+          "score": 0.0,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Microsoft’s open source tools were hacked to steal passwords",
+              "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "IPO",
+        "苹果",
+        "自动驾驶",
+        "五角大楼"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "大宗商品市场受多重因素影响：中国补贴重塑全球资本、红海石油出口风险、伊朗霍尔木兹海峡新收费制度、俄罗斯削减出口、中国需求疲软压低伊朗油价、亚洲煤炭需求激增、中国LNG进口创伊朗战争以来新高、中国买家竞购美国钨废料、安托法加斯塔投资延长铜矿寿命、科技巨头寻求非发电能源方案。整体情绪偏空，油价面临上涨压力。",
+      "events": [
+        {
+          "title_zh": "中国补贴重塑全球资本主义",
+          "summary_zh": "中国补贴机制正在改变全球资本流向，影响大宗商品市场。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "China’s Subsidy Machine Is Reshaping Global Capitalism",
+              "url": "https://oilprice.com/Alternative-Energy/Renewable-Energy/Chinas-Subsidy-Machine-Is-Reshaping-Global-",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "红海石油出口风险加剧市场动荡",
+          "summary_zh": "红海石油出口面临风险，可能进一步扰乱石油市场。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Risks to Red Sea Oil Exports Could Roil Oil Market Further",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Risks-to-Red-Sea-Oil-Exports-Could-Roil-Oil-Market-Further.htm",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "全球经济面临油价飙升威胁",
+          "summary_zh": "全球经济距离油价飙升引发的麻烦仅一步之遥。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Global Economy Is One Oil Price Spike Away From Trouble",
+              "url": "https://oilprice.com/Energy/Energy-General/Global-Economy-Is-One-Oil-Price-Spike-Away-From-Trouble.h",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄罗斯削减石油出口",
+          "summary_zh": "俄罗斯因燃料短缺和无人机袭击削减石油出口。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Russia Slashes Oil Exports As Fuel Shortages And Drone Attac",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Russia-Slashes-Oil-Exports-As-Fuel-Shortages-And-",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗官员称霍尔木兹海峡将重新开放",
+          "summary_zh": "伊朗官员表示霍尔木兹海峡将重新开放，并实施新收费制度。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Iranian Official Says Hormuz to Reopen with New Toll Regime",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Iranian-Official-Says-Hormuz-to-Reopen-with-New-T",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国需求疲软迫使伊朗原油降价",
+          "summary_zh": "中国需求疲软导致伊朗被迫削减原油价格。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Weak Chinese Demand Forces Cuts to Iranian Crude Prices",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Weak-Chinese-Demand-Forces-Cuts-to-Iranian-Crude-",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚洲煤炭需求2026年将激增7000万吨",
+          "summary_zh": "由于液化天然气短缺，亚洲煤炭需求预计2026年大幅增长。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Asia's Coal Demand to Jump 70 Million Tonnes in 2026 as LNG ",
+              "url": "https://oilprice.com/Energy/Energy-General/Asias-Coal-Demand-to-Jump-70-Million-Tonnes-in-2026-as-LN",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国LNG进口创伊朗战争以来新高",
+          "summary_zh": "中国液化天然气进口量达到伊朗战争开始以来的最高水平。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "China's LNG Imports Hit Highest Point Since Iran War Began",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Chinas-LNG-Imports-Hit-Highest-Point-Since-Iran-W",
+              "source": "OilPrice",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国买家竞购美国钨废料",
+          "summary_zh": "中国买家引发对美国钨废料的竞购战，显示资源争夺加剧。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Chinese buyers spark bidding war for US tungsten scrap: FT",
+              "url": "https://www.mining.com/chinese-buyers-spark-bidding-war-for-us-tungsten-scrap-ft/",
+              "source": "Mining.com",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "安托法加斯塔投资9亿美元延长铜矿寿命",
+          "summary_zh": "安托法加斯塔计划投资9亿美元将Zaldívar铜矿寿命延长至2051年。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Antofagasta to spend $900M extending Zaldívar mine to 2051",
+              "url": "https://www.mining.com/antofagasta-to-spend-900m-extending-zaldivar-mine-to-2051/",
+              "source": "Mining.com",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 4,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "油价",
+        "中国需求",
+        "红海风险",
+        "伊朗",
+        "煤炭"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "本周国际新闻涵盖尼日利亚绑架、南非反移民情绪、埃博拉疫情、秘鲁大选、加拿大工会、航空业、美国制裁古巴、菲律宾地震、中日关系、日本熊患、英国涉华报告、OpenAI上市、SpaceX股票、驾照考试改革及FTX创始人寻求赦免等。",
+      "events": [
+        {
+          "title_zh": "尼日利亚西北部绑架案",
+          "summary_zh": "匪徒邀请村民后实施绑架，引发安全担忧。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Bandits in north-west Nigeria abduct villagers they invited",
+              "url": "https://www.theguardian.com/world/2026/jun/08/bandits-in-north-west-nigeria-abduct-villagers-they-in",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非反移民情绪高涨",
+          "summary_zh": "移民群体面临极端恐惧，社会动荡加剧。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "‘Extreme fear’ among immigrants as backlash sweeps South Afr",
+              "url": "https://www.theguardian.com/world/2026/jun/08/extreme-fear-among-immigrants-as-backlash-sweeps-south",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "埃博拉疫情或创纪录",
+          "summary_zh": "中非埃博拉传播可能匹敌2014年疫情规模。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-06",
+          "sources": [
+            {
+              "title": "Ebola spread in central Africa could match 2014 record outbr",
+              "url": "https://www.theguardian.com/world/2026/jun/06/ebola-spread-in-central-africa-could-match-2014-record",
+              "source": "The Guardian",
+              "published_at": "2026-06-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "加拿大工会历史性协议",
+          "summary_zh": "仓库工人首次签署工会协议，标志劳工权益进步。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-06",
+          "sources": [
+            {
+              "title": "‘Historic’: Canadian warehouse workers sign first-ever union",
+              "url": "https://www.theguardian.com/business/2026/jun/06/canada-walmart-first-union-deal",
+              "source": "The Guardian",
+              "published_at": "2026-06-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "习近平抵达平壤访问",
+          "summary_zh": "习近平访朝旨在振兴中朝关系，推动地区合作。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Xi Jinping arrives in Pyongyang on trip to revitalise China-",
+              "url": "https://www.theguardian.com/world/2026/jun/08/xi-jinping-kim-jong-un-meeting-north-korea",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "季风带来关键降雨",
+          "summary_zh": "季风季节为部分地区带来重要降水，缓解干旱。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Weather tracker: Monsoon season brings vital rainfall to par",
+              "url": "https://www.theguardian.com/environment/2026/jun/08/weather-tracker-monsoon-season-vital-rainfall-pa",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "日本城市因熊患关闭学校",
+          "summary_zh": "宇都宫市因熊出没关闭近100所学校，安全受威胁。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Japanese city shuts down nearly 100 schools after unpreceden",
+              "url": "https://www.theguardian.com/world/2026/jun/08/utsunomiya-city-japan-bear-sighting-all-primary-second",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国内政部涉华报告争议",
+          "summary_zh": "报告作者揭露试图掩盖事实，引发外交关注。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-07",
+          "sources": [
+            {
+              "title": "Author of Home Office report on China reveals attempts to co",
+              "url": "https://www.theguardian.com/uk-news/2026/jun/07/home-office-china-report-honey-traps-compromise-atte",
+              "source": "The Guardian",
+              "published_at": "2026-06-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI计划上市",
+          "summary_zh": "OpenAI拟公开上市，加剧AI投资竞争。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI plans to go public, intensifying investment race with",
+              "url": "https://www.bbc.com/news/articles/cd958eqg1n5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "FTX创始人寻求特朗普赦免",
+          "summary_zh": "被监禁的加密货币创始人班克曼-弗里德寻求总统赦免。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Jailed crypto founder Sam Bankman-Fried seeks Trump pardon",
+              "url": "https://www.bbc.com/news/articles/cjwgd6jqd5do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 4,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "国际新闻",
+        "安全",
+        "政治",
+        "经济",
+        "环境"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "东南亚供应链新闻摘要：伊朗与以色列暂停打击但警告报复；菲律宾地震致35人死亡；SpaceX股市暴涨；OpenAI申请IPO；亚美尼亚亲西方政府胜选；马拉维人因仇外情绪从南非被遣返；纽约尼克斯队表现引发城市狂欢；股市因科技股担忧和中东紧张局势波动；埃里克森康复良好；索马里裁判被禁入美国；肯尼亚前首席大法官因抗议被捕；秘鲁选举计票中；FTX创始人寻求特朗普赦免；泽连斯基盟友提出停火条件。",
+      "events": [
+        {
+          "title_zh": "伊朗与以色列暂停打击",
+          "summary_zh": "伊朗和以色列同意暂停打击，但警告可能报复。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Iran and Israel say they will pause strikes but warn of reta",
+              "url": "https://www.bbc.com/news/articles/cj6ge150z5go?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "菲律宾南部地震致35死",
+          "summary_zh": "菲律宾南部发生强烈地震，至少35人死亡。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "At least 35 dead after major earthquake strikes southern Phi",
+              "url": "https://www.bbc.com/news/articles/clyel78e6p5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX股市暴涨引关注",
+          "summary_zh": "SpaceX股市暴涨，可能成为马斯克最大赌注。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "SpaceX's stock market blast-off could be Musk's biggest gamb",
+              "url": "https://www.bbc.com/news/articles/cy8d9e4lzv1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI申请美国IPO",
+          "summary_zh": "科技巨头OpenAI向美国提交首次公开募股申请。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Tech giant OpenAI files for US initial public offering",
+              "url": "https://www.aljazeera.com/economy/2026/6/8/tech-giant-openai-files-for-us-initial-public-offering?tr",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚美尼亚亲西方政府胜选",
+          "summary_zh": "亚美尼亚亲西方政府赢得选举，尽管俄罗斯影响。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Armenia's pro-West government wins election despite Russian ",
+              "url": "https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "马拉维人从南非被遣返",
+          "summary_zh": "因仇外情绪担忧，马拉维人从南非被遣返回国。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Malawians repatriated from South Africa amid xenophobia conc",
+              "url": "https://www.bbc.com/news/articles/cnv9dz3reego?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "纽约尼克斯队引发城市狂欢",
+          "summary_zh": "尼克斯队表现优异，纽约市陷入狂欢，特朗普也关注。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "'City's gonna be crazy:' Knicks run electrifies NYC, as Trum",
+              "url": "https://www.bbc.com/news/articles/ceqd5jgded8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "股市因科技担忧波动",
+          "summary_zh": "股市因科技股担忧和中东紧张局势持续波动。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Stock market jitters remain amid tech fears and renewed Midd",
+              "url": "https://www.bbc.com/news/articles/c78yd5g9qx0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "埃里克森康复良好",
+          "summary_zh": "埃里克森在家中康复良好，此前在比赛中昏倒。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Eriksen at home and 'doing well' after collapse",
+              "url": "https://www.bbc.com/sport/football/articles/c9w2kpyx58no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "FTX创始人寻求特朗普赦免",
+          "summary_zh": "被监禁的加密货币创始人Sam Bankman-Fried寻求特朗普赦免。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Jailed crypto founder Sam Bankman-Fried seeks Trump pardon",
+              "url": "https://www.bbc.com/news/articles/cjwgd6jqd5do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "东南亚供应链",
+        "伊朗以色列冲突",
+        "菲律宾地震",
+        "SpaceX",
+        "OpenAI"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "今日航天与科技新闻聚焦：俄罗斯卫星被指可干扰大陆级GPS；猎鹰9号火箭创下复用纪录；阿尔忒弥斯II号宇航员获新徽章；苹果WWDC发布iOS 27等更新；OpenAI秘密提交IPO；Meta指控NSO违反间谍软件禁令。",
+      "events": [
+        {
+          "title_zh": "俄罗斯卫星可干扰大陆级GPS",
+          "summary_zh": "测试表明俄罗斯卫星具备干扰大陆范围GPS的能力。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Tests suggest Russian satellites can jam GPS on a continental",
+              "url": "https://arstechnica.com/space/2026/06/tests-suggest-russian-satellites-can-jam-gps-on-a-continental-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "猎鹰9号火箭创5年复用纪录",
+          "summary_zh": "一枚猎鹰9号火箭迎来5岁生日，并创下新的复用纪录。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "A Falcon 9 booster turns 5 years old—and just set a remarkable",
+              "url": "https://arstechnica.com/space/2026/06/a-falcon-9-booster-turns-five-years-old-and-just-set-a-remarka",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿尔忒弥斯II号宇航员获新徽章",
+          "summary_zh": "最快人类宇航员获得新徽章，纪念其马赫39飞行。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "The fastest humans in the galaxy just got a spiffy patch to",
+              "url": "https://arstechnica.com/space/2026/06/artemis-ii-crew-flew-fast-earned-new-patch-astronauts-mach-39-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布iOS 27等更新",
+          "summary_zh": "苹果在WWDC上推出iOS 27、macOS 27等，聚焦AI功能。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple's iOS 27, macOS 27 Golden Gate, and other updates focus",
+              "url": "https://arstechnica.com/gadgets/2026/06/apples-ios-27-macos-27-golden-gate-and-other-updates-focus-o",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI秘密提交IPO申请",
+          "summary_zh": "继Anthropic之后，OpenAI也秘密提交了IPO申请。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files confidentially for IPO, following Anthropic",
+              "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta指控NSO违反间谍软件禁令",
+          "summary_zh": "Meta称NSO集团通过新WhatsApp漏洞违反禁令。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Meta alleges NSO violated spyware injunction with new WhatsApp",
+              "url": "https://arstechnica.com/tech-policy/2026/06/meta-alleges-nso-violated-spyware-injunction-with-new-wh",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC AI演示更真实",
+          "summary_zh": "苹果在WWDC上的AI演示因2.5亿美元虚假广告和解显得更真实。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple’s WWDC AI demos looked more real after $250M false ad",
+              "url": "https://techcrunch.com/2026/06/08/apples-wwdc-ai-demos-looked-more-real-after-250m-false-ad-settleme",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果押注更便宜AI吸引小开发者",
+          "summary_zh": "苹果希望通过更便宜的AI方案吸引小型开发者。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple bets cheaper AI will woo small developers",
+              "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI准备彻底改造ChatGPT",
+          "summary_zh": "OpenAI称“聊天已死”，准备对ChatGPT进行重大改造。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "\"Chat is dead\": OpenAI preps overhaul of ChatGPT",
+              "url": "https://arstechnica.com/ai/2026/06/chat-is-dead-openai-preps-overhaul-of-chatgpt/",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "密歇根政客欲禁中国品牌汽车",
+          "summary_zh": "密歇根州政客提议禁止中国品牌汽车参与电动汽车活动。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Michigan politicians want to ban Chinese-badged cars from ev",
+              "url": "https://arstechnica.com/cars/2026/06/michigan-politicians-want-to-ban-chinese-badged-cars-from-even-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "俄罗斯卫星",
+        "GPS干扰",
+        "猎鹰9号",
+        "阿尔忒弥斯",
+        "苹果WWDC"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "今日科技新闻聚焦AI领域：OpenAI秘密提交IPO申请，苹果WWDC发布多项AI功能更新，Waymo收购苹果自动驾驶测试场，微软开源工具遭黑客攻击，五角大楼指控阿里、百度等支持中国军事。",
+      "events": [
+        {
+          "title_zh": "OpenAI秘密提交IPO申请",
+          "summary_zh": "继Anthropic后，OpenAI也秘密提交IPO申请，估值或创新高。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OpenAI files confidentially for IPO, following Anthropic",
+              "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "As OpenAI files for IPO, Sam Altman’s eye-scanning company i",
+              "url": "https://techcrunch.com/2026/06/08/as-openai-files-for-ipo-sam-altmans-eye-scanning-company-is-doing-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布多项AI更新",
+          "summary_zh": "苹果在WWDC上推出Siri独立应用、AI编辑照片、智能分账等功能。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Apple gives Siri its own dedicated app",
+              "url": "https://techcrunch.com/2026/06/08/apple-gives-siri-its-own-dedicated-app/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "Apple’s Photos app is getting new AI editing features",
+              "url": "https://techcrunch.com/2026/06/08/apples-photos-app-is-getting-new-ai-editing-features/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Waymo收购苹果自动驾驶测试场",
+          "summary_zh": "Waymo以2.2亿美元收购苹果自动驾驶测试场，加速无人驾驶布局。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Waymo bought Apple’s self-driving car proving ground for $22",
+              "url": "https://techcrunch.com/2026/06/08/waymo-bought-apples-self-driving-car-proving-ground-for-220m/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            },
+            {
+              "title": "OpenAI Confidentially Files for IPO on the Heels of SpaceX and Anthropic",
+              "url": "https://www.wired.com/story/openai-confidentially-files-for-ipo/",
+              "source": "Wired",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软开源工具遭黑客攻击",
+          "summary_zh": "微软开源工具被黑客利用窃取AI模型密码，引发安全担忧。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Microsoft’s open source tools were hacked to steal passwords",
+              "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "五角大楼指控中国科技公司",
+          "summary_zh": "五角大楼称阿里、百度、比亚迪等支持中国军事，引发地缘政治紧张。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Pentagon says Alibaba, Baidu, BYD, and Unitree support China",
+              "url": "https://techcrunch.com/2026/06/08/pentagon-says-alibaba-baidu-byd-and-unitree-support-chinas-militar",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果AI功能吸引小开发者",
+          "summary_zh": "苹果押注更便宜的AI工具，以吸引小型开发者生态。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Apple bets cheaper AI will woo small developers",
+              "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄罗斯卫星可干扰GPS",
+          "summary_zh": "测试显示俄罗斯卫星能在大陆范围内干扰GPS信号，威胁全球导航。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Tests suggest Russian satellites can jam GPS on a continenta",
+              "url": "https://arstechnica.com/space/2026/06/tests-suggest-russian-satellites-can-jam-gps-on-a-continental-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "macOS 27放弃Intel支持",
+          "summary_zh": "macOS 27要求Apple Silicon，苹果逐步淘汰Intel芯片。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "macOS 27 requires Apple Silicon, as Apple draws down the Int",
+              "url": "https://arstechnica.com/gadgets/2026/06/macos-27-requires-apple-silicon-as-apple-draws-down-the-inte",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta指控NSO违反间谍软件禁令",
+          "summary_zh": "Meta称NSO集团通过WhatsApp新漏洞违反禁令，继续监控用户。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Meta alleges NSO violated spyware injunction with new WhatsA",
+              "url": "https://arstechnica.com/tech-policy/2026/06/meta-alleges-nso-violated-spyware-injunction-with-new-wh",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Artemis II机组获新徽章",
+          "summary_zh": "最快人类宇航员获新徽章，纪念Mach 39飞行速度。",
+          "region": "global",
+          "score": 0.0,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "The fastest humans in the galaxy just got a spiffy patch to ",
+              "url": "https://arstechnica.com/space/2026/06/artemis-ii-crew-flew-fast-earned-new-patch-astronauts-mach-39-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "OpenAI IPO",
+        "苹果WWDC",
+        "AI",
+        "自动驾驶",
+        "网络安全"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv 2026年6月5日发布20篇论文，涵盖量子物理、概率论、AI、天文学等领域，包括非阿贝尔编织、离散概率问题、LLM可靠性、单目视图合成、长期模拟、视频生成、强化学习、黑洞超新星等研究。",
+      "events": [
+        {
+          "title_zh": "非阿贝尔编织在分数量子霍尔效应中实现",
+          "summary_zh": "研究在阿贝尔分数量子霍尔相中实现非阿贝尔编织，推动拓扑量子计算。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Non-Abelian braiding in Abelian Fractional Quantum Hall Phas",
+              "url": "http://arxiv.org/abs/2606.07517v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "离散概率中的反直觉问题研究",
+          "summary_zh": "探讨离散概率中的反直觉问题，揭示常见认知偏差。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Counterintuitive problems in discrete probability",
+              "url": "http://arxiv.org/abs/2606.07516v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM掷骰子可靠性评估",
+          "summary_zh": "评估大型语言模型在掷骰子任务中的可靠性，发现其表现不稳定。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "How reliable are LLMs when it comes to playing dice?",
+              "url": "http://arxiv.org/abs/2606.07515v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "UniSHARP：通用锐利单目视图合成",
+          "summary_zh": "提出UniSHARP方法，实现高质量单目视图合成，提升图像锐度。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "UniSHARP: Universal Sharp Monocular View Synthesis",
+              "url": "http://arxiv.org/abs/2606.07514v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Agentopia：长期生命模拟与学习",
+          "summary_zh": "开发Agentopia框架，用于智能体长期生命模拟和持续学习。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Agentopia: Long-Term Life Simulation and Learning in Agent S",
+              "url": "http://arxiv.org/abs/2606.07513v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "MemDreamer：长视频感知与推理解耦",
+          "summary_zh": "提出MemDreamer，解耦感知和推理以生成连贯长视频。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "MemDreamer: Decoupling Perception and Reasoning for Long Vid",
+              "url": "http://arxiv.org/abs/2606.07512v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "GJ 3929 b：首个完整岩石行星DDT数据集",
+          "summary_zh": "发布GJ 3929 b的完整DDT数据集，助力岩石行星研究。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "GJ 3929 b as the First Complete Rocky Worlds DDT Data Set",
+              "url": "http://arxiv.org/abs/2606.07511v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "Gross-Neveu-Yukawa模型边界临界性研究",
+          "summary_zh": "在高能物理中研究Gross-Neveu-Yukawa模型的边界临界行为。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Boundary criticality in the Gross-Neveu-Yukawa model at high",
+              "url": "http://arxiv.org/abs/2606.07510v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "流式视频生成与力控制",
+          "summary_zh": "提出流式视频生成方法，结合力控制实现动态视频生成。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Streaming Video Generation with Streaming Force Control",
+              "url": "http://arxiv.org/abs/2606.07508v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        },
+        {
+          "title_zh": "基于可供性的分层强化学习",
+          "summary_zh": "利用可供性进行分层强化学习，提升机器人操作效率。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "Affordance-Based Hierarchical Reinforcement Learning for Qua",
+              "url": "http://arxiv.org/abs/2606.07506v1",
+              "source": "arXiv",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "arXiv",
+        "量子物理",
+        "人工智能",
+        "天文学",
+        "机器学习"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "五角大楼指控比亚迪等支持中国军事",
+      "summary": "美国五角大楼指控阿里巴巴、百度、比亚迪和宇树科技支持中国军事现代化，可能引发中美贸易紧张升级，影响相关企业海外业务和供应链稳定性，投资者需警惕政策风险。",
+      "action": "评估对相关企业投资风险，关注中美关系动态。"
+    },
+    {
+      "title": "习近平抵达平壤访问",
+      "summary": "习近平访朝旨在振兴中朝关系并推动地区合作，可能加强中朝经济联系，影响东北亚地缘政治格局，企业可关注朝鲜市场开放机遇。",
+      "action": "研究朝鲜市场准入机会，调整区域投资策略。"
+    },
+    {
+      "title": "通胀风暴酝酿或超4%",
+      "summary": "太平洋地区通胀可能超过4%，债券市场预期美联储将采取行动，高通胀将推高融资成本，影响企业借贷和消费者支出，需提前调整财务规划。",
+      "action": "优化资产配置，对冲通胀风险，关注美联储政策信号。"
+    },
+    {
+      "title": "伊朗战争直播：特朗普警告内塔尼亚胡",
+      "summary": "以色列与伊朗冲突升级，特朗普警告以色列总理，双方暂停打击但威胁报复，地缘政治风险推高能源价格，影响全球市场稳定，企业需防范供应链中断。",
+      "action": "监控能源价格波动，制定应急供应链预案。"
+    },
+    {
+      "title": "苹果WWDC发布iOS 27等更新",
+      "summary": "苹果在WWDC 2026推出iOS 27、macOS 27等系统，引入Siri AI和AI修复Safari扩展问题，推动AI技术应用，可能改变用户体验和行业竞争格局，企业需跟进技术趋势。",
+      "action": "评估AI技术整合机会，更新产品开发路线图。"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
