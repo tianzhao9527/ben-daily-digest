@@ -1,0 +1,2602 @@
+{
+  "date": "2026-06-10",
+  "generated_at_utc": "2026-06-10T00:35:25.211215+00:00",
+  "generated_at_bjt": "2026-06-10 08:35",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": 7386.65,
+      "updated_at": "2026-06-09",
+      "source": "FRED",
+      "delta": -19.079999999999927,
+      "delta_pct": -0.2576383422025908,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,37.71 L 7.82,36.63 L 10.23,31.61 L 12.64,32.61 L 15.05,35.28 L 17.46,30.91 L 19.87,32.66 L 22.28,29.31 L 24.69,28.78 L 27.10,30.86 L 29.51,31.03 L 31.92,26.71 L 34.33,25.46 L 36.74,27.20 L 39.15,23.74 L 41.56,17.47 L 43.97,19.13 L 46.38,15.47 L 48.79,14.65 L 51.21,15.35 L 53.62,12.79 L 56.03,9.42 L 58.44,14.91 L 60.85,15.23 L 63.26,18.15 L 65.67,13.46 L 68.08,12.70 L 70.49,11.06 L 72.90,8.36 L 75.31,8.29 L 77.72,5.73 L 80.13,4.76 L 82.54,3.58 L 84.95,3.00 L 87.36,6.32 L 89.77,4.51 L 92.18,16.37 L 94.59,15.07 L 97.00,16.20\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        6967.38,
+        7022.95,
+        7041.28,
+        7126.06,
+        7109.14,
+        7064.01,
+        7137.9,
+        7108.4,
+        7165.08,
+        7173.91,
+        7138.8,
+        7135.95,
+        7209.01,
+        7230.12,
+        7200.75,
+        7259.22,
+        7365.12,
+        7337.11,
+        7398.93,
+        7412.84,
+        7400.96,
+        7444.25,
+        7501.24,
+        7408.5,
+        7403.05,
+        7353.61,
+        7432.97,
+        7445.72,
+        7473.47,
+        7519.12,
+        7520.36,
+        7563.63,
+        7580.06,
+        7599.96,
+        7609.78,
+        7553.68,
+        7584.31,
+        7383.74,
+        7405.73,
+        7386.65
+      ]
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.63,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": -0.010000000000000231,
+      "delta_pct": -0.2747252747252811,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.99 L 5.41,18.20 L 7.82,14.18 L 10.23,9.04 L 12.64,8.59 L 15.05,7.69 L 17.46,3.00 L 19.87,3.00 L 22.28,3.00 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,7.47 L 51.21,14.18 L 53.62,18.42 L 56.03,22.00 L 58.44,25.35 L 60.85,25.35 L 63.26,25.35 L 65.67,25.35 L 68.08,25.35 L 70.49,25.35 L 72.90,25.35 L 75.31,25.35 L 77.72,27.81 L 80.13,30.72 L 82.54,35.41 L 84.95,38.99 L 87.36,40.78 L 89.77,40.78 L 92.18,40.78 L 94.59,40.78 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64,
+        3.64,
+        3.64,
+        3.63
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 13483.75153846154,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 593.0638111888093,
+      "delta_pct": 4.600715056762011,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,34.18 L 5.41,34.73 L 7.82,35.05 L 10.23,38.93 L 12.64,37.88 L 15.05,37.33 L 17.46,38.21 L 19.87,38.70 L 22.28,41.00 L 24.69,39.30 L 27.10,37.80 L 29.51,38.19 L 31.92,38.51 L 34.33,35.85 L 36.74,30.69 L 39.15,26.08 L 41.56,29.30 L 43.97,31.10 L 46.38,33.87 L 48.79,31.97 L 51.21,30.08 L 53.62,33.22 L 56.03,34.36 L 58.44,33.90 L 60.85,31.47 L 63.26,28.70 L 65.67,32.56 L 68.08,30.10 L 70.49,28.02 L 72.90,28.46 L 75.31,29.14 L 77.72,26.92 L 80.13,21.81 L 82.54,21.32 L 84.95,14.61 L 87.36,6.41 L 89.77,6.65 L 92.18,9.55 L 94.59,7.07 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182,
+        12951.345,
+        12528.70954545455,
+        12890.68772727273,
+        13483.75153846154
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3654.015384615385,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 59.636293706294055,
+      "delta_pct": 1.6591542571880151,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.98 L 5.41,36.97 L 7.82,35.93 L 10.23,37.54 L 12.64,39.77 L 15.05,40.40 L 17.46,41.00 L 19.87,39.77 L 22.28,39.53 L 24.69,39.33 L 27.10,39.59 L 29.51,39.35 L 31.92,39.90 L 34.33,38.65 L 36.74,31.90 L 39.15,30.22 L 41.56,31.94 L 43.97,35.66 L 46.38,35.57 L 48.79,32.94 L 51.21,29.49 L 53.62,29.82 L 56.03,30.86 L 58.44,30.09 L 60.85,27.98 L 63.26,28.09 L 65.67,35.19 L 68.08,33.20 L 70.49,31.23 L 72.90,29.22 L 75.31,29.41 L 77.72,28.01 L 80.13,24.55 L 82.54,23.90 L 84.95,22.47 L 87.36,16.01 L 89.77,17.74 L 92.18,10.03 L 94.59,4.49 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727,
+        3065.1885,
+        3372.952727272727,
+        3594.379090909091,
+        3654.015384615385
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3458.04,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 103.42454545454484,
+      "delta_pct": 3.0830521964717623,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,14.22 L 5.41,19.98 L 7.82,26.80 L 10.23,36.65 L 12.64,40.47 L 15.05,39.46 L 17.46,39.44 L 19.87,36.31 L 22.28,37.99 L 24.69,34.65 L 27.10,35.79 L 29.51,35.43 L 31.92,41.00 L 34.33,37.62 L 36.74,28.35 L 39.15,20.40 L 41.56,25.46 L 43.97,26.56 L 46.38,28.51 L 48.79,24.13 L 51.21,15.19 L 53.62,18.71 L 56.03,17.68 L 58.44,24.92 L 60.85,25.83 L 63.26,22.77 L 65.67,32.30 L 68.08,31.22 L 70.49,30.81 L 72.90,27.07 L 75.31,26.11 L 77.72,21.04 L 80.13,13.59 L 82.54,12.73 L 84.95,13.24 L 87.36,11.70 L 89.77,7.65 L 92.18,12.54 L 94.59,6.58 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182,
+        3323.7125,
+        3182.2609090909086,
+        3354.615454545455,
+        3458.04
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 18879.23461538462,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 1014.3182517482601,
+      "delta_pct": 5.677710609453971,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,13.84 L 7.82,12.32 L 10.23,17.48 L 12.64,20.32 L 15.05,20.76 L 17.46,22.80 L 19.87,25.32 L 22.28,29.68 L 24.69,33.57 L 27.10,35.41 L 29.51,36.46 L 31.92,35.74 L 34.33,32.41 L 36.74,30.09 L 39.15,25.54 L 41.56,32.09 L 43.97,35.76 L 46.38,35.85 L 48.79,36.28 L 51.21,34.40 L 53.62,37.67 L 56.03,38.58 L 58.44,38.78 L 60.85,39.06 L 63.26,36.66 L 65.67,39.50 L 68.08,38.86 L 70.49,39.95 L 72.90,39.86 L 75.31,40.13 L 77.72,39.64 L 80.13,39.67 L 82.54,41.00 L 84.95,40.34 L 87.36,31.42 L 89.77,33.11 L 92.18,33.42 L 94.59,30.93 L 97.00,27.74\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364,
+        17173.1035,
+        17076.29272727273,
+        17864.91636363636,
+        18879.23461538462
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "科技股因SpaceX IPO和通胀担忧下跌，Super Micro因70亿美元融资暴跌，AI领域竞争加剧，苹果AI或引发升级周期，美光等推动存储芯片超级周期，通用汽车押注能源，美国将比亚迪列入涉军名单。",
+      "events": [
+        {
+          "title_zh": "Super Micro因融资暴跌",
+          "summary_zh": "Super Micro股价因70亿美元股权融资计划暴跌，市场担忧稀释。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Super Micro stock plunges as $7 billion equity raise oversha",
+              "url": "https://www.marketwatch.com/story/super-micro-stock-plunges-as-7-billion-equity-raise-overshadows-bo",
+              "source": "MarketWatch",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果AI或引发升级周期",
+          "summary_zh": "苹果AI技术可能带来历史性升级周期，投资者关注。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple’s AI could usher in a historic upgrade cycle that inve",
+              "url": "https://www.marketwatch.com/story/apples-ai-could-usher-in-a-historic-upgrade-cycle-that-investors-a",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "美光等推动存储芯片超级周期",
+          "summary_zh": "美光和其他内存制造商推动存储芯片超级周期，利好相关领域。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Micron and other memory makers are driving a ‘supercycle’ fo",
+              "url": "https://www.marketwatch.com/story/micron-and-other-memory-makers-are-driving-a-supercycle-for-this-c",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO引发科技股下跌",
+          "summary_zh": "SpaceX IPO计划加剧市场焦虑，科技股普遍下跌。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Angst over SpaceX IPO adds to dive in tech stocks",
+              "url": "https://www.marketwatch.com/story/tech-stocks-dive-as-fridays-incoming-spacex-ipo-creates-bad-psycho",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "SpaceX's stock market blast-off could be Musk's biggest gamb",
+              "url": "https://www.bbc.com/news/articles/cy8d9e4lzv1o",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "通胀风暴酝酿威胁投资组合",
+          "summary_zh": "太平洋地区通胀风暴正在酝酿，可能影响投资组合。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "A powerful inflation storm is brewing — and your portfolio i",
+              "url": "https://www.marketwatch.com/story/an-inflation-storm-is-brewing-in-the-pacific-ocean-and-your-portfo",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "通用汽车押注能源领域",
+          "summary_zh": "通用汽车效仿福特，进行重大能源投资，但带有独特转折。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM follows Ford by making a big energy bet — this time with ",
+              "url": "https://www.marketwatch.com/story/gm-follows-ford-by-making-a-big-energy-bet-but-heres-the-quirky-tw",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI巨头融资竞赛升温",
+          "summary_zh": "ChatGPT所有者计划融资，AI巨头竞相筹集资金。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "AI giants' race to raise funds heats up as ChatGPT-owner pla",
+              "url": "https://www.bbc.com/news/articles/cd958eqg1n5o",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国将比亚迪列入涉军名单",
+          "summary_zh": "美国将比亚迪列入涉嫌与中国军方有关联的公司名单。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "US adds BYD to list of firms with alleged Chinese military t",
+              "url": "https://www.bbc.com/news/articles/c75y6e5p9reo",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Adobe需新CEO推动AI战略",
+          "summary_zh": "Adobe需要新CEO来做出大胆AI举措，选择可能影响未来。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Adobe needs a new CEO to make bold AI moves, and its choice ",
+              "url": "https://www.bbc.com/news/articles/c75y6e5p9reo",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "AST SpaceMobile股价波动",
+          "summary_zh": "AST SpaceMobile股价因SpaceX计划而经历波动交易。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "AST SpaceMobile’s stock experiences rocky trading as SpaceX ",
+              "url": "https://www.marketwatch.com/story/ast-spacemobiles-stock-experiences-rocky-trading-as-spacex-plans-t",
+              "source": "MarketWatch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "科技股下跌",
+        "AI竞争",
+        "通胀风险",
+        "SpaceX IPO",
+        "存储芯片"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "今日新闻涵盖地缘政治、自然灾害、社会冲突等。美国因埃博拉隔离抗议致人死亡；尼日利亚匪徒诱骗村民后绑架；南非反移民情绪高涨；中非埃博拉疫情或达2014年规模；非洲家庭价值观宪章遭谴责；前加航飞行员无证飞行被控；佛罗里达近古巴海域6.1级地震；世界杯期间犯罪集团牟利；两名美国飞行员在多米尼加坠机身亡；秘鲁大选左右对决；菲律宾南部强震致伤亡；习近平访朝推动中朝关系；日本因熊出没关闭近百所学校；英国内政部涉华报告遭干预；缅甸叛军失势；美国打击伊朗回应直升机被击落；全球最大芯片制造商或涨价；以色列空袭黎巴嫩提尔市；NASA公布阿尔忒弥斯登月宇航员。",
+      "events": [
+        {
+          "title_zh": "美国埃博拉隔离抗议致人死亡",
+          "summary_zh": "抗议美国埃博拉隔离提议中一人被枪杀。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Man shot dead during protest against proposed US Ebola quara",
+              "url": "https://www.theguardian.com/world/2026/jun/09/man-shot-during-protest-against-proposed-us-ebola-quar",
+              "source": "The Guardian",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "Man reportedly shot at Kenya protest against US Ebola quarantine centre",
+              "url": "https://www.bbc.com/news/articles/c3wypjz3n57o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚匪徒诱骗村民后绑架",
+          "summary_zh": "西北部匪徒邀请村民后实施绑架。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Bandits in north-west Nigeria abduct villagers they invited ",
+              "url": "https://www.theguardian.com/world/2026/jun/08/bandits-in-north-west-nigeria-abduct-villagers-they-in",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非反移民情绪引发恐惧",
+          "summary_zh": "移民面临极端恐惧，反移民浪潮席卷南非。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "‘Extreme fear’ among immigrants as backlash sweeps South Afr",
+              "url": "https://www.theguardian.com/world/2026/jun/08/extreme-fear-among-immigrants-as-backlash-sweeps-south",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "中非埃博拉疫情或达2014年规模",
+          "summary_zh": "埃博拉在中非蔓延，可能匹敌2014年记录。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-06",
+          "sources": [
+            {
+              "title": "Ebola spread in central Africa could match 2014 record outbr",
+              "url": "https://www.theguardian.com/world/2026/jun/06/ebola-spread-in-central-africa-could-match-2014-record",
+              "source": "The Guardian",
+              "published_at": "2026-06-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "习近平访朝推动中朝关系",
+          "summary_zh": "习近平抵达平壤，旨在振兴中朝关系。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Xi Jinping arrives in Pyongyang on trip to revitalise China-",
+              "url": "https://www.theguardian.com/world/2026/jun/08/xi-jinping-kim-jong-un-meeting-north-korea",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国打击伊朗回应直升机被击落",
+          "summary_zh": "美国军事打击伊朗，回应直升机被击落事件。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "US striking Iran in response to downing of helicopter, milit",
+              "url": "https://www.bbc.com/news/articles/cze9359gglyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列空袭黎巴嫩提尔市",
+          "summary_zh": "尽管伊朗警告，以色列仍空袭黎巴嫩提尔市。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Israeli air strikes hit Lebanese city of Tyre despite Irania",
+              "url": "https://www.bbc.com/news/articles/c36y16nkr5no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "佛罗里达近古巴海域6.1级地震",
+          "summary_zh": "佛罗里达州因古巴海岸地震而震动。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Florida shaken by 6.1-magnitude earthquake off coast of Cuba",
+              "url": "https://www.theguardian.com/us-news/2026/jun/09/florida-earthquake-cuba-coast-mexico",
+              "source": "The Guardian",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "菲律宾南部强震致伤亡",
+          "summary_zh": "菲律宾南部发生强震，造成至少伤亡。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Powerful earthquake in southern Philippines leaves at least ",
+              "url": "https://www.theguardian.com/world/2026/jun/08/philippines-earthquake-mindanao-tsunami-warnings",
+              "source": "The Guardian",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国内政部涉华报告遭干预",
+          "summary_zh": "报告作者揭露试图妥协的蜜罐行动。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-07",
+          "sources": [
+            {
+              "title": "Author of Home Office report on China reveals attempts to co",
+              "url": "https://www.theguardian.com/uk-news/2026/jun/07/home-office-china-report-honey-traps-compromise-atte",
+              "source": "The Guardian",
+              "published_at": "2026-06-07"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "地缘政治",
+        "自然灾害",
+        "冲突",
+        "制裁",
+        "疫情"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "本周AI领域动态密集：Google打响AI订阅价格战，Anthropic推出Fable 5游戏生成模型，苹果WWDC发布Siri AI和iOS 27，GM进军AI数据中心电池市场，微软AI负责人批评Anthropic。行业呈现价格竞争、应用创新和能源需求三大趋势。",
+      "events": [
+        {
+          "title_zh": "Google打响AI订阅价格战",
+          "summary_zh": "Google在AI订阅市场发出警告信号，可能引发行业价格竞争。",
+          "region": "global",
+          "score": 0.85,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Google just fired a warning shot in the AI subscription price",
+              "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars",
+              "source": "TechCrunch",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic发布Fable 5游戏模型",
+          "summary_zh": "Anthropic的Claude Fable 5可一键生成趣味视频游戏，Mythos版本向公众开放。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Fable 5 can make weirdly fun video games with th",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "Anthropic’s Claude Fable 5 is a version of Mythos the public",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-ac",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布Siri AI和iOS 27",
+          "summary_zh": "苹果在WWDC 2026上宣布Siri AI、iOS 27及Apple Intelligence，实际体验获好评。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "I tried Siri AI, and so far it actually works",
+              "url": "https://www.theverge.com/tech/947432/siri-ai-apple-intelligence-ios-27-wwdc",
+              "source": "The Verge",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果App Store将推订阅捆绑包",
+          "summary_zh": "苹果为App Store引入流媒体式订阅捆绑，可能移除不合规应用。",
+          "region": "cn",
+          "score": 0.75,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple brings streaming-style subscription bundles to the App",
+              "url": "https://techcrunch.com/2026/06/09/apple-brings-streaming-style-subscription-bundles-to-the-app-store",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "The App Store is going to add subscription bundles soon",
+              "url": "https://www.theverge.com/tech/947365/apple-subscription-bundles-app-store",
+              "source": "The Verge",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "GM进军AI数据中心电池市场",
+          "summary_zh": "通用汽车加入AI数据中心电池竞赛，利用电动汽车储能技术缓解AI能源消耗。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM joins race to build batteries for AI data centers and the",
+              "url": "https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "GM thinks EVs can help offset AI’s energy suck with vehicle-",
+              "url": "https://www.theverge.com/transportation/946820/gm-energy-ev-v2g-storage-sodium-ion",
+              "source": "The Verge",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软AI负责人批评Anthropic",
+          "summary_zh": "微软AI负责人Mustafa Suleyman指责Anthropic将Claude拟人化，引发行业争议。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Microsoft AI head calls out Anthropic for acting like Claude",
+              "url": "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious",
+              "source": "The Verge",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技公司能否接受更便宜AI模型",
+          "summary_zh": "行业探讨科技公司是否应转向成本更低的AI模型，以应对价格压力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Can tech companies learn to love cheaper AI models?",
+              "url": "https://techcrunch.com/2026/06/09/can-tech-companies-learn-to-love-cheaper-models/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "CISA要求三天修复VPN漏洞",
+          "summary_zh": "美国网络安全局CISA要求联邦机构三天内修复正在被利用的VPN漏洞。",
+          "region": "global",
+          "score": 0.55,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "CISA gives US federal agencies three days to fix a VPN bug u",
+              "url": "https://techcrunch.com/2026/06/09/cisa-gives-us-federal-agencies-three-days-to-fix-a-vpn-bug-under-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Justin Ernest投资近5亿美元",
+          "summary_zh": "投资者Justin Ernest向热门初创公司投资近5亿美元，聚焦AI领域。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "How Justin Ernest invested nearly $500M into hot startups wi",
+              "url": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian开始交付R2 SUV",
+          "summary_zh": "Rivian开始交付重要车型R2 SUV，标志电动汽车市场新进展。",
+          "region": "global",
+          "score": 0.45,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Rivian starts deliveries of its all-important R2 SUV",
+              "url": "https://techcrunch.com/2026/06/09/rivian-starts-deliveries-of-its-all-important-r2-suv/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "AI订阅",
+        "Anthropic",
+        "苹果WWDC",
+        "Siri AI",
+        "AI数据中心"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI领域动态密集：谷歌打响AI订阅价格战，Anthropic发布Fable 5游戏生成模型，苹果WWDC推出Siri AI及iOS 27，GM进军AI数据中心电池市场，Rivian交付R2 SUV，科技公司探索低成本AI模型。",
+      "events": [
+        {
+          "title_zh": "谷歌打响AI订阅价格战",
+          "summary_zh": "谷歌在AI订阅市场发出警告信号，可能引发价格竞争。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Google just fired a warning shot in the AI subscription pric",
+              "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars",
+              "source": "TechCrunch",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "通用汽车进军AI数据中心电池",
+          "summary_zh": "通用汽车加入AI数据中心电池竞赛，布局能源存储。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM joins race to build batteries for AI data centers and the",
+              "url": "https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic发布Fable 5游戏模型",
+          "summary_zh": "Anthropic推出Fable 5，可一键生成趣味视频游戏。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Fable 5 can make weirdly fun video games with th",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布Siri AI和iOS 27",
+          "summary_zh": "苹果WWDC 2026宣布Siri AI升级、iOS 27及Apple Intelligence。",
+          "region": "global",
+          "score": 0.85,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技公司探索低成本AI模型",
+          "summary_zh": "科技公司是否接受更便宜的AI模型成为行业讨论焦点。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Can tech companies learn to love cheaper AI models?",
+              "url": "https://techcrunch.com/2026/06/09/can-tech-companies-learn-to-love-cheaper-models/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian开始交付R2 SUV",
+          "summary_zh": "Rivian启动重要车型R2 SUV的交付，标志新阶段。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Rivian starts deliveries of its all-important R2 SUV",
+              "url": "https://techcrunch.com/2026/06/09/rivian-starts-deliveries-of-its-all-important-r2-suv/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果App Store引入订阅捆绑",
+          "summary_zh": "苹果为App Store引入流媒体式订阅捆绑，影响开发者。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple brings streaming-style subscription bundles to the App",
+              "url": "https://techcrunch.com/2026/06/09/apple-brings-streaming-style-subscription-bundles-to-the-app-store",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic推出Mythos升级版",
+          "summary_zh": "Anthropic为网络合作伙伴提供Mythos升级及安全功能。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic Offers Mythos Upgrade for Cyber Partners and a ‘Sa",
+              "url": "https://www.wired.com/story/anthropic-releases-claude-fable-5-mythos-5/",
+              "source": "Wired",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "CISA要求三天修复VPN漏洞",
+          "summary_zh": "美国CISA要求联邦机构三天内修复VPN漏洞，加强安全。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "CISA gives US federal agencies three days to fix a VPN bug u",
+              "url": "https://techcrunch.com/2026/06/09/cisa-gives-us-federal-agencies-three-days-to-fix-a-vpn-bug-under-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果可折叠iPhone即将到来",
+          "summary_zh": "苹果可折叠iPhone传闻再起，可能很快发布。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple’s foldable iPhone could be just around the corner",
+              "url": "https://techcrunch.com/2026/06/09/apples-foldable-iphone-could-be-just-around-the-corner/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "AI订阅",
+        "数据中心",
+        "苹果",
+        "Anthropic",
+        "通用汽车"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "通用汽车加入AI数据中心电池竞赛，Rivian开始交付R2 SUV，苹果App Store推出订阅捆绑服务，Anthropic发布Fable 5游戏AI，GM电动汽车将支持更多公共充电桩。",
+      "events": [
+        {
+          "title_zh": "通用汽车进军AI数据中心电池市场",
+          "summary_zh": "通用汽车加入为AI数据中心和电网制造电池的竞赛。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM joins race to build batteries for AI data centers and the",
+              "url": "https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian开始交付R2 SUV",
+          "summary_zh": "Rivian开始交付其重要车型R2 SUV，标志着公司新阶段。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Rivian starts deliveries of its all-important R2 SUV",
+              "url": "https://techcrunch.com/2026/06/09/rivian-starts-deliveries-of-its-all-important-r2-suv/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "通用电动汽车支持更多公共充电桩",
+          "summary_zh": "通用汽车电动汽车将很快支持更多类型的公共充电桩。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM's EVs will soon support more kinds of public chargers",
+              "url": "https://www.engadget.com/2190840/gms-evs-will-soon-support-more-kinds-of-public-chargers/",
+              "source": "Engadget",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果App Store推出订阅捆绑服务",
+          "summary_zh": "苹果将流媒体式订阅捆绑引入App Store，影响应用生态。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple brings streaming-style subscription bundles to the App",
+              "url": "https://techcrunch.com/2026/06/09/apple-brings-streaming-style-subscription-bundles-to-the-app-store",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic发布Fable 5游戏AI",
+          "summary_zh": "Anthropic的Fable 5能一键生成有趣视频游戏，展示AI创造力。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Fable 5 can make weirdly fun video games with th",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic Claude Fable 5公开版发布",
+          "summary_zh": "Anthropic推出Claude Fable 5，公众可体验未发布Mythos版本。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Claude Fable 5 is a version of Mythos the public",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-ac",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic Fable AI带来未发布能力",
+          "summary_zh": "Anthropic的Fable AI将未发布Mythos模型能力带给公众。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic's Fable AI brings the capabilities of its unreleas",
+              "url": "https://www.engadget.com/2190934/anthropic-fable-ai-brings-the-capabilities-of-its-unreleased-mythos",
+              "source": "Engadget",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果折叠iPhone即将到来",
+          "summary_zh": "苹果可折叠iPhone可能即将推出，引发市场期待。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple’s foldable iPhone could be just around the corner",
+              "url": "https://techcrunch.com/2026/06/09/apples-foldable-iphone-could-be-just-around-the-corner/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "WWDC 2026发布Siri AI和iOS 27",
+          "summary_zh": "WWDC 2026宣布Siri AI、iOS 27和苹果智能等多项更新。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技公司能否接受更便宜AI模型",
+          "summary_zh": "探讨科技公司是否应转向更便宜的AI模型以降低成本。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Can tech companies learn to love cheaper AI models?",
+              "url": "https://techcrunch.com/2026/06/09/can-tech-companies-learn-to-love-cheaper-models/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "新能源汽车",
+        "电池",
+        "充电",
+        "智驾",
+        "AI"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "美国新增稀土供应来源，通过《关键矿产主导法案》；刚果（金）出口管制重塑电池金属市场；中国重申对日稀土禁令；科威特自伊朗战争后首次向亚洲出口原油；印度燃料需求下降6.5%；停火协议限制油价涨势，中国需求疲软；全球最大电池制造商押注储能；黄金受债务周期支撑看涨。",
+      "events": [
+        {
+          "title_zh": "美国通过关键矿产主导法案",
+          "summary_zh": "美国通过《关键矿产主导法案》以确保关键矿产安全。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "US passes DOMINANCE Act for critical minerals security",
+              "url": "https://www.mining.com/the-us-passes-dominance-act-for-critical-minerals-security/",
+              "source": "Mining.com",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国重申对日稀土禁令",
+          "summary_zh": "中国无视美国请求，重申对日本的稀土出口禁令。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "China reaffirms Japan rare earth ban despite US request",
+              "url": "https://www.mining.com/china-reaffirms-japan-rare-earth-ban-despite-us-request/",
+              "source": "Mining.com",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "刚果（金）出口管制重塑电池金属市场",
+          "summary_zh": "刚果（金）的出口控制正在改变电池金属市场格局。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "DRC's Export Controls Are Reshaping the Battery Metals Marke",
+              "url": "https://oilprice.com/Energy/Energy-General/DRCs-Export-Controls-Are-Reshaping-the-Battery-Metals-Mar",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "停火协议限制油价涨势",
+          "summary_zh": "停火协议和中国需求疲软共同抑制了油价上涨。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Ceasefire Caps Oil Rally as China Demand Weakens",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Ceasefire-Caps-Oil-Rally-as-China-Demand-Weakens.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科威特首次向亚洲出口原油",
+          "summary_zh": "科威特自伊朗战争后首次向亚洲提供原油货物。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Kuwait Offers First Crude Cargoes to Asia since Iran War Sta",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Kuwait-Offers-First-Crude-Cargoes-to-Asia-since-I",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度燃料需求下降6.5%",
+          "summary_zh": "印度燃料需求下降6.5%，液化石油气消费下降20%。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "India's Fuel Demand Falls 6.5%, LPG Consumption Drops 20%",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Indias-Fuel-Demand-Falls-65-LPG-Consumption-Drops",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "全球最大电池制造商押注储能",
+          "summary_zh": "全球最大电池制造商大力投资能源存储领域。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "World's Largest Battery Maker Bets Big on Energy Storage",
+              "url": "https://oilprice.com/Energy/Energy-General/Worlds-Largest-Battery-Maker-Bets-Big-on-Energy-Storage.h",
+              "source": "OilPrice",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "债务周期支撑黄金价格",
+          "summary_zh": "债务周期显示黄金价格有更强上涨理由。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Debt cycle points to stronger case for gold price: Sprott",
+              "url": "https://www.mining.com/debt-cycle-points-to-stronger-case-for-gold-price-sprott/",
+              "source": "Mining.com",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国新增稀土供应来源",
+          "summary_zh": "美国新增大规模稀土供应来源，缓解供应担忧。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "America Just Added a Massive New Rare Earth Supply Source",
+              "url": "https://oilprice.com/Energy/Energy-General/America-Just-Added-a-Massive-New-Rare-Earth-Supply-Source",
+              "source": "OilPrice",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Sigma锂业在巴西赢得上诉",
+          "summary_zh": "Sigma锂业在巴西上诉成功，免除1000万美元法律罚款。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Sigma Lithium wins appeal in Brazil, removing $10M legal ord",
+              "url": "https://www.mining.com/sigma-lithium-wins-appeal-in-brazil-removing-10m-legal-order/",
+              "source": "Mining.com",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "稀土",
+        "电池金属",
+        "原油",
+        "黄金",
+        "中国需求"
+      ],
+      "deduped_count": 2,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "今日全球新闻聚焦芯片巨头涨价、世界杯观赛、债务飙升、AI融资竞赛、SpaceX上市、美国将比亚迪列入涉军名单、俄罗斯燃料危机、埃博拉疫情及南非反移民情绪等事件。",
+      "events": [
+        {
+          "title_zh": "全球最大芯片制造商未排除涨价",
+          "summary_zh": "世界最大芯片制造商表示不排除涨价可能，引发市场关注。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "World's largest chipmaker does not rule out price rises as c",
+              "url": "https://www.bbc.com/news/articles/ce3ez4zzzlvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国将比亚迪列入涉军名单",
+          "summary_zh": "美国将比亚迪列入涉嫌与中国军方有关联的企业名单，影响中美贸易。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "US adds BYD to list of firms with alleged Chinese military t",
+              "url": "https://www.bbc.com/news/articles/c75y6e5p9reo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI巨头融资竞赛升温",
+          "summary_zh": "ChatGPT所有者计划新一轮融资，AI领域资金争夺战加剧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "AI giants' race to raise funds heats up as ChatGPT-owner pla",
+              "url": "https://www.bbc.com/news/articles/cd958eqg1n5o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX上市或成马斯克最大赌注",
+          "summary_zh": "SpaceX股票市场爆发可能成为马斯克最大赌注，引发投资者关注。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "SpaceX's stock market blast-off could be Musk's biggest gamb",
+              "url": "https://www.bbc.com/news/articles/cy8d9e4lzv1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄罗斯燃料危机加剧",
+          "summary_zh": "乌克兰加强打击，俄罗斯燃料危机持续恶化，影响能源市场。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Russia's fuel crisis intensifies as Ukraine steps up strikes",
+              "url": "https://www.bbc.com/news/articles/cn75l36vdd8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "埃博拉疫情或创纪录",
+          "summary_zh": "中非埃博拉疫情扩散可能达到2014年爆发水平，引发全球担忧。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-06",
+          "sources": [
+            {
+              "title": "Ebola spread in central Africa could match 2014 record outbr",
+              "url": "https://www.theguardian.com/world/2026/jun/06/ebola-spread-in-central-africa-could-match-2014-record",
+              "source": "The Guardian",
+              "published_at": "2026-06-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非反移民情绪高涨",
+          "summary_zh": "南非移民面临极端恐惧，反移民浪潮席卷全国。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "‘Extreme fear’ among immigrants as backlash sweeps South Afr",
+              "url": "https://www.theguardian.com/world/2026/jun/08/extreme-fear-among-immigrants-as-backlash-sweeps-south",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国埃博拉隔离抗议致人死亡",
+          "summary_zh": "美国拟议埃博拉隔离措施引发抗议，一名男子被枪杀。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Man shot dead during protest against proposed US Ebola quara",
+              "url": "https://www.theguardian.com/world/2026/jun/09/man-shot-during-protest-against-proposed-us-ebola-quar",
+              "source": "The Guardian",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚匪徒诱骗村民后绑架",
+          "summary_zh": "尼日利亚西北部匪徒邀请村民后实施绑架，安全形势恶化。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Bandits in north-west Nigeria abduct villagers they invited ",
+              "url": "https://www.theguardian.com/world/2026/jun/08/bandits-in-north-west-nigeria-abduct-villagers-they-in",
+              "source": "The Guardian",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "非洲家庭价值观宪章遭谴责",
+          "summary_zh": "非洲家庭价值观宪章被权利组织谴责，引发性别平等争议。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-05",
+          "sources": [
+            {
+              "title": "‘Family values’ African charter condemned by rights groups a",
+              "url": "https://www.theguardian.com/global-development/2026/jun/05/ghana-african-charter-family-values-gende",
+              "source": "The Guardian",
+              "published_at": "2026-06-05"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "芯片涨价",
+        "AI融资",
+        "比亚迪",
+        "SpaceX",
+        "埃博拉"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "东南亚供应链动态：缅甸冲突加剧，美军空袭伊朗，全球最大芯片制造商可能涨价，以色列空袭黎巴嫩，NASA公布阿尔忒弥斯宇航员名单，法国11岁女孩谋杀案引发愤怒，英国制裁以色列定居者暴力网络，肯尼亚抗议美国埃博拉隔离，巴西拦截108名古巴移民，菲律宾余震不断。",
+      "events": [
+        {
+          "title_zh": "缅甸叛军失势",
+          "summary_zh": "缅甸叛军在军事压力下失去阵地",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Inside Myanmar, rebels are losing ground as military forces",
+              "url": "https://www.bbc.com/news/articles/c20y6966xqzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "美军空袭伊朗",
+          "summary_zh": "美军因直升机被击落对伊朗发动自卫打击",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "US strikes Iran in response to downing of helicopter, milita",
+              "url": "https://www.bbc.com/news/articles/cze9359gglyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-10"
+            },
+            {
+              "title": "US military launches ‘self-defence strikes’ targeting Iran",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/6/9/us-military-launches-self-defence-strikes-targetin",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-10"
+            },
+            {
+              "title": "Iran war live: US strikes after downing of helicopter, Tehran vows response",
+              "url": "https://www.aljazeera.com/news/liveblog/2026/6/10/iran-war-live-tehran-vows-response-as-us-strikes-over-downed-helicopter?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "芯片巨头或涨价",
+          "summary_zh": "全球最大芯片制造商未排除涨价可能",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "World's largest chipmaker does not rule out price rises as c",
+              "url": "https://www.bbc.com/news/articles/ce3ez4zzzlvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "以色列空袭黎巴嫩",
+          "summary_zh": "以色列空袭黎巴嫩提尔市，无视伊朗警告",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Israeli air strikes hit Lebanese city of Tyre despite Irania",
+              "url": "https://www.bbc.com/news/articles/c36y16nkr5no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "NASA公布登月宇航员",
+          "summary_zh": "NASA公布阿尔忒弥斯月球计划下一批宇航员",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Nasa names next astronauts for Artemis Moon programme",
+              "url": "https://www.bbc.com/news/articles/cdejn0gj12go?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国11岁女孩谋杀案",
+          "summary_zh": "11岁女孩Lyhanna谋杀案激怒法国，施压政府",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Murder of Lyhanna, 11, enrages France and turns up heat on g",
+              "url": "https://www.bbc.com/news/articles/c4gyd1w3e20o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国制裁以色列定居者",
+          "summary_zh": "英国及盟友制裁助长以色列定居者暴力的网络",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "UK and allies sanction 'networks' enabling settler violence",
+              "url": "https://www.bbc.com/news/articles/cddl4dl9m3po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "肯尼亚抗议美国隔离",
+          "summary_zh": "肯尼亚抗议美国埃博拉隔离，一人被枪击",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Man reportedly shot at Kenya protest against US Ebola quaran",
+              "url": "https://www.bbc.com/news/articles/c3wypjz3n57o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "巴西拦截古巴移民",
+          "summary_zh": "巴西拦截108名古巴移民，庇护申请增加",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Brazil intercepts 108 Cuban immigrants amid growing asylum a",
+              "url": "https://www.aljazeera.com/news/2026/6/10/brazil-intercepts-108-cuban-immigrants-amid-growing-asylum-",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "菲律宾余震不断",
+          "summary_zh": "菲律宾数百次余震，官员称破坏严重",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Hundreds of aftershocks jolt Philippines as officials say de",
+              "url": "https://www.bbc.com/news/articles/ckg50pypn2eo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "缅甸冲突",
+        "芯片涨价",
+        "美军空袭",
+        "以色列空袭",
+        "菲律宾余震"
+      ],
+      "deduped_count": 1,
+      "raw_count": 40
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "近期科技新闻聚焦AI订阅价格战、苹果WWDC发布iOS 27及折叠iPhone、Anthropic推出Fable 5游戏模型、Rivian交付R2 SUV、GM进军AI数据中心电池等领域，整体情绪中性偏正面。",
+      "events": [
+        {
+          "title_zh": "谷歌打响AI订阅价格战",
+          "summary_zh": "谷歌在AI订阅价格战中发出警告，可能影响市场格局。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Google just fired a warning shot in the AI subscription price",
+              "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars",
+              "source": "TechCrunch",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布iOS 27和Siri AI",
+          "summary_zh": "苹果在WWDC上宣布iOS 27、Siri AI及Apple Intelligence等新功能。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic推出Fable 5游戏模型",
+          "summary_zh": "Anthropic的Claude Fable 5能一键生成有趣视频游戏。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Fable 5 can make weirdly fun video games with th",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian开始交付R2 SUV",
+          "summary_zh": "Rivian启动其重要车型R2 SUV的交付，标志公司新阶段。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Rivian starts deliveries of its all-important R2 SUV",
+              "url": "https://techcrunch.com/2026/06/09/rivian-starts-deliveries-of-its-all-important-r2-suv/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果折叠iPhone即将推出",
+          "summary_zh": "苹果折叠屏iPhone可能即将面世，引发市场期待。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple’s foldable iPhone could be just around the corner",
+              "url": "https://techcrunch.com/2026/06/09/apples-foldable-iphone-could-be-just-around-the-corner/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "GM进军AI数据中心电池市场",
+          "summary_zh": "通用汽车加入为AI数据中心和电网建造电池的竞赛。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM joins race to build batteries for AI data centers and the",
+              "url": "https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果App Store引入订阅捆绑",
+          "summary_zh": "苹果在App Store推出类似流媒体的订阅捆绑服务。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple brings streaming-style subscription bundles to the App",
+              "url": "https://techcrunch.com/2026/06/09/apple-brings-streaming-style-subscription-bundles-to-the-app-store",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "CISA要求三天修复VPN漏洞",
+          "summary_zh": "美国CISA要求联邦机构三天内修复一个被利用的VPN漏洞。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "CISA gives US federal agencies three days to fix a VPN bug u",
+              "url": "https://techcrunch.com/2026/06/09/cisa-gives-us-federal-agencies-three-days-to-fix-a-vpn-bug-under-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技公司能否接受更便宜AI模型",
+          "summary_zh": "探讨科技公司是否愿意采用成本更低的AI模型。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Can tech companies learn to love cheaper AI models?",
+              "url": "https://techcrunch.com/2026/06/09/can-tech-companies-learn-to-love-cheaper-models/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic为网络伙伴提供Mythos升级",
+          "summary_zh": "Anthropic推出Claude Fable 5的Mythos版本，面向网络合作伙伴。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic Offers Mythos Upgrade for Cyber Partners and a ‘Sa",
+              "url": "https://www.wired.com/story/anthropic-releases-claude-fable-5-mythos-5/",
+              "source": "Wired",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "AI",
+        "苹果",
+        "Anthropic",
+        "Rivian",
+        "GM"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "前沿科技领域动态：谷歌打响AI订阅价格战，Anthropic发布Fable 5游戏生成模型，苹果WWDC推出Siri AI和iOS 27，Rivian开始交付R2 SUV，通用汽车进军AI数据中心电池市场，CISA要求联邦机构三天内修复VPN漏洞。",
+      "events": [
+        {
+          "title_zh": "谷歌打响AI订阅价格战",
+          "summary_zh": "谷歌在AI订阅市场发出警告信号，可能引发价格竞争。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Google just fired a warning shot in the AI subscription price",
+              "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars",
+              "source": "TechCrunch",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic发布Fable 5游戏模型",
+          "summary_zh": "Anthropic的Claude Fable 5可一键生成怪异有趣的视频游戏。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Anthropic’s Fable 5 can make weirdly fun video games with th",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "Anthropic’s Claude Fable 5 is a version of Mythos the public",
+              "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-ac",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "Anthropic Offers Mythos Upgrade for Cyber Partners and a ‘Sa",
+              "url": "https://www.wired.com/story/anthropic-releases-claude-fable-5-mythos-5/",
+              "source": "Wired",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果WWDC发布Siri AI和iOS 27",
+          "summary_zh": "苹果在WWDC 2026上宣布Siri AI、iOS 27及Apple Intelligence新功能。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple In",
+              "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "iOS 27 features we didn’t see onstage",
+              "url": "https://techcrunch.com/2026/06/09/ios-27-features-we-didnt-see-on-stage/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "The Top New Features in Apple’s iOS 27 and iPadOS 27",
+              "url": "https://www.wired.com/story/top-new-features-in-apples-ios-27-and-ipados-27/",
+              "source": "Wired",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Rivian开始交付R2 SUV",
+          "summary_zh": "Rivian启动其关键车型R2 SUV的交付，标志公司发展里程碑。",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Rivian starts deliveries of its all-important R2 SUV",
+              "url": "https://techcrunch.com/2026/06/09/rivian-starts-deliveries-of-its-all-important-r2-suv/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "通用汽车进军AI数据中心电池",
+          "summary_zh": "通用汽车加入为AI数据中心和电网建设电池的竞赛。",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "GM joins race to build batteries for AI data centers and the",
+              "url": "https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            },
+            {
+              "title": "GM Wants Your Electric Car to Power Your House—and Your Neig",
+              "url": "https://www.wired.com/story/gm-vehicle-to-grid-charging-your-electric-car-can-power-your-house-and-y",
+              "source": "Wired",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "CISA要求三天修复VPN漏洞",
+          "summary_zh": "美国CISA要求联邦机构在三天内修复正在被利用的VPN漏洞。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "CISA gives US federal agencies three days to fix a VPN bug u",
+              "url": "https://techcrunch.com/2026/06/09/cisa-gives-us-federal-agencies-three-days-to-fix-a-vpn-bug-under-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果折叠iPhone即将到来",
+          "summary_zh": "苹果折叠屏iPhone可能即将发布，引发市场期待。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple’s foldable iPhone could be just around the corner",
+              "url": "https://techcrunch.com/2026/06/09/apples-foldable-iphone-could-be-just-around-the-corner/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果App Store推订阅捆绑",
+          "summary_zh": "苹果将流媒体式订阅捆绑引入App Store，改变应用分发模式。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Apple brings streaming-style subscription bundles to the App",
+              "url": "https://techcrunch.com/2026/06/09/apple-brings-streaming-style-subscription-bundles-to-the-app-store",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "科技公司应拥抱廉价AI模型",
+          "summary_zh": "探讨科技公司是否应学习接受更便宜的AI模型以降低成本。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "Can tech companies learn to love cheaper AI models?",
+              "url": "https://techcrunch.com/2026/06/09/can-tech-companies-learn-to-love-cheaper-models/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "Justin Ernest投资5亿美元",
+          "summary_zh": "Justin Ernest如何在不设基金的情况下向热门初创公司投资近5亿美元。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-09",
+          "sources": [
+            {
+              "title": "How Justin Ernest invested nearly $500M into hot startups wi",
+              "url": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a",
+              "source": "TechCrunch",
+              "published_at": "2026-06-09"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.55,
+      "keywords": [
+        "AI订阅",
+        "Anthropic",
+        "苹果WWDC",
+        "Rivian",
+        "通用汽车"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv最新研究涵盖视频世界模型、记忆增强、VLM游戏智能体、强化学习、形式语言可学习性、LLM强化学习、数学与物理等多个领域，展示了AI与基础科学的交叉进展。",
+      "events": [
+        {
+          "title_zh": "视频世界模型潜在空间记忆",
+          "summary_zh": "提出潜在空间记忆方法提升视频世界模型性能",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Latent Spatial Memory for Video World Models",
+              "url": "http://arxiv.org/abs/2606.09828v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "记忆与想象时序建模",
+          "summary_zh": "MemoryVLA++通过记忆和想象增强时序建模能力",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "MemoryVLA++: Temporal Modeling via Memory and Imagination in",
+              "url": "http://arxiv.org/abs/2606.09827v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "VLM游戏智能体统一基准",
+          "summary_zh": "OmniGameArena提供UE5基准测试VLM游戏智能体",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "OmniGameArena: A Unified UE5 Benchmark for VLM Game Agents w",
+              "url": "http://arxiv.org/abs/2606.09826v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "无模型策略增强技术",
+          "summary_zh": "提出代理转移的无模型策略增强方法",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "An Agency-Transferring Model-Free Policy Enhancement Techniq",
+              "url": "http://arxiv.org/abs/2606.09825v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "分布式正则表达式相似搜索",
+          "summary_zh": "TSseek实现分布式正则表达式相似性搜索",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "TSseek: Regular Expression-Based Similarity Search for Distr",
+              "url": "http://arxiv.org/abs/2606.09824v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "形式语言任务可学习性因果评估",
+          "summary_zh": "因果方法评估形式语言任务的可学习性",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Causally Evaluating the Learnability of Formal Language Task",
+              "url": "http://arxiv.org/abs/2606.09822v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "LLM强化学习散度正则化反思",
+          "summary_zh": "重新思考LLM强化学习中的散度正则化",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Rethinking the Divergence Regularization in LLM RL",
+              "url": "http://arxiv.org/abs/2606.09821v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "加权通用逼近定理",
+          "summary_zh": "证明不可微映射的加权通用逼近性质",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Weighted universal approximation of differentiable maps on i",
+              "url": "http://arxiv.org/abs/2606.09820v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "线性Ricci迹变形与操作等价",
+          "summary_zh": "研究线性Ricci迹变形及其操作等价性",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "Linear Ricci-Trace Deformations and Operational Equivalence ",
+              "url": "http://arxiv.org/abs/2606.09819v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "Dirichlet L函数大值研究",
+          "summary_zh": "关于特征Dirichlet L函数大值的注记",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-08",
+          "sources": [
+            {
+              "title": "A note on large values of Dirichlet $L$-functions for charac",
+              "url": "http://arxiv.org/abs/2606.09818v1",
+              "source": "arXiv",
+              "published_at": "2026-06-08"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "视频世界模型",
+        "记忆增强",
+        "VLM游戏智能体",
+        "强化学习",
+        "形式语言"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "习近平访朝推动中朝关系",
+      "summary": "习近平主席访问平壤，旨在加强中朝双边关系，可能影响东北亚地缘政治格局。决策者需关注中朝合作动向，评估对区域稳定及中国外交策略的影响。",
+      "action": "评估中朝合作对区域安全的影响"
+    },
+    {
+      "title": "中国重申对日稀土禁令",
+      "summary": "中国无视美国请求，维持对日本的稀土出口禁令，可能加剧中日贸易紧张，影响全球稀土供应链。决策者需考虑稀土资源战略储备及替代来源。",
+      "action": "加强稀土储备并寻找替代供应"
+    },
+    {
+      "title": "美国打击伊朗回应直升机被击落",
+      "summary": "美国对伊朗采取军事行动，回应直升机被击落事件，可能引发中东局势升级。决策者需评估油价波动及地区安全风险，调整能源和外交策略。",
+      "action": "监控油价波动并调整能源策略"
+    },
+    {
+      "title": "苹果WWDC发布Siri AI和iOS 27",
+      "summary": "苹果在WWDC 2026上推出Siri AI、iOS 27及Apple Intelligence，实际体验获好评，可能推动AI技术普及。决策者需关注科技趋势，调整投资和产品策略。",
+      "action": "关注AI技术趋势并调整投资"
+    },
+    {
+      "title": "Rivian开始交付R2 SUV",
+      "summary": "Rivian开始交付R2 SUV，标志公司进入新阶段，可能影响电动汽车市场竞争格局。决策者需评估对传统车企和供应链的冲击。",
+      "action": "评估电动汽车市场竞争变化"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
