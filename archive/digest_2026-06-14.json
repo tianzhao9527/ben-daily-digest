@@ -1,0 +1,2621 @@
+{
+  "date": "2026-06-14",
+  "generated_at_utc": "2026-06-14T00:27:12.906889+00:00",
+  "generated_at_bjt": "2026-06-14 08:27",
+  "kpis": [
+    {
+      "id": "SP500",
+      "name": "标普500",
+      "unit": "",
+      "value": 7431.46,
+      "updated_at": "2026-06-12",
+      "source": "FRED",
+      "delta": 37.159999999999854,
+      "delta_pct": 0.502549260917191,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,36.68 L 5.41,37.86 L 7.82,41.00 L 10.23,35.86 L 12.64,37.91 L 15.05,33.96 L 17.46,33.35 L 19.87,35.79 L 22.28,35.99 L 24.69,30.90 L 27.10,29.43 L 29.51,31.48 L 31.92,27.41 L 34.33,20.03 L 36.74,21.99 L 39.15,17.68 L 41.56,16.71 L 43.97,17.54 L 46.38,14.53 L 48.79,10.56 L 51.21,17.01 L 53.62,17.39 L 56.03,20.84 L 58.44,15.31 L 60.85,14.42 L 63.26,12.49 L 65.67,9.31 L 68.08,9.23 L 70.49,6.21 L 72.90,5.07 L 75.31,3.68 L 77.72,3.00 L 80.13,6.91 L 82.54,4.77 L 84.95,18.74 L 87.36,17.21 L 89.77,18.54 L 92.18,26.87 L 94.59,18.00 L 97.00,15.42\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        7126.06,
+        7109.14,
+        7064.01,
+        7137.9,
+        7108.4,
+        7165.08,
+        7173.91,
+        7138.8,
+        7135.95,
+        7209.01,
+        7230.12,
+        7200.75,
+        7259.22,
+        7365.12,
+        7337.11,
+        7398.93,
+        7412.84,
+        7400.96,
+        7444.25,
+        7501.24,
+        7408.5,
+        7403.05,
+        7353.61,
+        7432.97,
+        7445.72,
+        7473.47,
+        7519.12,
+        7520.36,
+        7563.63,
+        7580.06,
+        7599.96,
+        7609.78,
+        7553.68,
+        7584.31,
+        7383.74,
+        7405.73,
+        7386.65,
+        7266.99,
+        7394.3,
+        7431.46
+      ]
+    },
+    {
+      "id": "NASDAQCOM",
+      "name": "纳斯达克",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DJIA",
+      "name": "道琼斯",
+      "unit": "",
+      "value": 51202.26,
+      "updated_at": "2026-06-12",
+      "source": "FRED",
+      "delta": 353.51000000000204,
+      "delta_pct": 0.6952186631923146,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.76 L 5.41,32.83 L 7.82,36.95 L 10.23,32.16 L 12.64,34.69 L 15.05,35.81 L 17.46,36.69 L 19.87,37.06 L 22.28,41.00 L 24.69,29.88 L 27.10,32.03 L 29.51,39.87 L 31.92,34.86 L 34.33,26.24 L 36.74,30.65 L 39.15,30.48 L 41.56,29.14 L 43.97,28.35 L 46.38,29.30 L 48.79,24.09 L 51.21,31.65 L 53.62,29.40 L 56.03,33.93 L 58.44,24.85 L 60.85,20.96 L 63.26,16.82 L 65.67,18.48 L 68.08,15.91 L 70.49,15.57 L 72.90,10.45 L 75.31,9.80 L 77.72,6.58 L 80.13,15.31 L 82.54,3.00 L 84.95,12.78 L 87.36,13.92 L 89.77,12.71 L 92.18,26.12 L 94.59,13.04 L 97.00,8.06\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        49447.43,
+        49442.56,
+        49149.38,
+        49490.03,
+        49310.32,
+        49230.71,
+        49167.79,
+        49141.93,
+        48861.81,
+        49652.14,
+        49499.27,
+        48941.9,
+        49298.25,
+        49910.59,
+        49596.97,
+        49609.16,
+        49704.47,
+        49760.56,
+        49693.2,
+        50063.46,
+        49526.17,
+        49686.12,
+        49363.88,
+        50009.35,
+        50285.66,
+        50579.7,
+        50461.68,
+        50644.28,
+        50668.97,
+        51032.46,
+        51078.88,
+        51307.79,
+        50687.07,
+        51561.93,
+        50866.78,
+        50786.01,
+        50872.11,
+        49918.78,
+        50848.75,
+        51202.26
+      ]
+    },
+    {
+      "id": "VIXCLS",
+      "name": "VIX恐慌",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "NIKKEI225",
+      "name": "日经225",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS10",
+      "name": "美债10Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DGS2",
+      "name": "美债2Y",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "T10Y2Y",
+      "name": "10Y-2Y利差",
+      "unit": "%",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "FEDFUNDS",
+      "name": "联邦基金利率",
+      "unit": "%",
+      "value": 3.63,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": -0.010000000000000231,
+      "delta_pct": -0.2747252747252811,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,19.99 L 5.41,18.20 L 7.82,14.18 L 10.23,9.04 L 12.64,8.59 L 15.05,7.69 L 17.46,3.00 L 19.87,3.00 L 22.28,3.00 L 24.69,3.00 L 27.10,3.00 L 29.51,3.00 L 31.92,3.00 L 34.33,3.00 L 36.74,3.00 L 39.15,3.00 L 41.56,3.00 L 43.97,3.00 L 46.38,3.00 L 48.79,7.47 L 51.21,14.18 L 53.62,18.42 L 56.03,22.00 L 58.44,25.35 L 60.85,25.35 L 63.26,25.35 L 65.67,25.35 L 68.08,25.35 L 70.49,25.35 L 72.90,25.35 L 75.31,25.35 L 77.72,27.81 L 80.13,30.72 L 82.54,35.41 L 84.95,38.99 L 87.36,40.78 L 89.77,40.78 L 92.18,40.78 L 94.59,40.78 L 97.00,41.00\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
+      "series_values": [
+        4.57,
+        4.65,
+        4.83,
+        5.06,
+        5.08,
+        5.12,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.33,
+        5.13,
+        4.83,
+        4.64,
+        4.48,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.33,
+        4.22,
+        4.09,
+        3.88,
+        3.72,
+        3.64,
+        3.64,
+        3.64,
+        3.64,
+        3.63
+      ]
+    },
+    {
+      "id": "DEXCHUS",
+      "name": "USD/CNY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXJPUS",
+      "name": "USD/JPY",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DEXUSEU",
+      "name": "EUR/USD",
+      "unit": "",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DTWEXBGS",
+      "name": "美元指数",
+      "unit": "",
+      "value": 120.0831,
+      "updated_at": "2026-06-05",
+      "source": "FRED",
+      "delta": 0.7215999999999951,
+      "delta_pct": 0.6045500433556843,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,25.52 L 5.41,23.02 L 7.82,34.64 L 10.23,34.57 L 12.64,34.58 L 15.05,39.75 L 17.46,36.86 L 19.87,33.27 L 22.28,30.20 L 24.69,28.09 L 27.10,27.83 L 29.51,31.20 L 31.92,27.06 L 34.33,21.08 L 36.74,28.90 L 39.15,34.01 L 41.56,26.05 L 43.97,29.83 L 46.38,39.41 L 48.79,41.00 L 51.21,40.49 L 53.62,40.18 L 56.03,31.60 L 58.44,32.52 L 60.85,28.93 L 63.26,17.69 L 65.67,21.82 L 68.08,14.60 L 70.49,19.89 L 72.90,16.10 L 75.31,17.61 L 77.72,19.76 L 80.13,19.51 L 82.54,22.29 L 84.95,25.10 L 87.36,19.84 L 89.77,22.21 L 92.18,15.81 L 94.59,16.24 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        118.8552,
+        118.9916,
+        118.3581,
+        118.3623,
+        118.3616,
+        118.0795,
+        118.2374,
+        118.4331,
+        118.6004,
+        118.7155,
+        118.7294,
+        118.5458,
+        118.7717,
+        119.0975,
+        118.671,
+        118.3926,
+        118.8264,
+        118.6207,
+        118.0982,
+        118.0116,
+        118.0392,
+        118.0562,
+        118.5238,
+        118.4737,
+        118.6696,
+        119.2825,
+        119.0574,
+        119.451,
+        119.1624,
+        119.369,
+        119.2868,
+        119.1696,
+        119.1829,
+        119.0318,
+        118.8783,
+        119.1653,
+        119.0359,
+        119.3848,
+        119.3615,
+        120.0831
+      ]
+    },
+    {
+      "id": "DCOILWTICO",
+      "name": "WTI原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DCOILBRENTEU",
+      "name": "布伦特原油",
+      "unit": "$/桶",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "DHHNGSP",
+      "name": "天然气",
+      "unit": "$/MMBtu",
+      "value": null,
+      "updated_at": null,
+      "source": "FRED",
+      "delta": null,
+      "delta_pct": null,
+      "direction": null,
+      "spark_svg": "",
+      "color": "#8E8E93",
+      "series_values": []
+    },
+    {
+      "id": "PCOPPUSDM",
+      "name": "铜",
+      "unit": "$/t",
+      "value": 13483.75153846154,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 593.0638111888093,
+      "delta_pct": 4.600715056762011,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,34.18 L 5.41,34.73 L 7.82,35.05 L 10.23,38.93 L 12.64,37.88 L 15.05,37.33 L 17.46,38.21 L 19.87,38.70 L 22.28,41.00 L 24.69,39.30 L 27.10,37.80 L 29.51,38.19 L 31.92,38.51 L 34.33,35.85 L 36.74,30.69 L 39.15,26.08 L 41.56,29.30 L 43.97,31.10 L 46.38,33.87 L 48.79,31.97 L 51.21,30.08 L 53.62,33.22 L 56.03,34.36 L 58.44,33.90 L 60.85,31.47 L 63.26,28.70 L 65.67,32.56 L 68.08,30.10 L 70.49,28.02 L 72.90,28.46 L 75.31,29.14 L 77.72,26.92 L 80.13,21.81 L 82.54,21.32 L 84.95,14.61 L 87.36,6.41 L 89.77,6.65 L 92.18,9.55 L 94.59,7.07 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        8936.587,
+        8856.310869565217,
+        8809.1575,
+        8243.156086956522,
+        8396.517727272727,
+        8476.679047619047,
+        8347.828260869564,
+        8276.71380952381,
+        7941.355909090909,
+        8189.587727272727,
+        8407.900476190476,
+        8351.339565217391,
+        8304.950476190475,
+        8692.819047619048,
+        9445.593636363636,
+        10117.16347826087,
+        9648.167,
+        9385.31304347826,
+        8981.117727272727,
+        9259.128571428571,
+        9533.991304347826,
+        9075.727142857144,
+        8909.907727272726,
+        8976.68043478261,
+        9330.975,
+        9735.823333333332,
+        9172.69590909091,
+        9531.200909090909,
+        9835.068095238095,
+        9770.580434782609,
+        9671.875714285714,
+        9994.773181818182,
+        10739.91826086957,
+        10812.028,
+        11790.96409090909,
+        12986.60681818182,
+        12951.345,
+        12528.70954545455,
+        12890.68772727273,
+        13483.75153846154
+      ]
+    },
+    {
+      "id": "PALUMUSDM",
+      "name": "铝",
+      "unit": "$/t",
+      "value": 3654.015384615385,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 59.636293706294055,
+      "delta_pct": 1.6591542571880151,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,33.98 L 5.41,36.97 L 7.82,35.93 L 10.23,37.54 L 12.64,39.77 L 15.05,40.40 L 17.46,41.00 L 19.87,39.77 L 22.28,39.53 L 24.69,39.33 L 27.10,39.59 L 29.51,39.35 L 31.92,39.90 L 34.33,38.65 L 36.74,31.90 L 39.15,30.22 L 41.56,31.94 L 43.97,35.66 L 46.38,35.57 L 48.79,32.94 L 51.21,29.49 L 53.62,29.82 L 56.03,30.86 L 58.44,30.09 L 60.85,27.98 L 63.26,28.09 L 65.67,35.19 L 68.08,33.20 L 70.49,31.23 L 72.90,29.22 L 75.31,29.41 L 77.72,28.01 L 80.13,24.55 L 82.54,23.90 L 84.95,22.47 L 87.36,16.01 L 89.77,17.74 L 92.18,10.03 L 94.59,4.49 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        2416.1815,
+        2296.416956521739,
+        2338.131,
+        2274.012608695652,
+        2184.753636363636,
+        2159.732380952381,
+        2135.581739130435,
+        2184.67380952381,
+        2194.390909090909,
+        2202.255454545455,
+        2192.005238095238,
+        2201.56652173913,
+        2179.457142857143,
+        2229.441904761905,
+        2499.228181818182,
+        2566.318695652174,
+        2497.6055,
+        2349.125217391304,
+        2352.467272727273,
+        2457.478095238095,
+        2595.583043478261,
+        2582.188571428571,
+        2540.882272727273,
+        2571.370434782609,
+        2655.7725,
+        2651.598571428571,
+        2367.800454545455,
+        2447.344090909091,
+        2525.959047619048,
+        2606.370869565217,
+        2598.735714285714,
+        2654.479090909091,
+        2793.086956521739,
+        2819.0615,
+        2875.897727272727,
+        3133.982727272727,
+        3065.1885,
+        3372.952727272727,
+        3594.379090909091,
+        3654.015384615385
+      ]
+    },
+    {
+      "id": "PZINCUSDM",
+      "name": "锌",
+      "unit": "$/t",
+      "value": 3458.04,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 103.42454545454484,
+      "delta_pct": 3.0830521964717623,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,14.22 L 5.41,19.98 L 7.82,26.80 L 10.23,36.65 L 12.64,40.47 L 15.05,39.46 L 17.46,39.44 L 19.87,36.31 L 22.28,37.99 L 24.69,34.65 L 27.10,35.79 L 29.51,35.43 L 31.92,41.00 L 34.33,37.62 L 36.74,28.35 L 39.15,20.40 L 41.56,25.46 L 43.97,26.56 L 46.38,28.51 L 48.79,24.13 L 51.21,15.19 L 53.62,18.71 L 56.03,17.68 L 58.44,24.92 L 60.85,25.83 L 63.26,22.77 L 65.67,32.30 L 68.08,31.22 L 70.49,30.81 L 72.90,27.07 L 75.31,26.11 L 77.72,21.04 L 80.13,13.59 L 82.54,12.73 L 84.95,13.24 L 87.36,11.70 L 89.77,7.65 L 92.18,12.54 L 94.59,6.58 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        3133.838,
+        2967.464782608696,
+        2770.357,
+        2485.780869565217,
+        2375.45,
+        2404.645238095238,
+        2405.16347826087,
+        2495.49619047619,
+        2447.181818181818,
+        2543.610454545455,
+        2510.568571428571,
+        2520.9391304347832,
+        2360.091904761905,
+        2457.85619047619,
+        2725.5595454545446,
+        2955.1882608695646,
+        2809.185,
+        2777.268695652174,
+        2721.078181818182,
+        2847.48380952381,
+        3105.770869565217,
+        3004.19619047619,
+        3033.758181818182,
+        2824.828695652174,
+        2798.2765,
+        2886.7619047619046,
+        2611.345,
+        2642.621363636364,
+        2654.65,
+        2762.56347826087,
+        2790.381428571429,
+        2936.735454545455,
+        3151.999130434783,
+        3176.8435,
+        3162.175,
+        3206.733181818182,
+        3323.7125,
+        3182.2609090909086,
+        3354.615454545455,
+        3458.04
+      ]
+    },
+    {
+      "id": "PNICKUSDM",
+      "name": "镍",
+      "unit": "$/t",
+      "value": 18879.23461538462,
+      "updated_at": "2026-05-01",
+      "source": "FRED",
+      "delta": 1014.3182517482601,
+      "delta_pct": 5.677710609453971,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,13.84 L 7.82,12.32 L 10.23,17.48 L 12.64,20.32 L 15.05,20.76 L 17.46,22.80 L 19.87,25.32 L 22.28,29.68 L 24.69,33.57 L 27.10,35.41 L 29.51,36.46 L 31.92,35.74 L 34.33,32.41 L 36.74,30.09 L 39.15,25.54 L 41.56,32.09 L 43.97,35.76 L 46.38,35.85 L 48.79,36.28 L 51.21,34.40 L 53.62,37.67 L 56.03,38.58 L 58.44,38.78 L 60.85,39.06 L 63.26,36.66 L 65.67,39.50 L 68.08,38.86 L 70.49,39.95 L 72.90,39.86 L 75.31,40.13 L 77.72,39.64 L 80.13,39.67 L 82.54,41.00 L 84.95,40.34 L 87.36,31.42 L 89.77,33.11 L 92.18,33.42 L 94.59,30.93 L 97.00,27.74\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
+      "series_values": [
+        26727.95,
+        23288.60826086957,
+        23770.7995,
+        22134.78260869565,
+        21233.27818181818,
+        21091.2619047619,
+        20446.35826086957,
+        19644.64285714286,
+        18264.035454545447,
+        17027.36363636364,
+        16443.52380952381,
+        16111.66695652174,
+        16338.46428571429,
+        17397.36047619048,
+        18132.364090909086,
+        19576.54652173913,
+        17498.0075,
+        16334.8752173913,
+        16303.28772727273,
+        16167.67761904762,
+        16765.80347826087,
+        15726.94761904762,
+        15438.65636363636,
+        15374.06086956522,
+        15287.031,
+        16048.2019047619,
+        15146.00227272727,
+        15350.40318181818,
+        15003.10761904762,
+        15034.01869565217,
+        14948.05666666667,
+        15103.18363636364,
+        15092.11434782609,
+        14670.7685,
+        14879.03,
+        17710.86363636364,
+        17173.1035,
+        17076.29272727273,
+        17864.91636363636,
+        18879.23461538462
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "macro",
+      "name": "宏观 / 市场（利率·汇率·风险偏好）",
+      "tags": [],
+      "gnews_queries": [
+        "Federal Reserve interest rate decision",
+        "US Treasury yields bond market",
+        "USD CNY yuan exchange rate",
+        "stock market index S&P Nasdaq"
+      ],
+      "brief_zh": "全球市场受多重因素影响：SpaceX上市推动马斯克成首位万亿富翁，英国经济因伊朗战争收缩，美国通胀加速，英国计划逐步淘汰俄罗斯能源进口，印度蓝金产业兴起，瑞安航空被调查，弗雷泽集团收购雨果博斯，英国可能阻止英国钢铁所有者分红。",
+      "events": [
+        {
+          "title_zh": "马斯克成首位万亿富翁",
+          "summary_zh": "SpaceX估值飙升，马斯克成为全球首位万亿富翁。",
+          "region": "global",
+          "score": 0.85,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Elon Musk becomes world's first trillionaire as SpaceX soars",
+              "url": "https://www.bbc.com/news/articles/c4gypy3wwl7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国经济因伊朗战争收缩",
+          "summary_zh": "伊朗战争影响导致英国经济出现收缩。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK economy contracts as Iran war impact felt",
+              "url": "https://www.bbc.com/news/articles/c77y47248k4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国计划淘汰俄能源进口",
+          "summary_zh": "英国承诺逐步淘汰俄罗斯柴油和航空燃料进口。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK vows to phase out Russian diesel and jet fuel imports by ",
+              "url": "https://www.bbc.com/news/articles/ceqdl8xre7qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国通胀加速引特朗普言论",
+          "summary_zh": "美国物价上涨速度创纪录，特朗普称‘我爱通胀’。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Trump says 'I love the inflation' as US prices rise at faste",
+              "url": "https://www.bbc.com/news/articles/c0myzxjkw99o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX上市准备最大升空",
+          "summary_zh": "SpaceX首次公开募股（IPO）准备中，被视为最大升空。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "SpaceX IPO: Preparing for the biggest liftoff yet?",
+              "url": "https://www.bbc.co.uk/sounds/play/w3ct8gld?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "弗雷泽集团收购雨果博斯",
+          "summary_zh": "迈克·阿什利的弗雷泽集团出价17.3亿英镑收购雨果博斯。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Mike Ashley's Frasers offers £1.73bn to buy all of Hugo Boss",
+              "url": "https://www.bbc.com/news/articles/c07y92gplmyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国或阻止钢铁所有者分红",
+          "summary_zh": "英国信号可能阻止英国钢铁所有者获得分红。",
+          "region": "cn",
+          "score": 0.4,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK signals it may block payout to British Steel owner",
+              "url": "https://www.bbc.com/news/articles/c932gng1dglo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞安航空被调查收费问题",
+          "summary_zh": "瑞安航空因向父母收取与孩子同坐费用被调查。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Ryanair investigated over charging parents to sit with child",
+              "url": "https://www.bbc.com/news/articles/czj87rvx349o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度蓝金产业兴起",
+          "summary_zh": "印度的‘蓝金’（蓝莓）开启新饮料产业。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "India's 'blue gold' starts a new drinks industry",
+              "url": "https://www.bbc.com/news/articles/cdrpe4vly5mo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "社保面临22%削减风险",
+          "summary_zh": "社会保障面临2032年自动削减22%的风险，提供4种应对方式。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Social Security is facing a 22% cliff — 4 ways to build an i",
+              "url": "https://www.marketwatch.com/story/social-security-could-face-an-automatic-22-cut-in-2032-these-4-mov",
+              "source": "MarketWatch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.45,
+      "keywords": [
+        "SpaceX",
+        "英国经济",
+        "通胀",
+        "俄罗斯能源",
+        "收购"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "sanctions",
+      "name": "地缘政治 / 制裁 / 合规（OFAC·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "US sanctions OFAC Treasury",
+        "EU sanctions Russia trade",
+        "China US trade tariffs",
+        "export controls technology chips"
+      ],
+      "brief_zh": "特朗普宣布美伊协议将于周日签署，伊朗面临制裁压力；美国击毙委内瑞拉黑帮头目；Anthropic因安全担忧暂停AI工具；瑞士将公投限制人口至1000万；华纳兄弟1110亿美元出售给派拉蒙获批；马斯克成全球首位万亿富翁。",
+      "events": [
+        {
+          "title_zh": "特朗普宣布美伊协议周日签署",
+          "summary_zh": "特朗普称美伊协议将于周日签署，伊朗面临制裁压力。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Trump says US-Iran deal to be signed on Sunday as Tehran cas",
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-14"
+            },
+            {
+              "title": "Iran war live: Trump says deal to be signed today; Tehran ur",
+              "url": "https://www.aljazeera.com/news/liveblog/2026/6/14/iran-war-live-trump-says-deal-to-be-signed-today-a",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国击毙委内瑞拉黑帮头目",
+          "summary_zh": "美国空袭击毙委内瑞拉Tren de Aragua黑帮头目。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "US kills leader of Venezuela's Tren de Aragua gang in airstr",
+              "url": "https://www.bbc.com/news/articles/cp36z37knlko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic因安全担忧暂停AI工具",
+          "summary_zh": "Anthropic因美国政府安全担忧暂停新AI工具发布。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic suspends new AI tools over US government security ",
+              "url": "https://www.bbc.com/news/articles/c932g3v3e13o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞士将公投限制人口至1000万",
+          "summary_zh": "瑞士计划公投限制人口上限为1000万。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Switzerland to vote on plan to cap population at 10 million",
+              "url": "https://www.bbc.com/news/articles/cx23kz7e76po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "华纳兄弟1110亿美元出售获批",
+          "summary_zh": "美国司法部批准华纳兄弟以1110亿美元出售给派拉蒙。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Warner Bros $111bn sale to Paramount approved by US justice ",
+              "url": "https://www.bbc.com/news/articles/cjwgled9jxwo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "马斯克成全球首位万亿富翁",
+          "summary_zh": "SpaceX估值飙升，马斯克成为世界首位万亿富翁。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Elon Musk becomes world's first trillionaire as SpaceX soars",
+              "url": "https://www.bbc.com/news/articles/c4gypy3wwl7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普名字从肯尼迪中心移除",
+          "summary_zh": "法院命令后，特朗普名字从肯尼迪中心移除。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Trump's name removed from Kennedy Center after court order",
+              "url": "https://www.bbc.com/news/articles/c5yzd4dgxw4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚退休将军被绑架后死亡",
+          "summary_zh": "被绑架的尼日利亚退休将军在囚禁中死亡。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Kidnapped Nigerian retired general dies in captivity",
+              "url": "https://www.bbc.com/news/articles/cvgq4veq2eqo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "悉尼海滩鲨鱼袭击致女子重伤",
+          "summary_zh": "悉尼海滩发生鲨鱼袭击，一名女子重伤。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Woman seriously injured in shark attack at Sydney beach",
+              "url": "https://www.bbc.com/news/articles/c3ryw807133o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国250周年庆典争议",
+          "summary_zh": "美国250周年庆典引发America250与Freedom250之争。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "America250 versus Freedom250: What to know about the US semi",
+              "url": "https://www.aljazeera.com/news/2026/6/14/america250-versus-freedom250-what-to-know-about-the-us-semi",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-14"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "美伊协议",
+        "制裁",
+        "特朗普",
+        "AI安全",
+        "人口限制"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ai",
+      "name": "AI / 大模型（GPT·LLM·应用）",
+      "tags": [],
+      "gnews_queries": [
+        "ChatGPT OpenAI artificial intelligence",
+        "Claude Anthropic AI model",
+        "large language model LLM",
+        "generative AI enterprise business"
+      ],
+      "brief_zh": "AI领域动态：Anthropic因政府指令切断Fable/Mythos模型访问；亚马逊安全研究影响白宫决策；SpaceX上市估值基于AI潜力；乌克兰测试全自主无人机；1300亿美元数据中心项目受阻；微软未排除分拆Xbox；苹果Siri AI登陆Mac；Jeff Bezos新AI公司Prometheus亮相。",
+      "events": [
+        {
+          "title_zh": "Anthropic切断Fable/Mythos模型",
+          "summary_zh": "Anthropic因政府指令停止Fable和Mythos AI模型访问",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic cuts off Fable 5 and Mythos 5 access following gov",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-nat",
+              "source": "The Verge",
+              "published_at": "2026-06-13"
+            },
+            {
+              "title": "Anthropic shuts down Fable, Mythos models following Trump ad",
+              "url": "https://arstechnica.com/ai/2026/06/anthropic-shuts-down-fable-mythos-models-following-trump-admin-di",
+              "source": "Ars Technica",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊安全研究影响白宫",
+          "summary_zh": "亚马逊安全研究据报导致白宫政策调整",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Amazon security research reportedly led to the White House’s",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/949601/amazon-anthropic-fablemythos-government-b",
+              "source": "The Verge",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX上市估值基于AI潜力",
+          "summary_zh": "SpaceX上市后估值主要基于其AI发展潜力",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX is now a public company valued for its AI potential, ",
+              "url": "https://arstechnica.com/space/2026/06/spacex-is-now-a-public-company-valued-for-its-ai-potential-so-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌克兰测试全自主无人机",
+          "summary_zh": "乌克兰首次测试全自主无人机用于攻击俄军",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Ukraine's one-time test used fully autonomous drones to kill",
+              "url": "https://arstechnica.com/ai/2026/06/ukraines-one-time-test-used-fully-autonomous-drones-to-kill-russi",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "1300亿美元数据中心项目受阻",
+          "summary_zh": "抗议活动导致1300亿美元数据中心项目被搁置",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "$130 billion in data center projects blocked by protests so ",
+              "url": "https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软未排除分拆Xbox",
+          "summary_zh": "微软表示尚未排除分拆Xbox业务的可能性",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Microsoft hasn’t ruled out spinning off Xbox",
+              "url": "https://www.theverge.com/games/949584/microsoft-spinning-off-xbox",
+              "source": "The Verge",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果Siri AI登陆Mac",
+          "summary_zh": "用户首次体验Mac上的Siri AI功能",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "My first 24 hours with Siri AI on the Mac",
+              "url": "https://www.theverge.com/tech/949502/apple-macos-27-golden-gate-siri-ai-apple-intelligence",
+              "source": "The Verge",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Jeff Bezos新AI公司Prometheus",
+          "summary_zh": "Jeff Bezos新创公司Prometheus将专注于AI领域",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Here's what Jeff Bezos' new startup Prometheus will do",
+              "url": "https://arstechnica.com/ai/2026/06/heres-what-jeff-bezos-new-startup-prometheus-will-do/",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "PeopleSoft零日漏洞窃取数据",
+          "summary_zh": "PeopleSoft零日漏洞影响数百组织，窃取敏感数据",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "PeopleSoft 0-day affecting hundreds of organizations steals ",
+              "url": "https://arstechnica.com/security/2026/06/peoplesoft-0-day-affecting-hundreds-of-organizations-steals",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "FISA间谍法到期但监控继续",
+          "summary_zh": "争议性FISA间谍法今晚到期，但监控活动不会停止",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Controversial FISA spying law expires tonight. The spying wi",
+              "url": "https://arstechnica.com/tech-policy/2026/06/controversial-fisa-spying-law-expires-tonight-the-spying",
+              "source": "Ars Technica",
+              "published_at": "2026-06-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "Anthropic",
+        "SpaceX",
+        "数据中心",
+        "无人机"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "compute",
+      "name": "AI 计算基础设施（算力·芯片·数据中心）",
+      "tags": [],
+      "gnews_queries": [
+        "Nvidia GPU AI chip",
+        "data center cloud computing",
+        "semiconductor chip manufacturing",
+        "AI infrastructure investment"
+      ],
+      "brief_zh": "AI计算基础设施领域本周动态：Meta因北京要求取消2亿美元Manus交易；KPMG因AI幻觉撤回报告；OpenAI遭多州调查；Anthropic安全警告引发政府关注；中国AI网络诈骗案曝光；SpaceX IPO首日涨19%创万亿市值；Mistral传闻融资30亿欧元。",
+      "events": [
+        {
+          "title_zh": "Meta取消2亿美元Manus交易",
+          "summary_zh": "Meta因北京要求取消与Manus的2亿美元AI交易",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing",
+              "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-deman",
+              "source": "TechCrunch",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国AI网络诈骗案曝光",
+          "summary_zh": "中国网络犯罪团伙利用AI诈骗数十万人",
+          "region": "cn",
+          "score": 0.85,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Chinese cybercrime operation that used AI to scam ‘hundreds of thousands’",
+              "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI遭多州调查",
+          "summary_zh": "美国多州检察长对OpenAI展开调查",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "OpenAI faces investigation from state attorneys general",
+              "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            },
+            {
+              "title": "OpenAI faces investigation from state attorneys general",
+              "url": "https://www.engadget.com/",
+              "source": "Engadget",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "KPMG因AI幻觉撤回报告",
+          "summary_zh": "KPMG因AI生成幻觉内容撤回AI使用报告",
+          "region": "global",
+          "score": 0.75,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+              "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            },
+            {
+              "title": "OpenAI is facing investigation from a group of state attorneys general",
+              "url": "https://www.engadget.com/2193666/openai-investigation-state-attorneys-general/",
+              "source": "Engadget",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic安全警告引发争议",
+          "summary_zh": "Anthropic安全警告引发政府关注，可能适得其反",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic’s safety warnings may have just backfired — the government is now investigating",
+              "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta AI部门被指压榨员工",
+          "summary_zh": "Meta新成立AI部门被员工描述为压榨性工作环境",
+          "region": "global",
+          "score": 0.65,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the engineers",
+              "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineer",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO首日涨19%",
+          "summary_zh": "SpaceX上市首日涨19%，创万亿市值",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX IPO closes up 19% and delivers the world’s first trillionaire",
+              "url": "https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mistral传闻融资30亿欧元",
+          "summary_zh": "AI公司Mistral传闻以200亿估值融资30亿欧元",
+          "region": "global",
+          "score": 0.55,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Mistral is rumored to be raising €3B at €20B valuation",
+              "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊CEO曾担忧Anthropic模型",
+          "summary_zh": "亚马逊CEO在政府关注前已对Anthropic模型表达担忧",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Amazon CEO reportedly raised Anthropic model concerns before government scrutiny",
+              "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-gover",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Robinhood因SpaceX交易流量创新高",
+          "summary_zh": "Robinhood因SpaceX股票交易创纪录流量",
+          "region": "global",
+          "score": 0.45,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Robinhood sees ‘record-breaking’ traffic after SpaceX stock debuts",
+              "url": "https://techcrunch.com/2026/06/12/robinhood-sees-record-breaking-traffic-after-spacex-stock-debuts/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
+      "keywords": [
+        "AI计算基础设施",
+        "Meta",
+        "OpenAI",
+        "SpaceX",
+        "AI安全"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "ev",
+      "name": "新能源汽车（电池·充电·智驾）",
+      "tags": [],
+      "gnews_queries": [
+        "Tesla electric vehicle sales",
+        "BYD EV battery China",
+        "autonomous driving self-driving",
+        "EV charging infrastructure",
+        "solid state battery technology"
+      ],
+      "brief_zh": "今日科技新闻涵盖Meta取消Manus交易、KPMG撤回AI报告、OpenAI遭调查、SpaceX IPO大涨等热点，涉及AI、网络安全、太空探索等领域。",
+      "events": [
+        {
+          "title_zh": "Meta取消Manus交易",
+          "summary_zh": "Meta据报因北京要求取消20亿美元Manus交易。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing",
+              "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-deman",
+              "source": "TechCrunch",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国AI诈骗团伙被端",
+          "summary_zh": "中国网络犯罪团伙利用AI诈骗数十万人，已被打击。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Chinese cybercrime operation that used AI to scam ‘hundreds ",
+              "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "KPMG撤回AI报告",
+          "summary_zh": "KPMG因明显幻觉撤回AI使用报告。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+              "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI遭调查",
+          "summary_zh": "OpenAI面临州检察长调查。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "OpenAI faces investigation from state attorneys general",
+              "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            },
+            {
+              "title": "OpenAI is facing investigation from a group of state attorneys general",
+              "url": "https://www.engadget.com/2193666/openai-investigation-state-attorneys-general/",
+              "source": "Engadget",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO大涨19%",
+          "summary_zh": "SpaceX IPO首日上涨19%，诞生世界首位万亿富翁。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX IPO closes up 19% and delivers the world’s first tril",
+              "url": "https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta AI部门被指压抑",
+          "summary_zh": "Meta成立数月的AI部门被工程师称为压抑的集中营。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the ",
+              "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineer",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic安全警告反效果",
+          "summary_zh": "Anthropic的安全警告可能适得其反，引发政府关注。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic’s safety warnings may have just backfired — the go",
+              "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mistral融资传闻",
+          "summary_zh": "Mistral据传以200亿估值融资30亿欧元。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Mistral is rumored to be raising €3B at €20B valuation",
+              "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Robinhood交易量破纪录",
+          "summary_zh": "SpaceX股票上市后Robinhood交易量创纪录。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Robinhood sees ‘record-breaking’ traffic after SpaceX stock ",
+              "url": "https://techcrunch.com/2026/06/12/robinhood-sees-record-breaking-traffic-after-spacex-stock-debuts/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Andrew Yang谈创业机会",
+          "summary_zh": "Andrew Yang认为下一个大创业机会是降低生活成本。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Andrew Yang thinks the next big startup opportunity is lower",
+              "url": "https://techcrunch.com/2026/06/12/andrew-yang-thinks-the-next-big-startup-opportunity-is-lowering-th",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "Meta",
+        "OpenAI",
+        "SpaceX",
+        "AI",
+        "网络安全"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "能源通胀加剧，多国调整燃料税；地缘政治紧张推高油价，但布伦特原油跌至两月低点；铜价因库存激增承压，美国铜关税导致溢价。",
+      "events": [
+        {
+          "title_zh": "六州燃料税调整应对能源通胀",
+          "summary_zh": "能源通胀加速，美国六个州调整燃料税以应对成本上升。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Fuel Tax Changes Hit Six States As Energy Inflation Accelera",
+              "url": "https://oilprice.com/Energy/Energy-General/Fuel-Tax-Changes-Hit-Six-States-As-Energy-Inflation-Accel",
+              "source": "OilPrice",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "牙买加近海石油前景与风险并存",
+          "summary_zh": "牙买加近海石油开发承诺巨大潜力，但面临环境和经济风险。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "The Promise and Peril of Jamaica’s Offshore Oil Ambitions",
+              "url": "https://oilprice.com/Energy/Energy-General/The-Promise-and-Peril-of-Jamaicas-Offshore-Oil-Ambitions.",
+              "source": "OilPrice",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国2027年1月禁运俄罗斯燃料",
+          "summary_zh": "英国设定2027年1月最后期限，禁止使用俄罗斯制造的燃料。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "UK Sets January 2027 Deadline for Ban on Fuel Made From Russ",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/UK-Sets-January-2027-Deadline-for-Ban-on-Fuel-Mad",
+              "source": "OilPrice",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "俄中伊联手对抗西方制裁",
+          "summary_zh": "俄罗斯、中国和伊朗联合力量，共同应对西方制裁压力。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Russia, China, and Iran Are Joining Forces Against Western P",
+              "url": "https://oilprice.com/Geopolitics/North-America/Russia-China-and-Iran-Are-Joining-Forces-Against-West",
+              "source": "OilPrice",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "能源账单飙升推动家用电池热潮",
+          "summary_zh": "全球能源成本上涨，刺激家用电池需求激增。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Rising Energy Bills Are Fueling a Global Home Battery Boom",
+              "url": "https://oilprice.com/Energy/Energy-General/Rising-Energy-Bills-Are-Fueling-a-Global-Home-Battery-Boo",
+              "source": "OilPrice",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "石油市场数周内或达临界点",
+          "summary_zh": "分析警告，石油市场可能在数周内面临崩溃风险。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "The Oil Market Could Be Weeks From a Breaking Point",
+              "url": "https://oilprice.com/Energy/Crude-Oil/The-Oil-Market-Could-Be-Weeks-From-a-Breaking-Point.html",
+              "source": "OilPrice",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国聚变反应堆2027年点火",
+          "summary_zh": "中国聚变反应堆计划2027年实现点火，威胁传统能源格局。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "China's Fusion Reactor on Track for Ignition by 2027, Threat",
+              "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Chinas-Fusion-Reactor-on-Track-for-Ignition-by",
+              "source": "OilPrice",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国铜关税导致每吨溢价2036美元",
+          "summary_zh": "美国铜关税政策使国内铜价每吨溢价2036美元，市场分化。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "US Copper Tariffs Create a $2,036/Ton Premium, Separating US",
+              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSnhMaWNUbkdEaHdXSTBjeVUwNEl3S05DRWxCQVJZMVlRUWs",
+              "source": "Crux Investor",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "金属普遍下跌，锂和钯上涨",
+          "summary_zh": "多数金属价格下跌，但碳酸锂和钯金逆势上涨。",
+          "region": "cn",
+          "score": 0.4,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Metals broadly fell, with lithium carbonate and palladium up",
+              "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQjF5TGtJN2dfVFR4djBZTFRPaEpvS3YtUFo4cHhYQkZxNkN",
+              "source": "SMM Metal",
+              "published_at": "2026-06-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 3,
+      "total_count": 9,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "能源通胀",
+        "燃料税",
+        "铜库存",
+        "地缘政治",
+        "油价"
+      ],
+      "deduped_count": 1,
+      "raw_count": 44
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "近期全球商业新闻聚焦SpaceX估值飙升、英国经济受伊朗战争影响、特朗普通胀言论等，碳相关议题未直接出现。",
+      "events": [
+        {
+          "title_zh": "马斯克成全球首位万亿富翁",
+          "summary_zh": "SpaceX估值飙升推动马斯克成为全球首位万亿富翁。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Elon Musk becomes world's first trillionaire as SpaceX soars",
+              "url": "https://www.bbc.com/news/articles/c4gypy3wwl7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国承诺逐步淘汰俄柴油和航空燃料",
+          "summary_zh": "英国宣布将逐步停止进口俄罗斯柴油和航空燃料。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK vows to phase out Russian diesel and jet fuel imports by ",
+              "url": "https://www.bbc.com/news/articles/ceqdl8xre7qo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国经济因伊朗战争影响萎缩",
+          "summary_zh": "伊朗战争冲击导致英国经济出现收缩。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK economy contracts as Iran war impact felt",
+              "url": "https://www.bbc.com/news/articles/c77y47248k4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国或阻止向英国钢铁所有者付款",
+          "summary_zh": "英国政府可能阻止向英国钢铁所有者支付款项。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "UK signals it may block payout to British Steel owner",
+              "url": "https://www.bbc.com/news/articles/c932gng1dglo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普称‘我爱通胀’引争议",
+          "summary_zh": "美国通胀加速，特朗普言论引发关注。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Trump says 'I love the inflation' as US prices rise at faste",
+              "url": "https://www.bbc.com/news/articles/c0myzxjkw99o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO：最大升空准备？",
+          "summary_zh": "SpaceX首次公开募股备受市场期待。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "SpaceX IPO: Preparing for the biggest liftoff yet?",
+              "url": "https://www.bbc.co.uk/sounds/play/w3ct8gld?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度‘蓝金’开启新饮料产业",
+          "summary_zh": "印度一种被称为‘蓝金’的资源推动新饮料行业发展。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "India's 'blue gold' starts a new drinks industry",
+              "url": "https://www.bbc.com/news/articles/cdrpe4vly5mo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "迈克·阿什利欲173亿收购雨果博斯",
+          "summary_zh": "弗雷泽集团提出收购德国时尚品牌雨果博斯全部股份。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Mike Ashley's Frasers offers £1.73bn to buy all of Hugo Boss",
+              "url": "https://www.bbc.com/news/articles/c07y92gplmyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普针对气候受灾国移民",
+          "summary_zh": "特朗普政府瞄准来自受气候变化影响严重国家的移民。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Trump targeting immigrants from countries hit most by climat",
+              "url": "https://www.theguardian.com/us-news/2026/jun/10/trump-administration-immigrants-climate-crisis",
+              "source": "The Guardian",
+              "published_at": "2026-06-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "全球品牌被指使用资助叛军的矿物",
+          "summary_zh": "调查称全球品牌可能使用来自刚果的钶钽铁矿，该矿物被指资助叛军。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-10",
+          "sources": [
+            {
+              "title": "Global brands ‘likely’ using mineral that funds rebels accus",
+              "url": "https://www.theguardian.com/global-development/2026/jun/10/coltan-drc-m23-global-witness-investigati",
+              "source": "The Guardian",
+              "published_at": "2026-06-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "SpaceX",
+        "英国经济",
+        "特朗普",
+        "通胀",
+        "IPO"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "今日新闻涵盖美伊协议签署、瑞士人口限制公投、马斯克成全球首位万亿富翁、Ticketmaster票务争议、鲨鱼袭击事件、肯尼迪中心更名、尼日利亚将军被绑身亡、Anthropic暂停AI工具、华纳兄弟与派拉蒙合并获批、法国儿童谋杀案等国际热点。",
+      "events": [
+        {
+          "title_zh": "特朗普宣布美伊协议周日签署",
+          "summary_zh": "特朗普称美伊协议将于周日签署，德黑兰方面表示紧急。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Iran war live: Trump says deal to be signed today; Tehran ur",
+              "url": "https://www.aljazeera.com/news/liveblog/2026/6/14/iran-war-live-trump-says-deal-to-be-signed-today-a",
+              "source": "Al Jazeera",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞士将公投限制人口至1000万",
+          "summary_zh": "瑞士计划举行公投，决定是否将人口上限设为1000万。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Switzerland to vote on plan to cap population at 10 million",
+              "url": "https://www.bbc.com/news/articles/cx23kz7e76po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "马斯克成全球首位万亿富翁",
+          "summary_zh": "随着SpaceX股价飙升，埃隆·马斯克成为世界首位万亿富翁。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Elon Musk becomes world's first trillionaire as SpaceX soars",
+              "url": "https://www.bbc.com/news/articles/c4gypy3wwl7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Ticketmaster确保尼克斯球迷入场",
+          "summary_zh": "Ticketmaster表示尼克斯球迷不会被锁在比赛门外。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Ticketmaster says Knicks fans won't be locked out of game af",
+              "url": "https://www.bbc.com/news/articles/c5yz7gj4x3yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "悉尼海滩鲨鱼袭击致女子重伤",
+          "summary_zh": "一名女子在悉尼海滩遭鲨鱼袭击，伤势严重。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Woman seriously injured in shark attack at Sydney beach",
+              "url": "https://www.bbc.com/news/articles/c3ryw807133o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普名字从肯尼迪中心移除",
+          "summary_zh": "法院命令后，特朗普的名字被从肯尼迪中心移除。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Trump's name removed from Kennedy Center after court order",
+              "url": "https://www.bbc.com/news/articles/c5yzd4dgxw4o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚退休将军被绑后身亡",
+          "summary_zh": "一名被绑架的尼日利亚退休将军在囚禁中死亡。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Kidnapped Nigerian retired general dies in captivity",
+              "url": "https://www.bbc.com/news/articles/cvgq4veq2eqo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic因安全暂停AI工具",
+          "summary_zh": "Anthropic因美国政府安全担忧暂停新AI工具。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic suspends new AI tools over US government security ",
+              "url": "https://www.bbc.com/news/articles/c932g3v3e13o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "华纳兄弟1110亿出售获批准",
+          "summary_zh": "美国司法部批准华纳兄弟以1110亿美元出售给派拉蒙。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Warner Bros $111bn sale to Paramount approved by US justice ",
+              "url": "https://www.bbc.com/news/articles/cjwgled9jxwo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "法国小镇埋葬被谋杀儿童",
+          "summary_zh": "法国小镇埋葬被谋杀儿童，警方问题引发质疑。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "French town buries murdered child as questions mount over po",
+              "url": "https://www.bbc.com/news/articles/cy9rq21dqego?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-06-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "美伊协议",
+        "马斯克万亿富翁",
+        "瑞士人口限制",
+        "华纳兄弟合并",
+        "AI安全"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "近期科技与航天领域动态：Meta取消Manus交易、SpaceX IPO首日涨19%诞生万亿富翁、OpenAI遭调查、FBI建模拟小镇反网络犯罪、中国AI诈骗团伙被端等。",
+      "events": [
+        {
+          "title_zh": "Meta取消Manus交易",
+          "summary_zh": "Meta因北京要求取消20亿美元Manus交易",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing",
+              "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-deman",
+              "source": "TechCrunch",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO首日涨19%",
+          "summary_zh": "SpaceX上市首日涨19%，诞生世界首位万亿富翁",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX IPO closes up 19% and delivers the world’s first tril",
+              "url": "https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI遭州检察长调查",
+          "summary_zh": "OpenAI因AI安全问题面临美国州检察长调查",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "OpenAI faces investigation from state attorneys general",
+              "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "FBI建模拟小镇反网络犯罪",
+          "summary_zh": "FBI建造复制小镇模拟真实网络攻击场景",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "The FBI built its own replica small town to simulate real-wo",
+              "url": "https://techcrunch.com/2026/06/13/the-fbi-built-its-own-replica-small-town-to-simulate-real-world-cy",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国AI诈骗团伙被端",
+          "summary_zh": "中国AI诈骗团伙利用AI诈骗数十万人被破获",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Chinese cybercrime operation that used AI to scam ‘hundreds ",
+              "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "KPMG撤回AI报告",
+          "summary_zh": "KPMG因AI幻觉问题撤回AI使用报告",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+              "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "亚马逊CEO曾提Anthropic担忧",
+          "summary_zh": "亚马逊CEO在政府干预前曾对Anthropic模型表示担忧",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Amazon CEO reportedly raised Anthropic model concerns before",
+              "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-gover",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic安全警告反效果",
+          "summary_zh": "Anthropic安全警告引发政府关注，可能适得其反",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "Anthropic’s safety warnings may have just backfired — the go",
+              "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta AI部门被指压榨员工",
+          "summary_zh": "Meta新AI部门被工程师形容为压榨灵魂的集中营",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the ",
+              "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineer",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX总裁暗示特斯拉合作",
+          "summary_zh": "SpaceX总裁暗示与特斯拉在太空领域合作可能",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX president Gwynne Shotwell just gave another hint at a",
+              "url": "https://techcrunch.com/2026/06/12/spacex-president-gwynne-shotwell-just-gave-another-hint-at-a-tesla",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "Meta",
+        "SpaceX",
+        "OpenAI",
+        "AI",
+        "网络安全"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "frontier",
+      "name": "前沿科技（量子·聚变·生物）",
+      "tags": [],
+      "gnews_queries": [
+        "quantum computing breakthrough",
+        "nuclear fusion energy reactor",
+        "gene editing CRISPR biotechnology",
+        "superconductor material science"
+      ],
+      "brief_zh": "前沿科技领域本周动态：Meta因北京要求取消20亿美元Manus交易；KPMG因AI幻觉撤回报告；OpenAI遭多州调查；SpaceX IPO首日涨19%诞生全球首位万亿富翁；中国AI诈骗团伙被端；Mistral拟融资30亿欧元估值200亿。",
+      "events": [
+        {
+          "title_zh": "Meta取消20亿美元Manus交易",
+          "summary_zh": "Meta因北京要求取消与Manus的20亿美元收购交易。",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-06-14",
+          "sources": [
+            {
+              "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing",
+              "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-deman",
+              "source": "TechCrunch",
+              "published_at": "2026-06-14"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国AI诈骗团伙被端",
+          "summary_zh": "中国警方破获利用AI诈骗数十万人的网络犯罪团伙。",
+          "region": "cn",
+          "score": 0.7,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Chinese cybercrime operation that used AI to scam ‘hundreds ",
+              "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thou",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpaceX IPO首日涨19%",
+          "summary_zh": "SpaceX上市首日股价飙升19%，诞生全球首位万亿富翁。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "SpaceX IPO closes up 19% and delivers the world’s first tril",
+              "url": "https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "KPMG因AI幻觉撤回报告",
+          "summary_zh": "KPMG因AI生成内容出现明显幻觉，撤回相关报告。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+              "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI遭多州调查",
+          "summary_zh": "OpenAI面临美国多州总检察长调查。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "OpenAI faces investigation from state attorneys general",
+              "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mistral拟融资30亿欧元",
+          "summary_zh": "AI初创公司Mistral传闻以200亿估值融资30亿欧元。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Mistral is rumored to be raising €3B at €20B valuation",
+              "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "FBI建模拟小镇进行网络攻防",
+          "summary_zh": "FBI建造复制小镇模拟真实网络攻击场景。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "The FBI built its own replica small town to simulate real-wo",
+              "url": "https://techcrunch.com/2026/06/13/the-fbi-built-its-own-replica-small-town-to-simulate-real-world-cy",
+              "source": "TechCrunch",
+              "published_at": "2026-06-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta AI部门被指压抑",
+          "summary_zh": "Meta成立数月的AI部门被员工形容为压抑的集中营。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the ",
+              "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineer",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "Robinhood因SpaceX交易流量破纪录",
+          "summary_zh": "Robinhood在SpaceX股票上市后交易流量创纪录。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-12",
+          "sources": [
+            {
+              "title": "Robinhood sees ‘record-breaking’ traffic after SpaceX stock ",
+              "url": "https://techcrunch.com/2026/06/12/robinhood-sees-record-breaking-traffic-after-spacex-stock-debuts/",
+              "source": "TechCrunch",
+              "published_at": "2026-06-12"
+            }
+          ]
+        },
+        {
+          "title_zh": "EcoFlow电池评测：电费减半",
+          "summary_zh": "EcoFlow家用电池评测显示可削减一半电费。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-06-13",
+          "sources": [
+            {
+              "title": "EcoFlow PowerOcean Battery Review: Cutting My Bill in Half",
+              "url": "https://www.wired.com/review/ecoflow-powerocean-home-battery/",
+              "source": "Wired",
+              "published_at": "2026-06-13"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "Meta",
+        "SpaceX",
+        "AI",
+        "OpenAI",
+        "IPO"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "arxiv",
+      "name": "研究雷达（arXiv）",
+      "tags": [],
+      "gnews_queries": [],
+      "brief_zh": "arXiv最新研究涵盖LLM智能体记忆追踪、类比推理、机器人操作、空间生成、世界模型、图神经网络、社会行为可重复性、知识编排、工具增强智能体、4D人体生成等前沿领域。",
+      "events": [
+        {
+          "title_zh": "EvoArena追踪LLM智能体记忆演化",
+          "summary_zh": "提出EvoArena框架，通过追踪记忆演化增强LLM智能体鲁棒性。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents",
+              "url": "http://arxiv.org/abs/2606.13681v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "检索增强强化学习实现类比推理",
+          "summary_zh": "通过检索增强强化学习，让模型学会类比推理。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Learning to Reason by Analogy via Retrieval-Augmented Reinfo",
+              "url": "http://arxiv.org/abs/2606.13680v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "InterleaveThinker强化交错生成",
+          "summary_zh": "提出InterleaveThinker，强化智能体交错生成能力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generatio",
+              "url": "http://arxiv.org/abs/2606.13679v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "局部与全局互惠模型研究",
+          "summary_zh": "建立局部和全局互惠的数学模型，分析社会互动。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "A model of local and global reciprocity",
+              "url": "http://arxiv.org/abs/2606.13678v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Mana实现铰接工具灵巧操作",
+          "summary_zh": "提出Mana框架，实现机器人对铰接工具的灵巧操作。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Mana: Dexterous Manipulation of Articulated Tools",
+              "url": "http://arxiv.org/abs/2606.13677v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "流反转转向改进机器人通用策略",
+          "summary_zh": "通过流反转转向技术，提升机器人通用策略性能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Improving Robotic Generalist Policies via Flow Reversal Stee",
+              "url": "http://arxiv.org/abs/2606.13675v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "模态强制实现可扩展空间生成",
+          "summary_zh": "提出模态强制方法，用于可扩展的空间生成任务。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "Modality Forcing for Scalable Spatial Generation",
+              "url": "http://arxiv.org/abs/2606.13676v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "RepWAM表示视觉-动作世界模型",
+          "summary_zh": "提出RepWAM，结合表示视觉和动作的世界建模方法。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "RepWAM: World Action Modeling with Representation Visual-Act",
+              "url": "http://arxiv.org/abs/2606.13674v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "SpatialClaw重新思考智能体空间动作接口",
+          "summary_zh": "提出SpatialClaw，重新设计智能体空间交互的动作接口。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial",
+              "url": "http://arxiv.org/abs/2606.13673v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "WEAVER更优更快更长的世界模型",
+          "summary_zh": "提出WEAVER，构建更高效、更快速、更持久的世界模型。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-06-11",
+          "sources": [
+            {
+              "title": "WEAVER, Better, Faster, Longer: An Effective World Model",
+              "url": "http://arxiv.org/abs/2606.13672v1",
+              "source": "arXiv",
+              "published_at": "2026-06-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 0,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "LLM智能体",
+        "机器人操作",
+        "世界模型",
+        "图神经网络",
+        "4D人体生成"
+      ],
+      "deduped_count": 0,
+      "raw_count": 20
+    }
+  ],
+  "top5": [
+    {
+      "title": "Meta取消2亿美元Manus交易",
+      "summary": "Meta因北京要求取消与Manus的2亿美元AI交易，显示中美科技合作受地缘政治影响加剧。企业需警惕跨境AI投资风险，重新评估合作伙伴关系。",
+      "action": "审查现有跨境AI合作，分散技术来源"
+    },
+    {
+      "title": "Meta取消Manus交易",
+      "summary": "Meta据报因北京要求取消20亿美元Manus交易，规模远超预期，表明中国对AI技术出口管控升级。决策者应调整对华AI投资策略，关注政策变化。",
+      "action": "暂停对华AI投资，监控政策动态"
+    },
+    {
+      "title": "特朗普宣布美伊协议周日签署",
+      "summary": "特朗普称美伊协议将于周日签署，伊朗面临制裁压力，可能缓解中东紧张局势。企业需关注能源市场波动，调整供应链布局。",
+      "action": "评估能源价格影响，优化供应链"
+    },
+    {
+      "title": "Anthropic切断Fable/Mythos模型",
+      "summary": "Anthropic因政府指令停止Fable和Mythos AI模型访问，反映AI安全监管趋严。企业应加强合规审查，避免依赖受控模型。",
+      "action": "检查AI模型合规性，准备替代方案"
+    },
+    {
+      "title": "马斯克成全球首位万亿富翁",
+      "summary": "随着SpaceX股价飙升，埃隆·马斯克成为世界首位万亿富翁，显示太空和科技领域投资潜力。决策者可关注相关行业增长机会。",
+      "action": "关注太空经济，探索投资机会"
+    }
+  ],
+  "meta": {
+    "llm_provider": "DeepSeek",
+    "llm_model": "deepseek-chat",
+    "limit_raw": 25,
+    "items_per_section": 15,
+    "kpi_count": 20,
+    "section_count": 11,
+    "importance_weights": {
+      "china_related": 1.5,
+      "source_tier1": 1.3,
+      "source_tier2": 1.1,
+      "recency_24h": 1.2,
+      "recency_48h": 1.0,
+      "keyword_match": 1.2
+    },
+    "china_queries_enabled": true,
+    "arxiv_enabled": true
+  }
+}
