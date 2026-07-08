@@ -1,7 +1,7 @@
 {
   "date": "2026-07-07",
-  "generated_at_utc": "2026-07-07T00:13:42.950544+00:00",
-  "generated_at_bjt": "2026-07-07 08:13",
+  "generated_at_utc": "2026-07-08T00:05:10.349312+00:00",
+  "generated_at_bjt": "2026-07-08 08:05",
   "kpis": [
     {
       "id": "SP500",
@@ -62,16 +62,15 @@
       "id": "NASDAQCOM",
       "name": "纳斯达克",
       "unit": "",
-      "value": 25832.67,
-      "updated_at": "2026-07-02",
+      "value": 26121.16,
+      "updated_at": "2026-07-06",
       "source": "FRED",
-      "delta": -207.36000000000058,
-      "delta_pct": -0.796312446644649,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,27.78 L 5.41,28.43 L 7.82,19.72 L 10.23,19.19 L 12.64,22.86 L 15.05,16.66 L 17.46,12.06 L 19.87,20.15 L 22.28,22.81 L 24.69,27.15 L 27.10,19.26 L 29.51,18.81 L 31.92,17.81 L 34.33,11.64 L 36.74,11.28 L 39.15,6.48 L 41.56,5.39 L 43.97,3.14 L 46.38,3.00 L 48.79,7.74 L 51.21,8.19 L 53.62,30.34 L 56.03,25.99 L 58.44,30.94 L 60.85,41.00 L 63.26,28.36 L 65.67,26.80 L 68.08,11.10 L 70.49,17.17 L 72.90,24.17 L 75.31,14.37 L 77.72,21.31 L 80.13,32.76 L 82.54,34.94 L 84.95,37.27 L 87.36,38.47 L 89.77,28.15 L 92.18,20.38 L 94.59,23.81 L 97.00,27.90\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 288.4900000000016,
+      "delta_pct": 1.1167641594926176,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,28.43 L 5.41,19.72 L 7.82,19.19 L 10.23,22.86 L 12.64,16.66 L 15.05,12.06 L 17.46,20.15 L 19.87,22.81 L 22.28,27.15 L 24.69,19.26 L 27.10,18.81 L 29.51,17.81 L 31.92,11.64 L 34.33,11.28 L 36.74,6.48 L 39.15,5.39 L 41.56,3.14 L 43.97,3.00 L 46.38,7.74 L 48.79,8.19 L 51.21,30.34 L 53.62,25.99 L 56.03,30.94 L 58.44,41.00 L 60.85,28.36 L 63.26,26.80 L 65.67,11.10 L 68.08,17.17 L 70.49,24.17 L 72.90,14.37 L 75.31,21.31 L 77.72,32.76 L 80.13,34.94 L 82.54,37.27 L 84.95,38.47 L 87.36,28.15 L 89.77,20.38 L 92.18,23.81 L 94.59,27.90 L 97.00,22.21\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        25838.94,
         25806.2,
         26247.08,
         26274.13,
@@ -110,23 +109,23 @@
         25820.14,
         26213.72,
         26040.03,
-        25832.67
+        25832.67,
+        26121.16
       ]
     },
     {
       "id": "DJIA",
       "name": "道琼斯",
       "unit": "",
-      "value": 53055.91,
-      "updated_at": "2026-07-06",
+      "value": 52925.15,
+      "updated_at": "2026-07-07",
       "source": "FRED",
-      "delta": 155.84000000000378,
-      "delta_pct": 0.2945931829579881,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,38.60 L 5.41,38.48 L 7.82,37.49 L 10.23,36.92 L 12.64,37.61 L 15.05,33.80 L 17.46,39.33 L 19.87,37.68 L 22.28,41.00 L 24.69,34.36 L 27.10,31.51 L 29.51,28.49 L 31.92,29.70 L 34.33,27.82 L 36.74,27.57 L 39.15,23.83 L 41.56,23.35 L 43.97,20.99 L 46.38,27.38 L 48.79,18.38 L 51.21,25.53 L 53.62,26.36 L 56.03,25.48 L 58.44,35.29 L 60.85,25.72 L 63.26,22.08 L 65.67,17.25 L 68.08,13.87 L 70.49,19.09 L 72.90,18.35 L 75.31,16.82 L 77.72,17.30 L 80.13,15.42 L 82.54,14.68 L 84.95,15.14 L 87.36,11.99 L 89.77,10.58 L 92.18,10.73 L 94.59,4.60 L 97.00,3.00\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": -130.76000000000204,
+      "delta_pct": -0.24645699225590897,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,38.48 L 5.41,37.49 L 7.82,36.92 L 10.23,37.61 L 12.64,33.80 L 15.05,39.33 L 17.46,37.68 L 19.87,41.00 L 22.28,34.36 L 24.69,31.51 L 27.10,28.49 L 29.51,29.70 L 31.92,27.82 L 34.33,27.57 L 36.74,23.83 L 39.15,23.35 L 41.56,20.99 L 43.97,27.38 L 46.38,18.38 L 48.79,25.53 L 51.21,26.36 L 53.62,25.48 L 56.03,35.29 L 58.44,25.72 L 60.85,22.08 L 63.26,17.25 L 65.67,13.87 L 68.08,19.09 L 70.49,18.35 L 72.90,16.82 L 75.31,17.30 L 77.72,15.42 L 80.13,14.68 L 82.54,15.14 L 84.95,11.99 L 87.36,10.58 L 89.77,10.73 L 92.18,4.60 L 94.59,3.00 L 97.00,4.35\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        49596.97,
         49609.16,
         49704.47,
         49760.56,
@@ -165,23 +164,23 @@
         52319.2,
         52305.24,
         52900.07,
-        53055.91
+        53055.91,
+        52925.15
       ]
     },
     {
       "id": "VIXCLS",
       "name": "VIX恐慌",
       "unit": "",
-      "value": 15.81,
-      "updated_at": "2026-07-03",
+      "value": 15.57,
+      "updated_at": "2026-07-06",
       "source": "FRED",
-      "delta": -0.3399999999999981,
-      "delta_pct": -2.105263157894725,
+      "delta": -0.2400000000000002,
+      "delta_pct": -1.5180265654648968,
       "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,24.15 L 5.41,26.30 L 7.82,26.96 L 10.23,30.32 L 12.64,23.87 L 15.05,27.23 L 17.46,25.91 L 19.87,29.32 L 22.28,33.07 L 24.69,33.40 L 27.10,34.01 L 29.51,31.69 L 31.92,35.66 L 34.33,38.69 L 36.74,41.00 L 39.15,36.98 L 41.56,38.52 L 43.97,36.92 L 46.38,40.56 L 48.79,6.91 L 51.21,21.17 L 53.62,15.94 L 56.03,3.00 L 58.44,18.31 L 60.85,28.00 L 63.26,36.15 L 65.67,35.00 L 68.08,23.82 L 70.49,35.05 L 72.90,32.96 L 75.31,30.21 L 77.72,18.03 L 80.13,22.77 L 82.54,21.34 L 84.95,23.98 L 87.36,28.17 L 89.77,34.78 L 92.18,34.01 L 94.59,36.43 L 97.00,38.30\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,26.30 L 5.41,26.96 L 7.82,30.32 L 10.23,23.87 L 12.64,27.23 L 15.05,25.91 L 17.46,29.32 L 19.87,33.07 L 22.28,33.40 L 24.69,34.01 L 27.10,31.69 L 29.51,35.66 L 31.92,38.69 L 34.33,41.00 L 36.74,36.98 L 39.15,38.52 L 41.56,36.92 L 43.97,40.56 L 46.38,6.91 L 48.79,21.17 L 51.21,15.94 L 53.62,3.00 L 56.03,18.31 L 58.44,28.00 L 60.85,36.15 L 63.26,35.00 L 65.67,23.82 L 68.08,35.05 L 70.49,32.96 L 72.90,30.21 L 75.31,18.03 L 77.72,22.77 L 80.13,21.34 L 82.54,23.98 L 84.95,28.17 L 87.36,34.78 L 89.77,34.01 L 92.18,36.43 L 94.59,38.30 L 97.00,39.62\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#FF3B30",
       "series_values": [
-        18.38,
         17.99,
         17.87,
         17.26,
@@ -220,23 +219,23 @@
         16.45,
         16.59,
         16.15,
-        15.81
+        15.81,
+        15.57
       ]
     },
     {
       "id": "NIKKEI225",
       "name": "日经225",
       "unit": "",
-      "value": 69737.69,
-      "updated_at": "2026-07-06",
+      "value": 68256.96,
+      "updated_at": "2026-07-07",
       "source": "FRED",
-      "delta": -6.380000000004657,
-      "delta_pct": -0.00914773112610815,
+      "delta": -1480.729999999996,
+      "delta_pct": -2.123285127454029,
       "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.11 L 5.41,30.51 L 7.82,32.38 L 10.23,36.15 L 12.64,37.94 L 15.05,38.74 L 17.46,41.00 L 19.87,35.31 L 22.28,30.31 L 24.69,24.80 L 27.10,25.30 L 29.51,25.29 L 31.92,26.21 L 34.33,21.26 L 36.74,19.43 L 39.15,20.04 L 41.56,14.99 L 43.97,17.81 L 46.38,20.48 L 48.79,28.23 L 51.21,24.02 L 53.62,27.77 L 56.03,27.65 L 58.44,22.20 L 60.85,12.22 L 63.26,11.96 L 65.67,10.45 L 68.08,6.97 L 70.49,6.38 L 72.90,3.04 L 75.31,10.80 L 77.72,12.65 L 80.13,3.00 L 82.54,12.09 L 84.95,11.77 L 87.36,9.97 L 89.77,8.72 L 92.18,13.99 L 94.59,10.93 L 97.00,10.95\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,30.51 L 5.41,32.38 L 7.82,36.15 L 10.23,37.94 L 12.64,38.74 L 15.05,41.00 L 17.46,35.31 L 19.87,30.31 L 22.28,24.80 L 24.69,25.30 L 27.10,25.29 L 29.51,26.21 L 31.92,21.26 L 34.33,19.43 L 36.74,20.04 L 39.15,14.99 L 41.56,17.81 L 43.97,20.48 L 46.38,28.23 L 48.79,24.02 L 51.21,27.77 L 53.62,27.65 L 56.03,22.20 L 58.44,12.22 L 60.85,11.96 L 63.26,10.45 L 65.67,6.97 L 68.08,6.38 L 70.49,3.04 L 72.90,10.80 L 75.31,12.65 L 77.72,3.00 L 80.13,12.09 L 82.54,11.77 L 84.95,9.97 L 87.36,8.72 L 89.77,13.99 L 92.18,10.93 L 94.59,10.95 L 97.00,15.43\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#FF3B30",
       "series_values": [
-        62742.57,
         63272.11,
         62654.05,
         61409.29,
@@ -275,23 +274,23 @@
         70474.96,
         68733.15,
         69744.07,
-        69737.69
+        69737.69,
+        68256.96
       ]
     },
     {
       "id": "DGS10",
       "name": "美债10Y",
       "unit": "%",
-      "value": 4.49,
-      "updated_at": "2026-07-02",
+      "value": 4.48,
+      "updated_at": "2026-07-06",
       "source": "FRED",
-      "delta": 0.009999999999999787,
-      "delta_pct": 0.22321428571428092,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,34.87 L 7.82,38.55 L 10.23,33.65 L 12.64,28.74 L 15.05,28.74 L 17.46,27.52 L 19.87,12.81 L 22.28,10.35 L 24.69,3.00 L 27.10,15.26 L 29.51,15.26 L 31.92,16.48 L 34.33,23.84 L 36.74,26.29 L 39.15,29.97 L 41.56,29.97 L 43.97,27.52 L 46.38,28.74 L 48.79,25.06 L 51.21,27.52 L 53.62,17.71 L 56.03,16.48 L 58.44,20.16 L 60.85,17.71 L 63.26,29.97 L 65.67,26.29 L 68.08,27.52 L 70.49,32.42 L 72.90,25.06 L 75.31,28.74 L 77.72,22.61 L 80.13,23.84 L 82.54,34.87 L 84.95,36.10 L 87.36,38.55 L 89.77,38.55 L 92.18,31.19 L 94.59,26.29 L 97.00,25.06\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": -0.009999999999999787,
+      "delta_pct": -0.22271714922048524,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,37.07 L 5.41,41.00 L 7.82,35.76 L 10.23,30.52 L 12.64,30.52 L 15.05,29.21 L 17.46,13.48 L 19.87,10.86 L 22.28,3.00 L 24.69,16.10 L 27.10,16.10 L 29.51,17.41 L 31.92,25.28 L 34.33,27.90 L 36.74,31.83 L 39.15,31.83 L 41.56,29.21 L 43.97,30.52 L 46.38,26.59 L 48.79,29.21 L 51.21,18.72 L 53.62,17.41 L 56.03,21.34 L 58.44,18.72 L 60.85,31.83 L 63.26,27.90 L 65.67,29.21 L 68.08,34.45 L 70.49,26.59 L 72.90,30.52 L 75.31,23.97 L 77.72,25.28 L 80.13,37.07 L 82.54,38.38 L 84.95,41.00 L 87.36,41.00 L 89.77,33.14 L 92.18,27.90 L 94.59,26.59 L 97.00,27.90\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        4.36,
         4.41,
         4.38,
         4.42,
@@ -330,23 +329,23 @@
         4.38,
         4.44,
         4.48,
-        4.49
+        4.49,
+        4.48
       ]
     },
     {
       "id": "DGS2",
       "name": "美债2Y",
       "unit": "%",
-      "value": 4.14,
-      "updated_at": "2026-07-02",
+      "value": 4.13,
+      "updated_at": "2026-07-06",
       "source": "FRED",
-      "delta": -0.03000000000000025,
-      "delta_pct": -0.7194244604316606,
+      "delta": -0.009999999999999787,
+      "delta_pct": -0.24154589371980165,
       "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,35.86 L 7.82,37.92 L 10.23,32.78 L 12.64,27.65 L 15.05,29.70 L 17.46,27.65 L 19.87,18.41 L 22.28,20.46 L 24.69,14.30 L 27.10,23.54 L 29.51,19.43 L 31.92,14.30 L 34.33,26.62 L 36.74,27.65 L 39.15,28.68 L 41.56,29.70 L 43.97,22.51 L 46.38,22.51 L 48.79,19.43 L 51.21,22.51 L 53.62,10.19 L 56.03,12.24 L 58.44,14.30 L 60.85,14.30 L 63.26,22.51 L 65.67,18.41 L 68.08,20.46 L 70.49,22.51 L 72.90,7.11 L 75.31,8.14 L 77.72,3.00 L 80.13,11.22 L 82.54,16.35 L 84.95,18.41 L 87.36,20.46 L 89.77,17.38 L 92.18,13.27 L 94.59,10.19 L 97.00,13.27\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,38.76 L 5.41,41.00 L 7.82,35.41 L 10.23,29.82 L 12.64,32.06 L 15.05,29.82 L 17.46,19.76 L 19.87,22.00 L 22.28,15.29 L 24.69,25.35 L 27.10,20.88 L 29.51,15.29 L 31.92,28.71 L 34.33,29.82 L 36.74,30.94 L 39.15,32.06 L 41.56,24.24 L 43.97,24.24 L 46.38,20.88 L 48.79,24.24 L 51.21,10.82 L 53.62,13.06 L 56.03,15.29 L 58.44,15.29 L 60.85,24.24 L 63.26,19.76 L 65.67,22.00 L 68.08,24.24 L 70.49,7.47 L 72.90,8.59 L 75.31,3.00 L 77.72,11.94 L 80.13,17.53 L 82.54,19.76 L 84.95,22.00 L 87.36,18.65 L 89.77,14.18 L 92.18,10.82 L 94.59,14.18 L 97.00,15.29\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#FF3B30",
       "series_values": [
-        3.87,
         3.92,
         3.9,
         3.95,
@@ -385,23 +384,23 @@
         4.1,
         4.14,
         4.17,
-        4.14
+        4.14,
+        4.13
       ]
     },
     {
       "id": "T10Y2Y",
       "name": "10Y-2Y利差",
       "unit": "%",
-      "value": 0.35,
-      "updated_at": "2026-07-06",
+      "value": 0.36,
+      "updated_at": "2026-07-07",
       "source": "FRED",
-      "delta": 0.0,
-      "delta_pct": 0.0,
-      "direction": "flat",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,10.04 L 5.41,11.44 L 7.82,12.85 L 10.23,14.26 L 12.64,11.44 L 15.05,12.85 L 17.46,8.63 L 19.87,3.00 L 22.28,3.00 L 24.69,4.41 L 27.10,10.04 L 29.51,18.48 L 31.92,10.04 L 34.33,11.44 L 36.74,14.26 L 39.15,12.85 L 41.56,19.89 L 43.97,21.30 L 46.38,21.30 L 48.79,19.89 L 51.21,25.52 L 53.62,21.30 L 56.03,22.70 L 58.44,19.89 L 60.85,22.70 L 63.26,24.11 L 65.67,22.70 L 68.08,25.52 L 70.49,38.19 L 72.90,41.00 L 75.31,41.00 L 77.72,31.15 L 80.13,36.78 L 82.54,35.37 L 84.95,35.37 L 87.36,39.59 L 89.77,36.78 L 92.18,35.37 L 94.59,29.74 L 97.00,29.74\" stroke=\"#8E8E93\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#8E8E93",
+      "delta": 0.010000000000000009,
+      "delta_pct": 2.85714285714286,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,11.44 L 5.41,12.85 L 7.82,14.26 L 10.23,11.44 L 12.64,12.85 L 15.05,8.63 L 17.46,3.00 L 19.87,3.00 L 22.28,4.41 L 24.69,10.04 L 27.10,18.48 L 29.51,10.04 L 31.92,11.44 L 34.33,14.26 L 36.74,12.85 L 39.15,19.89 L 41.56,21.30 L 43.97,21.30 L 46.38,19.89 L 48.79,25.52 L 51.21,21.30 L 53.62,22.70 L 56.03,19.89 L 58.44,22.70 L 60.85,24.11 L 63.26,22.70 L 65.67,25.52 L 68.08,38.19 L 70.49,41.00 L 72.90,41.00 L 75.31,31.15 L 77.72,36.78 L 80.13,35.37 L 82.54,35.37 L 84.95,39.59 L 87.36,36.78 L 89.77,35.37 L 92.18,29.74 L 94.59,29.74 L 97.00,28.33\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        0.49,
         0.48,
         0.47,
         0.46,
@@ -440,7 +439,8 @@
         0.3,
         0.31,
         0.35,
-        0.35
+        0.35,
+        0.36
       ]
     },
     {
@@ -1115,17 +1115,62 @@
         "USD CNY yuan exchange rate",
         "stock market index S&P Nasdaq"
       ],
-      "brief_zh": "本周宏观市场新闻涵盖银行服务、AI芯片、企业裁员、并购及消费领域。三星因AI芯片需求利润飙升1800%，微软裁员4800人，易捷航空同意52亿英镑收购，中国泡泡茶公司因侵权被判赔路易威登。市场波动加剧，投资者预期与现实差距大。",
+      "brief_zh": "本周全球市场动态：减肥药改变消费习惯，23andMe数据泄露赔偿4700万美元，英国百万房主面临更高房贷，三星AI芯片利润飙升1800%，微软裁员4800人，中国电动车成功能否复制到无人驾驶出租车。",
       "events": [
         {
-          "title_zh": "三星利润因AI芯片飙升1800%",
-          "summary_zh": "AI芯片需求推动三星利润大幅增长1800%。",
+          "title_zh": "减肥药改变消费习惯",
+          "summary_zh": "从漱口水到染发剂，减肥注射剂正改变消费者购买行为。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "From mouthwash to hair dye: How weight-loss jabs are changin",
+              "url": "https://www.bbc.co.uk/news/articles/cy49w2knlrdo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "23andMe数据泄露赔偿47亿美元",
+          "summary_zh": "法官裁定23andMe数据泄露受害者获得4700万美元赔偿。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Victims of 23andMe data breach to get $47m payout, judge rul",
+              "url": "https://www.bbc.co.uk/news/articles/cn0vnx2192vo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国百万房主面临更高房贷",
+          "summary_zh": "英国又有100万房主将面临更高的抵押贷款利率。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "One million more UK homeowners set to face higher mortgages",
+              "url": "https://www.bbc.co.uk/news/articles/cze9kpxx6d8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "三星AI芯片利润飙升1800%",
+          "summary_zh": "三星利润因AI芯片销售激增而暴涨1800%。",
           "region": "global",
           "score": 0.8,
           "date": "2026-07-07",
           "sources": [
             {
-              "title": "AI chip boom lifts Samsung profits by 1,800%",
+              "title": "Samsung profits jump 1,800% as AI chip sales soar",
               "url": "https://www.bbc.co.uk/news/articles/c1kyy8yrpxdo?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-07-07"
@@ -1133,10 +1178,25 @@
           ]
         },
         {
-          "title_zh": "微软裁员4800人并缩减Xbox业务",
-          "summary_zh": "微软进行重大重组，裁员4800人并缩减Xbox部门。",
-          "region": "global",
+          "title_zh": "中国电动车成功能否复制到无人驾驶出租车",
+          "summary_zh": "探讨中国在电动车领域的成功经验是否适用于无人驾驶出租车。",
+          "region": "cn",
           "score": 0.7,
+          "date": "2026-07-06",
+          "sources": [
+            {
+              "title": "Can China repeat its EV success with robotaxis?",
+              "url": "https://www.bbc.co.uk/news/articles/cvgl8dlxjd3o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软裁员4800人并缩减Xbox",
+          "summary_zh": "微软进行重大重组，裁员4800人并缩减Xbox业务。",
+          "region": "global",
+          "score": 0.6,
           "date": "2026-07-06",
           "sources": [
             {
@@ -1148,38 +1208,8 @@
           ]
         },
         {
-          "title_zh": "易捷航空同意52亿英镑收购",
-          "summary_zh": "易捷航空原则上同意52亿英镑的收购协议。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "EasyJet agrees 'in principle' to £5.2bn takeover deal",
-              "url": "https://www.bbc.co.uk/news/articles/cgjxx7ngz51o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国泡泡茶公司被判赔路易威登",
-          "summary_zh": "中国泡泡茶公司因侵权被法院命令赔偿路易威登，引发争议。",
-          "region": "cn",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Backlash after China bubble tea firm ordered to pay Louis Vu",
-              "url": "https://www.bbc.co.uk/news/articles/cwykk095yzzo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "ITV节目保持免费观看",
-          "summary_zh": "ITV热门节目如《我是名人》将继续免费播出。",
+          "title_zh": "ITV热门节目保持免费观看",
+          "summary_zh": "ITV的《我是名人》等节目在交易后仍免费播出。",
           "region": "cn",
           "score": 0.5,
           "date": "2026-07-06",
@@ -1193,94 +1223,64 @@
           ]
         },
         {
-          "title_zh": "中国能否在无人驾驶出租车上复制电动汽车成功",
-          "summary_zh": "探讨中国在无人驾驶出租车领域复制电动汽车成功的可能性。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Can China repeat its EV success with robotaxis?",
-              "url": "https://www.bbc.co.uk/news/articles/cvgl8dlxjd3o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "特朗普称沃尔玛降价牛肉‘爱国’",
-          "summary_zh": "特朗普赞扬沃尔玛降低牛肉价格，称其爱国行为。",
+          "title_zh": "美光股价下跌因内存市场担忧",
+          "summary_zh": "投资者担忧内存市场前景，美光股价下跌。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
+          "score": 0.6,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Trump calls Walmart ‘patriotic’ for cutting beef prices — in",
-              "url": "https://www.marketwatch.com/story/trump-calls-walmart-patriotic-for-cutting-beef-prices-in-a-stark-c",
+              "title": "Micron’s stock falls as investors wonder if the memory marke",
+              "url": "https://www.marketwatch.com/story/microns-stock-falls-as-investors-wonder-if-the-memory-market-is-ne",
               "source": "MarketWatch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "纳斯达克100波动性远超标普500",
-          "summary_zh": "纳斯达克100指数波动性显著高于标普500，市场不确定性增加。",
+          "title_zh": "AI相关债券大幅抛售",
+          "summary_zh": "亚马逊寻求再借款250亿美元，AI相关债券遭抛售。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
+          "score": 0.7,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "The Nasdaq-100 has been far more volatile than the S&P 500. ",
-              "url": "https://www.marketwatch.com/story/the-nasdaq-100-has-been-far-more-volatile-than-the-s-p-500-now-add",
+              "title": "AI-related debt sells off sharply as Amazon looks to borrow ",
+              "url": "https://www.marketwatch.com/story/ai-related-debt-sells-off-sharply-as-amazon-borrows-another-25-bil",
               "source": "MarketWatch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "投资者预期与现实差距超两倍",
-          "summary_zh": "投资者对回报的预期远高于实际市场表现，差距超过两倍。",
+          "title_zh": "特斯拉股价或因SpaceX合作上涨20%",
+          "summary_zh": "分析师称特斯拉与SpaceX合作潜力可能推动股价上涨20%。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
+          "score": 0.6,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Your investing expectations are more than double the reality",
-              "url": "https://www.marketwatch.com/story/your-investing-expectations-are-more-than-double-the-reality-here-",
+              "title": "Tesla’s stock could rise 20% thanks to the potential for a S",
+              "url": "https://www.marketwatch.com/story/teslas-stock-could-rise-20-thanks-to-the-potential-for-a-spacex-me",
               "source": "MarketWatch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "银行被指控未能服务最脆弱客户",
-          "summary_zh": "银行因未能充分服务弱势客户而受到批评。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Banks accused of failing most vulnerable customers",
-              "url": "https://www.bbc.co.uk/news/articles/cgl33dyk7y9o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 3,
+      "cn_count": 2,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
+        "减肥药",
         "AI芯片",
-        "三星",
-        "微软裁员",
-        "易捷航空",
-        "市场波动"
+        "房贷",
+        "数据泄露",
+        "裁员"
       ],
-      "deduped_count": 2,
-      "raw_count": 43
+      "deduped_count": 1,
+      "raw_count": 45
     },
     {
       "id": "sanctions",
@@ -1292,169 +1292,175 @@
         "China US trade tariffs",
         "export controls technology chips"
       ],
-      "brief_zh": "本周全球新闻涵盖地缘政治、自然灾害、军事动态等。中国测试远程导弹引发关注，台风造成伤亡，乌克兰面临导弹短缺。古巴停电、科特迪瓦洪灾、加拿大购潜艇等事件也值得关注。",
+      "brief_zh": "美国对伊朗发动空袭，中东局势紧张；法国极右翼领袖勒庞宣布参选总统；北约面临特朗普压力；乌克兰多地遭俄导弹袭击；中国官员因受贿3.25亿美元被判死刑；中国中部城市遭罕见龙卷风袭击。",
       "events": [
         {
-          "title_zh": "中国测试远程导弹引关注",
-          "summary_zh": "中国在南太平洋测试远程导弹，澳大利亚表示关切。",
-          "region": "cn",
+          "title_zh": "美国对伊朗发动空袭",
+          "summary_zh": "油轮在霍尔木兹海峡遇袭后，美国对伊朗发动空袭，伊朗南部传出爆炸声。",
+          "region": "global",
           "score": 0.9,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "China tests long-range missile in South Pacific in move Aust",
-              "url": "https://www.theguardian.com/world/2026/jul/06/china-missile-test-south-pacific",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "台风致2死数千人撤离",
-          "summary_zh": "台风梅萨克造成2人死亡，数千人被迫撤离。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Typhoon Maysak kills two and forces thousands to evacuate in",
-              "url": "https://www.theguardian.com/world/2026/jul/06/typhoon-maysak-kills-two-and-forces-thousands-to-evacu",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "乌克兰警告拦截导弹短缺",
-          "summary_zh": "乌克兰称拦截导弹短缺，23人在袭击中丧生。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Ukraine warns of interceptor missile shortage as 23 killed i",
-              "url": "https://www.bbc.co.uk/news/articles/cewqqnd7zdwo?at_medium=RSS&at_campaign=rss",
+              "title": "US launches strikes on Iran after tankers hit in Strait of H",
+              "url": "https://www.bbc.co.uk/news/articles/cwykq59jwpvo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "US says strikes launched as explosions heard in southern Ira",
+              "url": "https://www.aljazeera.com/news/2026/7/7/us-says-strikes-launched-as-explosions-heard-in-southern-ira",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "古巴第三次全国停电",
-          "summary_zh": "古巴六个月来第三次全国停电，民众生活痛苦。",
+          "title_zh": "勒庞宣布参选法国总统",
+          "summary_zh": "法国极右翼领袖玛丽娜·勒庞宣布参选总统，并对定罪提出上诉。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Marine Le Pen to run for French presidency and appeal convic",
+              "url": "https://www.bbc.co.uk/news/articles/c7vygl3zymjo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "北约面临特朗普再武装挑战",
+          "summary_zh": "特朗普影响力扩大，北约在重新武装问题上陷入困境。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "‘Living like this is agony’: Cuba suffers third nationwide b",
-              "url": "https://www.theguardian.com/world/2026/jul/06/cuba-suffers-third-nationwide-blackout-in-six-months",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
+              "title": "Trump looms large as Nato grapples with challenge of rearmin",
+              "url": "https://www.bbc.co.uk/news/articles/ckg06d3dgnlo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "加拿大购买12艘德国潜艇",
-          "summary_zh": "加拿大在竞标战后购买12艘高科技德国潜艇。",
+          "title_zh": "乌克兰首都基辅再遭导弹袭击",
+          "summary_zh": "俄罗斯导弹第三次袭击乌克兰首都基辅，局势持续紧张。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Russian missiles strike Ukraine’s capital, Kyiv, for third t",
+              "url": "https://www.aljazeera.com/news/2026/7/7/russian-missile-strikes-hit-ukraines-capital-kyiv-for-third-",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国官员受贿3.25亿美元被判死刑",
+          "summary_zh": "中国一名官员因受贿3.25亿美元被判处死刑，彰显反腐决心。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "China sentences official to death for taking $325m in bribes",
+              "url": "https://www.bbc.co.uk/news/articles/c33y0n1v1xjo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国中部城市遭罕见龙卷风袭击",
+          "summary_zh": "中国中部城市遭遇罕见龙卷风，造成破坏，视频记录瞬间。",
+          "region": "cn",
+          "score": 0.4,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Watch: Moment rare tornado lashes central Chinese cities",
+              "url": "https://www.bbc.co.uk/news/videos/cq61d22ved2o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "大马士革爆炸致18人受伤",
+          "summary_zh": "马克龙访问期间，大马士革发生炸弹爆炸，18人受伤。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Bomb explosions injure 18 in Damascus during Macron's visit",
+              "url": "https://www.bbc.co.uk/news/articles/c2eylx1jj9ko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "加沙医生在以色列遭严重殴打",
+          "summary_zh": "律师称被拘留的加沙医生在以色列监狱中遭严重殴打。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Lawyer says detained Gaza doctor was severely beaten in Isra",
+              "url": "https://www.bbc.co.uk/news/articles/c07yy3pgrlmo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "匈牙利公共新闻广播被叫停",
+          "summary_zh": "匈牙利公共新闻广播被叫停，旨在废除欧尔班媒体垄断。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Hungary's public news broadcasts halted in bid to scrap Orba",
+              "url": "https://www.bbc.co.uk/news/articles/cgevwq1pndgo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌克兰俄罗斯‘酷刑监狱’曝光",
+          "summary_zh": "乌克兰俄罗斯‘酷刑监狱’的狱警和官员被指虐待囚犯。",
           "region": "global",
           "score": 0.5,
           "date": "2026-07-06",
           "sources": [
             {
-              "title": "Canada to buy 12 hi-tech German submarines after bidding war",
-              "url": "https://www.theguardian.com/world/2026/jul/06/canada-buys-12-tkms-german-norwegian-submarines-after-",
-              "source": "The Guardian",
+              "title": "Jailers and officials at Russia's 'torture prisons' in Ukrai",
+              "url": "https://www.bbc.co.uk/news/articles/cx2kkrx8jeno?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
               "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "科特迪瓦洪灾致59人死亡",
-          "summary_zh": "西非暴雨引发洪灾，科特迪瓦59人遇难。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "Côte d’Ivoire floods kill 59 as west Africa endures torrenti",
-              "url": "https://www.theguardian.com/world/2026/jul/02/cote-d-ivoire-floods-dead-west-africa-rains",
-              "source": "The Guardian",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国地下教会创始人获释",
-          "summary_zh": "著名地下教会创始人从监狱获释。",
-          "region": "cn",
-          "score": 0.3,
-          "date": "2026-07-05",
-          "sources": [
-            {
-              "title": "Founder of prominent underground church released from prison",
-              "url": "https://www.theguardian.com/world/2026/jul/05/founder-of-prominent-underground-church-released-from-",
-              "source": "The Guardian",
-              "published_at": "2026-07-05"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国政府回应批评者",
-          "summary_zh": "中国政府要求批评者不要过度解读导弹测试。",
-          "region": "cn",
-          "score": 0.2,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Chinese government tells critics not to ‘overinterpret’ miss",
-              "url": "https://www.theguardian.com/world/2026/jul/07/chinese-government-tells-critics-not-to-overinterpret-",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "古巴动物园喜迎孟加拉虎",
-          "summary_zh": "能源危机中，古巴动物园庆祝孟加拉虎幼崽出生。",
-          "region": "global",
-          "score": 0.1,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Cuban zoo celebrates birth of Bengal tigers amid energy cris",
-              "url": "https://www.theguardian.com/world/2026/jul/06/cuban-zoo-celebrates-birth-of-bengal-tigers-amid-energ",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "委内瑞拉地震应急受质疑",
-          "summary_zh": "罗德里格斯为委内瑞拉地震应急响应辩护。",
-          "region": "global",
-          "score": 0.0,
-          "date": "2026-07-05",
-          "sources": [
-            {
-              "title": "Rodríguez defends Venezuela’s emergency earthquake response ",
-              "url": "https://www.theguardian.com/world/2026/jul/05/rodriguez-defends-venezuelas-emergency-earthquake-resp",
-              "source": "The Guardian",
-              "published_at": "2026-07-05"
             }
           ]
         }
       ],
-      "cn_count": 5,
+      "cn_count": 2,
       "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
       "keywords": [
-        "中国导弹测试",
-        "台风",
-        "乌克兰",
-        "古巴停电",
-        "加拿大潜艇"
+        "美国空袭伊朗",
+        "法国大选",
+        "北约",
+        "乌克兰战争",
+        "中国反腐"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -1469,177 +1475,183 @@
         "large language model LLM",
         "generative AI enterprise business"
       ],
-      "brief_zh": "2026年7月6日AI与大模型领域新闻：微软裁员近5000人并出售Xbox工作室；Reddit用LLM解决LLM造成的问题；谷歌用户数据训练AI可退出；Siri可自定义语速；Vercel CEO讨论模型拆分；首个AI勒索攻击仍需人类参与；SK Hynix将向美国投资者开放。",
+      "brief_zh": "2026年7月7日AI与大模型领域动态：Meta推出Muse图像生成器，开源AI未冲击Anthropic，微软加入AI降本趋势，Discord AI审核误封用户，Claude Cowork扩展至移动端，AI法律初创Norm获1.2亿美元估值独角兽，Figma收购编码应用团队，X新增视频编辑器，数据中心能源需求威胁制造业，美国陆军网站遭黑客攻击。",
       "events": [
         {
-          "title_zh": "微软裁员近5000人",
-          "summary_zh": "微软在Xbox和商业销售部门裁员近5000人，并出售四个Xbox工作室。",
+          "title_zh": "Meta推出Muse AI图像生成器",
+          "summary_zh": "Meta发布新AI图像生成工具Muse，扩展创意应用。",
           "region": "global",
-          "score": 0.9,
-          "date": "2026-07-06",
+          "score": 0.8,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Microsoft lays off nearly 5,000 employees across Xbox, commercial sales",
-              "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa",
+              "title": "Meta rolls out Muse, a new AI image generator",
+              "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            },
-            {
-              "title": "Microsoft is selling off four Xbox studios as part of significant layoffs",
-              "url": "https://www.theverge.com/news/961546/xbox-layoffs-studio-sales-2026",
-              "source": "The Verge",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Reddit用LLM解决LLM问题",
-          "summary_zh": "Reddit利用大语言模型解决由LLM大量生成内容带来的问题。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Reddit is using LLMs to solve a problem LLMs largely created",
-              "url": "https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌用户数据训练AI可退出",
-          "summary_zh": "谷歌用户数据被用于训练AI，用户可选择退出。",
+          "title_zh": "开源AI未冲击Anthropic",
+          "summary_zh": "分析认为开源AI崛起尚未对Anthropic构成威胁。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "If you use Google, you’re training its AI. Here’s how to opt out",
-              "url": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
+              "title": "Why the rise of open source AI isn’t hurting Anthropic … yet",
+              "url": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Siri可自定义语速和表达",
-          "summary_zh": "最新iOS更新允许用户自定义Siri的语速和表达方式。",
+          "title_zh": "微软加入AI降本趋势",
+          "summary_zh": "微软通过依赖自有模型降低成本，加入AI行业降本潮流。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
+          "score": 0.7,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "You can now customize Siri’s pace and expressivity in the latest iOS",
-              "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-io",
+              "title": "Microsoft joins AI cost-cutting trend by relying more on its",
+              "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-m",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Vercel CEO讨论模型拆分",
-          "summary_zh": "Vercel CEO Guillermo Rauch讨论从应用中拆分AI模型的挑战。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Vercel CEO Guillermo Rauch on the fight to split off models from apps",
-              "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "首个AI勒索攻击仍需人类",
-          "summary_zh": "首个由AI运行的勒索软件攻击仍需要人类参与才能完成。",
+          "title_zh": "Discord AI审核误封用户",
+          "summary_zh": "Discord承认AI审核系统因漏洞错误封禁用户。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "The ‘first’ AI-run ransomware attack still needed a human",
-              "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+              "title": "Discord admits AI moderation bug wrongfully banned users ove",
+              "url": "https://techcrunch.com/2026/07/07/discord-admits-ai-moderation-bug-wrongfully-banned-users-over-harm",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "SK Hynix向美国投资者开放",
-          "summary_zh": "美国投资者将很快获得SK Hynix等内存制造商的投资机会。",
+          "title_zh": "Claude Cowork扩展至移动端",
+          "summary_zh": "Anthropic的Claude Cowork编码助手扩展至移动和网页端。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
+          "score": 0.8,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "US investors will soon get access to SK Hynix, another memory maker",
-              "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker",
+              "title": "Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-cla",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "苹果恢复印度信用卡支付",
-          "summary_zh": "苹果在印度恢复Apple账户购买的信用卡支付功能。",
-          "region": "cn",
-          "score": 0.3,
-          "date": "2026-07-06",
+          "title_zh": "AI法律初创Norm获1.2亿美元",
+          "summary_zh": "AI法律初创公司Norm融资1.2亿美元，估值达独角兽。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Apple brings back card payments for Apple Account purchases in India",
-              "url": "https://techcrunch.com/2026/07/06/apple-brings-back-card-payments-for-apple-account-purchases-in-ind",
+              "title": "AI law startup Norm raises $120M, hits unicorn valuation",
+              "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Google's Pixel 11 launch event is set for August 12, with possible price increases",
+              "url": "https://arstechnica.com/gadgets/2026/07/googles-pixel-11-launch-event-is-set-for-august-12-with-possible-price-increases/",
+              "source": "Ars Technica",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "2026年AI相关裁员汇总",
-          "summary_zh": "2026年所有主要科技公司裁员中提及AI的汇总列表。",
+          "title_zh": "Figma收购编码应用团队",
+          "summary_zh": "Figma收购一家vibe-coding应用背后的团队，增强设计工具。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Figma acquires team behind a vibe-coding app",
+              "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "X新增视频编辑器",
+          "summary_zh": "X平台推出视频编辑器，鼓励创作者发布原创内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "X adds a video editor to encourage creators to post original",
+              "url": "https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-conte",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "数据中心能源威胁制造业",
+          "summary_zh": "AI数据中心能源需求推高成本，威胁美国制造业复兴。",
           "region": "global",
           "score": 0.3,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Every major tech layoff in 2026 that has name-checked AI",
-              "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "title": "Data centers’ energy demand threatens Trump’s “Made in Ameri",
+              "url": "https://arstechnica.com/tech-policy/2026/07/us-manufacturers-energy-costs-soar-because-of-ai-data-ce",
+              "source": "Ars Technica",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Nintendo欧洲停售原版Switch",
-          "summary_zh": "任天堂将于下个月在欧洲停止销售原版Switch。",
+          "title_zh": "美国陆军网站遭黑客攻击",
+          "summary_zh": "黑客活动人士攻击并篡改美国陆军网站，抗议特朗普。",
           "region": "global",
           "score": 0.2,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Nintendo will stop selling the original Switch in Europe next month",
-              "url": "https://www.theverge.com/games/961632/nintendo-switch-europe-discontinued",
+              "title": "Hacktivists call out Trump by hacking and defacing US Army w",
+              "url": "https://techcrunch.com/2026/07/07/hacktivists-call-out-trump-by-hacking-and-defacing-us-army-website",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Anthropic is launching Claude Cowork on mobile and web",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web",
               "source": "The Verge",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
-      "sentiment": "negative",
-      "sentiment_score": 0.35,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
-        "AI裁员",
-        "LLM",
+        "AI",
+        "大模型",
+        "Meta",
         "微软",
-        "Reddit",
-        "谷歌"
+        "Anthropic"
       ],
-      "deduped_count": 0,
+      "deduped_count": 2,
       "raw_count": 45
     },
     {
@@ -1652,183 +1664,189 @@
         "semiconductor chip manufacturing",
         "AI infrastructure investment"
       ],
-      "brief_zh": "AI领域动态：首例AI勒索攻击仍需人类参与；SK海力士向美投资者开放；微软裁员近5000人；谷歌用用户数据训练AI引隐私担忧；智能眼镜公司Even Realities估值达10亿美元；Reddit用LLM解决LLM问题；Station F成为欧洲AI创业中心。",
+      "brief_zh": "2026年7月7日，AI计算基础设施领域动态：Meta推出新AI图像生成器Muse，并允许用户Instagram照片用于AI训练；微软加入AI降本趋势，更多依赖自有模型；Anthropic推出Claude Cowork移动版；开源AI对Anthropic影响有限；Figma收购编码应用团队；AI法律初创Norm融资1.2亿美元成独角兽；Discord AI审核误封用户；谷歌Pixel活动定于8月12日。",
       "events": [
         {
-          "title_zh": "首例AI勒索攻击仍需人类参与",
-          "summary_zh": "AI驱动的勒索攻击首次出现，但攻击仍需人类操作。",
+          "title_zh": "Meta推出AI图像生成器Muse",
+          "summary_zh": "Meta发布新AI图像生成器Muse，并允许用户Instagram照片用于AI训练。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "The ‘first’ AI-run ransomware attack still needed a human",
-              "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "SK海力士向美投资者开放",
-          "summary_zh": "美国投资者将很快获得SK海力士等内存制造商的股票。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "US investors will soon get access to SK Hynix, another memor",
-              "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Vercel CEO谈模型拆分之争",
-          "summary_zh": "Vercel CEO讨论从AI模型中拆分模型的挑战。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Vercel CEO Guillermo Rauch on the fight to split off models ",
-              "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Siri可自定义语速和表达",
-          "summary_zh": "最新iOS更新允许用户自定义Siri的语速和表达方式。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "You can now customize Siri’s pace and expressivity in the la",
-              "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-io",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "2026年AI相关科技裁员汇总",
-          "summary_zh": "2026年多家科技公司因AI原因裁员，名单持续更新。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Every major tech layoff in 2026 that has name-checked AI",
-              "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌用用户数据训练AI",
-          "summary_zh": "谷歌使用用户上传的搜索媒体训练AI，用户可退出。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "If you use Google, you’re training its AI. Here’s how to opt",
-              "url": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            },
-            {
-              "title": "Google now uses your uploaded search media to train AI",
-              "url": "https://www.engadget.com/2208978/google-now-uses-your-uploaded-search-media-to-train-ai/",
-              "source": "Engadget",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果在印度恢复信用卡支付",
-          "summary_zh": "苹果在印度恢复Apple账户购买的信用卡支付功能。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Apple brings back card payments for Apple Account purchases ",
-              "url": "https://techcrunch.com/2026/07/06/apple-brings-back-card-payments-for-Apple-Account-purchases-in-ind",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "微软裁员近5000人",
-          "summary_zh": "微软在Xbox和商业销售部门裁员近5000人。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Microsoft lays off nearly 5,000 employees across Xbox, comme",
-              "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            },
-            {
-              "title": "Microsoft's layoffs extend beyond Xbox",
-              "url": "https://www.engadget.com/2208855/microsoft-layoffs-extend-beyond-xbox/",
-              "source": "Engadget",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Reddit用LLM解决LLM问题",
-          "summary_zh": "Reddit利用大语言模型解决由大语言模型引发的问题。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Reddit is using LLMs to solve a problem LLMs largely created",
-              "url": "https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "智能眼镜公司估值达10亿美元",
-          "summary_zh": "智能眼镜制造商Even Realities获1.5亿美元融资，估值达10亿美元。",
-          "region": "cn",
           "score": 0.8,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Smart glasses maker Even Realities hits $1B valuation with $",
-              "url": "https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-fun",
+              "title": "Meta rolls out Muse, a new AI image generator",
+              "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Meta Now Lets Anyone Use Your Instagram Photos in AI Images—",
+              "url": "https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-o",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软加入AI降本趋势",
+          "summary_zh": "微软通过更多依赖自有模型来降低AI成本，加入行业降本趋势。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Microsoft joins AI cost-cutting trend by relying more on its",
+              "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-m",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic推出Claude Cowork移动版",
+          "summary_zh": "Anthropic将Claude Cowork扩展至移动和网页端，提升AI助手可用性。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-cla",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Shut Those Laptops! Anthropic Puts Its Claude Cowork Agent o",
+              "url": "https://www.wired.com/story/shut-those-laptops-anthropic-puts-its-claude-cowork-agent-on-your-phone/",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "开源AI对Anthropic影响有限",
+          "summary_zh": "分析认为开源AI的崛起尚未对Anthropic造成显著冲击。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Why the rise of open source AI isn’t hurting Anthropic … yet",
+              "url": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Figma收购编码应用团队",
+          "summary_zh": "Figma收购vibe-coding应用团队，加强AI编码能力。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Figma acquires team behind a vibe-coding app",
+              "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI法律初创Norm融资1.2亿美元",
+          "summary_zh": "AI法律初创公司Norm完成1.2亿美元融资，估值达独角兽水平。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "AI law startup Norm raises $120M, hits unicorn valuation",
+              "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Google's next Pixel event is on August 12",
+              "url": "https://www.engadget.com/2209791/googles-next-pixel-event-is-on-august-12/",
+              "source": "Engadget",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Discord AI审核误封用户",
+          "summary_zh": "Discord承认AI审核系统存在漏洞，错误封禁用户。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Discord admits AI moderation bug wrongfully banned users ove",
+              "url": "https://techcrunch.com/2026/07/07/discord-admits-ai-moderation-bug-wrongfully-banned-users-over-harm",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌Pixel活动定于8月12日",
+          "summary_zh": "谷歌宣布Pixel活动将于8月12日举行，可能涉及AI功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Google’s Pixel event is set for August 12",
+              "url": "https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI首席未来学家离职",
+          "summary_zh": "OpenAI首席未来学家Joshua Achiam宣布离开公司。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "OpenAI’s Chief Futurist Is Leaving the Company",
+              "url": "https://www.wired.com/story/openai-chief-futurist-joshua-achiam-is-leaving-the-company/",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Solos推出隐私保护智能眼镜",
+          "summary_zh": "Solos发布带隐私保护罩的新款智能眼镜，应对AI隐私担忧。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "These New Smart Glasses From Solos Come With a Privacy Shiel",
+              "url": "https://www.wired.com/story/these-new-smart-glasses-from-solos-come-with-a-privacy-shield-for-the-ca",
+              "source": "Wired",
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 2,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "AI",
-        "裁员",
-        "数据隐私",
-        "智能眼镜",
-        "勒索攻击"
+        "AI计算基础设施",
+        "Meta",
+        "Anthropic",
+        "微软",
+        "AI图像生成"
       ],
-      "deduped_count": 0,
+      "deduped_count": 1,
       "raw_count": 45
     },
     {
@@ -1842,169 +1860,181 @@
         "EV charging infrastructure",
         "solid state battery technology"
       ],
-      "brief_zh": "今日科技新闻聚焦AI应用与行业动态，包括AI勒索攻击仍需人工、SK海力士向美投资者开放、Vercel CEO谈模型拆分、Siri个性化设置、2026年AI相关裁员、Bookshop.org支持Kobo、谷歌用搜索数据训练AI、苹果恢复印度信用卡支付、微软裁员近5000人、Reddit用LLM解决LLM问题、加拿大间谍机构黑客行动、WhatsApp用户名功能、Station F孵化AI初创、智能眼镜公司Even Realities估值达10亿美元、人形机器人公司上市、谷歌备份数据计入存储、有线耳机回归趋势、AI角色出演电影等。",
+      "brief_zh": "今日科技新闻聚焦AI领域，Meta推出Muse图像生成器，微软加入AI降本趋势，Discord承认AI审核误封用户，谷歌Pixel发布会定档8月12日。同时，Figma收购编程应用团队，Netflix尝试短视频，AI法律初创公司Norm融资1.2亿美元。",
       "events": [
         {
-          "title_zh": "AI勒索攻击仍需人工参与",
-          "summary_zh": "首次AI勒索攻击仍需人类操作，AI尚未完全自主。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "The ‘first’ AI-run ransomware attack still needed a human",
-              "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "SK海力士向美投资者开放",
-          "summary_zh": "美国投资者将很快获得SK海力士等内存制造商投资机会。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "US investors will soon get access to SK Hynix, another memor",
-              "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Vercel CEO谈模型拆分",
-          "summary_zh": "Vercel CEO讨论从AI平台拆分模型的斗争。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Vercel CEO Guillermo Rauch on the fight to split off models ",
-              "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Siri可自定义语速和表达",
-          "summary_zh": "最新iOS更新允许用户自定义Siri的语速和表达方式。",
+          "title_zh": "Meta推出Muse AI图像生成器",
+          "summary_zh": "Meta发布新AI图像生成器Muse，可接受Instagram账户作为提示。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "You can now customize Siri’s pace and expressivity in the la",
-              "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-io",
+              "title": "Meta rolls out Muse, a new AI image generator",
+              "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Meta's new Muse Image model accepts Instagram accounts as a prompt",
+              "url": "https://www.engadget.com/2210087/meta-s-new-muse-image-model-accepts-instagram-accounts-as-a-prompt/",
+              "source": "Engadget",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "2026年AI相关裁员汇总",
-          "summary_zh": "2026年多家科技公司因AI裁员，名单持续更新。",
+          "title_zh": "微软加入AI降本趋势",
+          "summary_zh": "微软通过更多依赖自身模型来削减AI成本，加入行业降本潮流。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
+          "score": 0.7,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Every major tech layoff in 2026 that has name-checked AI",
-              "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-",
+              "title": "Microsoft joins AI cost-cutting trend by relying more on its",
+              "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-m",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Bookshop.org支持Kobo阅读器",
-          "summary_zh": "亚马逊竞争对手Bookshop.org宣布将支持Kobo电子阅读器。",
+          "title_zh": "Discord承认AI审核误封用户",
+          "summary_zh": "Discord承认AI审核系统存在漏洞，错误封禁了用户账户。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Amazon competitor Bookshop.org says Kobo eReader support wil",
-              "url": "https://techcrunch.com/2026/07/06/amazon-competitor-bookshop-org-says-kobo-e-reader-support-will-hap",
+              "title": "Discord admits AI moderation bug wrongfully banned users ove",
+              "url": "https://techcrunch.com/2026/07/07/discord-admits-ai-moderation-bug-wrongfully-banned-users-over-harm",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "谷歌用搜索数据训练AI",
-          "summary_zh": "谷歌使用用户上传的搜索媒体训练AI，用户可选择退出。",
+          "title_zh": "谷歌Pixel发布会定档8月12日",
+          "summary_zh": "谷歌宣布Pixel活动将于8月12日举行，预计发布新设备。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "If you use Google, you’re training its AI. Here’s how to opt",
-              "url": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果恢复印度信用卡支付",
-          "summary_zh": "苹果在印度恢复Apple账户购买的信用卡支付功能。",
-          "region": "cn",
           "score": 0.7,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Apple brings back card payments for Apple Account purchases ",
-              "url": "https://techcrunch.com/2026/07/06/apple-brings-back-card-payments-for-apple-account-purchases-in-ind",
+              "title": "Google’s Pixel event is set for August 12",
+              "url": "https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "微软裁员近5000人",
-          "summary_zh": "微软在Xbox和商业销售部门裁员近5000人。",
+          "title_zh": "Figma收购编程应用团队",
+          "summary_zh": "Figma收购了一个开发编程应用（vibe-coding）的团队，以增强产品能力。",
           "region": "global",
-          "score": 0.2,
-          "date": "2026-07-06",
+          "score": 0.6,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Microsoft lays off nearly 5,000 employees across Xbox, comme",
-              "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa",
+              "title": "Figma acquires team behind a vibe-coding app",
+              "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Reddit用LLM解决LLM问题",
-          "summary_zh": "Reddit使用大语言模型解决由LLM大量创建的问题。",
+          "title_zh": "Netflix尝试短视频内容",
+          "summary_zh": "Netflix推出新系列短视频内容，探索短格式视频领域。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Reddit is using LLMs to solve a problem LLMs largely created",
-              "url": "https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/",
+              "title": "Netflix dabbles in shorter video content with its new set of",
+              "url": "https://techcrunch.com/2026/07/07/netflix-dabbles-in-shorter-video-content-with-its-new-set-of-publi",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Google's next Pixel event is on August 12",
+              "url": "https://www.engadget.com/2209791/googles-next-pixel-event-is-on-august-12/",
+              "source": "Engadget",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI法律初创公司Norm融资1.2亿美元",
+          "summary_zh": "AI法律初创公司Norm完成1.2亿美元融资，估值达到独角兽级别。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "AI law startup Norm raises $120M, hits unicorn valuation",
+              "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Claude Cowork扩展至移动和网页端",
+          "summary_zh": "AI编程助手Claude Cowork推出移动和网页版本，扩大使用场景。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-cla",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "X平台新增视频编辑器",
+          "summary_zh": "X平台推出视频编辑器功能，鼓励创作者发布原创内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "X adds a video editor to encourage creators to post original",
+              "url": "https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-conte",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "三星Galaxy Unpacked定档7月22日",
+          "summary_zh": "三星宣布Galaxy Unpacked发布会将于7月22日举行，预计发布新设备。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "The next Samsung Galaxy Unpacked launch is happening on July",
+              "url": "https://www.engadget.com/2209773/the-next-samsung-galaxy-unpacked-launch-is-happening-on-july-22/",
+              "source": "Engadget",
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
-        "裁员",
-        "谷歌",
+        "Meta",
         "微软",
-        "智能眼镜"
+        "谷歌",
+        "融资"
       ],
       "deduped_count": 3,
       "raw_count": 45
@@ -2019,171 +2049,171 @@
         "copper scrap recycling trade",
         "critical minerals rare earth"
       ],
-      "brief_zh": "美国陆军采取历史性步骤打破中国稀土垄断；阿布扎比建设全球首个综合能源项目；大型石油公司利润创纪录；壳牌和埃克森美孚投资尼日利亚深水项目；沙特通过霍尔木兹海峡运输3400万桶原油；北美贡献全球近半排放增长；伊朗战争强化可再生能源需求；阿联酋退出OPEC后产量接近历史高位；科罗拉多河危机加剧；俄罗斯乌拉尔原油跌至42美元/桶；碳市场迎来重要时刻；英国净零法案或削弱竞争力；巴基斯坦通过伊朗新走廊绕过阿富汗；印度电力需求年增6%至2030年；美国计划削弱伊朗霍尔木兹海峡影响力；中国最大ETF转为黄金；矿业面临野火季节恶化；钼与替代地缘政治；铜需求已超供应；达科他黄金公布高品位钻探结果。",
+      "brief_zh": "AI热潮将冲击美国电网，地缘政治风险推高油价，霍尔木兹海峡无人机袭击引发供应担忧，大宗商品市场波动加剧。",
       "events": [
         {
-          "title_zh": "美国陆军打破中国稀土垄断",
-          "summary_zh": "美国陆军采取历史性步骤，旨在减少对中国稀土供应的依赖。",
-          "region": "cn",
-          "score": 0.9,
+          "title_zh": "AI热潮冲击美国电网",
+          "summary_zh": "AI发展将导致美国电网负荷激增，面临崩溃风险。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-08",
+          "sources": [
+            {
+              "title": "Why the AI Boom Is About to Break the U.S. Power Grid",
+              "url": "https://oilprice.com/Energy/Energy-General/Why-the-AI-Boom-Is-About-to-Break-the-US-Power-Grid.html",
+              "source": "OilPrice",
+              "published_at": "2026-07-08"
+            }
+          ]
+        },
+        {
+          "title_zh": "油价可能即将飙升",
+          "summary_zh": "交易员低估了油价飙升风险，供应紧张或提前到来。",
+          "region": "global",
+          "score": 0.6,
           "date": "2026-07-07",
           "sources": [
             {
-              "title": "The U.S. Army Just Took a Historic Step to Break China's Rar",
-              "url": "https://oilprice.com/Energy/Energy-General/The-US-Army-Just-Took-a-Historic-Step-to-Break-Chinas-Rar",
+              "title": "The Next Oil Price Spike Could Come Sooner Than Traders Thin",
+              "url": "https://oilprice.com/Energy/Crude-Oil/The-Next-Oil-Price-Spike-Could-Come-Sooner-Than-Traders-Think.",
               "source": "OilPrice",
               "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "阿布扎比建设综合能源项目",
-          "summary_zh": "阿布扎比启动全球首个综合能源项目，整合多种能源资源。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Why Abu Dhabi Is Building the World's First Integrated Energ",
-              "url": "https://oilprice.com/Geopolitics/Middle-East/Why-Abu-Dhabi-Is-Building-the-Worlds-First-Integrated-E",
-              "source": "OilPrice",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "大型石油公司利润创纪录",
-          "summary_zh": "特朗普施压下，大型石油公司利润有望创历史新高。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Big Oil Heads for Record Profits as Trump Turns Up the Heat ",
-              "url": "https://oilprice.com/Energy/Crude-Oil/Big-Oil-Heads-for-Record-Profits-as-Trump-Turns-Up-the-Heat-on",
-              "source": "OilPrice",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "壳牌埃克森投资尼日利亚深水",
-          "summary_zh": "壳牌和埃克森美孚投资数十亿美元于尼日利亚深水项目。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Shell And ExxonMobil Are Betting Billions On Nigeria's Deepw",
-              "url": "https://oilprice.com/Energy/Energy-General/Shell-And-ExxonMobil-Are-Betting-Billions-On-Nigerias-Dee",
-              "source": "OilPrice",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "沙特通过霍尔木兹运输原油",
-          "summary_zh": "沙特阿拉伯通过霍尔木兹海峡运输3400万桶原油，尽管存在风险。",
+          "title_zh": "伊拉克双面策略面临困境",
+          "summary_zh": "伊拉克在石油交易中的双重策略可能已走到尽头。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Saudi Arabia Ships 34 Million Barrels Through Hormuz Despite",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Ships-34-Million-Barrels-Through-Hor",
+              "title": "Has Iraq Finally Run Out of Road in Its Double-Dealings with",
+              "url": "https://oilprice.com/Energy/Energy-General/Has-Iraq-Finally-Run-Out-of-Road-in-Its-Double-Dealings-w",
               "source": "OilPrice",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "北美贡献全球排放增长近半",
-          "summary_zh": "北美地区驱动全球近一半的排放增长，引发环境担忧。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "North America Drove Nearly Half Of Global Emissions Growth I",
-              "url": "https://oilprice.com/Energy/Energy-General/North-America-Drove-Nearly-Half-Of-Global-Emissions-Growt",
-              "source": "OilPrice",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "伊朗战争强化可再生能源需求",
-          "summary_zh": "伊朗战争凸显可再生能源和储能的重要性。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Iran War Strengthens the Case for Renewables and Storage",
-              "url": "https://oilprice.com/Alternative-Energy/Renewable-Energy/Iran-War-Strengthens-the-Case-for-Renewable",
-              "source": "OilPrice",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "阿联酋产量接近历史高位",
-          "summary_zh": "阿联酋退出OPEC后，石油产量接近历史最高水平。",
+          "title_zh": "美国原油库存下降",
+          "summary_zh": "尽管霍尔木兹海峡交通受阻，美国原油和产品库存仍下降。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "UAE Oil Production Nears Record High After OPEC Exit",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/UAE-Oil-Production-Nears-Record-High-After-OPEC-E",
+              "title": "US Crude Oil, Product Inventories Fall Even As Hormuz Traffi",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Crude-Oil-Product-Inventories-Fall-Even-As-Hor",
               "source": "OilPrice",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "科罗拉多河危机加剧",
-          "summary_zh": "科罗拉多河水资源危机达到临界点，影响农业和能源。",
+          "title_zh": "石油巨头暴利引发价格担忧",
+          "summary_zh": "大型石油公司暴利可能重新点燃特朗普的价格干预。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
+          "score": 0.5,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "The Colorado River Crisis Is Reaching a Breaking Point",
-              "url": "https://oilprice.com/Energy/Energy-General/The-Colorado-River-Crisis-Is-Reaching-a-Breaking-Point.ht",
+              "title": "Big Oil's Windfall Earnings Threaten to Reignite Trump's Pri",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Big-Oils-Windfall-Earnings-Threaten-to-Reignite-Trumps-Price-G",
               "source": "OilPrice",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "俄罗斯乌拉尔原油暴跌",
-          "summary_zh": "俄罗斯乌拉尔原油价格跌至42美元/桶，石油收入锐减。",
+          "title_zh": "油市从过剩担忧转向霍尔木兹",
+          "summary_zh": "油市情绪从供应过剩转向霍尔木兹海峡通行费担忧。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
+          "score": 0.6,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Russia’s Oil Windfall Vanishes as Urals Crashes to $42 a Bar",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/Russias-Oil-Windfall-Vanishes-as-Urals-Crashes-to",
+              "title": "Oil Market Swings From Glut Fears to Hormuz Toll Concerns",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Market-Swings-From-Glut-Fears-to-Hormuz-Toll-Concerns.html",
               "source": "OilPrice",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "无人机袭击关闭俄罗斯最大炼油厂",
+          "summary_zh": "无人机袭击导致俄罗斯最大炼油厂关闭，燃料短缺加剧。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Drone Strike Shuts Russia's Largest Refinery as Fuel Shortag",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Drone-Strike-Shuts-Russias-Largest-Refinery-as-Fu",
+              "source": "OilPrice",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "地缘政治风险重返霍尔木兹",
+          "summary_zh": "无人机袭击霍尔木兹海峡航运，地缘政治风险回归。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Geopolitical Risk Returns as Drone Strikes Hit Hormuz Shippi",
+              "url": "https://oilprice.com/Energy/Energy-General/Geopolitical-Risk-Returns-as-Drone-Strikes-Hit-Hormuz-Shi",
+              "source": "OilPrice",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "日元空头创19年新高",
+          "summary_zh": "日元空头头寸创19年新高，黄金或重演历史走势。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Yen shorts just hit a 19-year high. Gold did this last time",
+              "url": "https://www.mining.com/yen-shorts-just-hit-a-19-year-high-gold-did-this-last-time/",
+              "source": "Mining.com",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "South32获美国关键许可",
+          "summary_zh": "South32在亚利桑那州20亿美元矿山项目获美国关键许可。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "South32 clears key US hurdle for $2B Arizona mine",
+              "url": "https://www.mining.com/south32-clears-key-us-hurdle-for-2b-arizona-mine/",
+              "source": "Mining.com",
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment": "negative",
+      "sentiment_score": 0.35,
       "keywords": [
-        "稀土",
-        "石油",
-        "黄金",
-        "铜",
-        "能源"
+        "AI",
+        "油价",
+        "地缘政治",
+        "霍尔木兹",
+        "大宗商品"
       ],
-      "deduped_count": 1,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2196,17 +2226,62 @@
         "carbon neutrality net zero",
         "emissions trading ETS price"
       ],
-      "brief_zh": "今日新闻涵盖全球事件，包括埃及发现拜占庭古城、苏丹人道危机、科特迪瓦洪水、古巴停电、加拿大购潜艇、中国台风与导弹试验等。中国相关新闻涉及政府回应批评、台风灾害及军事活动。",
+      "brief_zh": "今日新闻涵盖全球事件，包括猫薄荷驱蚊效果、埃隆·马斯克遗产、利比亚毒品案、拜占庭古城发现、苏丹人道危机、姆巴佩种族歧视、古巴停电、加拿大购潜艇、古巴虎崽出生、委内瑞拉地震、澳洲网络中断、中国风暴、台风、导弹试验、减肥药影响、数据泄露赔偿、旅游价格、房贷及赌博监管。",
       "events": [
         {
-          "title_zh": "埃及发现拜占庭古城",
-          "summary_zh": "考古学家在埃及西部发现一座古代拜占庭城市。",
+          "title_zh": "猫薄荷驱蚊效果堪比避蚊胺",
+          "summary_zh": "研究发现猫薄荷乳液驱蚊效果与避蚊胺相当。",
           "region": "global",
           "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Catnip lotion as effective as Deet at repelling mosquitoes",
+              "url": "https://www.theguardian.com/global-development/2026/jul/07/catnip-lotion-as-effective-as-deet-at-rep",
+              "source": "The Guardian",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "马斯克遗产争议聚焦USAID削减",
+          "summary_zh": "埃隆·马斯克的遗产定义或与USAID削减和埃博拉相关。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "What will define Elon Musk’s legacy? Doge cuts to USAID Ebol",
+              "url": "https://www.theguardian.com/technology/2026/jul/07/elon-musk-doge-cuts-usaid-ebola",
+              "source": "The Guardian",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "利比亚查获200公斤可卡因",
+          "summary_zh": "利比亚五人因超过200公斤可卡因被指控。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Five charged in Liberia after more than 200kg of cocaine sei",
+              "url": "https://www.theguardian.com/world/2026/jul/07/charged-liberia-200kg-cocaine-seized-drug-bust",
+              "source": "The Guardian",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "埃及发现拜占庭古城",
+          "summary_zh": "考古学家在埃及西部发现古代拜占庭城市。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-07-04",
           "sources": [
             {
-              "title": "Archaeologists uncover ancient Byzantine city in Egypt’s west",
+              "title": "Archaeologists uncover ancient Byzantine city in Egypt’s wes",
               "url": "https://www.theguardian.com/world/2026/jul/04/archaeologists-uncover-ancient-byzantine-city-in-egypt",
               "source": "The Guardian",
               "published_at": "2026-07-04"
@@ -2214,10 +2289,10 @@
           ]
         },
         {
-          "title_zh": "苏丹人道危机加剧",
-          "summary_zh": "援助工作者描述苏丹生活状况糟糕，战争和无人机袭击持续。",
+          "title_zh": "苏丹人道危机恶化",
+          "summary_zh": "援助人员描述苏丹生活状况“可怕”。",
           "region": "global",
-          "score": 0.4,
+          "score": 0.3,
           "date": "2026-07-04",
           "sources": [
             {
@@ -2229,40 +2304,25 @@
           ]
         },
         {
-          "title_zh": "英国削减海外女性教育项目",
-          "summary_zh": "英国政府取消海外妇女和女童教育项目，引发争议。",
+          "title_zh": "姆巴佩遭种族歧视调查",
+          "summary_zh": "法国检察官调查对姆巴佩的种族歧视言论。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-04",
+          "score": 0.4,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Overseas education project for women and girls axed by UK af",
-              "url": "https://www.theguardian.com/global-development/2026/jul/04/overseas-education-project-for-women-and-",
+              "title": "French prosecutors investigate racist abuse of Kylian Mbappé",
+              "url": "https://www.theguardian.com/world/2026/jul/07/french-prosecutors-investigate-racist-abuse-mbappe",
               "source": "The Guardian",
-              "published_at": "2026-07-04"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "科特迪瓦洪水致59人死亡",
-          "summary_zh": "西非持续暴雨导致科特迪瓦洪水，造成59人丧生。",
+          "title_zh": "古巴第三次全国停电",
+          "summary_zh": "古巴六个月第三次全国停电，民众痛苦不堪。",
           "region": "global",
           "score": 0.2,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "Côte d’Ivoire floods kill 59 as west Africa endures torrenti",
-              "url": "https://www.theguardian.com/world/2026/jul/02/cote-d-ivoire-floods-dead-west-africa-rains",
-              "source": "The Guardian",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "古巴遭遇第三次全国停电",
-          "summary_zh": "古巴在六个月内第三次全国停电，民众生活痛苦。",
-          "region": "global",
-          "score": 0.3,
           "date": "2026-07-06",
           "sources": [
             {
@@ -2275,9 +2335,9 @@
         },
         {
           "title_zh": "加拿大购买12艘德国潜艇",
-          "summary_zh": "加拿大在竞标后决定购买12艘高科技德国潜艇。",
+          "summary_zh": "加拿大在竞标后购买12艘高科技德国潜艇。",
           "region": "global",
-          "score": 0.7,
+          "score": 0.6,
           "date": "2026-07-06",
           "sources": [
             {
@@ -2289,78 +2349,48 @@
           ]
         },
         {
-          "title_zh": "中国政府回应批评",
-          "summary_zh": "中国政府告诉批评者不要“过度解读”某些事件。",
-          "region": "cn",
-          "score": 0.5,
+          "title_zh": "古巴动物园庆祝孟加拉虎出生",
+          "summary_zh": "古巴动物园在能源危机中庆祝孟加拉虎幼崽出生。",
+          "region": "global",
+          "score": 0.6,
           "date": "2026-07-06",
           "sources": [
             {
-              "title": "Chinese government tells critics not to ‘overinterpret’ miss",
-              "url": "https://www.theguardian.com/world/2026/jul/07/chinese-government-tells-critics-not-to-overinterpret-",
+              "title": "Cuban zoo celebrates birth of Bengal tigers amid energy cris",
+              "url": "https://www.theguardian.com/world/2026/jul/06/cuban-zoo-celebrates-birth-of-bengal-tigers-amid-energ",
               "source": "The Guardian",
               "published_at": "2026-07-06"
             }
           ]
         },
         {
-          "title_zh": "台风梅莎克致2死数千撤离",
-          "summary_zh": "台风梅莎克在中国造成两人死亡，数千人被迫疏散。",
+          "title_zh": "中国风暴致伤亡",
+          "summary_zh": "中国严重风暴带来龙卷风和山体滑坡，造成死亡。",
           "region": "cn",
           "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Typhoon Maysak kills two and forces thousands to evacuate in",
-              "url": "https://www.theguardian.com/world/2026/jul/06/typhoon-maysak-kills-two-and-forces-thousands-to-evacu",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国在南太平洋试射导弹",
-          "summary_zh": "中国在南太平洋测试远程导弹，引发澳大利亚关注。",
-          "region": "cn",
-          "score": 0.4,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "China tests long-range missile in South Pacific in move Aust",
-              "url": "https://www.theguardian.com/world/2026/jul/06/china-missile-test-south-pacific",
-              "source": "The Guardian",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "AI芯片推动三星利润飙升",
-          "summary_zh": "AI芯片需求激增使三星利润增长1800%。",
-          "region": "global",
-          "score": 0.9,
           "date": "2026-07-07",
           "sources": [
             {
-              "title": "AI chip boom lifts Samsung profits by 1,800%",
-              "url": "https://www.bbc.co.uk/news/articles/c1kyy8yrpxdo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
+              "title": "Severe storms in China bring tornadoes and landslides that h",
+              "url": "https://www.theguardian.com/world/2026/jul/07/china-severe-storms-death-toll-xi-jinping-rescue-effor",
+              "source": "The Guardian",
               "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 3,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "拜占庭古城",
-        "苏丹",
-        "古巴停电",
-        "中国台风",
-        "加拿大潜艇"
+        "猫薄荷",
+        "马斯克",
+        "古巴",
+        "中国",
+        "台风"
       ],
-      "deduped_count": 1,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2374,155 +2404,155 @@
         "Thailand Malaysia electronics",
         "ASEAN trade manufacturing China"
       ],
-      "brief_zh": "今日新闻涵盖全球热点：乌克兰导弹短缺致23人死亡；法国野火疏散万人；全球人口贩卖逮捕超千人；斯里兰卡监狱骚乱26死；中国机器人出租车能否复制电动车成功；C罗世界杯生涯结束等。",
+      "brief_zh": "今日国际新闻聚焦：美国对伊朗发动空袭、法国勒庞宣布参选总统、北约面临特朗普挑战、中国官员因受贿被判处死刑、中国中部遭遇罕见龙卷风等。地缘政治紧张加剧，全球供应链风险上升。",
       "events": [
         {
-          "title_zh": "乌克兰导弹短缺致23人死亡",
-          "summary_zh": "乌克兰警告拦截导弹短缺，23人在袭击中丧生。",
-          "region": "cn",
+          "title_zh": "美国对伊朗发动空袭",
+          "summary_zh": "霍尔木兹海峡油轮遇袭后，美国对伊朗目标实施打击。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "US launches strikes on Iran after tankers hit in Strait of H",
+              "url": "https://www.bbc.co.uk/news/articles/cwykq59jwpvo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "勒庞宣布竞选法国总统",
+          "summary_zh": "法国极右翼领导人勒庞宣布参选总统并上诉定罪。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Marine Le Pen to run for French presidency and appeal convic",
+              "url": "https://www.bbc.co.uk/news/articles/c7vygl3zymjo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "北约面临特朗普再武装挑战",
+          "summary_zh": "特朗普影响力笼罩北约，联盟在重新武装问题上陷入困境。",
+          "region": "global",
           "score": 0.8,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Ukraine warns of interceptor missile shortage as 23 killed i",
-              "url": "https://www.bbc.co.uk/news/articles/cewqqnd7zdwo?at_medium=RSS&at_campaign=rss",
+              "title": "Trump looms large as Nato grapples with challenge of rearmin",
+              "url": "https://www.bbc.co.uk/news/articles/ckg06d3dgnlo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "法国南部野火疏散万人",
-          "summary_zh": "法国南部野火迫使1万人撤离，火势持续蔓延。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Wildfire in southern France forces evacuation of 10,000 peop",
-              "url": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "全球人口贩卖逮捕超千人",
-          "summary_zh": "全球人口贩卖行动逮捕超1000人，打击跨国犯罪。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "More than 1,000 arrested as part of global human trafficking",
-              "url": "https://www.bbc.co.uk/news/articles/c5yzzzdwqjko?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "斯里兰卡监狱骚乱26死",
-          "summary_zh": "斯里兰卡监狱骚乱致26人死亡，超100人受伤。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Sri Lanka prison riots leave 26 dead and more than 100 injur",
-              "url": "https://www.bbc.co.uk/news/articles/cvg77klne3yo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国机器人出租车能否复制电动车成功",
-          "summary_zh": "探讨中国机器人出租车能否像电动车一样取得全球成功。",
+          "title_zh": "中国官员受贿被判死刑",
+          "summary_zh": "中国一名官员因收受3.25亿美元贿赂被判处死刑。",
           "region": "cn",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Can China repeat its EV success with robotaxis?",
-              "url": "https://www.bbc.co.uk/news/articles/cvgl8dlxjd3o?at_medium=RSS&at_campaign=rss",
+              "title": "China sentences official to death for taking $325m in bribes",
+              "url": "https://www.bbc.co.uk/news/articles/c33y0n1v1xjo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "C罗世界杯生涯结束",
-          "summary_zh": "C罗确认最后一届世界杯结束，葡萄牙被西班牙淘汰。",
-          "region": "global",
+          "title_zh": "中国中部遭遇罕见龙卷风",
+          "summary_zh": "罕见龙卷风袭击中国中部城市，造成破坏。",
+          "region": "cn",
           "score": 0.5,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Ronaldo says his last World Cup is over but Portugal decisio",
-              "url": "https://www.aljazeera.com/sports/2026/7/6/ronaldo-says-his-last-world-cup-is-over-but-portugal-decis",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-06"
+              "title": "Watch: Moment rare tornado lashes central Chinese cities",
+              "url": "https://www.bbc.co.uk/news/videos/cq61d22ved2o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "苏丹冲突致5500儿童流离失所",
-          "summary_zh": "苏丹埃尔奥贝德战斗导致超5500名儿童流离失所。",
+          "title_zh": "大马士革爆炸致18人受伤",
+          "summary_zh": "马克龙访问期间，大马士革发生炸弹爆炸，18人受伤。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Over 5,500 children displaced by fighting in Sudan’s el-Obei",
-              "url": "https://www.aljazeera.com/news/2026/7/6/over-5500-children-displaced-by-fighting-in-sudans-el-obeid-",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-06"
+              "title": "Bomb explosions injure 18 in Damascus during Macron's visit",
+              "url": "https://www.bbc.co.uk/news/articles/c2eylx1jj9ko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "美国民主党撤回对普拉特纳支持",
-          "summary_zh": "美国主要民主党人在袭击后撤回对普拉特纳的支持。",
+          "title_zh": "俄罗斯导弹再次袭击基辅",
+          "summary_zh": "俄罗斯导弹第三次袭击乌克兰首都基辅。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
+          "score": 0.8,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Leading US Democrats withdraw support for Platner after assa",
-              "url": "https://www.aljazeera.com/news/2026/7/6/leading-us-democrats-withdraw-support-for-platner-after-assa",
+              "title": "Russian missiles strike Ukraine’s capital, Kyiv, for third t",
+              "url": "https://www.aljazeera.com/news/2026/7/7/russian-missile-strikes-hit-ukraines-capital-kyiv-for-third-",
               "source": "Al Jazeera",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "特朗普确认要求FIFA审查巴洛贡禁赛",
-          "summary_zh": "特朗普确认已要求国际足联审查巴洛贡的禁赛决定。",
+          "title_zh": "加沙医生遭以色列殴打",
+          "summary_zh": "律师称被拘留的加沙医生在以色列遭受严重殴打。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Lawyer says detained Gaza doctor was severely beaten in Isra",
+              "url": "https://www.bbc.co.uk/news/articles/c07yy3pgrlmo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度罗摩神庙改组董事会",
+          "summary_zh": "印度标志性罗摩神庙在涉嫌盗窃后改组董事会。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Trump confirms he asked Fifa to review Balogun ban",
-              "url": "https://www.bbc.co.uk/sport/football/articles/c1myykx0gmxo?at_medium=RSS&at_campaign=rss",
+              "title": "India's landmark Ram temple overhauls board after alleged th",
+              "url": "https://www.bbc.co.uk/news/articles/c872ngz405xo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "澳大利亚总理为不当言论道歉",
-          "summary_zh": "澳大利亚总理就关于某话题的不当言论道歉。",
+          "title_zh": "瑞士对阵阿根廷世界杯八强",
+          "summary_zh": "瑞士在世界杯四分之一决赛中迎战阿根廷。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
+          "score": 0.3,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Australian PM apologises for 'inappropriate' comments about ",
-              "url": "https://www.bbc.co.uk/news/articles/cr477en6w3go?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-06"
+              "title": "Switzerland face Argentina in World Cup quarterfinal after b",
+              "url": "https://www.aljazeera.com/sports/2026/7/7/switzerland-face-argentina-in-world-cup-quarterfinal-after",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-07"
             }
           ]
         }
@@ -2532,11 +2562,11 @@
       "sentiment": "negative",
       "sentiment_score": 0.35,
       "keywords": [
-        "乌克兰",
-        "人口贩卖",
-        "野火",
-        "监狱骚乱",
-        "机器人出租车"
+        "美国空袭伊朗",
+        "法国大选",
+        "北约",
+        "中国反腐",
+        "龙卷风"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -2551,171 +2581,177 @@
         "Starlink satellite constellation",
         "China space station moon"
       ],
-      "brief_zh": "2026年7月6日科技新闻涵盖AI勒索攻击、SK海力士投资、Siri定制、科技裁员、Bookshop.org支持Kobo、Google AI训练退出、Apple印度支付、微软裁员、Reddit用LLM解决问题、加拿大间谍机构黑客行动、WhatsApp用户名、Station F AI初创、智能眼镜估值、人形机器人IPO、世界杯科学、宾利电动车、键盘评测、索尼电视及地球不会被太阳吞噬等。",
+      "brief_zh": "今日科技新闻聚焦AI领域，Meta推出新AI图像生成器Muse，微软加入AI降本趋势，Discord承认AI审核误封用户，Anthropic将Claude Cowork扩展至移动端。此外，Google Pixel发布会定档8月12日，Figma收购编程应用团队，Netflix尝试短视频，X新增视频编辑器。安全方面，美国陆军网站遭黑客攻击，2026年数据泄露事件盘点。",
       "events": [
         {
-          "title_zh": "AI勒索攻击仍需人类参与",
-          "summary_zh": "首次AI勒索攻击仍需人类协助，凸显AI局限性。",
+          "title_zh": "Meta推出AI图像生成器Muse",
+          "summary_zh": "Meta发布新AI图像生成器Muse，可基于用户照片生成内容。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
+          "score": 0.8,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "The ‘first’ AI-run ransomware attack still needed a human",
-              "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+              "title": "Meta rolls out Muse, a new AI image generator",
+              "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "美国投资者将获SK海力士投资",
-          "summary_zh": "美国投资者即将获得SK海力士等内存制造商投资机会。",
+          "title_zh": "微软加入AI降本趋势",
+          "summary_zh": "微软通过更多依赖自有模型来降低AI成本，加入行业趋势。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "US investors will soon get access to SK Hynix, another memor",
-              "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker",
+              "title": "Microsoft joins AI cost-cutting trend by relying more on its",
+              "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-m",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Vercel CEO讨论模型拆分",
-          "summary_zh": "Vercel CEO Guillermo Rauch讨论从AI中拆分模型的斗争。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Vercel CEO Guillermo Rauch on the fight to split off models ",
-              "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Siri可自定义语速和表达",
-          "summary_zh": "最新iOS更新允许用户自定义Siri的语速和表达方式。",
+          "title_zh": "Discord AI审核误封用户",
+          "summary_zh": "Discord承认AI审核系统存在漏洞，错误封禁了用户账号。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "You can now customize Siri’s pace and expressivity in the la",
-              "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-io",
+              "title": "Discord admits AI moderation bug wrongfully banned users ove",
+              "url": "https://techcrunch.com/2026/07/07/discord-admits-ai-moderation-bug-wrongfully-banned-users-over-harm",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "2026年科技裁员因AI",
-          "summary_zh": "2026年主要科技裁员中，AI被列为原因之一。",
+          "title_zh": "Google Pixel发布会定档8月12日",
+          "summary_zh": "Google宣布Pixel系列新品发布会将于8月12日举行。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Every major tech layoff in 2026 that has name-checked AI",
-              "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Bookshop.org支持Kobo阅读器",
-          "summary_zh": "亚马逊竞争对手Bookshop.org宣布将支持Kobo电子阅读器。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Amazon competitor Bookshop.org says Kobo eReader support wil",
-              "url": "https://techcrunch.com/2026/07/06/amazon-competitor-bookshop-org-says-kobo-e-reader-support-will-hap",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Google AI训练可退出",
-          "summary_zh": "用户使用Google即训练其AI，现可退出。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "If you use Google, you’re training its AI. Here’s how to opt",
-              "url": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Apple恢复印度卡支付",
-          "summary_zh": "Apple在印度恢复Apple账户购买的卡支付功能。",
-          "region": "cn",
           "score": 0.7,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Apple brings back card payments for Apple Account purchases ",
-              "url": "https://techcrunch.com/2026/07/06/apple-brings-back-card-payments-for-apple-account-purchases-in-ind",
+              "title": "Google’s Pixel event is set for August 12",
+              "url": "https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "微软裁员近5000人",
-          "summary_zh": "微软在Xbox和商业销售部门裁员近5000人。",
+          "title_zh": "Figma收购编程应用团队",
+          "summary_zh": "Figma收购了vibe-coding应用背后的团队，扩展设计工具能力。",
           "region": "global",
-          "score": 0.2,
-          "date": "2026-07-06",
+          "score": 0.6,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Microsoft lays off nearly 5,000 employees across Xbox, comme",
-              "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa",
+              "title": "Figma acquires team behind a vibe-coding app",
+              "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "Reddit用LLM解决LLM问题",
-          "summary_zh": "Reddit使用LLM解决主要由LLM创建的问题。",
+          "title_zh": "Netflix尝试短视频内容",
+          "summary_zh": "Netflix推出新的短视频系列，探索更短的内容形式。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Reddit is using LLMs to solve a problem LLMs largely created",
-              "url": "https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/",
+              "title": "Netflix dabbles in shorter video content with its new set of",
+              "url": "https://techcrunch.com/2026/07/07/netflix-dabbles-in-shorter-video-content-with-its-new-set-of-publi",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Google's Pixel 11 launch event is set for August 12, with possible price increases",
+              "url": "https://arstechnica.com/gadgets/2026/07/googles-pixel-11-launch-event-is-set-for-august-12-with-possible-price-increases/",
+              "source": "Ars Technica",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国陆军网站遭黑客攻击",
+          "summary_zh": "黑客组织攻击并篡改美国陆军网站，抗议特朗普政策。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Hacktivists call out Trump by hacking and defacing US Army w",
+              "url": "https://techcrunch.com/2026/07/07/hacktivists-call-out-trump-by-hacking-and-defacing-us-army-website",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "冥王星和土卫六发现神秘化合物",
+          "summary_zh": "科学家在冥王星和土卫六上检测到一种未知化合物。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Mysterious Compound Detected on Pluto and Titan",
+              "url": "https://www.wired.com/story/mysterious-compound-detected-on-pluto-and-titan/",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Anthropic推出Claude Cowork移动版",
+          "summary_zh": "Anthropic将AI助手Claude Cowork扩展至手机和网页端。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-cla",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Solos推出带隐私保护智能眼镜",
+          "summary_zh": "Solos发布新款智能眼镜，配备隐私屏蔽功能保护摄像头。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "These New Smart Glasses From Solos Come With a Privacy Shiel",
+              "url": "https://www.wired.com/story/these-new-smart-glasses-from-solos-come-with-a-privacy-shield-for-the-ca",
+              "source": "Wired",
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
-        "科技",
-        "裁员",
-        "投资",
-        "智能眼镜"
+        "Meta",
+        "微软",
+        "Google",
+        "数据安全"
       ],
-      "deduped_count": 0,
+      "deduped_count": 1,
       "raw_count": 45
     },
     {
@@ -2728,177 +2764,189 @@
         "gene editing CRISPR biotechnology",
         "superconductor material science"
       ],
-      "brief_zh": "2026年7月6日科技新闻：AI勒索攻击仍需人类参与；SK海力士向美投资者开放；Vercel CEO谈模型拆分；Siri可定制语速；2026年AI相关裁员汇总；Bookshop.org支持Kobo；谷歌用户数据训练AI可退出；苹果恢复印度信用卡支付；微软裁员5000人；Reddit用LLM解决LLM问题；加拿大间谍机构黑客行动；WhatsApp用户名功能；Station F孵化欧洲AI初创；智能眼镜公司Even Realities估值10亿美元；人形机器人公司上市；FCC废除ISP定价规则；俄无人机疑飞越欧洲；最古老美国太空物品；NRC修改辐射标准；Katalyst卫星救援任务。",
+      "brief_zh": "2026年7月7日，前沿科技领域动态：Meta推出AI图像生成器Muse，并允许用户照片用于AI训练；Anthropic发布Claude Cowork移动版；OpenAI首席未来学家离职；微软加入AI降本趋势；Figma收购编码应用团队；AI法律初创Norm估值达独角兽；Discord承认AI审核误封用户；X推出视频编辑器；谷歌Pixel发布会定档8月12日；黑客攻击美国陆军网站。",
       "events": [
         {
-          "title_zh": "AI勒索攻击仍需人类参与",
-          "summary_zh": "首次AI驱动的勒索软件攻击仍需人类操作，显示AI尚未完全自主。",
+          "title_zh": "Meta推出AI图像生成器Muse",
+          "summary_zh": "Meta发布新AI图像生成器Muse，并允许用户照片用于AI训练。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
+          "score": 0.9,
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "The ‘first’ AI-run ransomware attack still needed a human",
-              "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+              "title": "Meta rolls out Muse, a new AI image generator",
+              "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "SK海力士向美投资者开放",
-          "summary_zh": "美国投资者将很快获得SK海力士等内存制造商的投资机会。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "US investors will soon get access to SK Hynix, another memor",
-              "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Vercel CEO谈模型拆分",
-          "summary_zh": "Vercel CEO讨论从AI平台拆分模型的斗争，强调开放生态。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Vercel CEO Guillermo Rauch on the fight to split off models ",
-              "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "Siri可定制语速和表达",
-          "summary_zh": "最新iOS更新允许用户自定义Siri的语速和表达方式。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "You can now customize Siri’s pace and expressivity in the la",
-              "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-io",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "2026年AI相关裁员汇总",
-          "summary_zh": "2026年多家科技公司因AI原因裁员，微软裁员近5000人。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "Every major tech layoff in 2026 that has name-checked AI",
-              "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             },
             {
-              "title": "Microsoft lays off nearly 5,000 employees across Xbox, comme",
-              "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "title": "Meta Now Lets Anyone Use Your Instagram Photos in AI Images—",
+              "url": "https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-o",
+              "source": "Wired",
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "谷歌用户数据训练AI可退出",
-          "summary_zh": "谷歌用户可退出数据用于AI训练，保护隐私。",
+          "title_zh": "Anthropic发布Claude Cowork移动版",
+          "summary_zh": "Anthropic将Claude Cowork代理扩展到手机和网页端。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-cla",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Shut Those Laptops! Anthropic Puts Its Claude Cowork Agent o",
+              "url": "https://www.wired.com/story/shut-those-laptops-anthropic-puts-its-claude-cowork-agent-on-your-phone/",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI首席未来学家离职",
+          "summary_zh": "OpenAI首席未来学家Joshua Achiam离开公司。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "OpenAI’s Chief Futurist Is Leaving the Company",
+              "url": "https://www.wired.com/story/openai-chief-futurist-joshua-achiam-is-leaving-the-company/",
+              "source": "Wired",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "微软加入AI降本趋势",
+          "summary_zh": "微软通过更多依赖自身模型来降低AI成本。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Microsoft joins AI cost-cutting trend by relying more on its",
+              "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-m",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Figma收购编码应用团队",
+          "summary_zh": "Figma收购了vibe-coding应用背后的团队。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "If you use Google, you’re training its AI. Here’s how to opt",
-              "url": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
+              "title": "Figma acquires team behind a vibe-coding app",
+              "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
             }
           ]
         },
         {
-          "title_zh": "苹果恢复印度信用卡支付",
-          "summary_zh": "苹果在印度恢复Apple Account购买的信用卡支付功能。",
-          "region": "cn",
+          "title_zh": "AI法律初创Norm估值达独角兽",
+          "summary_zh": "AI法律初创公司Norm融资1.2亿美元，估值达独角兽。",
+          "region": "global",
           "score": 0.7,
-          "date": "2026-07-06",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "Apple brings back card payments for Apple Account purchases ",
-              "url": "https://techcrunch.com/2026/07/06/apple-brings-back-card-payments-for-apple-account-purchases-in-ind",
+              "title": "AI law startup Norm raises $120M, hits unicorn valuation",
+              "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/",
               "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "智能眼镜公司估值10亿美元",
-          "summary_zh": "智能眼镜制造商Even Realities获1.5亿美元融资，估值达10亿美元。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-06",
-          "sources": [
+              "published_at": "2026-07-07"
+            },
             {
-              "title": "Smart glasses maker Even Realities hits $1B valuation with $",
-              "url": "https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-fun",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "人形机器人公司上市",
-          "summary_zh": "一家人形机器人公司即将上市，但CEO未公开露面。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "This humanoid robotics company is going public, but its CEO ",
-              "url": "https://techcrunch.com/2026/07/05/this-humanoid-robotics-company-is-going-public-but-its-ceo-isnt-pr",
-              "source": "TechCrunch",
-              "published_at": "2026-07-06"
-            }
-          ]
-        },
-        {
-          "title_zh": "FCC废除ISP定价规则",
-          "summary_zh": "FCC将结束拜登时代要求ISP列出所有定价的规则。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-06",
-          "sources": [
-            {
-              "title": "FCC to end Biden-era rule that forces ISPs to list all their",
-              "url": "https://arstechnica.com/tech-policy/2026/07/fcc-to-end-biden-era-rule-that-forces-isps-to-list-all-t",
+              "title": "Google's Pixel 11 launch event is set for August 12, with possible price increases",
+              "url": "https://arstechnica.com/gadgets/2026/07/googles-pixel-11-launch-event-is-set-for-august-12-with-possible-price-increases/",
               "source": "Ars Technica",
-              "published_at": "2026-07-06"
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "Discord承认AI审核误封用户",
+          "summary_zh": "Discord承认AI审核漏洞错误封禁用户。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Discord admits AI moderation bug wrongfully banned users ove",
+              "url": "https://techcrunch.com/2026/07/07/discord-admits-ai-moderation-bug-wrongfully-banned-users-over-harm",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "X推出视频编辑器",
+          "summary_zh": "X平台新增视频编辑器以鼓励创作者发布原创内容。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "X adds a video editor to encourage creators to post original",
+              "url": "https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-conte",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌Pixel发布会定档8月12日",
+          "summary_zh": "谷歌Pixel活动定于8月12日举行。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Google’s Pixel event is set for August 12",
+              "url": "https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
+            }
+          ]
+        },
+        {
+          "title_zh": "黑客攻击美国陆军网站",
+          "summary_zh": "黑客活动分子入侵并篡改美国陆军网站以抗议特朗普。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-07",
+          "sources": [
+            {
+              "title": "Hacktivists call out Trump by hacking and defacing US Army w",
+              "url": "https://techcrunch.com/2026/07/07/hacktivists-call-out-trump-by-hacking-and-defacing-us-army-website",
+              "source": "TechCrunch",
+              "published_at": "2026-07-07"
             }
           ]
         }
       ],
-      "cn_count": 2,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
-        "裁员",
-        "科技",
-        "网络安全",
-        "太空"
+        "Meta",
+        "Anthropic",
+        "OpenAI",
+        "微软"
       ],
-      "deduped_count": 0,
+      "deduped_count": 1,
       "raw_count": 45
     },
     {
@@ -2906,199 +2954,115 @@
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "arXiv发布20篇最新研究，涵盖AI可控模拟器、4D生成、扩散模型、LLM安全监控、量子混沌等前沿领域，技术进展积极。",
+      "brief_zh": "AI领域出现多则新闻：机器学习在超导体发现中加速应用，但AI和ML出版物质量存在不稳定性，同时发现机器学习用于科学研究的缺陷，以及2026年十大AI编程语言推荐。",
       "events": [
         {
-          "title_zh": "WorldDirector：构建可控世界模拟器",
-          "summary_zh": "提出新框架实现AI世界模拟器的可控性，推动仿真技术发展。",
+          "title_zh": "AI与机器学习出版物质量不稳定",
+          "summary_zh": "研究指出AI和机器学习出版物质量存在不稳定性问题。",
           "region": "global",
-          "score": 0.8,
-          "date": "2026-07-02",
+          "score": 0.6,
+          "date": "2026-07-03",
           "sources": [
             {
-              "title": "WorldDirector: Building Controllable World Simulators with P",
-              "url": "http://arxiv.org/abs/2607.02517v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
+              "title": "Instability in AI and machine learning publication quality",
+              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1MMy16ODlUQV9mbnBNamdNM1dmcFVDRzBlckdzd2xsY2MxQU1",
+              "source": "University World New",
+              "published_at": "2026-07-03"
             }
           ]
         },
         {
-          "title_zh": "X-to-4D生成：对齐即一切",
-          "summary_zh": "提出对齐方法实现任意输入到4D内容生成，提升生成质量。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "Alignment Is All You Need For X-to-4D Generation",
-              "url": "http://arxiv.org/abs/2607.02516v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "PointDiT：像素空间扩散单目几何估计",
-          "summary_zh": "利用扩散模型在像素空间进行单目几何估计，提升深度感知精度。",
+          "title_zh": "研究人员用AI加速超导体发现",
+          "summary_zh": "研究人员利用AI技术加速超导体的发现过程。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-02",
+          "date": "2026-07-07",
           "sources": [
             {
-              "title": "PointDiT: Pixel-Space Diffusion for Monocular Geometry Estim",
-              "url": "http://arxiv.org/abs/2607.02515v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
+              "title": "Researchers Use AI to Accelerate Superconductor Discovery",
+              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZ0NWMXZMbEVqQk9sd3E2SVZGeWdmZHB4UEhfQTVEbFZwcy1",
+              "source": "Let's Data Science",
+              "published_at": "2026-07-07"
+            },
+            {
+              "title": "Researchers Use AI to Compare Water Structural Descriptors - Let's Data Science",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdjhlMkZUX3AtYVJYUkJxbFc2RC1ibk9sZHZTRlhhTGozTG9JbU5Ca3VCSnRrU2lpMW0xMEFueWRoMXM1MTZaUzJ6NFd5aHItcWdPMFMweTl1a19jTEo1RE5vS1RQRVNUSjNPbnU3dzloVHFwemZNblpteWU4RXk1TGpZa3VsRUdZRlFtMWFnSDl4YnBHcExUcnRxX2pNVlc0R2c?oc=5",
+              "source": "Let's Data Science",
+              "published_at": "2026-07-06"
             }
           ]
         },
         {
-          "title_zh": "持久状态AI控制中的分布式攻击",
-          "summary_zh": "研究AI系统中分布式攻击的威胁，提出安全防护新思路。",
+          "title_zh": "机器学习用于科学发现存在缺陷",
+          "summary_zh": "研究发现机器学习在科学应用中存在缺陷，需进行AI检查。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-02",
+          "date": "2026-06-11",
           "sources": [
             {
-              "title": "Distributed Attacks in Persistent-State AI Control",
-              "url": "http://arxiv.org/abs/2607.02514v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
+              "title": "Time for an AI checkup: Flaw found in machine learning for s",
+              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOE4zbHpuWEZLaFNpWWdqVldBSVA0RjQyUnRWbWF6UXdhU0F",
+              "source": "Emory News",
+              "published_at": "2026-06-11"
             }
           ]
         },
         {
-          "title_zh": "LACUNA：评估定位精度的测试平台",
-          "summary_zh": "开发新测试平台用于评估定位精度，助力机器人导航研究。",
+          "title_zh": "2026年十大AI编程语言推荐",
+          "summary_zh": "推荐2026年应学习的十大AI编程语言。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-02",
+          "date": "2026-06-11",
           "sources": [
             {
-              "title": "LACUNA: A Testbed for Evaluating Localization Precision for ",
-              "url": "http://arxiv.org/abs/2607.02513v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "程序即权重：模糊函数编程范式",
-          "summary_zh": "提出新编程范式将程序视为权重，优化模糊函数计算。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functio",
-              "url": "http://arxiv.org/abs/2607.02512v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "LLM在线安全监控方法",
-          "summary_zh": "提出在线安全监控技术，实时检测大语言模型风险行为。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "Online Safety Monitoring for LLMs",
-              "url": "http://arxiv.org/abs/2607.02510v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "ReContext：递归证据回放增强LLM长上下文",
-          "summary_zh": "利用递归证据回放机制提升LLM处理长上下文能力。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "ReContext: Recursive Evidence Replay as LLM Harness for Long",
-              "url": "http://arxiv.org/abs/2607.02509v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "从SRA到自流：数据增强与自监督对比",
-          "summary_zh": "比较数据增强与自监督方法，优化模型训练效率。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "From SRA to Self-Flow: Data Augmentation or Self-Supervision",
-              "url": "http://arxiv.org/abs/2607.02508v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
-            }
-          ]
-        },
-        {
-          "title_zh": "LLM代理社交结构研究",
-          "summary_zh": "分析LLM代理在无监督下的社交结构形成，探索群体行为。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-02",
-          "sources": [
-            {
-              "title": "What LLM Agents Say When No One Is Watching: Social Structur",
-              "url": "http://arxiv.org/abs/2607.02507v1",
-              "source": "arXiv",
-              "published_at": "2026-07-02"
+              "title": "Top 10 AI Programming Languages You Should Learn in 2026",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5yVk9jLTIzNEx4VGRUT21UT0VRakJDT1Q5NDg3WWRFcERWd21",
+              "source": "iSchool | Syracuse U",
+              "published_at": "2026-06-11"
             }
           ]
         }
       ],
       "cn_count": 0,
-      "total_count": 10,
-      "sentiment": "positive",
-      "sentiment_score": 0.7,
+      "total_count": 4,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
       "keywords": [
-        "AI模拟器",
-        "4D生成",
-        "扩散模型",
-        "LLM安全",
-        "量子混沌"
+        "AI",
+        "机器学习",
+        "超导体",
+        "出版物质量",
+        "编程语言"
       ],
-      "deduped_count": 0,
-      "raw_count": 20
+      "deduped_count": 1,
+      "raw_count": 5
     }
   ],
   "top5": [
     {
-      "title": "中国测试远程导弹引发关注",
-      "summary": "中国在南太平洋测试远程导弹，引发澳大利亚等国的关切。此举可能加剧地区紧张局势，影响地缘政治稳定，决策者需评估对国际关系和军事平衡的潜在冲击。",
-      "action": "加强外交沟通，评估安全风险。"
+      "title": "中国电动车成功经验或推动无人驾驶出租车发展",
+      "summary": "中国电动车领域的成功经验可能被复制到无人驾驶出租车领域，这将加速相关技术研发和商业化进程，对投资者和车企而言，需关注政策支持与市场接受度，以把握行业转型机遇。",
+      "action": "关注无人驾驶出租车政策与投资机会"
     },
     {
-      "title": "美国陆军打破中国稀土垄断",
-      "summary": "美国陆军采取历史性步骤减少对中国稀土供应的依赖，旨在保障关键材料供应链安全。这将对全球稀土市场格局产生深远影响，决策者需关注供应链多元化趋势。",
-      "action": "推动国内稀土产业多元化发展。"
+      "title": "中国官员受贿3.25亿美元被判死刑",
+      "summary": "一名中国官员因巨额受贿被判处死刑，显示反腐力度持续加强，可能影响企业合规环境，决策者需加强内部监管，避免涉足高风险领域。",
+      "action": "加强企业合规审查，规避腐败风险"
     },
     {
-      "title": "微软裁员近5000人",
-      "summary": "微软在Xbox和商业销售部门裁员近5000人，并出售四个Xbox工作室，反映科技行业调整。此举可能影响市场信心和就业，决策者需关注行业动态和人才流动。",
-      "action": "关注科技行业裁员趋势，调整人才策略。"
+      "title": "美国对伊朗发动空袭，中东局势紧张",
+      "summary": "霍尔木兹海峡油轮遇袭后，美国对伊朗实施空袭，导致伊朗南部爆炸，地缘政治风险上升，可能影响全球油价和供应链稳定，决策者需评估能源依赖和避险策略。",
+      "action": "评估能源供应链风险，调整投资组合"
     },
     {
-      "title": "AI芯片推动三星利润飙升",
-      "summary": "AI芯片需求激增使三星利润增长1800%，显示AI技术对半导体行业的巨大推动力。决策者应抓住AI发展机遇，加大相关产业投资。",
-      "action": "加大AI芯片研发和产业布局。"
+      "title": "AI法律初创Norm获1.2亿美元融资",
+      "summary": "AI法律初创公司Norm完成1.2亿美元融资，估值达独角兽，表明AI在法律领域应用前景广阔，投资者可关注相关技术商业化机会，企业可探索AI提升法律效率。",
+      "action": "探索AI法律工具投资与合作机会"
     },
     {
-      "title": "三星利润因AI芯片飙升1800%",
-      "summary": "AI芯片需求推动三星利润大幅增长1800%，凸显AI芯片市场的强劲增长。决策者需评估AI技术对经济的影响，并制定相应战略。",
-      "action": "评估AI芯片市场机遇，制定投资计划。"
+      "title": "美国对伊朗发动空袭（重复）",
+      "summary": "重复新闻，强调中东冲突升级，霍尔木兹海峡安全受威胁，可能引发全球市场波动，决策者需密切关注事态发展，制定应急计划。",
+      "action": "监控中东局势，准备应急方案"
     }
   ],
   "meta": {
