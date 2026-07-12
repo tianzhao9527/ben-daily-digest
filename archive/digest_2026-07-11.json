@@ -1,22 +1,21 @@
 {
   "date": "2026-07-11",
-  "generated_at_utc": "2026-07-11T00:03:32.380641+00:00",
-  "generated_at_bjt": "2026-07-11 08:03",
+  "generated_at_utc": "2026-07-12T00:01:11.149472+00:00",
+  "generated_at_bjt": "2026-07-12 08:01",
   "kpis": [
     {
       "id": "SP500",
       "name": "标普500",
       "unit": "",
-      "value": 7543.64,
-      "updated_at": "2026-07-09",
+      "value": 7575.39,
+      "updated_at": "2026-07-10",
       "source": "FRED",
-      "delta": 60.93000000000029,
-      "delta_pct": 0.8142771803263831,
+      "delta": 31.75,
+      "delta_pct": 0.4208843476093769,
       "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,26.15 L 5.41,21.35 L 7.82,15.03 L 10.23,25.31 L 12.64,25.92 L 15.05,31.40 L 17.46,22.60 L 19.87,21.19 L 22.28,18.11 L 24.69,13.05 L 27.10,12.91 L 29.51,8.12 L 31.92,6.29 L 34.33,4.09 L 36.74,3.00 L 39.15,9.22 L 41.56,5.82 L 43.97,28.06 L 46.38,25.62 L 48.79,27.74 L 51.21,41.00 L 53.62,26.89 L 56.03,22.77 L 58.44,9.15 L 60.85,13.91 L 63.26,24.03 L 65.67,15.11 L 68.08,18.19 L 70.49,30.08 L 72.90,30.89 L 75.31,30.97 L 77.72,31.35 L 80.13,21.77 L 82.54,15.24 L 84.95,17.03 L 87.36,17.03 L 89.77,11.02 L 92.18,14.74 L 94.59,17.09 L 97.00,10.33\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,21.35 L 5.41,15.03 L 7.82,25.31 L 10.23,25.92 L 12.64,31.40 L 15.05,22.60 L 17.46,21.19 L 19.87,18.11 L 22.28,13.05 L 24.69,12.91 L 27.10,8.12 L 29.51,6.29 L 31.92,4.09 L 34.33,3.00 L 36.74,9.22 L 39.15,5.82 L 41.56,28.06 L 43.97,25.62 L 46.38,27.74 L 48.79,41.00 L 51.21,26.89 L 53.62,22.77 L 56.03,9.15 L 58.44,13.91 L 60.85,24.03 L 63.26,15.11 L 65.67,18.19 L 68.08,30.08 L 70.49,30.89 L 72.90,30.97 L 75.31,31.35 L 77.72,21.77 L 80.13,15.24 L 82.54,17.03 L 84.95,17.03 L 87.36,11.02 L 89.77,14.74 L 92.18,17.09 L 94.59,10.33 L 97.00,6.81\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#34C759",
       "series_values": [
-        7400.96,
         7444.25,
         7501.24,
         7408.5,
@@ -55,23 +54,23 @@
         7537.43,
         7503.85,
         7482.71,
-        7543.64
+        7543.64,
+        7575.39
       ]
     },
     {
       "id": "NASDAQCOM",
       "name": "纳斯达克",
       "unit": "",
-      "value": 26206.89,
-      "updated_at": "2026-07-09",
+      "value": 26281.61,
+      "updated_at": "2026-07-10",
       "source": "FRED",
-      "delta": 336.23999999999796,
-      "delta_pct": 1.2996967606148202,
+      "delta": 74.72000000000116,
+      "delta_pct": 0.2851158607526538,
       "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,22.86 L 5.41,16.66 L 7.82,12.06 L 10.23,20.15 L 12.64,22.81 L 15.05,27.15 L 17.46,19.26 L 19.87,18.81 L 22.28,17.81 L 24.69,11.64 L 27.10,11.28 L 29.51,6.48 L 31.92,5.39 L 34.33,3.14 L 36.74,3.00 L 39.15,7.74 L 41.56,8.19 L 43.97,30.34 L 46.38,25.99 L 48.79,30.94 L 51.21,41.00 L 53.62,28.36 L 56.03,26.80 L 58.44,11.10 L 60.85,17.17 L 63.26,24.17 L 65.67,14.37 L 68.08,21.31 L 70.49,32.76 L 72.90,34.94 L 75.31,37.27 L 77.72,38.47 L 80.13,28.15 L 82.54,20.38 L 84.95,23.81 L 87.36,27.90 L 89.77,22.21 L 92.18,28.18 L 94.59,27.15 L 97.00,20.52\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,16.66 L 5.41,12.06 L 7.82,20.15 L 10.23,22.81 L 12.64,27.15 L 15.05,19.26 L 17.46,18.81 L 19.87,17.81 L 22.28,11.64 L 24.69,11.28 L 27.10,6.48 L 29.51,5.39 L 31.92,3.14 L 34.33,3.00 L 36.74,7.74 L 39.15,8.19 L 41.56,30.34 L 43.97,25.99 L 46.38,30.94 L 48.79,41.00 L 51.21,28.36 L 53.62,26.80 L 56.03,11.10 L 58.44,17.17 L 60.85,24.17 L 63.26,14.37 L 65.67,21.31 L 68.08,32.76 L 70.49,34.94 L 72.90,37.27 L 75.31,38.47 L 77.72,28.15 L 80.13,20.38 L 82.54,23.81 L 84.95,27.90 L 87.36,22.21 L 89.77,28.18 L 92.18,27.15 L 94.59,20.52 L 97.00,19.04\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#34C759",
       "series_values": [
-        26088.2,
         26402.34,
         26635.22,
         26225.14,
@@ -110,7 +109,8 @@
         26121.16,
         25818.69,
         25870.65,
-        26206.89
+        26206.89,
+        26281.61
       ]
     },
     {
@@ -1115,11 +1115,56 @@
         "USD CNY yuan exchange rate",
         "stock market index S&P Nasdaq"
       ],
-      "brief_zh": "全球市场动态：SK海力士纳斯达克上市融资265亿美元，Meta股价创年内最佳周表现，苹果起诉OpenAI窃密，欧盟威胁对Meta罚款，英国央行暗示可能加息，霍尔木兹海峡航运量大幅下降，易捷航空接受美国公司收购要约。",
+      "brief_zh": "本周全球市场聚焦多重事件：特朗普账户对儿童的影响、汽车排放丑闻澄清、易捷航空收购、SK海力士融资265亿美元、欧盟威胁对Meta罚款、霍尔木兹海峡航运下降、英国央行可能加息等。市场情绪偏中性，利率和汇率波动加剧，风险偏好受地缘政治和监管影响。",
       "events": [
         {
-          "title_zh": "SK海力士纳斯达克上市融资265亿美元",
-          "summary_zh": "芯片巨头SK海力士在纳斯达克上市，股价大涨，融资265亿美元。",
+          "title_zh": "特朗普账户对儿童影响",
+          "summary_zh": "BBC报道特朗普账户是否惠及美国儿童，引发社会讨论。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Will Trump Accounts deliver for American children?",
+              "url": "https://www.bbc.co.uk/news/articles/ckg55v9e2y9o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "主要车企未安装排放作弊装置",
+          "summary_zh": "调查显示主要汽车公司未安装排放作弊装置，利好行业声誉。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Major car firms found not to have installed emissions-cheati",
+              "url": "https://www.bbc.co.uk/news/articles/c0mye0d1297o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "易捷航空接受美国公司收购",
+          "summary_zh": "易捷航空同意美国竞争对手的意外收购要约，航空业整合加速。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "EasyJet agrees to surprise takeover bid as rival US firm swo",
+              "url": "https://www.bbc.co.uk/news/articles/cgjxqq9jg8yo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "SK海力士融资265亿美元",
+          "summary_zh": "芯片巨头SK海力士股价飙升，成功融资265亿美元，显示半导体需求强劲。",
           "region": "global",
           "score": 0.8,
           "date": "2026-07-10",
@@ -1129,50 +1174,14 @@
               "url": "https://www.bbc.co.uk/news/articles/c4gym70r0y4o?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-07-10"
-            },
-            {
-              "title": "SK Hynix’s stock sees double-digit pop in Nasdaq debut",
-              "url": "https://www.marketwatch.com/story/sk-hynixs-stock-looks-primed-for-a-pop-in-its-nasdaq-debut-3805437",
-              "source": "MarketWatch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Meta股价创年内最佳周表现",
-          "summary_zh": "Meta股价大幅反弹，创下年内最佳周表现，市场情绪回暖。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Meta’s stock roars back to life as it notches its best week",
-              "url": "https://www.marketwatch.com/story/metas-stock-roars-back-to-life-as-it-heads-for-its-best-week-in-ye",
-              "source": "MarketWatch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果起诉OpenAI窃取机密信息",
-          "summary_zh": "苹果对OpenAI提起诉讼，指控其窃取机密信息，涉及知识产权纠纷。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Apple sues OpenAI for alleged theft of confidential info",
-              "url": "https://www.marketwatch.com/story/apple-sues-openai-for-institutional-misconduct-and-alleges-thats-j",
-              "source": "MarketWatch",
-              "published_at": "2026-07-10"
             }
           ]
         },
         {
           "title_zh": "欧盟威胁对Meta罚款",
-          "summary_zh": "欧盟因Facebook和Instagram的“成瘾性”问题威胁对Meta处以罚款。",
+          "summary_zh": "欧盟因Facebook和Instagram成瘾问题威胁对Meta罚款，科技监管趋严。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.3,
           "date": "2026-07-10",
           "sources": [
             {
@@ -1184,8 +1193,23 @@
           ]
         },
         {
-          "title_zh": "英国央行暗示今年可能加息",
-          "summary_zh": "英国央行表示今年可能需要加息，以应对通胀压力。",
+          "title_zh": "霍尔木兹海峡航运大幅下降",
+          "summary_zh": "美国支持的霍尔木兹海峡石油、天然气和货船航运量大幅下降，地缘风险升温。",
+          "region": "global",
+          "score": 0.2,
+          "date": "2026-07-09",
+          "sources": [
+            {
+              "title": "Big fall in oil, gas and cargo ships taking US-backed Hormuz",
+              "url": "https://www.bbc.co.uk/news/articles/c621k5r8764o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国央行可能今年加息",
+          "summary_zh": "英国央行表示今年可能需要加息，以应对通胀压力，影响利率预期。",
           "region": "global",
           "score": 0.4,
           "date": "2026-07-09",
@@ -1199,40 +1223,10 @@
           ]
         },
         {
-          "title_zh": "霍尔木兹海峡航运量大幅下降",
-          "summary_zh": "美国支持的霍尔木兹海峡航线油轮、天然气船和货船数量大幅减少。",
+          "title_zh": "欧洲最大港口面临绿色压力",
+          "summary_zh": "欧洲最大港口鹿特丹面临环保压力，需加速绿色转型。",
           "region": "global",
-          "score": 0.3,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Big fall in oil, gas and cargo ships taking US-backed Hormuz",
-              "url": "https://www.bbc.co.uk/news/articles/c621k5r8764o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "易捷航空接受美国公司收购要约",
-          "summary_zh": "易捷航空同意接受一家美国公司的意外收购要约，交易金额未披露。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "EasyJet agrees to surprise takeover bid as rival US firm swo",
-              "url": "https://www.bbc.co.uk/news/articles/cgjxqq9jg8yo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧洲最大港口面临环保压力",
-          "summary_zh": "欧洲最大港口面临越来越大的环保压力，要求其减少碳排放。",
-          "region": "global",
-          "score": 0.4,
+          "score": 0.5,
           "date": "2026-07-09",
           "sources": [
             {
@@ -1244,10 +1238,10 @@
           ]
         },
         {
-          "title_zh": "电动汽车保险成本更高原因分析",
-          "summary_zh": "文章探讨电动汽车保险费用更高的原因及应对措施。",
+          "title_zh": "电动汽车保险成本高企",
+          "summary_zh": "电动汽车保险费用高于燃油车，行业正寻求解决方案。",
           "region": "global",
-          "score": 0.3,
+          "score": 0.4,
           "date": "2026-07-08",
           "sources": [
             {
@@ -1259,17 +1253,17 @@
           ]
         },
         {
-          "title_zh": "英国最大银行行长提供理财建议",
-          "summary_zh": "英国最大银行行长分享五种管理个人财务的方法。",
+          "title_zh": "AI财富分配争议",
+          "summary_zh": "市场观察文章指出用户数据推动AI繁荣，但科技巨头独占收益，呼吁公平分配。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-08",
+          "score": 0.3,
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "I run the UK's biggest bank, here are five ways to manage yo",
-              "url": "https://www.bbc.co.uk/news/articles/cd7wldr3prro?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-08"
+              "title": "Your data built the AI boom — but Big Tech is pocketing 100%",
+              "url": "https://www.marketwatch.com/story/your-share-of-the-ai-wealth-is-a-right-not-a-handout-here-is-how-w",
+              "source": "MarketWatch",
+              "published_at": "2026-07-11"
             }
           ]
         }
@@ -1277,13 +1271,13 @@
       "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
-      "sentiment_score": 0.45,
+      "sentiment_score": 0.5,
       "keywords": [
+        "特朗普",
+        "汽车排放",
+        "易捷航空",
         "SK海力士",
-        "Meta",
-        "苹果",
-        "OpenAI",
-        "欧盟"
+        "欧盟罚款"
       ],
       "deduped_count": 1,
       "raw_count": 45
@@ -1298,177 +1292,195 @@
         "China US trade tariffs",
         "export controls technology chips"
       ],
-      "brief_zh": "今日新闻涵盖西班牙野火、东亚台风、法国政治、祖鲁国王争议、ICE误杀、瑞安航空事故、新恐龙物种、苹果起诉OpenAI、中国可回收火箭成功着陆、乌克兰袭击俄舰、古巴停电、亚马逊森林保护等事件。",
+      "brief_zh": "本周第二场台风在中国登陆；伊朗宣布关闭霍尔木兹海峡；西班牙山火肆虐；特朗普政府传唤纽约时报记者；波兰总理承诺纪念二战受害者；美国民主党议员被以色列拘留；南非世界杯中场球员去世；尼日利亚解救被绑架儿童；越南快艇倾覆致15死；美国支付哈瓦那综合征受害者赔偿。",
       "events": [
         {
-          "title_zh": "西班牙南部野火致12死",
-          "summary_zh": "西班牙南部野火造成至少12人死亡，23人失踪。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Wildfire in southern Spain leaves at least 12 dead and 23 mi",
-              "url": "https://www.bbc.co.uk/news/articles/c8e2382jk7jo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "东亚台风致山体滑坡",
-          "summary_zh": "东亚地区为破坏性台风做准备，山体滑坡已致多人死亡。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "East Asia braces for destructive typhoon as landslides kill ",
-              "url": "https://www.bbc.co.uk/news/articles/c04y6wr03gxo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "勒庞副手巴德拉等待接班",
-          "summary_zh": "法国极右翼领袖勒庞的副手巴德拉被迫等待接班机会。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Forced to wait his turn, Marine Le Pen's deputy Bardella ret",
-              "url": "https://www.bbc.co.uk/news/articles/cn7558gdvjro?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "祖鲁国王因视频道歉",
-          "summary_zh": "祖鲁国王在视频中被拍到对他人发怒后表示遗憾。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Zulu king expresses regret after video captures tirade again",
-              "url": "https://www.bbc.co.uk/news/articles/cy8dl9n1v3vo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "ICE误杀休斯顿男子",
-          "summary_zh": "ICE在休斯顿误杀一名男子，非原定目标。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Man fatally shot by ICE in Houston was not intended target, ",
-              "url": "https://www.bbc.co.uk/news/articles/cm2rm66xd17o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果起诉OpenAI窃密",
-          "summary_zh": "苹果起诉OpenAI及其员工，指控盗窃商业机密。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Apple sues OpenAI, its employees claiming theft of trade sec",
-              "url": "https://www.bbc.co.uk/news/articles/cy8w379e091o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "Apple files lawsuit accusing ChatGPT maker OpenAI of stealin",
-              "url": "https://www.aljazeera.com/economy/2026/7/10/apple-files-lawsuit-accusing-chatgpt-maker-openai-of-ste",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国可回收火箭首降成功",
-          "summary_zh": "中国首次成功着陆可重复使用火箭，官方媒体称。",
+          "title_zh": "中国一周内遭遇第二场台风",
+          "summary_zh": "台风在中国登陆，带来强风暴雨。",
           "region": "cn",
           "score": 0.9,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "China lands reusable rocket for first time, state media says",
-              "url": "https://www.bbc.co.uk/news/articles/cm2rmmx86pdo?at_medium=RSS&at_campaign=rss",
+              "title": "China's second typhoon in a week makes landfall",
+              "url": "https://www.bbc.co.uk/news/articles/cdxd3wkp2rzo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-10"
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "乌克兰袭击克里米亚俄舰",
-          "summary_zh": "乌克兰袭击克里米亚附近的俄罗斯船只，升级攻击行动。",
+          "title_zh": "伊朗宣布关闭霍尔木兹海峡",
+          "summary_zh": "伊朗称霍尔木兹海峡无限期关闭，加剧地缘紧张。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-09",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Ukraine strikes Russian ships near Crimea, escalating attack",
-              "url": "https://www.bbc.co.uk/news/articles/c70yd1g67z5o?at_medium=RSS&at_campaign=rss",
+              "title": "Iran says Strait of Hormuz closed 'until further notice'",
+              "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-09"
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "古巴一周内第二次全岛停电",
-          "summary_zh": "古巴在特朗普政策下遭遇一周内第二次全岛停电。",
+          "title_zh": "西班牙山火致多人死亡",
+          "summary_zh": "西班牙努力控制致命山火，火势严峻。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Cuba suffers second island-wide blackout in a week amid Trum",
-              "url": "https://www.aljazeera.com/news/2026/7/10/cuba-suffers-second-island-wide-blackout-in-a-week-amid-tru",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
+              "title": "Spain battles to contain one of its deadliest wildfires as a",
+              "url": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "亚马逊森林砍伐降至新低",
-          "summary_zh": "在卢拉领导下，亚马逊森林砍伐降至历史最低水平。",
+          "title_zh": "特朗普政府传唤纽约时报记者",
+          "summary_zh": "特朗普政府因报道传唤纽约时报记者，引发争议。",
           "region": "global",
-          "score": 0.8,
-          "date": "2026-07-10",
+          "score": 0.6,
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Under Lula, Amazon deforestation falls to lowest level in a ",
-              "url": "https://www.aljazeera.com/news/2026/7/10/under-lula-amazon-deforestation-falls-to-lowest-level-in-a-",
+              "title": "Trump administration subpoenas New York Times journalists ov",
+              "url": "https://www.bbc.co.uk/news/articles/cpd3g8q51g7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "波兰总理承诺纪念二战受害者",
+          "summary_zh": "波兰总理承诺为二战乌克兰种族灭绝受害者建纪念碑。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Polish PM pledges memorial to victims of WW2 'genocide by Uk",
+              "url": "https://www.bbc.co.uk/news/articles/cze94x4361po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国民主党议员被以色列拘留",
+          "summary_zh": "美国民主党议员罗·卡纳称被以色列武装人员拘留。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "US Democrat Ro Khanna says he was detained by armed Israeli ",
+              "url": "https://www.bbc.co.uk/news/articles/c0qyk9jwq9no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非世界杯中场球员去世",
+          "summary_zh": "南非世界杯中场球员亚当斯25岁去世。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "South Africa World Cup midfielder Adams dies aged 25",
+              "url": "https://www.bbc.co.uk/sport/football/articles/cr47y5nvrqlo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "South Africa World Cup midfielder Adams dies aged 25",
+              "url": "https://www.aljazeera.com",
               "source": "Al Jazeera",
-              "published_at": "2026-07-10"
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "South Africa’s Jayden Adams, 25, dies after playing in FIFA World Cup",
+              "url": "https://www.aljazeera.com/sports/2026/7/11/south-africas-jayden-adams-25-dies-after-playing-in-fifa-world-cup?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚解救被绑架儿童",
+          "summary_zh": "尼日利亚解救40多名被绑架儿童和教师。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "More than 40 kidnapped children and teachers freed after Nig",
+              "url": "https://www.bbc.co.uk/news/articles/cly9lnjlp1eo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "越南快艇倾覆致15死",
+          "summary_zh": "越南快艇倾覆，包括印度游客在内15人死亡。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Indian tourists among 15 killed as speedboat capsizes in Vie",
+              "url": "https://www.bbc.co.uk/news/articles/cwyd7x22lp1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "Indian tourists among 15 killed as speedboat capsizes in Vie",
+              "url": "https://www.aljazeera.com",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "Indian tourists killed after speedboat capsizes in Vietnam",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/7/11/indian-tourists-killed-after-speedboat-capsizes-in-vietnam?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国支付哈瓦那综合征赔偿",
+          "summary_zh": "美国向哈瓦那综合征受害者支付300万美元赔偿。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "US pays out $3m to victims of mystery Havana Syndrome condit",
+              "url": "https://www.bbc.co.uk/news/articles/cr7xyl78vnko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
             }
           ]
         }
       ],
       "cn_count": 1,
       "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
       "keywords": [
-        "西班牙野火",
-        "中国火箭",
-        "苹果诉讼",
-        "乌克兰冲突",
-        "台风"
+        "台风",
+        "伊朗",
+        "霍尔木兹海峡",
+        "山火",
+        "特朗普"
       ],
-      "deduped_count": 0,
+      "deduped_count": 2,
       "raw_count": 45
     },
     {
@@ -1481,42 +1493,30 @@
         "large language model LLM",
         "generative AI enterprise business"
       ],
-      "brief_zh": "今日AI/大模型领域新闻聚焦：Meta因争议关闭Instagram AI功能；苹果起诉OpenAI窃取硬件机密；SK海力士创美国史上最大外资IPO；中国可重复使用火箭技术追赶马斯克；Disney+考虑推出免费流媒体层。",
+      "brief_zh": "本周AI与科技领域动态：OpenAI拓展家庭场景，苹果起诉OpenAI窃取商业机密，Meta移除争议AI功能，SK海力士创美国史上最大外资IPO，中国可重复使用火箭追赶马斯克，Oratomic获3亿美元量子计算融资。",
       "events": [
         {
-          "title_zh": "Meta关闭Instagram争议AI功能",
-          "summary_zh": "Meta因用户强烈反对，关闭了Instagram上允许用户创建AI角色的功能。",
+          "title_zh": "OpenAI押注家庭场景",
+          "summary_zh": "ChatGPT深入家庭，OpenAI瞄准家庭用户市场。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Meta turns off the Instagram feature that let users make AI",
-              "url": "https://www.theverge.com/tech/964416/meta-instagram-ai-muse-image-deepfakes",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "Meta removes controversial AI feature on Instagram after backlash",
-              "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+              "title": "OpenAI bets on families as ChatGPT goes deeper into househol",
+              "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
               "source": "TechCrunch",
-              "published_at": "2026-07-10"
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "苹果起诉OpenAI窃取硬件机密",
-          "summary_zh": "苹果指控OpenAI窃取其硬件商业秘密，已提起诉讼。",
+          "title_zh": "苹果起诉OpenAI窃密",
+          "summary_zh": "苹果指控OpenAI窃取商业机密，法律纠纷升级。",
           "region": "global",
           "score": 0.9,
           "date": "2026-07-10",
           "sources": [
-            {
-              "title": "Apple sues OpenAI for allegedly stealing hardware secrets",
-              "url": "https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
-            },
             {
               "title": "Apple sues OpenAI over alleged trade secret theft",
               "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
@@ -1526,35 +1526,29 @@
           ]
         },
         {
-          "title_zh": "SK海力士创美国史上最大外资IPO",
-          "summary_zh": "SK海力士通过IPO融资265亿美元，成为美国历史上最大的外国公司上市。",
+          "title_zh": "Meta移除争议AI功能",
+          "summary_zh": "Instagram因用户反对移除争议性AI功能。",
           "region": "global",
           "score": 0.7,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Nvidia's biggest RAM supplier just had a trillion-dollar",
-              "url": "https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US history",
-              "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-",
+              "title": "Meta removes controversial AI feature on Instagram after bac",
+              "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "中国可重复使用火箭追赶马斯克",
-          "summary_zh": "中国在可重复使用火箭技术方面正快速追赶埃隆·马斯克的SpaceX。",
+          "title_zh": "中国追赶马斯克可重复火箭",
+          "summary_zh": "中国在可重复使用火箭技术方面取得进展，追赶马斯克。",
           "region": "cn",
-          "score": 0.6,
+          "score": 0.9,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "China is catching up to Elon Musk's reusable rockets",
+              "title": "China is catching up to Elon Musk’s reusable rockets",
               "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
@@ -1562,80 +1556,74 @@
           ]
         },
         {
-          "title_zh": "Disney+考虑推出免费流媒体层",
-          "summary_zh": "据报道，Disney+正在探索推出免费流媒体服务，以吸引更多用户。",
+          "title_zh": "SK海力士创美最大外资IPO",
+          "summary_zh": "SK海力士融资265亿美元，创美国史上最大外资IPO。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.8,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Disney Plus is reportedly looking into a free streaming tier",
-              "url": "https://www.theverge.com/streaming/964056/disney-plus-free-tier-report",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "Disney+ is considering a free streaming tier, report says",
-              "url": "https://techcrunch.com/2026/07/10/disney-is-considering-a-free-streaming-tier-report-says/",
+              "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US hist",
+              "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "FCC打击DJI规避外国技术限制",
-          "summary_zh": "FCC对DJI通过空壳公司规避外国技术限制的行为进行打击。",
+          "title_zh": "Oratomic获3亿美元量子计算融资",
+          "summary_zh": "Oratomic融资3亿美元，用于构建可行量子计算机。",
           "region": "global",
-          "score": 0.4,
+          "score": 0.8,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "The FCC is cracking down on DJI tech that dodged the foreign",
-              "url": "https://www.theverge.com/policy/964342/fcc-crack-down-dji-front-companies-xtra-skyrover-sgs-lab",
-              "source": "The Verge",
+              "title": "Oratomic raises $300M to build a viable quantum computer tha",
+              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs/",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "Spotify允许用户微调Release Radar",
-          "summary_zh": "Spotify推出新功能，让用户能够调整每周Release Radar播放列表的算法。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Spotify will let you fine-tune your weekly Release Radar pla",
-              "url": "https://www.theverge.com/entertainment/964021/spotify-release-radar-algorithm-controls",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Netflix正变成YouTube",
-          "summary_zh": "Netflix的内容策略和界面越来越像YouTube，引发讨论。",
+          "title_zh": "CISA紧急构建事件剧本",
+          "summary_zh": "美国网络安全机构CISA在事件中被迫构建事件剧本。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Netflix is turning into YouTube",
-              "url": "https://www.theverge.com/podcast/964082/netflix-youtube-smart-glasses-vergecast",
-              "source": "The Verge",
-              "published_at": "2026-07-10"
+              "title": "US cybersecurity agency CISA had to build its incident playb",
+              "url": "https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Phia被指控Cookie填充",
+          "summary_zh": "Phia被指控通过Cookie填充获取联盟营销佣金。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Phia accused of ‘cookie stuffing,’ taking affiliate credit o",
+              "url": "https://techcrunch.com/2026/07/10/phia-accused-of-cookie-stuffing-taking-affiliate-credit-on-purchas",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
           "title_zh": "Bluesky临时CEO转正",
-          "summary_zh": "Bluesky的临时CEO托尼·施奈德正式成为永久CEO。",
+          "summary_zh": "Bluesky临时CEO Toni Schneider正式担任CEO。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Bluesky's interim CEO, Toni Schneider, drops the 'interim'",
+              "title": "Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’",
               "url": "https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
@@ -1643,15 +1631,15 @@
           ]
         },
         {
-          "title_zh": "Oratomic融资3亿美元造量子计算机",
-          "summary_zh": "Oratomic公司融资3亿美元，用于建造实用的量子计算机。",
+          "title_zh": "Fizz指控VC泄露机密",
+          "summary_zh": "大学应用Fizz指控风险投资公司分享机密信息。",
           "region": "global",
-          "score": 0.7,
+          "score": 0.4,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Oratomic raises $300M to build a viable quantum computer tha",
-              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
+              "title": "Filing: College app Fizz accuses VC of sharing confidential ",
+              "url": "https://techcrunch.com/2026/07/10/filing-college-app-fizz-accuses-vc-of-sharing-confidential-startup",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
@@ -1663,11 +1651,11 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "AI",
-        "大模型",
-        "Meta",
         "OpenAI",
-        "SK海力士"
+        "苹果",
+        "AI",
+        "量子计算",
+        "可重复使用火箭"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -1682,11 +1670,11 @@
         "semiconductor chip manufacturing",
         "AI infrastructure investment"
       ],
-      "brief_zh": "AI计算基础设施领域动态：SK海力士创美国史上最大外资IPO募资265亿美元；中国可重复使用火箭技术追赶马斯克；Oratomic获3亿美元研发量子计算机；Hugging Face CEO谈企业AI租赁模式转变；苹果起诉OpenAI窃取硬件机密；Meta因争议AI功能遭欧盟罚款威胁。",
+      "brief_zh": "AI计算基础设施领域动态：SK海力士创美国史上最大外资IPO，融资265亿美元；OpenAI家庭化布局与安全主管离职；苹果起诉OpenAI窃取商业机密；Meta移除争议AI功能；中国可重复使用火箭追赶马斯克；Oratomic获3亿美元量子计算投资。",
       "events": [
         {
           "title_zh": "SK海力士创美国最大外资IPO",
-          "summary_zh": "SK海力士在美IPO募资265亿美元，为史上最大外资IPO，凸显AI芯片需求旺盛。",
+          "summary_zh": "SK海力士融资265亿美元，为美国史上最大外资IPO，凸显AI芯片需求旺盛。",
           "region": "global",
           "score": 0.9,
           "date": "2026-07-10",
@@ -1700,55 +1688,31 @@
           ]
         },
         {
-          "title_zh": "中国可重复火箭追赶马斯克",
-          "summary_zh": "中国在可重复使用火箭技术方面取得进展，正追赶SpaceX的领先地位。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "China is catching up to Elon Musk’s reusable rockets",
-              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Oratomic获3亿美元研发量子计算机",
-          "summary_zh": "量子计算初创公司Oratomic融资3亿美元，致力于构建实用量子计算机。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Oratomic raises $300M to build a viable quantum computer that",
-              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Hugging Face CEO谈AI租赁模式转变",
-          "summary_zh": "Hugging Face CEO指出企业正从租赁AI转向自建，反映行业趋势变化。",
+          "title_zh": "OpenAI家庭化布局引关注",
+          "summary_zh": "OpenAI押注家庭场景，ChatGPT深入家庭，同时安全主管离职引发重组担忧。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Hugging Face’s CEO on why companies are done renting their AI",
-              "url": "https://techcrunch.com/2026/07/10/hugging-faces-ceo-on-why-companies-are-done-renting-their-ai/",
+              "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+              "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
               "source": "TechCrunch",
-              "published_at": "2026-07-10"
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "OpenAI's head of safety is reportedly leaving as part of company reorganization",
+              "url": "https://www.engadget.com/2212941/openai-head-of-safety-leaving-company-reorganization/",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "苹果起诉OpenAI窃取硬件机密",
-          "summary_zh": "苹果指控OpenAI窃取硬件商业秘密，涉及AI芯片等核心技术。",
+          "title_zh": "苹果起诉OpenAI窃密",
+          "summary_zh": "苹果指控OpenAI窃取商业机密，加剧AI领域法律纠纷。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.7,
           "date": "2026-07-10",
           "sources": [
             {
@@ -1756,39 +1720,18 @@
               "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
-            },
-            {
-              "title": "Apple Is Suing OpenAI for Allegedly Stealing Hardware Secret",
-              "url": "https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "Meta因AI功能遭欧盟罚款威胁",
-          "summary_zh": "欧盟威胁对Meta罚款，因其在Facebook和Instagram上推出成瘾性AI功能。",
+          "title_zh": "Meta移除争议AI功能",
+          "summary_zh": "Meta因用户反对移除Instagram上争议性AI功能，反映AI伦理挑战。",
           "region": "global",
-          "score": 0.4,
+          "score": 0.5,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "EU threatens Meta with fines over addictive features on Facebook a",
-              "url": "https://techcrunch.com/2026/07/10/eu-threatens-meta-with-fines-over-addictive-features-on-facebook-a",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Meta移除Instagram争议AI功能",
-          "summary_zh": "Meta在用户强烈反对后，移除Instagram上引发争议的AI功能。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Meta removes controversial AI feature on Instagram after bac",
+              "title": "Meta removes controversial AI feature on Instagram after backlash",
               "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
@@ -1796,47 +1739,98 @@
           ]
         },
         {
-          "title_zh": "微软碳排放量飙升25%",
-          "summary_zh": "微软报告碳排放量大幅增长25%，主要受AI数据中心扩张影响。",
-          "region": "global",
-          "score": 0.2,
+          "title_zh": "中国可重复使用火箭追赶马斯克",
+          "summary_zh": "中国在可重复使用火箭技术方面取得进展，追赶SpaceX，利好航天计算。",
+          "region": "cn",
+          "score": 0.8,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Microsoft Reports a Massive 25 Percent Jump in Emissions",
-              "url": "https://www.wired.com/story/microsoft-25-percent-jump-in-carbon-emissions/",
-              "source": "Wired",
+              "title": "China is catching up to Elon Musk's reusable rockets",
+              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "电池初创公司挑战中国巨头",
-          "summary_zh": "美国电池初创公司Prologium押注新技术，试图挑战中国电池行业主导地位。",
+          "title_zh": "Oratomic获3亿美元量子计算投资",
+          "summary_zh": "Oratomic融资3亿美元，用于构建实用量子计算机，推动计算基础设施发展。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Oratomic raises $300M to build a viable quantum computer",
+              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Philips免费更换智能灯桥",
+          "summary_zh": "Philips因固件更新导致智能灯桥故障，提供免费更换，影响物联网计算。",
           "region": "cn",
+          "score": 0.4,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Philips offers free replacements after update bricked smart lights",
+              "url": "https://www.engadget.com/2212954/philips-free-replacements-hue-bridge-pro-update-bricked-smart-light",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "CISA构建网络安全事件手册",
+          "summary_zh": "美国网络安全局CISA在事件中构建响应手册，凸显AI安全计算需求。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "US cybersecurity agency CISA had to build its incident playbook during the",
+              "url": "https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Phia被指控Cookie填充欺诈",
+          "summary_zh": "AI购物应用Phia被指控通过Cookie填充获取不当佣金，涉及AI伦理。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Phia accused of 'cookie stuffing,' taking affiliate credit on purchases",
+              "url": "https://techcrunch.com/2026/07/10/phia-accused-of-cookie-stuffing-taking-affiliate-credit-on-purchas",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "Phoebe Gates' AI shopping app Phia reportedly claimed unearned affiliate sales",
+              "url": "https://www.engadget.com/2212973/phoebe-gates-ai-shopping-app-phia-affiliate-sales-fake-clicks/",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bluesky任命正式CEO",
+          "summary_zh": "Bluesky临时CEO Toni Schneider转正，社交平台计算架构稳定。",
+          "region": "global",
           "score": 0.6,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Meet the Battery Startup Taking on China’s Giants",
-              "url": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "印度智能手机制造进入新阶段",
-          "summary_zh": "继苹果之后，印度智能手机制造业迎来新阶段，产能持续扩张。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "After Apple, India’s smartphone manufacturing boom enters ne",
-              "url": "https://techcrunch.com/2026/07/09/after-apple-indias-smartphone-manufacturing-boom-enters-new-phase-",
+              "title": "Bluesky's interim CEO, Toni Schneider, drops the 'interim'",
+              "url": "https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/",
               "source": "TechCrunch",
-              "published_at": "2026-07-09"
+              "published_at": "2026-07-10"
             }
           ]
         }
@@ -1846,13 +1840,13 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
+        "AI计算基础设施",
         "SK海力士IPO",
-        "中国可重复火箭",
-        "量子计算",
-        "AI租赁",
-        "苹果起诉OpenAI"
+        "OpenAI",
+        "苹果诉讼",
+        "量子计算"
       ],
-      "deduped_count": 2,
+      "deduped_count": 1,
       "raw_count": 45
     },
     {
@@ -1866,43 +1860,43 @@
         "EV charging infrastructure",
         "solid state battery technology"
       ],
-      "brief_zh": "今日新能源汽车相关新闻较少，主要涉及科技行业动态，包括苹果与OpenAI的法律纠纷、Meta的AI功能调整、大众汽车缩减车型等。中国成功回收火箭助推器成为亮点。",
+      "brief_zh": "今日科技新闻涵盖AI、芯片、航天等领域。SK海力士在美创下265亿美元最大外资IPO纪录；中国可重复使用火箭技术追赶马斯克；OpenAI家庭化战略及安全主管离职；苹果起诉OpenAI窃取商业机密；Meta移除争议性AI功能；飞利浦为智能灯桥故障提供免费更换。",
       "events": [
         {
-          "title_zh": "中国成功回收火箭助推器",
-          "summary_zh": "中国成为第二个成功回收火箭助推器的国家，标志航天技术重大突破。",
-          "region": "cn",
+          "title_zh": "SK海力士创美国最大外资IPO",
+          "summary_zh": "SK海力士在美IPO融资265亿美元，创历史纪录。",
+          "region": "global",
           "score": 0.9,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "China becomes the second country to recover a rocket booster",
-              "url": "https://www.engadget.com/2212193/china-becomes-second-country-to-recover-rocket-booster/",
-              "source": "Engadget",
+              "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US history",
+              "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "大众汽车大幅缩减车型",
-          "summary_zh": "大众汽车计划大幅缩减车型阵容和工厂规模，以应对市场变化。",
-          "region": "global",
-          "score": 0.7,
+          "title_zh": "中国可重复使用火箭追赶马斯克",
+          "summary_zh": "中国在可重复使用火箭技术方面正快速追赶马斯克。",
+          "region": "cn",
+          "score": 0.8,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Volkswagen will dramatically shrink its model lineup and fac",
-              "url": "https://www.engadget.com/2212213/volkswagen-will-shrink-model-lineup-and-factory-footprint/",
-              "source": "Engadget",
+              "title": "China is catching up to Elon Musk’s reusable rockets",
+              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
           "title_zh": "苹果起诉OpenAI窃取商业机密",
-          "summary_zh": "苹果指控OpenAI窃取商业机密，双方关系恶化。",
+          "summary_zh": "苹果指控OpenAI窃取其商业机密，已提起诉讼。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.7,
           "date": "2026-07-10",
           "sources": [
             {
@@ -1914,30 +1908,754 @@
           ]
         },
         {
-          "title_zh": "苹果批评OpenAI硬件业务",
-          "summary_zh": "苹果称OpenAI硬件业务“烂到骨子里”，加剧行业竞争。",
+          "title_zh": "OpenAI安全主管离职",
+          "summary_zh": "OpenAI安全主管因公司重组而离职。",
           "region": "global",
-          "score": 0.5,
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "OpenAI's head of safety is reportedly leaving as part of company reorganization",
+              "url": "https://www.engadget.com/2212941/openai-head-of-safety-leaving-company-reorganization/",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Meta移除争议性AI功能",
+          "summary_zh": "Meta因用户反对移除Instagram上争议性AI功能。",
+          "region": "global",
+          "score": 0.6,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Apple calls OpenAI's hardware business 'rotten to its core'",
-              "url": "https://www.engadget.com/2212759/apple-calls-openais-hardware-business-rotten-to-its-core-in-trade-s",
-              "source": "Engadget",
+              "title": "Meta removes controversial AI feature on Instagram after backlash",
+              "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "Meta移除Instagram争议AI功能",
-          "summary_zh": "Meta在用户强烈反对后移除Instagram的AI功能，调整策略。",
+          "title_zh": "飞利浦为智能灯桥故障免费更换",
+          "summary_zh": "飞利浦因更新导致智能灯桥变砖，提供免费更换。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Philips offers free replacements after update bricked smart lights",
+              "url": "https://www.engadget.com/2212954/philips-free-replacements-hue-bridge-pro-update-bricked-smart-light",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI深入家庭市场",
+          "summary_zh": "OpenAI推出家庭化战略，ChatGPT深入家庭场景。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+              "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Bluesky任命正式CEO",
+          "summary_zh": "Bluesky临时CEO托尼·施奈德转正。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’",
+              "url": "https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Phia被指虚假点击欺诈",
+          "summary_zh": "菲比·盖茨的AI购物应用Phia被指控虚假点击。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Phoebe Gates' AI shopping app Phia reportedly claimed unearned affiliate sales",
+              "url": "https://www.engadget.com/2212973/phoebe-gates-ai-shopping-app-phia-affiliate-sales-fake-clicks/",
+              "source": "Engadget",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "Oratomic融资3亿美元造量子计算机",
+          "summary_zh": "Oratomic获3亿美元融资，研发实用量子计算机。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Oratomic raises $300M to build a viable quantum computer",
+              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "AI",
+        "芯片",
+        "火箭",
+        "IPO",
+        "安全"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "metals",
+      "name": "大宗 / 金属（LME·供需·库存）",
+      "tags": [],
+      "gnews_queries": [
+        "copper price LME market",
+        "aluminum nickel zinc metal",
+        "copper scrap recycling trade",
+        "critical minerals rare earth"
+      ],
+      "brief_zh": "大宗商品市场波动加剧，库存补充或推动下一轮牛市。黄金价格下跌，全球矿业公司市值蒸发2280亿美元。铜市场面临供应缺口，需每年新增六座矿山。中国加强在纳米比亚能源领域布局，CATL入股石墨材料公司。欧洲热浪影响核电与电力系统，哈萨克斯坦延长石油出口禁令。",
+      "events": [
+        {
+          "title_zh": "库存补充或推动下一轮牛市",
+          "summary_zh": "分析认为库存补充周期可能开启大宗商品新牛市",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "The Next Bull Market Could Be Built on Inventory Replenishme",
+              "url": "https://oilprice.com/Energy/Crude-Oil/The-Next-Bull-Market-Could-Be-Built-on-Inventory-Replenishment",
+              "source": "OilPrice",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "黄金价格下跌，矿业公司市值蒸发",
+          "summary_zh": "金价走弱，全球50大矿业公司市值损失2280亿美元",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Gold price loses its grip: World’s 50 biggest mining compani",
+              "url": "https://www.mining.com/gold-price-loses-its-grip-worlds-50-biggest-mining-companies-shed-228-billion",
+              "source": "Mining.com",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "铜市场需每年新增六座矿山",
+          "summary_zh": "专家指出铜供应缺口巨大，需持续开发新矿至2050年",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Giustra: Copper market needs six new mines a year to 2050",
+              "url": "https://www.mining.com/giustra-copper-market-needs-six-new-mines-a-year-to-2050/",
+              "source": "Mining.com",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国加强纳米比亚能源布局",
+          "summary_zh": "中国加大对纳米比亚能源领域的投资控制",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "China Tightens Its Grip on Namibia's Next Energy Boom",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/China-Tightens-Its-Grip-on-Namibias-Next-Energy-B",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "CATL入股石墨材料公司",
+          "summary_zh": "宁德时代收购CarbonScape 20%股份，布局石墨材料",
+          "region": "cn",
+          "score": 0.8,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "CATL takes 20% stake in graphite materials developer CarbonS",
+              "url": "https://www.mining.com/catl-takes-20-stake-in-graphite-materials-developer-carbonscape/",
+              "source": "Mining.com",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "欧洲热浪影响核电与电力",
+          "summary_zh": "高温导致欧洲核电站运行受限，英国电力规则改写",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Europe’s Nuclear Plants Can’t Beat the Heat",
+              "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Europes-Nuclear-Plants-Cant-Beat-the-Heat.html",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            },
+            {
+              "title": "Summer Heatwaves Are Rewriting the Rules for Britain's Power",
+              "url": "https://oilprice.com/Energy/Energy-General/Summer-Heatwaves-Are-Rewriting-the-Rules-for-Britains-Pow",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "哈萨克斯坦延长石油出口禁令",
+          "summary_zh": "因霍尔木兹海峡风险，哈萨克斯坦延长石油出口禁令六个月",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Kazakhstan Extends Petroleum Export Ban Six Months as Hormuz",
+              "url": "https://oilprice.com/Energy/Energy-General/Kazakhstan-Extends-Petroleum-Export-Ban-Six-Months-as-Hor",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "中东风险回归，油价波动加剧",
+          "summary_zh": "中东局势紧张导致油价平静期结束",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Oil’s Calm Is Over as Middle East Risks Return",
+              "url": "https://oilprice.com/Energy/Energy-General/Oils-Calm-Is-Over-as-Middle-East-Risks-Return.html",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国油气钻探商在波动市场中观望",
+          "summary_zh": "市场波动导致美国油气钻探活动放缓",
           "region": "global",
           "score": 0.5,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Meta removes controversial AI feature on Instagram after bac",
-              "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+              "title": "US Oil, Gas Drillers Hang Back in Volatile Market",
+              "url": "https://oilprice.com/Energy/Crude-Oil/US-Oil-Gas-Drillers-Hang-Back-in-Volatile-Market.html",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿联酋石油产量创历史新高",
+          "summary_zh": "阿联酋石油产量翻倍，达到危机前水平的两倍",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "UAE Oil Output Hits All-Time High, Doubling Pre-Crisis Level",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/UAE-Oil-Output-Hits-All-Time-High-Doubling-Pre-Cr",
+              "source": "OilPrice",
+              "published_at": "2026-07-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "neutral",
+      "sentiment_score": 0.45,
+      "keywords": [
+        "库存补充",
+        "铜供应缺口",
+        "黄金价格下跌",
+        "中国能源布局",
+        "热浪影响"
+      ],
+      "deduped_count": 0,
+      "raw_count": 45
+    },
+    {
+      "id": "carbon",
+      "name": "碳 / CBAM / 碳市场（Verra·EU）",
+      "tags": [],
+      "gnews_queries": [
+        "EU carbon border CBAM",
+        "carbon credit trading market",
+        "carbon neutrality net zero",
+        "emissions trading ETS price"
+      ],
+      "brief_zh": "近期全球新闻聚焦尼日利亚安全、发展中国家债务、委内瑞拉地震、墨西哥毒品调查、古巴停电、台风灾害、韩国芯片投资、新西兰数据中心争议、中国毒蛇逃脱、汽车排放丑闻、易捷航空收购等事件，涉及环境、经济、社会等多领域。",
+      "events": [
+        {
+          "title_zh": "尼日利亚军方击毙300名匪徒",
+          "summary_zh": "尼日利亚军方在西北部扎姆法拉州行动中击毙约300名匪徒。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Nigeria says army has killed 300 bandits in north-western st",
+              "url": "https://www.theguardian.com/world/2026/jul/11/nigeria-army-kills-bandits-north-western-state-zamfara",
+              "source": "The Guardian",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "发展中国家偿债支出超其他",
+          "summary_zh": "发展中国家偿还外债的支出超过其他领域，引发关注。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Developing countries spend more repaying foreign debt than o",
+              "url": "https://www.theguardian.com/global-development/2026/jul/10/developing-countries-spend-more-foreign-d",
+              "source": "The Guardian",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "委内瑞拉地震死亡超4300人",
+          "summary_zh": "委内瑞拉地震死亡人数超过4300人，救援工作持续。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Venezuela quake death toll passes 4,300 as scale of recovery",
+              "url": "https://www.theguardian.com/world/2026/jul/11/venezuela-quake-deaths-passes-4000-recovery-effort",
+              "source": "The Guardian",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "墨西哥调查美国在抓捕中的角色",
+          "summary_zh": "墨西哥调查美国是否在毒枭抓捕中撒谎，涉及锡那罗亚卡特尔。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-09",
+          "sources": [
+            {
+              "title": "Mexico investigates whether US lied about role in capture of",
+              "url": "https://www.theguardian.com/world/2026/jul/09/mexico-drug-lord-arrest-sinaloa-cartel-investigation",
+              "source": "The Guardian",
+              "published_at": "2026-07-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "古巴遭遇第三次全国停电",
+          "summary_zh": "古巴在六个月内第三次全国停电，民众生活痛苦。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-06",
+          "sources": [
+            {
+              "title": "‘Living like this is agony’: Cuba suffers third nationwide b",
+              "url": "https://www.theguardian.com/world/2026/jul/06/cuba-suffers-third-nationwide-blackout-in-six-months",
+              "source": "The Guardian",
+              "published_at": "2026-07-06"
+            }
+          ]
+        },
+        {
+          "title_zh": "台风致多人被困屋顶",
+          "summary_zh": "台风导致人们被困屋顶，天气追踪报道。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Weather tracker: Typhoon leaves people stranded on rooftops ",
+              "url": "https://www.theguardian.com/world/2026/jul/10/weather-tracker-typhoon-leaves-people-stranded-on-roof",
+              "source": "The Guardian",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "韩国SK海力士借AI热潮融资265亿",
+          "summary_zh": "韩国芯片制造商SK海力士利用AI热潮融资265亿美元。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "South Korea chip maker SK hynix rides AI boom raising $26.5b",
+              "url": "https://www.theguardian.com/world/2026/jul/10/south-korea-chip-maker-sk-hynix-rides-ai-boom-raising-",
+              "source": "The Guardian",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "新西兰首个数据中心计划引担忧",
+          "summary_zh": "新西兰首个数据中心计划引发当地居民担忧，称存在红旗。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "‘A lot of red flags’: plans for New Zealand’s first datacent",
+              "url": "https://www.theguardian.com/world/2026/jul/10/new-zealand-first-datacentre-concern-locals-makarewa-i",
+              "source": "The Guardian",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国南方毒蛇逃离养殖场",
+          "summary_zh": "中国南方洪水期间，毒蛇从养殖场逃脱。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-07-09",
+          "sources": [
+            {
+              "title": "Venomous snakes escape breeding farms in southern China duri",
+              "url": "https://www.theguardian.com/world/2026/jul/09/snakes-cobras-escape-breeding-farms-southern-china-flo",
+              "source": "The Guardian",
+              "published_at": "2026-07-09"
+            }
+          ]
+        },
+        {
+          "title_zh": "主要车企未安装排放作弊装置",
+          "summary_zh": "调查发现主要汽车公司未安装排放作弊装置。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Major car firms found not to have installed emissions-cheati",
+              "url": "https://www.bbc.co.uk/news/articles/c0mye0d1297o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-10"
+            }
+          ]
+        }
+      ],
+      "cn_count": 2,
+      "total_count": 10,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
+      "keywords": [
+        "尼日利亚",
+        "委内瑞拉地震",
+        "古巴停电",
+        "台风",
+        "汽车排放"
+      ],
+      "deduped_count": 1,
+      "raw_count": 45
+    },
+    {
+      "id": "sea",
+      "name": "东南亚供应链（制造·转移·关键矿产）",
+      "tags": [],
+      "gnews_queries": [
+        "Vietnam manufacturing investment",
+        "Indonesia nickel mining smelter",
+        "Southeast Asia supply chain",
+        "Thailand Malaysia electronics",
+        "ASEAN trade manufacturing China"
+      ],
+      "brief_zh": "本周东南亚供应链相关新闻中，中国遭遇一周内第二次台风登陆，影响制造业和物流；伊朗宣布霍尔木兹海峡关闭，威胁关键矿产运输；西班牙野火、美国政治事件等全球新闻也值得关注。",
+      "events": [
+        {
+          "title_zh": "中国一周内第二次台风登陆",
+          "summary_zh": "台风登陆中国，可能影响制造业和供应链。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "China's second typhoon in a week makes landfall",
+              "url": "https://www.bbc.co.uk/news/articles/cdxd3wkp2rzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "伊朗关闭霍尔木兹海峡",
+          "summary_zh": "伊朗宣布海峡关闭，威胁全球能源和矿产运输。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Iran says Strait of Hormuz closed 'until further notice'",
+              "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "西班牙野火肆虐",
+          "summary_zh": "西班牙遭遇致命野火，影响当地经济和环境。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Spain battles to contain one of its deadliest wildfires as a",
+              "url": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普政府传唤纽约时报记者",
+          "summary_zh": "美国政治事件引发媒体自由争议。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Trump administration subpoenas New York Times journalists ov",
+              "url": "https://www.bbc.co.uk/news/articles/cpd3g8q51g7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "波兰总理承诺纪念二战受害者",
+          "summary_zh": "波兰计划纪念二战中乌克兰人造成的种族灭绝受害者。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Polish PM pledges memorial to victims of WW2 'genocide by Uk",
+              "url": "https://www.bbc.co.uk/news/articles/cze94x4361po?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国民主党人被以色列军队拘留",
+          "summary_zh": "美国议员罗·卡纳在以色列被拘留，引发外交关注。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "US Democrat Ro Khanna says he was detained by armed Israeli ",
+              "url": "https://www.bbc.co.uk/news/articles/c0qyk9jwq9no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "南非世界杯中场球员去世",
+          "summary_zh": "25岁南非足球运动员亚当斯去世，引发体育界哀悼。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "South Africa World Cup midfielder Adams dies aged 25",
+              "url": "https://www.bbc.co.uk/sport/football/articles/cr47y5nvrqlo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "South Africa World Cup midfielder Adams dies aged 25",
+              "url": "https://www.aljazeera.com",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "South Africa’s Jayden Adams, 25, dies after playing in FIFA World Cup",
+              "url": "https://www.aljazeera.com/sports/2026/7/11/south-africas-jayden-adams-25-dies-after-playing-in-fifa-world-cup?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚40多名儿童和教师获救",
+          "summary_zh": "被绑架的儿童和教师获救，但安全形势仍严峻。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "More than 40 kidnapped children and teachers freed after Nig",
+              "url": "https://www.bbc.co.uk/news/articles/cly9lnjlp1eo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "越南快艇倾覆致15人死亡",
+          "summary_zh": "包括印度游客在内的15人在越南快艇事故中丧生。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Indian tourists among 15 killed as speedboat capsizes in Vie",
+              "url": "https://www.bbc.co.uk/news/articles/cwyd7x22lp1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "Indian tourists among 15 killed as speedboat capsizes in Vie",
+              "url": "https://www.aljazeera.com",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            },
+            {
+              "title": "Indian tourists killed after speedboat capsizes in Vietnam",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/7/11/indian-tourists-killed-after-speedboat-capsizes-in-vietnam?traffic_source=rss",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-11"
+            }
+          ]
+        }
+      ],
+      "cn_count": 1,
+      "total_count": 9,
+      "sentiment": "neutral",
+      "sentiment_score": 0.5,
+      "keywords": [
+        "台风",
+        "供应链",
+        "关键矿产",
+        "霍尔木兹海峡",
+        "制造业"
+      ],
+      "deduped_count": 2,
+      "raw_count": 44
+    },
+    {
+      "id": "space",
+      "name": "宇宙探索（航天·卫星·深空）",
+      "tags": [],
+      "gnews_queries": [
+        "SpaceX Starship launch rocket",
+        "NASA space mission exploration",
+        "Starlink satellite constellation",
+        "China space station moon"
+      ],
+      "brief_zh": "中国在可重复使用火箭领域追赶马斯克，同时全球科技界关注AI、量子计算、网络安全等热点。",
+      "events": [
+        {
+          "title_zh": "中国追赶马斯克可重复火箭",
+          "summary_zh": "中国在可重复使用火箭技术方面取得进展，追赶马斯克的SpaceX。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "China is catching up to Elon Musk’s reusable rockets",
+              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "三星Micro RGB R95H评测",
+          "summary_zh": "三星Micro RGB R95H电视评测：非最亮但性能出色。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "Samsung Micro RGB R95H Review (2026): Not the Brightest",
+              "url": "https://www.wired.com/review/samsung-micro-rgb-r95h/",
+              "source": "Wired",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "AI发现Linux内核15年漏洞",
+          "summary_zh": "AI工具发现Linux内核中一个被忽视15年的root漏洞。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "AI Found a Root Bug in Linux That Everyone Missed for 15 Yea",
+              "url": "https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-misse",
+              "source": "Wired",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI押注家庭场景",
+          "summary_zh": "OpenAI将ChatGPT深入家庭，瞄准家庭用户市场。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "OpenAI bets on families as ChatGPT goes deeper into househol",
+              "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果起诉OpenAI窃取商业机密",
+          "summary_zh": "苹果指控OpenAI窃取贸易机密，引发法律纠纷。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Apple sues OpenAI over alleged trade secret theft",
+              "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
@@ -1959,706 +2677,15 @@
           ]
         },
         {
-          "title_zh": "FCC批准太空反射镜项目",
-          "summary_zh": "美国FCC批准太阳反射太空镜，引发环境与科技讨论。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "FCC grants approval for sun-reflecting space mirror that's b",
-              "url": "https://www.engadget.com/2212600/fcc-grants-approval-for-sun-reflecting-space-mirror/",
-              "source": "Engadget",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Meta眼镜引发使用方式改变",
-          "summary_zh": "Meta眼镜的争议导致用户改变或停止使用，影响市场接受度。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "The Meta Glasses backlash is changing how (or if) people use",
-              "url": "https://www.engadget.com/2212604/the-meta-glasses-backlash-is-changing-how-or-if-people-use-them/",
-              "source": "Engadget",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "OpenAI浏览器移至ChatGPT应用",
-          "summary_zh": "OpenAI浏览器项目未死，而是整合到ChatGPT应用中。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "OpenAI's browser isn't dead, it just moved to the ChatGPT ap",
-              "url": "https://www.engadget.com/2212701/openai-browser-isnt-dead/",
-              "source": "Engadget",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "纽约市推出一键取消规则",
-          "summary_zh": "纽约市宣布新的一键取消订阅规则，保护消费者权益。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Mamdani announces new Click-to-Cancel rule for New York City",
-              "url": "https://www.engadget.com/2212741/mamdani-announces-new-click-to-cancel-rule-for-new-york-city/",
-              "source": "Engadget",
-              "published_at": "2026-07-10"
-            }
-          ]
-        }
-      ],
-      "cn_count": 1,
-      "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
-      "keywords": [
-        "苹果",
-        "OpenAI",
-        "大众汽车",
-        "中国火箭回收",
-        "Meta"
-      ],
-      "deduped_count": 0,
-      "raw_count": 45
-    },
-    {
-      "id": "metals",
-      "name": "大宗 / 金属（LME·供需·库存）",
-      "tags": [],
-      "gnews_queries": [
-        "copper price LME market",
-        "aluminum nickel zinc metal",
-        "copper scrap recycling trade",
-        "critical minerals rare earth"
-      ],
-      "brief_zh": "欧洲核电站因高温面临挑战，哈萨克斯坦延长石油出口禁令，英国热浪改写电力规则，美国油气钻探商在波动市场中观望，中国加强对纳米比亚能源控制，中东风险推高油价，俄罗斯燃料中断影响中亚，IEA呼吁欧盟取消北极钻探禁令，阿联酋石油产量创新高，官僚主义阻碍美国清洁能源发展，IEA下调俄罗斯产量预测，印度核企寻求全球铀资产，油价因霍尔木兹风险上涨，北溪保险案败诉，美国未能打破伊朗对霍尔木兹海峡控制，美国钨加工联盟成立，CATL入股石墨材料公司，前海军指挥官因争议离职，铜市场需每年新增六座矿山，爱达荷州发现钨矿。",
-      "events": [
-        {
-          "title_zh": "欧洲核电站高温挑战",
-          "summary_zh": "欧洲核电站因高温无法正常运行，影响能源供应。",
+          "title_zh": "Oratomic融资3亿美元造量子计算机",
+          "summary_zh": "Oratomic获3亿美元融资，开发实用量子计算机。",
           "region": "global",
           "score": 0.7,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Europe’s Nuclear Plants Can’t Beat the Heat",
-              "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Europes-Nuclear-Plants-Cant-Beat-the-Heat.html",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "哈萨克斯坦延长石油出口禁令",
-          "summary_zh": "哈萨克斯坦将石油出口禁令延长六个月，影响全球供应。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Kazakhstan Extends Petroleum Export Ban Six Months as Hormuz",
-              "url": "https://oilprice.com/Energy/Energy-General/Kazakhstan-Extends-Petroleum-Export-Ban-Six-Months-as-Hor",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "英国热浪改写电力规则",
-          "summary_zh": "夏季热浪迫使英国调整电力供应规则，能源系统承压。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Summer Heatwaves Are Rewriting the Rules for Britain's Power",
-              "url": "https://oilprice.com/Energy/Energy-General/Summer-Heatwaves-Are-Rewriting-the-Rules-for-Britains-Pow",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国加强对纳米比亚能源控制",
-          "summary_zh": "中国加大对纳米比亚能源领域的投资，扩大全球影响力。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "China Tightens Its Grip on Namibia's Next Energy Boom",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/China-Tightens-Its-Grip-on-Namibias-Next-Energy-B",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "中东风险推高油价",
-          "summary_zh": "中东地缘政治风险回归，导致油价上涨。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Oil’s Calm Is Over as Middle East Risks Return",
-              "url": "https://oilprice.com/Energy/Energy-General/Oils-Calm-Is-Over-as-Middle-East-Risks-Return.html",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "阿联酋石油产量创新高",
-          "summary_zh": "阿联酋石油产量达到历史最高水平，翻倍于危机前。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "UAE Oil Output Hits All-Time High, Doubling Pre-Crisis Level",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/UAE-Oil-Output-Hits-All-Time-High-Doubling-Pre-Cr",
-              "source": "OilPrice",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "CATL入股石墨材料公司",
-          "summary_zh": "宁德时代收购石墨材料开发商CarbonScape 20%股份，布局电池材料。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "CATL takes 20% stake in graphite materials developer CarbonS",
-              "url": "https://www.mining.com/catl-takes-20-stake-in-graphite-materials-developer-carbonscape/",
-              "source": "Mining.com",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "铜市场需每年新增六座矿山",
-          "summary_zh": "专家指出，铜市场到2050年每年需要六座新矿山以满足需求。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Giustra: Copper market needs six new mines a year to 2050",
-              "url": "https://www.mining.com/giustra-copper-market-needs-six-new-mines-a-year-to-2050/",
-              "source": "Mining.com",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国钨加工联盟成立",
-          "summary_zh": "Guardian Metal与蒙大拿矿业协会合作，推动美国钨加工。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Guardian Metal, Montana Mining Association forge US tungsten",
-              "url": "https://www.mining.com/guardian-metal-montana-mining-association-forge-us-tungsten-processing-allian",
-              "source": "Mining.com",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "爱达荷州发现钨矿",
-          "summary_zh": "IDEX在爱达荷州铜钻探中发现钨矿，增加关键矿产供应。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "IDEX finds tungsten in Idaho copper drilling",
-              "url": "https://www.mining.com/idex-finds-tungsten-in-idaho-copper-drilling/",
-              "source": "Mining.com",
-              "published_at": "2026-07-10"
-            }
-          ]
-        }
-      ],
-      "cn_count": 3,
-      "total_count": 10,
-      "sentiment": "negative",
-      "sentiment_score": 0.35,
-      "keywords": [
-        "能源",
-        "石油",
-        "核能",
-        "铜",
-        "钨"
-      ],
-      "deduped_count": 1,
-      "raw_count": 45
-    },
-    {
-      "id": "carbon",
-      "name": "碳 / CBAM / 碳市场（Verra·EU）",
-      "tags": [],
-      "gnews_queries": [
-        "EU carbon border CBAM",
-        "carbon credit trading market",
-        "carbon neutrality net zero",
-        "emissions trading ETS price"
-      ],
-      "brief_zh": "近期全球新闻涵盖发展中国家债务、尼日利亚假机构、LGBTQ+游轮被拒、物种生存策略、猫薄荷驱蚊、墨西哥调查美国、英国审理特立尼达反同法、法国调查姆巴佩种族歧视、古巴停电、加拿大购潜艇、台风、SK海力士融资、新西兰数据中心、毒蛇逃逸、软件故障、车企排放、易捷航空收购、假空调、瑞安航空事件、电子烟新规等。",
-      "events": [
-        {
-          "title_zh": "物种生存策略难敌人类破坏",
-          "summary_zh": "物种巧妙生存策略无法抵抗人类破坏，环境危机加剧。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Species’ ingenious survival strategies no match for human de",
-              "url": "https://www.theguardian.com/environment/2026/jul/09/species-ingenious-survival-strategies-no-match-h",
-              "source": "The Guardian",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "台风致多人被困屋顶",
-          "summary_zh": "台风袭击导致人员被困屋顶，天气灾害影响严重。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Weather tracker: Typhoon leaves people stranded on rooftops",
-              "url": "https://www.theguardian.com/world/2026/jul/10/weather-tracker-typhoon-leaves-people-stranded-on-roof",
-              "source": "The Guardian",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "毒蛇从中国养殖场逃逸",
-          "summary_zh": "中国南方毒蛇养殖场因洪水导致毒蛇逃逸，引发安全担忧。",
-          "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Venomous snakes escape breeding farms in southern China duri",
-              "url": "https://www.theguardian.com/world/2026/jul/09/snakes-cobras-escape-breeding-farms-southern-china-flo",
-              "source": "The Guardian",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "发展中国家偿债超支出",
-          "summary_zh": "发展中国家偿还外债金额超过其他支出，经济压力巨大。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Developing countries spend more repaying foreign debt than o",
-              "url": "https://www.theguardian.com/global-development/2026/jul/10/developing-countries-spend-more-foreign-d",
-              "source": "The Guardian",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "尼日利亚假机构丑闻",
-          "summary_zh": "尼日利亚政府内设假联邦机构引发愤怒，政治信任受损。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Furore in Nigeria over fake federal agency set up in governm",
-              "url": "https://www.theguardian.com/world/2026/jul/09/bola-tinubu-under-pressure-fake-nigerian-government-ag",
-              "source": "The Guardian",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "LGBTQ+游轮被埃及拒绝",
-          "summary_zh": "LGBTQ+游轮在土耳其后遭埃及拒绝入境，人权争议再起。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "LGBTQ+ cruise ship refused entry to Egypt days after Turkey",
-              "url": "https://www.theguardian.com/world/2026/jul/09/lgbtq-cruise-ship-refused-entry-egypt-turkey",
-              "source": "The Guardian",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "猫薄荷驱蚊效果等同避蚊胺",
-          "summary_zh": "研究发现猫薄荷乳液驱蚊效果与避蚊胺相当，环保新选择。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-07",
-          "sources": [
-            {
-              "title": "Catnip lotion as effective as Deet at repelling mosquitoes",
-              "url": "https://www.theguardian.com/global-development/2026/jul/07/catnip-lotion-as-effective-as-deet-at-rep",
-              "source": "The Guardian",
-              "published_at": "2026-07-07"
-            }
-          ]
-        },
-        {
-          "title_zh": "墨西哥调查美国涉毒枭逮捕",
-          "summary_zh": "墨西哥调查美国是否在毒枭逮捕中撒谎，外交关系紧张。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Mexico investigates whether US lied about role in capture of",
-              "url": "https://www.theguardian.com/world/2026/jul/09/mexico-drug-lord-arrest-sinaloa-cartel-investigation",
-              "source": "The Guardian",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "英国审理特立尼达反同法",
-          "summary_zh": "英国法官审理特立尼达和多巴哥反同性恋法律上诉案。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-08",
-          "sources": [
-            {
-              "title": "UK judges begin hearing appeal over Trinidad and Tobago anti",
-              "url": "https://www.theguardian.com/world/2026/jul/08/uk-judges-appeal-trinidad-and-tobago-homophobic-law",
-              "source": "The Guardian",
-              "published_at": "2026-07-08"
-            }
-          ]
-        },
-        {
-          "title_zh": "法国调查姆巴佩种族歧视",
-          "summary_zh": "法国检察官调查姆巴佩遭种族歧视辱骂事件，体育界关注。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-07",
-          "sources": [
-            {
-              "title": "French prosecutors investigate racist abuse of Kylian Mbappé",
-              "url": "https://www.theguardian.com/world/2026/jul/07/french-prosecutors-investigate-racist-abuse-mbappe",
-              "source": "The Guardian",
-              "published_at": "2026-07-07"
-            }
-          ]
-        }
-      ],
-      "cn_count": 3,
-      "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
-      "keywords": [
-        "发展中国家债务",
-        "物种生存",
-        "台风",
-        "SK海力士",
-        "毒蛇逃逸"
-      ],
-      "deduped_count": 0,
-      "raw_count": 45
-    },
-    {
-      "id": "sea",
-      "name": "东南亚供应链（制造·转移·关键矿产）",
-      "tags": [],
-      "gnews_queries": [
-        "Vietnam manufacturing investment",
-        "Indonesia nickel mining smelter",
-        "Southeast Asia supply chain",
-        "Thailand Malaysia electronics",
-        "ASEAN trade manufacturing China"
-      ],
-      "brief_zh": "东南亚供应链新闻聚焦中国可重复使用火箭首次成功着陆，显示中国在航天技术上的突破，可能影响全球供应链。其他新闻包括西班牙野火、加密货币、台风、政治事件等，但与中国供应链直接相关度低。",
-      "events": [
-        {
-          "title_zh": "中国首次成功着陆可重复使用火箭",
-          "summary_zh": "中国成功测试可重复使用火箭，标志航天技术重大突破，可能增强供应链自主性。",
-          "region": "cn",
-          "score": 0.9,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "China lands reusable rocket for first time, state media says",
-              "url": "https://www.bbc.co.uk/news/articles/cm2rmmx86pdo",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "西班牙南部野火致12死23失踪",
-          "summary_zh": "西班牙野火造成严重伤亡，可能影响当地供应链和制造业。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Wildfire in southern Spain leaves at least 12 dead and 23 mi",
-              "url": "https://www.bbc.co.uk/news/articles/c8e2382jk7jo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "加密货币亿万富翁构建新世界",
-          "summary_zh": "加密货币富豪试图重塑金融体系，可能影响全球供应链融资。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Meet the crypto billionaires building a world where money bu",
-              "url": "https://www.bbc.co.uk/news/articles/cly8eqyj8e2o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "东亚面临破坏性台风威胁",
-          "summary_zh": "台风导致山体滑坡，可能扰乱东亚供应链和制造业。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "East Asia braces for destructive typhoon as landslides kill ",
-              "url": "https://www.bbc.co.uk/news/articles/c04y6wr03gxo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果起诉OpenAI窃取商业机密",
-          "summary_zh": "苹果指控OpenAI员工窃取技术，可能影响AI供应链和合作。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Apple sues OpenAI, its employees claiming theft of trade sec",
-              "url": "https://www.bbc.co.uk/news/articles/cy8w379e091o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "Apple files lawsuit accusing ChatGPT maker OpenAI of stealin",
-              "url": "https://www.aljazeera.com/economy/2026/7/10/apple-files-lawsuit-accusing-chatgpt-maker-openai-of-ste",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "加拿大AI隐私法案C-36引关注",
-          "summary_zh": "加拿大新法案加强AI隐私保护，可能影响科技供应链合规。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Canada’s Bill C-36 tackles AI privacy. Is it enough?",
-              "url": "https://www.aljazeera.com/economy/2026/7/10/canadas-bill-c-36-tackles-ai-privacy-is-it-enough?traffi",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "卢拉治下亚马逊森林砍伐创新低",
-          "summary_zh": "巴西森林砍伐减少，可能影响木材和矿产供应链。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Under Lula, Amazon deforestation falls to lowest level in a ",
-              "url": "https://www.aljazeera.com/news/2026/7/10/under-lula-amazon-deforestation-falls-to-lowest-level-in-a-",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "古巴一周内第二次全岛停电",
-          "summary_zh": "古巴停电加剧经济困境，可能影响当地供应链和制造业。",
-          "region": "global",
-          "score": 0.3,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Cuba suffers second island-wide blackout in a week amid Trum",
-              "url": "https://www.aljazeera.com/news/2026/7/10/cuba-suffers-second-island-wide-blackout-in-a-week-amid-tru",
-              "source": "Al Jazeera",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "乌克兰袭击克里米亚俄军舰",
-          "summary_zh": "乌克兰升级攻击，可能扰乱黑海供应链和能源运输。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "Ukraine strikes Russian ships near Crimea, escalating attack",
-              "url": "https://www.bbc.co.uk/news/articles/c70yd1g67z5o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-09"
-            }
-          ]
-        },
-        {
-          "title_zh": "韩国应用助受害者追踪跟踪者",
-          "summary_zh": "韩国推出反跟踪应用，可能影响科技供应链创新。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-09",
-          "sources": [
-            {
-              "title": "How an app in South Korea will let victims track their stalk",
-              "url": "https://www.bbc.co.uk/news/videos/c2dyw4zygrko?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-09"
-            }
-          ]
-        }
-      ],
-      "cn_count": 1,
-      "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
-      "keywords": [
-        "中国",
-        "可重复使用火箭",
-        "供应链",
-        "航天技术",
-        "突破"
-      ],
-      "deduped_count": 0,
-      "raw_count": 45
-    },
-    {
-      "id": "space",
-      "name": "宇宙探索（航天·卫星·深空）",
-      "tags": [],
-      "gnews_queries": [
-        "SpaceX Starship launch rocket",
-        "NASA space mission exploration",
-        "Starlink satellite constellation",
-        "China space station moon"
-      ],
-      "brief_zh": "今日科技新闻聚焦AI、太空竞赛与科技巨头诉讼。微软碳排放激增25%，苹果起诉OpenAI窃取硬件机密。中国可重复使用火箭技术追赶马斯克，SK海力士创美国史上最大外资IPO。Meta移除争议AI功能，电池初创挑战中国巨头。",
-      "events": [
-        {
-          "title_zh": "中国可重复使用火箭追赶马斯克",
-          "summary_zh": "中国在可重复使用火箭技术方面正迅速追赶SpaceX，取得显著进展。",
-          "region": "cn",
-          "score": 0.9,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "China is catching up to Elon Musk’s reusable rockets",
-              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "电池初创挑战中国巨头",
-          "summary_zh": "一家电池初创公司正挑战中国电池巨头，试图在市场中占据一席之地。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Meet the Battery Startup Taking on China’s Giants",
-              "url": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "微软碳排放激增25%",
-          "summary_zh": "微软报告其碳排放量大幅增加25%，引发环保关注。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Microsoft Reports a Massive 25 Percent Jump in Emissions",
-              "url": "https://www.wired.com/story/microsoft-25-percent-jump-in-carbon-emissions/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果起诉OpenAI窃取硬件秘密",
-          "summary_zh": "苹果指控OpenAI窃取其硬件商业秘密，已提起诉讼。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Apple Is Suing OpenAI for Allegedly Stealing Hardware Secret",
-              "url": "https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            },
-            {
-              "title": "Apple sues OpenAI over alleged trade secret theft",
-              "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "SK海力士创美国史上最大外资IPO",
-          "summary_zh": "SK海力士通过IPO筹集265亿美元，创下美国历史上最大外资IPO纪录。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US hist",
-              "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-",
+              "title": "Oratomic raises $300M to build a viable quantum computer tha",
+              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
               "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
@@ -2666,9 +2693,9 @@
         },
         {
           "title_zh": "Meta移除Instagram争议AI功能",
-          "summary_zh": "Meta在用户强烈反对后，移除了Instagram上的一项争议性AI功能。",
+          "summary_zh": "Meta因用户反弹移除Instagram上争议性AI功能。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.4,
           "date": "2026-07-10",
           "sources": [
             {
@@ -2680,8 +2707,8 @@
           ]
         },
         {
-          "title_zh": "Bluesky临时CEO正式转正",
-          "summary_zh": "Bluesky的临时CEO托尼·施奈德正式成为永久CEO。",
+          "title_zh": "Bluesky临时CEO转正",
+          "summary_zh": "Bluesky临时CEO Toni Schneider正式成为永久CEO。",
           "region": "global",
           "score": 0.5,
           "date": "2026-07-10",
@@ -2695,46 +2722,16 @@
           ]
         },
         {
-          "title_zh": "大学应用Fizz指控风投泄露机密",
-          "summary_zh": "大学社交应用Fizz指控一家风投公司分享其机密初创信息。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Filing: College app Fizz accuses VC of sharing confidential ",
-              "url": "https://techcrunch.com/2026/07/10/filing-college-app-fizz-accuses-vc-of-sharing-confidential-startup",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "新应用HyperTexting将开放网络变社交",
-          "summary_zh": "一款名为HyperTexting的新应用将开放网络转化为可滚动的社交平台。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "A new app, HyperTexting, turns the open web into a scrollabl",
-              "url": "https://techcrunch.com/2026/07/10/a-new-app-hypertexting-turns-the-open-web-into-a-scrollable-social",
-              "source": "TechCrunch",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "联合国AI峰会展示机器人狗和特斯拉",
-          "summary_zh": "联合国AI峰会展示了机器人狗、特斯拉和救援直升机等创新技术。",
+          "title_zh": "CISA紧急构建事件响应手册",
+          "summary_zh": "美国网络安全机构CISA在事件中临时构建响应手册。",
           "region": "global",
           "score": 0.3,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Robot Dogs, Teslas, and Rescue Helicopters: The UN AI Summit",
-              "url": "https://www.wired.com/story/robot-dogs-teslas-and-rescue-helicopters-the-un-ai-summit-was-alot/",
-              "source": "Wired",
+              "title": "US cybersecurity agency CISA had to build its incident playb",
+              "url": "https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
@@ -2745,13 +2742,13 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
+        "中国",
+        "可重复使用火箭",
         "AI",
-        "太空竞赛",
-        "碳排放",
-        "IPO",
-        "诉讼"
+        "量子计算",
+        "网络安全"
       ],
-      "deduped_count": 2,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2764,58 +2761,109 @@
         "gene editing CRISPR biotechnology",
         "superconductor material science"
       ],
-      "brief_zh": "前沿科技领域：微软碳排放激增25%，苹果起诉OpenAI窃取硬件秘密，中国成功回收首枚可重复使用火箭，量子纠错技术取得新进展，电池初创企业挑战中国巨头。",
+      "brief_zh": "前沿科技领域本周动态：中国可回收火箭取得突破，SK海力士创美股最大外资IPO，OpenAI布局家庭场景，苹果起诉OpenAI窃密，量子计算公司获3亿美元融资，Instagram移除争议AI功能。",
       "events": [
         {
-          "title_zh": "微软碳排放激增25%",
-          "summary_zh": "微软报告碳排放量大幅增长25%，引发环保关注。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Microsoft Reports a Massive 25 Percent Jump in Emissions",
-              "url": "https://www.wired.com/story/microsoft-25-percent-jump-in-carbon-emissions/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果起诉OpenAI窃密",
-          "summary_zh": "苹果指控OpenAI窃取硬件秘密，法律纠纷升级。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Apple Is Suing OpenAI for Allegedly Stealing Hardware Secret",
-              "url": "https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "电池初创挑战中国巨头",
-          "summary_zh": "Prologium电池初创公司挑战中国电池巨头，引发行业关注。",
+          "title_zh": "中国可回收火箭取得突破",
+          "summary_zh": "中国成功回收首枚可重复使用火箭，追赶马斯克技术。",
           "region": "cn",
           "score": 0.9,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Meet the Battery Startup Taking on China’s Giants",
-              "url": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
-              "source": "Wired",
+              "title": "China is catching up to Elon Musk’s reusable rockets",
+              "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            },
+            {
+              "title": "China recovered its first reusable rocket and showed a new w",
+              "url": "https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way",
+              "source": "Ars Technica",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "量子纠错技术新突破",
-          "summary_zh": "量子纠错可不断重新校准处理器，提升计算稳定性。",
+          "title_zh": "SK海力士创美股最大外资IPO",
+          "summary_zh": "SK海力士融资265亿美元，创美国史上最大外资IPO。",
           "region": "global",
           "score": 0.8,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US hist",
+              "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI布局家庭场景",
+          "summary_zh": "OpenAI押注家庭市场，ChatGPT深入家庭应用。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-11",
+          "sources": [
+            {
+              "title": "OpenAI bets on families as ChatGPT goes deeper into househol",
+              "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
+            }
+          ]
+        },
+        {
+          "title_zh": "苹果起诉OpenAI窃密",
+          "summary_zh": "苹果指控OpenAI窃取商业机密，引发法律纠纷。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Apple sues OpenAI over alleged trade secret theft",
+              "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "量子计算公司获3亿美元融资",
+          "summary_zh": "Oratomic融资3亿美元，用于构建可行量子计算机。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Oratomic raises $300M to build a viable quantum computer tha",
+              "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "Instagram移除争议AI功能",
+          "summary_zh": "Meta因用户反对移除Instagram争议性AI功能。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-10",
+          "sources": [
+            {
+              "title": "Meta removes controversial AI feature on Instagram after bac",
+              "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-10"
+            }
+          ]
+        },
+        {
+          "title_zh": "量子纠错技术取得进展",
+          "summary_zh": "量子纠错可不断校准处理器，提升稳定性。",
+          "region": "global",
+          "score": 0.7,
           "date": "2026-07-10",
           "sources": [
             {
@@ -2827,108 +2875,63 @@
           ]
         },
         {
-          "title_zh": "中国回收首枚可重复使用火箭",
-          "summary_zh": "中国成功回收首枚可重复使用火箭，展示新航天能力。",
-          "region": "cn",
-          "score": 0.9,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "China recovered its first reusable rocket and showed a new w",
-              "url": "https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way",
-              "source": "Ars Technica",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "无人机监控非法烟花",
-          "summary_zh": "美国多地使用无人机监控独立日非法烟花，提升安全。",
+          "title_zh": "Bluesky任命正式CEO",
+          "summary_zh": "Bluesky临时CEO托尼·施奈德转正，领导公司发展。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-10",
           "sources": [
             {
-              "title": "Increased drone surveillance of illegal July 4th fireworks l",
-              "url": "https://arstechnica.com/gadgets/2026/07/on-americas-250th-more-cities-used-drone-surveillance-to-spo",
-              "source": "Ars Technica",
+              "title": "Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’",
+              "url": "https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/",
+              "source": "TechCrunch",
               "published_at": "2026-07-10"
             }
           ]
         },
         {
-          "title_zh": "勒索谈判者勾结黑客",
-          "summary_zh": "勒索软件谈判者被发现帮助黑客敲诈自己的客户。",
+          "title_zh": "无摄像头智能眼镜问世",
+          "summary_zh": "Even Realities推出无摄像头智能眼镜，专注生产力。",
           "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
+          "score": 0.6,
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Ransomware negotiator hired to represent victims was working",
-              "url": "https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-cl",
-              "source": "Ars Technica",
-              "published_at": "2026-07-10"
+              "title": "Smart glasses without a camera? Even Realities bets producti",
+              "url": "https://techcrunch.com/2026/07/11/smart-glasses-without-a-camera-even-realities-bets-productivity-be",
+              "source": "TechCrunch",
+              "published_at": "2026-07-11"
             }
           ]
         },
         {
-          "title_zh": "反疫苗政策危害儿童",
-          "summary_zh": "研究显示RFK Jr.的麻疹疫苗变更将伤害弱势幼儿。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "Study shows how toxic RFK Jr.’s change to measles vaccine is",
-              "url": "https://arstechnica.com/health/2026/07/anti-vaccine-changes-under-rfk-jr-will-hurt-vulnerable-toddle",
-              "source": "Ars Technica",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "Valve Steam Machine验证系统",
-          "summary_zh": "Valve新Steam Machine验证系统引发更多问题而非答案。",
+          "title_zh": "木星大小行星逃离恒星死亡",
+          "summary_zh": "天文学家发现一颗木星大小行星逃脱了恒星死亡。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-10",
+          "date": "2026-07-11",
           "sources": [
             {
-              "title": "Valve's new Steam Machine verification system is silent on t",
-              "url": "https://arstechnica.com/gaming/2026/07/valves-steam-machine-verified-ratings-offer-more-questions-th",
+              "title": "A Jupiter-size planet that escaped its star's death",
+              "url": "https://arstechnica.com/science/2026/07/a-jupiter-size-planet-that-escaped-its-stars-death/",
               "source": "Ars Technica",
-              "published_at": "2026-07-10"
-            }
-          ]
-        },
-        {
-          "title_zh": "AI艺术画廊改变看法",
-          "summary_zh": "新体验式画廊可能改变人们对AI艺术的看法。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-10",
-          "sources": [
-            {
-              "title": "A New Experiential Gallery Just Might Change Your Mind About",
-              "url": "https://www.wired.com/story/a-new-experiential-gallery-just-might-change-your-mind-about-ai-art/",
-              "source": "Wired",
-              "published_at": "2026-07-10"
+              "published_at": "2026-07-11"
             }
           ]
         }
       ],
-      "cn_count": 2,
+      "cn_count": 1,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "量子纠错",
-        "可重复使用火箭",
-        "电池初创",
-        "碳排放",
-        "OpenAI"
+        "可回收火箭",
+        "量子计算",
+        "OpenAI",
+        "SK海力士",
+        "AI争议"
       ],
-      "deduped_count": 2,
+      "deduped_count": 0,
       "raw_count": 45
     },
     {
@@ -2936,11 +2939,11 @@
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "arXiv最新研究涵盖水下3D几何学习、零样本深度估计、事件视频重建、全景分割、机器人基准、量子计算、自蒸馏、视频生成、科学推理、音乐转录等20项前沿技术，涉及计算机视觉、量子物理、教育AI等多个领域。",
+      "brief_zh": "arXiv最新研究涵盖水下3D学习、深度估计、事件视频重建、全景分割、机器人基准、量子计算、视频生成推理、消费数据基准、科学推理、扩散模型、音乐转录、低秩正则化、优化证明、扭结碰撞、灵巧操作、星系光谱、AI教育助手等方向。",
       "events": [
         {
           "title_zh": "水下3D几何无标注学习",
-          "summary_zh": "提出Wat3R方法，无需标注即可学习水下3D几何结构。",
+          "summary_zh": "提出Wat3R方法，无需标注实现水下3D几何学习。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -2954,8 +2957,8 @@
           ]
         },
         {
-          "title_zh": "轻量级零样本深度估计",
-          "summary_zh": "ZipDepth实现轻量级零样本单目深度估计，提升泛化能力。",
+          "title_zh": "轻量级零样本单目深度估计",
+          "summary_zh": "ZipDepth实现轻量级零样本单目深度估计。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -2969,8 +2972,8 @@
           ]
         },
         {
-          "title_zh": "长时域事件视频重建预测",
-          "summary_zh": "LongE2V实现基于事件的长时域视频重建与预测。",
+          "title_zh": "长时域事件视频重建与预测",
+          "summary_zh": "LongE2V实现长时域事件视频重建与预测。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -2984,8 +2987,8 @@
           ]
         },
         {
-          "title_zh": "全景室外场景几何分割",
-          "summary_zh": "基于几何与梯度方法实现全景室外场景分割。",
+          "title_zh": "全景室外场景几何与梯度分割",
+          "summary_zh": "提出基于几何和梯度的全景室外场景分割方法。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -2999,8 +3002,8 @@
           ]
         },
         {
-          "title_zh": "通用机器人基准UniClawBench",
-          "summary_zh": "提出UniClawBench，用于主动代理的通用基准测试。",
+          "title_zh": "通用灵巧爪机器人基准",
+          "summary_zh": "UniClawBench为主动灵巧爪代理提供通用基准。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -3014,8 +3017,8 @@
           ]
         },
         {
-          "title_zh": "量子计算硬件设计平台",
-          "summary_zh": "Plaquette平台实现容错量子计算的硬件感知设计。",
+          "title_zh": "硬件感知容错量子计算平台",
+          "summary_zh": "Plaquette设计平台支持硬件感知的容错量子计算。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -3045,7 +3048,7 @@
         },
         {
           "title_zh": "几何感知全景生成增强",
-          "summary_zh": "通过几何感知方法增强上下文全景生成效果。",
+          "summary_zh": "通过几何感知增强上下文全景生成。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -3059,7 +3062,7 @@
           ]
         },
         {
-          "title_zh": "视频生成推理学习OpenCoF",
+          "title_zh": "通过视频生成学习推理",
           "summary_zh": "OpenCoF通过视频生成学习推理能力。",
           "region": "global",
           "score": 0.6,
@@ -3075,7 +3078,7 @@
         },
         {
           "title_zh": "双量子比特态操控典型性",
-          "summary_zh": "研究双量子比特态操控的典型性特征。",
+          "summary_zh": "研究双量子比特态操控的典型性。",
           "region": "global",
           "score": 0.6,
           "date": "2026-07-09",
@@ -3095,10 +3098,10 @@
       "sentiment_score": 0.5,
       "keywords": [
         "arXiv",
-        "计算机视觉",
         "深度学习",
+        "计算机视觉",
         "量子计算",
-        "AI"
+        "AI教育"
       ],
       "deduped_count": 0,
       "raw_count": 20
@@ -3106,29 +3109,29 @@
   ],
   "top5": [
     {
-      "title": "中国可重复使用火箭首次成功着陆",
-      "summary": "中国首次成功实现可重复使用火箭着陆，官方媒体高度评价。这标志着中国在航天技术领域取得重大突破，有望降低发射成本，提升国际竞争力。对决策者而言，需关注后续技术验证和商业化进程，可能影响航天产业布局和投资方向。",
-      "action": "评估航天产业链投资机会，关注技术成熟度。"
+      "title": "中国一周内遭遇第二场台风",
+      "summary": "台风连续登陆中国，带来强风暴雨，可能影响多地生产生活，需关注防灾减灾和供应链中断风险。",
+      "action": "加强应急准备，评估供应链影响。"
     },
     {
-      "title": "中国成功回收火箭助推器，航天技术重大突破",
-      "summary": "中国成为全球第二个成功回收火箭助推器的国家，彰显航天技术实力。这一进展将加速中国航天商业化，降低发射成本，并可能改变全球航天竞争格局。决策者应重视相关产业链发展，提前布局。",
-      "action": "制定航天产业扶持政策，鼓励技术创新。"
+      "title": "中国追赶马斯克可重复火箭",
+      "summary": "中国在可重复使用火箭技术取得进展，追赶马斯克，显示航天领域竞争加剧，可能影响商业航天和科技投资。",
+      "action": "关注航天政策，调整投资策略。"
     },
     {
-      "title": "苹果起诉OpenAI窃取硬件机密",
-      "summary": "苹果指控OpenAI窃取其硬件商业秘密并提起诉讼，凸显科技巨头间竞争加剧。此案可能影响AI硬件合作生态，引发行业监管关注。决策者需关注法律风险，评估对供应链和合作伙伴关系的影响。",
-      "action": "加强知识产权保护，监控行业法律动态。"
+      "title": "苹果起诉OpenAI窃密",
+      "summary": "苹果指控OpenAI窃取商业机密，法律纠纷升级，可能影响AI行业合作与监管，需警惕技术安全风险。",
+      "action": "评估AI合作风险，加强合规审查。"
     },
     {
-      "title": "SK海力士创美国最大外资IPO，凸显AI芯片需求",
-      "summary": "SK海力士在美IPO募资265亿美元，为史上最大外资IPO，反映AI芯片需求旺盛。此举将增强其资本实力，加速技术研发，可能加剧全球芯片市场竞争。决策者应关注半导体产业投资趋势。",
-      "action": "加大本土芯片产业投资，吸引外资合作。"
+      "title": "SK海力士创美国最大外资IPO",
+      "summary": "SK海力士融资265亿美元，为美国史上最大外资IPO，凸显AI芯片需求旺盛，可能推动半导体投资热潮。",
+      "action": "加大AI芯片领域投资，把握市场机遇。"
     },
     {
-      "title": "SK海力士纳斯达克上市融资265亿美元",
-      "summary": "芯片巨头SK海力士在纳斯达克上市，股价大涨，融资265亿美元。这显示市场对AI芯片前景看好，可能推动行业扩张。决策者需评估对国内芯片企业的竞争压力，并考虑政策支持。",
-      "action": "优化半导体产业政策，支持企业融资创新。"
+      "title": "SK海力士创美国最大外资IPO",
+      "summary": "SK海力士在美IPO融资265亿美元，创历史纪录，反映AI芯片市场强劲，可能带动相关产业链发展。",
+      "action": "关注半导体板块，布局AI相关资产。"
     }
   ],
   "meta": {
