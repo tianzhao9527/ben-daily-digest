@@ -1,7 +1,7 @@
 {
   "date": "2026-07-20",
-  "generated_at_utc": "2026-07-20T00:07:23.522268+00:00",
-  "generated_at_bjt": "2026-07-20 08:07",
+  "generated_at_utc": "2026-07-21T00:02:35.765801+00:00",
+  "generated_at_bjt": "2026-07-21 08:02",
   "kpis": [
     {
       "id": "SP500",
@@ -117,16 +117,15 @@
       "id": "DJIA",
       "name": "道琼斯",
       "unit": "",
-      "value": 52146.42,
-      "updated_at": "2026-07-17",
+      "value": 51839.26,
+      "updated_at": "2026-07-20",
       "source": "FRED",
-      "delta": -406.5500000000029,
-      "delta_pct": -0.7736004263888472,
+      "delta": -307.1599999999962,
+      "delta_pct": -0.5890337246545329,
       "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,39.90 L 5.41,36.56 L 7.82,32.99 L 10.23,34.42 L 12.64,32.21 L 15.05,31.91 L 17.46,27.51 L 19.87,26.95 L 22.28,24.17 L 24.69,31.69 L 27.10,21.10 L 29.51,29.52 L 31.92,30.50 L 34.33,29.45 L 36.74,41.00 L 39.15,29.74 L 41.56,25.45 L 43.97,19.78 L 46.38,15.79 L 48.79,21.94 L 51.21,21.06 L 53.62,19.27 L 56.03,19.83 L 58.44,17.62 L 60.85,16.75 L 63.26,17.29 L 65.67,13.58 L 68.08,11.92 L 70.49,12.09 L 72.90,4.89 L 75.31,3.00 L 77.72,4.58 L 80.13,11.57 L 82.54,9.89 L 84.95,8.07 L 87.36,9.75 L 89.77,9.63 L 92.18,7.81 L 94.59,9.09 L 97.00,14.02\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,36.56 L 5.41,32.99 L 7.82,34.42 L 10.23,32.21 L 12.64,31.91 L 15.05,27.51 L 17.46,26.95 L 19.87,24.17 L 22.28,31.69 L 24.69,21.10 L 27.10,29.52 L 29.51,30.50 L 31.92,29.45 L 34.33,41.00 L 36.74,29.74 L 39.15,25.45 L 41.56,19.78 L 43.97,15.79 L 46.38,21.94 L 48.79,21.06 L 51.21,19.27 L 53.62,19.83 L 56.03,17.62 L 58.44,16.75 L 60.85,17.29 L 63.26,13.58 L 65.67,11.92 L 68.08,12.09 L 70.49,4.89 L 72.90,3.00 L 75.31,4.58 L 77.72,11.57 L 80.13,9.89 L 82.54,8.07 L 84.95,9.75 L 87.36,9.63 L 89.77,7.81 L 92.18,9.09 L 94.59,14.02 L 97.00,17.74\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#FF3B30",
       "series_values": [
-        50009.35,
         50285.66,
         50579.7,
         50461.68,
@@ -165,23 +164,23 @@
         52508.27,
         52658.64,
         52552.97,
-        52146.42
+        52146.42,
+        51839.26
       ]
     },
     {
       "id": "VIXCLS",
       "name": "VIX恐慌",
       "unit": "",
-      "value": 16.73,
-      "updated_at": "2026-07-16",
+      "value": 18.77,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": 1.0600000000000005,
-      "delta_pct": 6.764518187619658,
+      "delta": 2.039999999999999,
+      "delta_pct": 12.19366407650926,
       "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.17 L 5.41,32.76 L 7.82,30.54 L 10.23,34.34 L 12.64,37.25 L 15.05,39.47 L 17.46,35.61 L 19.87,37.09 L 22.28,35.56 L 24.69,39.04 L 27.10,6.75 L 29.51,20.44 L 31.92,15.42 L 34.33,3.00 L 36.74,17.69 L 39.15,26.99 L 41.56,34.82 L 43.97,33.71 L 46.38,22.98 L 48.79,33.76 L 51.21,31.75 L 53.62,29.11 L 56.03,17.43 L 58.44,21.97 L 60.85,20.60 L 63.26,23.14 L 65.67,27.15 L 68.08,33.50 L 70.49,32.76 L 72.90,35.08 L 75.31,36.88 L 77.72,38.15 L 80.13,35.19 L 82.54,31.12 L 84.95,36.72 L 87.36,41.00 L 89.77,29.74 L 92.18,33.23 L 94.59,37.62 L 97.00,32.02\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.76 L 5.41,30.54 L 7.82,34.34 L 10.23,37.25 L 12.64,39.47 L 15.05,35.61 L 17.46,37.09 L 19.87,35.56 L 22.28,39.04 L 24.69,6.75 L 27.10,20.44 L 29.51,15.42 L 31.92,3.00 L 34.33,17.69 L 36.74,26.99 L 39.15,34.82 L 41.56,33.71 L 43.97,22.98 L 46.38,33.76 L 48.79,31.75 L 51.21,29.11 L 53.62,17.43 L 56.03,21.97 L 58.44,20.60 L 60.85,23.14 L 63.26,27.15 L 65.67,33.50 L 68.08,32.76 L 70.49,35.08 L 72.90,36.88 L 75.31,38.15 L 77.72,35.19 L 80.13,31.12 L 82.54,36.72 L 84.95,41.00 L 87.36,29.74 L 89.77,33.23 L 92.18,37.62 L 94.59,32.02 L 97.00,21.23\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#34C759",
       "series_values": [
-        16.7,
         16.59,
         17.01,
         16.29,
@@ -220,7 +219,8 @@
         17.16,
         16.5,
         15.67,
-        16.73
+        16.73,
+        18.77
       ]
     },
     {
@@ -282,16 +282,15 @@
       "id": "DGS10",
       "name": "美债10Y",
       "unit": "%",
-      "value": 4.57,
-      "updated_at": "2026-07-16",
+      "value": 4.55,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": 0.020000000000000462,
-      "delta_pct": 0.4395604395604497,
-      "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,16.10 L 7.82,16.10 L 10.23,17.41 L 12.64,25.28 L 15.05,27.90 L 17.46,31.83 L 19.87,31.83 L 22.28,29.21 L 24.69,30.52 L 27.10,26.59 L 29.51,29.21 L 31.92,18.72 L 34.33,17.41 L 36.74,21.34 L 39.15,18.72 L 41.56,31.83 L 43.97,27.90 L 46.38,29.21 L 48.79,34.45 L 51.21,26.59 L 53.62,30.52 L 56.03,23.97 L 58.44,25.28 L 60.85,37.07 L 63.26,38.38 L 65.67,41.00 L 68.08,41.00 L 70.49,33.14 L 72.90,27.90 L 75.31,26.59 L 77.72,27.90 L 80.13,18.72 L 82.54,17.41 L 84.95,20.03 L 87.36,17.41 L 89.77,9.55 L 92.18,14.79 L 94.59,18.72 L 97.00,16.10\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#34C759",
+      "delta": -0.020000000000000462,
+      "delta_pct": -0.43763676148797503,
+      "direction": "down",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,10.92 L 5.41,10.92 L 7.82,12.50 L 10.23,22.00 L 12.64,25.17 L 15.05,29.92 L 17.46,29.92 L 19.87,26.75 L 22.28,28.33 L 24.69,23.58 L 27.10,26.75 L 29.51,14.08 L 31.92,12.50 L 34.33,17.25 L 36.74,14.08 L 39.15,29.92 L 41.56,25.17 L 43.97,26.75 L 46.38,33.08 L 48.79,23.58 L 51.21,28.33 L 53.62,20.42 L 56.03,22.00 L 58.44,36.25 L 60.85,37.83 L 63.26,41.00 L 65.67,41.00 L 68.08,31.50 L 70.49,25.17 L 72.90,23.58 L 75.31,25.17 L 77.72,14.08 L 80.13,12.50 L 82.54,15.67 L 84.95,12.50 L 87.36,3.00 L 89.77,9.33 L 92.18,14.08 L 94.59,10.92 L 97.00,14.08\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#FF3B30",
       "series_values": [
-        4.67,
         4.57,
         4.57,
         4.56,
@@ -330,23 +329,23 @@
         4.62,
         4.58,
         4.55,
-        4.57
+        4.57,
+        4.55
       ]
     },
     {
       "id": "DGS2",
       "name": "美债2Y",
       "unit": "%",
-      "value": 4.16,
-      "updated_at": "2026-07-16",
+      "value": 4.18,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": 0.03000000000000025,
-      "delta_pct": 0.7263922518159867,
+      "delta": 0.019999999999999574,
+      "delta_pct": 0.48076923076922046,
       "direction": "up",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,20.64 L 5.41,32.86 L 7.82,27.43 L 10.23,20.64 L 12.64,36.93 L 15.05,38.29 L 17.46,39.64 L 19.87,41.00 L 22.28,31.50 L 24.69,31.50 L 27.10,27.43 L 29.51,31.50 L 31.92,15.21 L 34.33,17.93 L 36.74,20.64 L 39.15,20.64 L 41.56,31.50 L 43.97,26.07 L 46.38,28.79 L 48.79,31.50 L 51.21,11.14 L 53.62,12.50 L 56.03,5.71 L 58.44,16.57 L 60.85,23.36 L 63.26,26.07 L 65.67,28.79 L 68.08,24.71 L 70.49,19.29 L 72.90,15.21 L 75.31,19.29 L 77.72,20.64 L 80.13,12.50 L 82.54,9.79 L 84.95,16.57 L 87.36,9.79 L 89.77,3.00 L 92.18,13.86 L 94.59,20.64 L 97.00,16.57\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,32.86 L 5.41,27.43 L 7.82,20.64 L 10.23,36.93 L 12.64,38.29 L 15.05,39.64 L 17.46,41.00 L 19.87,31.50 L 22.28,31.50 L 24.69,27.43 L 27.10,31.50 L 29.51,15.21 L 31.92,17.93 L 34.33,20.64 L 36.74,20.64 L 39.15,31.50 L 41.56,26.07 L 43.97,28.79 L 46.38,31.50 L 48.79,11.14 L 51.21,12.50 L 53.62,5.71 L 56.03,16.57 L 58.44,23.36 L 60.85,26.07 L 63.26,28.79 L 65.67,24.71 L 68.08,19.29 L 70.49,15.21 L 72.90,19.29 L 75.31,20.64 L 77.72,12.50 L 80.13,9.79 L 82.54,16.57 L 84.95,9.79 L 87.36,3.00 L 89.77,13.86 L 92.18,20.64 L 94.59,16.57 L 97.00,13.86\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#34C759",
       "series_values": [
-        4.13,
         4.04,
         4.08,
         4.13,
@@ -385,23 +384,23 @@
         4.26,
         4.18,
         4.13,
-        4.16
+        4.16,
+        4.18
       ]
     },
     {
       "id": "T10Y2Y",
       "name": "10Y-2Y利差",
       "unit": "%",
-      "value": 0.37,
-      "updated_at": "2026-07-17",
+      "value": 0.39,
+      "updated_at": "2026-07-20",
       "source": "FRED",
-      "delta": -0.03999999999999998,
-      "delta_pct": -9.756097560975606,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,8.85 L 7.82,17.62 L 10.23,8.85 L 12.64,10.31 L 15.05,13.23 L 17.46,11.77 L 19.87,19.08 L 22.28,20.54 L 24.69,20.54 L 27.10,19.08 L 29.51,24.92 L 31.92,20.54 L 34.33,22.00 L 36.74,19.08 L 39.15,22.00 L 41.56,23.46 L 43.97,22.00 L 46.38,24.92 L 48.79,38.08 L 51.21,41.00 L 53.62,41.00 L 56.03,30.77 L 58.44,36.62 L 60.85,35.15 L 63.26,35.15 L 65.67,39.54 L 68.08,36.62 L 70.49,35.15 L 72.90,29.31 L 75.31,29.31 L 77.72,27.85 L 80.13,29.31 L 82.54,24.92 L 84.95,29.31 L 87.36,27.85 L 89.77,22.00 L 92.18,19.08 L 94.59,20.54 L 97.00,26.38\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.020000000000000018,
+      "delta_pct": 5.405405405405411,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,13.36 L 7.82,3.00 L 10.23,4.73 L 12.64,8.18 L 15.05,6.45 L 17.46,15.09 L 19.87,16.82 L 22.28,16.82 L 24.69,15.09 L 27.10,22.00 L 29.51,16.82 L 31.92,18.55 L 34.33,15.09 L 36.74,18.55 L 39.15,20.27 L 41.56,18.55 L 43.97,22.00 L 46.38,37.55 L 48.79,41.00 L 51.21,41.00 L 53.62,28.91 L 56.03,35.82 L 58.44,34.09 L 60.85,34.09 L 63.26,39.27 L 65.67,35.82 L 68.08,34.09 L 70.49,27.18 L 72.90,27.18 L 75.31,25.45 L 77.72,27.18 L 80.13,22.00 L 82.54,27.18 L 84.95,25.45 L 87.36,18.55 L 89.77,15.09 L 92.18,16.82 L 94.59,23.73 L 97.00,20.27\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        0.53,
         0.49,
         0.43,
         0.49,
@@ -440,7 +439,8 @@
         0.4,
         0.42,
         0.41,
-        0.37
+        0.37,
+        0.39
       ]
     },
     {
@@ -502,20 +502,15 @@
       "id": "DEXCHUS",
       "name": "USD/CNY",
       "unit": "",
-      "value": 6.7766,
-      "updated_at": "2026-07-10",
+      "value": 6.776,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": -0.015499999999999403,
-      "delta_pct": -0.22820629849382965,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,18.45 L 5.41,22.16 L 7.82,6.45 L 10.23,12.45 L 12.64,3.00 L 15.05,12.13 L 17.46,10.82 L 19.87,16.04 L 22.28,21.58 L 24.69,26.27 L 27.10,25.75 L 29.51,34.48 L 31.92,35.26 L 34.33,37.09 L 36.74,32.53 L 39.15,29.72 L 41.56,34.94 L 43.97,23.40 L 46.38,30.57 L 48.79,29.07 L 51.21,28.36 L 53.62,36.83 L 56.03,40.48 L 58.44,41.00 L 60.85,40.02 L 63.26,32.92 L 65.67,29.07 L 68.08,18.97 L 70.49,5.54 L 72.90,14.02 L 75.31,13.75 L 77.72,16.62 L 80.13,22.16 L 82.54,16.23 L 84.95,19.88 L 87.36,15.19 L 89.77,16.75 L 92.18,10.82 L 94.59,17.60 L 97.00,27.70\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.0034000000000000696,
+      "delta_pct": 0.050202285680537306,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,10.06 L 5.41,8.66 L 7.82,14.25 L 10.23,20.18 L 12.64,25.21 L 15.05,24.65 L 17.46,34.01 L 19.87,34.85 L 22.28,36.81 L 24.69,31.92 L 27.10,28.92 L 29.51,34.50 L 31.92,22.14 L 34.33,29.82 L 36.74,28.22 L 39.15,27.45 L 41.56,36.53 L 43.97,40.44 L 46.38,41.00 L 48.79,39.95 L 51.21,32.34 L 53.62,28.22 L 56.03,17.39 L 58.44,3.00 L 60.85,12.08 L 63.26,11.80 L 65.67,14.88 L 68.08,20.81 L 70.49,14.46 L 72.90,18.37 L 75.31,13.34 L 77.72,15.01 L 80.13,8.66 L 82.54,15.92 L 84.95,26.75 L 87.36,24.72 L 89.77,31.36 L 92.18,32.62 L 94.59,29.54 L 97.00,27.17\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        6.7908,
-        6.7851,
-        6.8092,
-        6.8,
-        6.8145,
         6.8005,
         6.8025,
         6.7945,
@@ -550,27 +545,27 @@
         6.7934,
         6.8025,
         6.7921,
-        6.7766
+        6.7766,
+        6.7795,
+        6.77,
+        6.7682,
+        6.7726,
+        6.776
       ]
     },
     {
       "id": "DEXJPUS",
       "name": "USD/JPY",
       "unit": "",
-      "value": 161.31,
-      "updated_at": "2026-07-10",
+      "value": 162.43,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": -0.9799999999999898,
-      "delta_pct": -0.6038572925010721,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,39.11 L 7.82,34.31 L 10.23,33.21 L 12.64,31.01 L 15.05,33.13 L 17.46,30.61 L 19.87,30.30 L 22.28,29.04 L 24.69,28.18 L 27.10,29.59 L 29.51,30.06 L 31.92,26.68 L 34.33,25.11 L 36.74,24.24 L 39.15,24.24 L 41.56,21.96 L 43.97,23.06 L 46.38,22.20 L 48.79,20.31 L 51.21,19.99 L 53.62,22.12 L 56.03,22.43 L 58.44,20.94 L 60.85,22.28 L 63.26,13.23 L 65.67,12.13 L 68.08,11.81 L 70.49,10.16 L 72.90,10.87 L 75.31,10.87 L 77.72,8.82 L 80.13,3.47 L 82.54,5.05 L 84.95,16.93 L 87.36,6.07 L 89.77,8.98 L 92.18,3.00 L 94.59,5.99 L 97.00,13.70\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.010000000000019327,
+      "delta_pct": 0.006156877231879896,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,37.83 L 7.82,37.43 L 10.23,35.84 L 12.64,34.75 L 15.05,36.54 L 17.46,37.13 L 19.87,32.86 L 22.28,30.88 L 24.69,29.79 L 27.10,29.79 L 29.51,26.91 L 31.92,28.30 L 34.33,27.21 L 36.74,24.83 L 39.15,24.43 L 41.56,27.11 L 43.97,27.51 L 46.38,25.62 L 48.79,27.31 L 51.21,15.90 L 53.62,14.51 L 56.03,14.11 L 58.44,12.03 L 60.85,12.92 L 63.26,12.92 L 65.67,10.34 L 68.08,3.60 L 70.49,5.58 L 72.90,20.56 L 75.31,6.87 L 77.72,10.54 L 80.13,3.00 L 82.54,6.77 L 84.95,16.49 L 87.36,6.47 L 89.77,8.26 L 92.18,8.36 L 94.59,5.48 L 97.00,5.38\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        157.84,
-        158.08,
-        158.69,
-        158.83,
-        159.11,
         158.84,
         159.16,
         159.2,
@@ -605,27 +600,27 @@
         161.91,
         162.67,
         162.29,
-        161.31
+        161.31,
+        162.32,
+        162.14,
+        162.13,
+        162.42,
+        162.43
       ]
     },
     {
       "id": "DEXUSEU",
       "name": "EUR/USD",
       "unit": "",
-      "value": 1.1438,
-      "updated_at": "2026-07-10",
+      "value": 1.144,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": -9.999999999998899e-05,
-      "delta_pct": -0.008742022904099046,
+      "delta": -0.000700000000000145,
+      "delta_pct": -0.06115139337819035,
       "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,3.00 L 5.41,6.45 L 7.82,11.79 L 10.23,9.49 L 12.64,14.41 L 15.05,12.53 L 17.46,15.77 L 19.87,14.31 L 22.28,12.53 L 24.69,11.37 L 27.10,9.49 L 29.51,6.35 L 31.92,12.11 L 34.33,10.22 L 36.74,14.10 L 39.15,11.58 L 41.56,21.63 L 43.97,20.38 L 46.38,19.23 L 48.79,19.85 L 51.21,23.52 L 53.62,17.45 L 56.03,14.72 L 58.44,13.05 L 60.85,15.35 L 63.26,28.23 L 65.67,32.21 L 68.08,37.34 L 70.49,41.00 L 72.90,37.13 L 75.31,35.24 L 77.72,32.94 L 80.13,33.78 L 82.54,37.23 L 84.95,30.53 L 87.36,32.83 L 89.77,33.15 L 92.18,35.98 L 94.59,31.47 L 97.00,31.58\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,9.77 L 5.41,13.33 L 7.82,11.73 L 10.23,9.77 L 12.64,8.51 L 15.05,6.44 L 17.46,3.00 L 19.87,9.31 L 22.28,7.25 L 24.69,11.50 L 27.10,8.74 L 29.51,19.76 L 31.92,18.38 L 34.33,17.12 L 36.74,17.81 L 39.15,21.83 L 41.56,15.17 L 43.97,12.18 L 46.38,10.35 L 48.79,12.87 L 51.21,26.99 L 53.62,31.36 L 56.03,36.98 L 58.44,41.00 L 60.85,36.75 L 63.26,34.69 L 65.67,32.16 L 68.08,33.08 L 70.49,36.87 L 72.90,29.52 L 75.31,32.05 L 77.72,32.39 L 80.13,35.49 L 82.54,30.55 L 84.95,30.67 L 87.36,34.80 L 89.77,31.82 L 92.18,30.90 L 94.59,29.63 L 97.00,30.44\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
       "color": "#FF3B30",
       "series_values": [
-        1.1711,
-        1.1678,
-        1.1627,
-        1.1649,
-        1.1602,
         1.162,
         1.1589,
         1.1603,
@@ -660,27 +655,27 @@
         1.1423,
         1.1396,
         1.1439,
-        1.1438
+        1.1438,
+        1.1402,
+        1.1428,
+        1.1436,
+        1.1447,
+        1.144
       ]
     },
     {
       "id": "DTWEXBGS",
       "name": "美元指数",
       "unit": "",
-      "value": 120.5046,
-      "updated_at": "2026-07-10",
+      "value": 120.5315,
+      "updated_at": "2026-07-17",
       "source": "FRED",
-      "delta": -0.24840000000000373,
-      "delta_pct": -0.2057091749273341,
-      "direction": "down",
-      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,41.00 L 5.41,38.47 L 7.82,30.54 L 10.23,33.45 L 12.64,28.36 L 15.05,32.09 L 17.46,29.42 L 19.87,30.48 L 22.28,32.00 L 24.69,31.83 L 27.10,33.78 L 29.51,35.77 L 31.92,32.06 L 34.33,33.73 L 36.74,29.22 L 39.15,29.52 L 41.56,20.19 L 43.97,20.82 L 46.38,21.76 L 48.79,22.38 L 51.21,19.74 L 53.62,27.63 L 56.03,30.11 L 58.44,30.88 L 60.85,29.19 L 63.26,16.14 L 65.67,14.20 L 68.08,7.61 L 70.49,3.00 L 72.90,7.61 L 75.31,9.79 L 77.72,8.94 L 80.13,9.30 L 82.54,6.45 L 84.95,12.33 L 87.36,10.46 L 89.77,10.73 L 92.18,6.64 L 94.59,11.52 L 97.00,14.74\" stroke=\"#FF3B30\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-      "color": "#FF3B30",
+      "delta": 0.20049999999999102,
+      "delta_pct": 0.1666237295459948,
+      "direction": "up",
+      "spark_svg": "<svg class=\"spark\" viewBox=\"0 0 100 44\" preserveAspectRatio=\"none\"><path d=\"M 3.00,36.74 L 5.41,33.64 L 7.82,34.87 L 10.23,36.63 L 12.64,36.43 L 15.05,38.70 L 17.46,41.00 L 19.87,36.70 L 22.28,38.64 L 24.69,33.40 L 27.10,33.75 L 29.51,22.93 L 31.92,23.67 L 34.33,24.75 L 36.74,25.48 L 39.15,22.42 L 41.56,31.57 L 43.97,34.44 L 46.38,35.34 L 48.79,33.37 L 51.21,18.24 L 53.62,15.98 L 56.03,8.35 L 58.44,3.00 L 60.85,8.34 L 63.26,10.88 L 65.67,9.89 L 68.08,10.31 L 70.49,7.00 L 72.90,13.83 L 75.31,11.65 L 77.72,11.96 L 80.13,7.22 L 82.54,12.88 L 84.95,16.61 L 87.36,13.06 L 89.77,17.09 L 92.18,19.55 L 94.59,19.21 L 97.00,16.21\" stroke=\"#34C759\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "color": "#34C759",
       "series_values": [
-        118.4737,
-        118.6696,
-        119.2825,
-        119.0574,
-        119.451,
         119.1624,
         119.369,
         119.2868,
@@ -715,7 +710,12 @@
         120.8145,
         121.1307,
         120.753,
-        120.5046
+        120.5046,
+        120.7413,
+        120.4728,
+        120.3088,
+        120.331,
+        120.5315
       ]
     },
     {
@@ -1115,153 +1115,153 @@
         "USD CNY yuan exchange rate",
         "stock market index S&P Nasdaq"
       ],
-      "brief_zh": "国际油价因美伊冲突飙升，美股期货持平；西班牙世界杯夺冠获5000万美元奖金；中国公司就英国钢铁国有化寻求赔偿；泰晤士水务债权人准备法律挑战；欧盟新边境系统导致通关时间延长三倍。",
+      "brief_zh": "今日宏观市场新闻涵盖英国政治变动、特朗普对加拿大加征50%关税、瑞安航空因伊朗战争利润下滑、AliExpress被欧盟罚款5.5亿欧元、西非250亿美元天然气管道计划、中国廉价AI模型利好英伟达等。市场情绪偏负面，关税和地缘冲突影响显著。",
       "events": [
         {
-          "title_zh": "油价飙升美股期货持平",
-          "summary_zh": "美伊冲突导致油价上涨，美股期货表现平稳。",
+          "title_zh": "特朗普对加拿大加征50%关税",
+          "summary_zh": "特朗普宣布对加拿大进口商品征收50%关税，加剧贸易紧张。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Trump imposes 50% tariff on Canadian imports",
+              "url": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞安航空因伊朗战争利润下滑",
+          "summary_zh": "伊朗战争导致乘客减少和生命损失，瑞安航空利润下降。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Oil prices surge, stock futures flat as fighting between U.S",
-              "url": "https://www.marketwatch.com/story/oil-prices-surge-stock-futures-dip-as-fighting-between-u-s-and-ira",
-              "source": "MarketWatch",
-              "published_at": "2026-07-19"
+              "title": "Ryanair profits drop as Iran war puts off passengers and lif",
+              "url": "https://www.bbc.co.uk/news/articles/cn8nldwj12jo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "西班牙世界杯夺冠获5000万",
-          "summary_zh": "西班牙队赢得世界杯冠军，获得5000万美元奖金，但需缴税。",
+          "title_zh": "AliExpress被欧盟罚款5.5亿欧元",
+          "summary_zh": "欧盟因AliExpress允许销售非法商品，处以创纪录的5.5亿欧元罚款。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "AliExpress fined record €550m by EU for allowing sale of ill",
+              "url": "https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "西非签署250亿美元天然气管道计划",
+          "summary_zh": "西非国家签署250亿美元巨型天然气管道计划，推动能源合作。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "World Cup-champion Spain just won $50 million — and the IRS ",
-              "url": "https://www.marketwatch.com/story/the-world-cupwinning-side-will-make-50-million-and-the-irs-gets-a-",
-              "source": "MarketWatch",
-              "published_at": "2026-07-19"
+              "title": "West Africa signs off $25bn mega gas-pipeline plan",
+              "url": "https://www.bbc.co.uk/news/articles/cwyr5rpglngo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "中国公司寻求英国钢铁赔偿",
-          "summary_zh": "中国公司就英国钢铁国有化问题寻求赔偿，涉及国际投资争端。",
+          "title_zh": "中国廉价AI模型利好英伟达",
+          "summary_zh": "分析称中国廉价AI模型可能对英伟达有利，推动市场乐观。",
           "region": "cn",
-          "score": 0.7,
-          "date": "2026-07-19",
+          "score": 0.6,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Chinese firm seeks compensation over British Steel nationali",
-              "url": "https://www.bbc.co.uk/news/articles/cwyj4ppqn41o",
+              "title": "Why cheap Chinese AI models could actually be a boon for Nvi",
+              "url": "https://www.marketwatch.com/story/why-cheap-chinese-ai-models-could-actually-be-a-boon-for-nvidia-mi",
+              "source": "MarketWatch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "约翰·希利意外辞职后成为财政大臣",
+          "summary_zh": "约翰·希利在震惊辞职后数周成为英国财政大臣，政治变动。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "John Healey becomes chancellor weeks after shock resignation",
+              "url": "https://www.bbc.co.uk/news/articles/ce85y9lm81no?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "伯纳姆的经济挑战：就业、借贷和税收",
+          "summary_zh": "安迪·伯纳姆面临就业、借贷和税收等经济挑战，提出大计划。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Jobs, borrowing and taxes: Andy Burnham's economic challenge",
+              "url": "https://www.bbc.co.uk/news/articles/crkvj0ngzexo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "20多岁年轻人重注科技股",
+          "summary_zh": "20多岁的年轻人大量投资科技股，显示市场投机情绪。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "The 20-somethings betting big on tech stocks",
+              "url": "https://www.bbc.co.uk/news/articles/c20yz9v1llro?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "汽油价格比油价上涨更快",
+          "summary_zh": "汽油价格上涨速度快于原油价格，原因在于炼油瓶颈。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Why are gasoline prices rising faster than oil prices? Blame",
+              "url": "https://www.marketwatch.com/story/why-are-gasoline-prices-rising-faster-than-oil-prices-blame-it-on-",
+              "source": "MarketWatch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
           "title_zh": "泰晤士水务债权人准备法律挑战",
-          "summary_zh": "泰晤士水务债权人准备在国有化情况下发起法律挑战，影响英国水务市场。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Thames Water lenders preparing legal challenge in event of B",
-              "url": "https://www.bbc.co.uk/news/articles/cx278ed09nzo",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟新边境系统通关时间延长",
-          "summary_zh": "欧盟新边境系统导致机场通关时间延长三倍，影响旅行效率。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "New EU border system tripling time at passport control, airp",
-              "url": "https://www.bbc.co.uk/news/articles/ckg5gg6n9x3o",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "健身追踪器提前发现怀孕",
-          "summary_zh": "用户通过健身追踪器数据意外发现怀孕，引发隐私讨论。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "My fitness tracker knew I was pregnant before I did",
-              "url": "https://www.bbc.co.uk/news/articles/cr474z1qyn6o",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "夜班隐藏成本及睡眠建议",
-          "summary_zh": "报道夜班工作对健康的影响，并提供改善睡眠的方法。",
+          "summary_zh": "泰晤士水务债权人准备在国有化情况下发起法律挑战。",
           "region": "global",
           "score": 0.3,
           "date": "2026-07-19",
           "sources": [
             {
-              "title": "The hidden cost of the night shift and how to sleep it off",
-              "url": "https://www.bbc.co.uk/news/articles/cp9errxl97go",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "Brewdog创始人面临数据投诉",
-          "summary_zh": "Brewdog创始人因回购酒吧努力面临数据隐私投诉。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Brewdog founder faces data complaints over efforts to buy ba",
-              "url": "https://www.bbc.co.uk/news/articles/c4gw9pp0xlno",
-              "source": "BBC Business",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "买家在交换合同前降价1.5万",
-          "summary_zh": "英国房产市场出现买家在交换合同前大幅降价现象，反映市场不确定性。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "'My buyers dropped their offer by £15,000 the day before exc",
-              "url": "https://www.bbc.co.uk/news/articles/c3d39r338m0o",
-              "source": "BBC Business",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "伯纳姆承诺北海油气新曙光",
-          "summary_zh": "政治人物承诺为北海油气行业带来新机遇，涉及能源政策。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Is Burnham promising a new dawn for North Sea oil and gas?",
-              "url": "https://www.bbc.co.uk/news/articles/c4g3l22ry6wo",
+              "title": "Thames Water lenders preparing legal challenge in event of B",
+              "url": "https://www.bbc.co.uk/news/articles/cx278ed09nzo?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-07-19"
             }
@@ -1273,14 +1273,14 @@
       "sentiment": "negative",
       "sentiment_score": 0.35,
       "keywords": [
-        "油价",
-        "美股",
-        "英国钢铁",
-        "泰晤士水务",
-        "欧盟边境"
+        "关税",
+        "地缘冲突",
+        "AI",
+        "罚款",
+        "天然气"
       ],
-      "deduped_count": 0,
-      "raw_count": 25
+      "deduped_count": 1,
+      "raw_count": 45
     },
     {
       "id": "sanctions",
@@ -1292,155 +1292,155 @@
         "China US trade tariffs",
         "export controls technology chips"
       ],
-      "brief_zh": "伊朗袭击致美军一死一伤；俄罗斯对乌克兰发动大规模弹道导弹袭击；欧盟新边境系统导致护照检查时间延长三倍；美国士兵在伊朗袭击中丧生；古巴异见人士流亡；匈牙利总统同意下台；德国政客因代孕争议辞职；老挝无法确定游客死亡原因；印度发射首枚商业火箭；特朗普威胁对加拿大加征关税。",
+      "brief_zh": "2026年7月20日，全球地缘政治紧张加剧：美国对加拿大加征50%关税，对伊朗发动新打击；也门胡塞武装宣布对沙特实施海上禁运；俄罗斯在黑海袭击商船致10人死亡；哈马斯任命新领导人；圭亚那渡轮倾覆恐致多人死亡。此外，西班牙世界杯庆祝活动中一名13岁男孩死亡，英国削减对非洲援助，美国七名人员在肯尼亚隔离埃博拉。",
       "events": [
         {
-          "title_zh": "伊朗袭击致美军一死一伤",
-          "summary_zh": "伊朗袭击造成一名美军死亡、一人受伤。",
+          "title_zh": "美国对加拿大加征50%关税",
+          "summary_zh": "特朗普宣布对加拿大进口商品加征50%关税，加剧贸易紧张。",
           "region": "global",
           "score": 0.9,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "US soldier killed and one injured after Iranian attack in Ir",
-              "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss",
+              "title": "Trump imposes 50% tariff on Canadian imports",
+              "url": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "俄罗斯大规模导弹袭击乌克兰",
-          "summary_zh": "俄罗斯对乌克兰发动重大弹道导弹攻击。",
+          "title_zh": "美国对伊朗发动新打击",
+          "summary_zh": "美国对伊朗发动新打击，特朗普警告报复，中东局势升级。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "US launches fresh strikes on Iran, as Trump warns of retalia",
+              "url": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "胡塞武装对沙特实施海上禁运",
+          "summary_zh": "也门胡塞武装宣布对沙特阿拉伯实施海上禁运，加剧地区冲突。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Russia launches major ballistic missile attack on Ukrainian ",
-              "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss",
+              "title": "Yemen's Houthis announce 'maritime embargo' on Saudi Arabia",
+              "url": "https://www.bbc.co.uk/news/articles/cm2gmddx1ldo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "欧盟新边境系统延长通关时间",
-          "summary_zh": "欧盟新边境系统导致护照检查时间增加三倍。",
+          "title_zh": "俄罗斯袭击黑海商船致10死",
+          "summary_zh": "俄罗斯在黑海袭击商船，造成10人死亡，航运安全受威胁。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
+          "score": 0.8,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "New EU border system tripling time at passport control, airp",
-              "url": "https://www.bbc.co.uk/news/articles/ckg5gg6n9x3o?at_medium=RSS&at_campaign=rss",
+              "title": "Ten killed as Russian attacks on merchant ships in Black Sea",
+              "url": "https://www.bbc.co.uk/news/articles/c4gvpv3ewv2o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "古巴异见人士流亡",
-          "summary_zh": "古巴异见人士路易斯·曼努埃尔·奥特罗·阿尔坎塔拉流亡。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Cuban dissident Luis Manuel Otero Alcántara goes into exile ",
-              "url": "https://www.bbc.co.uk/news/articles/cx2k77p2r1xo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "匈牙利总统同意下台",
-          "summary_zh": "匈牙利总统在议会投票后同意辞职。",
+          "title_zh": "哈马斯任命新领导人",
+          "summary_zh": "哈马斯任命哈利勒·哈亚为新领导人，中东局势再添变数。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Hungary's president agrees to stand down after parliament ba",
-              "url": "https://www.bbc.co.uk/news/articles/cpd7q7eev7po?at_medium=RSS&at_campaign=rss",
+              "title": "Hamas names Khalil al-Hayya as new overall leader",
+              "url": "https://www.bbc.co.uk/news/articles/cx25nzkyj50o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "德国政客因代孕争议辞职",
-          "summary_zh": "德国政客因代孕儿童争议辞职。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "German politician resigns over surrogacy child controversy",
-              "url": "https://www.bbc.co.uk/news/articles/cq56e9n1ddzo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "老挝无法确定游客死亡原因",
-          "summary_zh": "老挝称无法确定与游客死亡相关的原因。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "Laos says it can't determine cause of  tourist deaths linked",
-              "url": "https://www.bbc.co.uk/news/articles/cdx8rj99endo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "印度发射首枚商业火箭",
-          "summary_zh": "太空初创公司发射印度首枚商业火箭。",
+          "title_zh": "圭亚那渡轮倾覆恐致多人死亡",
+          "summary_zh": "圭亚那附近海域一艘客轮倾覆，恐造成多人死亡，救援进行中。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Space start-up launches India’s first commercial rocket desi",
-              "url": "https://www.bbc.co.uk/news/articles/clyekv7rld3o?at_medium=RSS&at_campaign=rss",
+              "title": "Scores feared dead after passenger ferry capsizes off Guyana",
+              "url": "https://www.bbc.co.uk/news/articles/cm2gm99nrm7o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "特朗普威胁对加拿大加征关税",
-          "summary_zh": "特朗普因火灾问题威胁对加拿大加征新关税。",
+          "title_zh": "西班牙世界杯庆祝活动13岁男孩死亡",
+          "summary_zh": "西班牙世界杯庆祝活动中，一名13岁男孩死亡，引发安全担忧。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Trump threatens new Canada tariffs over fires sending 'filth",
-              "url": "https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss",
+              "title": "Boy, 13, dies during World Cup celebrations in Spain",
+              "url": "https://www.bbc.co.uk/news/articles/c0qvdy0jv05o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "圣多美和普林西比总统选举",
-          "summary_zh": "圣多美和普林西比举行紧张总统选举。",
+          "title_zh": "英国削减对非洲援助",
+          "summary_zh": "英国削减对外援助，减少对部分非洲国家的双边支持，引发批评。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
+          "score": 0.6,
+          "date": "2026-07-16",
           "sources": [
             {
-              "title": "São Tomé and Príncipe heads to polls in tense presidential e",
-              "url": "https://www.theguardian.com/world/2026/jul/19/sao-tome-and-principe-presidential-election",
+              "title": "UK aid cuts ‘reduce bilateral support to some African countr",
+              "url": "https://www.theguardian.com/politics/2026/jul/16/uk-aid-cuts-bilateral-support-african-countries",
               "source": "The Guardian",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-16"
+            }
+          ]
+        },
+        {
+          "title_zh": "美国七名人员在肯尼亚隔离埃博拉",
+          "summary_zh": "七名美国援助人员在肯尼亚因埃博拉病毒隔离，疫情风险受关注。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-17",
+          "sources": [
+            {
+              "title": "Seven Americans quarantining at Kenya Ebola facility after U",
+              "url": "https://www.theguardian.com/us-news/2026/jul/17/ebola-us-aid-workers-kenya",
+              "source": "The Guardian",
+              "published_at": "2026-07-17"
+            }
+          ]
+        },
+        {
+          "title_zh": "乌干达呼吁解除旅行限制",
+          "summary_zh": "乌干达在最后一名埃博拉患者康复后，呼吁解除旅行限制。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-16",
+          "sources": [
+            {
+              "title": "Uganda calls for travel restrictions to be lifted after last",
+              "url": "https://www.theguardian.com/global-development/2026/jul/16/uganda-travel-restrictions-last-ebola-pat",
+              "source": "The Guardian",
+              "published_at": "2026-07-16"
             }
           ]
         }
@@ -1450,11 +1450,11 @@
       "sentiment": "negative",
       "sentiment_score": 0.3,
       "keywords": [
-        "伊朗袭击",
-        "俄罗斯导弹",
-        "欧盟边境",
-        "古巴流亡",
-        "匈牙利总统"
+        "关税",
+        "制裁",
+        "地缘政治",
+        "冲突",
+        "贸易"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -1469,172 +1469,172 @@
         "large language model LLM",
         "generative AI enterprise business"
       ],
-      "brief_zh": "本期AI/大模型新闻聚焦AI在医疗授权、影视制作、自动驾驶法规及硬件领域的争议与进展，同时涉及印度私营火箭、野火监测卫星等科技动态。",
+      "brief_zh": "AI领域动态密集：Colossal Biosciences融资谈判、特朗普AI主管辞职、谷歌研发新AI芯片、OpenAI担忧开源模型、Natural获3000万美元、Adobe相机AI点评、YouTube规范AI内容、Hugging Face遭入侵等。",
       "events": [
         {
-          "title_zh": "AI能否改善医疗授权？",
-          "summary_zh": "探讨AI在医疗预先授权中的潜在利弊，可能简化流程或加剧问题。",
+          "title_zh": "Colossal Biosciences融资谈判",
+          "summary_zh": "Colossal Biosciences正谈判融资，估值或达20亿美元。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Will AI fix prior authorization—or make it worse?",
-              "url": "https://arstechnica.com/ai/2026/07/will-ai-fix-prior-authorization-or-make-it-worse/",
-              "source": "Ars Technica",
-              "published_at": "2026-07-18"
+              "title": "Colossal Biosciences reportedly in talks to raise new capita",
+              "url": "https://techcrunch.com/2026/07/20/colossal-biosciences-reportedly-in-talks-to-raise-new-capital-at-2",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Netflix收购AI电影初创公司",
-          "summary_zh": "Netflix以5.87亿美元收购本·阿弗莱克的AI电影制作初创公司。",
+          "title_zh": "特朗普AI主管辞职",
+          "summary_zh": "特朗普最新任命的AI主管已辞职，引发关注。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Trump’s latest AI czar has already resigned",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌研发新AI芯片",
+          "summary_zh": "谷歌正研发新AI芯片，旨在提升Gemini效率。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Netflix paid $587M for Ben Affleck’s AI filmmaking startup",
-              "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
+              "title": "Google is working on a new AI chip designed to make Gemini m",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-ef",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "苹果诉讼或阻碍OpenAI硬件计划",
-          "summary_zh": "苹果的诉讼可能影响OpenAI的硬件发展计划。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Can an Apple lawsuit derail OpenAI’s hardware plans?",
-              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "自动驾驶出租车规则之争",
-          "summary_zh": "围绕自动驾驶出租车法规的激烈争论持续进行。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "TechCrunch Mobility: The battle over robotaxi rules",
-              "url": "https://techcrunch.com/2026/07/19/techcrunch-mobility-the-battle-over-robotaxi-rules/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "诺兰称AI是特洛伊木马",
-          "summary_zh": "导演克里斯托弗·诺兰将AI视为明显的特洛伊木马。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "‘Odyssey’ director Christopher Nolan calls AI an obvious ‘Trojan Horse’",
-              "url": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-hors",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "印度私营火箭首次入轨",
-          "summary_zh": "印度首枚私营开发火箭成功进入轨道。",
-          "region": "global",
-          "score": 0.9,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "India's first privately-developed rocket reaches orbit on dr",
-              "url": "https://arstechnica.com/space/2026/07/indias-first-privately-developed-rocket-reaches-orbit-on-drama",
-              "source": "Ars Technica",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌支持野火监测卫星发射",
-          "summary_zh": "谷歌支持的野火探测卫星在烟雾中发射升空。",
+          "title_zh": "AI协议易用性提升",
+          "summary_zh": "AI重要协议使用门槛降低，推动应用普及。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Google-backed satellites for wildfire detection launch as sm",
-              "url": "https://arstechnica.com/space/2026/07/google-backed-satellites-for-wildfire-detection-launch-as-smok",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "旧金山要求下架AI脱衣应用",
-          "summary_zh": "旧金山命令苹果和谷歌移除AI脱衣应用。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "San Francisco orders Apple, Google to remove nudify apps fro",
-              "url": "https://arstechnica.com/tech-policy/2026/07/apple-google-must-stop-profiting-off-ai-nudify-apps-san-",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "黄仁勋访日后关注焦点",
-          "summary_zh": "分析黄仁勋访问日本后的行业影响和关注点。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "What to watch for after Jensen Huang’s Japan visit",
-              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
+              "title": "AI’s most important protocol is getting a little bit easier ",
+              "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Ars招聘高级科技记者",
-          "summary_zh": "Ars Technica正在寻找高级科技记者。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-07-17",
+          "title_zh": "X重推Android应用",
+          "summary_zh": "X经过一年努力，重新发布重建的Android应用。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Ars is looking for a senior technology reporter, and you mig",
-              "url": "https://arstechnica.com/staff/2026/07/ars-is-looking-for-a-senior-technology-reporter-and-you-might-",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
+              "title": "X relaunches a rebuilt Android app after year-long effort",
+              "url": "https://techcrunch.com/2026/07/20/x-relaunches-a-rebuilt-android-app-after-year-long-effort/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI担忧开源模型",
+          "summary_zh": "OpenAI对开源模型表示担忧，引发美国安全讨论。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "OpenAI is scared of open-weight models. Should the US be?",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Natural获3000万美元融资",
+          "summary_zh": "Natural融资3000万美元，重塑AI代理支付。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Natural raises $30M to reinvent payments for AI agents — and",
+              "url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Adobe相机AI点评照片",
+          "summary_zh": "Adobe相机应用新功能利用AI点评照片。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Adobe camera app’s new feature will critique your photos usi",
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "YouTube规范AI内容",
+          "summary_zh": "YouTube明确AI生成内容政策，减少不当视频。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "YouTube clarifies policies around AI slop and upsetting vide",
+              "url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Hugging Face遭入侵",
+          "summary_zh": "Hugging Face确认数据泄露，影响内部数据集。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Hugging Face confirms breach affected internal datasets and ",
+              "url": "https://techcrunch.com/2026/07/20/hugging-face-confirms-breach-affected-internal-datasets-and-creden",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
         "大模型",
-        "医疗授权",
-        "影视制作",
-        "自动驾驶"
+        "融资",
+        "安全",
+        "芯片"
       ],
       "deduped_count": 0,
-      "raw_count": 40
+      "raw_count": 45
     },
     {
       "id": "compute",
@@ -1646,155 +1646,161 @@
         "semiconductor chip manufacturing",
         "AI infrastructure investment"
       ],
-      "brief_zh": "Netflix以5.87亿美元收购本·阿弗莱克的AI电影制作初创公司；黄仁勋访日引发关注；苹果诉讼可能阻碍OpenAI硬件计划；Waymo旧金山服务因停电暂停后恢复；Databricks估值达1880亿美元；非营利组织Current AI致力于构建AI万维网；Vertu推出6880美元AI代理服务；Kimi引发威胁讨论；美国多款电动车停产；联邦雇员可再次在办公手机下载TikTok。",
+      "brief_zh": "AI计算基础设施领域动态密集：谷歌研发新AI芯片提升Gemini效率；OpenAI担忧开源模型风险；推理初创Infinity获1500万美元融资；Hugging Face确认数据泄露；特朗普AI主管辞职；Colossal Biosciences寻求融资；Adobe相机应用新增AI照片评价功能；YouTube明确AI内容政策；X重推Android应用；Netflix为节目添加ASL手语翻译。",
       "events": [
         {
-          "title_zh": "Netflix收购AI电影初创公司",
-          "summary_zh": "Netflix以5.87亿美元收购本·阿弗莱克的AI电影制作初创公司。",
+          "title_zh": "谷歌研发新AI芯片",
+          "summary_zh": "谷歌正开发新AI芯片，旨在提升Gemini模型效率。",
           "region": "global",
           "score": 0.8,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Netflix paid $587M for Ben Affleck’s AI filmmaking startup",
-              "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
+              "title": "Google is working on a new AI chip designed to make Gemini m",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-ef",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "黄仁勋访日引关注",
-          "summary_zh": "黄仁勋访问日本后，市场关注AI芯片领域动向。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "What to watch for after Jensen Huang’s Japan visit",
-              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果诉讼或阻碍OpenAI硬件",
-          "summary_zh": "苹果诉讼可能影响OpenAI的硬件计划，引发行业关注。",
+          "title_zh": "OpenAI担忧开源模型风险",
+          "summary_zh": "OpenAI对开源权重模型表示担忧，引发美国安全讨论。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Can an Apple lawsuit derail OpenAI’s hardware plans?",
-              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
+              "title": "OpenAI is scared of open-weight models. Should the US be?",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Waymo旧金山服务恢复",
-          "summary_zh": "Waymo旧金山服务因停电暂停一小时后恢复运营。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "Waymo says San Francisco service has resumed after one-hour",
-              "url": "https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "Databricks估值达1880亿美元",
-          "summary_zh": "Databricks估值达1880亿美元，巩固其作为AI基础设施领先地位。",
-          "region": "cn",
-          "score": 0.9,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Databricks hits $188B valuation, extending its run as AI’s f",
-              "url": "https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-s",
-              "source": "TechCrunch",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "非营利组织构建AI万维网",
-          "summary_zh": "非营利组织Current AI致力于构建类似万维网的AI基础设施。",
+          "title_zh": "推理初创Infinity获1500万美元融资",
+          "summary_zh": "推理初创公司Infinity从Touring Capital和OpenAI等融资1500万美元。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Nonprofit Current AI is racing to build the World Wide Web o",
-              "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-f",
+              "title": "Inference startup Infinity raises $15M from Touring Capital,",
+              "url": "https://techcrunch.com/2026/07/20/inference-startup-infinity-raises-15m-from-touring-capital-openai-",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Vertu推出6880美元AI代理",
-          "summary_zh": "Vertu面向高管推出6880美元的AI代理服务，提供个性化支持。",
+          "title_zh": "Hugging Face确认数据泄露",
+          "summary_zh": "Hugging Face确认内部数据集和凭证遭泄露，影响安全。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Hugging Face confirms breach affected internal datasets and ",
+              "url": "https://techcrunch.com/2026/07/20/hugging-face-confirms-breach-affected-internal-datasets-and-creden",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普AI主管辞职",
+          "summary_zh": "特朗普最新任命的AI主管已辞职，引发政策不确定性。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Vertu wants executives to pay $6,880 for an AI agent — here’",
-              "url": "https://techcrunch.com/2026/07/17/vertu-wants-executives-to-pay-6880-for-an-ai-agent-heres-how-it-ac",
+              "title": "Trump’s latest AI czar has already resigned",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
               "source": "TechCrunch",
-              "published_at": "2026-07-17"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Kimi引发威胁讨论",
-          "summary_zh": "Kimi被讨论为潜在威胁或挑战者，引发行业关注。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "Kimi: Threat or menace?",
-              "url": "https://techcrunch.com/2026/07/18/kimi-threat-or-menace/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国多款电动车停产",
-          "summary_zh": "美国市场多款电动车被停产或取消，反映行业调整。",
+          "title_zh": "Colossal Biosciences寻求融资",
+          "summary_zh": "Colossal Biosciences据报道正洽谈新一轮融资，估值或达20亿美元。",
           "region": "global",
           "score": 0.3,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "All the EVs that were discontinued or killed off in the U.S.",
-              "url": "https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-y",
+              "title": "Colossal Biosciences reportedly in talks to raise new capita",
+              "url": "https://techcrunch.com/2026/07/20/colossal-biosciences-reportedly-in-talks-to-raise-new-capital-at-2",
               "source": "TechCrunch",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "联邦雇员可再下载TikTok",
-          "summary_zh": "联邦雇员被允许在办公手机上再次下载TikTok，政策调整。",
+          "title_zh": "Adobe相机应用新增AI评价功能",
+          "summary_zh": "Adobe相机应用新功能将使用AI评价用户照片，提升用户体验。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
+          "score": 0.2,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Federal employees can download TikTok on their work phones a",
-              "url": "https://techcrunch.com/2026/07/18/federal-employees-can-download-tiktok-on-their-work-phones-again/",
+              "title": "Adobe camera app’s new feature will critique your photos usi",
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
               "source": "TechCrunch",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "YouTube明确AI内容政策",
+          "summary_zh": "YouTube澄清关于AI生成内容和令人不安视频的政策，加强监管。",
+          "region": "global",
+          "score": 0.1,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "YouTube clarifies policies around AI slop and upsetting vide",
+              "url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            },
+            {
+              "title": "Judge pauses the controversial Paramount-Warner Bros. merger for two weeks",
+              "url": "https://www.engadget.com/2218975/judge-pauses-the-controversial-paramount-warner-bros-merger-for-two-weeks/",
+              "source": "Engadget",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "X重推Android应用",
+          "summary_zh": "X经过一年努力重新推出重建的Android应用，改善性能。",
+          "region": "global",
+          "score": 0.0,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "X relaunches a rebuilt Android app after year-long effort",
+              "url": "https://techcrunch.com/2026/07/20/x-relaunches-a-rebuilt-android-app-after-year-long-effort/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Netflix添加ASL手语翻译",
+          "summary_zh": "Netflix为数十个节目和电影添加美国手语翻译，提升无障碍性。",
+          "region": "cn",
+          "score": 0.9,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Netflix brings ASL interpretations to dozens of shows and mo",
+              "url": "https://www.engadget.com/2219079/netflix-brings-asl-interpretations-to-dozens-of-shows-and-movies-fo",
+              "source": "Engadget",
+              "published_at": "2026-07-20"
             }
           ]
         }
@@ -1804,13 +1810,13 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "AI",
-        "Netflix",
-        "Databricks",
-        "Waymo",
-        "OpenAI"
+        "AI芯片",
+        "数据泄露",
+        "融资",
+        "开源模型",
+        "政策"
       ],
-      "deduped_count": 0,
+      "deduped_count": 1,
       "raw_count": 45
     },
     {
@@ -1824,172 +1830,184 @@
         "EV charging infrastructure",
         "solid state battery technology"
       ],
-      "brief_zh": "本周新能源汽车领域动态：Waymo旧金山服务因停电暂停后恢复；美国多款电动车停产；600英里实测证明充电体验已改善；Databricks估值达1880亿美元；Netflix收购AI电影制作公司；苹果诉讼或影响OpenAI硬件计划；机器人出租车规则争议持续。",
+      "brief_zh": "今日新闻主要围绕AI、科技公司动态及网络安全，未涉及新能源汽车领域。",
       "events": [
         {
-          "title_zh": "Waymo旧金山服务恢复",
-          "summary_zh": "Waymo在旧金山因停电暂停服务一小时后恢复运营。",
+          "title_zh": "Colossal Biosciences融资谈判",
+          "summary_zh": "Colossal Biosciences据悉正进行新一轮融资谈判。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Colossal Biosciences reportedly in talks to raise new capita",
+              "url": "https://techcrunch.com/2026/07/20/colossal-biosciences-reportedly-in-talks-to-raise-new-capital-at-2",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普AI主管辞职",
+          "summary_zh": "特朗普最新任命的AI主管已辞职。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Trump’s latest AI czar has already resigned",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "谷歌研发新AI芯片",
+          "summary_zh": "谷歌正在研发新AI芯片以提升Gemini效率。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Waymo says San Francisco service has resumed after one-hour",
-              "url": "https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/",
+              "title": "Google is working on a new AI chip designed to make Gemini m",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-ef",
               "source": "TechCrunch",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "美国多款电动车停产",
-          "summary_zh": "盘点今年在美国停产或取消的电动车车型。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "All the EVs that were discontinued or killed off in the U.S.",
-              "url": "https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-y",
-              "source": "TechCrunch",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "600英里实测证明充电不差",
-          "summary_zh": "一次600英里公路旅行和数据证明电动车充电体验已显著改善。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "A 600-mile road trip (and data) proves EV charging doesn’t s",
-              "url": "https://techcrunch.com/2026/07/18/a-600-mile-road-trip-and-data-proves-ev-charging-doesnt-suck-anymo",
-              "source": "TechCrunch",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "机器人出租车规则之争",
-          "summary_zh": "TechCrunch Mobility栏目探讨机器人出租车规则的争议。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "TechCrunch Mobility: The battle over robotaxi rules",
-              "url": "https://techcrunch.com/2026/07/19/techcrunch-mobility-the-battle-over-robotaxi-rules/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "Netflix收购AI电影公司",
-          "summary_zh": "Netflix以5.87亿美元收购本·阿弗莱克的AI电影制作初创公司。",
+          "title_zh": "AI协议易用性提升",
+          "summary_zh": "AI重要协议使用难度降低。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Netflix paid $587M for Ben Affleck’s AI filmmaking startup",
-              "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
+              "title": "AI’s most important protocol is getting a little bit easier ",
+              "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "苹果诉讼或影响OpenAI硬件",
-          "summary_zh": "苹果的诉讼可能阻碍OpenAI的硬件计划。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Can an Apple lawsuit derail OpenAI’s hardware plans?",
-              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "黄仁勋访日后续观察",
-          "summary_zh": "黄仁勋访问日本后，关注AI领域的新动向。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "What to watch for after Jensen Huang’s Japan visit",
-              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "Databricks估值达1880亿美元",
-          "summary_zh": "Databricks估值达到1880亿美元，延续AI领域领先地位。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Databricks hits $188B valuation, extending its run as AI’s f",
-              "url": "https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-s",
-              "source": "TechCrunch",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "诺兰称AI是特洛伊木马",
-          "summary_zh": "导演克里斯托弗·诺兰称AI是明显的特洛伊木马。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "‘Odyssey’ director Christopher Nolan calls AI an obvious 'Tr",
-              "url": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-hors",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "非营利组织构建AI万维网",
-          "summary_zh": "非营利组织Current AI正竞相构建AI的万维网。",
+          "title_zh": "X重新发布安卓应用",
+          "summary_zh": "X经过一年努力重新发布安卓应用。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Nonprofit Current AI is racing to build the World Wide Web o",
-              "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-f",
+              "title": "X relaunches a rebuilt Android app after year-long effort",
+              "url": "https://techcrunch.com/2026/07/20/x-relaunches-a-rebuilt-android-app-after-year-long-effort/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI担忧开源模型",
+          "summary_zh": "OpenAI对开源权重模型表示担忧。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "OpenAI is scared of open-weight models. Should the US be?",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Natural融资3000万美元",
+          "summary_zh": "Natural融资3000万美元重塑AI支付。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Natural raises $30M to reinvent payments for AI agents — and",
+              "url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "派拉蒙华纳合并暂停",
+          "summary_zh": "法官暂停1100亿美元派拉蒙华纳合并。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Judge pauses $110B Paramount-Warner Bros. merger",
+              "url": "https://techcrunch.com/2026/07/20/judge-pauses-110b-paramount-warner-bros-merger/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            },
+            {
+              "title": "Judge pauses $110B Paramount-Warner Bros. merger",
+              "url": "https://www.engadget.com",
+              "source": "Engadget",
+              "published_at": "2026-07-20"
+            },
+            {
+              "title": "Judge pauses the controversial Paramount-Warner Bros. merger for two weeks",
+              "url": "https://www.engadget.com/2218975/judge-pauses-the-controversial-paramount-warner-bros-merger-for-two-weeks/",
+              "source": "Engadget",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "Adobe应用AI评照片",
+          "summary_zh": "Adobe相机应用新增AI照片评论功能。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Adobe camera app’s new feature will critique your photos usi",
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "WordPress漏洞遭利用",
+          "summary_zh": "黑客利用近期修补的WordPress漏洞攻击。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Hackers are exploiting recently patched WordPress bugs, putt",
+              "url": "https://techcrunch.com/2026/07/20/hackers-are-exploiting-recently-patched-wordpress-bugs-putting-mil",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         }
       ],
-      "cn_count": 1,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "新能源汽车",
-        "电动车充电",
-        "自动驾驶",
         "AI",
-        "机器人出租车"
+        "科技",
+        "网络安全",
+        "融资",
+        "合并"
       ],
-      "deduped_count": 0,
-      "raw_count": 30
+      "deduped_count": 1,
+      "raw_count": 45
     },
     {
       "id": "metals",
@@ -2001,178 +2019,172 @@
         "copper scrap recycling trade",
         "critical minerals rare earth"
       ],
-      "brief_zh": "近期全球能源市场波动加剧，欧洲热浪引发能源危机，美国钻井活动回升，地缘政治风险溢价重返原油市场。印度拟推更严排放法规，哥伦比亚新政府准备化石燃料回归，新泽西押注小型核反应堆。科学家或解决储能难题，矿产权利指南发布。",
+      "brief_zh": "美伊冲突升级导致布伦特原油短暂突破90美元，美国汽油价格重回4美元以上，欧洲面临柴油短缺。地缘政治风险加剧，LME基本金属遭抛售，但中国铜进口创九个月新高支撑铜价。",
       "events": [
         {
-          "title_zh": "欧洲热浪引发能源危机",
-          "summary_zh": "欧洲持续热浪导致能源需求激增，可能演变为能源危机。",
-          "region": "global",
-          "score": 0.85,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "Europe's Heatwave Is Becoming an Energy Crisis",
-              "url": "https://oilprice.com/Energy/Energy-General/Europes-Heatwave-Is-Becoming-an-Energy-Crisis.html",
-              "source": "OilPrice",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "科学家或解决储能难题",
-          "summary_zh": "科学家可能解决了阻碍储能发展的最大谜题，有助于避免下一次能源危机。",
-          "region": "global",
-          "score": 0.75,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Did Scientists Just Solve The Biggest Mystery Holding Back S",
-              "url": "https://oilprice.com/Energy/Energy-General/Did-Scientists-Just-Solve-The-Biggest-Mystery-Holding-Bac",
-              "source": "OilPrice",
-              "published_at": "2026-07-19"
-            },
-            {
-              "title": "Energy Storage Key To Avoiding The Next Energy Crisis",
-              "url": "https://oilprice.com/Energy/Energy-General/Energy-Storage-Key-To-Avoiding-The-Next-Energy-Crisis.htm",
-              "source": "OilPrice",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国钻井活动回升",
-          "summary_zh": "布伦特原油上涨4%，推动美国石油钻井活动增加。",
-          "region": "global",
-          "score": 0.65,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "US Oil Drilling Picks Up As Brent Gains 4%",
-              "url": "https://oilprice.com/Energy/Energy-General/US-Oil-Drilling-Picks-Up-As-Brent-Gains-4.html",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "地缘政治风险溢价重返",
-          "summary_zh": "原油创下最大周涨幅，地缘政治风险溢价重返市场。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Geopolitical Risk Premium Returns as Crude Posts Biggest Wee",
-              "url": "https://oilprice.com/Energy/Energy-General/Geopolitical-Risk-Premium-Returns-as-Crude-Posts-Biggest-",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "印度拟推更严排放法规",
-          "summary_zh": "印度提议更严格的车辆排放规则，以减少石油消耗。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "India Proposes Stricter Vehicle Emission Rules To Cut Oil Co",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/India-Proposes-Stricter-Vehicle-Emission-Rules-To",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "哥伦比亚准备化石燃料回归",
-          "summary_zh": "哥伦比亚新政府准备推动化石燃料产业复苏。",
-          "region": "global",
-          "score": 0.55,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Colombia's New Government Prepares Fossil Fuel Comeback",
-              "url": "https://oilprice.com/Energy/Energy-General/Colombias-New-Government-Prepares-Fossil-Fuel-Comeback.ht",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "新泽西押注小型核反应堆",
-          "summary_zh": "新泽西州大力投资小型核反应堆技术。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "New Jersey Bets Big on Small Nuclear Reactors",
-              "url": "https://oilprice.com/Energy/Energy-General/New-Jersey-Bets-Big-on-Small-Nuclear-Reactors.html",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "BP与康菲合作伊拉克油田",
-          "summary_zh": "BP和康菲石油合作开发伊拉克巨型油田。",
-          "region": "global",
-          "score": 0.45,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "BP, ConocoPhillips Partner In Iraq’s Giant Oilfield",
-              "url": "https://oilprice.com/Latest-Energy-News/World-News/BP-ConocoPhillips-Partner-In-Iraqs-Giant-Oilfield",
-              "source": "OilPrice",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "美国扩大对伊朗打击",
-          "summary_zh": "美国扩大对伊朗的打击行动，伊朗在波斯湾进行报复。",
+          "title_zh": "美伊冲突升级推高油价",
+          "summary_zh": "布伦特原油短暂突破90美元，美国汽油价格重回4美元以上。",
           "region": "global",
           "score": 0.9,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "U.S. Expands Iran Strikes as Tehran Retaliates Across the Gu",
-              "url": "https://oilprice.com/Geopolitics/Middle-East/US-Expands-Iran-Strikes-as-Tehran-Retaliates-Across-the",
+              "title": "Brent Briefly Breaks $90 After Fresh Iran War Escalation",
+              "url": "https://oilprice.com/Energy/Oil-Prices/Brent-Briefly-Breaks-90-After-Fresh-Iran-War-Escalation.html",
               "source": "OilPrice",
-              "published_at": "2026-07-17"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "石油市场忽视风险",
-          "summary_zh": "石油市场忽视不断上升的风险，可能面临严重后果。",
+          "title_zh": "欧洲面临柴油短缺危机",
+          "summary_zh": "欧洲柴油库存降至多年低位，供应紧张加剧。",
           "region": "global",
-          "score": 0.7,
-          "date": "2026-07-17",
+          "score": 0.8,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Oil Markets Ignore Mounting Risks at Their Own Peril",
-              "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Markets-Ignore-Mounting-Risks-at-Their-Own-Peril.html",
+              "title": "Europe Faces Diesel Crunch as Inventories Head Toward Multi-",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Europe-Faces-Diesel-Crunch-as-Inventories-Head-To",
               "source": "OilPrice",
-              "published_at": "2026-07-17"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "胡塞武装宣布封锁沙特红海",
+          "summary_zh": "胡塞武装宣布对沙特实施海上封锁，红海局势紧张。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Houthis Declare Naval Blockade on Saudi Arabia as Red Sea Cr",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Houthis-Declare-Naval-Blockade-on-Saudi-Arabia-as",
+              "source": "OilPrice",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "无人机袭击黑海石油终端",
+          "summary_zh": "黑海战略石油终端出口因无人机袭击暂停。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Drone Strike Halts Exports at Strategic Black Sea Oil Termin",
+              "url": "https://oilprice.com/Latest-Energy-News/World-News/Drone-Strike-Halts-Exports-at-Strategic-Black-Sea",
+              "source": "OilPrice",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "美伊冲突引发基本金属抛售",
+          "summary_zh": "美伊冲突导致LME基本金属价格大幅下跌。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-13",
+          "sources": [
+            {
+              "title": "US-Iran Conflict Triggers Sharp Selloff Across Base Metals A",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdEswdVA0RUlyWGw0ck5vSW9DQjg5dFFuZFpoT1MwbXQwRW9",
+              "source": "ChemAnalyst",
+              "published_at": "2026-07-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "中国铜进口创九个月新高",
+          "summary_zh": "中国铜进口量创九个月新高，支撑铜价。",
+          "region": "cn",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "China imports at nine-month high buoy copper prices - Busine",
+              "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yaWVCRWY0YVl3RlB0ZEk5cjZMRS1ydTFjNEhfZlh6bnBUTWw",
+              "source": "Business Recorder",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "LME铜微跌，沪铜微涨",
+          "summary_zh": "LME铜价小幅下跌，而上海期货交易所铜价小幅上涨。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "LME Copper Slightly Drops While SHFE Copper Edges Up; Middle",
+              "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPT2RVRmhia0Y0ME4walBLMHVFS3hVSGw5TVRHblNYZ1lfWFR",
+              "source": "SMM Metal",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "LME二季度交易活跃",
+          "summary_zh": "LME报告第二季度交易活跃，市场流动性良好。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-13",
+          "sources": [
+            {
+              "title": "LME reports active Q2 - Recycling Today",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYV9zZjdwclo2UURZMF8yRGVtVjRVRGhBQW1qYVFsM1FCTnB",
+              "source": "Recycling Today",
+              "published_at": "2026-07-13"
+            }
+          ]
+        },
+        {
+          "title_zh": "海外金属市场表现优于国内",
+          "summary_zh": "LME和海外金属市场表现优于国内，价差扩大。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-16",
+          "sources": [
+            {
+              "title": "Metals: overseas market outperforms domestic market; LME and",
+              "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQnJLU0o4WkpCMFlwV2pFYmJHRVlDQWpjOVZWeDZ6NEtRcUV",
+              "source": "SMM Metal",
+              "published_at": "2026-07-16"
+            }
+          ]
+        },
+        {
+          "title_zh": "尼日利亚计划2030年日产300万桶",
+          "summary_zh": "尼日利亚设定2030年原油产量目标300万桶/日。",
+          "region": "global",
+          "score": 0.3,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Nigeria Targets Record 3 Million Bpd Oil Output by 2030",
+              "url": "https://oilprice.com/Energy/Crude-Oil/Nigeria-Targets-Record-3-Million-Bpd-Oil-Output-by-2030.html",
+              "source": "OilPrice",
+              "published_at": "2026-07-20"
             }
           ]
         }
       ],
-      "cn_count": 0,
+      "cn_count": 2,
       "total_count": 10,
       "sentiment": "negative",
-      "sentiment_score": 0.35,
+      "sentiment_score": 0.3,
       "keywords": [
-        "能源危机",
+        "美伊冲突",
+        "原油价格",
+        "LME铜",
         "地缘政治",
-        "原油",
-        "储能",
-        "排放法规"
+        "库存"
       ],
-      "deduped_count": 0,
-      "raw_count": 15
+      "deduped_count": 1,
+      "raw_count": 44
     },
     {
       "id": "carbon",
@@ -2184,41 +2196,131 @@
         "carbon neutrality net zero",
         "emissions trading ETS price"
       ],
-      "brief_zh": "今日新闻主要涉及英国本土经济与社会议题，包括家庭福利、水务公司法律挑战、房产市场波动、夜班健康成本等。国际方面有中国企业对英国钢铁国有化寻求赔偿、欧盟新边境系统影响、以及非洲多国选举与公共卫生事件。",
+      "brief_zh": "今日新闻聚焦全球商业与政治动态，包括TikTok销售暴富案例、英国政坛变动、特朗普对加拿大加征关税、瑞安航空利润下滑、阿里速卖通被欧盟重罚、西非签署250亿美元天然气管道计划等，未涉及碳市场或CBAM相关新闻。",
       "events": [
         {
-          "title_zh": "英国家庭每周可领27英镑福利",
-          "summary_zh": "BBC报道英国家庭可能错过的每周27英镑福利申领方式。",
+          "title_zh": "TikTok单日销售10万英镑",
+          "summary_zh": "一位卖家通过TikTok实现单日10万英镑销售额，展示社交媒体电商潜力。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
+          "score": 0.7,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Are you a parent missing out on £27 a week? Here's how to ch",
-              "url": "https://www.bbc.co.uk/news/articles/cz9l993wj5ko?at_medium=RSS&at_campaign=rss",
+              "title": "'I made £100,000 of TikTok sales in one day': The business o",
+              "url": "https://www.bbc.co.uk/news/articles/cm2j22w8k0po?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "泰晤士水务准备法律挑战",
-          "summary_zh": "泰晤士水务贷款人准备在政府接管情况下发起法律挑战。",
+          "title_zh": "约翰·希利意外成为财政大臣",
+          "summary_zh": "约翰·希利在震惊辞职数周后接任英国财政大臣，引发政坛关注。",
           "region": "global",
-          "score": 0.7,
-          "date": "2026-07-19",
+          "score": 0.6,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Thames Water lenders preparing legal challenge in event of B",
-              "url": "https://www.bbc.co.uk/news/articles/cx278ed09nzo?at_medium=RSS&at_campaign=rss",
+              "title": "John Healey becomes chancellor weeks after shock resignation",
+              "url": "https://www.bbc.co.uk/news/articles/ce85y9lm81no?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "伯纳姆提出经济大计划但成本未知",
+          "summary_zh": "伯纳姆提出宏大经济愿景，但具体成本引发质疑。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Burnham has big ideas - but what will they cost?",
+              "url": "https://www.bbc.co.uk/news/articles/c9357rlk494o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "特朗普对加拿大加征50%关税",
+          "summary_zh": "特朗普宣布对加拿大进口商品征收50%关税，加剧贸易紧张。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Trump imposes 50% tariff on Canadian imports",
+              "url": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "瑞安航空利润因伊朗战争下滑",
+          "summary_zh": "伊朗战争导致乘客减少和成本上升，瑞安航空利润下降。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Ryanair profits drop as Iran war puts off passengers and lif",
+              "url": "https://www.bbc.co.uk/news/articles/cn8nldwj12jo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "阿里速卖通被欧盟罚款5.5亿欧元",
+          "summary_zh": "欧盟因速卖通允许销售非法商品，创纪录罚款5.5亿欧元。",
+          "region": "global",
+          "score": 0.9,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "AliExpress fined record €550m by EU for allowing sale of ill",
+              "url": "https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "西非签署250亿美元天然气管道计划",
+          "summary_zh": "西非国家签署250亿美元巨型天然气管道计划，推动能源合作。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "West Africa signs off $25bn mega gas-pipeline plan",
+              "url": "https://www.bbc.co.uk/news/articles/cwyr5rpglngo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "东南水务影响240万人软管禁令",
+          "summary_zh": "东南水务实施软管禁令，影响240万人，应对水资源短缺。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "South East Water hosepipe ban to affect 2.4 million people",
+              "url": "https://www.bbc.co.uk/news/articles/c7vg3geg3qmo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC Business",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
           "title_zh": "健身追踪器提前发现怀孕",
-          "summary_zh": "一名女性通过健身追踪器数据比本人更早得知怀孕。",
+          "summary_zh": "一位用户通过健身追踪器数据在本人察觉前发现怀孕。",
           "region": "global",
           "score": 0.5,
           "date": "2026-07-19",
@@ -2232,130 +2334,34 @@
           ]
         },
         {
-          "title_zh": "欧盟新边境系统延长通关时间",
-          "summary_zh": "机场称欧盟新边境系统使护照检查时间增加三倍。",
+          "title_zh": "泰晤士水务债权人准备法律挑战",
+          "summary_zh": "泰晤士水务债权人准备在破产情况下发起法律挑战。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.7,
           "date": "2026-07-19",
           "sources": [
             {
-              "title": "New EU border system tripling time at passport control, airp",
-              "url": "https://www.bbc.co.uk/news/articles/ckg5gg6n9x3o?at_medium=RSS&at_campaign=rss",
+              "title": "Thames Water lenders preparing legal challenge in event of B",
+              "url": "https://www.bbc.co.uk/news/articles/cx278ed09nzo?at_medium=RSS&at_campaign=rss",
               "source": "BBC Business",
               "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国企业就英国钢铁国有化索赔",
-          "summary_zh": "中国公司就英国钢铁国有化寻求赔偿，涉及中英经贸关系。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Chinese firm seeks compensation over British Steel nationali",
-              "url": "https://www.bbc.co.uk/news/articles/cwyj4ppqn41o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "农民难离可卡因产业",
-          "summary_zh": "一名农民试图退出可卡因行业但面临重重困难。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "This farmer wanted to quit the cocaine industry - he couldn'",
-              "url": "https://www.bbc.co.uk/news/articles/c0kyml1zxz4o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "买家在成交前一天降价1.5万英镑",
-          "summary_zh": "房产市场波动，买家在交换合同前一天大幅降价。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "'My buyers dropped their offer by £15,000 the day before exc",
-              "url": "https://www.bbc.co.uk/news/articles/c3d39r338m0o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "伯纳姆承诺北海油气新曙光",
-          "summary_zh": "英国首相伯纳姆被问及是否承诺北海油气行业新前景。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Is Burnham promising a new dawn for North Sea oil and gas?",
-              "url": "https://www.bbc.co.uk/news/articles/c4g3l22ry6wo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "夜班隐藏成本与睡眠方法",
-          "summary_zh": "报道夜班工作的健康成本及如何改善睡眠。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "The hidden cost of the night shift and how to sleep it off",
-              "url": "https://www.bbc.co.uk/news/articles/cp9errxl97go?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "中国批评英国钢铁国有化",
-          "summary_zh": "中国对英国钢铁国有化表示不满，涉及双边贸易争端。",
-          "region": "cn",
-          "score": 0.8,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "China hits out at British Steel nationalisation",
-              "url": "https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss",
-              "source": "BBC Business",
-              "published_at": "2026-07-17"
-            },
-            {
-              "title": "China hits out at British Steel nationalisation",
-              "url": "https://www.theguardian.com",
-              "source": "The Guardian",
-              "published_at": "2026-07-17"
             }
           ]
         }
       ],
-      "cn_count": 2,
+      "cn_count": 0,
       "total_count": 10,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "英国经济",
-        "水务公司",
-        "房产市场",
-        "中国钢铁",
-        "欧盟边境"
+        "TikTok",
+        "特朗普关税",
+        "瑞安航空",
+        "阿里速卖通",
+        "西非天然气"
       ],
-      "deduped_count": 1,
-      "raw_count": 30
+      "deduped_count": 0,
+      "raw_count": 45
     },
     {
       "id": "sea",
@@ -2368,172 +2374,172 @@
         "Thailand Malaysia electronics",
         "ASEAN trade manufacturing China"
       ],
-      "brief_zh": "今日新闻涵盖伊朗袭击致美军伤亡、俄罗斯导弹袭击乌克兰、欧盟新边境系统、名人婚讯、圭亚那渡轮沉没、美国腹泻疫情、古巴异见人士流亡、北极马拉松、匈牙利总统辞职、德国政客辞职、老挝游客死亡、印度商业火箭、特朗普关税威胁、伊拉克美军死亡、美国副总统生子、特朗普世界杯、西班牙夺冠、2030世界杯等事件。",
+      "brief_zh": "2026年7月20日全球新闻摘要：特朗普对加拿大进口商品加征50%关税，美国对伊朗发动新打击，也门胡塞武装宣布对沙特实施海上封锁，印度爆发抗议活动，英国新首相面临挑战，以及其他国际事件。",
       "events": [
         {
-          "title_zh": "伊朗袭击致美军一死一伤",
-          "summary_zh": "伊朗袭击伊拉克致一名美军死亡，一名受伤。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "US soldier killed and one injured after Iranian attack in Ir",
-              "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "俄罗斯大规模导弹袭击乌克兰",
-          "summary_zh": "俄罗斯对乌克兰发动大规模弹道导弹袭击。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Russia launches major ballistic missile attack on Ukrainian ",
-              "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "欧盟新边境系统延长通关时间",
-          "summary_zh": "欧盟新边境系统使护照检查时间增加三倍，机场担忧。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "New EU border system tripling time at passport control, airp",
-              "url": "https://www.bbc.co.uk/news/articles/ckg5gg6n9x3o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "1975乐队主唱马蒂·希利结婚",
-          "summary_zh": "1975乐队主唱马蒂·希利与模特加布里埃特·贝希特尔在洛杉矶结婚。",
-          "region": "cn",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "The 1975's Matty Healy marries model Gabbriette Bechtel in L",
-              "url": "https://www.bbc.co.uk/news/articles/c5ywxp2d826o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "圭亚那渡轮沉没133人失踪",
-          "summary_zh": "一艘载有133名乘客和船员的渡轮在圭亚那海岸沉没。",
+          "title_zh": "特朗普对加拿大加征50%关税",
+          "summary_zh": "特朗普宣布对加拿大进口商品征收50%关税，加剧贸易紧张。",
           "region": "global",
           "score": 0.9,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Ferry carrying 133 passengers and crew sinks off Guyana coas",
-              "url": "https://www.bbc.co.uk/news/articles/cm2gm99nrm7o?at_medium=RSS&at_campaign=rss",
+              "title": "Trump imposes 50% tariff on Canadian imports",
+              "url": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "美国腹泻疫情源头查明",
-          "summary_zh": "美国卫生官员查明爆炸性腹泻疫情的源头。",
+          "title_zh": "美国对伊朗发动新打击",
+          "summary_zh": "美国对伊朗发动新一轮打击，特朗普警告报复。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
+          "score": 0.8,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Health officials identify source of US explosive diarrhoea o",
-              "url": "https://www.bbc.co.uk/news/articles/c4gw9n1kx9do?at_medium=RSS&at_campaign=rss",
+              "title": "US launches fresh strikes on Iran, as Trump warns of retalia",
+              "url": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "古巴异见人士流亡海外",
-          "summary_zh": "古巴异见人士路易斯·曼努埃尔·奥特罗·阿尔坎塔拉流亡海外。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Cuban dissident Luis Manuel Otero Alcántara goes into exile ",
-              "url": "https://www.bbc.co.uk/news/articles/cx2k77p2r1xo?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "北极马拉松完成‘最酷’赛事",
-          "summary_zh": "跑步者在漂流的北极浮冰上完成‘世界最酷马拉松’。",
-          "region": "global",
-          "score": 0.4,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Runners complete 'world's coolest marathon' on drifting Nort",
-              "url": "https://www.bbc.co.uk/news/videos/c9q9lw5rql4o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC World",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "匈牙利总统同意下台",
-          "summary_zh": "匈牙利总统在议会投票后同意辞职。",
+          "title_zh": "胡塞武装对沙特实施海上封锁",
+          "summary_zh": "也门胡塞武装宣布对沙特阿拉伯实施海上封锁。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Hungary's president agrees to stand down after parliament ba",
-              "url": "https://www.bbc.co.uk/news/articles/cpd7q7eev7po?at_medium=RSS&at_campaign=rss",
+              "title": "Yemen's Houthis announce 'maritime embargo' on Saudi Arabia",
+              "url": "https://www.bbc.co.uk/news/articles/cm2gmddx1ldo?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "德国政客因代孕争议辞职",
-          "summary_zh": "德国政客因代孕儿童争议辞职。",
+          "title_zh": "俄罗斯袭击黑海商船致10死",
+          "summary_zh": "俄罗斯对黑海商船发动袭击，造成10人死亡。",
           "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
+          "score": 0.7,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "German politician resigns over surrogacy child controversy",
-              "url": "https://www.bbc.co.uk/news/articles/cq56e9n1ddzo?at_medium=RSS&at_campaign=rss",
+              "title": "Ten killed as Russian attacks on merchant ships in Black Sea",
+              "url": "https://www.bbc.co.uk/news/articles/c4gvpv3ewv2o?at_medium=RSS&at_campaign=rss",
               "source": "BBC World",
-              "published_at": "2026-07-18"
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "印度爆发抗议活动",
+          "summary_zh": "印度数千名抗议者向议会游行，警方封锁。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Police block thousands of 'cockroach' protesters marching on",
+              "url": "https://www.bbc.co.uk/news/articles/cvg9w9dxd7lo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国新首相面临挑战",
+          "summary_zh": "分析英国新首相面临的最大挑战。",
+          "region": "cn",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "What are the new British Prime Minister’s biggest challenges",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/7/20/what-are-the-new-british-prime-ministers-biggest-",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "派拉蒙与华纳合并暂停",
+          "summary_zh": "法官暂停派拉蒙与华纳兄弟的合并交易。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Merger deal between Paramount and Warner Bros paused by judg",
+              "url": "https://www.bbc.co.uk/news/articles/c5ywxy41vg6o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "哈马斯任命新领导人",
+          "summary_zh": "哈马斯任命哈利勒·哈亚为新任领导人。",
+          "region": "global",
+          "score": 0.4,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Hamas names Khalil al-Hayya as new overall leader",
+              "url": "https://www.bbc.co.uk/news/articles/cx25nzkyj50o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "圭亚那渡轮倾覆多人死亡",
+          "summary_zh": "圭亚那一艘客运渡轮倾覆，数十人恐遇难。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Scores feared dead after passenger ferry capsizes off Guyana",
+              "url": "https://www.bbc.co.uk/news/articles/cm2gm99nrm7o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC World",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "英国政治家遇袭案嫌疑人被控",
+          "summary_zh": "英国政治家安·威德科姆遇袭案嫌疑人被起诉。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Suspect charged in fatal attack on UK politician Ann Widdeco",
+              "url": "https://www.aljazeera.com/news/2026/7/20/suspect-charged-in-fatal-attack-on-uk-politician-ann-widdec",
+              "source": "Al Jazeera",
+              "published_at": "2026-07-20"
             }
           ]
         }
       ],
       "cn_count": 1,
       "total_count": 10,
-      "sentiment": "neutral",
-      "sentiment_score": 0.5,
+      "sentiment": "negative",
+      "sentiment_score": 0.3,
       "keywords": [
-        "美军伤亡",
-        "俄罗斯导弹",
-        "欧盟边境",
-        "名人婚讯",
-        "渡轮沉没"
+        "关税",
+        "冲突",
+        "抗议",
+        "封锁",
+        "地缘政治"
       ],
       "deduped_count": 0,
-      "raw_count": 30
+      "raw_count": 45
     },
     {
       "id": "space",
@@ -2545,161 +2551,155 @@
         "Starlink satellite constellation",
         "China space station moon"
       ],
-      "brief_zh": "近期科技新闻聚焦AI、流媒体、消费电子等领域，Netflix收购AI电影初创公司，苹果诉讼或影响OpenAI硬件计划，FIFA世界杯引入中场秀但缺乏气候应对计划，同时Wired发布多款产品评测与安全警示。",
+      "brief_zh": "今日科技新闻聚焦AI领域，包括Colossal Biosciences融资、特朗普AI主管辞职、谷歌开发新AI芯片、OpenAI担忧开源模型等。同时涉及X应用重建、Adobe AI照片批评功能、WordPress漏洞利用、YouTube政策更新等。",
       "events": [
         {
-          "title_zh": "Netflix斥资5.87亿美元收购AI电影初创公司",
-          "summary_zh": "Netflix以5.87亿美元收购本·阿弗莱克的AI电影制作初创公司，加速AI内容创作布局。",
-          "region": "global",
-          "score": 0.8,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "Netflix paid $587M for Ben Affleck’s AI filmmaking startup",
-              "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
-              "source": "TechCrunch",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "苹果诉讼或阻碍OpenAI硬件计划",
-          "summary_zh": "苹果对OpenAI提起的诉讼可能影响其硬件发展计划，引发行业关注。",
+          "title_zh": "Colossal Biosciences融资谈判",
+          "summary_zh": "Colossal Biosciences据悉正进行新一轮融资谈判，估值或达20亿美元。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Can an Apple lawsuit derail OpenAI’s hardware plans?",
-              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
+              "title": "Colossal Biosciences reportedly in talks to raise new capita",
+              "url": "https://techcrunch.com/2026/07/20/colossal-biosciences-reportedly-in-talks-to-raise-new-capital-at-2",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "FIFA世界杯引入美式中场秀但缺乏气候计划",
-          "summary_zh": "FIFA世界杯决赛将首次引入美式中场秀，但被指缺乏应对气候变化的计划。",
+          "title_zh": "特朗普AI主管辞职",
+          "summary_zh": "特朗普最新任命的AI主管已辞职，引发外界关注。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "FIFA’s World Cup Halftime Show Puts American-Style Spectacle",
-              "url": "https://www.wired.com/story/fifa-world-cup-halftime-show-what-to-expect/",
-              "source": "Wired",
-              "published_at": "2026-07-18"
-            },
-            {
-              "title": "FIFA Doesn’t Have a Plan to Deal With Climate Change",
-              "url": "https://www.wired.com/story/fifa-doesnt-have-plan-to-deal-with-climate-change/",
-              "source": "Wired",
-              "published_at": "2026-07-18"
+              "title": "Trump’s latest AI czar has already resigned",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "寻找类地行星取得重大进展",
-          "summary_zh": "科学家在寻找另一颗类地行星方面取得重要突破，推动宇宙探索。",
+          "title_zh": "谷歌开发新AI芯片",
+          "summary_zh": "谷歌正研发新AI芯片，旨在提升Gemini模型效率。",
           "region": "global",
-          "score": 0.9,
-          "date": "2026-07-19",
+          "score": 0.8,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "The Search for Another Earth-Like Planet Just Took a Big Ste",
-              "url": "https://www.wired.com/story/search-for-earth-like-planet-step-forward/",
-              "source": "Wired",
-              "published_at": "2026-07-19"
+              "title": "Google is working on a new AI chip designed to make Gemini m",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-ef",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "黄仁勋访日后关注AI芯片动向",
-          "summary_zh": "英伟达CEO黄仁勋访问日本后，市场关注AI芯片领域的新动向。",
+          "title_zh": "AI协议易用性提升",
+          "summary_zh": "AI最重要的协议正变得更易使用，推动行业进步。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "AI’s most important protocol is getting a little bit easier ",
+              "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "X重建Android应用",
+          "summary_zh": "经过一年努力，X重新推出重建的Android应用。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "What to watch for after Jensen Huang’s Japan visit",
-              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
+              "title": "X relaunches a rebuilt Android app after year-long effort",
+              "url": "https://techcrunch.com/2026/07/20/x-relaunches-a-rebuilt-android-app-after-year-long-effort/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "机器人出租车规则之争加剧",
-          "summary_zh": "科技行业围绕机器人出租车监管规则展开激烈争论，影响自动驾驶发展。",
+          "title_zh": "OpenAI担忧开源模型",
+          "summary_zh": "OpenAI对开源权重模型表示担忧，引发美国安全讨论。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "TechCrunch Mobility: The battle over robotaxi rules",
-              "url": "https://techcrunch.com/2026/07/19/techcrunch-mobility-the-battle-over-robotaxi-rules/",
+              "title": "OpenAI is scared of open-weight models. Should the US be?",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "诺兰称AI是明显的特洛伊木马",
-          "summary_zh": "《奥德赛》导演克里斯托弗·诺兰批评AI是明显的特洛伊木马，引发讨论。",
+          "title_zh": "Natural融资3000万美元",
+          "summary_zh": "Natural获3000万美元融资，用于革新AI代理支付。",
+          "region": "global",
+          "score": 0.8,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Natural raises $30M to reinvent payments for AI agents — and",
+              "url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "派拉蒙华纳合并暂停",
+          "summary_zh": "法官暂停1100亿美元派拉蒙-华纳兄弟合并案。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "‘Odyssey’ director Christopher Nolan calls AI an obvious ‘Tr",
-              "url": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-hors",
+              "title": "Judge pauses $110B Paramount-Warner Bros. merger",
+              "url": "https://techcrunch.com/2026/07/20/judge-pauses-110b-paramount-warner-bros-merger/",
               "source": "TechCrunch",
-              "published_at": "2026-07-19"
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "提示注入攻击阻碍AI黑客代理",
-          "summary_zh": "提示注入攻击正在挫败AI黑客代理，凸显AI安全挑战。",
-          "region": "global",
-          "score": 0.5,
-          "date": "2026-07-18",
-          "sources": [
-            {
-              "title": "Prompt Injection Attacks Are Thwarting AI Hacking Agents",
-              "url": "https://www.wired.com/story/prompt-injection-attacks-are-thwarting-ai-hacking-agents/",
-              "source": "Wired",
-              "published_at": "2026-07-18"
-            }
-          ]
-        },
-        {
-          "title_zh": "谷歌Gemini新费率系统上线",
-          "summary_zh": "谷歌推出Gemini新费率系统，用户可追踪使用情况，影响AI服务定价。",
+          "title_zh": "Adobe应用AI批评照片",
+          "summary_zh": "Adobe相机应用新功能将用AI批评用户照片。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "How Google’s New Gemini Rates Work and How to Track Your Usa",
-              "url": "https://www.wired.com/story/how-googles-new-gemini-rates-work-and-how-to-track-your-usage/",
-              "source": "Wired",
-              "published_at": "2026-07-18"
+              "title": "Adobe camera app’s new feature will critique your photos usi",
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "经期追踪应用被指存在隐私间谍风险",
-          "summary_zh": "Wired报道经期追踪应用可能正在监视用户，引发隐私担忧。",
+          "title_zh": "WordPress漏洞遭利用",
+          "summary_zh": "黑客利用近期修补的WordPress漏洞，威胁数百万网站。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-18",
+          "score": 0.3,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Your Period Tracker Is (Probably) Spying on You",
-              "url": "https://www.wired.com/story/security-news-this-week-your-period-tracker-is-probably-spying-on-you/",
-              "source": "Wired",
-              "published_at": "2026-07-18"
+              "title": "Hackers are exploiting recently patched WordPress bugs, putt",
+              "url": "https://techcrunch.com/2026/07/20/hackers-are-exploiting-recently-patched-wordpress-bugs-putting-mil",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         }
@@ -2710,10 +2710,10 @@
       "sentiment_score": 0.5,
       "keywords": [
         "AI",
-        "Netflix",
-        "FIFA",
-        "苹果",
-        "OpenAI"
+        "融资",
+        "安全",
+        "政策",
+        "科技"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -2728,155 +2728,155 @@
         "gene editing CRISPR biotechnology",
         "superconductor material science"
       ],
-      "brief_zh": "前沿科技领域本周动态：印度首枚私营火箭入轨；谷歌支持卫星监测野火；AI在医疗预授权中的争议；蚊子栖息地扩张需加强监测；寻找类地行星取得进展；FIFA世界杯中场秀引入美式表演；俄罗斯版猎鹰9号火箭前景不明；糖尿病争议新细节；旧金山要求下架AI脱衣应用；Fubo涨价恢复NBCU频道。",
+      "brief_zh": "今日前沿科技领域动态：Colossal Biosciences计划融资，特朗普AI主管辞职，谷歌开发新AI芯片，AI协议易用性提升，X重推安卓应用，OpenAI担忧开源模型，Natural获3000万美元融资，派拉蒙-华纳合并被叫停，Adobe相机应用新增AI评论功能，WordPress漏洞遭利用，YouTube更新AI内容政策，Infinity获1500万美元融资，黑客窃取科技公司数据，Flock Safety讨论监控未来，Hugging Face确认数据泄露，三星推出Galaxy Card，FDA否认道歉，世界杯球迷旅行致碳排放激增，睡眠不足或致体重增加。",
       "events": [
         {
-          "title_zh": "印度首枚私营火箭入轨",
-          "summary_zh": "印度首枚私营火箭成功进入轨道，标志航天领域新里程碑。",
+          "title_zh": "Colossal Biosciences计划融资",
+          "summary_zh": "Colossal Biosciences据报道正洽谈新一轮融资，估值或达20亿美元。",
           "region": "global",
-          "score": 0.8,
-          "date": "2026-07-19",
+          "score": 0.6,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "India's first privately-developed rocket reaches orbit on dr",
-              "url": "https://arstechnica.com/space/2026/07/indias-first-privately-developed-rocket-reaches-orbit-on-drama",
-              "source": "Ars Technica",
-              "published_at": "2026-07-19"
+              "title": "Colossal Biosciences reportedly in talks to raise new capita",
+              "url": "https://techcrunch.com/2026/07/20/colossal-biosciences-reportedly-in-talks-to-raise-new-capital-at-2",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "谷歌支持卫星监测野火",
-          "summary_zh": "谷歌支持的卫星用于野火监测，在烟雾中发射升空。",
-          "region": "global",
-          "score": 0.7,
-          "date": "2026-07-17",
-          "sources": [
-            {
-              "title": "Google-backed satellites for wildfire detection launch as sm",
-              "url": "https://arstechnica.com/space/2026/07/google-backed-satellites-for-wildfire-detection-launch-as-smok",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "AI在医疗预授权中的争议",
-          "summary_zh": "AI能否改善医疗预授权流程，还是使其更糟？引发讨论。",
+          "title_zh": "特朗普AI主管辞职",
+          "summary_zh": "特朗普最新任命的AI主管已辞职，引发外界关注。",
           "region": "global",
           "score": 0.5,
-          "date": "2026-07-18",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Will AI fix prior authorization—or make it worse?",
-              "url": "https://arstechnica.com/ai/2026/07/will-ai-fix-prior-authorization-or-make-it-worse/",
-              "source": "Ars Technica",
-              "published_at": "2026-07-18"
+              "title": "Trump’s latest AI czar has already resigned",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "蚊子栖息地扩张需加强监测",
-          "summary_zh": "随着蚊子栖息地扩大，更好的监测是预防疾病的关键。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "As mosquito ranges expand, better monitoring is key to preve",
-              "url": "https://arstechnica.com/science/2026/07/as-mosquito-ranges-expand-better-monitoring-is-key-to-preven",
-              "source": "Ars Technica",
-              "published_at": "2026-07-19"
-            }
-          ]
-        },
-        {
-          "title_zh": "寻找类地行星取得进展",
-          "summary_zh": "寻找另一个类地行星的研究迈出重要一步。",
+          "title_zh": "谷歌开发新AI芯片",
+          "summary_zh": "谷歌正在研发新AI芯片，旨在提升Gemini模型效率。",
           "region": "global",
           "score": 0.7,
-          "date": "2026-07-19",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "The Search for Another Earth-Like Planet Just Took a Big Ste",
-              "url": "https://www.wired.com/story/search-for-earth-like-planet-step-forward/",
-              "source": "Wired",
-              "published_at": "2026-07-19"
+              "title": "Google is working on a new AI chip designed to make Gemini m",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-ef",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "俄罗斯版猎鹰9号前景不明",
-          "summary_zh": "俄罗斯对标猎鹰9号的火箭能否成功发射仍存疑问。",
+          "title_zh": "AI协议易用性提升",
+          "summary_zh": "AI重要协议获得更新，使用门槛降低，利于开发者。",
+          "region": "global",
+          "score": 0.6,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "AI’s most important protocol is getting a little bit easier ",
+              "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "X重推安卓应用",
+          "summary_zh": "经过一年努力，X平台重新推出重建的安卓应用。",
+          "region": "global",
+          "score": 0.5,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "X relaunches a rebuilt Android app after year-long effort",
+              "url": "https://techcrunch.com/2026/07/20/x-relaunches-a-rebuilt-android-app-after-year-long-effort/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "OpenAI担忧开源模型",
+          "summary_zh": "OpenAI对开源权重模型表示担忧，引发美国安全讨论。",
           "region": "global",
           "score": 0.4,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Will Russia's answer to the Falcon 9 rocket ever take flight",
-              "url": "https://arstechnica.com/space/2026/07/will-russias-answer-to-the-falcon-9-rocket-ever-take-flight/",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
+              "title": "OpenAI is scared of open-weight models. Should the US be?",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "糖尿病争议新细节",
-          "summary_zh": "糖尿病争议事件出现令人不安的新细节。",
+          "title_zh": "Natural获3000万美元融资",
+          "summary_zh": "Natural公司融资3000万美元，用于重塑AI代理支付系统。",
+          "region": "global",
+          "score": 0.7,
+          "date": "2026-07-20",
+          "sources": [
+            {
+              "title": "Natural raises $30M to reinvent payments for AI agents — and",
+              "url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
+            }
+          ]
+        },
+        {
+          "title_zh": "派拉蒙-华纳合并被叫停",
+          "summary_zh": "法官暂停价值1100亿美元的派拉蒙-华纳兄弟合并案。",
           "region": "global",
           "score": 0.3,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Troubling new details emerge on diabetes ouster controversy",
-              "url": "https://arstechnica.com/science/2026/07/troubling-new-details-emerge-on-diabetes-ouster-controversy/",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
+              "title": "Judge pauses $110B Paramount-Warner Bros. merger",
+              "url": "https://techcrunch.com/2026/07/20/judge-pauses-110b-paramount-warner-bros-merger/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "旧金山要求下架AI脱衣应用",
-          "summary_zh": "旧金山命令苹果和谷歌移除AI脱衣应用，停止从中获利。",
+          "title_zh": "Adobe相机应用AI评论",
+          "summary_zh": "Adobe相机应用新增AI功能，可对照片进行评论。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-17",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "San Francisco orders Apple, Google to remove nudify apps fro",
-              "url": "https://arstechnica.com/tech-policy/2026/07/apple-google-must-stop-profiting-off-ai-nudify-apps-san-",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
+              "title": "Adobe camera app’s new feature will critique your photos usi",
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "Fubo涨价恢复NBCU频道",
-          "summary_zh": "Fubo在恢复部分NBCU频道后，将价格上调15美元。",
+          "title_zh": "WordPress漏洞遭利用",
+          "summary_zh": "黑客利用近期修补的WordPress漏洞，威胁数百万网站。",
           "region": "global",
-          "score": 0.4,
-          "date": "2026-07-17",
+          "score": 0.2,
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Fubo hikes prices by $15 after restoring some NBCU channels ",
-              "url": "https://arstechnica.com/gadgets/2026/07/fubo-hikes-prices-by-15-after-restoring-some-nbcu-channels-l",
-              "source": "Ars Technica",
-              "published_at": "2026-07-17"
-            }
-          ]
-        },
-        {
-          "title_zh": "FIFA世界杯中场秀引入美式表演",
-          "summary_zh": "FIFA世界杯中场秀将呈现美式风格表演，引发期待。",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-19",
-          "sources": [
-            {
-              "title": "FIFA’s World Cup Halftime Show Puts American-Style Spectacle",
-              "url": "https://www.wired.com/story/fifa-world-cup-halftime-show-what-to-expect/",
-              "source": "Wired",
-              "published_at": "2026-07-19"
+              "title": "Hackers are exploiting recently patched WordPress bugs, putt",
+              "url": "https://techcrunch.com/2026/07/20/hackers-are-exploiting-recently-patched-wordpress-bugs-putting-mil",
+              "source": "TechCrunch",
+              "published_at": "2026-07-20"
             }
           ]
         }
@@ -2886,11 +2886,11 @@
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "印度私营火箭",
-        "AI医疗",
-        "野火监测卫星",
-        "类地行星",
-        "蚊子监测"
+        "AI",
+        "融资",
+        "数据泄露",
+        "芯片",
+        "政策"
       ],
       "deduped_count": 0,
       "raw_count": 45
@@ -2900,194 +2900,154 @@
       "name": "研究雷达（arXiv）",
       "tags": [],
       "gnews_queries": [],
-      "brief_zh": "arXiv最新研究涵盖粒子物理、机器人策略、视觉推理、科学图表编辑、心肌梗死诊断、区块链情绪分析等多个领域，展示了AI与基础科学的前沿进展。",
+      "brief_zh": "近期AI研究领域动态：阿肯色大学小石城分校教授Nitin Agarwal发布AI研究成果；AI工具标记超25万篇可疑癌症研究论文；ICML 2026会议召开；AI与机器学习出版物质量出现不稳定性；研究比较AI与人类预测；AI研究科学家职业指南发布；IEEE Spectrum纪念人工智能70周年。",
       "events": [
         {
-          "title_zh": "气泡碰撞产生粒子",
-          "summary_zh": "研究气泡碰撞中的粒子产生机制",
+          "title_zh": "AI标记25万篇可疑癌症论文",
+          "summary_zh": "AI工具识别出超过25万篇存在问题的癌症研究论文。",
           "region": "global",
-          "score": 0.6,
+          "score": 0.7,
           "date": "2026-07-16",
           "sources": [
             {
-              "title": "Particle production from bubble collisions",
-              "url": "http://arxiv.org/abs/2607.15279v1",
-              "source": "arXiv",
+              "title": "AI flags more than 250,000 suspicious cancer research papers",
+              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9fRkZpYXJsQkhxMmVXTDJVaXp5NUYtRkYxVU5SVWZtOG1QVVp",
+              "source": "ScienceDaily",
               "published_at": "2026-07-16"
             }
           ]
         },
         {
-          "title_zh": "多步视觉推理去噪",
-          "summary_zh": "提出层次化去噪方法用于多步视觉推理",
+          "title_zh": "UA Little Rock教授AI研究发表",
+          "summary_zh": "阿肯色大学小石城分校教授Nitin Agarwal的AI研究成果发布。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-16",
+          "date": "2026-07-20",
           "sources": [
             {
-              "title": "Hierarchical Denoising For Multi-Step Visual Reasoning",
-              "url": "http://arxiv.org/abs/2607.15278v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "UA Little Rock Professor Nitin Agarwal’s AI Research Publish",
+              "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNUGFZVVJEcHQ1ZG1adUVVZVdCRkJsdlQ2bENQRUd6ejNPdFJ",
+              "source": "UA Little Rock",
+              "published_at": "2026-07-20"
             }
           ]
         },
         {
-          "title_zh": "统计自一致性方法",
-          "summary_zh": "分区、提示、聚合实现统计自一致性",
+          "title_zh": "ICML 2026机器学习大会召开",
+          "summary_zh": "国际机器学习大会（ICML）2026年会议举行。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
+          "score": 0.5,
+          "date": "2026-07-03",
           "sources": [
             {
-              "title": "Partition, Prompt, Aggregate: Statistical Self-Consistency i",
-              "url": "http://arxiv.org/abs/2607.15277v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "International Conference on Machine Learning (ICML) 2026 - A",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwdTNsRU5ReFhLdDQxdjJPNTJ6X3pIWXMxNXFLdDJsbG5SQ0x",
+              "source": "Apple Machine Learni",
+              "published_at": "2026-07-03"
             }
           ]
         },
         {
-          "title_zh": "机器人策略上下文缩放",
-          "summary_zh": "RoboTTT实现机器人策略的上下文缩放",
+          "title_zh": "AI与机器学习出版质量不稳定",
+          "summary_zh": "AI和机器学习出版物的质量出现不稳定性问题。",
           "region": "global",
           "score": 0.6,
-          "date": "2026-07-16",
+          "date": "2026-07-03",
           "sources": [
             {
-              "title": "RoboTTT: Context Scaling for Robot Policies",
-              "url": "http://arxiv.org/abs/2607.15275v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "Instability in AI and machine learning publication quality -",
+              "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1MMy16ODlUQV9mbnBNamdNM1dmcFVDRzBlckdzd2xsY2MxQU1",
+              "source": "University World New",
+              "published_at": "2026-07-03"
             }
           ]
         },
         {
-          "title_zh": "平均速度流NFT",
-          "summary_zh": "将前向过程强化学习应用于平均速度流",
+          "title_zh": "AI与人类预测比较研究",
+          "summary_zh": "Goal26研究考察AI和人类在道德等领域的预测能力。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
+          "score": 0.5,
+          "date": "2026-07-19",
           "sources": [
             {
-              "title": "MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity",
-              "url": "http://arxiv.org/abs/2607.15273v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "Goal26 Research Examines AI and Human Predictions Across Mor",
+              "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSU5rbXZIOEZUak16WEZJU2Y5TlpxVTlBdGNobXFIbzlhUkx",
+              "source": "EIN Presswire",
+              "published_at": "2026-07-19"
             }
           ]
         },
         {
-          "title_zh": "科学图表编辑学习",
-          "summary_zh": "从配对数据学习编辑科学图表",
+          "title_zh": "AI研究科学家职业指南发布",
+          "summary_zh": "2026年AI研究科学家职业指南发布，介绍职业路径。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
+          "score": 0.5,
+          "date": "2026-07-09",
           "sources": [
             {
-              "title": "SciDiagramEdit: Learning to Edit Scientific Diagrams from Pa",
-              "url": "http://arxiv.org/abs/2607.15272v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "What Is an AI Research Scientist? 2026 Career Guide - Course",
+              "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE52OHo4Q25JYzFlYTRUcnNWbjE4dDl5d1ZvVThNUC1xS0NkOEh",
+              "source": "Coursera",
+              "published_at": "2026-07-09"
             }
           ]
         },
         {
-          "title_zh": "在线神经时空记忆",
-          "summary_zh": "用于动态新视角合成的在线神经时空记忆",
+          "title_zh": "纪念人工智能70周年",
+          "summary_zh": "IEEE Spectrum发文纪念人工智能发展70周年。",
           "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
+          "score": 0.5,
+          "date": "2026-06-22",
           "sources": [
             {
-              "title": "Online Neural Space Time Memory for Dynamic Novel View Synth",
-              "url": "http://arxiv.org/abs/2607.15271v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
-            }
-          ]
-        },
-        {
-          "title_zh": "无大和集的稠密集",
-          "summary_zh": "研究无大和集的稠密集性质",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
-          "sources": [
-            {
-              "title": "Dense sets without large sumsets",
-              "url": "http://arxiv.org/abs/2607.15269v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
-            }
-          ]
-        },
-        {
-          "title_zh": "心肌梗死多视图融合",
-          "summary_zh": "运动条件多视图融合用于心肌梗死诊断",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
-          "sources": [
-            {
-              "title": "Motion-Conditioned Multi-View Fusion for Myocardial Infarcti",
-              "url": "http://arxiv.org/abs/2607.15268v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
-            }
-          ]
-        },
-        {
-          "title_zh": "预训练数据投毒风险",
-          "summary_zh": "通过计算传播污染预训练数据",
-          "region": "global",
-          "score": 0.6,
-          "date": "2026-07-16",
-          "sources": [
-            {
-              "title": "Pretraining Data Can Be Poisoned through Computational Propa",
-              "url": "http://arxiv.org/abs/2607.15267v1",
-              "source": "arXiv",
-              "published_at": "2026-07-16"
+              "title": "Commemorating 70 Years of Artificial Intelligence - IEEE Spe",
+              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9yOGU1TThHSEtpNk85QXpGd21wb0REQi1IaEdJNzNDSWRkSFV",
+              "source": "IEEE Spectrum",
+              "published_at": "2026-06-22"
             }
           ]
         }
       ],
       "cn_count": 0,
-      "total_count": 10,
+      "total_count": 7,
       "sentiment": "neutral",
       "sentiment_score": 0.5,
       "keywords": [
-        "arXiv",
-        "粒子物理",
-        "机器人",
-        "视觉推理",
-        "区块链"
+        "AI研究",
+        "机器学习",
+        "出版物质量",
+        "癌症研究",
+        "人工智能70周年"
       ],
       "deduped_count": 0,
-      "raw_count": 20
+      "raw_count": 7
     }
   ],
   "top5": [
     {
-      "title": "Databricks估值达1880亿美元",
-      "summary": "Databricks估值达到1880亿美元，巩固其作为AI基础设施的领先地位。这反映了AI领域的强劲增长和投资热度，可能影响相关企业的估值和投资决策。",
-      "action": "关注AI基础设施投资机会，评估相关公司估值。"
+      "title": "Netflix添加ASL手语翻译",
+      "summary": "Netflix为数十个节目和电影添加美国手语翻译，提升无障碍性，可能吸引更多残障用户，增加订阅量，对决策影响是需关注无障碍市场增长。",
+      "action": "评估无障碍功能对用户增长的影响"
     },
     {
-      "title": "伊朗袭击致美军一死一伤",
-      "summary": "伊朗袭击造成一名美军死亡、一人受伤，加剧了中东地区的紧张局势。这可能引发美国更强烈的军事回应，影响地缘政治稳定和能源市场。",
-      "action": "评估地缘政治风险，调整能源相关投资策略。"
+      "title": "中国廉价AI模型利好英伟达",
+      "summary": "分析称中国廉价AI模型可能对英伟达有利，推动市场乐观，表明低成本AI解决方案可能增加对英伟达芯片的需求，影响投资决策。",
+      "action": "关注AI模型对芯片需求的推动"
     },
     {
-      "title": "印度私营火箭首次入轨",
-      "summary": "印度首枚私营开发火箭成功进入轨道，标志着印度航天产业的重大突破。这为私营航天企业开辟了新机遇，可能推动全球航天市场竞争。",
-      "action": "关注印度航天产业投资机会，评估合作潜力。"
+      "title": "特朗普对加拿大加征50%关税",
+      "summary": "特朗普宣布对加拿大进口商品征收50%关税，加剧贸易紧张，可能导致供应链成本上升，影响跨国企业利润，需调整采购策略。",
+      "action": "评估供应链风险并调整采购"
     },
     {
-      "title": "美国扩大对伊朗打击",
-      "summary": "美国扩大对伊朗的打击行动，伊朗在波斯湾进行报复，导致冲突升级。这增加了地区不稳定性和油价波动风险，影响全球供应链。",
-      "action": "监控油价波动，调整能源和国防相关投资。"
+      "title": "美国对加拿大加征50%关税",
+      "summary": "特朗普宣布对加拿大进口商品加征50%关税，加剧贸易紧张，可能导致供应链成本上升，影响跨国企业利润，需调整采购策略。",
+      "action": "评估供应链风险并调整采购"
+    },
+    {
+      "title": "美国对伊朗发动新打击",
+      "summary": "美国对伊朗发动新打击，特朗普警告报复，中东局势升级，可能推高油价和地缘政治风险，影响能源投资和避险资产配置。",
+      "action": "监控油价波动并调整投资组合"
     }
   ],
   "meta": {
